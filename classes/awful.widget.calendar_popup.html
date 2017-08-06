@@ -42,6 +42,7 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../classes/awful.widget.button.html">awful.widget.button</a></li>
@@ -69,6 +70,9 @@
   <li><a href="../classes/key.html">key</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
   <li><a href="../classes/tag.html">tag</a></li>
@@ -118,11 +122,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.html">awful.hotkeys_popup.keys</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.firefox.html">awful.hotkeys_popup.keys.firefox</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.qutebrowser.html">awful.hotkeys_popup.keys.qutebrowser</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.tmux.html">awful.hotkeys_popup.keys.tmux</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.vim.html">awful.hotkeys_popup.keys.vim</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.keygrabber.html">awful.keygrabber</a></li>
@@ -140,12 +139,12 @@
   <li><a href="../libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="../libraries/awful.mouse.html">awful.mouse</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
+  <li><a href="../libraries/awful.popup.html">awful.popup</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><a href="../libraries/awful.screen.html">awful.screen</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
   <li><a href="../libraries/awful.tag.html">awful.tag</a></li>
-  <li><a href="../libraries/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
@@ -171,15 +170,6 @@
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
-  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
-  <li><a href="../libraries/objects.button.html">objects.button</a></li>
-  <li><a href="../libraries/objects.client.html">objects.client</a></li>
-  <li><a href="../libraries/objects.drawable.html">objects.drawable</a></li>
-  <li><a href="../libraries/objects.drawin.html">objects.drawin</a></li>
-  <li><a href="../libraries/objects.key.html">objects.key</a></li>
-  <li><a href="../libraries/objects.screen.html">objects.screen</a></li>
-  <li><a href="../libraries/objects.tag.html">objects.tag</a></li>
-  <li><a href="../libraries/objects.window.html">objects.window</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -212,7 +202,7 @@
 <h1>Class <code>awful.widget.calendar_popup</code></h1>
 <p>A calendar popup wibox</p>
 
-<p> Display a month or year calendar popup using <a href="../classes/awful.widget.calendar_popup.html#awful.calendar.month">calendar_popup.month</a> or <a href="../classes/awful.widget.calendar_popup.html#awful.calendar.year">calendar_popup.year</a>.</p>
+<p> Display a month or year calendar popup using <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar.month">calendar_popup.month</a> or <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar.year">calendar_popup.year</a>.</p>
 <p> The calendar style can be tweaked by providing tables of style properties at creation:
  <code>style_year</code>, <code>style_month</code>, <code>style_yearheader</code>, <code>style_header</code>,
  <code>style_weekday</code>, <code>style_weeknumber</code>, <code>style_normal</code>, <code>style_focus</code> (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>).</p>
@@ -238,11 +228,11 @@
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#awful.calendar.month">awful.calendar.month (args)</a></td>
+	<td class="name" ><a href="#awful.widget.calendar.month">awful.widget.calendar.month (args)</a></td>
 	<td class="summary">A month calendar wibox.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#awful.calendar.year">awful.calendar.year (args)</a></td>
+	<td class="name" ><a href="#awful.widget.calendar.year">awful.widget.calendar.year (args)</a></td>
 	<td class="summary">A year calendar wibox.</td>
 	</tr>
 </table>
@@ -288,8 +278,8 @@
     Methods
     <dl class="function">
     <dt>
-    <a name = "awful.calendar.month"></a>
-    <strong>awful.calendar.month (args)</strong>
+    <a name = "awful.widget.calendar.month"></a>
+    <strong>awful.widget.calendar.month (args)</strong>
     </dt>
     <dd>
     <p>A month calendar wibox. </p>
@@ -342,27 +332,27 @@ month_calendar:attach( mytextclock, "tr" )
             <span class="types"><span class="type">boolean</span></span>
          Format the weekdays with three characters instead of two
         </li>
-        <li><span class="parameter">month_style</span>
+        <li><span class="parameter">style_month</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Container style for the month calendar (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>)
         </li>
-        <li><span class="parameter">header_style</span>
+        <li><span class="parameter">style_header</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Cell style for the month calendar header (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>)
         </li>
-        <li><span class="parameter">weekday_style</span>
+        <li><span class="parameter">style_weekday</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Cell style for the weekday cells (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>)
         </li>
-        <li><span class="parameter">weeknumber_style</span>
+        <li><span class="parameter">style_weeknumber</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Cell style for the weeknumber cells (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>)
         </li>
-        <li><span class="parameter">normal_style</span>
+        <li><span class="parameter">style_normal</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Cell style for the normal day cells (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>)
         </li>
-        <li><span class="parameter">focus_style</span>
+        <li><span class="parameter">style_focus</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Cell style for the current day cell (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>)
         </li>
@@ -381,8 +371,8 @@ month_calendar:attach( mytextclock, "tr" )
 
 </dd>
     <dt>
-    <a name = "awful.calendar.year"></a>
-    <strong>awful.calendar.year (args)</strong>
+    <a name = "awful.widget.calendar.year"></a>
+    <strong>awful.widget.calendar.year (args)</strong>
     </dt>
     <dd>
     <p>A year calendar wibox. </p>
@@ -435,36 +425,36 @@ month_calendar:attach( mytextclock, "tr" )
             <span class="types"><span class="type">boolean</span></span>
          Format the weekdays with three characters instead of two
         </li>
-        <li><span class="parameter">year_style</span>
+        <li><span class="parameter">style_year</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Container style for the year calendar (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>)
         </li>
-        <li><span class="parameter">month_style</span>
+        <li><span class="parameter">style_month</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Container style for the month calendar (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>).
- This field can also be called <code>monthheader_style</code>.
+ This field can also be called <code>style_monthheader</code>.
         </li>
-        <li><span class="parameter">yearheader_style</span>
+        <li><span class="parameter">style_yearheader</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Cell style for the year calendar header (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>)
         </li>
-        <li><span class="parameter">header_style</span>
+        <li><span class="parameter">style_header</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Cell style for the month calendar header (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>)
         </li>
-        <li><span class="parameter">weekday_style</span>
+        <li><span class="parameter">style_weekday</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Cell style for the weekday cells (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>)
         </li>
-        <li><span class="parameter">weeknumber_style</span>
+        <li><span class="parameter">style_weeknumber</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Cell style for the weeknumber cells (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>)
         </li>
-        <li><span class="parameter">normal_style</span>
+        <li><span class="parameter">style_normal</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Cell style for the normal day cells (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>)
         </li>
-        <li><span class="parameter">focus_style</span>
+        <li><span class="parameter">style_focus</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Cell style for the current day cell (see <a href="../classes/awful.widget.calendar_popup.html#awful.widget.calendar_popup.cell_properties">cell_properties</a>)
         </li>
@@ -690,7 +680,7 @@ month_calendar:attach(mytextclock, 'tr')
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-06-20 04:39:44 </i>
+<i style="float:right;">Last updated 2017-08-06 01:28:00 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

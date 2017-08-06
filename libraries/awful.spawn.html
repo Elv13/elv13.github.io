@@ -44,11 +44,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.html">awful.hotkeys_popup.keys</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.firefox.html">awful.hotkeys_popup.keys.firefox</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.qutebrowser.html">awful.hotkeys_popup.keys.qutebrowser</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.tmux.html">awful.hotkeys_popup.keys.tmux</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.vim.html">awful.hotkeys_popup.keys.vim</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.keygrabber.html">awful.keygrabber</a></li>
@@ -66,12 +61,12 @@
   <li><a href="../libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="../libraries/awful.mouse.html">awful.mouse</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
+  <li><a href="../libraries/awful.popup.html">awful.popup</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><a href="../libraries/awful.screen.html">awful.screen</a></li>
   <li><strong>awful.spawn</strong></li>
   <li><a href="../libraries/awful.tag.html">awful.tag</a></li>
-  <li><a href="../libraries/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
@@ -97,15 +92,6 @@
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
-  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
-  <li><a href="../libraries/objects.button.html">objects.button</a></li>
-  <li><a href="../libraries/objects.client.html">objects.client</a></li>
-  <li><a href="../libraries/objects.drawable.html">objects.drawable</a></li>
-  <li><a href="../libraries/objects.drawin.html">objects.drawin</a></li>
-  <li><a href="../libraries/objects.key.html">objects.key</a></li>
-  <li><a href="../libraries/objects.screen.html">objects.screen</a></li>
-  <li><a href="../libraries/objects.tag.html">objects.tag</a></li>
-  <li><a href="../libraries/objects.window.html">objects.window</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -118,6 +104,7 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../classes/awful.widget.button.html">awful.widget.button</a></li>
@@ -145,6 +132,9 @@
   <li><a href="../classes/key.html">key</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
   <li><a href="../classes/tag.html">tag</a></li>
@@ -405,6 +395,10 @@ awful.spawn({<span class="string">"xdg-open"</span>, <span class="string">"/path
 	<td class="summary">Asynchronously spawn a program and capture its output.</td>
 	</tr>
 	<tr>
+	<td class="name" ><a href="#easy_async_with_shell">easy_async_with_shell (cmd, callback)</a></td>
+	<td class="summary">Call <a href="../libraries/awful.spawn.html#easy_async">spawn.easy_async</a> with a shell.</td>
+	</tr>
+	<tr>
 	<td class="name" ><a href="#read_lines">read_lines (input_stream, line_callback[, done_callback[, close=false]])</a></td>
 	<td class="summary">Read lines from a Gio input stream</td>
 	</tr>
@@ -581,14 +575,75 @@ awful.spawn({<span class="string">"xdg-open"</span>, <span class="string">"/path
         </li>
         <li><span class="parameter">exitreason</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Exit Reason.
- The reason can be &ldquo;exit&rdquo; or &ldquo;signal&rdquo;.
+         Exit reason (&ldquo;exit&rdquo; or &ldquo;signal&rdquo;).
         </li>
         <li><span class="parameter">exitcode</span>
             <span class="types"><span class="type">integer</span></span>
-         Exit code.
- For &ldquo;exit&rdquo; reason it&rsquo;s the exit code.
- For &ldquo;signal&rdquo; reason — the signal causing process termination.
+        <p> Exit code (exit code or signal number,</p>
+
+<pre><code> depending on "exitreason").
+</code></pre>
+
+        </li>
+        </li></ul>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">Integer</span></span>
+        the PID of the forked process.
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        Error message.
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/awful.spawn.html#with_line_callback">spawn.with_line_callback</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "easy_async_with_shell"></a>
+    <strong>easy_async_with_shell (cmd, callback)</strong>
+    </dt>
+    <dd>
+    Call <a href="../libraries/awful.spawn.html#easy_async">spawn.easy_async</a> with a shell.
+ This calls <code>cmd</code> with <code>$SHELL -c</code> (via <a href="../libraries/awful.util.html#shell">awful.util.shell</a>).
+
+
+    <ul>
+        <li><span class="parameter">cmd</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The command.
+        </li>
+        <li><span class="parameter">callback</span> Function with the following arguments
+        <ul>
+        <li><span class="parameter">stdout</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Output on stdout.
+        </li>
+        <li><span class="parameter">stderr</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Output on stderr.
+        </li>
+        <li><span class="parameter">exitreason</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Exit reason (&ldquo;exit&rdquo; or &ldquo;signal&rdquo;).
+        </li>
+        <li><span class="parameter">exitcode</span>
+            <span class="types"><span class="type">integer</span></span>
+        <p> Exit code (exit code or signal number,</p>
+
+<pre><code> depending on "exitreason").
+</code></pre>
+
         </li>
         </li></ul>
     </ul>
@@ -657,7 +712,7 @@ awful.spawn({<span class="string">"xdg-open"</span>, <span class="string">"/path
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-06-20 04:39:44 </i>
+<i style="float:right;">Last updated 2017-08-06 01:28:00 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

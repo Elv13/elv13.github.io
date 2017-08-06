@@ -46,11 +46,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.html">awful.hotkeys_popup.keys</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.firefox.html">awful.hotkeys_popup.keys.firefox</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.qutebrowser.html">awful.hotkeys_popup.keys.qutebrowser</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.tmux.html">awful.hotkeys_popup.keys.tmux</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.vim.html">awful.hotkeys_popup.keys.vim</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.keygrabber.html">awful.keygrabber</a></li>
@@ -68,12 +63,12 @@
   <li><a href="../libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="../libraries/awful.mouse.html">awful.mouse</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
+  <li><a href="../libraries/awful.popup.html">awful.popup</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><a href="../libraries/awful.screen.html">awful.screen</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
   <li><a href="../libraries/awful.tag.html">awful.tag</a></li>
-  <li><a href="../libraries/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
@@ -99,15 +94,6 @@
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
-  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
-  <li><a href="../libraries/objects.button.html">objects.button</a></li>
-  <li><a href="../libraries/objects.client.html">objects.client</a></li>
-  <li><a href="../libraries/objects.drawable.html">objects.drawable</a></li>
-  <li><a href="../libraries/objects.drawin.html">objects.drawin</a></li>
-  <li><a href="../libraries/objects.key.html">objects.key</a></li>
-  <li><a href="../libraries/objects.screen.html">objects.screen</a></li>
-  <li><a href="../libraries/objects.tag.html">objects.tag</a></li>
-  <li><a href="../libraries/objects.window.html">objects.window</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -120,6 +106,7 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../classes/awful.widget.button.html">awful.widget.button</a></li>
@@ -147,6 +134,9 @@
   <li><a href="../classes/key.html">key</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
   <li><a href="../classes/tag.html">tag</a></li>
@@ -210,8 +200,8 @@
 
 <h1>Module <code>awesome</code></h1>
 <p>awesome core API</p>
-<p>
-</p>
+<p> Additionally to the classes described here, one can also use X properties as
+ described in <a href="../classes/xproperties.html#">xproperties</a>.</p>
     <h3>Info:</h3>
     <ul>
         <li><strong>Copyright</strong>: 2008-2009 Julien Danjou</li>
@@ -221,6 +211,10 @@
 
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
+	<tr>
+	<td class="name" ><a href="#register_xproperty">register_xproperty (name, type)</a></td>
+	<td class="summary">Register a new xproperty.</td>
+	</tr>
 	<tr>
 	<td class="name" ><a href="#quit">quit ([code=0])</a></td>
 	<td class="summary">Quit awesome.</td>
@@ -402,6 +396,30 @@
     <h2 class="section-header "><a name="Functions"></a>Functions</h2>
     Methods
     <dl class="function">
+    <dt>
+    <a name = "register_xproperty"></a>
+    <strong>register_xproperty (name, type)</strong>
+    </dt>
+    <dd>
+    Register a new xproperty.
+
+
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The name of the X11 property.
+        </li>
+        <li><span class="parameter">type</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         One of &ldquo;string&rdquo;, &ldquo;number&rdquo; or &ldquo;boolean&rdquo;.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
     <dt>
     <a name = "quit"></a>
     <strong>quit ([code=0])</strong>
@@ -795,8 +813,19 @@
     <h3>Arguments:</h3>
     <ul>
         <li><span class="parameter">hint</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          String with a hint on what to use instead of the
  deprecated functionality.
+        </li>
+        <li><span class="parameter">see</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">nil</span></span>
+         The name of the newer API
+         (<em>default</em> nil)
+        </li>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> or <span class="type">nil</span></span>
+         The name of the newer API
+         (<em>default</em> nil)
         </li>
     </ul>
 
@@ -1334,7 +1363,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-06-20 04:39:44 </i>
+<i style="float:right;">Last updated 2017-08-06 01:28:00 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
