@@ -286,6 +286,38 @@ s.mytasklist = awful.widget.tasklist {
 </pre>
 
 
+<p> As demonstrated in the example above, there is a few &ldquo;shortcuts&rdquo; to avoid
+ re-inventing the wheel. By setting the predefined roles as widget <code>id</code>s,
+ <a href="../classes/awful.widget.common.html#">awful.widget.common</a> will do most of the work to update the values
+ automatically. All of them are optional. The supported roles are:</p>
+
+<ul>
+<li><code>icon_role</code>: A <a href="../classes/wibox.widget.imagebox.html#">wibox.widget.imagebox</a></li>
+<li><code>text_role</code>: A <a href="../classes/wibox.widget.textbox.html#">wibox.widget.textbox</a></li>
+<li><code>background_role</code>: A <a href="../classes/wibox.container.background.html#">wibox.container.background</a></li>
+<li><code>text_margin_role</code>: A <a href="../classes/wibox.container.margin.html#">wibox.container.margin</a></li>
+<li><code>icon_margin_role</code>: A <a href="../classes/wibox.container.margin.html#">wibox.container.margin</a></li>
+</ul>
+
+
+<p> <a href="../classes/awful.widget.common.html#">awful.widget.common</a> also has 2 callbacks to give more control over the widget:</p>
+
+<ul>
+<li><code>create_callback</code>: Called once after the widget instance is created</li>
+<li><code>update_callback</code>: Called everytime the data is refreshed</li>
+</ul>
+
+
+<p> Both callback have the same parameters:</p>
+
+<ul>
+<li><code>self</code>: The widget instance (<em>widget</em>).</li>
+<li><code>c</code>: The client (<em>client</em>)</li>
+<li><code>index</code>: The widget position in the list (<em>number</em>)</li>
+<li><code>clients</code>: The list of client, in order (<em>table</em>)</li>
+</ul>
+
+
 <p> It is also possible to omit some roles and create an icon only tasklist.
  Notice that this example use the <a href="../classes/awful.widget.clienticon.html#">awful.widget.clienticon</a> widget instead
  of an <code>imagebox</code>. This allows higher resoluton icons to be loaded. This
@@ -397,7 +429,7 @@ s.mytasklist = awful.widget.tasklist {
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#awful.tasklist">awful.tasklist (args, filter, buttons, style[, update_function[, base_widget]])</a></td>
+	<td class="name" ><a href="#awful.tasklist">awful.tasklist (args, widget_template, filter, buttons[, style[, update_function[, base_widget]]])</a></td>
 	<td class="summary">Create a new tasklist widget.</td>
 	</tr>
 	<tr>
@@ -566,7 +598,7 @@ s.mytasklist = awful.widget.tasklist {
     <dl class="function">
     <dt>
     <a name = "awful.tasklist"></a>
-    <strong>awful.tasklist (args, filter, buttons, style[, update_function[, base_widget]])</strong>
+    <strong>awful.tasklist (args, widget_template, filter, buttons[, style[, update_function[, base_widget]]])</strong>
     </dt>
     <dd>
     Create a new tasklist widget.
@@ -582,30 +614,6 @@ s.mytasklist = awful.widget.tasklist {
         <li><span class="parameter">args</span>
 
         <ul>
-        <li><span class="parameter">screen</span>
-            <span class="types"><a class="type" href="../classes/screen.html#">screen</a></span>
-         The screen to draw tasklist for.
-        </li>
-        <li><span class="parameter">filter</span>
-            <span class="types"><span class="type">function</span></span>
-         Filter function to define what clients will be listed.
-        </li>
-        <li><span class="parameter">buttons</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         A table with buttons binding to set.
-        </li>
-        <li><span class="parameter">update_function</span>
-            <span class="types"><span class="type">function</span></span>
-         Function to create a tag widget on each
-   update. See <a href="../classes/awful.widget.common.html#awful.widget.common:list_update">awful.widget.common.list_update</a>.
-         (<em>optional</em>)
-        </li>
-        <li><span class="parameter">layout</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         Container widget for tag widgets. Default
-   is <a href="../classes/wibox.layout.flex.html#wibox.layout.flex.horizontal">wibox.layout.flex.horizontal</a>.
-         (<em>optional</em>)
-        </li>
         <li><span class="parameter">style</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The style overrides default theme.
@@ -802,6 +810,11 @@ s.mytasklist = awful.widget.tasklist {
          (<em>default</em> nil)
         </li>
         </li></ul>
+        <li><span class="parameter">widget_template</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A custom widget to be used for each client
+         (<em>optional</em>)
+        </li>
         <li><span class="parameter">filter</span>
          <strong>DEPRECATED</strong> use args.filter
         </li>
@@ -1769,7 +1782,7 @@ s.mytasklist = awful.widget.tasklist {
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-08-09 01:05:41 </i>
+<i style="float:right;">Last updated 2017-08-10 00:36:32 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
