@@ -30,6 +30,12 @@
   <li><a href="../index.html">Index</a></li>
 </ul>
 
+<h2>Contents</h2>
+<ul>
+<li><a href="#Object_properties">Object properties</a></li>
+<li><a href="#Theme_variables">Theme variables</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
 
 
 <h2>Classes</h2>
@@ -64,8 +70,12 @@
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
   <li><strong>naughty.widget.box</strong></li>
+  <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
   <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
+  <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
+  <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
   <li><a href="../classes/tag.html">tag</a></li>
@@ -141,6 +151,7 @@
   <li><a href="../libraries/awful.tag.html">awful.tag</a></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
+  <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
   <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
@@ -198,23 +209,1052 @@
 <p><img src="../images/AUTOGEN_naughty_actions.svg" alt="Usage example" /></p>
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2008 koniu,2017 Emmanuel Lepage Vallee</li>
-        <li><strong>Author</strong>: koniu &lt;gkusnierz@gmail.com&gt;,koniu &lt;elv1313@gmail.com&gt;</li>
+        <li><strong>Copyright</strong>: 2017 Emmanuel Lepage Vallee</li>
+        <li><strong>Author</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;</li>
+    </ul>
+
+
+<h2><a href="#Object_properties">Object properties</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.notification">naughty.widget.box.notification</a></td>
+	<td class="summary">The widget notification object.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.widget_template">naughty.widget.box.widget_template</a></td>
+	<td class="summary">The widget template to construct the box content.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.border_width">naughty.widget.box.border_width</a></td>
+	<td class="summary">Border width.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.border_color">naughty.widget.box.border_color</a></td>
+	<td class="summary">Border color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.ontop">naughty.widget.box.ontop</a></td>
+	<td class="summary">On top of other windows.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.cursor">naughty.widget.box.cursor</a></td>
+	<td class="summary">The mouse cursor.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.visible">naughty.widget.box.visible</a></td>
+	<td class="summary">Visibility.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.opacity">naughty.widget.box.opacity</a></td>
+	<td class="summary">The opacity of the wibox, between 0 and 1.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.type">naughty.widget.box.type</a></td>
+	<td class="summary">The window type (desktop, normal, dock, &hellip;).</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.x">naughty.widget.box.x</a></td>
+	<td class="summary">The x coordinates.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.y">naughty.widget.box.y</a></td>
+	<td class="summary">The y coordinates.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.width">naughty.widget.box.width</a></td>
+	<td class="summary">The width of the wibox.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.height">naughty.widget.box.height</a></td>
+	<td class="summary">The height of the wibox.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.screen">naughty.widget.box.screen</a></td>
+	<td class="summary">The wibox screen.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.drawable">naughty.widget.box.drawable</a></td>
+	<td class="summary">The wibox&rsquo;s <a href="../classes/drawable.html#">drawable</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.widget">naughty.widget.box.widget</a></td>
+	<td class="summary">The widget that the <a href="../classes/wibox.html#">wibox</a> displays.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.window">naughty.widget.box.window</a></td>
+	<td class="summary">The X window id.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.shape_bounding">naughty.widget.box.shape_bounding</a></td>
+	<td class="summary">The wibox&rsquo;s bounding shape as a (native) cairo surface.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.shape_clip">naughty.widget.box.shape_clip</a></td>
+	<td class="summary">The wibox&rsquo;s clip shape as a (native) cairo surface.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.shape_input">naughty.widget.box.shape_input</a></td>
+	<td class="summary">The wibox&rsquo;s input shape as a (native) cairo surface.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.shape">naughty.widget.box.shape</a></td>
+	<td class="summary">The wibar&rsquo;s shape.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.bg">naughty.widget.box.bg</a></td>
+	<td class="summary">The background of the wibox.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.bgimage">naughty.widget.box.bgimage</a></td>
+	<td class="summary">The background image of the drawable.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box.fg">naughty.widget.box.fg</a></td>
+	<td class="summary">The foreground (text) of the wibox.</td>
+	</tr>
+</table>
+<h2><a href="#Theme_variables">Theme variables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_max_width">beautiful.notification_max_width</a></td>
+	<td class="summary">The maximum notification width.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_position">beautiful.notification_position</a></td>
+	<td class="summary">The maximum notification position.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.bg_normal">beautiful.bg_normal</a></td>
+	<td class="summary">The default background color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.fg_normal">beautiful.fg_normal</a></td>
+	<td class="summary">The default foreground (text) color.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box:buttons">naughty.widget.box:buttons (buttons_table)</a></td>
+	<td class="summary">Get or set mouse buttons bindings to a wibox.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box:geometry">naughty.widget.box:geometry (A)</a></td>
+	<td class="summary">Get or set wibox geometry.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box:struts">naughty.widget.box:struts (strut)</a></td>
+	<td class="summary">Get or set wibox struts.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box:setup">naughty.widget.box:setup (args)</a></td>
+	<td class="summary">Set a declarative widget hierarchy description.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.widget.box:find_widgets">naughty.widget.box:find_widgets (x, y)</a></td>
+	<td class="summary">Find a widget by a point.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Object_properties"></a>Object properties</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "naughty.widget.box.notification"></a>
+    <strong>naughty.widget.box.notification</strong>
+    </dt>
+    <dd>
+    The widget notification object.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.widget_template"></a>
+    <strong>naughty.widget.box.widget_template</strong>
+    </dt>
+    <dd>
+    The widget template to construct the box content.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">widget</span>
+
+
+        </li>
     </ul>
 
 
 
-<br/>
-<br/>
 
 
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.border_width"></a>
+    <strong>naughty.widget.box.border_width</strong>
+    </dt>
+    <dd>
+    <p>Border width. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::border_width</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">integer</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.border_color"></a>
+    <strong>naughty.widget.box.border_color</strong>
+    </dt>
+    <dd>
+    <p>Border color. </p>
+
+<p> Please note that this property only support string based 24 bit or 32 bit
+ colors:</p>
+
+<pre><code>Red Blue
+ _|  _|
+#FF00FF
+   T‾
+ Green
+
+
+Red Blue
+ _|  _|
+#FF00FF00
+   T‾  ‾T
+Green   Alpha
+</code></pre>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::border_color</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.ontop"></a>
+    <strong>naughty.widget.box.ontop</strong>
+    </dt>
+    <dd>
+    <p>On top of other windows. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::ontop</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.cursor"></a>
+    <strong>naughty.widget.box.cursor</strong>
+    </dt>
+    <dd>
+    <p>The mouse cursor. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::cursor</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/mouse.html#">mouse</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.visible"></a>
+    <strong>naughty.widget.box.visible</strong>
+    </dt>
+    <dd>
+    <p>Visibility. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::visible</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.opacity"></a>
+    <strong>naughty.widget.box.opacity</strong>
+    </dt>
+    <dd>
+    <p>The opacity of the wibox, between 0 and 1. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::opacity</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">opacity</span>
+            <span class="types"><span class="type">number</span></span>
+         (between 0 and 1)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.type"></a>
+    <strong>naughty.widget.box.type</strong>
+    </dt>
+    <dd>
+    <p>The window type (desktop, normal, dock, &hellip;). </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::type</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/client.html#client.type">client.type</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.x"></a>
+    <strong>naughty.widget.box.x</strong>
+    </dt>
+    <dd>
+    <p>The x coordinates. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::x</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">integer</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.y"></a>
+    <strong>naughty.widget.box.y</strong>
+    </dt>
+    <dd>
+    <p>The y coordinates. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::y</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">integer</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.width"></a>
+    <strong>naughty.widget.box.width</strong>
+    </dt>
+    <dd>
+    <p>The width of the wibox. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::width</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.height"></a>
+    <strong>naughty.widget.box.height</strong>
+    </dt>
+    <dd>
+    <p>The height of the wibox. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::height</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">height</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.screen"></a>
+    <strong>naughty.widget.box.screen</strong>
+    </dt>
+    <dd>
+    The wibox screen.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">screen</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.drawable"></a>
+    <strong>naughty.widget.box.drawable</strong>
+    </dt>
+    <dd>
+    <p>The wibox&rsquo;s <a href="../classes/drawable.html#">drawable</a>. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::drawable</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">drawable</span>
+            <span class="types"><a class="type" href="../classes/drawable.html#">drawable</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.widget"></a>
+    <strong>naughty.widget.box.widget</strong>
+    </dt>
+    <dd>
+    The widget that the <a href="../classes/wibox.html#">wibox</a> displays.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">widget</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.window"></a>
+    <strong>naughty.widget.box.window</strong>
+    </dt>
+    <dd>
+    <p>The X window id. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::window</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/client.html#property::window">client.window</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.shape_bounding"></a>
+    <strong>naughty.widget.box.shape_bounding</strong>
+    </dt>
+    <dd>
+    <p>The wibox&rsquo;s bounding shape as a (native) cairo surface. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::shape_bounding</em></li>
+</ul>
+
+
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.shape_clip"></a>
+    <strong>naughty.widget.box.shape_clip</strong>
+    </dt>
+    <dd>
+    <p>The wibox&rsquo;s clip shape as a (native) cairo surface. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::shape_clip</em></li>
+</ul>
+
+
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.shape_input"></a>
+    <strong>naughty.widget.box.shape_input</strong>
+    </dt>
+    <dd>
+    <p>The wibox&rsquo;s input shape as a (native) cairo surface. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::shape_input</em></li>
+</ul>
+
+
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.shape"></a>
+    <strong>naughty.widget.box.shape</strong>
+    </dt>
+    <dd>
+    <p>The wibar&rsquo;s shape. </p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::shape</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">shape</span>
+            <span class="types"><span class="type">gears.shape</span></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.bg"></a>
+    <strong>naughty.widget.box.bg</strong>
+    </dt>
+    <dd>
+    The background of the wibox.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">c</span>
+         The background to use. This must either be a cairo pattern object,
+   nil or a string that gears.color() understands.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.bgimage"></a>
+    <strong>naughty.widget.box.bgimage</strong>
+    </dt>
+    <dd>
+    The background image of the drawable.
+ If <code>image</code> is a function, it will be called with <code>(context, cr, width, height)</code>
+ as arguments. Any other arguments passed to this method will be appended.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">image</span>
+         A background image or a function
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.surface.html#">gears.surface</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box.fg"></a>
+    <strong>naughty.widget.box.fg</strong>
+    </dt>
+    <dd>
+    The foreground (text) of the wibox.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">c</span>
+         The foreground to use. This must either be a cairo pattern object,
+   nil or a string that gears.color() understands.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Theme_variables"></a>Theme variables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "beautiful.notification_max_width"></a>
+    <strong>beautiful.notification_max_width</strong>
+    </dt>
+    <dd>
+    The maximum notification width.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_max_width</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+         (<em>default</em> 500)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_position"></a>
+    <strong>beautiful.notification_position</strong>
+    </dt>
+    <dd>
+    <p>The maximum notification position. </p>
+
+<p> Valid values are:</p>
+
+<ul>
+<li>top_left</li>
+<li>top_middle</li>
+<li>top_right</li>
+<li>bottom_left</li>
+<li>bottom_middle</li>
+<li>bottom_right</li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_position</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+         (<em>default</em> "top_right")
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.bg_normal"></a>
+    <strong>beautiful.bg_normal</strong>
+    </dt>
+    <dd>
+    The default background color.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/naughty.widget.box.html#naughty.widget.box.bg">bg</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.fg_normal"></a>
+    <strong>beautiful.fg_normal</strong>
+    </dt>
+    <dd>
+    The default foreground (text) color.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/naughty.widget.box.html#naughty.widget.box.fg">fg</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "naughty.widget.box:buttons"></a>
+    <strong>naughty.widget.box:buttons (buttons_table)</strong>
+    </dt>
+    <dd>
+    Get or set mouse buttons bindings to a wibox.
+
+
+    <ul>
+        <li><span class="parameter">buttons_table</span>
+         A table of buttons objects, or nothing.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box:geometry"></a>
+    <strong>naughty.widget.box:geometry (A)</strong>
+    </dt>
+    <dd>
+    Get or set wibox geometry.  That&rsquo;s the same as accessing or setting the x,
+ y, width or height properties of a wibox.
+
+
+    <ul>
+        <li><span class="parameter">A</span>
+         table with coordinates to modify.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A table with wibox coordinates and geometry.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box:struts"></a>
+    <strong>naughty.widget.box:struts (strut)</strong>
+    </dt>
+    <dd>
+    Get or set wibox struts.
+
+
+    <ul>
+        <li><span class="parameter">strut</span>
+         A table with new strut, or nothing
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        The wibox strut in a table.
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/client.html#client:struts">client.struts</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box:setup"></a>
+    <strong>naughty.widget.box:setup (args)</strong>
+    </dt>
+    <dd>
+    Set a declarative widget hierarchy description.
+ See <a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a>
+
+
+    <ul>
+        <li><span class="parameter">args</span>
+         An array containing the widgets disposition
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.widget.box:find_widgets"></a>
+    <strong>naughty.widget.box:find_widgets (x, y)</strong>
+    </dt>
+    <dd>
+    Find a widget by a point.
+ The wibox must have drawn itself at least once for this to work.
+
+
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X coordinate of the point
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y coordinate of the point
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A sorted table of widgets positions. The first element is the biggest
+ container while the last is the topmost widget. The table contains <em>x</em>, <em>y</em>,
+ <em>width</em>, <em>height</em> and <em>widget</em>.
+    </ol>
+
+
+
+
+</dd>
+</dl>
 
 
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-08-10 00:36:32 </i>
+<i style="float:right;">Last updated 2017-08-13 02:14:52 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

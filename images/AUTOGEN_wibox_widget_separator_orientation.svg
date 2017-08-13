@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4210pt" height="40pt" viewBox="0 0 4210 40" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="410pt" height="40pt" viewBox="0 0 410 40" version="1.1">
 <defs>
 <g>
 <symbol overflow="visible" id="glyph0-0">
@@ -107,7 +107,7 @@
   <use xlink:href="#glyph2-8" x="108.509766" y="9.65625"/>
   <use xlink:href="#glyph2-9" x="114.62793" y="9.65625"/>
 </g>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 0 20 L 200 20 L 200 22 L 0 22 Z M 0 20 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 0 20.5 L 200 20.5 L 200 21.5 L 0 21.5 Z M 0 20.5 "/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph0-1" x="200" y="9.65625"/>
   <use xlink:href="#glyph0-2" x="206.719727" y="9.65625"/>
@@ -136,6 +136,6 @@
   <use xlink:href="#glyph2-8" x="295.655273" y="9.65625"/>
   <use xlink:href="#glyph2-9" x="301.773438" y="9.65625"/>
 </g>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 299 12 L 301 12 L 301 30 L 299 30 Z M 299 12 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 299.5 12 L 300.5 12 L 300.5 30 L 299.5 30 Z M 299.5 12 "/>
 </g>
 </svg>
