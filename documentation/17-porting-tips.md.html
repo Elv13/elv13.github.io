@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
     <title>awesome API documentation</title>
-    <link rel="stylesheet" href="../ldoc_pale.css" type="text/css" />
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
 
@@ -41,11 +41,11 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
-  <li><a href="../documentation/07-my-first-awesome.md.html">My first awesome</a></li>
+  <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><strong>Tips for upgrading your configuration</strong></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -59,9 +59,9 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
+  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
-  <li><a href="../libraries/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.layout.dynamic.html">awful.layout.dynamic</a></li>
   <li><a href="../libraries/awful.layout.dynamic.base.html">awful.layout.dynamic.base</a></li>
@@ -76,7 +76,6 @@
   <li><a href="../libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="../libraries/awful.mouse.html">awful.mouse</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
-  <li><a href="../libraries/awful.popup.html">awful.popup</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><a href="../libraries/awful.screen.html">awful.screen</a></li>
@@ -101,7 +100,6 @@
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
-  <li><a href="../libraries/keygrabber.html">keygrabber</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
@@ -120,6 +118,7 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.popup.html">awful.popup</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -127,12 +126,11 @@
   <li><a href="../classes/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../classes/awful.widget.clienticon.html">awful.widget.clienticon</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
-  <li><a href="../classes/awful.widget.graph.html">awful.widget.graph</a></li>
   <li><a href="../classes/awful.widget.keyboardlayout.html">awful.widget.keyboardlayout</a></li>
   <li><a href="../classes/awful.widget.launcher.html">awful.widget.launcher</a></li>
   <li><a href="../classes/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
+  <li><a href="../classes/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../classes/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
-  <li><a href="../classes/awful.widget.progressbar.html">awful.widget.progressbar</a></li>
   <li><a href="../classes/awful.widget.prompt.html">awful.widget.prompt</a></li>
   <li><a href="../classes/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../classes/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
@@ -146,6 +144,7 @@
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
+  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
@@ -170,19 +169,13 @@
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.layout.align.html">wibox.layout.align</a></li>
-  <li><a href="../classes/wibox.layout.constraint.html">wibox.layout.constraint</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
   <li><a href="../classes/wibox.layout.flex.html">wibox.layout.flex</a></li>
   <li><a href="../classes/wibox.layout.grid.html">wibox.layout.grid</a></li>
   <li><a href="../classes/wibox.layout.manual.html">wibox.layout.manual</a></li>
-  <li><a href="../classes/wibox.layout.margin.html">wibox.layout.margin</a></li>
-  <li><a href="../classes/wibox.layout.mirror.html">wibox.layout.mirror</a></li>
   <li><a href="../classes/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
-  <li><a href="../classes/wibox.layout.rotate.html">wibox.layout.rotate</a></li>
-  <li><a href="../classes/wibox.layout.scroll.html">wibox.layout.scroll</a></li>
   <li><a href="../classes/wibox.layout.stack.html">wibox.layout.stack</a></li>
   <li><a href="../classes/wibox.widget.html">wibox.widget</a></li>
-  <li><a href="../classes/wibox.widget.background.html">wibox.widget.background</a></li>
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
   <li><a href="../classes/wibox.widget.calendar.html">wibox.widget.calendar</a></li>
   <li><a href="../classes/wibox.widget.checkbox.html">wibox.widget.checkbox</a></li>
@@ -202,15 +195,15 @@
 
 <div id="content">
 
-    <h1>Tips for upgrading your configuration</h1>
+
+<h1>Tips for upgrading your configuration</h1>
 
 <p><a name="v4"></a>
 <a name="From_3_5_to_4_0"></a></p>
-
 <h2>From 3.5 to 4.0</h2>
 
 <p>The
-<strong>best advice is to start from the default <a href="../sample files/rc.lua.html#">rc.lua</a> and backport any changes</strong>
+**best advice is to start from the default <a href="../sample files/rc.lua.html#">rc.lua</a> and backport any changes**
 you might have added to your <a href="../sample files/rc.lua.html#">rc.lua</a>.
 This avoids most of the possible errors due to missing important changes.</p>
 
@@ -219,28 +212,29 @@ This avoids most of the possible errors due to missing important changes.</p>
 then compare your existing rc.lua with the 3.5.9 default using your diff tool of
 choice. Write down the changes, then apply these to the 4.0 default rc.lua,
 which you can find at /etc/xdg/awesome/rc.lua after the upgrade, or
-<a href="../sample%2520files/rc.lua.html">here</a> if you have not yet performed the upgrade.</p>
+<a href="../sample%20files/rc.lua.html">here</a> if you have not yet performed the upgrade.</p>
 
 <p>If you still wish to ignore this advice, first read the
 <a href="89-NEWS.md.html#v4">NEWS</a> section about the breaking changes. This
 document assumes you did.</p>
 
-<p>Be warned, even if it looks like it&rsquo;s working after changing some lines, <strong>it wont
+<p>Be warned, even if it looks like it's working after changing some lines, <strong>it wont
 supports dynamic screen changes and will have many subtle bugs</strong>. The changes
 mentioned below <strong>are important for the stability of your window manager</strong>.</p>
 
 <p>Here is a diff of the 3.5.9 <a href="../sample files/rc.lua.html#">rc.lua</a> with the 4.0 one. All changes due to
-new features and new syntaxes have been removed. A <code>&ndash;</code> in front of the line
+new features and new syntaxes have been removed. A <code>-</code> in front of the line
 correspond to content of the 3.5 <a href="../sample files/rc.lua.html#">rc.lua</a> and <code>+</code> its replacement in 4.0.</p>
 
-<p>This document does not cover the new features added in the Awesome 4 <a href="../sample files/rc.lua.html#">rc.lua</a>,
+<p>This document does not cover the new features added in the Awesome v4 <a href="../sample files/rc.lua.html#">rc.lua</a>,
 it only covers the minimal required changes to have a properly behaving config.</p>
 
 <p>To test during the port, we recommend the <code>Xephyr</code> X11 server.</p>
 
-<p>If Awesome4 <strong>is not installed yet</strong>, we recommand to install it in its own
+<p>If Awesome v4 <strong>is not installed yet</strong>, we recommend to install it in its own
 prefix to avoid conflicts in case you wish to stay on 3.5 for a little
 longer:</p>
+
 
 <pre>
 cd path/to/awesome/code
@@ -264,19 +258,19 @@ DISPLAY=:<span class="number">1</span> $HOME/awesome4_test/bin/awesome \
     <span class="comment">--search $HOME/awesome4_test/share/awesome/lib</span>
 </pre>
 
-
-<p>If Awesome 4 is <strong>already installed</strong>, then backup your old <a href="../sample files/rc.lua.html#">rc.lua</a> and overwrite
+<p>If Awesome v4 is <strong>already installed</strong>, then backup your old <a href="../sample files/rc.lua.html#">rc.lua</a> and overwrite
 <code>~/.config/awesome/rc.lua</code> (replace this by another path if you use a custom
 XDH config local directory). And only execute:</p>
+
 
 <pre>
 Xephyr :<span class="number">1</span> -screen <span class="number">1280</span>x800 &amp;
 DISPLAY=:<span class="number">1</span> awesome
 </pre>
 
-
 <p>Screens are now added and removed without reloading <a href="../sample files/rc.lua.html#">rc.lua</a>. The wallpaper are
 now set in a signal callback.</p>
+
 
 <pre>
 <span class="comment">--- {{{ Wallpaper
@@ -303,9 +297,9 @@ now set in a signal callback.</p>
 </span>+<span class="backtick"><code>screen.connect_signal</code></span>(<span class="string">"property::geometry"</span>, set_wallpaper)
 </pre>
 
-
 <p>Tags need to be created for each screens, the old static initialization cannot
 work. Remove this section.</p>
+
 
 <pre>
 <span class="comment">--- {{{ Tags
@@ -318,9 +312,9 @@ work. Remove this section.</p>
 <span class="comment">--- }}}</span>
 </pre>
 
-
 <p>The <code>quit</code> menu command must be wrapped in a function, otherwise an error
-occurs due to mismatched argument types from the v4.0 <a href="../libraries/awful.menu.html#">awful.menu</a> library.</p>
+occurs due to mismatched argument types from the v4 <a href="../libraries/awful.menu.html#">awful.menu</a> library.</p>
+
 
 <pre>
  <span class="comment">-- {{{ Menu
@@ -334,8 +328,8 @@ occurs due to mismatched argument types from the v4.0 <a href="../libraries/awfu
  }
 </pre>
 
-
 <p>The textclock is now part of the <a href="../classes/wibox.html#">wibox</a> library, rename it.</p>
+
 
 <pre>
  <span class="comment">-- {{{ Wibar
@@ -344,9 +338,9 @@ occurs due to mismatched argument types from the v4.0 <a href="../libraries/awfu
 +mytextclock = <span class="backtick"><a href="../classes/wibox.widget.textclock.html#">wibox.widget.textclock</a></span>()
 </pre>
 
-
-<p>Widgets were previously added to static global tables. This isn&rsquo;t going to
+<p>Widgets were previously added to static global tables. This isn't going to
 behave correctly when screen are added and removed. Remove this section.</p>
+
 
 <pre>
 <span class="comment">--- Create a wibox for each screen and add it
@@ -357,9 +351,9 @@ behave correctly when screen are added and removed. Remove this section.</p>
 -mytasklist = {}
 </pre>
 
-
 <p>Many functions have been converted to methods. The old functions are deprecated,
 they are still supported, but will be removed in the next release.</p>
+
 
 <pre>
 -mytaglist.buttons = awful.util.<span class="global">table</span>.join(
@@ -368,7 +362,7 @@ they are still supported, but will be removed in the next release.</p>
 +                    awful.button({ }, <span class="number">1</span>, <span class="keyword">function</span>(t) t:<span class="backtick"><code>view_only</code></span>() <span class="keyword">end</span>),
 -                    awful.button({ modkey }, <span class="number">1</span>, <span class="backtick"><code>awful.client.movetotag</code></span>),
 +                    awful.button({ modkey }, <span class="number">1</span>, <span class="keyword">function</span>(t)
-+                                              <span class="keyword">if</span> <span class="backtick"><a href="../classes/client.html#client.focus">client.focus</a></span> <span class="keyword">then</span>
++                                              <span class="keyword">if</span> <span class="backtick"><a href="../classes/client.html#.focus">client.focus</a></span> <span class="keyword">then</span>
 +                                                  <span class="backtick"><code>client.focus:move_to_tag</code></span>(t)
 +                                              <span class="keyword">end</span>
 +                                          <span class="keyword">end</span>),
@@ -388,7 +382,7 @@ they are still supported, but will be removed in the next release.</p>
 -mytasklist.buttons = awful.util.<span class="global">table</span>.join(
 +<span class="keyword">local</span> tasklist_buttons = awful.util.<span class="global">table</span>.join(
                       awful.button({ }, <span class="number">1</span>, <span class="keyword">function</span> (c)
-                                               <span class="keyword">if</span> c == <span class="backtick"><a href="../classes/client.html#client.focus">client.focus</a></span> <span class="keyword">then</span>
+                                               <span class="keyword">if</span> c == <span class="backtick"><a href="../classes/client.html#.focus">client.focus</a></span> <span class="keyword">then</span>
                                                    c.minimized = <span class="keyword">true</span>
                                                <span class="keyword">else</span>
                                                    <span class="comment">-- Without this, the following
@@ -401,16 +395,16 @@ they are still supported, but will be removed in the next release.</p>
                                                    <span class="keyword">end</span>
                                                    <span class="comment">-- This will also un-minimize
 </span>                                                   <span class="comment">-- the client, if needed
-</span>                                                   <span class="backtick"><a href="../classes/client.html#client.focus">client.focus</a></span> = c
+</span>                                                   <span class="backtick"><a href="../classes/client.html#.focus">client.focus</a></span> = c
                                                    c:raise()
                                                <span class="keyword">end</span>
                                            <span class="keyword">end</span>),
 </pre>
 
-
 <p>This section is <strong>very important</strong>. This is where adding and removing screens is
 handled (including during startup). Note that the <code>mysomething</code> table
 previously removed are replaced by custom screens attributes.</p>
+
 
 <pre>
 -<span class="keyword">for</span> s = <span class="number">1</span>, <span class="backtick"><a href="../classes/screen.html#screen:count">screen.count</a></span>() <span class="keyword">do</span>
@@ -475,8 +469,8 @@ previously removed are replaced by custom screens attributes.</p>
  <span class="comment">-- }}}</span>
 </pre>
 
-
 <p><code>awful.util.spawn</code> is now called <a href="../libraries/awful.spawn.html#">awful.spawn</a>.</p>
+
 
 <pre>
 <span class="comment">-- Standard program
@@ -484,8 +478,8 @@ previously removed are replaced by custom screens attributes.</p>
 +    <span class="backtick"><a href="../libraries/awful.key.html#">awful.key</a></span>({ modkey,           }, <span class="string">"Return"</span>, <span class="keyword">function</span> () <span class="backtick"><a href="../libraries/awful.spawn.html#">awful.spawn</a></span>(terminal) <span class="keyword">end</span>),
 </pre>
 
-
 <p>Another dynamic screen related changes.</p>
+
 
 <pre>
 ⠀<span class="comment">-- Prompt
@@ -493,9 +487,9 @@ previously removed are replaced by custom screens attributes.</p>
 +    awful.key({ modkey },            <span class="string">"r"</span>,     <span class="keyword">function</span> () <span class="backtick"><code>awful.screen.focused</code></span>().mypromptbox:run() <span class="keyword">end</span>),
 </pre>
 
-
 <p><a href="../libraries/awful.prompt.html#">awful.prompt</a> now uses a more future proof arguments table instead of many
 optional arguments.</p>
+
 
 <pre>
 ⠀    awful.key({ modkey }, <span class="string">"x"</span>,
@@ -514,17 +508,17 @@ optional arguments.</p>
 +              <span class="keyword">end</span>),
 </pre>
 
-
 <p>Another function-to-method API change:</p>
+
 
 <pre>
 -    <span class="backtick"><a href="../libraries/awful.key.html#">awful.key</a></span>({ modkey,           }, <span class="string">"o"</span>,      <span class="backtick"><code>awful.client.movetoscreen</code></span>                        ),
 +    <span class="backtick"><a href="../libraries/awful.key.html#">awful.key</a></span>({ modkey,           }, <span class="string">"o"</span>,      <span class="keyword">function</span> (c) c:<span class="backtick"><code>move_to_screen</code></span>()               <span class="keyword">end</span>),
 </pre>
 
-
 <p>The <code>mod4+[1-9]</code> keybindings also have some changes related to deprecated
 functions.</p>
+
 
 <pre>
 <span class="comment">-- Bind all key numbers to tags.
@@ -584,8 +578,8 @@ functions.</p>
 <span class="keyword">end</span>
 </pre>
 
-
 <p>The default rules need to be changed to avoid having offscreen clients:</p>
+
 
 <pre>
 awful.rules.rules = {
@@ -601,18 +595,18 @@ awful.rules.rules = {
 +                     placement = <span class="backtick"><a href="../libraries/awful.placement.html#no_overlap">awful.placement.no_overlap</a></span>+<span class="backtick"><a href="../libraries/awful.placement.html#no_offscreen">awful.placement.no_offscreen</a></span>
 </pre>
 
-
 <p>The <code>tags</code> global table has been removed to support dynamic screens, you can
 now access tags by name.</p>
+
 
 <pre>
 -    <span class="comment">--   properties = { tag = tags[1][2] } },
 </span>+    <span class="comment">--   properties = { screen = 1, tag = "2" } },</span>
 </pre>
 
-
 <p>If you need to get the current client object in global context, currently you can use
-<a href="../classes/client.html#client.focus">client.focus</a> for it. E.g., to mark/unmark the client:</p>
+<a href="../classes/client.html#.focus">client.focus</a> for it. E.g., to mark/unmark the client:</p>
+
 
 <pre>
 -    awful.client.mark()
@@ -628,7 +622,7 @@ now access tags by name.</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-08-13 02:14:52 </i>
+<i style="float:right;">Last updated 2018-01-12 02:04:03 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

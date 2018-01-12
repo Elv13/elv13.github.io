@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
     <title>awesome API documentation</title>
-    <link rel="stylesheet" href="../ldoc_pale.css" type="text/css" />
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
 
@@ -50,6 +50,7 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.popup.html">awful.popup</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -57,12 +58,11 @@
   <li><a href="../classes/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../classes/awful.widget.clienticon.html">awful.widget.clienticon</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
-  <li><a href="../classes/awful.widget.graph.html">awful.widget.graph</a></li>
   <li><a href="../classes/awful.widget.keyboardlayout.html">awful.widget.keyboardlayout</a></li>
   <li><a href="../classes/awful.widget.launcher.html">awful.widget.launcher</a></li>
   <li><a href="../classes/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
+  <li><a href="../classes/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../classes/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
-  <li><a href="../classes/awful.widget.progressbar.html">awful.widget.progressbar</a></li>
   <li><a href="../classes/awful.widget.prompt.html">awful.widget.prompt</a></li>
   <li><a href="../classes/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../classes/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
@@ -76,6 +76,7 @@
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
+  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
@@ -100,19 +101,13 @@
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.layout.align.html">wibox.layout.align</a></li>
-  <li><a href="../classes/wibox.layout.constraint.html">wibox.layout.constraint</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
   <li><a href="../classes/wibox.layout.flex.html">wibox.layout.flex</a></li>
   <li><a href="../classes/wibox.layout.grid.html">wibox.layout.grid</a></li>
   <li><a href="../classes/wibox.layout.manual.html">wibox.layout.manual</a></li>
-  <li><a href="../classes/wibox.layout.margin.html">wibox.layout.margin</a></li>
-  <li><a href="../classes/wibox.layout.mirror.html">wibox.layout.mirror</a></li>
   <li><a href="../classes/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
-  <li><a href="../classes/wibox.layout.rotate.html">wibox.layout.rotate</a></li>
-  <li><a href="../classes/wibox.layout.scroll.html">wibox.layout.scroll</a></li>
   <li><a href="../classes/wibox.layout.stack.html">wibox.layout.stack</a></li>
   <li><a href="../classes/wibox.widget.html">wibox.widget</a></li>
-  <li><a href="../classes/wibox.widget.background.html">wibox.widget.background</a></li>
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
   <li><a href="../classes/wibox.widget.calendar.html">wibox.widget.calendar</a></li>
   <li><a href="../classes/wibox.widget.checkbox.html">wibox.widget.checkbox</a></li>
@@ -135,9 +130,9 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
+  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
-  <li><a href="../libraries/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.layout.dynamic.html">awful.layout.dynamic</a></li>
   <li><a href="../libraries/awful.layout.dynamic.base.html">awful.layout.dynamic.base</a></li>
@@ -152,7 +147,6 @@
   <li><a href="../libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="../libraries/awful.mouse.html">awful.mouse</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
-  <li><a href="../libraries/awful.popup.html">awful.popup</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><a href="../libraries/awful.screen.html">awful.screen</a></li>
@@ -177,7 +171,6 @@
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
-  <li><a href="../libraries/keygrabber.html">keygrabber</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
@@ -198,11 +191,11 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
-  <li><a href="../documentation/07-my-first-awesome.md.html">My first awesome</a></li>
+  <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -221,16 +214,16 @@
  command line applications).
  Clients are usually grouped by classes.
  A class is the name used by X11 to help the window manager distinguish
- between windows and write rules for them.  A client&rsquo;s behavior is also
+ between windows and write rules for them.  A client's behavior is also
  defined by its <a href="../classes/client.html#client.type">type</a> and <a href="../classes/client.html#client.size_hints">size_hints</a> properties.
  See the <code>xprop</code> command line application to query properties for a client.</p>
 
-<p> <img src="../images/client_geo.svg" alt="Client geometry" /></p>
+<p> <img src="../images/client_geo.svg" alt="Client geometry"/></p>
 
-<p> The client&rsquo;s <code>:geometry()</code> function returns a table with <em>x</em>, <em>y</em>, <em>width</em>
+<p> The client's <code>:geometry()</code> function returns a table with <em>x</em>, <em>y</em>, <em>width</em>
  and <em>height</em>.  The area returned <strong>excludes the border width</strong>.
- All clients also have a <a href="../classes/client.html#client.shape_bounding">shape_bounding</a> and <a href="../classes/client.html#client.shape_clip">shape_clip</a> used to &ldquo;crop&rdquo; the
- client&rsquo;s content.
+ All clients also have a <a href="../classes/client.html#client.shape_bounding">shape_bounding</a> and <a href="../classes/client.html#client.shape_clip">shape_clip</a> used to "crop" the
+ client's content.
  Finally, each clients can have titlebars (see <a href="../classes/awful.titlebar.html#">awful.titlebar</a>).</p>
 
 <p> Additionally to the classes described here, one can also use signals as
@@ -244,6 +237,7 @@
  context.
  To get the currently focused client:</p>
 
+
 <pre>
 <span class="keyword">local</span> c = client.focus
 <span class="keyword">if</span> c <span class="keyword">then</span>
@@ -251,8 +245,8 @@
 </span><span class="keyword">end</span>
 </pre>
 
-
 <p> To get a list of all clients, use <a href="../classes/client.html#client:get">client:get</a>:</p>
+
 
 <pre>
 <span class="keyword">for</span> _, c <span class="keyword">in</span> <span class="global">ipairs</span>(client.get()) <span class="keyword">do</span>
@@ -260,8 +254,8 @@
 </span><span class="keyword">end</span>
 </pre>
 
-
 <p> To execute a callback when a new client is added, use the <a href="../classes/client.html#.manage">manage</a> signal:</p>
+
 
 <pre>
 client.connect_signal(<span class="string">"manage"</span>, <span class="keyword">function</span>(c)
@@ -269,8 +263,8 @@ client.connect_signal(<span class="string">"manage"</span>, <span class="keyword
 </span><span class="keyword">end</span>)
 </pre>
 
-
 <p> To be notified when a property of a client changed:</p>
+
 
 <pre>
 client.connect_signal(<span class="string">"property::name"</span>, <span class="keyword">function</span>(c)
@@ -278,15 +272,14 @@ client.connect_signal(<span class="string">"property::name"</span>, <span class=
 </span><span class="keyword">end</span>)
 </pre>
 
-
 <p> To be notified when a property of a specific client <code>c</code> changed:</p>
+
 
 <pre>
 c:connect_signal(<span class="string">"property::name"</span>, <span class="keyword">function</span>()
     <span class="comment">-- do something
 </span><span class="keyword">end</span>)
 </pre>
-
 
 <p> To get all the clients for a screen use either <a href="../classes/screen.html#screen.clients">screen.clients</a> or
  <a href="../classes/screen.html#screen.tiled_clients">screen.tiled_clients</a>.</p>
@@ -497,23 +490,23 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.shape_bounding">client.shape_bounding</a></td>
-	<td class="summary">The client&rsquo;s bounding shape as set by awesome as a (native) cairo surface.</td>
+	<td class="summary">The client's bounding shape as set by awesome as a (native) cairo surface.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.shape_clip">client.shape_clip</a></td>
-	<td class="summary">The client&rsquo;s clip shape as set by awesome as a (native) cairo surface.</td>
+	<td class="summary">The client's clip shape as set by awesome as a (native) cairo surface.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.shape_input">client.shape_input</a></td>
-	<td class="summary">The client&rsquo;s input shape as set by awesome as a (native) cairo surface.</td>
+	<td class="summary">The client's input shape as set by awesome as a (native) cairo surface.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#client.shape_client_bounding">client.shape_client_bounding</a></td>
-	<td class="summary">The client&rsquo;s bounding shape as set by the program as a (native) cairo surface.</td>
+	<td class="name" ><a href="#client.client_shape_bounding">client.client_shape_bounding</a></td>
+	<td class="summary">The client's bounding shape as set by the program as a (native) cairo surface.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#client.shape_client_clip">client.shape_client_clip</a></td>
-	<td class="summary">The client&rsquo;s clip shape as set by the program as a (native) cairo surface.</td>
+	<td class="name" ><a href="#client.client_shape_clip">client.client_shape_clip</a></td>
+	<td class="summary">The client's clip shape as set by the program as a (native) cairo surface.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.startup_id">client.startup_id</a></td>
@@ -534,6 +527,14 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<tr>
 	<td class="name" ><a href="#client.is_fixed">client.is_fixed</a></td>
 	<td class="summary">Return if a client has a fixed size or not.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client.immobilized">client.immobilized</a></td>
+	<td class="summary">Is the client immobilized horizontally?</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client.immobilized">client.immobilized</a></td>
+	<td class="summary">Is the client immobilized vertically?</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.floating">client.floating</a></td>
@@ -580,37 +581,42 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	</tr>
 	<tr>
 	<td class="name" ><a href="#.manage">.manage</a></td>
-	<td class="summary">
-</td>
+	<td class="summary">When a new client appears and gets managed by Awesome.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#button::press">button::press</a></td>
 	<td class="summary">
+
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#button::release">button::release</a></td>
 	<td class="summary">
+
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#mouse::enter">mouse::enter</a></td>
 	<td class="summary">
+
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#mouse::leave">mouse::leave</a></td>
 	<td class="summary">
+
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#mouse::move">mouse::move</a></td>
 	<td class="summary">
+
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#property::window">property::window</a></td>
 	<td class="summary">
+
 </td>
 	</tr>
 	<tr>
@@ -620,16 +626,19 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<tr>
 	<td class="name" ><a href="#request::geometry">request::geometry</a></td>
 	<td class="summary">
+
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#request::tag">request::tag</a></td>
 	<td class="summary">
+
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#request::urgent">request::urgent</a></td>
 	<td class="summary">
+
 </td>
 	</tr>
 	<tr>
@@ -643,6 +652,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<tr>
 	<td class="name" ><a href="#.unmanage">.unmanage</a></td>
 	<td class="summary">
+
 </td>
 	</tr>
 	<tr>
@@ -652,11 +662,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<tr>
 	<td class="name" ><a href="#.raised">.raised</a></td>
 	<td class="summary">
+
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#.lowered">.lowered</a></td>
 	<td class="summary">
+
 </td>
 	</tr>
 	<tr>
@@ -735,11 +747,11 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.mark">awful.client.mark</a></td>
-	<td class="summary">Mark a client, and then call &lsquo;marked&rsquo; hook.</td>
+	<td class="summary">Mark a client, and then call 'marked' hook.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.unmark">awful.client.unmark</a></td>
-	<td class="summary">Unmark a client and then call &lsquo;unmarked&rsquo; hook.</td>
+	<td class="summary">Unmark a client and then call 'unmarked' hook.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.ismarked">awful.client.ismarked</a></td>
@@ -763,15 +775,15 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.floating.toggle">awful.client.floating.toggle</a></td>
-	<td class="summary">Toggle the floating state of a client between &lsquo;auto&rsquo; and &lsquo;true&rsquo;.</td>
+	<td class="summary">Toggle the floating state of a client between 'auto' and 'true'.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.dockable.get">awful.client.dockable.get</a></td>
-	<td class="summary">Get a client&rsquo;s dockable state.</td>
+	<td class="summary">Get a client's dockable state.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.dockable.set">awful.client.dockable.set</a></td>
-	<td class="summary">Set a client&rsquo;s dockable state, overriding auto-detection.</td>
+	<td class="summary">Set a client's dockable state, overriding auto-detection.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.property.get">awful.client.property.get</a></td>
@@ -806,7 +818,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.idx">awful.client.idx</a></td>
-	<td class="summary">Calculate a client&rsquo;s column number, index in that column, and
+	<td class="summary">Calculate a client's column number, index in that column, and
  number of visible clients in this column.</td>
 	</tr>
 	<tr>
@@ -892,7 +904,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client:get_icon">client:get_icon (index)</a></td>
-	<td class="summary">Get the client&rsquo;s n-th icon.</td>
+	<td class="summary">Get the client's n-th icon.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client:jump_to">client:jump_to (merge)</a></td>
@@ -926,10 +938,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<td class="name" ><a href="#client:is_transient_for">client:is_transient_for (c2)</a></td>
 	<td class="summary">Is a client transient for another one?</td>
 	</tr>
-	<tr>
-	<td class="name" ><a href="#client:add_rules_for_terminal">client:add_rules_for_terminal (rule)</a></td>
-	<td class="summary">Add rules to match tmux session.</td>
-	</tr>
 </table>
 <h2><a href="#lib_awful_client_focus_Functions">lib.awful.client.focus Functions</a></h2>
 <table class="function_list">
@@ -958,6 +966,14 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<td class="summary">Focus the previous client in history.</td>
 	</tr>
 	<tr>
+	<td class="name" ><a href="#focus.history.select_previous">focus.history.select_previous ([wrap=true[, filter=nil]])</a></td>
+	<td class="summary">Select the previous client relative to the focused one.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#focus.history.select_next">focus.history.select_next ([wrap=true[, filter=nil]])</a></td>
+	<td class="summary">Select the next client relative to the focused one.</td>
+	</tr>
+	<tr>
 	<td class="name" ><a href="#awful.client.focus.bydirection">awful.client.focus.bydirection (dir[, c[, stacked=false]])</a></td>
 	<td class="summary">Focus a client by the given direction.</td>
 	</tr>
@@ -970,19 +986,19 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#awful.client.shape.get_transformed">awful.client.shape.get_transformed (c, shape_name)</a></td>
-	<td class="summary">Get one of a client&rsquo;s shapes and transform it to include window decorations.</td>
+	<td class="summary">Get one of a client's shapes and transform it to include window decorations.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.shape.update.all">awful.client.shape.update.all (c)</a></td>
-	<td class="summary">Update all of a client&rsquo;s shapes from the shapes the client set itself.</td>
+	<td class="summary">Update all of a client's shapes from the shapes the client set itself.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.shape.update.bounding">awful.client.shape.update.bounding (c)</a></td>
-	<td class="summary">Update a client&rsquo;s bounding shape from the shape the client set itself.</td>
+	<td class="summary">Update a client's bounding shape from the shape the client set itself.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.shape.update.clip">awful.client.shape.update.clip (c)</a></td>
-	<td class="summary">Update a client&rsquo;s clip shape from the shape the client set itself.</td>
+	<td class="summary">Update a client's clip shape from the shape the client set itself.</td>
 	</tr>
 </table>
 <h2><a href="#lib_awful_client_urgent_Functions">lib.awful.client.urgent Functions</a></h2>
@@ -1065,8 +1081,8 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
     <ul>
         <li><span class="parameter">dir</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The direction, can be either "up", "down", "left" or "right".
         </li>
         <li><span class="parameter">c</span>
             <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
@@ -1095,7 +1111,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
     <ul>
         <li><span class="parameter">dir</span>
-         The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
+         The direction, can be either "up", "down", "left" or "right".
         </li>
         <li><span class="parameter">sel</span>
             <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
@@ -1218,7 +1234,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
         </li>
         <li><span class="parameter">kind</span>
          The type (used for register_xproperty).
-   One of &ldquo;string&rdquo;, &ldquo;number&rdquo; or &ldquo;boolean&rdquo;.
+   One of "string", "number" or "boolean".
         </li>
     </ul>
 
@@ -1284,7 +1300,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
         </li>
         <li><span class="parameter">merge</span>
             <span class="types"><span class="type">bool</span> or <span class="type">function</span></span>
-         If true then merge tags (select the client&rsquo;s
+         If true then merge tags (select the client's
    first tag additionally) when the client is not visible.
    If it is a function, it will be called with the client as argument.
         </li>
@@ -1383,12 +1399,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.window</strong>
     </dt>
     <dd>
-    <p>The X window id. </p>
+
+<p>The X window id. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::window</em></li>
+    <li><em>property::window</em></li>
 </ul>
 
 
@@ -1397,6 +1414,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
+
 
 
         </li>
@@ -1412,12 +1430,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.name</strong>
     </dt>
     <dd>
-    <p>The client title. </p>
+
+<p>The client title. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::name</em></li>
+    <li><em>property::name</em></li>
 </ul>
 
 
@@ -1426,6 +1445,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
+
 
 
         </li>
@@ -1441,12 +1461,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.skip_taskbar</strong>
     </dt>
     <dd>
-    <p>True if the client does not want to be in taskbar. </p>
+
+<p>True if the client does not want to be in taskbar. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::skip_taskbar</em></li>
+    <li><em>property::skip_taskbar</em></li>
 </ul>
 
 
@@ -1455,6 +1476,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -1470,33 +1492,33 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.type</strong>
     </dt>
     <dd>
-    <p>The window type. </p>
+
+<p>The window type. </p>
 
 <p> Valid types are:</p>
 
 <ul>
-<li><strong>desktop</strong>: The root client, it cannot be moved or resized.</li>
-<li><strong>dock</strong>: A client attached to the side of the screen.</li>
-<li><strong>splash</strong>: A client, usually without titlebar shown when an application starts.</li>
-<li><strong>dialog</strong>: A dialog, see <a href="../classes/client.html#client.transient_for">transient_for</a>.</li>
-<li><strong>menu</strong>: A context menu.</li>
-<li><strong>toolbar</strong>: A floating toolbar.</li>
-<li><strong>utility</strong>:</li>
-<li><strong>dropdown_menu</strong>: A context menu attached to a parent position.</li>
-<li><strong>popup_menu</strong>: A context menu.</li>
-<li><strong>notification</strong>: A notification popup.</li>
-<li><strong>combo</strong>: A combobox list menu.</li>
-<li><strong>dnd</strong>: A drag and drop indicator.</li>
-<li><strong>normal</strong>: A normal application main window.</li>
+    <li><strong>desktop</strong>: The root client, it cannot be moved or resized.</li>
+    <li><strong>dock</strong>: A client attached to the side of the screen.</li>
+    <li><strong>splash</strong>: A client, usually without titlebar shown when an application starts.</li>
+    <li><strong>dialog</strong>: A dialog, see <a href="../classes/client.html#client.transient_for">transient_for</a>.</li>
+    <li><strong>menu</strong>: A context menu.</li>
+    <li><strong>toolbar</strong>: A floating toolbar.</li>
+    <li><strong>utility</strong>:</li>
+    <li><strong>dropdown_menu</strong>: A context menu attached to a parent position.</li>
+    <li><strong>popup_menu</strong>: A context menu.</li>
+    <li><strong>notification</strong>: A notification popup.</li>
+    <li><strong>combo</strong>: A combobox list menu.</li>
+    <li><strong>dnd</strong>: A drag and drop indicator.</li>
+    <li><strong>normal</strong>: A normal application main window.</li>
 </ul>
-
 
 <p> More information can be found <a href="https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html#idm140200472629520">here</a></p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::type</em></li>
+    <li><em>property::type</em></li>
 </ul>
 
 
@@ -1505,6 +1527,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
+
 
 
         </li>
@@ -1520,16 +1543,17 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.class</strong>
     </dt>
     <dd>
-    <p>The client class. </p>
+
+<p>The client class. </p>
 
 <p> If the client has multiple classes, the first one is used.</p>
 
-<p> To get a client class from the command line, use te <code>xprop</code> command.</p>
+<p> To get a client class from the command line, use the <code>xprop</code> command.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::class</em></li>
+    <li><em>property::class</em></li>
 </ul>
 
 
@@ -1538,6 +1562,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
+
 
 
         </li>
@@ -1553,12 +1578,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.instance</strong>
     </dt>
     <dd>
-    <p>The client instance. </p>
+
+<p>The client instance. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::instance</em></li>
+    <li><em>property::instance</em></li>
 </ul>
 
 
@@ -1567,6 +1593,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
+
 
 
         </li>
@@ -1582,12 +1609,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.pid</strong>
     </dt>
     <dd>
-    <p>The client PID, if available. </p>
+
+<p>The client PID, if available. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::pid</em></li>
+    <li><em>property::pid</em></li>
 </ul>
 
 
@@ -1596,6 +1624,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1611,12 +1640,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.role</strong>
     </dt>
     <dd>
-    <p>The window role, if available. </p>
+
+<p>The window role, if available. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::role</em></li>
+    <li><em>property::role</em></li>
 </ul>
 
 
@@ -1625,6 +1655,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
+
 
 
         </li>
@@ -1640,12 +1671,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.machine</strong>
     </dt>
     <dd>
-    <p>The machine client is running on. </p>
+
+<p>The machine client is running on. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::machine</em></li>
+    <li><em>property::machine</em></li>
 </ul>
 
 
@@ -1654,6 +1686,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
+
 
 
         </li>
@@ -1669,12 +1702,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.icon_name</strong>
     </dt>
     <dd>
-    <p>The client name when iconified. </p>
+
+<p>The client name when iconified. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::icon_name</em></li>
+    <li><em>property::icon_name</em></li>
 </ul>
 
 
@@ -1683,6 +1717,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
+
 
 
         </li>
@@ -1698,12 +1733,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.icon</strong>
     </dt>
     <dd>
-    <p>The client icon. </p>
+
+<p>The client icon. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::icon</em></li>
+    <li><em>property::icon</em></li>
 </ul>
 
 
@@ -1712,6 +1748,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
+
 
 
         </li>
@@ -1727,13 +1764,14 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.icon_sizes</strong>
     </dt>
     <dd>
-    <p>The available sizes of client icons.  This is a table where each entry
+
+<p>The available sizes of client icons.  This is a table where each entry
  contains the width and height of an icon.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::icon_sizes</em></li>
+    <li><em>property::icon_sizes</em></li>
 </ul>
 
 
@@ -1742,7 +1780,8 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">sizes</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
 
 
         </li>
@@ -1762,12 +1801,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.screen</strong>
     </dt>
     <dd>
-    <p>Client screen. </p>
+
+<p>Client screen. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::screen</em></li>
+    <li><em>property::screen</em></li>
 </ul>
 
 
@@ -1776,6 +1816,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">screen</span>
+
 
 
         </li>
@@ -1791,13 +1832,14 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.hidden</strong>
     </dt>
     <dd>
-    <p>Define if the client must be hidden, i.e.  never mapped,
+
+<p>Define if the client must be hidden, i.e.  never mapped,
    invisible in taskbar.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::hidden</em></li>
+    <li><em>property::hidden</em></li>
 </ul>
 
 
@@ -1806,6 +1848,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -1821,13 +1864,14 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.minimized</strong>
     </dt>
     <dd>
-    <p>Define it the client must be iconify, i.e.  only visible in
+
+<p>Define it the client must be iconify, i.e.  only visible in
    taskbar.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::minimized</em></li>
+    <li><em>property::minimized</em></li>
 </ul>
 
 
@@ -1836,6 +1880,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -1851,7 +1896,8 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.size_hints_honor</strong>
     </dt>
     <dd>
-    <p>Honor size hints, e.g.  respect size ratio.</p>
+
+<p>Honor size hints, e.g.  respect size ratio.</p>
 
 <p> For example, a terminal such as <code>xterm</code> require the client size to be a
  multiple of the character size. Honoring size hints will cause the terminal
@@ -1862,7 +1908,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::size_hints_honor</em></li>
+    <li><em>property::size_hints_honor</em></li>
 </ul>
 
 
@@ -1871,6 +1917,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -1898,6 +1945,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
         <li><span class="parameter">integer</span>
 
 
+
         </li>
     </ul>
 
@@ -1911,12 +1959,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.border_color</strong>
     </dt>
     <dd>
-    <p>The client border color. </p>
+
+<p>The client border color. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::border_color</em></li>
+    <li><em>property::border_color</em></li>
 </ul>
 
 
@@ -1944,12 +1993,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.urgent</strong>
     </dt>
     <dd>
-    <p>The client urgent state. </p>
+
+<p>The client urgent state. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::urgent</em></li>
+    <li><em>property::urgent</em></li>
 </ul>
 
 
@@ -1958,6 +2008,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -1973,7 +2024,8 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.content</strong>
     </dt>
     <dd>
-    <p>A cairo surface for the client window content. </p>
+
+<p>A cairo surface for the client window content. </p>
 
 <p> To get the screenshot, use:</p>
 
@@ -1987,9 +2039,11 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
 
 
+
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
+
 
 
         </li>
@@ -2005,12 +2059,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.opacity</strong>
     </dt>
     <dd>
-    <p>The client opacity. </p>
+
+<p>The client opacity. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::opacity</em></li>
+    <li><em>property::opacity</em></li>
 </ul>
 
 
@@ -2041,6 +2096,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
         <li><span class="parameter">boolean</span>
 
 
+
         </li>
     </ul>
 
@@ -2054,12 +2110,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.above</strong>
     </dt>
     <dd>
-    <p>The client is above normal windows. </p>
+
+<p>The client is above normal windows. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::above</em></li>
+    <li><em>property::above</em></li>
 </ul>
 
 
@@ -2068,6 +2125,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -2083,12 +2141,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.below</strong>
     </dt>
     <dd>
-    <p>The client is below normal windows. </p>
+
+<p>The client is below normal windows. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::below</em></li>
+    <li><em>property::below</em></li>
 </ul>
 
 
@@ -2097,6 +2156,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -2112,12 +2172,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.fullscreen</strong>
     </dt>
     <dd>
-    <p>The client is fullscreen or not. </p>
+
+<p>The client is fullscreen or not. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::fullscreen</em></li>
+    <li><em>property::fullscreen</em></li>
 </ul>
 
 
@@ -2126,6 +2187,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -2141,12 +2203,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.maximized</strong>
     </dt>
     <dd>
-    <p>The client is maximized (horizontally and vertically) or not. </p>
+
+<p>The client is maximized (horizontally and vertically) or not. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::maximized</em></li>
+    <li><em>property::maximized</em></li>
 </ul>
 
 
@@ -2155,6 +2218,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -2170,12 +2234,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.maximized_horizontal</strong>
     </dt>
     <dd>
-    <p>The client is maximized horizontally or not. </p>
+
+<p>The client is maximized horizontally or not. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::maximized_horizontal</em></li>
+    <li><em>property::maximized_horizontal</em></li>
 </ul>
 
 
@@ -2184,6 +2249,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -2199,12 +2265,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.maximized_vertical</strong>
     </dt>
     <dd>
-    <p>The client is maximized vertically or not. </p>
+
+<p>The client is maximized vertically or not. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::maximized_vertical</em></li>
+    <li><em>property::maximized_vertical</em></li>
 </ul>
 
 
@@ -2213,6 +2280,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -2228,12 +2296,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.transient_for</strong>
     </dt>
     <dd>
-    <p>The client the window is transient for. </p>
+
+<p>The client the window is transient for. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::transient_for</em></li>
+    <li><em>property::transient_for</em></li>
 </ul>
 
 
@@ -2242,6 +2311,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">client</span>
+
 
 
         </li>
@@ -2257,12 +2327,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.group_window</strong>
     </dt>
     <dd>
-    <p>Window identification unique to a group of windows. </p>
+
+<p>Window identification unique to a group of windows. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::group_window</em></li>
+    <li><em>property::group_window</em></li>
 </ul>
 
 
@@ -2271,6 +2342,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">client</span>
+
 
 
         </li>
@@ -2294,6 +2366,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
         <li><span class="parameter">client</span>
 
 
+
         </li>
     </ul>
 
@@ -2307,12 +2380,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.size_hints</strong>
     </dt>
     <dd>
-    <p>A table with size hints of the client. </p>
+
+<p>A table with size hints of the client. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::size_hints</em></li>
+    <li><em>property::size_hints</em></li>
 </ul>
 
 
@@ -2322,9 +2396,11 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <ul>
         <li><span class="parameter">table</span>
 
+
         <ul>
         <li><span class="parameter">user_position</span>
             <span class="types"><span class="type">integer</span></span>
+
 
 
         </li>
@@ -2332,9 +2408,11 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
             <span class="types"><span class="type">integer</span></span>
 
 
+
         </li>
         <li><span class="parameter">program_position</span>
             <span class="types"><span class="type">integer</span></span>
+
 
 
         </li>
@@ -2342,9 +2420,11 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
             <span class="types"><span class="type">integer</span></span>
 
 
+
         </li>
         <li><span class="parameter">max_width</span>
             <span class="types"><span class="type">integer</span></span>
+
 
 
         </li>
@@ -2352,9 +2432,11 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
             <span class="types"><span class="type">integer</span></span>
 
 
+
         </li>
         <li><span class="parameter">min_width</span>
             <span class="types"><span class="type">integer</span></span>
+
 
 
         </li>
@@ -2362,14 +2444,17 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
             <span class="types"><span class="type">integer</span></span>
 
 
+
         </li>
         <li><span class="parameter">width_inc</span>
             <span class="types"><span class="type">integer</span></span>
 
 
+
         </li>
         <li><span class="parameter">height_inc</span>
             <span class="types"><span class="type">integer</span></span>
+
 
 
         </li>
@@ -2390,12 +2475,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.sticky</strong>
     </dt>
     <dd>
-    <p>Set the client sticky, i.e.  available on all tags.</p>
+
+<p>Set the client sticky, i.e.  available on all tags.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::sticky</em></li>
+    <li><em>property::sticky</em></li>
 </ul>
 
 
@@ -2404,6 +2490,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -2419,12 +2506,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.modal</strong>
     </dt>
     <dd>
-    <p>Indicate if the client is modal. </p>
+
+<p>Indicate if the client is modal. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::modal</em></li>
+    <li><em>property::modal</em></li>
 </ul>
 
 
@@ -2433,6 +2521,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -2448,12 +2537,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.focusable</strong>
     </dt>
     <dd>
-    <p>True if the client can receive the input focus. </p>
+
+<p>True if the client can receive the input focus. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::focusable</em></li>
+    <li><em>property::focusable</em></li>
 </ul>
 
 
@@ -2462,6 +2552,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -2477,12 +2568,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.shape_bounding</strong>
     </dt>
     <dd>
-    <p>The client&rsquo;s bounding shape as set by awesome as a (native) cairo surface. </p>
+
+<p>The client's bounding shape as set by awesome as a (native) cairo surface. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::shape_bounding</em></li>
+    <li><em>property::shape_bounding</em></li>
 </ul>
 
 
@@ -2491,6 +2583,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
+
 
 
         </li>
@@ -2510,12 +2603,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.shape_clip</strong>
     </dt>
     <dd>
-    <p>The client&rsquo;s clip shape as set by awesome as a (native) cairo surface. </p>
+
+<p>The client's clip shape as set by awesome as a (native) cairo surface. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::shape_clip</em></li>
+    <li><em>property::shape_clip</em></li>
 </ul>
 
 
@@ -2524,6 +2618,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
+
 
 
         </li>
@@ -2539,12 +2634,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.shape_input</strong>
     </dt>
     <dd>
-    <p>The client&rsquo;s input shape as set by awesome as a (native) cairo surface. </p>
+
+<p>The client's input shape as set by awesome as a (native) cairo surface. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::shape_input</em></li>
+    <li><em>property::shape_input</em></li>
 </ul>
 
 
@@ -2553,6 +2649,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
+
 
 
         </li>
@@ -2564,16 +2661,17 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
 </dd>
     <dt>
-    <a name = "client.shape_client_bounding"></a>
-    <strong>client.shape_client_bounding</strong>
+    <a name = "client.client_shape_bounding"></a>
+    <strong>client.client_shape_bounding</strong>
     </dt>
     <dd>
-    <p>The client&rsquo;s bounding shape as set by the program as a (native) cairo surface. </p>
+
+<p>The client's bounding shape as set by the program as a (native) cairo surface. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::shape_client_bounding</em></li>
+    <li><em>property::shape_client_bounding</em></li>
 </ul>
 
 
@@ -2582,6 +2680,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
+
 
 
         </li>
@@ -2593,16 +2692,17 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
 </dd>
     <dt>
-    <a name = "client.shape_client_clip"></a>
-    <strong>client.shape_client_clip</strong>
+    <a name = "client.client_shape_clip"></a>
+    <strong>client.client_shape_clip</strong>
     </dt>
     <dd>
-    <p>The client&rsquo;s clip shape as set by the program as a (native) cairo surface. </p>
+
+<p>The client's clip shape as set by the program as a (native) cairo surface. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::shape_client_clip</em></li>
+    <li><em>property::shape_client_clip</em></li>
 </ul>
 
 
@@ -2611,6 +2711,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
+
 
 
         </li>
@@ -2626,7 +2727,8 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.startup_id</strong>
     </dt>
     <dd>
-    <p>The FreeDesktop StartId. </p>
+
+<p>The FreeDesktop StartId. </p>
 
 <p> When a client is spawned (like using a terminal or <a href="../libraries/awful.spawn.html#">awful.spawn</a>, a startup
  notification identifier is created. When the client is created, this
@@ -2636,7 +2738,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::startup_id</em></li>
+    <li><em>property::startup_id</em></li>
 </ul>
 
 
@@ -2645,6 +2747,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
+
 
 
         </li>
@@ -2660,7 +2763,8 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.valid</strong>
     </dt>
     <dd>
-    <p>If the client that this object refers to is still managed by awesome. </p>
+
+<p>If the client that this object refers to is still managed by awesome. </p>
 
 <p> To avoid errors, use:</p>
 
@@ -2670,7 +2774,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::valid</em></li>
+    <li><em>property::valid</em></li>
 </ul>
 
 
@@ -2679,6 +2783,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -2694,12 +2799,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.first_tag</strong>
     </dt>
     <dd>
-    <p>The first tag of the client.   Optimized form of <code>c:tags()[1]</code>.</p>
+
+<p>The first tag of the client.   Optimized form of <code>c:tags()[1]</code>.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::first_tag</em></li>
+    <li><em>property::first_tag</em></li>
 </ul>
 
 
@@ -2708,6 +2814,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">tag</span>
+
 
 
         </li>
@@ -2723,14 +2830,15 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.marked</strong>
     </dt>
     <dd>
-    <p>If a client is marked or not. </p>
+
+<p>If a client is marked or not. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>marked</em> (for legacy reasons, use <code>property::marked</code>)</li>
-<li><em>unmarked</em> (for legacy reasons, use <code>property::marked</code>)</li>
-<li><em>property::marked</em></li>
+    <li><em>marked</em> (for legacy reasons, use <code>property::marked</code>)</li>
+    <li><em>unmarked</em> (for legacy reasons, use <code>property::marked</code>)</li>
+    <li><em>property::marked</em></li>
 </ul>
 
 
@@ -2739,6 +2847,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -2759,9 +2868,8 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::is_fixed</em></li>
+    <li>*property::is_fixed*</li>
 </ul>
-
 
 <p> This property is read only.
 
@@ -2784,11 +2892,76 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
 </dd>
     <dt>
+    <a name = "client.immobilized"></a>
+    <strong>client.immobilized</strong>
+    </dt>
+    <dd>
+    Is the client immobilized horizontally? </p>
+
+<p> Does the client have a fixed horizontal position and width, i.e. is it
+ fullscreen, maximized, or horizontally maximized?</p>
+
+<p> This property is read only.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+         The immobilized state
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../classes/client.html#client.maximized">maximized</a></li>
+         <li><a href="../classes/client.html#client.maximized_horizontal">maximized_horizontal</a></li>
+         <li><a href="../classes/client.html#client.maximized_vertical">maximized_vertical</a></li>
+         <li><a href="../classes/client.html#client.fullscreen">fullscreen</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "client.immobilized"></a>
+    <strong>client.immobilized</strong>
+    </dt>
+    <dd>
+    Is the client immobilized vertically? </p>
+
+<p> Does the client have a fixed vertical position and width, i.e. is it
+ fullscreen, maximized, or vertically maximized?</p>
+
+<p> This property is read only.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+         The immobilized state
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../classes/client.html#client.maximized">maximized</a></li>
+         <li><a href="../classes/client.html#client.maximized_horizontal">maximized_horizontal</a></li>
+         <li><a href="../classes/client.html#client.maximized_vertical">maximized_vertical</a></li>
+         <li><a href="../classes/client.html#client.fullscreen">fullscreen</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
     <a name = "client.floating"></a>
     <strong>client.floating</strong>
     </dt>
     <dd>
-    <p>The client floating state.
+
+<p>The client floating state.
  If the client is part of the tiled layout or free floating.</p>
 
 <p> Note that some windows might be floating even if you
@@ -2798,7 +2971,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::floating</em></li>
+    <li><em>property::floating</em></li>
 </ul>
 
 
@@ -2821,12 +2994,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.x</strong>
     </dt>
     <dd>
-    <p>The x coordinates. </p>
+
+<p>The x coordinates. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::x</em></li>
+    <li><em>property::x</em></li>
 </ul>
 
 
@@ -2835,6 +3009,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">integer</span>
+
 
 
         </li>
@@ -2850,12 +3025,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.y</strong>
     </dt>
     <dd>
-    <p>The y coordinates. </p>
+
+<p>The y coordinates. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::y</em></li>
+    <li><em>property::y</em></li>
 </ul>
 
 
@@ -2864,6 +3040,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">integer</span>
+
 
 
         </li>
@@ -2879,12 +3056,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.width</strong>
     </dt>
     <dd>
-    <p>The width of the client. </p>
+
+<p>The width of the client. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::width</em></li>
+    <li><em>property::width</em></li>
 </ul>
 
 
@@ -2893,6 +3071,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">width</span>
+
 
 
         </li>
@@ -2908,12 +3087,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.height</strong>
     </dt>
     <dd>
-    <p>The height of the client. </p>
+
+<p>The height of the client. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::height</em></li>
+    <li><em>property::height</em></li>
 </ul>
 
 
@@ -2922,6 +3102,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">height</span>
+
 
 
         </li>
@@ -2937,18 +3118,19 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client.dockable</strong>
     </dt>
     <dd>
-    <p>If the client is dockable. </p>
+
+<p>If the client is dockable. </p>
 
 <p> A dockable client is an application confined to the edge of the screen. The
  space it occupies is substracted from the <a href="../classes/screen.html#screen.workarea">screen.workarea</a>.</p>
 
-<p> Clients with a type of &ldquo;utility&rdquo;, &ldquo;toolbar&rdquo; or &ldquo;dock&rdquo; are dockable by
+<p> Clients with a type of "utility", "toolbar" or "dock" are dockable by
  default.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::dockable</em></li>
+    <li><em>property::dockable</em></li>
 </ul>
 
 
@@ -3053,8 +3235,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>.manage</strong>
     </dt>
     <dd>
-
-
+    When a new client appears and gets managed by Awesome.
 
 
 
@@ -3068,6 +3249,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>button::press</strong>
     </dt>
     <dd>
+
 
 
 
@@ -3092,12 +3274,14 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
 
 
+
 </dd>
     <dt>
     <a name = "mouse::enter"></a>
     <strong>mouse::enter</strong>
     </dt>
     <dd>
+
 
 
 
@@ -3122,12 +3306,14 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
 
 
+
 </dd>
     <dt>
     <a name = "mouse::move"></a>
     <strong>mouse::move</strong>
     </dt>
     <dd>
+
 
 
 
@@ -3152,6 +3338,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
 
 
+
 </dd>
     <dt>
     <a name = "request::activate"></a>
@@ -3163,29 +3350,28 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 <p> <strong>Contexts are:</strong></p>
 
 <ul>
-<li><em>ewmh</em>: When a client asks for focus (from <code>X11</code> events).</li>
-<li><em>autofocus.check_focus</em>: When autofocus is enabled (from
-<code>awful.autofocus</code>).</li>
-<li><em>autofocus.check_focus_tag</em>: When autofocus is enabled
-(from <code>awful.autofocus</code>).</li>
-<li><em>client.jumpto</em>: When a custom lua extension asks a client to be focused
-(from <a href="../classes/client.html#client:jump_to">client.jump_to</a>).</li>
-<li><em>client.swap.global_bydirection</em>: When client swapping requires a focus
-change (from <a href="../classes/client.html#awful.client.swap.bydirection">awful.client.swap.bydirection</a>).</li>
-<li><em>client.movetotag</em>: When a client is moved to a new tag
-(from <a href="../classes/client.html#client:move_to_tag">client.move_to_tag</a>).</li>
-<li><em>client.movetoscreen</em>: When the client is moved to a new screen
-(from <a href="../classes/client.html#client:move_to_screen">client.move_to_screen</a>).</li>
-<li><em>client.focus.byidx</em>: When selecting a client using its index
-(from <a href="../classes/client.html#awful.client.focus.byidx">awful.client.focus.byidx</a>).</li>
-<li><em>client.focus.history.previous</em>: When cycling through history
-(from <a href="../classes/client.html#awful.client.focus.history.previous">awful.client.focus.history.previous</a>).</li>
-<li><em>menu.clients</em>: When using the builtin client menu
-(from <a href="../libraries/awful.menu.html#clients">awful.menu.clients</a>).</li>
-<li><em>rules</em>: When a new client is focused from a rule (from <a href="../libraries/awful.rules.html#">awful.rules</a>).</li>
-<li><em>screen.focus</em>: When a screen is focused (from <code>awful.screen.focus</code>).</li>
+    <li><em>ewmh</em>: When a client asks for focus (from <code>X11</code> events).</li>
+    <li>*autofocus.check_focus*: When autofocus is enabled (from
+    <code>awful.autofocus</code>).</li>
+    <li>*autofocus.check<em>focus</em>tag*: When autofocus is enabled
+    (from <code>awful.autofocus</code>).</li>
+    <li><em>client.jumpto</em>: When a custom lua extension asks a client to be focused
+    (from <a href="../classes/client.html#client:jump_to">client.jump_to</a>).</li>
+    <li>*client.swap.global_bydirection*: When client swapping requires a focus
+    change (from <a href="../classes/client.html#awful.client.swap.bydirection">awful.client.swap.bydirection</a>).</li>
+    <li><em>client.movetotag</em>: When a client is moved to a new tag
+    (from <a href="../classes/client.html#client:move_to_tag">client.move_to_tag</a>).</li>
+    <li><em>client.movetoscreen</em>: When the client is moved to a new screen
+    (from <a href="../classes/client.html#client:move_to_screen">client.move_to_screen</a>).</li>
+    <li><em>client.focus.byidx</em>: When selecting a client using its index
+    (from <a href="../classes/client.html#awful.client.focus.byidx">awful.client.focus.byidx</a>).</li>
+    <li><em>client.focus.history.previous</em>: When cycling through history
+    (from <a href="../classes/client.html#awful.client.focus.history.previous">awful.client.focus.history.previous</a>).</li>
+    <li><em>menu.clients</em>: When using the builtin client menu
+    (from <a href="../libraries/awful.menu.html#clients">awful.menu.clients</a>).</li>
+    <li><em>rules</em>: When a new client is focused from a rule (from <a href="../libraries/awful.rules.html#">awful.rules</a>).</li>
+    <li><em>screen.focus</em>: When a screen is focused (from <code>awful.screen.focus</code>).</li>
 </ul>
-
 
 <p> Default implementation: <a href="../libraries/awful.ewmh.html#awful.ewmh.activate">awful.ewmh.activate</a>.</p>
 
@@ -3195,7 +3381,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <h3>Arguments:</h3>
     <ul>
         <li><span class="parameter">context</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The context where this signal was used.
         </li>
         <li><span class="parameter">hints</span> A table with additional hints:
@@ -3222,6 +3408,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
 
 
+
     <h3>Arguments:</h3>
     <ul>
         <li><span class="parameter">c</span>
@@ -3229,12 +3416,12 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
          The client
         </li>
         <li><span class="parameter">context</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          Why and what to resize. This is used for the
    handlers to know if they are capable of applying the new geometry.
         </li>
         <li><span class="parameter">Additional</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          arguments. Each context handler may
    interpret this differently.
          (<em>default</em> {})
@@ -3260,12 +3447,14 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
 
 
+
 </dd>
     <dt>
     <a name = "request::urgent"></a>
     <strong>request::urgent</strong>
     </dt>
     <dd>
+
 
 
 
@@ -3325,6 +3514,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
 
 
+
 </dd>
     <dt>
     <a name = ".untagged"></a>
@@ -3361,12 +3551,14 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
 
 
+
 </dd>
     <dt>
     <a name = ".lowered"></a>
     <strong>.lowered</strong>
     </dt>
     <dd>
+
 
 
 
@@ -3390,7 +3582,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/client.html#client:geometry">client.geometry</a>
+         <a href="../classes/client.html#request::geometry">client.geometry</a>
     </ul>
 
 
@@ -3408,7 +3600,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/client.html#client:geometry">client.geometry</a>
+         <a href="../classes/client.html#request::geometry">client.geometry</a>
     </ul>
 
 
@@ -3438,12 +3630,12 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <h3>Arguments:</h3>
     <ul>
         <li><span class="parameter">content</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         The context (like &ldquo;rules&rdquo;)
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The context (like "rules")
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">hints</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          Some hints.
          (<em>default</em> nil)
         </li>
@@ -3499,6 +3691,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
         <li><span class="parameter">string</span>
 
 
+
         </li>
     </ul>
 
@@ -3518,6 +3711,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
+
 
 
         </li>
@@ -3541,6 +3735,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
         <li><span class="parameter">integer</span>
 
 
+
         </li>
     </ul>
 
@@ -3560,6 +3755,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
+
 
 
         </li>
@@ -3591,7 +3787,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
         </li>
         <li><span class="parameter">merge</span>
             <span class="types"><span class="type">bool</span> or <span class="type">function</span></span>
-         If true then merge tags (select the client&rsquo;s
+         If true then merge tags (select the client's
    first tag additionally) when the client is not visible.
    If it is a function, it will be called with the client and its first
    tag as arguments.
@@ -3798,7 +3994,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <strong>awful.client.mark</strong>
     </dt>
     <dd>
-    Mark a client, and then call &lsquo;marked&rsquo; hook.
+    Mark a client, and then call 'marked' hook.
 
 
     <h3>param:</h3>
@@ -3819,7 +4015,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <strong>awful.client.unmark</strong>
     </dt>
     <dd>
-    Unmark a client and then call &lsquo;unmarked&rsquo; hook.
+    Unmark a client and then call 'unmarked' hook.
 
 
     <h3>param:</h3>
@@ -3959,7 +4155,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <strong>awful.client.floating.toggle</strong>
     </dt>
     <dd>
-    Toggle the floating state of a client between &lsquo;auto&rsquo; and &lsquo;true&rsquo;.
+    Toggle the floating state of a client between 'auto' and 'true'.
  Use <code>c.floating = not c.floating</code>
 
 
@@ -3985,7 +4181,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <strong>awful.client.dockable.get</strong>
     </dt>
     <dd>
-    Get a client&rsquo;s dockable state.
+    Get a client's dockable state.
 
 
     <h3>param:</h3>
@@ -4006,7 +4202,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <strong>awful.client.dockable.set</strong>
     </dt>
     <dd>
-    Set a client&rsquo;s dockable state, overriding auto-detection. </p>
+    Set a client's dockable state, overriding auto-detection. </p>
 
 <p> With this enabled you can dock windows by moving them from the center
  to the edge of the workarea.
@@ -4138,7 +4334,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/client.html#awful.client.is_transient_for">client.is_transient_for</a>
+         <a href="../classes/client.html#client:is_transient_for">client.is_transient_for</a>
     </ul>
 
 
@@ -4215,7 +4411,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <strong>awful.client.idx</strong>
     </dt>
     <dd>
-    Calculate a client&rsquo;s column number, index in that column, and
+    Calculate a client's column number, index in that column, and
  number of visible clients in this column.
 
 
@@ -4268,7 +4464,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <ul>
         <li><span class="parameter">add</span>
             <span class="types"><span class="type">number</span></span>
-         Amount to increase/decrease the client&rsquo;s window factor.
+         Amount to increase/decrease the client's window factor.
    Should be between <code>-current_window_factor</code> and something close to
    infinite.  The normalisation then ensures that the sum of all factors is 1.
         </li>
@@ -4316,6 +4512,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <ul>
         <li><span class="parameter">focus</span>
             <span class="types"><a class="type" href="../classes/client.html#">client</a></span>
+
 
 
         </li>
@@ -4422,7 +4619,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         A table with clients.
     </ol>
 
@@ -4488,14 +4685,15 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <strong>client:tags (tags_table)</strong>
     </dt>
     <dd>
-    <p>Access or set the client tags. </p>
+
+<p>Access or set the client tags. </p>
 
 <p> Use the <a href="../classes/client.html#client.first_tag">first_tag</a> field to access the first tag of a client directly.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::tags</em></li>
+    <li><em>property::tags</em></li>
 </ul>
 
 
@@ -4503,7 +4701,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
     <ul>
         <li><span class="parameter">tags_table</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table with tags to set, or <code>nil</code> to get the
    current tags.
         </li>
@@ -4512,7 +4710,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         A table with all tags.
     </ol>
 
@@ -4572,7 +4770,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
     <ul>
         <li><span class="parameter">geo</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> or <span class="type">nil</span></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a> or <span class="type">nil</span></span>
          A table with new coordinates, or nil.
         </li>
     </ul>
@@ -4580,7 +4778,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         A table with client geometry and coordinates.
     </ol>
 
@@ -4646,12 +4844,13 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <strong>client:get_icon (index)</strong>
     </dt>
     <dd>
-    <p>Get the client&rsquo;s n-th icon. </p>
+
+<p>Get the client's n-th icon. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::icon</em></li>
+    <li><em>property::icon</em></li>
 </ul>
 
 
@@ -4688,7 +4887,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <ul>
         <li><span class="parameter">merge</span>
             <span class="types"><span class="type">bool</span> or <span class="type">function</span></span>
-         If true then merge tags (select the client&rsquo;s
+         If true then merge tags (select the client's
    first tag additionally) when the client is not visible.
    If it is a function, it will be called with the client and its first
    tag as arguments.
@@ -4735,7 +4934,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/client.html#client:geometry">geometry</a>
+         <a href="../classes/client.html#request::geometry">geometry</a>
     </ul>
 
 
@@ -4877,38 +5076,6 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
 
 </dd>
-    <dt>
-    <a name = "client:add_rules_for_terminal"></a>
-    <strong>client:add_rules_for_terminal (rule)</strong>
-    </dt>
-    <dd>
-    Add rules to match tmux session. </p>
-
-<p> For example:</p>
-
-<pre><code> tmux.add_rules_for_terminal({ rule = { name = { "tmux" }}})
-</code></pre>
-
-<p> will show tmux hotkeys for any window that has &lsquo;tmux&rsquo; in its title.
- If no rules are provided then tmux hotkeys will be shown always!
-
-
-    <ul>
-        <li><span class="parameter">rule</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         Rules to match a window containing a tmux session.
-        </li>
-    </ul>
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../libraries/awful.rules.html#rules">awful.rules.rules</a>
-    </ul>
-
-
-</dd>
 </dl>
     <h2 class="section-header "><a name="lib_awful_client_focus_Functions"></a>lib.awful.client.focus Functions</h2>
 
@@ -4977,7 +5144,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <h3>Returns:</h3>
     <ol>
 
-        The same client if it&rsquo;s ok, nil otherwise.
+        The same client if it's ok, nil otherwise.
     </ol>
 
 
@@ -5056,6 +5223,75 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
 </dd>
     <dt>
+    <a name = "focus.history.select_previous"></a>
+    <strong>focus.history.select_previous ([wrap=true[, filter=nil]])</strong>
+    </dt>
+    <dd>
+    Select the previous client relative to the focused one.
+
+
+    <ul>
+        <li><span class="parameter">wrap</span>
+            <span class="types"><span class="type">boolean</span></span>
+         If there is no previous, select the most
+  recent one.
+         (<em>default</em> true)
+        </li>
+        <li><span class="parameter">filter</span>
+            <span class="types"><span class="type">function</span></span>
+         A function returning a boolean to either
+  accept or reject the client. If it's rejected, it will keep searching until
+  it runs out of options.
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/client.html#">client</a></span>
+        The client
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "focus.history.select_next"></a>
+    <strong>focus.history.select_next ([wrap=true[, filter=nil]])</strong>
+    </dt>
+    <dd>
+    Select the next client relative to the focused one.
+
+
+    <ul>
+        <li><span class="parameter">wrap</span>
+            <span class="types"><span class="type">boolean</span></span>
+         If there is no next client, select the last one.
+         (<em>default</em> true)
+        </li>
+        <li><span class="parameter">filter</span>
+            <span class="types"><span class="type">function</span></span>
+         A function returning a boolean to either
+  accept or reject the client. If it's rejected, it will keep searching until
+  it runs out of options.
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/client.html#">client</a></span>
+        The client
+    </ol>
+
+
+
+
+</dd>
+    <dt>
     <a name = "awful.client.focus.bydirection"></a>
     <strong>awful.client.focus.bydirection (dir[, c[, stacked=false]])</strong>
     </dt>
@@ -5065,7 +5301,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
     <ul>
         <li><span class="parameter">dir</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The direction, can be either
    <code>&quot;up&quot;</code>, <code>&quot;down&quot;</code>, <code>&quot;left&quot;</code> or <code>&quot;right&quot;</code>.
         </li>
@@ -5096,7 +5332,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 
     <ul>
         <li><span class="parameter">dir</span>
-         The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
+         The direction, can be either "up", "down", "left" or "right".
         </li>
         <li><span class="parameter">c</span>
             <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
@@ -5124,7 +5360,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <strong>awful.client.shape.get_transformed (c, shape_name)</strong>
     </dt>
     <dd>
-    Get one of a client&rsquo;s shapes and transform it to include window decorations.
+    Get one of a client's shapes and transform it to include window decorations.
 
 
     <ul>
@@ -5133,8 +5369,8 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
          The client whose shape should be retrieved
         </li>
         <li><span class="parameter">shape_name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Either &ldquo;bounding&rdquo; or &ldquo;clip&rdquo;
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Either "bounding" or "clip"
         </li>
     </ul>
 
@@ -5148,7 +5384,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <strong>awful.client.shape.update.all (c)</strong>
     </dt>
     <dd>
-    Update all of a client&rsquo;s shapes from the shapes the client set itself.
+    Update all of a client's shapes from the shapes the client set itself.
 
 
     <ul>
@@ -5168,7 +5404,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <strong>awful.client.shape.update.bounding (c)</strong>
     </dt>
     <dd>
-    Update a client&rsquo;s bounding shape from the shape the client set itself.
+    Update a client's bounding shape from the shape the client set itself.
 
 
     <ul>
@@ -5188,7 +5424,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <strong>awful.client.shape.update.clip (c)</strong>
     </dt>
     <dd>
-    Update a client&rsquo;s clip shape from the shape the client set itself.
+    Update a client's clip shape from the shape the client set itself.
 
 
     <ul>
@@ -5238,7 +5474,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
     <ul>
         <li><span class="parameter">merge</span>
             <span class="types"><span class="type">bool</span> or <span class="type">function</span></span>
-         If true then merge tags (select the client&rsquo;s
+         If true then merge tags (select the client's
    first tag additionally) when the client is not visible.
    If it is a function, it will be called with the client as argument.
         </li>
@@ -5299,7 +5535,7 @@ change (from <a href="../classes/client.html#awful.client.swap.bydirection">awfu
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2017-08-13 02:14:52 </i>
+<i style="float:right;">Last updated 2018-01-12 02:04:03 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

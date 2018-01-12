@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320pt" height="240pt" viewBox="0 0 320 240" version="1.1">
+<defs>
+<clipPath id="clip1">
+  <path d="M 86 60 L 235 60 L 235 180 L 86 180 Z M 86 60 "/>
+</clipPath>
+<clipPath id="clip2">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<clipPath id="clip3">
+  <path d="M 90.5 64.5 L 114.5 64.5 L 114.5 88.5 L 90.5 88.5 Z M 90.5 64.5 "/>
+</clipPath>
+<clipPath id="clip4">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<clipPath id="clip5">
+  <path d="M 94.5 68.5 L 110.5 68.5 L 110.5 84.5 L 94.5 84.5 Z M 94.5 68.5 "/>
+</clipPath>
+<clipPath id="clip6">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image56" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAABMUlEQVR4nO2a0W2DMAAFn6suAU0myiBZqVmkCyWGMZyf/DR2WxG7OYLffYKwjhMgsJGMMT0T7jfM83xIKZ0kfQA+S7iEEI7DMHzVDPJ2vyGl9Kn1n7wk7W6uVWQBJO1qB30i+9oBSgG6wgFoARoHoAVoHIAWoHEAWoDGAWgBGgegBWgcgBagcQBagMYBaAEaB6AFaByAFqBxAFqA5p0WaM00TemHXcW1xJ6ugOJaYk8BpMJaYm8BMhyAFqApBbg83eJxzrUDZAFCCEe9RoTzzbWK7B+hV+eX9wBJ0jiO387ZzwBaoCUxxsX/DG0mQIxxH0I4LT2u+bfAX/fg2tjMFfAoDkAL0DgALUDjALQAjQPQAjQOQAvQOAAtQPMfAdY8nZbNITYPsOI5xSZziMaYbXEFpMcxhEI0QLcAAAAASUVORK5CYII="/>
+<clipPath id="clip7">
+  <path d="M 123.5 68.5 L 139.5 68.5 L 139.5 84.5 L 123.5 84.5 Z M 123.5 68.5 "/>
+</clipPath>
+<clipPath id="clip8">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image57" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAABEElEQVR4nO2YwRGCMBREfxybALEiC6ElbcSGZKCMeEEPwEFC4ksm+44Zsuy8Qw5rJoSoGbc8mKbp5r1/mNllZ9bgnOubpnmWlHdafuW9vweEm5l1892i8lYCzKwLCP9wLS1vS0BVSABdgEYC6AI0EkAXoJEAugCNBNAFaP4hYDhw95U6L7kA51xvYaVf8920ecuDcRx9QPiXtm1XmTmjN4AuQFO9gHPqHxS3CcamxE0wNtoEc0YC6AI0EkAXoJEAugCNBNAFaCSALkCjTfBA2E9oE8wcvQF0AZrqBWgT3BmyG22C2gTzRgLoAjQSQBegkQC6AI0E0AVoJIAuQLMlIOsNL3beSkD2G17kPCFE3bwBsmebVpolXZoAAAAASUVORK5CYII="/>
+<clipPath id="clip9">
+  <path d="M 152.5 68.5 L 168.5 68.5 L 168.5 84.5 L 152.5 84.5 Z M 152.5 68.5 "/>
+</clipPath>
+<clipPath id="clip10">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image58" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAABDklEQVR4nO2YwRGCMBREfxybALEiC6ElbcSGYKCMeMGDgYsQffmTfccM2VneIYc1E0LUTEgP5nm+xRgfZnb5MmsMIfRN0zw95Z3Sr2KM9x3hZmbdctdV3kqAmXU7wt9cveVtCagKCaAL0EgAXYBGAugCNBJAF6CRALoAzZaA8UDe8Ie8rKwEhBB621d6WO7+NC83qz2gdKZpikfut2378c96A+gCNNULOKcHpW94uXG3CebG4yaYlerfAAmgC9BIAF2ARgLoAjQSQBegkQC6AI02wfRAm2DhaBPMjATQBWi0CaYH2gS1CdaFBNAFaCSALkAjAXQBGgmgC9BIAF2AxuMmmDXP3SZY+sYohPDFC+6im1YkKVSOAAAAAElFTkSuQmCC"/>
+<clipPath id="clip11">
+  <path d="M 181.5 68.5 L 197.5 68.5 L 197.5 84.5 L 181.5 84.5 Z M 181.5 68.5 "/>
+</clipPath>
+<clipPath id="clip12">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image59" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAABAklEQVR4nO2YwQ3CMBTFftiiAiZikK4Ei7BQkTpGuFQI0twIdUTtY1RFjk/VixCRPZPKg3meLznnW0QcAZ9f8kgpjcMw3N8PD+VXOedr/N/jIyJOy9s+WAWIiNMGMhTn8qAWYFcYgBagMQAtQGMAWoDGALQAjQFoAZpagMfmFtsxlQerACmlMf4zwrS8TUTkRctNsLq59X5fy02wurn1fl/rTXC1ufV+n3+CtACNAWgBGgPQAjQGoAVoDEAL0BigcvbNHLba3Hq/r+UmWN3cer9PRPaNm2D5Ve8bnpugm2BbDEAL0BiAFqAxAC1AYwBagMYAtACNm2B50PuG5yYoIi15AhTTk0KgZuMZAAAAAElFTkSuQmCC"/>
+<clipPath id="clip13">
+  <path d="M 210.5 68.5 L 226.5 68.5 L 226.5 84.5 L 210.5 84.5 Z M 210.5 68.5 "/>
+</clipPath>
+<clipPath id="clip14">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image60" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAA8klEQVR4nO3YwQ2CQBRF0T92QdSKLMSWtBEbgoQyxg1uBjfi6J0J9ywJfF7e8kVI2rNUPpjn+ZJzvkfE8cNbU0rpOgzDo6d7h/KtnPNtw/GIiNPybVf3VgVExGnD8Zdzb/feFbArFkAHoFkAHYBmAXQAmgXQAWgWQAegvStg+uLe2Nu9VQEppevGn4zLt13dk7RvboLlW61veG6CboJ1WQAdgGYBdACaBdABaBZAB6BZAB2A5iZYPmh9w3MTlFRTzU2wdT/fBFv3l02wdW6CJQugA9AsgA5AswA6AM0C6AA0C6AD0Gpvgq376SbYOjdBSStPxk6TQvlOtFMAAAAASUVORK5CYII="/>
+<clipPath id="clip15">
+  <path d="M 94.5 97.5 L 110.5 97.5 L 110.5 113.5 L 94.5 113.5 Z M 94.5 97.5 "/>
+</clipPath>
+<clipPath id="clip16">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image61" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAA3ElEQVR4nO2YsQ3CMBQF/2eLiDARg2QlWISFEiljmCY0TlpzlnxXWpb+6coXISIjk/XDvu/PUso7Iu6Nbm6ZuUzT9Onh7q3+VUp5NZSIiJiPG13cPQWIiLmhxI9HL3evAgyFAWgBGgPQAjQGoAVoDEAL0BiAFqC5CrD94e7ay91TgMxcGsusx40u7orI2LgJ1r/cBN0Ex8IAtACNAWgBGgPQAjQGoAVoDEAL0LgJ1g9ugiIyEm6C9S83QTfBsTAALUBjAFqAxgC0AI0BaAEaA9ACNG6C9YOboIiMxBf2235GtYHaTwAAAABJRU5ErkJggg=="/>
+<clipPath id="clip17">
+  <path d="M 123.5 97.5 L 139.5 97.5 L 139.5 113.5 L 123.5 113.5 Z M 123.5 97.5 "/>
+</clipPath>
+<clipPath id="clip18">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image62" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAA50lEQVR4nO2ZwQ2CUBAFd+2CiBVZCC1pIzaECWV8L3j5cBFJhh9mjgQek7luhIicmawfTNN0L6U8I+L649Y7M4eu614t7V3qt0opjw3jERH9/G1Te4sAEdFvGP9ya21vLcCpMAAtQGMAWoDGALQAjQFoARoD0AI0BqAFaAxAC9AYgBagMQAtQGMAWoBmLcD7j72xtb1FgMwcNv5knL9tak9Ezo3X4fqto19zvQ57Hd4XA9ACNAagBWgMQAvQGIAWoDEALUBjAFqAxgC0AI0BaAEaA9ACNAagBWi8DtcPjn7N9TosInvyASAtfk9V9oOkAAAAAElFTkSuQmCC"/>
+<clipPath id="clip19">
+  <path d="M 152.5 97.5 L 168.5 97.5 L 168.5 113.5 L 152.5 113.5 Z M 152.5 97.5 "/>
+</clipPath>
+<clipPath id="clip20">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image63" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAABg0lEQVR4nO2aQU7DMBREx6iXSNLCondhw0EqLoRAvQcbzsKqlXMMs8mC2m4iN9jzUectrdQzeXKTyDIghLhnXDwwjuNLCOEDwFA5++ycO3Rd99koP5v3EF8VQnivEJ5jO2W1ys/mJQIAbCuEX2PXOD/Jywm4KySAXYCNBLALsJEAdgE2EsAuwEYC2AXYSAC7ABsJYBdgIwHsAmwkgF2AjQSwC7CRAHYBNhLALsBGAtgF2FgUcK449ykeMCfAOXdAHQmnae7LvHjAex8qhF+l7/ukQ0vMrYDWSAC7AJsNu0DMzBmh7Bkf7/0zgDcA+4Wpv0MIr8MwfP0eNLcCZs4IZc/4ADhi+eYBYO+cO8aD5gTcwGPBtU/xgDkBM98B2ff4Wsw9A6b/eO70WBXMrYDWSAC7ABtzz4DS74C1mFsBN3wHrMKcAMyfFf7zt4NFAU2RAHYBNhLALsBGAtgF2OQE1NyXj0n26RfyS69f/H0ioOK+fFImu09fuB9Q0LfKfoIQ4n/zA98/ZqHOf2QxAAAAAElFTkSuQmCC"/>
+<clipPath id="clip21">
+  <path d="M 181.5 97.5 L 197.5 97.5 L 197.5 113.5 L 181.5 113.5 Z M 181.5 97.5 "/>
+</clipPath>
+<clipPath id="clip22">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image64" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAABd0lEQVR4nO2aQU7DMBBFZxCXSNLCondhw0EqLoSoeg82nIVVK+cYZpMF2FM3VrC/lfy3tJz836eobUYWIYRsGQ0XxnF89d6fRGQonH1V1WPXdZ+V8s28h3CX9/6jQLjFbsqqlW/mRQJEZFcg/Bb7yvlRniVgU1AAugAaCkAXQEMB6AJoKABdAA0FoAugoQB0ATQUgC6AhgLQBdBQALoAGgpAF0BDAegCaCgAXQANBaALoGlRwLXgvS/hQnMCVPUoZSRcpnv/zQsXnHO+QPhN+r6POtSkuSegNhSALoDmEV0gxDn3IiLvInK4s/Xbe/82DMPX78XEGaN5Z4Qa4Cz3P7yIyEFVz+Fi4ozR7DNCaJ4y9j4ba6kzRjwjFEIB6AJoKABdAA0FoAugWaOA1Kt0+/OApSTmCeY8oLl3gaVM//WtU+gmq3sCcqEAdAE0q/sOWMM8YBH/MQ8oOZcPiX6XM/Ot67OIBBScy4fYc/r5+bnXm/sJIdvmB+V4ZqFtZvLrAAAAAElFTkSuQmCC"/>
+<clipPath id="clip23">
+  <path d="M 210.5 97.5 L 226.5 97.5 L 226.5 113.5 L 210.5 113.5 Z M 210.5 97.5 "/>
+</clipPath>
+<clipPath id="clip24">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image65" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAADGElEQVR4nO2ayU7cQBCG/xrlBXJzdxOJ98lrRECkKGIZlixA2EKGTVEUIQhCUV4izxMFuuqYHHOicplB4Fm8zLjbAn+3aVeP//pt91I20NDQ8JihdIOIPFfVcwAugp4quSaiWWPMz7uNrXSUqp7h4SUPAFPd3O7RZwCAqQBiYvEs3TDIgEdFVANUdVtVt2NqeBLrxKp65JzbBABmbgF4H0NHrDvgxDm33PthrV0H8DGGkBgGfLbWLqUbrbXvAHwKLSa0AV+stQvDDlpr3xDRQUhBIQ24MMbMZwUlSbJGRF9DCALCGXBpjJkjIs0KJCJNkuS1qp6GEFb5LEBE35MkmSGimwJ9VFVfiUgLwFyF8vr3AsyceZUK8gtA7uRTtABMT0wJAGvtvZxDrAOmA5yjNM1SOLaA2DQGxBYQm8aA2AJiM64BlwB+T0JISf5izF3kOAZcGGNmUH6RMxG6u8jdsv3LGvCtu7aPmnwPa+162cpSGQPO6pR8D+fcpqquFe1X1IATa+3LPLu6GDjnOkVNyG2Aqh4NquTUDedch4hW8sbnMoCIDu7W8OqOMeaQiNp5YjMNIKKOMWZ1fFlhMcYcA1gEMPJxfegLIcKAmsddMg1Q1VXvfdBC5SQQkTaA46y4vGPAMjMfja0qEN77FVU9zBNb5BFYYuYTVR15S8XGe79KRJ288UXHgAUROa2rCd77D0RU6OVKmUFwTkTOVLVWAygzbxPRZtF+ZZOYEZHzupjAzLsA1sv0Hacq/EJEgLhTKTFzb74v9wfphgreC9SK9HuBWtzCMWkMiC0gNo0BsQXE5tEbEOLt8J8x+z+diIohhDDgx6jvgkbBzPsAChc6ixDiEZjvrtYKwcx7qDh5INwYsOi9z7U/BwBm3gHwtkI9twQbBImo7b3fyorrxgT7ajToLEBEGyKyMey4iGwQ0dDjVRB8GlTVLWbuu8Ii0lbVzDtk0sRaB+ww8+0zzsyLeWt4kyba1+IA9pj5BsA/5KjeVkVMAwBgP/L5m6XwIAOug6sIx1W6oc8AIprFwzThqptbQ0NDwy3/AZkL9wHhixWKAAAAAElFTkSuQmCC"/>
+<clipPath id="clip25">
+  <path d="M 94.5 126.5 L 110.5 126.5 L 110.5 142.5 L 94.5 142.5 Z M 94.5 126.5 "/>
+</clipPath>
+<clipPath id="clip26">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image66" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEMUlEQVR4nO2az2/cRBTHv28cb34oUm/R7thcUE75M1BR86NJoUVIVOLcE38FR1Rx4AJHqAQkpYCEVFVIhUJb4MI1p9xSj5VICKXZOJvs2o/D2mHX6117Y+/OJvHntjNvxu99PPbK9gAlJSVXGYo3uK67xsxfALA05DNKXhHRvVqt9rizUcSjmPlzXL7iAcAOa+uiRwAAewzJ6OKNeEOSgCvFVFpArVYTRMTR7/39/fnj42OzX7xhGMI0zWsAEATBMjN/hvOLDojoIyHEEwBoNpsHvu8H/YJnZ2ebCwsL9eg3M5Prun3jgQwC0L5RngnoPMAA/lFK3QBwH/lWmWDmT1ut1q5lWT+dZ3zugIwxXSillgH8CGBm2LEJVIjoO8dxNs4xNr+A7e3toQSExf+AYoqPqBDRw2El7Ozs5BcwNzeXWYDruisovviISMKtrANmZmbyC5iens4kwHXdFWb+HqMpPqJCRFtZJZimmV/A1NRUakxY/KjOfJwKEW0ppd5JCzQMI7+AtElc110Ni59Om6tAKgA20yQUIqBerxv9+hzHuaWh+IgKgM1Bl8Ph4WF+AUKIngcmoP3QRESbYSK6qBDRQ6XUu0mdI7sEwifGR9Bz5uOYaF8Ot+MdhQgQQnTFKKVua1z2/TABbDmO80FnYzz3JIYSoJS6A+Db8ICThkFEDzolFCKg0WgI4Kz4bzCZxUcYRPRAKXUX+D/3QaQ+DAkhhOu67zHz15js4iMMAF8ppYiZf08LznIJvM/Mk37m4xgAviSiD9MCe/7ilFKcFHhZkFJ21Xzl3wiVAnQnoJtSgO4EdFMK0J2AbkoBuhPQTSlAdwK6KQXoTkA3pYAMMacjz2J0pOae5YXIHQBZPolPGh6Au2lBWQQ8A7CKiyXBC4JgwzTNn9MCUwW0Wq1ASvkcF0eCFwTBhm3bTwftJolIFXBychIAwAWR4Akh1m3bfgoAzWYzvwDP884mCSWsADjMk+WI8IQQ69Vq9ZeoodFo5BewtLTUNYmU8gXaK2GSJHhEdLOzeABYXFzMLwBAzyRSyhfMPCkrwSOim7Va7deEvkIEJL4mtyzrJYA16L0n1AEs9ykeKEBA0LlHMI6U8jkzL0PPSjgiovXwvpRImPvA7xypAtKysCzrZSjhdVpsgRyFy/5ZhtiBNeQWAACWZf0R3hPGIeGIiNYyFg+MQwDQlhAEwahXQlT8b0OMGY8AALBt+88RSjgCsDpk8cA4BQBtCQDeAvDvsGMH8FoIcV1Kmfq5O4HxCgAAKeXfAN5GMRIOhBA3qtXqX+ccn2u3OO3t7b15eno6bxhG3/0BRCSCILjW2cbMIKL7AD5Gwmf4jDCAT3zfn3cc53pnhxDigJn7Fuf7frNSqdR93x94gHJ/gK5EJoUkAa/GnsX42I039Aggonu4nBJ2w9pKSkpKzvgPQtyI8doF/vgAAAAASUVORK5CYII="/>
+<clipPath id="clip27">
+  <path d="M 123.5 126.5 L 139.5 126.5 L 139.5 142.5 L 123.5 142.5 Z M 123.5 126.5 "/>
+</clipPath>
+<clipPath id="clip28">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image67" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAABr0lEQVR4nO2aYW6EIBCFB9JLqHih9iDukepB2gst6CmU/nGTVoyACM/U+X4ax3m+sOzMCBHDMHdGrC+M4/hhre2JqDk5lxZCdFVVfe/dVDq/XN9lrf3MkJyISC3P3qV0fscAIlIZkr9oA+4pmn/LgFvBBqAFoGED0ALQvB2I+ZqmqWvb1pyuhojqunZqkxC01kpK2RPRe0xc9AqY5/mR6+VTUEppa+0jNi7aAKWUjo0pRdM0z9gY3gNSH5CxdvcR1Fv4SF4BGWt3H0G9hY8zfgI5a3cfIb3FLrffA9gAtAA0bABaABo2AC0AzZYBl631T8DpFRwDhBAd/U8Tnsu7/eFQ7/2bYRhs6jNSODo/eMF7AFoAGjYALQANG4AWgOb2BjgzQd+ML/V/Nzc7dQn8fACaS5wPQMPnA9awAWgBaNgAtAA0bABaAJozDECOz6LPA6xJNgA4Q9yc8cWSfD5gqa2Tv9Ki4D0gNkBrfdlewRgTvRKjDZBS9lc0wRjTCiH62Dint8895/fNE0rn5z0ALQANG4AWgIYN2LiWs6wNqd2L5i95PiCodkfnZxjmXvwAToGG3crwOE0AAAAASUVORK5CYII="/>
+<clipPath id="clip29">
+  <path d="M 152.5 126.5 L 168.5 126.5 L 168.5 142.5 L 152.5 142.5 Z M 152.5 126.5 "/>
+</clipPath>
+<clipPath id="clip30">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image68" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAABWklEQVR4nO2asRHCMAxFZY4l4gJGg0ko2ITRoHDGCA0FiXWAkJ0fJ/+VPkf3+Ge7EBIhhGyZMF3o+/40DMNVRA4An4+EEM5d193e1yy+2vdZACml+y/FQDxijMf3BaNv9v1O2bTUHy+iu1l8s71aAJuCAaAF0DAAtAAaBoAWQMMA0AJoGABaAM0aAnh49jYfQAjhIj+G8No7XpsupJSGAl7ViDFmzh6aPwFeGABaAM0eLeDF2xNs/gRYGrivvSOaD0DYE/TBANACaBgAWgANA0ALoGEAaAE0DAAtgGYNAbAnKOwJ/k/zJ8CLFoDlTs1NcbcsAMudmhvtDrtrli44N8XnBFvD+mhPH1E+gmgBNNn/AiVmhb0zvZa6XrITUGJQWuu/16rrpdassHem11LXxebfAAaAFkDDANACaBgAWgBNrX6AVmMJdb/3BEv0A9Te2wLq1ugnEELa5gmzFHLfIWcz3gAAAABJRU5ErkJggg=="/>
+<clipPath id="clip31">
+  <path d="M 181.5 126.5 L 197.5 126.5 L 197.5 142.5 L 181.5 142.5 Z M 181.5 126.5 "/>
+</clipPath>
+<clipPath id="clip32">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image69" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAABYElEQVR4nO2awRGDIBBFSSYtcLEEL5Zg2rBC20hK8EIJXijCnHIIYIJh5cPw39GBne8bZ2dcUIoQ0jIX98E8z49xHMdfG621yhjznKbp/s/+3Ozl9QQsy7JpraOLDsPwUePI/tyE8l7dRUfCh9aW+vJKhbN5AlqDAtAB0FAAOgAaCkAHQEMB6ABoKAAdAI0nwFobvfnI2lLxBBhjnjEb37+X8pHy4v0Op7Ku6yZdU5Ku677/DrcGBaADoLm5D1JngrXhfQF930cNNLXW0WtLRnwmWBvN9wAKQAdAQwHoAGgoAB0ADQWgA6ChAHQANJwJug84E0yEM8HKEBdQcl8IZRMXUGpf2OtZ4vcEa8MTcLSJuU2lNtgE0QHQeOcCqaTeFT7rDvJeXfEvIPWsYO+84ay64gIkzgrOuoPMu8IBKAAdAA0FoAOgoQB0ADTiM0GJeUDOuuIzwdR5QO66hJC2eQHus7zGnYTQrAAAAABJRU5ErkJggg=="/>
+<clipPath id="clip33">
+  <path d="M 210.5 126.5 L 226.5 126.5 L 226.5 142.5 L 210.5 142.5 Z M 210.5 126.5 "/>
+</clipPath>
+<clipPath id="clip34">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image70" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAABXklEQVR4nO2awW2EMBREnSgtcFiaQHJHVEYdvwlLNAEHF7F7DnaidSafwWLeEZm/oydkwaxDEELcmY/jhWVZthjjYxiGPw81s32e5/Fqc2v3FwLWdX0iIUMIIeccpmn6NvsKc2v3fx4XoSF/mnGFubW1hYC7IQHsAGwkgB2AjQSwA7ApBOSc4aG1GV5zUQoBKaUd/aGU0n7WXJTiVbg3tm17tqwfx/H3V+G7IQHsAChm9vbeYmbFHuLSB3hR+55HcekDvKh9z6O49AFeeGTrfg9A+WIHQEE7we6fgJYNO8b4OF7rXoA6QRAJYAdgIwHsAGwkgB2AjQSwA7CRAHYANt0LaKnaa2u7F9Dyf0Ptf4WiXmrt2c/m2OujdP8EoEgAOwAbdYJuyU5CnaA6QQwJYAdgIwHsAGwkgB2AjQSwA7CRAHYANi5nhb1AzyC/1Qn+x5leL9AzyB5njYUQffMCvSKt+3ObbWIAAAAASUVORK5CYII="/>
+<clipPath id="clip35">
+  <path d="M 94.5 155.5 L 110.5 155.5 L 110.5 171.5 L 94.5 171.5 Z M 94.5 155.5 "/>
+</clipPath>
+<clipPath id="clip36">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+<image id="image71" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAABXklEQVR4nO2asXGEMBRE5Ru3oIQSSCiBa4MKacMqgUQlkPwizpGDk87jr9OHFda+UCMtyw5oYME5QkjPfKQD67p+zfM8/7VQRFyMMSzLcn9nfSu6WQDbtj2892rRaZqeNErWt6B7SyeVHOTV3FqTZ+tmAfQGA0AbQMMA0AbQMAC0ATTmAYjIIRpH6ZoHEGMMNet/HlnP0s0ehfd9f5QID8OQaVwJ7gFoA2iyAEIIqntNRNRzW8b8/q19bz8KdR9Qi8V7+1Go+oBaWj1559gHvOQzHajtBK9GdgWM46jawLz36rktY94JXo3u9wAGgDaAhgGgDaBhAGgDaBgA2gAaBoA2gCYLoKR/t+jq0WQBaPv333r2q2FeiZV+Vzib9DsG9wC0ATTdB8BOMB1gJ8hOsC8YANoAGgaANoCGAaANoGEAaANoGADaABrzTrDlnlD1r3BtJ9hqT/hfOkxCiC3fD6a/i9ndnh8AAAAASUVORK5CYII="/>
+<clipPath id="clip37">
+  <path d="M 86 60 L 235 60 L 235 180 L 86 180 Z M 86 60 "/>
+</clipPath>
+<clipPath id="clip38">
+  <path d="M 86.5 70.5 C 86.5 64.976562 90.976562 60.5 96.5 60.5 L 224.5 60.5 C 230.023438 60.5 234.5 64.976562 234.5 70.5 L 234.5 169.5 C 234.5 175.023438 230.023438 179.5 224.5 179.5 L 96.5 179.5 C 90.976562 179.5 86.5 175.023438 86.5 169.5 Z M 86.5 70.5 "/>
+</clipPath>
+</defs>
+<g id="surface53">
+<path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.266667;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 0.75 0.75 L 319.25 0.75 L 319.25 239.25 L 0.75 239.25 Z M 0.75 0.75 "/>
+<path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.2;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 10 10 L 310 10 L 310 230 L 10 230 Z M 10 10 "/>
+<g clip-path="url(#clip1)" clip-rule="nonzero">
+<g clip-path="url(#clip2)" clip-rule="nonzero">
+<rect x="0" y="0" width="320" height="240" style="fill:rgb(38.039216%,50.588235%,100%);fill-opacity:0.490196;stroke:none;"/>
+</g>
+</g>
+<g clip-path="url(#clip3)" clip-rule="nonzero">
+<g clip-path="url(#clip4)" clip-rule="nonzero">
+<rect x="0" y="0" width="320" height="240" style="fill:rgb(66.666667%,0%,100%);fill-opacity:0.490196;stroke:none;"/>
+</g>
+</g>
+<g clip-path="url(#clip5)" clip-rule="nonzero">
+<g clip-path="url(#clip6)" clip-rule="nonzero">
+<use xlink:href="#image56" transform="matrix(0.25,0,0,0.25,94.5,68.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip7)" clip-rule="nonzero">
+<g clip-path="url(#clip8)" clip-rule="nonzero">
+<use xlink:href="#image57" transform="matrix(0.25,0,0,0.25,123.5,68.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip9)" clip-rule="nonzero">
+<g clip-path="url(#clip10)" clip-rule="nonzero">
+<use xlink:href="#image58" transform="matrix(0.25,0,0,0.25,152.5,68.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip11)" clip-rule="nonzero">
+<g clip-path="url(#clip12)" clip-rule="nonzero">
+<use xlink:href="#image59" transform="matrix(0.25,0,0,0.25,181.5,68.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip13)" clip-rule="nonzero">
+<g clip-path="url(#clip14)" clip-rule="nonzero">
+<use xlink:href="#image60" transform="matrix(0.25,0,0,0.25,210.5,68.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip15)" clip-rule="nonzero">
+<g clip-path="url(#clip16)" clip-rule="nonzero">
+<use xlink:href="#image61" transform="matrix(0.25,0,0,0.25,94.5,97.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip17)" clip-rule="nonzero">
+<g clip-path="url(#clip18)" clip-rule="nonzero">
+<use xlink:href="#image62" transform="matrix(0.25,0,0,0.25,123.5,97.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip19)" clip-rule="nonzero">
+<g clip-path="url(#clip20)" clip-rule="nonzero">
+<use xlink:href="#image63" transform="matrix(0.25,0,0,0.25,152.5,97.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip21)" clip-rule="nonzero">
+<g clip-path="url(#clip22)" clip-rule="nonzero">
+<use xlink:href="#image64" transform="matrix(0.25,0,0,0.25,181.5,97.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip23)" clip-rule="nonzero">
+<g clip-path="url(#clip24)" clip-rule="nonzero">
+<use xlink:href="#image65" transform="matrix(0.25,0,0,0.25,210.5,97.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip25)" clip-rule="nonzero">
+<g clip-path="url(#clip26)" clip-rule="nonzero">
+<use xlink:href="#image66" transform="matrix(0.25,0,0,0.25,94.5,126.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip27)" clip-rule="nonzero">
+<g clip-path="url(#clip28)" clip-rule="nonzero">
+<use xlink:href="#image67" transform="matrix(0.25,0,0,0.25,123.5,126.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip29)" clip-rule="nonzero">
+<g clip-path="url(#clip30)" clip-rule="nonzero">
+<use xlink:href="#image68" transform="matrix(0.25,0,0,0.25,152.5,126.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip31)" clip-rule="nonzero">
+<g clip-path="url(#clip32)" clip-rule="nonzero">
+<use xlink:href="#image69" transform="matrix(0.25,0,0,0.25,181.5,126.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip33)" clip-rule="nonzero">
+<g clip-path="url(#clip34)" clip-rule="nonzero">
+<use xlink:href="#image70" transform="matrix(0.25,0,0,0.25,210.5,126.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip35)" clip-rule="nonzero">
+<g clip-path="url(#clip36)" clip-rule="nonzero">
+<use xlink:href="#image71" transform="matrix(0.25,0,0,0.25,94.5,155.5)"/>
+</g>
+</g>
+<g clip-path="url(#clip37)" clip-rule="nonzero">
+<g clip-path="url(#clip38)" clip-rule="nonzero">
+<path style="fill:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(38.039216%,50.588235%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 1.5 11.5 C 1.5 5.976562 5.976562 1.5 11.5 1.5 L 139.5 1.5 C 145.023438 1.5 149.5 5.976562 149.5 11.5 L 149.5 110.5 C 149.5 116.023438 145.023438 120.5 139.5 120.5 L 11.5 120.5 C 5.976562 120.5 1.5 116.023438 1.5 110.5 Z M 1.5 11.5 " transform="matrix(1,0,0,1,85,59)"/>
+</g>
+</g>
+</g>
+</svg>
