@@ -40,9 +40,11 @@
   <li><a href="libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="libraries/awful.key.html">awful.key</a></li>
+  <li><a href="libraries/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="libraries/awful.layout.dynamic.html">awful.layout.dynamic</a></li>
   <li><a href="libraries/awful.layout.dynamic.base.html">awful.layout.dynamic.base</a></li>
+  <li><a href="libraries/awful.layout.dynamic.base_conditional.html">awful.layout.dynamic.base_conditional</a></li>
   <li><a href="libraries/awful.layout.dynamic.base_layout.html">awful.layout.dynamic.base_layout</a></li>
   <li><a href="libraries/awful.layout.dynamic.base_stack.html">awful.layout.dynamic.base_stack</a></li>
   <li><a href="libraries/awful.layout.dynamic.resize.html">awful.layout.dynamic.resize</a></li>
@@ -74,16 +76,21 @@
   <li><a href="libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="libraries/gears.shape.html">gears.shape</a></li>
+  <li><a href="libraries/gears.sort.html">gears.sort</a></li>
   <li><a href="libraries/gears.string.html">gears.string</a></li>
   <li><a href="libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="libraries/gears.table.html">gears.table</a></li>
   <li><a href="libraries/gears.wallpaper.html">gears.wallpaper</a></li>
+  <li><a href="libraries/keygrabber.html">keygrabber</a></li>
+  <li><a href="libraries/lib.naughty.constants.html">lib.naughty.constants</a></li>
   <li><a href="libraries/menubar.html">menubar</a></li>
   <li><a href="libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="libraries/mouse.html">mouse</a></li>
   <li><a href="libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="libraries/naughty.html">naughty</a></li>
+  <li><a href="libraries/naughty.dbus.html">naughty.dbus</a></li>
+  <li><a href="libraries/naughty.widget.html">naughty.widget</a></li>
   <li><a href="libraries/root.html">root</a></li>
   <li><a href="libraries/selection.html">selection</a></li>
   <li><a href="libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -122,7 +129,6 @@
   <li><a href="classes/gears.object.html">gears.object</a></li>
   <li><a href="classes/gears.timer.html">gears.timer</a></li>
   <li><a href="classes/key.html">key</a></li>
-  <li><a href="classes/keygrabber.html">keygrabber</a></li>
   <li><a href="classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="classes/naughty.notification.html">naughty.notification</a></li>
@@ -138,6 +144,7 @@
   <li><a href="classes/wibox.html">wibox</a></li>
   <li><a href="classes/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
   <li><a href="classes/wibox.container.background.html">wibox.container.background</a></li>
+  <li><a href="classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
   <li><a href="classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
@@ -163,6 +170,7 @@
   <li><a href="classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="classes/wibox.widget.separator.html">wibox.widget.separator</a></li>
   <li><a href="classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
+  <li><a href="classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="classes/wibox.widget.systray.html">wibox.widget.systray</a></li>
   <li><a href="classes/wibox.widget.textbox.html">wibox.widget.textbox</a></li>
   <li><a href="classes/wibox.widget.textclock.html">wibox.widget.textclock</a></li>
@@ -173,7 +181,7 @@
   <li><a href="documentation/00-authors.md.html">Authors</a></li>
   <li><a href="documentation/01-readme.md.html">Readme</a></li>
   <li><a href="documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="documentation/03-declarative-layout.md.html">The declarative layout system</a></li>
   <li><a href="documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="documentation/06-appearance.md.html">Change Awesome appearance</a></li>
@@ -189,7 +197,7 @@
 <div id="content">
 
 
-  <h2>API documentation for awesome, a highly configurable X window manager (version v4.2-282-g40fe6ca20-dirty).</h2>
+  <h2>API documentation for awesome, a highly configurable X window manager (version v4.2-298-g2b914f7be-dirty).</h2>
   <p>Welcome to the documentation for the awesome window manager. Below you find an
 overview of the individual parts which links to the full documentation.</p>
 
@@ -239,6 +247,10 @@ should be useful for you.</p>
 		<td class="summary">Create easily new key objects ignoring certain modifiers.</td>
 	</tr>
 	<tr>
+		<td class="name"  ><a href="libraries/awful.keygrabber.html">awful.keygrabber</a></td>
+		<td class="summary">Keygrabber Stack</td>
+	</tr>
+	<tr>
 		<td class="name"  ><a href="libraries/awful.layout.html">awful.layout</a></td>
 		<td class="summary">
 
@@ -254,6 +266,10 @@ should be useful for you.</p>
 	<tr>
 		<td class="name"  ><a href="libraries/awful.layout.dynamic.base.html">awful.layout.dynamic.base</a></td>
 		<td class="summary">Allow dynamic layouts to be created using wibox.layout composition</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/awful.layout.dynamic.base_conditional.html">awful.layout.dynamic.base_conditional</a></td>
+		<td class="summary">A specialised of the conditional container.</td>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/awful.layout.dynamic.base_layout.html">awful.layout.dynamic.base_layout</a></td>
@@ -351,9 +367,7 @@ should be useful for you.</p>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/gears.color.html">gears.color</a></td>
-		<td class="summary">
-
-</td>
+		<td class="summary">This module simplifies the creation of cairo pattern objects.</td>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/gears.debug.html">gears.debug</a></td>
@@ -389,6 +403,10 @@ should be useful for you.</p>
 		<td class="summary">Module dedicated to gather common shape painters.</td>
 	</tr>
 	<tr>
+		<td class="name"  ><a href="libraries/gears.sort.html">gears.sort</a></td>
+		<td class="summary">Extra sorting algorithms.</td>
+	</tr>
+	<tr>
 		<td class="name"  ><a href="libraries/gears.string.html">gears.string</a></td>
 		<td class="summary">String module for gears</td>
 	</tr>
@@ -404,9 +422,15 @@ should be useful for you.</p>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/gears.wallpaper.html">gears.wallpaper</a></td>
-		<td class="summary">
-
-</td>
+		<td class="summary">Functions for setting the wallpaper.</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/keygrabber.html">keygrabber</a></td>
+		<td class="summary">awesome keygrabber API</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/lib.naughty.constants.html">lib.naughty.constants</a></td>
+		<td class="summary">This file host the shared constants used by the notification subsystem.</td>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/menubar.html">menubar</a></td>
@@ -430,7 +454,18 @@ should be useful for you.</p>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/naughty.html">naughty</a></td>
-		<td class="summary">Notification library.</td>
+		<td class="summary">Notification library</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/naughty.dbus.html">naughty.dbus</a></td>
+		<td class="summary">DBUS/Notification support
+ Notify</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/naughty.widget.html">naughty.widget</a></td>
+		<td class="summary">
+
+</td>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/root.html">root</a></td>
@@ -587,10 +622,6 @@ should be useful for you.</p>
  described in <a href="classes/signals.html#">signals</a>.</td>
 	</tr>
 	<tr>
-		<td class="name"  ><a href="classes/keygrabber.html">keygrabber</a></td>
-		<td class="summary">A keyboard grabbing and transaction object.</td>
-	</tr>
-	<tr>
 		<td class="name"  ><a href="classes/menubar.icon_theme.html">menubar.icon_theme</a></td>
 		<td class="summary">(Deprecated) class module for icon lookup for menubar</td>
 	</tr>
@@ -657,6 +688,10 @@ should be useful for you.</p>
 		<td class="name"  ><a href="classes/wibox.container.background.html">wibox.container.background</a></td>
 		<td class="summary">A container capable of changing the background color, foreground color
  widget shape.</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="classes/wibox.container.conditional.html">wibox.container.conditional</a></td>
+		<td class="summary">A container displaying a child widget when a condition is met.</td>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="classes/wibox.container.constraint.html">wibox.container.constraint</a></td>
@@ -782,6 +817,10 @@ should be useful for you.</p>
 		<td class="summary">An interactive mouse based slider widget.</td>
 	</tr>
 	<tr>
+		<td class="name"  ><a href="classes/wibox.widget.status.html">wibox.widget.status</a></td>
+		<td class="summary">Several preconfigured status widget for common devices.</td>
+	</tr>
+	<tr>
 		<td class="name"  ><a href="classes/wibox.widget.systray.html">wibox.widget.systray</a></td>
 		<td class="summary">
 
@@ -858,7 +897,7 @@ should be useful for you.</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-01-12 02:04:03 </i>
+<i style="float:right;">Last updated 2018-04-16 15:30:27 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

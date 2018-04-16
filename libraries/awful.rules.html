@@ -33,6 +33,7 @@
 <h2>Contents</h2>
 <ul>
 <li><a href="#Functions">Functions</a></li>
+<li><a href="#Rule_sources">Rule sources</a></li>
 <li><a href="#Tables">Tables</a></li>
 </ul>
 
@@ -48,9 +49,11 @@
   <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
+  <li><a href="../libraries/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.layout.dynamic.html">awful.layout.dynamic</a></li>
   <li><a href="../libraries/awful.layout.dynamic.base.html">awful.layout.dynamic.base</a></li>
+  <li><a href="../libraries/awful.layout.dynamic.base_conditional.html">awful.layout.dynamic.base_conditional</a></li>
   <li><a href="../libraries/awful.layout.dynamic.base_layout.html">awful.layout.dynamic.base_layout</a></li>
   <li><a href="../libraries/awful.layout.dynamic.base_stack.html">awful.layout.dynamic.base_stack</a></li>
   <li><a href="../libraries/awful.layout.dynamic.resize.html">awful.layout.dynamic.resize</a></li>
@@ -82,16 +85,21 @@
   <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
+  <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
   <li><a href="../libraries/gears.string.html">gears.string</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
+  <li><a href="../libraries/keygrabber.html">keygrabber</a></li>
+  <li><a href="../libraries/lib.naughty.constants.html">lib.naughty.constants</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
+  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
+  <li><a href="../libraries/naughty.widget.html">naughty.widget</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -130,7 +138,6 @@
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
@@ -146,6 +153,7 @@
   <li><a href="../classes/wibox.html">wibox</a></li>
   <li><a href="../classes/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
   <li><a href="../classes/wibox.container.background.html">wibox.container.background</a></li>
+  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
@@ -171,6 +179,7 @@
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.separator.html">wibox.widget.separator</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
+  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/wibox.widget.systray.html">wibox.widget.systray</a></li>
   <li><a href="../classes/wibox.widget.textbox.html">wibox.widget.textbox</a></li>
   <li><a href="../classes/wibox.widget.textclock.html">wibox.widget.textclock</a></li>
@@ -181,7 +190,7 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
@@ -252,6 +261,14 @@
 	<td class="summary">Check if a client matches a given set of rules.</td>
 	</tr>
 	<tr>
+	<td class="name" ><a href="#add_rule_source">add_rule_source (name, callback, depends_on, precede)</a></td>
+	<td class="summary">Add a new rule source.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#remove_rule_source">remove_rule_source (name)</a></td>
+	<td class="summary">Remove a source.</td>
+	</tr>
+	<tr>
 	<td class="name" ><a href="#apply">apply (c)</a></td>
 	<td class="summary">Apply awful.rules.rules to a client.</td>
 	</tr>
@@ -262,6 +279,17 @@
 	<tr>
 	<td class="name" ><a href="#execute">execute (c, props[, callbacks])</a></td>
 	<td class="summary">Apply properties and callbacks to a client.</td>
+	</tr>
+</table>
+<h2><a href="#Rule_sources">Rule sources</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#awful.rules">awful.rules</a></td>
+	<td class="summary">The default <a href="../libraries/awful.rules.html#">awful.rules</a> source.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#awful.spawn">awful.spawn</a></td>
+	<td class="summary">The rule source for clients spawned by <a href="../libraries/awful.spawn.html#">awful.spawn</a>.</td>
 	</tr>
 </table>
 <h2><a href="#Tables">Tables</a></h2>
@@ -447,6 +475,114 @@
 
 </dd>
     <dt>
+    <a name = "add_rule_source"></a>
+    <strong>add_rule_source (name, callback, depends_on, precede)</strong>
+    </dt>
+    <dd>
+    Add a new rule source. </p>
+
+<p> A rule source is a provider called when a client is managed (started). It
+ allows to configure the client by providing properties that should be applied.
+ By default, Awesome provides 2 sources:</p>
+
+<ul>
+    <li><a href="../libraries/awful.rules.html#">awful.rules</a>: A declarative matcher</li>
+    <li><a href="../libraries/awful.spawn.html#">awful.spawn</a>: Launch clients with pre-defined properties</li>
+</ul>
+
+<p> It is possible to register new callbacks to modify the properties table
+ before it is applied. Each provider is executed sequentially and modifies the
+ same table. If the first provider set a property, then the second can
+ override it, then the third, etc. Once the providers are exhausted, the
+ properties are applied on the client.</p>
+
+<p> It is important to note that properties themselves have their own
+ dependencies. For example, a <a href="../classes/tag.html#">tag</a> property implies a <a href="../classes/screen.html#">screen</a>. Therefor, if
+ a <a href="../classes/screen.html#">screen</a> is already specified, then it will be ignored when the rule is
+ executed. Properties also have their own priorities. For example, the
+ <a href="../classes/awful.titlebar.html">titlebar</a> and <code>border_width</code> need to be applied before the <code>x</code> and <code>y</code>
+ positions are set. Otherwise, it will be off or the client will shift
+ upward everytime Awesome is restarted. A rule source <em>cannot</em> change this.
+ It is up to the callback to be aware of the dependencies and avoid to
+ introduce issues. For example, if the source wants to set a <a href="../classes/screen.html#">screen</a>, it has
+ to check if the <a href="../classes/tag.html#">tag</a>, <code>tags</code> or <a href="../libraries/awful.rules.html#rules.high_priority_properties.new_tag">new_tag</a> are on that <a href="../classes/screen.html#">screen</a> or remove
+ those properties. Otherwise, they will be ignored once the rule is applied.
+
+
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The provider name. It must be unique.
+        </li>
+        <li><span class="parameter">callback</span> The callback that is called to produce properties.
+        <ul>
+        <li><span class="parameter">c</span>
+            <span class="types"><a class="type" href="../classes/client.html#">client</a></span>
+         The client
+        </li>
+        <li><span class="parameter">properties</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         The current properties. The callback should
+  add to and overwrite properties in this table
+        </li>
+        <li><span class="parameter">callbacks</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         A table of all callbacks scheduled to be
+  executed after the main properties are applied.
+        </li>
+        </li></ul>
+        <li><span class="parameter">depends_on</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         A list of names of sources this source depends on
+  (sources that must be executed <em>before</em> <code>name</code>.
+         (<em>default</em> {})
+        </li>
+        <li><span class="parameter">precede</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         A list of names of sources this source have a
+  priority over.
+         (<em>default</em> {})
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        Returns false if a dependency conflict was found.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "remove_rule_source"></a>
+    <strong>remove_rule_source (name)</strong>
+    </dt>
+    <dd>
+    Remove a source.
+
+
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The source name.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        If the source was removed
+    </ol>
+
+
+
+
+</dd>
+    <dt>
     <a name = "apply"></a>
     <strong>apply (c)</strong>
     </dt>
@@ -523,6 +659,51 @@
          (<em>optional</em>)
         </li>
     </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Rule_sources"></a>Rule sources</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "awful.rules"></a>
+    <strong>awful.rules</strong>
+    </dt>
+    <dd>
+    The default <a href="../libraries/awful.rules.html#">awful.rules</a> source. </p>
+
+<p> <strong>Has priority over:</strong></p>
+
+<p> <em>nothing</em>
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "awful.spawn"></a>
+    <strong>awful.spawn</strong>
+    </dt>
+    <dd>
+
+<p>The rule source for clients spawned by <a href="../libraries/awful.spawn.html#">awful.spawn</a>. </p>
+
+<p> <strong>Has priority over:</strong></p>
+
+<ul>
+    <li><a href="../libraries/awful.rules.html#">awful.rules</a></li>
+</ul>
+
+
+
+
 
 
 
@@ -731,7 +912,7 @@ end
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-01-12 02:04:03 </i>
+<i style="float:right;">Last updated 2018-04-16 15:30:27 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

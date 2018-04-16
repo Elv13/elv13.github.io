@@ -68,7 +68,6 @@
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
@@ -84,6 +83,7 @@
   <li><a href="../classes/wibox.html">wibox</a></li>
   <li><a href="../classes/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
   <li><a href="../classes/wibox.container.background.html">wibox.container.background</a></li>
+  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
@@ -109,6 +109,7 @@
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.separator.html">wibox.widget.separator</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
+  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/wibox.widget.systray.html">wibox.widget.systray</a></li>
   <li><a href="../classes/wibox.widget.textbox.html">wibox.widget.textbox</a></li>
   <li><a href="../classes/wibox.widget.textclock.html">wibox.widget.textclock</a></li>
@@ -125,9 +126,11 @@
   <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
+  <li><a href="../libraries/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.layout.dynamic.html">awful.layout.dynamic</a></li>
   <li><a href="../libraries/awful.layout.dynamic.base.html">awful.layout.dynamic.base</a></li>
+  <li><a href="../libraries/awful.layout.dynamic.base_conditional.html">awful.layout.dynamic.base_conditional</a></li>
   <li><a href="../libraries/awful.layout.dynamic.base_layout.html">awful.layout.dynamic.base_layout</a></li>
   <li><a href="../libraries/awful.layout.dynamic.base_stack.html">awful.layout.dynamic.base_stack</a></li>
   <li><a href="../libraries/awful.layout.dynamic.resize.html">awful.layout.dynamic.resize</a></li>
@@ -159,16 +162,21 @@
   <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
+  <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
   <li><a href="../libraries/gears.string.html">gears.string</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
+  <li><a href="../libraries/keygrabber.html">keygrabber</a></li>
+  <li><a href="../libraries/lib.naughty.constants.html">lib.naughty.constants</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
+  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
+  <li><a href="../libraries/naughty.widget.html">naughty.widget</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -183,7 +191,7 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
@@ -253,27 +261,17 @@
 
 
 <pre>
-<span class="keyword">local</span> wb = awful.wibar {
-    widget = {
-        <span class="keyword">nil</span>,
-        <span class="keyword">nil</span>,
-        {
-            {
-                text   = <span class="string">'foo  '</span>,
-                widget = wibox.widget.textbox
-            },
-            layout = wibox.layout.fixed.horizontal
-        },
-        layout = wibox.layout.align.horizontal,
-    }
-}
+<span class="keyword">local</span> lb = awful.widget.layoutbox(screen[<span class="number">1</span>])
+<span class="keyword">local</span> l = wibox.layout.align.horizontal(<span class="keyword">nil</span>, lb, <span class="keyword">nil</span>)
+l.expand = <span class="string">'outside'</span>
+<span class="keyword">local</span> wb = awful.wibar { widget = l }
 <span class="keyword">local</span> p = awful.popup {
     widget = wibox.widget {
         awful.widget.layoutlist {
             screen      = <span class="number">1</span>,
             base_layout = wibox.widget {
                 spacing         = <span class="number">5</span>,
-                forced_num_cols = <span class="number">5</span>,
+                forced_num_cols = <span class="number">3</span>,
                 layout          = wibox.layout.grid.vertical(),
             },
             widget_template = {
@@ -297,12 +295,12 @@
         margins = <span class="number">4</span>,
         widget  = wibox.container.margin,
     },
-    border_color = beautiful.border_color,
-    border_width = beautiful.border_width,
-    placement    = awful.placement.centered,
-    ontop        = <span class="keyword">true</span>,
-    shape        = gears.shape.rounded_rect
+    preferred_anchors = <span class="string">'middle'</span>,
+    border_color      = beautiful.border_color,
+    border_width      = beautiful.border_width,
+    shape             = gears.shape.infobubble,
 }
+p:bind_to_widget(lb)
 </pre>
 
 </p>
@@ -323,7 +321,7 @@
 <h2><a href="#Object_properties">Object properties</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#awful.widget.layoutlist.layout">awful.widget.layoutlist.layout</a></td>
+	<td class="name" ><a href="#awful.widget.layoutlist.base_layout">awful.widget.layoutlist.base_layout</a></td>
 	<td class="summary">The layoutlist layout.</td>
 	</tr>
 	<tr>
@@ -464,8 +462,8 @@
 
     <dl class="function">
     <dt>
-    <a name = "awful.widget.layoutlist.layout"></a>
-    <strong>awful.widget.layoutlist.layout</strong>
+    <a name = "awful.widget.layoutlist.base_layout"></a>
+    <strong>awful.widget.layoutlist.base_layout</strong>
     </dt>
     <dd>
     The layoutlist layout.
@@ -1157,7 +1155,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-01-12 02:04:03 </i>
+<i style="float:right;">Last updated 2018-04-16 15:30:27 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
