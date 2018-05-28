@@ -35,6 +35,7 @@
 <li><a href="#Functions">Functions</a></li>
 <li><a href="#Object_properties">Object properties</a></li>
 <li><a href="#Signals">Signals</a></li>
+<li><a href="#Theme_variables">Theme variables</a></li>
 <li><a href="#Methods">Methods</a></li>
 </ul>
 
@@ -68,6 +69,7 @@
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
+  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
@@ -126,7 +128,6 @@
   <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
-  <li><a href="../libraries/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.layout.dynamic.html">awful.layout.dynamic</a></li>
   <li><a href="../libraries/awful.layout.dynamic.base.html">awful.layout.dynamic.base</a></li>
@@ -167,16 +168,12 @@
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
-  <li><a href="../libraries/keygrabber.html">keygrabber</a></li>
-  <li><a href="../libraries/lib.naughty.constants.html">lib.naughty.constants</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
-  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
-  <li><a href="../libraries/naughty.widget.html">naughty.widget</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -191,7 +188,7 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
@@ -211,6 +208,29 @@
 <p>
 
 
+<p> This is what the layoutlist looks like by default with a vertical layout:</p>
+
+
+
+<p><img src="../images/AUTOGEN_awful_widget_layoutlist_default.svg" alt="Usage example"/></p>
+
+
+
+<pre>
+awful.popup {
+    widget = awful.widget.layoutlist {
+        screen      = <span class="number">1</span>,
+        base_layout = wibox.layout.flex.vertical()
+    },
+    maximum_height = #awful.layout.layouts * <span class="number">24</span>,
+    minimum_height = #awful.layout.layouts * <span class="number">24</span>,
+    placement      = awful.placement.centered,
+}
+</pre>
+
+<p> In the second example, it is shown how to create a popup in centered in
+ the screen:</p>
+
 
 
 <p><img src="../images/AUTOGEN_awful_widget_layoutlist_popup.svg" alt="Usage example"/></p>
@@ -218,7 +238,7 @@
 
 
 <pre>
-<span class="keyword">local</span> p = awful.popup {
+awful.popup {
     widget = wibox.widget {
         awful.widget.layoutlist {
             screen      = <span class="number">1</span>,
@@ -256,6 +276,11 @@
 }
 </pre>
 
+<p> This example show how to extend the <a href="../classes/awful.widget.layoutbox.html#">awful.widget.layoutbox</a> to show a layout
+ list popup:</p>
+
+
+
 <p><img src="../images/AUTOGEN_awful_widget_layoutlist_bar.svg" alt="Usage example"/></p>
 
 
@@ -264,7 +289,7 @@
 <span class="keyword">local</span> lb = awful.widget.layoutbox(screen[<span class="number">1</span>])
 <span class="keyword">local</span> l = wibox.layout.align.horizontal(<span class="keyword">nil</span>, lb, <span class="keyword">nil</span>)
 l.expand = <span class="string">'outside'</span>
-<span class="keyword">local</span> wb = awful.wibar { widget = l }
+awful.wibar { widget = l }
 <span class="keyword">local</span> p = awful.popup {
     widget = wibox.widget {
         awful.widget.layoutlist {
@@ -303,10 +328,49 @@ l.expand = <span class="string">'outside'</span>
 p:bind_to_widget(lb)
 </pre>
 
+<p> This example show how to add a layout subset to the default wibar:</p>
+
+
+
+<p><img src="../images/AUTOGEN_awful_widget_layoutlist_wibar.svg" alt="Usage example"/></p>
+
+
+
+<pre>
+wb:setup {
+    layout = wibox.layout.align.horizontal,
+    { <span class="comment">-- Left widgets
+</span>        mytaglist,
+        awful.widget.layoutlist {
+            screen = <span class="number">1</span>,
+            style = {
+                disable_name = <span class="keyword">true</span>,
+                spacing      = <span class="number">3</span>,
+            },
+            layouts = {
+                awful.layout.suit.floating,
+                awful.layout.suit.tile,
+                awful.layout.suit.tile.left,
+                awful.layout.suit.tile.bottom,
+                awful.layout.suit.tile.top,
+            }
+        },
+        layout = wibox.layout.fixed.horizontal,
+    },
+    mytasklist, <span class="comment">-- Middle widget
+</span>    { <span class="comment">-- Right widgets
+</span>        layout = wibox.layout.fixed.horizontal,
+        mykeyboardlayout,
+        mytextclock,
+        mylayoutbox,
+    },
+}
+</pre>
+
 </p>
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2017 Emmanuel Lepage Vallee</li>
+        <li><strong>Copyright</strong>: 2010, 2018 Emmanuel Lepage Vallee</li>
         <li><strong>Author</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;</li>
     </ul>
 
@@ -322,7 +386,7 @@ p:bind_to_widget(lb)
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#awful.widget.layoutlist.base_layout">awful.widget.layoutlist.base_layout</a></td>
-	<td class="summary">The layoutlist layout.</td>
+	<td class="summary">The layoutlist default widget layout.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.widget.layoutlist.widget_template">awful.widget.layoutlist.widget_template</a></td>
@@ -331,6 +395,10 @@ p:bind_to_widget(lb)
 	<tr>
 	<td class="name" ><a href="#awful.widget.layoutlist.screen">awful.widget.layoutlist.screen</a></td>
 	<td class="summary">The layoutlist screen.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#awful.widget.layoutlist.buttons">awful.widget.layoutlist.buttons</a></td>
+	<td class="summary">The layoutlist buttons.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.widget.layoutlist.forced_height">awful.widget.layoutlist.forced_height</a></td>
@@ -374,6 +442,73 @@ p:bind_to_widget(lb)
 	<tr>
 	<td class="name" ><a href="#mouse::leave">mouse::leave</a></td>
 	<td class="summary">When the mouse leave a widget.</td>
+	</tr>
+</table>
+<h2><a href="#Theme_variables">Theme variables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_fg_normal">beautiful.layoutlist_fg_normal</a></td>
+	<td class="summary">The default foreground (text) color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_bg_normal">beautiful.layoutlist_bg_normal</a></td>
+	<td class="summary">The default background color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_fg_selected">beautiful.layoutlist_fg_selected</a></td>
+	<td class="summary">The selected layout foreground (text) color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_bg_selected">beautiful.layoutlist_bg_selected</a></td>
+	<td class="summary">The selected layout background color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_disable_icon">beautiful.layoutlist_disable_icon</a></td>
+	<td class="summary">Disable the layout icons (only show the name label).</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_disable_name">beautiful.layoutlist_disable_name</a></td>
+	<td class="summary">Disable the layout name label (only show the icon).</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_font">beautiful.layoutlist_font</a></td>
+	<td class="summary">The layoutlist font.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_align">beautiful.layoutlist_align</a></td>
+	<td class="summary">The selected layout alignment.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_font_selected">beautiful.layoutlist_font_selected</a></td>
+	<td class="summary">The selected layout title alignment.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_spacing">beautiful.layoutlist_spacing</a></td>
+	<td class="summary">The space between the layouts.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_shape">beautiful.layoutlist_shape</a></td>
+	<td class="summary">The default layoutlist elements shape.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_shape_border_width">beautiful.layoutlist_shape_border_width</a></td>
+	<td class="summary">The default layoutlist elements border width.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_shape_border_color">beautiful.layoutlist_shape_border_color</a></td>
+	<td class="summary">The default layoutlist elements border color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_shape_selected">beautiful.layoutlist_shape_selected</a></td>
+	<td class="summary">The selected layout shape.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_shape_border_width_selected">beautiful.layoutlist_shape_border_width_selected</a></td>
+	<td class="summary">The selected layout border width.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.layoutlist_shape_border_color_selected">beautiful.layoutlist_shape_border_color_selected</a></td>
+	<td class="summary">The selected layout border color.</td>
 	</tr>
 </table>
 <h2><a href="#Methods">Methods</a></h2>
@@ -434,6 +569,14 @@ p:bind_to_widget(lb)
          The widget layout (not to be confused with client
   layout).
         </li>
+        <li><span class="parameter">buttons</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         A table with buttons binding to set.
+        </li>
+        <li><span class="parameter">layouts</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         A list of layouts to display.
+        </li>
         <li><span class="parameter">widget_template</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A custom widget to be used for each action.
@@ -442,6 +585,105 @@ p:bind_to_widget(lb)
         <li><span class="parameter">screen</span>
             <span class="types"><a class="type" href="../classes/screen.html#">screen</a></span>
          A screen (mandatory)
+        </li>
+        <li><span class="parameter">style</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Extra look and feel parameters
+         (<em>default</em> {})
+        </li>
+        <li><span class="parameter">style.disable_icon</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.disable_name</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.fg_normal</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">pattern</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.bg_normal</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">pattern</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.fg_selected</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">pattern</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.bg_selected</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">pattern</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.font</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.font_selected</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.align</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         <em>left</em>, <em>right</em> or <em>center</em>
+        </li>
+        <li><span class="parameter">style.spacing</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.shape</span>
+            <span class="types"><span class="type">gears.shape</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.shape_border_width</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.shape_border_color</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">pattern</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.shape_selected</span>
+            <span class="types"><span class="type">gears.shape</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.shape_border_width_selected</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">pattern</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">style.shape_border_color_selected</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">pattern</span></span>
+
+
+
         </li>
         </li></ul>
     </ul>
@@ -466,7 +708,7 @@ p:bind_to_widget(lb)
     <strong>awful.widget.layoutlist.base_layout</strong>
     </dt>
     <dd>
-    The layoutlist layout.
+    The layoutlist default widget layout.
  If no layout is specified, a <a href="../classes/wibox.layout.fixed.html#wibox.layout.fixed.vertical">wibox.layout.fixed.vertical</a> will be created
  automatically.
 
@@ -484,7 +726,8 @@ p:bind_to_widget(lb)
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/wibox.layout.fixed.html#wibox.layout.fixed.vertical">wibox.layout.fixed.vertical</a>
+         <li><a href="../classes/wibox.layout.fixed.html#wibox.layout.fixed.vertical">wibox.layout.fixed.vertical</a></li>
+         <li><a href="../classes/awful.widget.layoutlist.html#awful.widget.layoutlist.base_layout">base_layout</a></li>
     </ul>
 
 
@@ -522,6 +765,38 @@ p:bind_to_widget(lb)
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">screen</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "awful.widget.layoutlist.buttons"></a>
+    <strong>awful.widget.layoutlist.buttons</strong>
+    </dt>
+    <dd>
+
+<p>The layoutlist buttons. </p>
+
+<p> The default is:</p>
+
+<pre><code>gears.table.join(
+    awful.button({ }, 1, awful.layout.set)
+)
+</code></pre>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
 
 
 
@@ -978,6 +1253,414 @@ p:bind_to_widget(lb)
 
 </dd>
 </dl>
+    <h2 class="section-header "><a name="Theme_variables"></a>Theme variables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "beautiful.layoutlist_fg_normal"></a>
+    <strong>beautiful.layoutlist_fg_normal</strong>
+    </dt>
+    <dd>
+    The default foreground (text) color.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">fg_normal</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">pattern</span></span>
+
+
+
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_bg_normal"></a>
+    <strong>beautiful.layoutlist_bg_normal</strong>
+    </dt>
+    <dd>
+    The default background color.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">bg_normal</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">pattern</span></span>
+
+
+
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_fg_selected"></a>
+    <strong>beautiful.layoutlist_fg_selected</strong>
+    </dt>
+    <dd>
+    The selected layout foreground (text) color.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">fg_selected</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">pattern</span></span>
+
+
+
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_bg_selected"></a>
+    <strong>beautiful.layoutlist_bg_selected</strong>
+    </dt>
+    <dd>
+    The selected layout background color.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">bg_selected</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">pattern</span></span>
+
+
+
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_disable_icon"></a>
+    <strong>beautiful.layoutlist_disable_icon</strong>
+    </dt>
+    <dd>
+    Disable the layout icons (only show the name label).
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">layoutlist_disable_icon</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_disable_name"></a>
+    <strong>beautiful.layoutlist_disable_name</strong>
+    </dt>
+    <dd>
+    Disable the layout name label (only show the icon).
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">layoutlist_disable_name</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_font"></a>
+    <strong>beautiful.layoutlist_font</strong>
+    </dt>
+    <dd>
+    The layoutlist font.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">font</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_align"></a>
+    <strong>beautiful.layoutlist_align</strong>
+    </dt>
+    <dd>
+    The selected layout alignment.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">align</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         <em>left</em>, <em>right</em> or <em>center</em>
+         (<em>default</em> left)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_font_selected"></a>
+    <strong>beautiful.layoutlist_font_selected</strong>
+    </dt>
+    <dd>
+    The selected layout title alignment.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">font_selected</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_spacing"></a>
+    <strong>beautiful.layoutlist_spacing</strong>
+    </dt>
+    <dd>
+    The space between the layouts.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">spacing</span>
+            <span class="types"><span class="type">number</span></span>
+         The spacing between tasks.
+         (<em>default</em> 0)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_shape"></a>
+    <strong>beautiful.layoutlist_shape</strong>
+    </dt>
+    <dd>
+    The default layoutlist elements shape.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">shape</span>
+            <span class="types"><span class="type">gears.shape</span></span>
+
+
+
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_shape_border_width"></a>
+    <strong>beautiful.layoutlist_shape_border_width</strong>
+    </dt>
+    <dd>
+    The default layoutlist elements border width.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">shape_border_width</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+
+         (<em>default</em> 0)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_shape_border_color"></a>
+    <strong>beautiful.layoutlist_shape_border_color</strong>
+    </dt>
+    <dd>
+    The default layoutlist elements border color.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">shape_border_color</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">color</span></span>
+
+
+
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_shape_selected"></a>
+    <strong>beautiful.layoutlist_shape_selected</strong>
+    </dt>
+    <dd>
+    The selected layout shape.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">shape_selected</span>
+            <span class="types"><span class="type">gears.shape</span></span>
+
+
+
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_shape_border_width_selected"></a>
+    <strong>beautiful.layoutlist_shape_border_width_selected</strong>
+    </dt>
+    <dd>
+    The selected layout border width.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">shape_border_width_selected</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+
+         (<em>default</em> 0)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.layoutlist_shape_border_color_selected"></a>
+    <strong>beautiful.layoutlist_shape_border_color_selected</strong>
+    </dt>
+    <dd>
+    The selected layout border color.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">shape_border_color_selected</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">color</span></span>
+
+
+
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+</dl>
     <h2 class="section-header "><a name="Methods"></a>Methods</h2>
 
     <dl class="function">
@@ -1155,7 +1838,7 @@ p:bind_to_widget(lb)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-04-16 15:30:27 </i>
+<i style="float:right;">Last updated 2018-05-28 17:02:13 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
