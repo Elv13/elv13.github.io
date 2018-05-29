@@ -22,7 +22,7 @@
 <clipPath id="clip7">
   <path d="M 83 80 C 83 74.476562 87.476562 70 93 70 L 227 70 C 232.523438 70 237 74.476562 237 80 L 237 161 C 237 166.523438 232.523438 171 227 171 L 93 171 C 87.476562 171 83 166.523438 83 161 Z M 83 80 "/>
 </clipPath>
-<image id="image13" width="22" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAIAAABL1vtsAAAABmJLR0QA/wD/AP+gvaeTAAAAQUlEQVQ4jWM0NzdnoAwwUah/1AhqG8H4//9/4lVbWFhgMWI0XQw/I1hwSZw4cQKrOGbSwGkE1lSE1dzBERbDxggAF2YLHQjOKHUAAAAASUVORK5CYII="/>
+<image id="image11" width="22" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAIAAABL1vtsAAAABmJLR0QA/wD/AP+gvaeTAAAAQUlEQVQ4jWM0NzdnoAwwUah/1AhqG8H4//9/4lVbWFhgMWI0XQw/I1hwSZw4cQKrOGbSwGkE1lSE1dzBERbDxggAF2YLHQjOKHUAAAAASUVORK5CYII="/>
 <clipPath id="clip8">
   <path d="M 83 123 L 131 123 L 131 171 L 83 171 Z M 83 123 "/>
 </clipPath>
@@ -105,7 +105,7 @@
   <path d="M 83 80 C 83 74.476562 87.476562 70 93 70 L 227 70 C 232.523438 70 237 74.476562 237 80 L 237 161 C 237 166.523438 232.523438 171 227 171 L 93 171 C 87.476562 171 83 166.523438 83 161 Z M 83 80 "/>
 </clipPath>
 </defs>
-<g id="surface10">
+<g id="surface8">
 <path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.266667;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 0.75 0.75 L 319.25 0.75 L 319.25 239.25 L 0.75 239.25 Z M 0.75 0.75 "/>
 <path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.2;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 10 10 L 310 10 L 310 230 L 10 230 Z M 10 10 "/>
 <g clip-path="url(#clip1)" clip-rule="nonzero">
@@ -122,7 +122,7 @@
 </g>
 <g clip-path="url(#clip6)" clip-rule="nonzero">
 <g clip-path="url(#clip7)" clip-rule="nonzero">
-<use xlink:href="#image13" transform="matrix(2.5,0,0,2.5,87,74)"/>
+<use xlink:href="#image11" transform="matrix(2.5,0,0,2.5,87,74)"/>
 </g>
 </g>
 <g clip-path="url(#clip8)" clip-rule="nonzero">
@@ -134,7 +134,7 @@
 </g>
 <g clip-path="url(#clip11)" clip-rule="nonzero">
 <g clip-path="url(#clip12)" clip-rule="nonzero">
-<use xlink:href="#image13" transform="matrix(2.5,0,0,2.5,87,127)"/>
+<use xlink:href="#image11" transform="matrix(2.5,0,0,2.5,87,127)"/>
 </g>
 </g>
 <g clip-path="url(#clip13)" clip-rule="nonzero">
@@ -146,7 +146,7 @@
 </g>
 <g clip-path="url(#clip16)" clip-rule="nonzero">
 <g clip-path="url(#clip17)" clip-rule="nonzero">
-<use xlink:href="#image13" transform="matrix(2.5,0,0,2.5,140,74)"/>
+<use xlink:href="#image11" transform="matrix(2.5,0,0,2.5,140,74)"/>
 </g>
 </g>
 <g clip-path="url(#clip18)" clip-rule="nonzero">
@@ -158,7 +158,7 @@
 </g>
 <g clip-path="url(#clip21)" clip-rule="nonzero">
 <g clip-path="url(#clip22)" clip-rule="nonzero">
-<use xlink:href="#image13" transform="matrix(2.5,0,0,2.5,140,127)"/>
+<use xlink:href="#image11" transform="matrix(2.5,0,0,2.5,140,127)"/>
 </g>
 </g>
 <g clip-path="url(#clip23)" clip-rule="nonzero">
@@ -170,7 +170,7 @@
 </g>
 <g clip-path="url(#clip26)" clip-rule="nonzero">
 <g clip-path="url(#clip27)" clip-rule="nonzero">
-<use xlink:href="#image13" transform="matrix(2.5,0,0,2.5,193,74)"/>
+<use xlink:href="#image11" transform="matrix(2.5,0,0,2.5,193,74)"/>
 </g>
 </g>
 <g clip-path="url(#clip28)" clip-rule="nonzero">
@@ -182,7 +182,7 @@
 </g>
 <g clip-path="url(#clip31)" clip-rule="nonzero">
 <g clip-path="url(#clip32)" clip-rule="nonzero">
-<use xlink:href="#image13" transform="matrix(2.5,0,0,2.5,193,127)"/>
+<use xlink:href="#image11" transform="matrix(2.5,0,0,2.5,193,127)"/>
 </g>
 </g>
 <g clip-path="url(#clip33)" clip-rule="nonzero">

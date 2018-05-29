@@ -205,7 +205,7 @@
 <h1>Class <code>awful.tooltip</code></h1>
 <p>Tooltip module for awesome objects.</p>
 <p> A tooltip is a small hint displayed when the mouse cursor
- hovers a specific item.
+ hovers over a specific item.
  In awesome, a tooltip can be linked with almost any
  object having a <code>:connect_signal()</code> method and receiving
  <code>mouse::enter</code> and <code>mouse::leave</code> signals.</p>
@@ -259,40 +259,52 @@ myclock_t:remove_from_object(obj2)
 <h2><a href="#Object_properties">Object properties</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#awful.tooltip.wibox">awful.tooltip.wibox</a></td>
-	<td class="summary">The wibox.</td>
+	<td class="name" ><a href="#awful.tooltip.wibox">wibox</a></td>
+	<td class="summary">The wibox containing the tooltip widgets.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#awful.tooltip.visible">awful.tooltip.visible</a></td>
+	<td class="name" ><a href="#awful.tooltip.visible">visible</a></td>
 	<td class="summary">Is the tooltip visible?</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#awful.tooltip.align">awful.tooltip.align</a></td>
+	<td class="name" ><a href="#awful.tooltip.align">align</a></td>
 	<td class="summary">The horizontal alignment.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#awful.tooltip.shape">awful.tooltip.shape</a></td>
+	<td class="name" ><a href="#awful.tooltip.shape">shape</a></td>
 	<td class="summary">The shape of the tooltip window.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#awful.tooltip.mode">awful.tooltip.mode</a></td>
+	<td class="name" ><a href="#awful.tooltip.mode">mode</a></td>
 	<td class="summary">Set the tooltip positioning mode.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#awful.tooltip.preferred_positions">awful.tooltip.preferred_positions</a></td>
+	<td class="name" ><a href="#awful.tooltip.preferred_positions">preferred_positions</a></td>
 	<td class="summary">The preferred positions when in <code>outside</code> mode.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#awful.tooltip.text">awful.tooltip.text</a></td>
+	<td class="name" ><a href="#awful.tooltip.text">text</a></td>
 	<td class="summary">Change displayed text.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#awful.tooltip.markup">awful.tooltip.markup</a></td>
+	<td class="name" ><a href="#awful.tooltip.markup">markup</a></td>
 	<td class="summary">Change displayed markup.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#awful.tooltip.timeout">awful.tooltip.timeout</a></td>
+	<td class="name" ><a href="#awful.tooltip.timeout">timeout</a></td>
 	<td class="summary">Change the tooltip's update interval.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#awful.tooltip.margins">margins</a></td>
+	<td class="summary">Set all margins around the tooltip textbox</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#awful.tooltip.margins_leftright">margins_leftright</a></td>
+	<td class="summary">Set the margins around the left and right of the tooltip textbox</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#awful.tooltip.margins_topbottom">margins_topbottom</a></td>
+	<td class="summary">Set the margins around the top and bottom of the tooltip textbox</td>
 	</tr>
 </table>
 <h2><a href="#Theme_variables">Theme variables</a></h2>
@@ -403,6 +415,41 @@ myclock_t:remove_from_object(obj2)
          The shape
          (<em>default</em> nil)
         </li>
+        <li><span class="parameter">bg</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The background color
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">fg</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The foreground color
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">border_color</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The tooltip border color
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">border_width</span>
+            <span class="types"><span class="type">number</span></span>
+         The tooltip border width
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">align</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The horizontal alignment
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">font</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The tooltip font
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">opacity</span>
+            <span class="types"><span class="type">number</span></span>
+         The tooltip opacity
+         (<em>optional</em>)
+        </li>
         </li></ul>
     </ul>
 
@@ -420,6 +467,7 @@ myclock_t:remove_from_object(obj2)
          <li><a href="../classes/awful.tooltip.html#awful.tooltip.timeout">timeout</a></li>
          <li><a href="../classes/awful.tooltip.html#awful.tooltip.text">text</a></li>
          <li><a href="../classes/awful.tooltip.html#awful.tooltip.markup">markup</a></li>
+         <li><a href="../classes/awful.tooltip.html#awful.tooltip.align">align</a></li>
     </ul>
 
 
@@ -430,10 +478,10 @@ myclock_t:remove_from_object(obj2)
     <dl class="function">
     <dt>
     <a name = "awful.tooltip.wibox"></a>
-    <strong>awful.tooltip.wibox</strong>
+    <strong>wibox</strong>
     </dt>
     <dd>
-    The wibox.
+    The wibox containing the tooltip widgets.
 
 
     <h3>Type:</h3>
@@ -450,7 +498,7 @@ myclock_t:remove_from_object(obj2)
 </dd>
     <dt>
     <a name = "awful.tooltip.visible"></a>
-    <strong>awful.tooltip.visible</strong>
+    <strong>visible</strong>
     </dt>
     <dd>
     Is the tooltip visible?
@@ -472,7 +520,7 @@ myclock_t:remove_from_object(obj2)
 </dd>
     <dt>
     <a name = "awful.tooltip.align"></a>
-    <strong>awful.tooltip.align</strong>
+    <strong>align</strong>
     </dt>
     <dd>
 
@@ -506,7 +554,7 @@ myclock_t:remove_from_object(obj2)
 </dd>
     <dt>
     <a name = "awful.tooltip.shape"></a>
-    <strong>awful.tooltip.shape</strong>
+    <strong>shape</strong>
     </dt>
     <dd>
     The shape of the tooltip window.
@@ -527,7 +575,7 @@ myclock_t:remove_from_object(obj2)
 </dd>
     <dt>
     <a name = "awful.tooltip.mode"></a>
-    <strong>awful.tooltip.mode</strong>
+    <strong>mode</strong>
     </dt>
     <dd>
 
@@ -562,7 +610,7 @@ myclock_t:remove_from_object(obj2)
 </dd>
     <dt>
     <a name = "awful.tooltip.preferred_positions"></a>
-    <strong>awful.tooltip.preferred_positions</strong>
+    <strong>preferred_positions</strong>
     </dt>
     <dd>
 
@@ -594,7 +642,7 @@ myclock_t:remove_from_object(obj2)
 </dd>
     <dt>
     <a name = "awful.tooltip.text"></a>
-    <strong>awful.tooltip.text</strong>
+    <strong>text</strong>
     </dt>
     <dd>
     Change displayed text.
@@ -615,12 +663,16 @@ myclock_t:remove_from_object(obj2)
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/wibox.widget.textbox.html#">wibox.widget.textbox</a>
+    </ul>
 
 
 </dd>
     <dt>
     <a name = "awful.tooltip.markup"></a>
-    <strong>awful.tooltip.markup</strong>
+    <strong>markup</strong>
     </dt>
     <dd>
     Change displayed markup.
@@ -641,12 +693,16 @@ myclock_t:remove_from_object(obj2)
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/wibox.widget.textbox.html#">wibox.widget.textbox</a>
+    </ul>
 
 
 </dd>
     <dt>
     <a name = "awful.tooltip.timeout"></a>
-    <strong>awful.tooltip.timeout</strong>
+    <strong>timeout</strong>
     </dt>
     <dd>
     Change the tooltip's update interval.
@@ -661,6 +717,81 @@ myclock_t:remove_from_object(obj2)
         <li><span class="parameter">timeout</span>
             <span class="types"><span class="type">number</span></span>
          The timeout value.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "awful.tooltip.margins"></a>
+    <strong>margins</strong>
+    </dt>
+    <dd>
+    Set all margins around the tooltip textbox
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+            <span class="types"><a class="type" href="../classes/awful.tooltip.html">tooltip</a></span>
+         A tooltip object
+        </li>
+        <li><span class="parameter">New</span>
+            <span class="types"><span class="type">number</span></span>
+         margins value
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "awful.tooltip.margins_leftright"></a>
+    <strong>margins_leftright</strong>
+    </dt>
+    <dd>
+    Set the margins around the left and right of the tooltip textbox
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+            <span class="types"><a class="type" href="../classes/awful.tooltip.html">tooltip</a></span>
+         A tooltip object
+        </li>
+        <li><span class="parameter">New</span>
+            <span class="types"><span class="type">number</span></span>
+         margins value
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "awful.tooltip.margins_topbottom"></a>
+    <strong>margins_topbottom</strong>
+    </dt>
+    <dd>
+    Set the margins around the top and bottom of the tooltip textbox
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+            <span class="types"><a class="type" href="../classes/awful.tooltip.html">tooltip</a></span>
+         A tooltip object
+        </li>
+        <li><span class="parameter">New</span>
+            <span class="types"><span class="type">number</span></span>
+         margins value
         </li>
     </ul>
 
@@ -763,7 +894,7 @@ myclock_t:remove_from_object(obj2)
     </dt>
     <dd>
     The default tooltip shape.
- By default, all tooltips are rectangles, however, by setting this variables,
+ The default shape for all tooltips is a rectangle. However, by setting this variable
  they can default to rounded rectangle or stretched octogons.
 
 
@@ -899,7 +1030,7 @@ myclock_t:remove_from_object(obj2)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-05-28 17:02:13 </i>
+<i style="float:right;">Last updated 2018-05-28 20:57:28 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
