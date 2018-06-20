@@ -131,17 +131,6 @@
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.html">awful.layout.dynamic</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.base.html">awful.layout.dynamic.base</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.base_conditional.html">awful.layout.dynamic.base_conditional</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.base_layout.html">awful.layout.dynamic.base_layout</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.base_stack.html">awful.layout.dynamic.base_stack</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.resize.html">awful.layout.dynamic.resize</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.suit.html">awful.layout.dynamic.suit</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.suit.max.html">awful.layout.dynamic.suit.max</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.suit.treesome.html">awful.layout.dynamic.suit.treesome</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.tabbed.html">awful.layout.dynamic.tabbed</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.wrapper.html">awful.layout.dynamic.wrapper</a></li>
   <li><a href="../libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="../libraries/awful.mouse.html">awful.mouse</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
@@ -157,6 +146,12 @@
   <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
   <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
+  <li><a href="../libraries/dynamite.html">dynamite</a></li>
+  <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
+  <li><a href="../libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
+  <li><a href="../libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
+  <li><a href="../libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
@@ -170,6 +165,10 @@
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
+  <li><a href="../libraries/lib.dynamite.base.html">lib.dynamite.base</a></li>
+  <li><a href="../libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
+  <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
+  <li><a href="../libraries/lib.dynamite.wrapper.html">lib.dynamite.wrapper</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
@@ -980,7 +979,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a>
+         <a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a>
     </ul>
 
 
@@ -1398,14 +1397,14 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 
-<p><img src="../images/AUTOGEN_awful_layout_dynamic_suit_tile_mwfact.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_mwfact.svg" alt="Usage example"/></p>
 
 
 <p> Here is the property effect on the magnifier layout:</p>
 
 
 
-<p><img src="../images/AUTOGEN_awful_layout_dynamic_suit_magnifier_mwfact.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_dynamite_suit_magnifier_mwfact.svg" alt="Usage example"/></p>
 
 
 <p> <strong>Signal:</strong></p>
@@ -1431,7 +1430,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <ul>
          <li><a href="../classes/tag.html#beautiful.master_count">master_count</a></li>
          <li><a href="../classes/tag.html#tag.column_count">column_count</a></li>
-         <li><a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a></li>
+         <li><a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a></li>
          <li><a href="../classes/tag.html#tag.gap">gap</a></li>
     </ul>
 
@@ -1483,7 +1482,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 <pre><code> local t = mouse.screen.selected_tag --luacheck: no unused
  -- The first argument (_) is a tag, it is here unused.
- t.layout = awful.layout.dynamic('vertical_fair', function(_)
+ t.layout = dynamite('vertical_fair', function(_)
      return wibox.layout.flex.horizontal()
  end)
 </code></pre>
@@ -1574,7 +1573,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 
-<p><img src="../images/AUTOGEN_awful_layout_dynamic_suit_tile_gap.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_gap.svg" alt="Usage example"/></p>
 
 
 <p> <strong>Signal:</strong></p>
@@ -1597,7 +1596,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#tag.gap_single_client">gap_single_client</a>
+         <a href="../classes/tag.html#beautiful.gap_single_client">gap_single_client</a>
     </ul>
 
 
@@ -1680,7 +1679,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 
-<p><img src="../images/AUTOGEN_awful_layout_dynamic_suit_tile_nmaster.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_nmaster.svg" alt="Usage example"/></p>
 
 
 <p> <strong>Signal:</strong></p>
@@ -1747,7 +1746,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 
-<p><img src="../images/AUTOGEN_awful_layout_dynamic_suit_tile_ncol.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_ncol.svg" alt="Usage example"/></p>
 
 
 <p> <strong>Signal:</strong></p>
@@ -1956,7 +1955,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>See also:</h3>
     <ul>
          <li><a href="../classes/tag.html#tag.gap">gap</a></li>
-         <li><a href="../classes/tag.html#tag.gap_single_client">gap_single_client</a></li>
+         <li><a href="../classes/tag.html#beautiful.gap_single_client">gap_single_client</a></li>
     </ul>
 
 
@@ -1981,7 +1980,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>See also:</h3>
     <ul>
          <li><a href="../classes/tag.html#tag.gap">gap</a></li>
-         <li><a href="../classes/tag.html#tag.gap_single_client">gap_single_client</a></li>
+         <li><a href="../classes/tag.html#beautiful.gap_single_client">gap_single_client</a></li>
     </ul>
 
 
@@ -2016,7 +2015,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a>
+         <a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a>
     </ul>
 
 
@@ -2302,7 +2301,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <li><a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a></li>
+         <li><a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a></li>
          <li><a href="../classes/tag.html#beautiful.master_width_factor">master_width_factor</a></li>
     </ul>
 
@@ -2329,7 +2328,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>See also:</h3>
     <ul>
          <li><a href="../classes/tag.html#beautiful.master_width_factor">master_width_factor</a></li>
-         <li><a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a></li>
+         <li><a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a></li>
     </ul>
 
 
@@ -2500,7 +2499,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a>
+         <a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a>
     </ul>
 
 
@@ -2526,7 +2525,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a>
+         <a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a>
     </ul>
 
 
@@ -3091,7 +3090,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-05-28 20:57:28 </i>
+<i style="float:right;">Last updated 2018-06-04 02:50:24 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

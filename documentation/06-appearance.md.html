@@ -64,17 +64,6 @@
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.html">awful.layout.dynamic</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.base.html">awful.layout.dynamic.base</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.base_conditional.html">awful.layout.dynamic.base_conditional</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.base_layout.html">awful.layout.dynamic.base_layout</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.base_stack.html">awful.layout.dynamic.base_stack</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.resize.html">awful.layout.dynamic.resize</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.suit.html">awful.layout.dynamic.suit</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.suit.max.html">awful.layout.dynamic.suit.max</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.suit.treesome.html">awful.layout.dynamic.suit.treesome</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.tabbed.html">awful.layout.dynamic.tabbed</a></li>
-  <li><a href="../libraries/awful.layout.dynamic.wrapper.html">awful.layout.dynamic.wrapper</a></li>
   <li><a href="../libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="../libraries/awful.mouse.html">awful.mouse</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
@@ -90,6 +79,12 @@
   <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
   <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
+  <li><a href="../libraries/dynamite.html">dynamite</a></li>
+  <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
+  <li><a href="../libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
+  <li><a href="../libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
+  <li><a href="../libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
@@ -103,6 +98,10 @@
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
+  <li><a href="../libraries/lib.dynamite.base.html">lib.dynamite.base</a></li>
+  <li><a href="../libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
+  <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
+  <li><a href="../libraries/lib.dynamite.wrapper.html">lib.dynamite.wrapper</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
@@ -256,6 +255,7 @@
   <tr><td><a href='../libraries/awful.mouse.html#beautiful.snap_bg'>snap_bg</a></td><td>The snap outline background color</td></tr>
   <tr><td><a href='../libraries/awful.mouse.html#beautiful.snap_border_width'>snap<em>border</em>width</a></td><td>The snap outline width</td></tr>
   <tr><td><a href='../libraries/awful.mouse.html#beautiful.snap_shape'>snap_shape</a></td><td>The snap outline shape</td></tr>
+  <tr><td><a href='../libraries/awful.mouse.html#beautiful.snapper_gap'>snapper_gap</a></td><td>The gap between snapped contents</td></tr>
   <tr><td><a href='../libraries/awful.mouse.resize.html#beautiful.cursor_mouse_resize'>cursor<em>mouse</em>resize</a></td><td>The resize cursor name</td></tr>
   <tr><td><a href='../libraries/awful.mouse.resize.html#beautiful.cursor_mouse_move'>cursor<em>mouse</em>move</a></td><td>The move cursor name</td></tr>
   <tr><td><a href='../classes/awful.popup.html#beautiful.bg_normal'>bg_normal</a></td><td>The default background color</td></tr>
@@ -371,6 +371,22 @@
   <tr><td><a href='../classes/awful.wibar.html#beautiful.bg_normal'>bg_normal</a></td><td>The default background color</td></tr>
   <tr><td><a href='../classes/awful.wibar.html#beautiful.fg_normal'>fg_normal</a></td><td>The default foreground (text) color</td></tr>
   <tr><td><a href='../classes/awful.widget.calendar_popup.html#beautiful.calendar_style'>calendar_style</a></td><td>The generic calendar style table</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_fg_normal'>layoutlist<em>fg</em>normal</a></td><td>The default foreground (text) color</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_bg_normal'>layoutlist<em>bg</em>normal</a></td><td>The default background color</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_fg_selected'>layoutlist<em>fg</em>selected</a></td><td>The selected layout foreground (text) color</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_bg_selected'>layoutlist<em>bg</em>selected</a></td><td>The selected layout background color</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_disable_icon'>layoutlist<em>disable</em>icon</a></td><td>Disable the layout icons (only show the name label)</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_disable_name'>layoutlist<em>disable</em>name</a></td><td>Disable the layout name label (only show the icon)</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_font'>layoutlist_font</a></td><td>The layoutlist font</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_align'>layoutlist_align</a></td><td>The selected layout alignment</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_font_selected'>layoutlist<em>font</em>selected</a></td><td>The selected layout title alignment</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_spacing'>layoutlist_spacing</a></td><td>The space between the layouts</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_shape'>layoutlist_shape</a></td><td>The default layoutlist elements shape</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_shape_border_width'>layoutlist<em>shape</em>border_width</a></td><td>The default layoutlist elements border width</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_shape_border_color'>layoutlist<em>shape</em>border_color</a></td><td>The default layoutlist elements border color</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_shape_selected'>layoutlist<em>shape</em>selected</a></td><td>The selected layout shape</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_shape_border_width_selected'>layoutlist<em>shape</em>border<em>width</em>selected</a></td><td>The selected layout border width</td></tr>
+  <tr><td><a href='../classes/awful.widget.layoutlist.html#beautiful.layoutlist_shape_border_color_selected'>layoutlist<em>shape</em>border<em>color</em>selected</a></td><td>The selected layout border color</td></tr>
   <tr><td><a href='../classes/awful.widget.prompt.html#beautiful.prompt_fg'>prompt_fg</a></td><td>The prompt foreground color</td></tr>
   <tr><td><a href='../classes/awful.widget.prompt.html#beautiful.prompt_bg'>prompt_bg</a></td><td>The prompt background color</td></tr>
   <tr><td><a href='../classes/awful.widget.taglist.html#beautiful.taglist_fg_focus'>taglist<em>fg</em>focus</a></td><td>The tag list main foreground (text) color</td></tr>
@@ -659,6 +675,24 @@
 </span><span class="comment">-- theme.layout_tilebottom = nil
 </span><span class="comment">-- theme.layout_tileleft = nil
 </span>
+<span class="comment">-- layoutlist
+</span><span class="comment">-- theme.layoutlist_fg_normal = nil
+</span><span class="comment">-- theme.layoutlist_bg_normal = nil
+</span><span class="comment">-- theme.layoutlist_fg_selected = nil
+</span><span class="comment">-- theme.layoutlist_bg_selected = nil
+</span><span class="comment">-- theme.layoutlist_disable_icon = nil
+</span><span class="comment">-- theme.layoutlist_disable_name = nil
+</span><span class="comment">-- theme.layoutlist_font = nil
+</span><span class="comment">-- theme.layoutlist_align = nil
+</span><span class="comment">-- theme.layoutlist_font_selected = nil
+</span><span class="comment">-- theme.layoutlist_spacing = nil
+</span><span class="comment">-- theme.layoutlist_shape = nil
+</span><span class="comment">-- theme.layoutlist_shape_border_width = nil
+</span><span class="comment">-- theme.layoutlist_shape_border_color = nil
+</span><span class="comment">-- theme.layoutlist_shape_selected = nil
+</span><span class="comment">-- theme.layoutlist_shape_border_width_selected = nil
+</span><span class="comment">-- theme.layoutlist_shape_border_color_selected = nil
+</span>
 <span class="comment">-- master
 </span><span class="comment">-- theme.master_width_factor = nil
 </span><span class="comment">-- theme.master_fill_policy = nil
@@ -750,6 +784,9 @@
 </span><span class="comment">-- theme.snap_bg = nil
 </span><span class="comment">-- theme.snap_border_width = nil
 </span><span class="comment">-- theme.snap_shape = nil
+</span>
+<span class="comment">-- snapper
+</span><span class="comment">-- theme.snapper_gap = nil
 </span>
 <span class="comment">-- systray
 </span><span class="comment">-- theme.systray_icon_spacing = nil
@@ -939,7 +976,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-05-28 20:57:28 </i>
+<i style="float:right;">Last updated 2018-06-04 02:50:24 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

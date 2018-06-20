@@ -41,17 +41,6 @@
   <li><a href="libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="libraries/awful.key.html">awful.key</a></li>
   <li><a href="libraries/awful.layout.html">awful.layout</a></li>
-  <li><a href="libraries/awful.layout.dynamic.html">awful.layout.dynamic</a></li>
-  <li><a href="libraries/awful.layout.dynamic.base.html">awful.layout.dynamic.base</a></li>
-  <li><a href="libraries/awful.layout.dynamic.base_conditional.html">awful.layout.dynamic.base_conditional</a></li>
-  <li><a href="libraries/awful.layout.dynamic.base_layout.html">awful.layout.dynamic.base_layout</a></li>
-  <li><a href="libraries/awful.layout.dynamic.base_stack.html">awful.layout.dynamic.base_stack</a></li>
-  <li><a href="libraries/awful.layout.dynamic.resize.html">awful.layout.dynamic.resize</a></li>
-  <li><a href="libraries/awful.layout.dynamic.suit.html">awful.layout.dynamic.suit</a></li>
-  <li><a href="libraries/awful.layout.dynamic.suit.max.html">awful.layout.dynamic.suit.max</a></li>
-  <li><a href="libraries/awful.layout.dynamic.suit.treesome.html">awful.layout.dynamic.suit.treesome</a></li>
-  <li><a href="libraries/awful.layout.dynamic.tabbed.html">awful.layout.dynamic.tabbed</a></li>
-  <li><a href="libraries/awful.layout.dynamic.wrapper.html">awful.layout.dynamic.wrapper</a></li>
   <li><a href="libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="libraries/awful.mouse.html">awful.mouse</a></li>
   <li><a href="libraries/awful.placement.html">awful.placement</a></li>
@@ -67,6 +56,12 @@
   <li><a href="libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
   <li><a href="libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="libraries/dbus.html">dbus</a></li>
+  <li><a href="libraries/dynamite.html">dynamite</a></li>
+  <li><a href="libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
+  <li><a href="libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
+  <li><a href="libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
+  <li><a href="libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="libraries/gears.color.html">gears.color</a></li>
   <li><a href="libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="libraries/gears.filesystem.html">gears.filesystem</a></li>
@@ -80,6 +75,10 @@
   <li><a href="libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="libraries/gears.table.html">gears.table</a></li>
   <li><a href="libraries/gears.wallpaper.html">gears.wallpaper</a></li>
+  <li><a href="libraries/lib.dynamite.base.html">lib.dynamite.base</a></li>
+  <li><a href="libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
+  <li><a href="libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
+  <li><a href="libraries/lib.dynamite.wrapper.html">lib.dynamite.wrapper</a></li>
   <li><a href="libraries/menubar.html">menubar</a></li>
   <li><a href="libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="libraries/menubar.utils.html">menubar.utils</a></li>
@@ -193,7 +192,7 @@
 <div id="content">
 
 
-  <h2>API documentation for awesome, a highly configurable X window manager (version v4.2-396-g91d59f2f7).</h2>
+  <h2>API documentation for awesome, a highly configurable X window manager (version v3.5.2-3272-g5aa09c2d9-dirty).</h2>
   <p>Welcome to the documentation for the awesome window manager. Below you find an
 overview of the individual parts which links to the full documentation.</p>
 
@@ -244,58 +243,7 @@ should be useful for you.</p>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/awful.layout.html">awful.layout</a></td>
-		<td class="summary">
-
-</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/awful.layout.dynamic.html">awful.layout.dynamic</a></td>
-		<td class="summary">A drop-in replacment for the stateless layout suits</p>
-
-<p> This system also add the possibility to write handlers enabling the use
- of tabs, spliters or custom client recorator.</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/awful.layout.dynamic.base.html">awful.layout.dynamic.base</a></td>
-		<td class="summary">Allow dynamic layouts to be created using wibox.layout composition</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/awful.layout.dynamic.base_conditional.html">awful.layout.dynamic.base_conditional</a></td>
-		<td class="summary">A specialised of the conditional container.</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/awful.layout.dynamic.base_layout.html">awful.layout.dynamic.base_layout</a></td>
-		<td class="summary">A specialised ratio layout with dynamic client layout features.</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/awful.layout.dynamic.base_stack.html">awful.layout.dynamic.base_stack</a></td>
-		<td class="summary">A specialised stack layout with dynamic client layout features</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/awful.layout.dynamic.resize.html">awful.layout.dynamic.resize</a></td>
-		<td class="summary">Utilities required to resize a client wrapped in ratio layouts</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/awful.layout.dynamic.suit.html">awful.layout.dynamic.suit</a></td>
-		<td class="summary">
-
-</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/awful.layout.dynamic.suit.max.html">awful.layout.dynamic.suit.max</a></td>
-		<td class="summary">A layout with clients on top of each other filling all the space</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/awful.layout.dynamic.suit.treesome.html">awful.layout.dynamic.suit.treesome</a></td>
-		<td class="summary">Split the focused* client area in two.</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/awful.layout.dynamic.tabbed.html">awful.layout.dynamic.tabbed</a></td>
-		<td class="summary">A specialised stack layout with a tabbar on top.</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/awful.layout.dynamic.wrapper.html">awful.layout.dynamic.wrapper</a></td>
-		<td class="summary">A compatibility wrapper around clients to conform to the widget API</td>
+		<td class="summary">Layout module for awful</td>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/awful.menu.html">awful.menu</a></td>
@@ -358,6 +306,33 @@ should be useful for you.</p>
 		<td class="summary">awesome D-Bus API</td>
 	</tr>
 	<tr>
+		<td class="name"  ><a href="libraries/dynamite.html">dynamite</a></td>
+		<td class="summary">A drop-in replacment for the stateless layout suits</p>
+
+<p> This system also add the possibility to write handlers enabling the use
+ of tabs, spliters or custom client decorator.</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></td>
+		<td class="summary">A specialised of the conditional container.</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></td>
+		<td class="summary">A specialised ratio layout with dynamic client layout features.</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></td>
+		<td class="summary">A specialised stack layout with dynamic client layout features</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></td>
+		<td class="summary">A specialised stack layout with a tabbar on top.</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></td>
+		<td class="summary">Spawn a client in a reserved spot.</td>
+	</tr>
+	<tr>
 		<td class="name"  ><a href="libraries/gears.color.html">gears.color</a></td>
 		<td class="summary">This module simplifies the creation of cairo pattern objects.</td>
 	</tr>
@@ -415,6 +390,24 @@ should be useful for you.</p>
 	<tr>
 		<td class="name"  ><a href="libraries/gears.wallpaper.html">gears.wallpaper</a></td>
 		<td class="summary">Functions for setting the wallpaper.</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/lib.dynamite.base.html">lib.dynamite.base</a></td>
+		<td class="summary">Allow dynamic layouts to be created using wibox.layout composition</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></td>
+		<td class="summary">Utilities required to resize a client wrapped in ratio layouts</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></td>
+		<td class="summary">
+
+</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/lib.dynamite.wrapper.html">lib.dynamite.wrapper</a></td>
+		<td class="summary">A compatibility wrapper around clients to conform to the widget API</td>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/menubar.html">menubar</a></td>
@@ -874,7 +867,7 @@ should be useful for you.</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-05-28 20:57:28 </i>
+<i style="float:right;">Last updated 2018-06-04 02:50:24 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
