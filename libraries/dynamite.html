@@ -106,6 +106,7 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
+  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -155,6 +156,7 @@
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.layout.align.html">wibox.layout.align</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
@@ -725,6 +727,14 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_corner_corner.svg" alt="Usage example"/></p>
 
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  2
+EXEC
+EXEC
+</code></pre>
+
+
 
 <p> <strong>Client count scaling</strong>:</p>
 
@@ -733,6 +743,23 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_corner_scaling.svg" alt="Usage example"/></p>
+
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  2
+EXEC
+EXEC
+BEFORE  2
+EXEC
+EXEC
+BEFORE  2
+EXEC
+EXEC
+BEFORE  2
+EXEC
+EXEC
+</code></pre>
+
 
 
 <p> <strong>master_count effect</strong>:</p>
@@ -749,6 +776,13 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_corner_mwfact.svg" alt="Usage example"/></p>
 
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
+
 
 <p> <strong>gap effect</strong>:</p>
 
@@ -756,6 +790,14 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_corner_gap.svg" alt="Usage example"/></p>
+
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  2
+EXEC
+EXEC
+</code></pre>
+
 
 
 <p> <strong>resize effect:</strong></p>
@@ -773,6 +815,14 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_corner_padding.svg" alt="Usage example"/></p>
+
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  2
+EXEC
+EXEC
+</code></pre>
+
 
 <p> See <code>awful.screen.padding</code>
 
@@ -803,6 +853,13 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_fair_fair.svg" alt="Usage example"/></p>
 
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
+
 
 <p> <strong>Client count scaling</strong>:</p>
 
@@ -811,6 +868,17 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_fair_scaling.svg" alt="Usage example"/></p>
+
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  2
+EXEC
+EXEC
+BEFORE  2
+EXEC
+EXEC
+</code></pre>
+
 
 
 <p> <strong>master_count effect</strong>:</p>
@@ -832,6 +900,14 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_fair_gap.svg" alt="Usage example"/></p>
 
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  2
+EXEC
+EXEC
+</code></pre>
+
+
 <p> See <code>awful.tag.setgap</code>
  See <code>awful.tag.getgap</code>
  See <code>awful.tag.incgap</code></p>
@@ -842,12 +918,27 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_fair_padding.svg" alt="Usage example"/></p>
 
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  2
+EXEC
+EXEC
+</code></pre>
+
+
 
 <p> <strong>Resize effect</strong>:</p>
 
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_fair_resize.svg" alt="Usage example"/></p>
+
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
 
 
 <p> See <code>awful.screen.padding</code>
@@ -888,12 +979,26 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_magnifier_magnifier.svg" alt="Usage example"/></p>
 
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
+
 
 <p> <strong>Client count scaling</strong>:</p>
 
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_magnifier_scaling.svg" alt="Usage example"/></p>
+
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
 
 
 <p> <strong>nmaster effect</strong>:</p>
@@ -910,6 +1015,13 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_magnifier_mwfact.svg" alt="Usage example"/></p>
 
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
+
 
 <p> <strong>gap effect</strong>:</p>
 
@@ -918,11 +1030,25 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_magnifier_gap.svg" alt="Usage example"/></p>
 
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
+
 
 <p> <strong>resize effect</strong>:</p>
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_magnifier_resize.svg" alt="Usage example"/></p>
+
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
 
 
 <p> See <code>awful.tag.setgap</code>
@@ -982,6 +1108,13 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_max_scaling.svg" alt="Usage example"/></p>
 
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
+
 
 <p> <strong>nmaster effect</strong>:</p>
 
@@ -1002,12 +1135,27 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_max_gap.svg" alt="Usage example"/></p>
 
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
+
 
 <p> <strong>screen padding effect</strong>:</p>
 
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_max_padding.svg" alt="Usage example"/></p>
+
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  2
+EXEC
+EXEC
+</code></pre>
+
 
 <p> See <code>awful.screen.padding</code>
 
@@ -1043,6 +1191,23 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_tile_scaling.svg" alt="Usage example"/></p>
 
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  2
+EXEC
+EXEC
+BEFORE  2
+EXEC
+EXEC
+BEFORE  2
+EXEC
+EXEC
+BEFORE  2
+EXEC
+EXEC
+</code></pre>
+
+
 
 <p> <strong>master_count effect</strong>:</p>
 
@@ -1050,6 +1215,13 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_tile_nmaster.svg" alt="Usage example"/></p>
+
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
 
 <p> See <a href="../classes/tag.html#beautiful.master_count">tag.master_count</a>
  See <code>awful.tag.incnmaster</code></p>
@@ -1062,6 +1234,13 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_tile_ncol.svg" alt="Usage example"/></p>
 
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
+
 <p> See <a href="../classes/tag.html#tag.column_count">tag.column_count</a>
  See <code>awful.tag.incncol</code></p>
 
@@ -1073,7 +1252,14 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_tile_mwfact.svg" alt="Usage example"/></p>
 
-<p> See <a href="../classes/tag.html#beautiful.master_width_factor">tag.master_width_factor</a>
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
+
+<p> See <a href="../classes/tag.html#tag.master_width_factor">tag.master_width_factor</a>
  See <code>awful.tag.incmwfact</code></p>
 
 <p> <strong>gap effect</strong>:</p>
@@ -1083,6 +1269,13 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_tile_gap.svg" alt="Usage example"/></p>
 
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  1
+EXEC
+</code></pre>
+
+
 <p> See <a href="../classes/tag.html#tag.gap">tag.gap</a>
  See <code>awful.tag.incgap</code></p>
 
@@ -1091,6 +1284,14 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_tile_padding.svg" alt="Usage example"/></p>
+
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>BEFORE  2
+EXEC
+EXEC
+</code></pre>
+
 
 <p> See <code>awful.screen.padding</code></p>
 
@@ -1168,7 +1369,7 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-06-04 02:50:24 </i>
+<i style="float:right;">Last updated 2018-06-26 10:45:33 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

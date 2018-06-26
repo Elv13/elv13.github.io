@@ -32,7 +32,6 @@
 
 <h2>Contents</h2>
 <ul>
-<li><a href="#Functions">Functions</a></li>
 <li><a href="#Object_properties">Object properties</a></li>
 <li><a href="#Signals">Signals</a></li>
 <li><a href="#Methods">Methods</a></li>
@@ -87,13 +86,13 @@
   <li><a href="../classes/wibox.container.background.html">wibox.container.background</a></li>
   <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
-  <li><strong>wibox.container.margin</strong></li>
+  <li><strong>wibox.container.interval</strong></li>
+  <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
   <li><a href="../classes/wibox.container.place.html">wibox.container.place</a></li>
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
-  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.layout.align.html">wibox.layout.align</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
@@ -203,69 +202,57 @@
 
 <div id="content">
 
-<h1>Class <code>wibox.container.margin</code></h1>
-<p>
+<h1>Class <code>wibox.container.interval</code></h1>
+<p>A container designed to update its child widget value automatically.</p>
+<p> This container parses the Lua code of the <code>reactive</code> functions to generate
+ the list of all object <a href="../classes/wibox.container.interval.html#wibox.container.interval:connect_signal">connect_signal</a>s it needs to always display
+ up-to-date values. The goal of this widget is to enable easier model/view
+ when using the declarative syntax.</p>
 
-</p>
-<p><img src="../images/AUTOGEN_wibox_container_defaults_margin.svg" alt="Usage example"/></p>
+<p> To use this container, you need to first define some <code>gears.objects</code> for
+ your model. You can use the existing Awesome API ones like <a href="../classes/client.html#">client</a>s or
+ <a href="../classes/screen.html#">screen</a>s too. Here is a simple <a href="../classes/gears.object.html#">gears.object</a></p>
+
+
+<pre>
+<span class="keyword">local</span> myobject = gears.object {
+    enable_properties   = <span class="keyword">true</span>,
+    enable_auto_signals = <span class="keyword">true</span>,
+}
+myobject.foo = <span class="number">42</span>
+</pre>
+
+<p> In this example, the <code>myobject</code> object has a <code>foo</code> property set to <code>42</code>. If
+ this property is modified later on and a <a href="../classes/wibox.container.interval.html#">wibox.container.interval</a>
+ <code>reactive</code> expression contain it, the template will be updated to the new
+ value. Note that it only works with <a href="../classes/gears.object.html#">gears.object</a> and constant values. It
+ cannot detect that a string or a normal table upvalue changed. It also
+ doesn't try to recursively parse each functions called by the expression
+ because it would be exponentially too slow. Within those limitation, the
+ system should be reliable.</p>
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2010 Uli Schlachter</li>
-        <li><strong>Author</strong>: Uli Schlachter</li>
+        <li><strong>Copyright</strong>: 2018 Emmanuel Lepage Vallee</li>
+        <li><strong>Author</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;</li>
     </ul>
 
 
-<h2><a href="#Functions">Functions</a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" ><a href="#wibox.container.margin">wibox.container.margin ([widget[, left[, right[, top[, bottom[, color[, draw_empty]]]]]]])</a></td>
-	<td class="summary">Returns a new margin container.</td>
-	</tr>
-</table>
 <h2><a href="#Object_properties">Object properties</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#wibox.container.margin.widget">widget</a></td>
-	<td class="summary">The widget to be wrapped the the margins.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.container.margin.margins">margins</a></td>
-	<td class="summary">Set all the margins to val.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.container.margin.color">color</a></td>
-	<td class="summary">Set the margins color to create a border.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.container.margin.left">left</a></td>
-	<td class="summary">Set the left margin that this layout adds to its widget.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.container.margin.right">right</a></td>
-	<td class="summary">Set the right margin that this layout adds to its widget.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.container.margin.top">top</a></td>
-	<td class="summary">Set the top margin that this layout adds to its widget.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.container.margin.bottom">bottom</a></td>
-	<td class="summary">Set the bottom margin that this layout adds to its widget.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.container.margin.forced_height">forced_height</a></td>
+	<td class="name" ><a href="#wibox.container.interval.forced_height">forced_height</a></td>
 	<td class="summary">Force a widget height.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#wibox.container.margin.forced_width">forced_width</a></td>
+	<td class="name" ><a href="#wibox.container.interval.forced_width">forced_width</a></td>
 	<td class="summary">Force a widget width.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#wibox.container.margin.opacity">opacity</a></td>
+	<td class="name" ><a href="#wibox.container.interval.opacity">opacity</a></td>
 	<td class="summary">The widget opacity (transparency).</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#wibox.container.margin.visible">visible</a></td>
+	<td class="name" ><a href="#wibox.container.interval.visible">visible</a></td>
 	<td class="summary">The widget visibility.</td>
 	</tr>
 </table>
@@ -299,40 +286,32 @@
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#wibox.container.margin:draw_empty">wibox.container.margin:draw_empty (draw_empty)</a></td>
-	<td class="summary">Draw the margin even if the content size is 0x0 (default: true)</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.container.margin:reset">wibox.container.margin:reset ()</a></td>
-	<td class="summary">Reset this layout.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.container.margin:get_all_children">wibox.container.margin:get_all_children ()</a></td>
+	<td class="name" ><a href="#wibox.container.interval:get_all_children">wibox.container.interval:get_all_children ()</a></td>
 	<td class="summary">Get all direct and indirect children widgets.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#wibox.container.margin:setup">wibox.container.margin:setup (args)</a></td>
+	<td class="name" ><a href="#wibox.container.interval:setup">wibox.container.interval:setup (args)</a></td>
 	<td class="summary">Set a declarative widget hierarchy description.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#wibox.container.margin:buttons">wibox.container.margin:buttons (_buttons)</a></td>
+	<td class="name" ><a href="#wibox.container.interval:buttons">wibox.container.interval:buttons (_buttons)</a></td>
 	<td class="summary">Set/get a widget's buttons.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#wibox.container.margin:emit_signal_recursive">wibox.container.margin:emit_signal_recursive (signal_name, ...)</a></td>
+	<td class="name" ><a href="#wibox.container.interval:emit_signal_recursive">wibox.container.interval:emit_signal_recursive (signal_name, ...)</a></td>
 	<td class="summary">Emit a signal and ensure all parent widgets in the hierarchies also
  forward the signal.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#wibox.container.margin:emit_signal">wibox.container.margin:emit_signal (name, ...)</a></td>
+	<td class="name" ><a href="#wibox.container.interval:emit_signal">wibox.container.interval:emit_signal (name, ...)</a></td>
 	<td class="summary">Emit a signal.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#wibox.container.margin:connect_signal">wibox.container.margin:connect_signal (name, func)</a></td>
+	<td class="name" ><a href="#wibox.container.interval:connect_signal">wibox.container.interval:connect_signal (name, func)</a></td>
 	<td class="summary">Connect to a signal.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#wibox.container.margin:weak_connect_signal">wibox.container.margin:weak_connect_signal (name, func)</a></td>
+	<td class="name" ><a href="#wibox.container.interval:weak_connect_signal">wibox.container.interval:weak_connect_signal (name, func)</a></td>
 	<td class="summary">Connect to a signal weakly.</td>
 	</tr>
 </table>
@@ -341,207 +320,11 @@
 <br/>
 
 
-    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
-    Methods
-    <dl class="function">
-    <dt>
-    <a name = "wibox.container.margin"></a>
-    <strong>wibox.container.margin ([widget[, left[, right[, top[, bottom[, color[, draw_empty]]]]]]])</strong>
-    </dt>
-    <dd>
-    Returns a new margin container.
-
-
-    <ul>
-        <li><span class="parameter">widget</span>
-         A widget to use.
-         (<em>optional</em>)
-        </li>
-        <li><span class="parameter">left</span>
-         A margin to use on the left side of the widget.
-         (<em>optional</em>)
-        </li>
-        <li><span class="parameter">right</span>
-         A margin to use on the right side of the widget.
-         (<em>optional</em>)
-        </li>
-        <li><span class="parameter">top</span>
-         A margin to use on the top side of the widget.
-         (<em>optional</em>)
-        </li>
-        <li><span class="parameter">bottom</span>
-         A margin to use on the bottom side of the widget.
-         (<em>optional</em>)
-        </li>
-        <li><span class="parameter">color</span>
-         A color for the margins.
-         (<em>optional</em>)
-        </li>
-        <li><span class="parameter">draw_empty</span>
-         whether or not to draw the margin when the content is empty
-         (<em>optional</em>)
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-        A new margin container
-    </ol>
-
-
-
-
-</dd>
-</dl>
     <h2 class="section-header "><a name="Object_properties"></a>Object properties</h2>
 
     <dl class="function">
     <dt>
-    <a name = "wibox.container.margin.widget"></a>
-    <strong>widget</strong>
-    </dt>
-    <dd>
-    The widget to be wrapped the the margins.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">widget</span>
-            <span class="types"><a class="type" href="../classes/wibox.widget.html">widget</a></span>
-         The widget
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "wibox.container.margin.margins"></a>
-    <strong>margins</strong>
-    </dt>
-    <dd>
-    Set all the margins to val.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">val</span>
-            <span class="types"><span class="type">number</span></span>
-         The margin value
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "wibox.container.margin.color"></a>
-    <strong>color</strong>
-    </dt>
-    <dd>
-    Set the margins color to create a border.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">color</span>
-         A color used to fill the margin.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "wibox.container.margin.left"></a>
-    <strong>left</strong>
-    </dt>
-    <dd>
-    Set the left margin that this layout adds to its widget.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">margin</span>
-         The new margin to use.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "wibox.container.margin.right"></a>
-    <strong>right</strong>
-    </dt>
-    <dd>
-    Set the right margin that this layout adds to its widget.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">margin</span>
-         The new margin to use.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "wibox.container.margin.top"></a>
-    <strong>top</strong>
-    </dt>
-    <dd>
-    Set the top margin that this layout adds to its widget.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">margin</span>
-         The new margin to use.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "wibox.container.margin.bottom"></a>
-    <strong>bottom</strong>
-    </dt>
-    <dd>
-    Set the bottom margin that this layout adds to its widget.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">margin</span>
-         The new margin to use.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "wibox.container.margin.forced_height"></a>
+    <a name = "wibox.container.interval.forced_height"></a>
     <strong>forced_height</strong>
     </dt>
     <dd>
@@ -562,7 +345,7 @@
 
 </dd>
     <dt>
-    <a name = "wibox.container.margin.forced_width"></a>
+    <a name = "wibox.container.interval.forced_width"></a>
     <strong>forced_width</strong>
     </dt>
     <dd>
@@ -583,7 +366,7 @@
 
 </dd>
     <dt>
-    <a name = "wibox.container.margin.opacity"></a>
+    <a name = "wibox.container.interval.opacity"></a>
     <strong>opacity</strong>
     </dt>
     <dd>
@@ -605,7 +388,7 @@
 
 </dd>
     <dt>
-    <a name = "wibox.container.margin.visible"></a>
+    <a name = "wibox.container.interval.visible"></a>
     <strong>visible</strong>
     </dt>
     <dd>
@@ -646,7 +429,7 @@
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/wibox.container.margin.html#widget::redraw_needed">widget::redraw_needed</a>
+         <a href="../classes/wibox.container.interval.html#widget::redraw_needed">widget::redraw_needed</a>
     </ul>
 
 
@@ -667,7 +450,7 @@
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/wibox.container.margin.html#widget::layout_changed">widget::layout_changed</a>
+         <a href="../classes/wibox.container.interval.html#widget::layout_changed">widget::layout_changed</a>
     </ul>
 
 
@@ -989,43 +772,8 @@
 
     <dl class="function">
     <dt>
-    <a name = "wibox.container.margin:draw_empty"></a>
-    <strong>wibox.container.margin:draw_empty (draw_empty)</strong>
-    </dt>
-    <dd>
-    Draw the margin even if the content size is 0x0 (default: true)
-
-
-    <ul>
-        <li><span class="parameter">draw_empty</span>
-            <span class="types"><span class="type">boolean</span></span>
-         Draw nothing is content is 0x0 or draw the margin anyway
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "wibox.container.margin:reset"></a>
-    <strong>wibox.container.margin:reset ()</strong>
-    </dt>
-    <dd>
-    Reset this layout.  The widget will be unreferenced, the margins set to 0
- and the color erased
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "wibox.container.margin:get_all_children"></a>
-    <strong>wibox.container.margin:get_all_children ()</strong>
+    <a name = "wibox.container.interval:get_all_children"></a>
+    <strong>wibox.container.interval:get_all_children ()</strong>
     </dt>
     <dd>
     Get all direct and indirect children widgets.
@@ -1047,8 +795,8 @@
 
 </dd>
     <dt>
-    <a name = "wibox.container.margin:setup"></a>
-    <strong>wibox.container.margin:setup (args)</strong>
+    <a name = "wibox.container.interval:setup"></a>
+    <strong>wibox.container.interval:setup (args)</strong>
     </dt>
     <dd>
     Set a declarative widget hierarchy description.
@@ -1067,8 +815,8 @@
 
 </dd>
     <dt>
-    <a name = "wibox.container.margin:buttons"></a>
-    <strong>wibox.container.margin:buttons (_buttons)</strong>
+    <a name = "wibox.container.interval:buttons"></a>
+    <strong>wibox.container.interval:buttons (_buttons)</strong>
     </dt>
     <dd>
     Set/get a widget's buttons.
@@ -1086,8 +834,8 @@
 
 </dd>
     <dt>
-    <a name = "wibox.container.margin:emit_signal_recursive"></a>
-    <strong>wibox.container.margin:emit_signal_recursive (signal_name, ...)</strong>
+    <a name = "wibox.container.interval:emit_signal_recursive"></a>
+    <strong>wibox.container.interval:emit_signal_recursive (signal_name, ...)</strong>
     </dt>
     <dd>
     Emit a signal and ensure all parent widgets in the hierarchies also
@@ -1113,8 +861,8 @@
 
 </dd>
     <dt>
-    <a name = "wibox.container.margin:emit_signal"></a>
-    <strong>wibox.container.margin:emit_signal (name, ...)</strong>
+    <a name = "wibox.container.interval:emit_signal"></a>
+    <strong>wibox.container.interval:emit_signal (name, ...)</strong>
     </dt>
     <dd>
     Emit a signal.
@@ -1138,8 +886,8 @@
 
 </dd>
     <dt>
-    <a name = "wibox.container.margin:connect_signal"></a>
-    <strong>wibox.container.margin:connect_signal (name, func)</strong>
+    <a name = "wibox.container.interval:connect_signal"></a>
+    <strong>wibox.container.interval:connect_signal (name, func)</strong>
     </dt>
     <dd>
     Connect to a signal.
@@ -1162,8 +910,8 @@
 
 </dd>
     <dt>
-    <a name = "wibox.container.margin:weak_connect_signal"></a>
-    <strong>wibox.container.margin:weak_connect_signal (name, func)</strong>
+    <a name = "wibox.container.interval:weak_connect_signal"></a>
+    <strong>wibox.container.interval:weak_connect_signal (name, func)</strong>
     </dt>
     <dd>
     Connect to a signal weakly.  This allows the callback function to be garbage
@@ -1197,7 +945,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-06-26 10:45:33 </i>
+<i style="float:right;">Last updated 2018-06-25 17:23:17 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
