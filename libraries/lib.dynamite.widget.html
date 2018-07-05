@@ -30,10 +30,6 @@
   <li><a href="../index.html">Index</a></li>
 </ul>
 
-<h2>Contents</h2>
-<ul>
-<li><a href="#Object_properties">Object properties</a></li>
-</ul>
 
 
 <h2>Libraries</h2>
@@ -69,7 +65,7 @@
   <li><a href="../libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
   <li><a href="../libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
   <li><a href="../libraries/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
-  <li><strong>dynamite.widget.spawn</strong></li>
+  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
@@ -86,7 +82,7 @@
   <li><a href="../libraries/lib.dynamite.base.html">lib.dynamite.base</a></li>
   <li><a href="../libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
   <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
-  <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
+  <li><strong>lib.dynamite.widget</strong></li>
   <li><a href="../libraries/lib.dynamite.wrapper.html">lib.dynamite.wrapper</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
@@ -202,161 +198,25 @@
 
 <div id="content">
 
-<h1>Module <code>dynamite.widget.spawn</code></h1>
-<p>Spawn a client in a reserved spot.</p>
-<p> It accept all usual client properties.</p>
+<h1>Module <code>lib.dynamite.widget</code></h1>
+<p>
 
-<p> Note: this only works with client with a proper implementation of the startup
- notification protocol. For other client, see <a href="../classes/client.html#client.startup_id">client.startup_id</a> for more
- information about how to make them work.</p>
+</p>
+<p>
+
+</p>
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2018 Emmanuel Lepage Vallee</li>
+        <li><strong>Copyright</strong>: 2016-2018 Emmanuel Lepage Vallee</li>
         <li><strong>Author</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;</li>
     </ul>
 
 
-<h2><a href="#Object_properties">Object properties</a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" ><a href="#command">command</a></td>
-	<td class="summary">The command to be executed.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#delay">delay</a></td>
-	<td class="summary">The delay before spawing the command.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#init">init</a></td>
-	<td class="summary">If the command has to be executed even if the tag isn't selected.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#displace">displace</a></td>
-	<td class="summary">If the area must be reserved even before the client has been created.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#timeout">timeout</a></td>
-	<td class="summary">The delay before canceling and self destruction.</td>
-	</tr>
-</table>
 
 <br/>
 <br/>
 
 
-    <h2 class="section-header "><a name="Object_properties"></a>Object properties</h2>
-
-    <dl class="function">
-    <dt>
-    <a name = "command"></a>
-    <strong>command</strong>
-    </dt>
-    <dd>
-    The command to be executed.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">command</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a> or <a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         The command
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "delay"></a>
-    <strong>delay</strong>
-    </dt>
-    <dd>
-    The delay before spawing the command.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">number</span>
-         In milliseconds.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "init"></a>
-    <strong>init</strong>
-    </dt>
-    <dd>
-    If the command has to be executed even if the tag isn't selected.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">boolean</span>
-
-
-
-         (<em>default</em> false)
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "displace"></a>
-    <strong>displace</strong>
-    </dt>
-    <dd>
-    If the area must be reserved even before the client has been created. </p>
-
-<p> When set to <code>true</code>, this widget will use space even if it is empty.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">boolean</span>
-
-
-
-         (<em>default</em> false)
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "timeout"></a>
-    <strong>timeout</strong>
-    </dt>
-    <dd>
-    The delay before canceling and self destruction.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">number</span>
-         In milliseconds.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-</dl>
 
 
 </div> <!-- id="content" -->

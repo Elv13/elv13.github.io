@@ -69,6 +69,7 @@
   <li><a href="../libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
   <li><a href="../libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
   <li><a href="../libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../libraries/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
@@ -86,6 +87,7 @@
   <li><a href="../libraries/lib.dynamite.base.html">lib.dynamite.base</a></li>
   <li><a href="../libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
   <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
+  <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
   <li><a href="../libraries/lib.dynamite.wrapper.html">lib.dynamite.wrapper</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
@@ -207,7 +209,7 @@
 <p> This system also add the possibility to write handlers enabling the use
  of tabs, spliters or custom client decorator.</p>
 <p> Any wibox.layout compliant layout can be implemented. Monkey-patching
- <code>dynamite.wrapper</code> also allow modules to define extra features
+ <a href="../libraries/dynamite.widget.placeholder.html#">dynamite.widget.placeholder</a> also allow modules to define extra features
  for tiled clients.</p>
 
 <p> To enable this system, add <code>require(&quot;dynamite&quot;)</code> at the top
@@ -259,27 +261,59 @@
 
 
 <pre>
-<span class="keyword">local</span> tile = <span class="global">require</span>(<span class="string">'dynamite.layout.ratio'</span>)
-<span class="keyword">local</span> manual = <span class="global">require</span>(<span class="string">'dynamite.suit.manual'</span>)
-<span class="keyword">local</span> mycustomtilelayout = manual {
+<span class="keyword">local</span> mycustomtilelayout = dynamite {
     {
         max_elements = <span class="number">1</span>,
         priority     = <span class="number">3</span>,
-        layout       = tile.vertical
+        layout       = dynamite.layout.ratio.vertical
     },
     {
         reflow       = <span class="keyword">true</span>,
         max_elements = <span class="number">2</span>,
         priority     = <span class="number">1</span>,
-        layout       = tile.vertical
+        layout       = dynamite.layout.ratio.vertical
     },
     {
         priority = <span class="number">1</span>,
-        layout = tile.vertical
+        layout = dynamite.layout.ratio.vertical
     },
-    layout     = tile.horizontal
+    layout     = dynamite.layout.ratio.horizontal
 }
 </pre>
+
+<p> <strong>In place client spawning</strong>:</p>
+
+<p> The <a href="../libraries/dynamite.widget.spawn.html#">dynamite.widget.spawn</a> allows to add "future" clients directly into
+ a layout:</p>
+
+
+<pre>
+<span class="keyword">local</span> mycustomtilelayout = dynamite {
+    {
+        {
+            command = <span class="string">"urxvt -e 'bash -c \"nano ~/.config/awesome\""</span>,
+            widget = dynamite.widget.spawn,
+        },
+        max_elements = <span class="number">1</span>,
+        priority     = <span class="number">3</span>,
+        layout       = dynamite.layout.ratio.vertical
+    },
+    {
+        {
+            command = <span class="string">"urxvt -e 'top'"</span>,
+            widget = dynamite.widget.spawn,
+        },
+        reflow       = <span class="keyword">true</span>,
+        max_elements = <span class="number">3</span>,
+        priority     = <span class="number">1</span>,
+        layout       = dynamite.layout.ratio.vertical
+    },
+    layout = dynamite.layout.ratio.horizontal
+}
+</pre>
+
+<p> See the <a href="../classes/client.html#client.startup_id">client.startup_id</a> for an overview of the limitations and
+ workarounds available to mitigate them.</p>
 
 <p> <strong>A column and a layout.tabbed stack</strong>:</p>
 
@@ -290,23 +324,20 @@
 
 
 <pre>
-<span class="keyword">local</span> tile = <span class="global">require</span>(<span class="string">'dynamite.layout.ratio'</span>)
-<span class="keyword">local</span> stack = <span class="global">require</span>(<span class="string">'dynamite.layout.tabbed'</span>)
-<span class="keyword">local</span> manual = <span class="global">require</span>(<span class="string">'dynamite.suit.manual'</span>)
-<span class="keyword">local</span> mycustomtilelayout = manual {
+<span class="keyword">local</span> mycustomtilelayout = dynamite {
     {
         reflow       = <span class="keyword">true</span>,
         max_elements = <span class="number">2</span>,
         priority     = <span class="number">1</span>,
         ratio        = <span class="number">0.20</span>,
-        layout       = tile.vertical
+        layout       = dynamite.layout.ratio.vertical
     },
     {
         priority = <span class="number">1</span>,
-        layout    = stack
+        layout    = dynamite.layout.tabbed
     },
     inner_fill_strategy = <span class="string">'default'</span>,
-    layout     = tile.horizontal
+    layout     = dynamite.layout.ratio.horizontal
 }
     c1.name = <span class="string">'Client '</span>..i
 </pre>
@@ -320,24 +351,22 @@
 
 
 <pre>
-<span class="keyword">local</span> tile = <span class="global">require</span>(<span class="string">'dynamite.layout.ratio'</span>)
-<span class="keyword">local</span> manual = <span class="global">require</span>(<span class="string">'dynamite.suit.manual'</span>)
-<span class="keyword">local</span> mycustomtilelayout = manual {
+<span class="keyword">local</span> mycustomtilelayout = dynamite {
     {
         reflow       = <span class="keyword">true</span>,
         max_elements = <span class="number">2</span>,
         priority     = <span class="number">1</span>,
         ratio        = <span class="number">0.20</span>,
-        layout       = tile.vertical
+        layout       = dynamite.layout.ratio.vertical
     },
     {
         priority  = <span class="number">1</span>,
         ratio     = <span class="number">0.80</span>,
-        layout    = tile.vertical
+        layout    = dynamite.layout.ratio.vertical
     },
-    ratio = <span class="number">2.99</span>,
+    ratio               = <span class="number">2.99</span>,
     inner_fill_strategy = <span class="string">'center'</span>,
-    layout     = tile.horizontal
+    layout              = dynamite.layout.ratio.horizontal
 }
 </pre>
 
@@ -350,27 +379,25 @@
 
 
 <pre>
-<span class="keyword">local</span> tile = <span class="global">require</span>(<span class="string">'dynamite.layout.ratio'</span>)
-<span class="keyword">local</span> manual = <span class="global">require</span>(<span class="string">'dynamite.suit.manual'</span>)
-<span class="keyword">local</span> mycustomtilelayout = manual {
+<span class="keyword">local</span> mycustomtilelayout = dynamite {
     {
         reflow       = <span class="keyword">true</span>,
         max_elements = <span class="number">2</span>,
         priority     = <span class="number">1</span>,
         ratio        = <span class="number">0.20</span>,
-        layout       = tile.vertical
+        layout       = dynamite.layout.ratio.vertical
     },
     {
         {
             priority  = <span class="number">1</span>,
             ratio     = <span class="number">0.80</span>,
-            layout    = tile.vertical
+            layout    = dynamite.layout.ratio.vertical
         },
         margins = <span class="number">3</span>,
         widget = wibox.container.margin
     },
     ratio = <span class="number">2.99</span>,
-    layout     = tile.horizontal
+    layout     = dynamite.layout.ratio.horizontal
 }
 </pre>
 
@@ -383,17 +410,15 @@
 
 
 <pre>
-<span class="keyword">local</span> tile = <span class="global">require</span>(<span class="string">'dynamite.layout.ratio'</span>)
-<span class="keyword">local</span> manual = <span class="global">require</span>(<span class="string">'dynamite.suit.manual'</span>)
 <span class="keyword">local</span> <span class="keyword">function</span> gen_with_mirror(hor, ver)
-    <span class="keyword">return</span> manual {
+    <span class="keyword">return</span> dynamite {
         {
             {
                 reflow       = <span class="keyword">true</span>,
                 max_elements = <span class="number">2</span>,
                 priority     = <span class="number">3</span>,
                 ratio        = <span class="number">0.20</span>,
-                layout       = tile.vertical
+                layout       = dynamite.layout.ratio.vertical
             },
             {
                 {
@@ -401,19 +426,19 @@
                     max_elements = <span class="number">1</span>,
                     priority     = <span class="number">2</span>,
                     ratio        = <span class="number">0.20</span>,
-                    layout       = tile.vertical
+                    layout       = dynamite.layout.ratio.vertical
                 },
                 {
                     reflow   = <span class="keyword">true</span>,
                     priority = <span class="number">1</span>,
                     ratio    = <span class="number">0.20</span>,
-                    layout   = tile.horizontal
+                    layout   = dynamite.layout.ratio.horizontal
                 },
                 reflow = <span class="keyword">true</span>,
-                layout = tile.vertical
+                layout = dynamite.layout.ratio.vertical
             },
             reflow = <span class="keyword">true</span>,
-            layout = tile.horizontal
+            layout = dynamite.layout.ratio.horizontal
         },
         reflection = {
             horizontal = hor,
@@ -442,24 +467,21 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 
 <pre>
-<span class="keyword">local</span> tile   = <span class="global">require</span>(<span class="string">'dynamite.layout.ratio'</span>)
-<span class="keyword">local</span> cond   = <span class="global">require</span>(<span class="string">'dynamite.layout.conditional'</span>)
-<span class="keyword">local</span> manual = <span class="global">require</span>(<span class="string">'dynamite.suit.manual'</span>)
-<span class="keyword">local</span> mycustomtilelayout = manual {
+<span class="keyword">local</span> mycustomtilelayout = dynamite {
     {
         reflow   = <span class="keyword">true</span>,
         when     = <span class="keyword">function</span>(self, t, count) <span class="comment">-- luacheck: no unused args
 </span>            <span class="keyword">return</span> count &lt; <span class="number">3</span> <span class="keyword">end</span>,
         priority = <span class="number">1</span>,
-        layout   = tile.vertical
+        layout   = dynamite.layout.ratio.vertical
     },
     {
         reflow   = <span class="keyword">true</span>,
         when     = <span class="keyword">function</span>(self, t, count) <span class="keyword">return</span> count &gt;= <span class="number">3</span> <span class="keyword">end</span>, <span class="comment">-- luacheck: no unused args
 </span>        priority = <span class="number">1</span>,
-        layout   = tile.horizontal
+        layout   = dynamite.layout.ratio.horizontal
     },
-    layout     = cond
+    layout     = dynamite.layout.conditional
 }
 </pre>
 
@@ -474,11 +496,10 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 <pre>
 <span class="keyword">local</span> tile   = <span class="global">require</span>(<span class="string">'dynamite.layout.ratio'</span>)
 <span class="keyword">local</span> cond   = <span class="global">require</span>(<span class="string">'dynamite.layout.conditional'</span>)
-<span class="keyword">local</span> manual = <span class="global">require</span>(<span class="string">'dynamite.suit.manual'</span>)
 <span class="keyword">local</span> corner = <span class="global">require</span>(<span class="string">'dynamite.suit.corner'</span>)
 <span class="keyword">local</span> fair   = <span class="global">require</span>(<span class="string">'dynamite.suit.fair'</span>)
 <span class="keyword">local</span> margin = <span class="global">require</span>(<span class="string">'wibox.container.margin'</span>)
-<span class="keyword">local</span> mycustomtilelayout = manual {
+<span class="keyword">local</span> mycustomtilelayout = dynamite {
     {
         max_elements = <span class="number">3</span>,
         {
@@ -486,23 +507,23 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
                 priority     = <span class="number">2</span>,
                 max_elements = <span class="number">1</span>,
                 ratio        = <span class="number">0.33</span>,
-                layout       = tile.vertical
+                layout       = dynamite.layout.ratio.vertical
             },
             {
                 max_elements = <span class="number">1</span>,
                 priority     = <span class="number">1</span>,
                 ratio        = <span class="number">0.33</span>,
-                layout       = tile.vertical
+                layout       = dynamite.layout.ratio.vertical
             },
             {
                 max_elements = <span class="number">1</span>,
                 priority     = <span class="number">3</span>,
                 ratio        = <span class="number">0.33</span>,
-                layout       = tile.vertical
+                layout       = dynamite.layout.ratio.vertical
             },
             reflow              = <span class="keyword">true</span>,
             inner_fill_strategy = <span class="string">'spacing'</span>,
-            layout              = tile.horizontal
+            layout              = dynamite.layout.ratio.horizontal
         },
         margins = <span class="number">3</span>,
         widget  = margin
@@ -727,14 +748,6 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p><img src="../images/AUTOGEN_dynamite_suit_corner_corner.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  2
-EXEC
-EXEC
-</code></pre>
-
-
 
 <p> <strong>Client count scaling</strong>:</p>
 
@@ -743,23 +756,6 @@ EXEC
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_corner_scaling.svg" alt="Usage example"/></p>
-
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  2
-EXEC
-EXEC
-BEFORE  2
-EXEC
-EXEC
-BEFORE  2
-EXEC
-EXEC
-BEFORE  2
-EXEC
-EXEC
-</code></pre>
-
 
 
 <p> <strong>master_count effect</strong>:</p>
@@ -776,13 +772,6 @@ EXEC
 
 <p><img src="../images/AUTOGEN_dynamite_suit_corner_mwfact.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
-
 
 <p> <strong>gap effect</strong>:</p>
 
@@ -790,14 +779,6 @@ EXEC
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_corner_gap.svg" alt="Usage example"/></p>
-
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  2
-EXEC
-EXEC
-</code></pre>
-
 
 
 <p> <strong>resize effect:</strong></p>
@@ -815,14 +796,6 @@ EXEC
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_corner_padding.svg" alt="Usage example"/></p>
-
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  2
-EXEC
-EXEC
-</code></pre>
-
 
 <p> See <code>awful.screen.padding</code>
 
@@ -853,13 +826,6 @@ EXEC
 
 <p><img src="../images/AUTOGEN_dynamite_suit_fair_fair.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
-
 
 <p> <strong>Client count scaling</strong>:</p>
 
@@ -868,17 +834,6 @@ EXEC
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_fair_scaling.svg" alt="Usage example"/></p>
-
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  2
-EXEC
-EXEC
-BEFORE  2
-EXEC
-EXEC
-</code></pre>
-
 
 
 <p> <strong>master_count effect</strong>:</p>
@@ -900,14 +855,6 @@ EXEC
 
 <p><img src="../images/AUTOGEN_dynamite_suit_fair_gap.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  2
-EXEC
-EXEC
-</code></pre>
-
-
 <p> See <code>awful.tag.setgap</code>
  See <code>awful.tag.getgap</code>
  See <code>awful.tag.incgap</code></p>
@@ -918,27 +865,12 @@ EXEC
 
 <p><img src="../images/AUTOGEN_dynamite_suit_fair_padding.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  2
-EXEC
-EXEC
-</code></pre>
-
-
 
 <p> <strong>Resize effect</strong>:</p>
 
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_fair_resize.svg" alt="Usage example"/></p>
-
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
 
 
 <p> See <code>awful.screen.padding</code>
@@ -979,26 +911,12 @@ EXEC
 
 <p><img src="../images/AUTOGEN_dynamite_suit_magnifier_magnifier.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
-
 
 <p> <strong>Client count scaling</strong>:</p>
 
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_magnifier_scaling.svg" alt="Usage example"/></p>
-
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
 
 
 <p> <strong>nmaster effect</strong>:</p>
@@ -1015,13 +933,6 @@ EXEC
 
 <p><img src="../images/AUTOGEN_dynamite_suit_magnifier_mwfact.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
-
 
 <p> <strong>gap effect</strong>:</p>
 
@@ -1030,25 +941,11 @@ EXEC
 
 <p><img src="../images/AUTOGEN_dynamite_suit_magnifier_gap.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
-
 
 <p> <strong>resize effect</strong>:</p>
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_magnifier_resize.svg" alt="Usage example"/></p>
-
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
 
 
 <p> See <code>awful.tag.setgap</code>
@@ -1108,13 +1005,6 @@ EXEC
 
 <p><img src="../images/AUTOGEN_dynamite_suit_max_scaling.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
-
 
 <p> <strong>nmaster effect</strong>:</p>
 
@@ -1135,27 +1025,12 @@ EXEC
 
 <p><img src="../images/AUTOGEN_dynamite_suit_max_gap.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
-
 
 <p> <strong>screen padding effect</strong>:</p>
 
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_max_padding.svg" alt="Usage example"/></p>
-
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  2
-EXEC
-EXEC
-</code></pre>
-
 
 <p> See <code>awful.screen.padding</code>
 
@@ -1191,23 +1066,6 @@ EXEC
 
 <p><img src="../images/AUTOGEN_dynamite_suit_tile_scaling.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  2
-EXEC
-EXEC
-BEFORE  2
-EXEC
-EXEC
-BEFORE  2
-EXEC
-EXEC
-BEFORE  2
-EXEC
-EXEC
-</code></pre>
-
-
 
 <p> <strong>master_count effect</strong>:</p>
 
@@ -1215,13 +1073,6 @@ EXEC
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_tile_nmaster.svg" alt="Usage example"/></p>
-
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
 
 <p> See <a href="../classes/tag.html#beautiful.master_count">tag.master_count</a>
  See <code>awful.tag.incnmaster</code></p>
@@ -1234,13 +1085,6 @@ EXEC
 
 <p><img src="../images/AUTOGEN_dynamite_suit_tile_ncol.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
-
 <p> See <a href="../classes/tag.html#tag.column_count">tag.column_count</a>
  See <code>awful.tag.incncol</code></p>
 
@@ -1252,13 +1096,6 @@ EXEC
 
 <p><img src="../images/AUTOGEN_dynamite_suit_tile_mwfact.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
-
 <p> See <a href="../classes/tag.html#tag.master_width_factor">tag.master_width_factor</a>
  See <code>awful.tag.incmwfact</code></p>
 
@@ -1269,13 +1106,6 @@ EXEC
 
 <p><img src="../images/AUTOGEN_dynamite_suit_tile_gap.svg" alt="Usage example"/></p>
 
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  1
-EXEC
-</code></pre>
-
-
 <p> See <a href="../classes/tag.html#tag.gap">tag.gap</a>
  See <code>awful.tag.incgap</code></p>
 
@@ -1284,14 +1114,6 @@ EXEC
 
 
 <p><img src="../images/AUTOGEN_dynamite_suit_tile_padding.svg" alt="Usage example"/></p>
-
-<p><strong>Usage example output</strong>:</p>
-
-<pre><code>BEFORE  2
-EXEC
-EXEC
-</code></pre>
-
 
 <p> See <code>awful.screen.padding</code></p>
 
@@ -1369,7 +1191,7 @@ EXEC
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-06-26 10:45:33 </i>
+<i style="float:right;">Last updated 2018-07-05 04:33:52 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
