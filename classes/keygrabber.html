@@ -153,6 +153,7 @@
   <li><a href="../libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
   <li><a href="../libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
   <li><a href="../libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
   <li><a href="../libraries/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
@@ -230,14 +231,18 @@
  all windows (clients). This popup will only disappear when "Alt" is released.</p>
 
 
+
+
+
+
 <pre>
 keygrabber {
     keybindings = {
-        {{<span class="string">"Mod1"</span>         }, <span class="string">"Tab"</span>, awful.client.focus.history.select_previous},
-        {{<span class="string">"Mod1"</span>, <span class="string">"Shift"</span>}, <span class="string">"Tab"</span>, awful.client.focus.history.select_next    },
+        {{<span class="string">'Mod1'</span>         }, <span class="string">'Tab'</span>, awful.client.focus.history.select_previous},
+        {{<span class="string">'Mod1'</span>, <span class="string">'Shift'</span>}, <span class="string">'Tab'</span>, awful.client.focus.history.select_next    },
     },
-    release_key        = <span class="string">"Mod1"</span>,
-    release_event      = <span class="string">"release"</span>,
+    release_key        = <span class="string">'Mod1'</span>,
+    release_event      = <span class="string">'release'</span>,
     start_callback     = awful.client.focus.history.disable_tracking,
     stop_callback      = awful.client.focus.history.enable_tracking,
     export_keybindings = <span class="keyword">true</span>,
@@ -247,13 +252,6 @@ keygrabber {
 <p> In that example, because <a href="../classes/keygrabber.html#keygrabber.export_keybindings">export_keybindings</a> is set to <code>true</code>, pressing
  <code>alt+tab</code> or <code>alt+shift+tab</code> will start the transaction even if the
  keygrabber is not (yet) running.</p>
-
-<h2> Using keygrabber as transactional state machines</h2>
-
-<p> State machine keygrabber are like transactional keybindings, but change
- meaning depending on the set of (mod)keys currently pressed. For example,
- in the classic "Alt+Tab" transaction, pressing <code>Shift</code> changes if the
- selection goes forward or backward.</p>
 
 <h2> Using keygrabber for key sequence recording</h2>
 
@@ -310,9 +308,9 @@ keygrabber {
 <span class="keyword">end</span>
 
 keygrabber {
-    stop_callback  = parse,
-    release_key    = gears.<span class="global">table</span>.keys(map.verbs),
-    autostart      = <span class="keyword">true</span>,
+    stop_callback = parse,
+    release_key   = gears.<span class="global">table</span>.keys(map.verbs),
+    autostart     = <span class="keyword">true</span>,
 }
 </pre>
 
@@ -351,6 +349,10 @@ keygrabber {
 <h2><a href="#Object_properties">Object properties</a></h2>
 <table class="function_list">
 	<tr>
+	<td class="name" ><a href="#keygrabber.timeout">timeout</a></td>
+	<td class="summary">The keygrabber timeout.</td>
+	</tr>
+	<tr>
 	<td class="name" ><a href="#keygrabber.release_key">release_key</a></td>
 	<td class="summary">The key on which the keygrabber listen to terminate itself.</td>
 	</tr>
@@ -375,12 +377,20 @@ keygrabber {
 	<td class="summary">The keybindings associated with this keygrabber.</td>
 	</tr>
 	<tr>
+	<td class="name" ><a href="#keygrabber.allowed_keys">allowed_keys</a></td>
+	<td class="summary">Define a list of keys that are allowed instead of using <a href="../classes/keygrabber.html#keygrabber.release_key">release_key</a>.</td>
+	</tr>
+	<tr>
 	<td class="name" ><a href="#keygrabber.sequence">sequence</a></td>
 	<td class="summary">The sequence recorded from the current acquisition.</td>
 	</tr>
 </table>
 <h2><a href="#Signals">Signals</a></h2>
 <table class="function_list">
+	<tr>
+	<td class="name" ><a href="#property::current_instance">property::current_instance</a></td>
+	<td class="summary">The global signal used to track the <a href="../classes/keygrabber.html#keygrabber.current_instance">current_instance</a>.</td>
+	</tr>
 	<tr>
 	<td class="name" ><a href="#keygrabber.started">started</a></td>
 	<td class="summary">When the keygrabber starts.</td>
@@ -414,7 +424,7 @@ keygrabber {
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#keygrabber.start_callback">keygrabber.start_callback</a></td>
-	<td class="summary">.</td>
+	<td class="summary">A function called when a keygrabber starts.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#keygrabber.stop_callback">keygrabber.stop_callback</a></td>
@@ -423,7 +433,7 @@ keygrabber {
 	</tr>
 	<tr>
 	<td class="name" ><a href="#keygrabber.timeout_callback">keygrabber.timeout_callback</a></td>
-	<td class="summary">.</td>
+	<td class="summary">The function called when the keygrabber stops because of a <a href="../classes/keygrabber.html#keygrabber.timeout">timeout</a>.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#keygrabber.keypressed_callback">keygrabber.keypressed_callback</a></td>
@@ -730,6 +740,25 @@ keygrabber {
 
     <dl class="function">
     <dt>
+    <a name = "keygrabber.timeout"></a>
+    <strong>timeout</strong>
+    </dt>
+    <dd>
+    The keygrabber timeout.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../classes/gears.timer.html#">gears.timer</a></li>
+         <li><a href="../classes/keygrabber.html#keygrabber.timeout_callback">timeout_callback</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
     <a name = "keygrabber.release_key"></a>
     <strong>release_key</strong>
     </dt>
@@ -915,6 +944,35 @@ keygrabber {
 
 </dd>
     <dt>
+    <a name = "keygrabber.allowed_keys"></a>
+    <strong>allowed_keys</strong>
+    </dt>
+    <dd>
+    Define a list of keys that are allowed instead of using <a href="../classes/keygrabber.html#keygrabber.release_key">release_key</a>. </p>
+
+<p> When defined, this property allows to define an implicit way to release the
+ keygrabber. It helps save some boilerplate code in the handler callbacks.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">allowed_keys</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a> or <span class="type">nil</span></span>
+         The list of keys.
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">mykeygrabber.allowed_keys = {<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"Shift_L"</span>}</pre>
+    </ul>
+
+</dd>
+    <dt>
     <a name = "keygrabber.sequence"></a>
     <strong>sequence</strong>
     </dt>
@@ -956,6 +1014,20 @@ keygrabber {
     <h2 class="section-header "><a name="Signals"></a>Signals</h2>
 
     <dl class="function">
+    <dt>
+    <a name = "property::current_instance"></a>
+    <strong>property::current_instance</strong>
+    </dt>
+    <dd>
+    The global signal used to track the <a href="../classes/keygrabber.html#keygrabber.current_instance">current_instance</a>.
+
+
+
+
+
+
+
+</dd>
     <dt>
     <a name = "keygrabber.started"></a>
     <strong>started</strong>
@@ -1073,6 +1145,10 @@ keygrabber {
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/keygrabber.html#keygrabber.is_running">keygrabber.is_running</a>
+    </ul>
 
 
 </dd>
@@ -1107,9 +1183,16 @@ keygrabber {
     <strong>keygrabber.start_callback</strong>
     </dt>
     <dd>
-    .
+    A function called when a keygrabber starts.
 
 
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">keygrabber</span>
+            <span class="types"><a class="type" href="../classes/keygrabber.html#">keygrabber</a></span>
+         The keygrabber.
+        </li>
+    </ul>
 
 
 
@@ -1149,7 +1232,8 @@ keygrabber {
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/keygrabber.html#keygrabber.sequence">sequence</a>
+         <li><a href="../classes/keygrabber.html#keygrabber.sequence">sequence</a></li>
+         <li><a href="../classes/keygrabber.html#keygrabber:stop">stop</a></li>
     </ul>
 
     <h3>Usage:</h3>
@@ -1165,12 +1249,16 @@ keygrabber {
     <strong>keygrabber.timeout_callback</strong>
     </dt>
     <dd>
-    .
+    The function called when the keygrabber stops because of a <a href="../classes/keygrabber.html#keygrabber.timeout">timeout</a>.
 
 
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/keygrabber.html#keygrabber.timeout">timeout</a>
+    </ul>
 
 
 </dd>
@@ -1282,6 +1370,10 @@ keygrabber {
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/keygrabber.html#property::current_instance">property::current_instance</a>
+    </ul>
 
 
 </dd>
@@ -1484,7 +1576,7 @@ keygrabber {
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-07-05 04:33:52 </i>
+<i style="float:right;">Last updated 2018-07-21 09:17:12 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
