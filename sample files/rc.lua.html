@@ -48,6 +48,7 @@
   <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
+  <li><a href="../libraries/awful.keyboard.html">awful.keyboard</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="../libraries/awful.mouse.html">awful.mouse</a></li>
@@ -61,6 +62,7 @@
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
+  <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
   <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
   <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
@@ -90,12 +92,15 @@
   <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
   <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
   <li><a href="../libraries/lib.dynamite.wrapper.html">lib.dynamite.wrapper</a></li>
+  <li><a href="../libraries/lib.naughty.constants.html">lib.naughty.constants</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
+  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
+  <li><a href="../libraries/naughty.widget.html">naughty.widget</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -184,7 +189,7 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
@@ -414,18 +419,10 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
                            awful.button({ }, <span class="number">4</span>, <span class="keyword">function</span> () awful.layout.inc( <span class="number">1</span>) <span class="keyword">end</span>),
                            awful.button({ }, <span class="number">5</span>, <span class="keyword">function</span> () awful.layout.inc(-<span class="number">1</span>) <span class="keyword">end</span>)))
     <span class="comment">-- Create a taglist widget
-</span>    s.mytaglist = awful.widget.taglist {
-        screen  = s,
-        filter  = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons
-    }
+</span>    s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist_buttons)
 
     <span class="comment">-- Create a tasklist widget
-</span>    s.mytasklist = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
-    }
+</span>    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
 
     <span class="comment">-- Create the wibox
 </span>    s.mywibox = awful.wibar({ position = <span class="string">"top"</span>, screen = s })
@@ -725,8 +722,8 @@ clientbuttons = gears.<span class="global">table</span>.join(
 </span>    <span class="comment">-- i.e. put it at the end of others instead of setting it master.
 </span>    <span class="comment">-- if not awesome.startup then awful.client.setslave(c) end
 </span>
-    <span class="keyword">if</span> awesome.startup
-      <span class="keyword">and</span> <span class="keyword">not</span> c.size_hints.user_position
+    <span class="keyword">if</span> awesome.startup <span class="keyword">and</span>
+      <span class="keyword">not</span> c.size_hints.user_position
       <span class="keyword">and</span> <span class="keyword">not</span> c.size_hints.program_position <span class="keyword">then</span>
         <span class="comment">-- Prevent clients from being unreachable after screen count changes.
 </span>        awful.placement.no_offscreen(c)
@@ -802,7 +799,7 @@ client.connect_signal(<span class="string">"unfocus"</span>, <span class="keywor
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-07-21 09:17:12 </i>
+<i style="float:right;">Last updated 2018-07-24 18:12:04 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

@@ -42,7 +42,7 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><strong>Change Awesome appearance</strong></li>
@@ -63,6 +63,7 @@
   <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
+  <li><a href="../libraries/awful.keyboard.html">awful.keyboard</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="../libraries/awful.mouse.html">awful.mouse</a></li>
@@ -76,6 +77,7 @@
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
+  <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
   <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
   <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
@@ -105,12 +107,15 @@
   <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
   <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
   <li><a href="../libraries/lib.dynamite.wrapper.html">lib.dynamite.wrapper</a></li>
+  <li><a href="../libraries/lib.naughty.constants.html">lib.naughty.constants</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
+  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
+  <li><a href="../libraries/naughty.widget.html">naughty.widget</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -260,7 +265,6 @@
   <tr><td><a href='../libraries/awful.mouse.html#beautiful.snap_bg'>snap_bg</a></td><td>The snap outline background color</td></tr>
   <tr><td><a href='../libraries/awful.mouse.html#beautiful.snap_border_width'>snap<em>border</em>width</a></td><td>The snap outline width</td></tr>
   <tr><td><a href='../libraries/awful.mouse.html#beautiful.snap_shape'>snap_shape</a></td><td>The snap outline shape</td></tr>
-  <tr><td><a href='../libraries/awful.mouse.html#beautiful.snapper_gap'>snapper_gap</a></td><td>The gap between snapped contents</td></tr>
   <tr><td><a href='../libraries/awful.mouse.resize.html#beautiful.cursor_mouse_resize'>cursor<em>mouse</em>resize</a></td><td>The resize cursor name</td></tr>
   <tr><td><a href='../libraries/awful.mouse.resize.html#beautiful.cursor_mouse_move'>cursor<em>mouse</em>move</a></td><td>The move cursor name</td></tr>
   <tr><td><a href='../classes/awful.popup.html#beautiful.bg_normal'>bg_normal</a></td><td>The default background color</td></tr>
@@ -275,83 +279,83 @@
   <tr><td><a href='../libraries/awful.tag.html#beautiful.master_fill_policy'>master<em>fill</em>policy</a></td><td>The default fill policy</td></tr>
   <tr><td><a href='../libraries/awful.tag.html#beautiful.master_count'>master_count</a></td><td>The default number of master windows</td></tr>
   <tr><td><a href='../libraries/awful.tag.html#beautiful.column_count'>column_count</a></td><td>The default number of columns</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_fg_normal'>titlebar<em>fg</em>normal</a></td><td>The titlebar foreground (text) color</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_bg_normal'>titlebar<em>bg</em>normal</a></td><td>The titlebar background color</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_bgimage_normal'>titlebar<em>bgimage</em>normal</a></td><td>The titlebar background image image</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_fg'>titlebar_fg</a></td><td>The titlebar foreground (text) color</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_bg'>titlebar_bg</a></td><td>The titlebar background color</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_bgimage'>titlebar_bgimage</a></td><td>The titlebar background image image</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_fg_focus'>titlebar<em>fg</em>focus</a></td><td>The focused titlebar foreground (text) color</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_bg_focus'>titlebar<em>bg</em>focus</a></td><td>The focused titlebar background color</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_bgimage_focus'>titlebar<em>bgimage</em>focus</a></td><td>The focused titlebar background image image</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_normal'>titlebar<em>floating</em>button_normal</a></td><td>floating<em>button</em>normal</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_normal'>titlebar<em>maximized</em>button_normal</a></td><td>maximized<em>button</em>normal</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_minimize_button_normal'>titlebar<em>minimize</em>button_normal</a></td><td>minimize<em>button</em>normal</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_minimize_button_normal_hover'>titlebar<em>minimize</em>button<em>normal</em>hover</a></td><td>minimize<em>button</em>normal_hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_minimize_button_normal_press'>titlebar<em>minimize</em>button<em>normal</em>press</a></td><td>minimize<em>button</em>normal_press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_close_button_normal'>titlebar<em>close</em>button_normal</a></td><td>close<em>button</em>normal</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_close_button_normal_hover'>titlebar<em>close</em>button<em>normal</em>hover</a></td><td>close<em>button</em>normal_hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_close_button_normal_press'>titlebar<em>close</em>button<em>normal</em>press</a></td><td>close<em>button</em>normal_press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_normal'>titlebar<em>ontop</em>button_normal</a></td><td>ontop<em>button</em>normal</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_normal'>titlebar<em>sticky</em>button_normal</a></td><td>sticky<em>button</em>normal</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_focus'>titlebar<em>floating</em>button_focus</a></td><td>floating<em>button</em>focus</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_focus'>titlebar<em>maximized</em>button_focus</a></td><td>maximized<em>button</em>focus</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_minimize_button_focus'>titlebar<em>minimize</em>button_focus</a></td><td>minimize<em>button</em>focus</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_minimize_button_focus_hover'>titlebar<em>minimize</em>button<em>focus</em>hover</a></td><td>minimize<em>button</em>focus_hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_minimize_button_focus_press'>titlebar<em>minimize</em>button<em>focus</em>press</a></td><td>minimize<em>button</em>focus_press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_close_button_focus'>titlebar<em>close</em>button_focus</a></td><td>close<em>button</em>focus</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_close_button_focus_hover'>titlebar<em>close</em>button<em>focus</em>hover</a></td><td>close<em>button</em>focus_hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_close_button_focus_press'>titlebar<em>close</em>button<em>focus</em>press</a></td><td>close<em>button</em>focus_press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_focus'>titlebar<em>ontop</em>button_focus</a></td><td>ontop<em>button</em>focus</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_focus'>titlebar<em>sticky</em>button_focus</a></td><td>sticky<em>button</em>focus</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_normal_active'>titlebar<em>floating</em>button<em>normal</em>active</a></td><td>floating<em>button</em>normal_active</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_normal_active_hover'>titlebar<em>floating</em>button<em>normal</em>active_hover</a></td><td>floating<em>button</em>normal<em>active</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_normal_active_press'>titlebar<em>floating</em>button<em>normal</em>active_press</a></td><td>floating<em>button</em>normal<em>active</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_normal_active'>titlebar<em>maximized</em>button<em>normal</em>active</a></td><td>maximized<em>button</em>normal_active</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_normal_active_hover'>titlebar<em>maximized</em>button<em>normal</em>active_hover</a></td><td>maximized<em>button</em>normal<em>active</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_normal_active_press'>titlebar<em>maximized</em>button<em>normal</em>active_press</a></td><td>maximized<em>button</em>normal<em>active</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_normal_active'>titlebar<em>ontop</em>button<em>normal</em>active</a></td><td>ontop<em>button</em>normal_active</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_normal_active_hover'>titlebar<em>ontop</em>button<em>normal</em>active_hover</a></td><td>ontop<em>button</em>normal<em>active</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_normal_active_press'>titlebar<em>ontop</em>button<em>normal</em>active_press</a></td><td>ontop<em>button</em>normal<em>active</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_normal_active'>titlebar<em>sticky</em>button<em>normal</em>active</a></td><td>sticky<em>button</em>normal_active</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_normal_active_hover'>titlebar<em>sticky</em>button<em>normal</em>active_hover</a></td><td>sticky<em>button</em>normal<em>active</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_normal_active_press'>titlebar<em>sticky</em>button<em>normal</em>active_press</a></td><td>sticky<em>button</em>normal<em>active</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_focus_active'>titlebar<em>floating</em>button<em>focus</em>active</a></td><td>floating<em>button</em>focus_active</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_focus_active_hover'>titlebar<em>floating</em>button<em>focus</em>active_hover</a></td><td>floating<em>button</em>focus<em>active</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_focus_active_press'>titlebar<em>floating</em>button<em>focus</em>active_press</a></td><td>floating<em>button</em>focus<em>active</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_focus_active'>titlebar<em>maximized</em>button<em>focus</em>active</a></td><td>maximized<em>button</em>focus_active</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_focus_active_hover'>titlebar<em>maximized</em>button<em>focus</em>active_hover</a></td><td>maximized<em>button</em>focus<em>active</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_focus_active_press'>titlebar<em>maximized</em>button<em>focus</em>active_press</a></td><td>maximized<em>button</em>focus<em>active</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_focus_active'>titlebar<em>ontop</em>button<em>focus</em>active</a></td><td>ontop<em>button</em>focus_active</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_focus_active_hover'>titlebar<em>ontop</em>button<em>focus</em>active_hover</a></td><td>ontop<em>button</em>focus<em>active</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_focus_active_press'>titlebar<em>ontop</em>button<em>focus</em>active_press</a></td><td>ontop<em>button</em>focus<em>active</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_focus_active'>titlebar<em>sticky</em>button<em>focus</em>active</a></td><td>sticky<em>button</em>focus_active</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_focus_active_hover'>titlebar<em>sticky</em>button<em>focus</em>active_hover</a></td><td>sticky<em>button</em>focus<em>active</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_focus_active_press'>titlebar<em>sticky</em>button<em>focus</em>active_press</a></td><td>sticky<em>button</em>focus<em>active</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_normal_inactive'>titlebar<em>floating</em>button<em>normal</em>inactive</a></td><td>floating<em>button</em>normal_inactive</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_normal_inactive_hover'>titlebar<em>floating</em>button<em>normal</em>inactive_hover</a></td><td>floating<em>button</em>normal<em>inactive</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_normal_inactive_press'>titlebar<em>floating</em>button<em>normal</em>inactive_press</a></td><td>floating<em>button</em>normal<em>inactive</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_normal_inactive'>titlebar<em>maximized</em>button<em>normal</em>inactive</a></td><td>maximized<em>button</em>normal_inactive</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_normal_inactive_hover'>titlebar<em>maximized</em>button<em>normal</em>inactive_hover</a></td><td>maximized<em>button</em>normal<em>inactive</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_normal_inactive_press'>titlebar<em>maximized</em>button<em>normal</em>inactive_press</a></td><td>maximized<em>button</em>normal<em>inactive</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_normal_inactive'>titlebar<em>ontop</em>button<em>normal</em>inactive</a></td><td>ontop<em>button</em>normal_inactive</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_normal_inactive_hover'>titlebar<em>ontop</em>button<em>normal</em>inactive_hover</a></td><td>ontop<em>button</em>normal<em>inactive</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_normal_inactive_press'>titlebar<em>ontop</em>button<em>normal</em>inactive_press</a></td><td>ontop<em>button</em>normal<em>inactive</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_normal_inactive'>titlebar<em>sticky</em>button<em>normal</em>inactive</a></td><td>sticky<em>button</em>normal_inactive</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_normal_inactive_hover'>titlebar<em>sticky</em>button<em>normal</em>inactive_hover</a></td><td>sticky<em>button</em>normal<em>inactive</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_normal_inactive_press'>titlebar<em>sticky</em>button<em>normal</em>inactive_press</a></td><td>sticky<em>button</em>normal<em>inactive</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_focus_inactive'>titlebar<em>floating</em>button<em>focus</em>inactive</a></td><td>floating<em>button</em>focus_inactive</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_focus_inactive_hover'>titlebar<em>floating</em>button<em>focus</em>inactive_hover</a></td><td>floating<em>button</em>focus<em>inactive</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_floating_button_focus_inactive_press'>titlebar<em>floating</em>button<em>focus</em>inactive_press</a></td><td>floating<em>button</em>focus<em>inactive</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_focus_inactive'>titlebar<em>maximized</em>button<em>focus</em>inactive</a></td><td>maximized<em>button</em>focus_inactive</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_focus_inactive_hover'>titlebar<em>maximized</em>button<em>focus</em>inactive_hover</a></td><td>maximized<em>button</em>focus<em>inactive</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_maximized_button_focus_inactive_press'>titlebar<em>maximized</em>button<em>focus</em>inactive_press</a></td><td>maximized<em>button</em>focus<em>inactive</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_focus_inactive'>titlebar<em>ontop</em>button<em>focus</em>inactive</a></td><td>ontop<em>button</em>focus_inactive</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_focus_inactive_hover'>titlebar<em>ontop</em>button<em>focus</em>inactive_hover</a></td><td>ontop<em>button</em>focus<em>inactive</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_ontop_button_focus_inactive_press'>titlebar<em>ontop</em>button<em>focus</em>inactive_press</a></td><td>ontop<em>button</em>focus<em>inactive</em>press</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_focus_inactive'>titlebar<em>sticky</em>button<em>focus</em>inactive</a></td><td>sticky<em>button</em>focus_inactive</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_focus_inactive_hover'>titlebar<em>sticky</em>button<em>focus</em>inactive_hover</a></td><td>sticky<em>button</em>focus<em>inactive</em>hover</td></tr>
-  <tr><td><a href='../classes/awful.titlebar.html#beautiful.titlebar_sticky_button_focus_inactive_press'>titlebar<em>sticky</em>button<em>focus</em>inactive_press</a></td><td>sticky<em>button</em>focus<em>inactive</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_fg_normal'>titlebar<em>fg</em>normal</a></td><td>The titlebar foreground (text) color</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_bg_normal'>titlebar<em>bg</em>normal</a></td><td>The titlebar background color</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_bgimage_normal'>titlebar<em>bgimage</em>normal</a></td><td>The titlebar background image image</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_fg'>titlebar_fg</a></td><td>The titlebar foreground (text) color</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_bg'>titlebar_bg</a></td><td>The titlebar background color</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_bgimage'>titlebar_bgimage</a></td><td>The titlebar background image image</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_fg_focus'>titlebar<em>fg</em>focus</a></td><td>The focused titlebar foreground (text) color</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_bg_focus'>titlebar<em>bg</em>focus</a></td><td>The focused titlebar background color</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_bgimage_focus'>titlebar<em>bgimage</em>focus</a></td><td>The focused titlebar background image image</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_normal'>titlebar<em>floating</em>button_normal</a></td><td>floating<em>button</em>normal</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_normal'>titlebar<em>maximized</em>button_normal</a></td><td>maximized<em>button</em>normal</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_minimize_button_normal'>titlebar<em>minimize</em>button_normal</a></td><td>minimize<em>button</em>normal</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_minimize_button_normal_hover'>titlebar<em>minimize</em>button<em>normal</em>hover</a></td><td>minimize<em>button</em>normal_hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_minimize_button_normal_press'>titlebar<em>minimize</em>button<em>normal</em>press</a></td><td>minimize<em>button</em>normal_press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_close_button_normal'>titlebar<em>close</em>button_normal</a></td><td>close<em>button</em>normal</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_close_button_normal_hover'>titlebar<em>close</em>button<em>normal</em>hover</a></td><td>close<em>button</em>normal_hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_close_button_normal_press'>titlebar<em>close</em>button<em>normal</em>press</a></td><td>close<em>button</em>normal_press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_normal'>titlebar<em>ontop</em>button_normal</a></td><td>ontop<em>button</em>normal</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_normal'>titlebar<em>sticky</em>button_normal</a></td><td>sticky<em>button</em>normal</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_focus'>titlebar<em>floating</em>button_focus</a></td><td>floating<em>button</em>focus</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_focus'>titlebar<em>maximized</em>button_focus</a></td><td>maximized<em>button</em>focus</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_minimize_button_focus'>titlebar<em>minimize</em>button_focus</a></td><td>minimize<em>button</em>focus</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_minimize_button_focus_hover'>titlebar<em>minimize</em>button<em>focus</em>hover</a></td><td>minimize<em>button</em>focus_hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_minimize_button_focus_press'>titlebar<em>minimize</em>button<em>focus</em>press</a></td><td>minimize<em>button</em>focus_press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_close_button_focus'>titlebar<em>close</em>button_focus</a></td><td>close<em>button</em>focus</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_close_button_focus_hover'>titlebar<em>close</em>button<em>focus</em>hover</a></td><td>close<em>button</em>focus_hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_close_button_focus_press'>titlebar<em>close</em>button<em>focus</em>press</a></td><td>close<em>button</em>focus_press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_focus'>titlebar<em>ontop</em>button_focus</a></td><td>ontop<em>button</em>focus</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_focus'>titlebar<em>sticky</em>button_focus</a></td><td>sticky<em>button</em>focus</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_normal_active'>titlebar<em>floating</em>button<em>normal</em>active</a></td><td>floating<em>button</em>normal_active</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_normal_active_hover'>titlebar<em>floating</em>button<em>normal</em>active_hover</a></td><td>floating<em>button</em>normal<em>active</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_normal_active_press'>titlebar<em>floating</em>button<em>normal</em>active_press</a></td><td>floating<em>button</em>normal<em>active</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_normal_active'>titlebar<em>maximized</em>button<em>normal</em>active</a></td><td>maximized<em>button</em>normal_active</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_normal_active_hover'>titlebar<em>maximized</em>button<em>normal</em>active_hover</a></td><td>maximized<em>button</em>normal<em>active</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_normal_active_press'>titlebar<em>maximized</em>button<em>normal</em>active_press</a></td><td>maximized<em>button</em>normal<em>active</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_normal_active'>titlebar<em>ontop</em>button<em>normal</em>active</a></td><td>ontop<em>button</em>normal_active</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_normal_active_hover'>titlebar<em>ontop</em>button<em>normal</em>active_hover</a></td><td>ontop<em>button</em>normal<em>active</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_normal_active_press'>titlebar<em>ontop</em>button<em>normal</em>active_press</a></td><td>ontop<em>button</em>normal<em>active</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_normal_active'>titlebar<em>sticky</em>button<em>normal</em>active</a></td><td>sticky<em>button</em>normal_active</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_normal_active_hover'>titlebar<em>sticky</em>button<em>normal</em>active_hover</a></td><td>sticky<em>button</em>normal<em>active</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_normal_active_press'>titlebar<em>sticky</em>button<em>normal</em>active_press</a></td><td>sticky<em>button</em>normal<em>active</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_focus_active'>titlebar<em>floating</em>button<em>focus</em>active</a></td><td>floating<em>button</em>focus_active</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_focus_active_hover'>titlebar<em>floating</em>button<em>focus</em>active_hover</a></td><td>floating<em>button</em>focus<em>active</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_focus_active_press'>titlebar<em>floating</em>button<em>focus</em>active_press</a></td><td>floating<em>button</em>focus<em>active</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_focus_active'>titlebar<em>maximized</em>button<em>focus</em>active</a></td><td>maximized<em>button</em>focus_active</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_focus_active_hover'>titlebar<em>maximized</em>button<em>focus</em>active_hover</a></td><td>maximized<em>button</em>focus<em>active</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_focus_active_press'>titlebar<em>maximized</em>button<em>focus</em>active_press</a></td><td>maximized<em>button</em>focus<em>active</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_focus_active'>titlebar<em>ontop</em>button<em>focus</em>active</a></td><td>ontop<em>button</em>focus_active</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_focus_active_hover'>titlebar<em>ontop</em>button<em>focus</em>active_hover</a></td><td>ontop<em>button</em>focus<em>active</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_focus_active_press'>titlebar<em>ontop</em>button<em>focus</em>active_press</a></td><td>ontop<em>button</em>focus<em>active</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_focus_active'>titlebar<em>sticky</em>button<em>focus</em>active</a></td><td>sticky<em>button</em>focus_active</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_focus_active_hover'>titlebar<em>sticky</em>button<em>focus</em>active_hover</a></td><td>sticky<em>button</em>focus<em>active</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_focus_active_press'>titlebar<em>sticky</em>button<em>focus</em>active_press</a></td><td>sticky<em>button</em>focus<em>active</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_normal_inactive'>titlebar<em>floating</em>button<em>normal</em>inactive</a></td><td>floating<em>button</em>normal_inactive</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_normal_inactive_hover'>titlebar<em>floating</em>button<em>normal</em>inactive_hover</a></td><td>floating<em>button</em>normal<em>inactive</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_normal_inactive_press'>titlebar<em>floating</em>button<em>normal</em>inactive_press</a></td><td>floating<em>button</em>normal<em>inactive</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_normal_inactive'>titlebar<em>maximized</em>button<em>normal</em>inactive</a></td><td>maximized<em>button</em>normal_inactive</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_normal_inactive_hover'>titlebar<em>maximized</em>button<em>normal</em>inactive_hover</a></td><td>maximized<em>button</em>normal<em>inactive</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_normal_inactive_press'>titlebar<em>maximized</em>button<em>normal</em>inactive_press</a></td><td>maximized<em>button</em>normal<em>inactive</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_normal_inactive'>titlebar<em>ontop</em>button<em>normal</em>inactive</a></td><td>ontop<em>button</em>normal_inactive</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_normal_inactive_hover'>titlebar<em>ontop</em>button<em>normal</em>inactive_hover</a></td><td>ontop<em>button</em>normal<em>inactive</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_normal_inactive_press'>titlebar<em>ontop</em>button<em>normal</em>inactive_press</a></td><td>ontop<em>button</em>normal<em>inactive</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_normal_inactive'>titlebar<em>sticky</em>button<em>normal</em>inactive</a></td><td>sticky<em>button</em>normal_inactive</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_normal_inactive_hover'>titlebar<em>sticky</em>button<em>normal</em>inactive_hover</a></td><td>sticky<em>button</em>normal<em>inactive</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_normal_inactive_press'>titlebar<em>sticky</em>button<em>normal</em>inactive_press</a></td><td>sticky<em>button</em>normal<em>inactive</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_focus_inactive'>titlebar<em>floating</em>button<em>focus</em>inactive</a></td><td>floating<em>button</em>focus_inactive</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_focus_inactive_hover'>titlebar<em>floating</em>button<em>focus</em>inactive_hover</a></td><td>floating<em>button</em>focus<em>inactive</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_floating_button_focus_inactive_press'>titlebar<em>floating</em>button<em>focus</em>inactive_press</a></td><td>floating<em>button</em>focus<em>inactive</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_focus_inactive'>titlebar<em>maximized</em>button<em>focus</em>inactive</a></td><td>maximized<em>button</em>focus_inactive</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_focus_inactive_hover'>titlebar<em>maximized</em>button<em>focus</em>inactive_hover</a></td><td>maximized<em>button</em>focus<em>inactive</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_maximized_button_focus_inactive_press'>titlebar<em>maximized</em>button<em>focus</em>inactive_press</a></td><td>maximized<em>button</em>focus<em>inactive</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_focus_inactive'>titlebar<em>ontop</em>button<em>focus</em>inactive</a></td><td>ontop<em>button</em>focus_inactive</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_focus_inactive_hover'>titlebar<em>ontop</em>button<em>focus</em>inactive_hover</a></td><td>ontop<em>button</em>focus<em>inactive</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_ontop_button_focus_inactive_press'>titlebar<em>ontop</em>button<em>focus</em>inactive_press</a></td><td>ontop<em>button</em>focus<em>inactive</em>press</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_focus_inactive'>titlebar<em>sticky</em>button<em>focus</em>inactive</a></td><td>sticky<em>button</em>focus_inactive</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_focus_inactive_hover'>titlebar<em>sticky</em>button<em>focus</em>inactive_hover</a></td><td>sticky<em>button</em>focus<em>inactive</em>hover</td></tr>
+  <tr><td><a href='../libraries/awful.titlebar.html#beautiful.titlebar_sticky_button_focus_inactive_press'>titlebar<em>sticky</em>button<em>focus</em>inactive_press</a></td><td>sticky<em>button</em>focus<em>inactive</em>press</td></tr>
   <tr><td><a href='../classes/awful.tooltip.html#beautiful.tooltip_border_color'>tooltip<em>border</em>color</a></td><td>The tooltip border color</td></tr>
   <tr><td><a href='../classes/awful.tooltip.html#beautiful.tooltip_bg'>tooltip_bg</a></td><td>The tooltip background color</td></tr>
   <tr><td><a href='../classes/awful.tooltip.html#beautiful.tooltip_fg'>tooltip_fg</a></td><td>The tooltip foregound (text) color</td></tr>
@@ -478,6 +482,17 @@
   <tr><td><a href='../libraries/beautiful.html#beautiful.wallpaper'>wallpaper</a></td><td>The wallpaper path</td></tr>
   <tr><td><a href='../libraries/beautiful.html#beautiful.icon_theme'>icon_theme</a></td><td>The icon theme name</td></tr>
   <tr><td><a href='../libraries/beautiful.html#beautiful.awesome_icon'>awesome_icon</a></td><td>The Awesome icon path</td></tr>
+  <tr><td><a href='../libraries/naughty.core.html#beautiful.notification_font'>notification_font</a></td><td>Notifications font</td></tr>
+  <tr><td><a href='../libraries/naughty.core.html#beautiful.notification_bg'>notification_bg</a></td><td>Notifications background color</td></tr>
+  <tr><td><a href='../libraries/naughty.core.html#beautiful.notification_fg'>notification_fg</a></td><td>Notifications foreground color</td></tr>
+  <tr><td><a href='../libraries/naughty.core.html#beautiful.notification_border_width'>notification<em>border</em>width</a></td><td>Notifications border width</td></tr>
+  <tr><td><a href='../libraries/naughty.core.html#beautiful.notification_border_color'>notification<em>border</em>color</a></td><td>Notifications border color</td></tr>
+  <tr><td><a href='../libraries/naughty.core.html#beautiful.notification_shape'>notification_shape</a></td><td>Notifications shape</td></tr>
+  <tr><td><a href='../libraries/naughty.core.html#beautiful.notification_opacity'>notification_opacity</a></td><td>Notifications opacity</td></tr>
+  <tr><td><a href='../libraries/naughty.core.html#beautiful.notification_margin'>notification_margin</a></td><td>Notifications margin</td></tr>
+  <tr><td><a href='../libraries/naughty.core.html#beautiful.notification_width'>notification_width</a></td><td>Notifications width</td></tr>
+  <tr><td><a href='../libraries/naughty.core.html#beautiful.notification_height'>notification_height</a></td><td>Notifications height</td></tr>
+  <tr><td><a href='../libraries/naughty.core.html#beautiful.notification_icon_size'>notification<em>icon</em>size</a></td><td>Notifications icon size</td></tr>
   <tr><td><a href='../classes/naughty.notification.html#beautiful.notification_font'>notification_font</a></td><td>Notifications font</td></tr>
   <tr><td><a href='../classes/naughty.notification.html#beautiful.notification_bg'>notification_bg</a></td><td>Notifications background color</td></tr>
   <tr><td><a href='../classes/naughty.notification.html#beautiful.notification_fg'>notification_fg</a></td><td>Notifications foreground color</td></tr>
@@ -730,6 +745,17 @@
 </span><span class="comment">-- theme.notification_margin = nil
 </span><span class="comment">-- theme.notification_width = nil
 </span><span class="comment">-- theme.notification_height = nil
+</span><span class="comment">-- theme.notification_icon_size = nil
+</span><span class="comment">-- theme.notification_font = nil
+</span><span class="comment">-- theme.notification_bg = nil
+</span><span class="comment">-- theme.notification_fg = nil
+</span><span class="comment">-- theme.notification_border_width = nil
+</span><span class="comment">-- theme.notification_border_color = nil
+</span><span class="comment">-- theme.notification_shape = nil
+</span><span class="comment">-- theme.notification_opacity = nil
+</span><span class="comment">-- theme.notification_margin = nil
+</span><span class="comment">-- theme.notification_width = nil
+</span><span class="comment">-- theme.notification_height = nil
 </span><span class="comment">-- theme.notification_max_width = nil
 </span><span class="comment">-- theme.notification_position = nil
 </span>
@@ -789,9 +815,6 @@
 </span><span class="comment">-- theme.snap_bg = nil
 </span><span class="comment">-- theme.snap_border_width = nil
 </span><span class="comment">-- theme.snap_shape = nil
-</span>
-<span class="comment">-- snapper
-</span><span class="comment">-- theme.snapper_gap = nil
 </span>
 <span class="comment">-- systray
 </span><span class="comment">-- theme.systray_icon_spacing = nil
@@ -981,7 +1004,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-07-21 09:17:12 </i>
+<i style="float:right;">Last updated 2018-07-24 18:12:04 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

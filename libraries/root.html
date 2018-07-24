@@ -47,6 +47,7 @@
   <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
+  <li><a href="../libraries/awful.keyboard.html">awful.keyboard</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="../libraries/awful.mouse.html">awful.mouse</a></li>
@@ -60,6 +61,7 @@
   <li><a href="../libraries/awful.wibox.html">awful.wibox</a></li>
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
+  <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
   <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
   <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
@@ -89,12 +91,15 @@
   <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
   <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
   <li><a href="../libraries/lib.dynamite.wrapper.html">lib.dynamite.wrapper</a></li>
+  <li><a href="../libraries/lib.naughty.constants.html">lib.naughty.constants</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
+  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
+  <li><a href="../libraries/naughty.widget.html">naughty.widget</a></li>
   <li><strong>root</strong></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -188,7 +193,7 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
@@ -219,7 +224,7 @@
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#fake_input">fake_input (event_type, detail, x, y)</a></td>
-	<td class="summary">Send fake events.</td>
+	<td class="summary">Send fake keyboard or mouse events.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#keys">keys (keys_array)</a></td>
@@ -267,13 +272,74 @@
     <strong>fake_input (event_type, detail, x, y)</strong>
     </dt>
     <dd>
-    Send fake events.  Usually the currently focused client will get it.
+
+<p>Send fake keyboard or mouse events. </p>
+
+<p> Usually the currently focused client or the keybindings will receive those
+ events. If a <a href="../classes/keygrabber.html#">keygrabber</a> or <a href="../libraries/mousegrabber.html#">mousegrabber</a> is running, then it will get them.</p>
+
+<p> Some keys have different names compared to the ones generally used in
+ Awesome. For example, here is the modifiers Awesome names versus the ones
+ that need to be used by <code>fake_inputs</code>:
+ <table>
+  <tr style='font-weight: bold;'>
+   <th align='center'>Modifier name </th>
+   <th align='center'>Key name</th>
+   <th align='center'>Alternate key name</th>
+  </tr>
+  <tr><td> Mod4</td><td align='center'> Super_L </td><td align='center'> Super_R </td></tr>
+  <tr><td> Control </td><td align='center'> Control_L </td><td align='center'> Control_R </td></tr>
+  <tr><td> Shift </td><td align='center'> Shift_L </td><td align='center'> Shift_R </td></tr>
+  <tr><td> Mod1</td><td align='center'> Alt_L </td><td align='center'> Alt_R </td></tr>
+ </table></p>
+
+<p> This function is very low level, to be more useful, it can be wrapped into
+ higher level constructs such as:</p>
+
+<p> <strong>Sending strings:</strong></p>
+
+
+
+
+
+<pre><code>local function send_string_to_client(s, c)
+    local old_c = client.focus
+    client.focus = c
+    for i=1, #s do
+        local char = s:sub(i,i)
+        root.fake_inputs('key_press'  , char)
+        root.fake_inputs('key_release', char)
+    end
+    client.focus = old_c
+end
+
+send_string_to_client('Hello world!')
+</code></pre>
+
+<p> <strong>Clicking:</strong></p>
+
+<p> <img src="../images/mouse.svg" alt="Client geometry"/></p>
+
+
+
+
+
+<pre><code>local function click(button_id, x, y)
+    mouse.coords {x = x, y = y}
+    root.fake_inputs('button_press' , button_id)
+    root.fake_inputs('button_release', button_id)
+end
+
+click(1, 42, 42)
+</code></pre>
+
+
 
 
     <ul>
         <li><span class="parameter">event_type</span>
-         The event type: key<em>press, key</em>release, button<em>press,
-  button</em>release or motion_notify.
+         The event type: key_press, key_release, button_press,
+  button_release or motion_notify.
         </li>
         <li><span class="parameter">detail</span>
          The detail: in case of a key event, this is the keycode
@@ -561,7 +627,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-07-21 09:17:12 </i>
+<i style="float:right;">Last updated 2018-07-24 18:12:04 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
