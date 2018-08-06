@@ -48,7 +48,6 @@
   <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
-  <li><a href="../libraries/awful.keyboard.html">awful.keyboard</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="../libraries/awful.mouse.html">awful.mouse</a></li>
@@ -71,6 +70,7 @@
   <li><a href="../libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
   <li><a href="../libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
   <li><a href="../libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../libraries/dynamite.utils.html">dynamite.utils</a></li>
   <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
   <li><a href="../libraries/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
@@ -91,16 +91,12 @@
   <li><a href="../libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
   <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
   <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
-  <li><a href="../libraries/lib.dynamite.wrapper.html">lib.dynamite.wrapper</a></li>
-  <li><a href="../libraries/lib.naughty.constants.html">lib.naughty.constants</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
-  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
-  <li><a href="../libraries/naughty.widget.html">naughty.widget</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -189,7 +185,7 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
@@ -366,16 +362,11 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                               <span class="keyword">if</span> c == client.focus <span class="keyword">then</span>
                                                   c.minimized = <span class="keyword">true</span>
                                               <span class="keyword">else</span>
-                                                  <span class="comment">-- Without this, the following
-</span>                                                  <span class="comment">-- :isvisible() makes no sense
-</span>                                                  c.minimized = <span class="keyword">false</span>
-                                                  <span class="keyword">if</span> <span class="keyword">not</span> c:isvisible() <span class="keyword">and</span> c.first_tag <span class="keyword">then</span>
-                                                      c.first_tag:view_only()
-                                                  <span class="keyword">end</span>
-                                                  <span class="comment">-- This will also un-minimize
-</span>                                                  <span class="comment">-- the client, if needed
-</span>                                                  client.focus = c
-                                                  c:raise()
+                                                  c:emit_signal(
+                                                      <span class="string">"request::activate"</span>,
+                                                      <span class="string">"tasklist"</span>,
+                                                      {raise = <span class="keyword">true</span>}
+                                                  )
                                               <span class="keyword">end</span>
                                           <span class="keyword">end</span>),
                      awful.button({ }, <span class="number">3</span>, client_menu_toggle_fn()),
@@ -419,10 +410,18 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
                            awful.button({ }, <span class="number">4</span>, <span class="keyword">function</span> () awful.layout.inc( <span class="number">1</span>) <span class="keyword">end</span>),
                            awful.button({ }, <span class="number">5</span>, <span class="keyword">function</span> () awful.layout.inc(-<span class="number">1</span>) <span class="keyword">end</span>)))
     <span class="comment">-- Create a taglist widget
-</span>    s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist_buttons)
+</span>    s.mytaglist = awful.widget.taglist {
+        screen  = s,
+        filter  = awful.widget.taglist.filter.all,
+        buttons = taglist_buttons
+    }
 
     <span class="comment">-- Create a tasklist widget
-</span>    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
+</span>    s.mytasklist = awful.widget.tasklist {
+        screen  = s,
+        filter  = awful.widget.tasklist.filter.currenttags,
+        buttons = tasklist_buttons
+    }
 
     <span class="comment">-- Create the wibox
 </span>    s.mywibox = awful.wibar({ position = <span class="string">"top"</span>, screen = s })
@@ -532,8 +531,9 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
                   <span class="keyword">local</span> c = awful.client.restore()
                   <span class="comment">-- Focus restored client
 </span>                  <span class="keyword">if</span> c <span class="keyword">then</span>
-                      client.focus = c
-                      c:raise()
+                    c:emit_signal(
+                        <span class="string">"request::activate"</span>, <span class="string">"key.unminimize"</span>, {raise = <span class="keyword">true</span>}
+                    )
                   <span class="keyword">end</span>
               <span class="keyword">end</span>,
               {description = <span class="string">"restore minimized"</span>, group = <span class="string">"client"</span>}),
@@ -652,9 +652,18 @@ clientkeys = gears.<span class="global">table</span>.join(
 <span class="keyword">end</span>
 
 clientbuttons = gears.<span class="global">table</span>.join(
-    awful.button({ }, <span class="number">1</span>, <span class="keyword">function</span> (c) client.focus = c; c:raise() <span class="keyword">end</span>),
-    awful.button({ modkey }, <span class="number">1</span>, awful.mouse.client.move),
-    awful.button({ modkey }, <span class="number">3</span>, awful.mouse.client.resize))
+    awful.button({ }, <span class="number">1</span>, <span class="keyword">function</span> (c)
+        c:emit_signal(<span class="string">"request::activate"</span>, <span class="string">"mouse_click"</span>, {raise = <span class="keyword">true</span>})
+    <span class="keyword">end</span>),
+    awful.button({ modkey }, <span class="number">1</span>, <span class="keyword">function</span> (c)
+        c:emit_signal(<span class="string">"request::activate"</span>, <span class="string">"mouse_click"</span>, {raise = <span class="keyword">true</span>})
+        awful.mouse.client.move(c)
+    <span class="keyword">end</span>),
+    awful.button({ modkey }, <span class="number">3</span>, <span class="keyword">function</span> (c)
+        c:emit_signal(<span class="string">"request::activate"</span>, <span class="string">"mouse_click"</span>, {raise = <span class="keyword">true</span>})
+        awful.mouse.client.resize(c)
+    <span class="keyword">end</span>)
+)
 
 <span class="comment">-- Set keys
 </span>root.keys(globalkeys)
@@ -722,8 +731,8 @@ clientbuttons = gears.<span class="global">table</span>.join(
 </span>    <span class="comment">-- i.e. put it at the end of others instead of setting it master.
 </span>    <span class="comment">-- if not awesome.startup then awful.client.setslave(c) end
 </span>
-    <span class="keyword">if</span> awesome.startup <span class="keyword">and</span>
-      <span class="keyword">not</span> c.size_hints.user_position
+    <span class="keyword">if</span> awesome.startup
+      <span class="keyword">and</span> <span class="keyword">not</span> c.size_hints.user_position
       <span class="keyword">and</span> <span class="keyword">not</span> c.size_hints.program_position <span class="keyword">then</span>
         <span class="comment">-- Prevent clients from being unreachable after screen count changes.
 </span>        awful.placement.no_offscreen(c)
@@ -735,13 +744,11 @@ clientbuttons = gears.<span class="global">table</span>.join(
     <span class="comment">-- buttons for the titlebar
 </span>    <span class="keyword">local</span> buttons = gears.<span class="global">table</span>.join(
         awful.button({ }, <span class="number">1</span>, <span class="keyword">function</span>()
-            client.focus = c
-            c:raise()
+            c:emit_signal(<span class="string">"request::activate"</span>, <span class="string">"titlebar"</span>, {raise = <span class="keyword">true</span>})
             awful.mouse.client.move(c)
         <span class="keyword">end</span>),
         awful.button({ }, <span class="number">3</span>, <span class="keyword">function</span>()
-            client.focus = c
-            c:raise()
+            c:emit_signal(<span class="string">"request::activate"</span>, <span class="string">"titlebar"</span>, {raise = <span class="keyword">true</span>})
             awful.mouse.client.resize(c)
         <span class="keyword">end</span>)
     )
@@ -774,10 +781,7 @@ clientbuttons = gears.<span class="global">table</span>.join(
 
 <span class="comment">-- Enable sloppy focus, so that focus follows mouse.
 </span>client.connect_signal(<span class="string">"mouse::enter"</span>, <span class="keyword">function</span>(c)
-    <span class="keyword">if</span> awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
-        <span class="keyword">and</span> awful.client.focus.filter(c) <span class="keyword">then</span>
-        client.focus = c
-    <span class="keyword">end</span>
+    c:emit_signal(<span class="string">"request::activate"</span>, <span class="string">"mouse_enter"</span>, {raise = <span class="keyword">true</span>})
 <span class="keyword">end</span>)
 
 client.connect_signal(<span class="string">"focus"</span>, <span class="keyword">function</span>(c) c.border_color = beautiful.border_focus <span class="keyword">end</span>)
@@ -799,7 +803,7 @@ client.connect_signal(<span class="string">"unfocus"</span>, <span class="keywor
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-07-24 18:12:04 </i>
+<i style="float:right;">Last updated 2018-08-06 10:49:32 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

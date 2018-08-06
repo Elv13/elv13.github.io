@@ -137,7 +137,6 @@
   <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
-  <li><a href="../libraries/awful.keyboard.html">awful.keyboard</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="../libraries/awful.mouse.html">awful.mouse</a></li>
@@ -160,6 +159,7 @@
   <li><a href="../libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
   <li><a href="../libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
   <li><a href="../libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../libraries/dynamite.utils.html">dynamite.utils</a></li>
   <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
   <li><a href="../libraries/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
@@ -180,16 +180,12 @@
   <li><a href="../libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
   <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
   <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
-  <li><a href="../libraries/lib.dynamite.wrapper.html">lib.dynamite.wrapper</a></li>
-  <li><a href="../libraries/lib.naughty.constants.html">lib.naughty.constants</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
-  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
-  <li><a href="../libraries/naughty.widget.html">naughty.widget</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -204,7 +200,7 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
@@ -977,6 +973,14 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<tr>
 	<td class="name" ><a href="#awful.client.focus.history.previous">awful.client.focus.history.previous ()</a></td>
 	<td class="summary">Focus the previous client in history.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#focus.history.select_previous">focus.history.select_previous ([wrap=true[, filter=nil]])</a></td>
+	<td class="summary">Select the previous client relative to the focused one.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#focus.history.select_next">focus.history.select_next ([wrap=true[, filter=nil]])</a></td>
+	<td class="summary">Select the next client relative to the focused one.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.focus.bydirection">awful.client.focus.bydirection (dir[, c[, stacked=false]])</a></td>
@@ -2740,6 +2744,52 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
  identifier remain the same. This allow to match a spawn event to an actual
  client.</p>
 
+<p> This is used to display a different mouse cursor when the application is
+ loading and also to attach some properties to the newly created client (like
+ a <a href="../classes/tag.html#">tag</a> or <a href="../classes/client.html#client.floating">floating</a> state).</p>
+
+<p> Some applications, like <code>xterm</code>, don't support startup notification. While
+ not perfect, the adding the following code to <a href="../sample files/rc.lua.html#">rc.lua</a> will mitigate the
+ issue. Please note that this code is Linux specific.</p>
+
+<pre><code>local blacklisted_snid = setmetatable({}, {__mode = "v" })
+
+--- Make startup notification work for some clients like XTerm. This is ugly
+-- but works often enough to be useful.
+local function fix_startup_id(c)
+    -- Prevent "broken" sub processes created by &lt;code&gt;c&lt;/code&gt; to inherit its SNID
+    if c.startup_id then
+        blacklisted_snid[c.startup_id] = blacklisted_snid[c.startup_id] or c
+        return
+    end
+
+    if not c.pid then return end
+
+    -- Read the process environment variables
+    local f = io.open("/proc/"..c.pid.."/environ", "rb")
+
+    -- It will only work on Linux, that's already 99% of the userbase.
+    if not f then return end
+
+    local snid = f:read("*all"):match("STARTUP_ID=(.*)\0")
+    f:close()
+
+    -- If there is already a client using this SNID, it means it's either a
+    -- subprocess or another window for the same process. While it makes sense
+    -- in some case to apply the same rules, it is not always the case, so
+    -- better doing nothing rather than something stupid.
+    if blacklisted_snid[snid] then return end
+
+    c.startup_id = snid
+
+    blacklisted_snid[snid] = c
+end
+
+awful.rules.add_rule_source(
+    "snid", fix_startup_id, {}, {"awful.spawn", "awful.rules"}
+)
+</code></pre>
+
 <p> <strong>Signal:</strong></p>
 
 <ul>
@@ -2760,6 +2810,10 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/awful.spawn.html#">awful.spawn</a>
+    </ul>
 
 
 </dd>
@@ -3587,7 +3641,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/client.html#request::geometry">client.geometry</a>
+         <a href="../classes/client.html#client:geometry">client.geometry</a>
     </ul>
 
 
@@ -3605,7 +3659,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/client.html#request::geometry">client.geometry</a>
+         <a href="../classes/client.html#client:geometry">client.geometry</a>
     </ul>
 
 
@@ -4939,7 +4993,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/client.html#request::geometry">geometry</a>
+         <a href="../classes/client.html#client:geometry">geometry</a>
     </ul>
 
 
@@ -5228,6 +5282,75 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
 </dd>
     <dt>
+    <a name = "focus.history.select_previous"></a>
+    <strong>focus.history.select_previous ([wrap=true[, filter=nil]])</strong>
+    </dt>
+    <dd>
+    Select the previous client relative to the focused one.
+
+
+    <ul>
+        <li><span class="parameter">wrap</span>
+            <span class="types"><span class="type">boolean</span></span>
+         If there is no previous, select the most
+  recent one.
+         (<em>default</em> true)
+        </li>
+        <li><span class="parameter">filter</span>
+            <span class="types"><span class="type">function</span></span>
+         A function returning a boolean to either
+  accept or reject the client. If it's rejected, it will keep searching until
+  it runs out of options.
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/client.html#">client</a></span>
+        The client
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "focus.history.select_next"></a>
+    <strong>focus.history.select_next ([wrap=true[, filter=nil]])</strong>
+    </dt>
+    <dd>
+    Select the next client relative to the focused one.
+
+
+    <ul>
+        <li><span class="parameter">wrap</span>
+            <span class="types"><span class="type">boolean</span></span>
+         If there is no next client, select the last one.
+         (<em>default</em> true)
+        </li>
+        <li><span class="parameter">filter</span>
+            <span class="types"><span class="type">function</span></span>
+         A function returning a boolean to either
+  accept or reject the client. If it's rejected, it will keep searching until
+  it runs out of options.
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/client.html#">client</a></span>
+        The client
+    </ol>
+
+
+
+
+</dd>
+    <dt>
     <a name = "awful.client.focus.bydirection"></a>
     <strong>awful.client.focus.bydirection (dir[, c[, stacked=false]])</strong>
     </dt>
@@ -5471,7 +5594,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-07-24 18:12:04 </i>
+<i style="float:right;">Last updated 2018-08-06 10:49:32 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

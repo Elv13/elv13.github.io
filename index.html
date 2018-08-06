@@ -40,7 +40,6 @@
   <li><a href="libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="libraries/awful.key.html">awful.key</a></li>
-  <li><a href="libraries/awful.keyboard.html">awful.keyboard</a></li>
   <li><a href="libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="libraries/awful.menu.html">awful.menu</a></li>
   <li><a href="libraries/awful.mouse.html">awful.mouse</a></li>
@@ -63,6 +62,7 @@
   <li><a href="libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
   <li><a href="libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
   <li><a href="libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="libraries/dynamite.utils.html">dynamite.utils</a></li>
   <li><a href="libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
   <li><a href="libraries/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
   <li><a href="libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
@@ -83,16 +83,12 @@
   <li><a href="libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
   <li><a href="libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
   <li><a href="libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
-  <li><a href="libraries/lib.dynamite.wrapper.html">lib.dynamite.wrapper</a></li>
-  <li><a href="libraries/lib.naughty.constants.html">lib.naughty.constants</a></li>
   <li><a href="libraries/menubar.html">menubar</a></li>
   <li><a href="libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="libraries/mouse.html">mouse</a></li>
   <li><a href="libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="libraries/naughty.html">naughty</a></li>
-  <li><a href="libraries/naughty.dbus.html">naughty.dbus</a></li>
-  <li><a href="libraries/naughty.widget.html">naughty.widget</a></li>
   <li><a href="libraries/root.html">root</a></li>
   <li><a href="libraries/selection.html">selection</a></li>
   <li><a href="libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -186,7 +182,7 @@
   <li><a href="documentation/00-authors.md.html">Authors</a></li>
   <li><a href="documentation/01-readme.md.html">Readme</a></li>
   <li><a href="documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="documentation/03-declarative-layout.md.html">The declarative layout system</a></li>
+  <li><a href="documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
   <li><a href="documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="documentation/06-appearance.md.html">Change Awesome appearance</a></li>
@@ -202,7 +198,7 @@
 <div id="content">
 
 
-  <h2>API documentation for awesome, a highly configurable X window manager (version v4.2-355-g904c482e0).</h2>
+  <h2>API documentation for awesome, a highly configurable X window manager (version v3.5.2-3281-g958e7e1bc).</h2>
   <p>Welcome to the documentation for the awesome window manager. Below you find an
 overview of the individual parts which links to the full documentation.</p>
 
@@ -250,10 +246,6 @@ should be useful for you.</p>
 	<tr>
 		<td class="name"  ><a href="libraries/awful.key.html">awful.key</a></td>
 		<td class="summary">Create easily new key objects ignoring certain modifiers.</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/awful.keyboard.html">awful.keyboard</a></td>
-		<td class="summary">Utilities related to the keyboard and text entry.</td>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/awful.layout.html">awful.layout</a></td>
@@ -332,7 +324,7 @@ should be useful for you.</p>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></td>
-		<td class="summary">A specialised of the conditional container.</td>
+		<td class="summary">A specialised of the <a href="classes/wibox.container.conditional.html#">wibox.container.conditional</a>.</td>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></td>
@@ -345,6 +337,10 @@ should be useful for you.</p>
 	<tr>
 		<td class="name"  ><a href="libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></td>
 		<td class="summary">A specialised stack layout with a tabbar on top.</td>
+	</tr>
+	<tr>
+		<td class="name"  ><a href="libraries/dynamite.utils.html">dynamite.utils</a></td>
+		<td class="summary">A set of generic functions to manipulate layouts.</td>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></td>
@@ -438,14 +434,6 @@ should be useful for you.</p>
 </td>
 	</tr>
 	<tr>
-		<td class="name"  ><a href="libraries/lib.dynamite.wrapper.html">lib.dynamite.wrapper</a></td>
-		<td class="summary">A compatibility wrapper around clients to conform to the widget API</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/lib.naughty.constants.html">lib.naughty.constants</a></td>
-		<td class="summary">This file host the shared constants used by the notification subsystem.</td>
-	</tr>
-	<tr>
 		<td class="name"  ><a href="libraries/menubar.html">menubar</a></td>
 		<td class="summary">Menubar module, which aims to provide a freedesktop menu alternative</td>
 	</tr>
@@ -467,18 +455,7 @@ should be useful for you.</p>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/naughty.html">naughty</a></td>
-		<td class="summary">Notification library</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/naughty.dbus.html">naughty.dbus</a></td>
-		<td class="summary">DBUS/Notification support
- Notify</td>
-	</tr>
-	<tr>
-		<td class="name"  ><a href="libraries/naughty.widget.html">naughty.widget</a></td>
-		<td class="summary">
-
-</td>
+		<td class="summary">Notification library.</td>
 	</tr>
 	<tr>
 		<td class="name"  ><a href="libraries/root.html">root</a></td>
@@ -922,7 +899,7 @@ should be useful for you.</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-07-24 18:12:04 </i>
+<i style="float:right;">Last updated 2018-08-06 10:49:32 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
