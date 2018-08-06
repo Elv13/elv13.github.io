@@ -752,6 +752,18 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	<td class="summary">Get or set the clients attached to this tag.</td>
 	</tr>
 	<tr>
+	<td class="name" ><a href="#tag:disconnect_signal">tag:disconnect_signal (name, func)</a></td>
+	<td class="summary">Disconnect from a signal.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#tag:emit_signal">tag:emit_signal (name, ...)</a></td>
+	<td class="summary">Emit a signal.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#tag:connect_signal">tag:connect_signal (name, func)</a></td>
+	<td class="summary">Connect to a signal.</td>
+	</tr>
+	<tr>
 	<td class="name" ><a href="#tag:swap">tag:swap (tag2)</a></td>
 	<td class="summary">Swap 2 tags</td>
 	</tr>
@@ -985,7 +997,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a>
+         <a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a>
     </ul>
 
 
@@ -1436,7 +1448,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <ul>
          <li><a href="../classes/tag.html#beautiful.master_count">master_count</a></li>
          <li><a href="../classes/tag.html#tag.column_count">column_count</a></li>
-         <li><a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a></li>
+         <li><a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a></li>
          <li><a href="../classes/tag.html#tag.gap">gap</a></li>
     </ul>
 
@@ -1602,7 +1614,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#beautiful.gap_single_client">gap_single_client</a>
+         <a href="../classes/tag.html#tag.gap_single_client">gap_single_client</a>
     </ul>
 
 
@@ -1853,7 +1865,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/client.html#client.urgent">client.urgent</a>
+         <a href="../classes/client.html#request::urgent">client.urgent</a>
     </ul>
 
 
@@ -1871,7 +1883,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/client.html#client.urgent">client.urgent</a>
+         <a href="../classes/client.html#request::urgent">client.urgent</a>
     </ul>
 
 
@@ -1961,7 +1973,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>See also:</h3>
     <ul>
          <li><a href="../classes/tag.html#tag.gap">gap</a></li>
-         <li><a href="../classes/tag.html#beautiful.gap_single_client">gap_single_client</a></li>
+         <li><a href="../classes/tag.html#tag.gap_single_client">gap_single_client</a></li>
     </ul>
 
 
@@ -1986,7 +1998,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>See also:</h3>
     <ul>
          <li><a href="../classes/tag.html#tag.gap">gap</a></li>
-         <li><a href="../classes/tag.html#beautiful.gap_single_client">gap_single_client</a></li>
+         <li><a href="../classes/tag.html#tag.gap_single_client">gap_single_client</a></li>
     </ul>
 
 
@@ -2021,7 +2033,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a>
+         <a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a>
     </ul>
 
 
@@ -2128,7 +2140,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#tag:swap">tag.swap</a>
+         <a href="../classes/tag.html#awful.tag.swap">tag.swap</a>
     </ul>
 
 
@@ -2307,7 +2319,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <li><a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a></li>
+         <li><a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a></li>
          <li><a href="../classes/tag.html#tag.master_width_factor">master_width_factor</a></li>
     </ul>
 
@@ -2334,7 +2346,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>See also:</h3>
     <ul>
          <li><a href="../classes/tag.html#tag.master_width_factor">master_width_factor</a></li>
-         <li><a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a></li>
+         <li><a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a></li>
     </ul>
 
 
@@ -2505,7 +2517,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a>
+         <a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a>
     </ul>
 
 
@@ -2531,7 +2543,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#tag.master_fill_policy">master_fill_policy</a>
+         <a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a>
     </ul>
 
 
@@ -2959,6 +2971,79 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 </dd>
     <dt>
+    <a name = "tag:disconnect_signal"></a>
+    <strong>tag:disconnect_signal (name, func)</strong>
+    </dt>
+    <dd>
+    Disconnect from a signal.
+
+
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal.
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         The callback that should be disconnected.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tag:emit_signal"></a>
+    <strong>tag:emit_signal (name, ...)</strong>
+    </dt>
+    <dd>
+    Emit a signal.
+
+
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal.
+        </li>
+        <li><span class="parameter">...</span>
+         Extra arguments for the callback functions. Each connected
+   function receives the object as first argument and then any extra
+   arguments that are given to emit_signal().
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tag:connect_signal"></a>
+    <strong>tag:connect_signal (name, func)</strong>
+    </dt>
+    <dd>
+    Connect to a signal.
+
+
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal.
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         The callback to call when the signal is emitted.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
     <a name = "tag:swap"></a>
     <strong>tag:swap (tag2)</strong>
     </dt>
@@ -3096,7 +3181,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 10:59:18 </i>
+<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

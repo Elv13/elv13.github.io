@@ -283,7 +283,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 	</tr>
 	<tr>
 	<td class="name" ><a href="#screen.index">index</a></td>
-	<td class="summary">The screen number.</td>
+	<td class="summary">The internal screen number.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#screen.outputs">outputs</a></td>
@@ -411,6 +411,18 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 	<tr>
 	<td class="name" ><a href="#screen:swap">screen:swap (s)</a></td>
 	<td class="summary">Swap a screen with another one in global screen list.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#screen:disconnect_signal">screen:disconnect_signal (name, func)</a></td>
+	<td class="summary">Disconnect from a signal.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#screen:emit_signal">screen:emit_signal (name, ...)</a></td>
+	<td class="summary">Emit a signal.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#screen:connect_signal">screen:connect_signal (name, func)</a></td>
+	<td class="summary">Connect to a signal.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#screen:get_square_distance">screen:get_square_distance (x, y)</a></td>
@@ -696,10 +708,34 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>index</strong>
     </dt>
     <dd>
-    The screen number. </p>
+    The internal screen number. </p>
 
-<p> An integer greater than 1 and smaller than <code>screen.count()</code>. Please note that
- the screen order isn't always mirroring the screen logical position.</p>
+<ul>
+    <li>The indeces are a continuous sequence from 1 to <code>screen.count()</code>.</li>
+    <li>It is <strong>NOT</strong> related to the actual screen position relative to each
+    other.</li>
+    <li>1 is <strong>NOT</strong> necessarily the primary screen.</li>
+    <li>When screens are added and removed indices <strong>CAN</strong> change.</li>
+</ul>
+
+<p> If you really want to keep an array of screens you should use something
+ along:</p>
+
+<pre><code> local myscreens = setmetatable({}. {__mode="k"})
+ myscreens[ screen[1] ] = "mydata"
+</code></pre>
+
+<p> But it might be a better option to simply store the data directly in the
+ screen object as:</p>
+
+<pre><code> screen[1].mydata = "mydata"
+</code></pre>
+
+<p> Remember that screens are also objects, so if you only want to store a simple
+ property, you can do it directly:</p>
+
+<pre><code> screen[1].answer = 42
+</code></pre>
 
 <p> <strong>Immutable:</strong> true
 
@@ -715,6 +751,10 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/screen.html#">screen</a>
+    </ul>
 
 
 </dd>
@@ -906,7 +946,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <ul>
          <li><a href="../classes/screen.html#screen.all_clients">all_clients</a></li>
          <li><a href="../classes/screen.html#screen.hidden_clients">hidden_clients</a></li>
-         <li><a href="../classes/client.html#client:get">client.get</a></li>
+         <li><a href="../classes/client.html#awful.client.property.get">client.get</a></li>
     </ul>
 
 
@@ -934,7 +974,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <ul>
          <li><a href="../classes/screen.html#screen.clients">clients</a></li>
          <li><a href="../classes/screen.html#screen.all_clients">all_clients</a></li>
-         <li><a href="../classes/client.html#client:get">client.get</a></li>
+         <li><a href="../classes/client.html#awful.client.property.get">client.get</a></li>
     </ul>
 
 
@@ -960,7 +1000,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <ul>
          <li><a href="../classes/screen.html#screen.clients">clients</a></li>
          <li><a href="../classes/screen.html#screen.hidden_clients">hidden_clients</a></li>
-         <li><a href="../classes/client.html#client:get">client.get</a></li>
+         <li><a href="../classes/client.html#awful.client.property.get">client.get</a></li>
     </ul>
 
 
@@ -1249,7 +1289,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/screen.html#awful.screen.padding">padding</a>
+         <a href="../classes/screen.html#screen.padding">padding</a>
     </ul>
 
 
@@ -1462,6 +1502,79 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
         <li><span class="parameter">s</span>
             <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
          A screen to swap with.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "screen:disconnect_signal"></a>
+    <strong>screen:disconnect_signal (name, func)</strong>
+    </dt>
+    <dd>
+    Disconnect from a signal.
+
+
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal.
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         The callback that should be disconnected.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "screen:emit_signal"></a>
+    <strong>screen:emit_signal (name, ...)</strong>
+    </dt>
+    <dd>
+    Emit a signal.
+
+
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal.
+        </li>
+        <li><span class="parameter">...</span>
+         Extra arguments for the callback functions. Each connected
+   function receives the object as first argument and then any extra
+   arguments that are given to emit_signal().
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "screen:connect_signal"></a>
+    <strong>screen:connect_signal (name, func)</strong>
+    </dt>
+    <dd>
+    Connect to a signal.
+
+
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal.
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         The callback to call when the signal is emitted.
         </li>
     </ul>
 
@@ -1758,7 +1871,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 10:59:18 </i>
+<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

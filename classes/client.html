@@ -399,7 +399,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.icon">icon</a></td>
-	<td class="summary">The client icon.</td>
+	<td class="summary">The client icon as a surface.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.icon_sizes">icon_sizes</a></td>
@@ -914,6 +914,18 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<tr>
 	<td class="name" ><a href="#client:get_icon">client:get_icon (index)</a></td>
 	<td class="summary">Get the client's n-th icon.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client:disconnect_signal">client:disconnect_signal (name, func)</a></td>
+	<td class="summary">Disconnect from a signal.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client:emit_signal">client:emit_signal (name, ...)</a></td>
+	<td class="summary">Emit a signal.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client:connect_signal">client:connect_signal (name, func)</a></td>
+	<td class="summary">Connect to a signal.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client:jump_to">client:jump_to (merge)</a></td>
@@ -1743,7 +1755,27 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     </dt>
     <dd>
 
-<p>The client icon. </p>
+<p>The client icon as a surface. </p>
+
+<p> This property holds the client icon closest to the size configured via
+ <a href="../libraries/awesome.html#set_preferred_icon_size">awesome.set_preferred_icon_size</a>.</p>
+
+<p> It is not a path or an "real" file. Rather, it is already a bitmap surface.</p>
+
+<p> Typically you would want to use <a href="../classes/awful.widget.clienticon.html#">awful.widget.clienticon</a> to get this as a
+ widget.</p>
+
+<p> Working with icons is tricky because their surfaces do not use reference
+ counting correctly. If <code>gears.surface(c.icon)</code> is called multiple time on
+ the same icon, it will cause a double-free error and Awesome will crash. To
+ get a copy of the icon, you can use:</p>
+
+<pre><code> local s = gears.surface(c.icon)
+ local img = cairo.ImageSurface.create(cairo.Format.ARGB32, s:get_width(), s:get_height())
+ local cr  = cairo.Context(img)
+ cr:set_source_surface(s, 0, 0)
+ cr:paint()
+</code></pre>
 
 <p> <strong>Signal:</strong></p>
 
@@ -1766,6 +1798,10 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> ib = wibox.widget.imagebox(c.icon)</pre>
+    </ul>
 
 </dd>
     <dt>
@@ -2749,7 +2785,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
  a <a href="../classes/tag.html#">tag</a> or <a href="../classes/client.html#client.floating">floating</a> state).</p>
 
 <p> Some applications, like <code>xterm</code>, don't support startup notification. While
- not perfect, the adding the following code to <a href="../sample files/rc.lua.html#">rc.lua</a> will mitigate the
+ not perfect, the addition the following code to <a href="../sample files/rc.lua.html#">rc.lua</a> will mitigate the
  issue. Please note that this code is Linux specific.</p>
 
 <pre><code>local blacklisted_snid = setmetatable({}, {__mode = "v" })
@@ -2771,7 +2807,8 @@ local function fix_startup_id(c)
     -- It will only work on Linux, that's already 99% of the userbase.
     if not f then return end
 
-    local snid = f:read("*all"):match("STARTUP_ID=(.*)\0")
+    local value = _VERSION &lt;= "Lua 5.1" and "([^\z]*)\0" or "([^\0]*)\0"
+    local snid = f:read("*all"):match("STARTUP_ID=" .. value)
     f:close()
 
     -- If there is already a client using this SNID, it means it's either a
@@ -4935,6 +4972,79 @@ awful.rules.add_rule_source(
 
 </dd>
     <dt>
+    <a name = "client:disconnect_signal"></a>
+    <strong>client:disconnect_signal (name, func)</strong>
+    </dt>
+    <dd>
+    Disconnect from a signal.
+
+
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal.
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         The callback that should be disconnected.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "client:emit_signal"></a>
+    <strong>client:emit_signal (name, ...)</strong>
+    </dt>
+    <dd>
+    Emit a signal.
+
+
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal.
+        </li>
+        <li><span class="parameter">...</span>
+         Extra arguments for the callback functions. Each connected
+   function receives the object as first argument and then any extra
+   arguments that are given to emit_signal().
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "client:connect_signal"></a>
+    <strong>client:connect_signal (name, func)</strong>
+    </dt>
+    <dd>
+    Connect to a signal.
+
+
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal.
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         The callback to call when the signal is emitted.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
     <a name = "client:jump_to"></a>
     <strong>client:jump_to (merge)</strong>
     </dt>
@@ -5594,7 +5704,7 @@ awful.rules.add_rule_source(
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 10:59:18 </i>
+<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
