@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Module naughty - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -33,9 +33,7 @@
 <h2>Contents</h2>
 <ul>
 <li><a href="#Functions">Functions</a></li>
-<li><a href="#Object_properties">Object properties</a></li>
-<li><a href="#Signals">Signals</a></li>
-<li><a href="#Deprecated_functions">Deprecated functions</a></li>
+<li><a href="#Theme_variables">Theme variables</a></li>
 <li><a href="#Tables">Tables</a></li>
 </ul>
 
@@ -48,7 +46,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -65,24 +62,12 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
-  <li><a href="../libraries/dynamite.html">dynamite</a></li>
-  <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
-  <li><a href="../libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
-  <li><a href="../libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
-  <li><a href="../libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
-  <li><a href="../libraries/dynamite.utils.html">dynamite.utils</a></li>
-  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
-  <li><a href="../libraries/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
-  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -90,16 +75,13 @@
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
-  <li><a href="../libraries/lib.dynamite.base.html">lib.dynamite.base</a></li>
-  <li><a href="../libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
-  <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
-  <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><strong>naughty</strong></li>
+  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -112,7 +94,10 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
+  <li><a href="../classes/awful.spawn.factory.html">awful.spawn.factory</a></li>
+  <li><a href="../classes/awful.spawn.future.html">awful.spawn.future</a></li>
   <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
@@ -135,27 +120,19 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
-  <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
-  <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
-  <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
-  <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
   <li><a href="../classes/tag.html">tag</a></li>
   <li><a href="../classes/wibox.html">wibox</a></li>
   <li><a href="../classes/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
   <li><a href="../classes/wibox.container.background.html">wibox.container.background</a></li>
-  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
@@ -163,7 +140,6 @@
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
-  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.layout.align.html">wibox.layout.align</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
@@ -182,7 +158,6 @@
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.separator.html">wibox.widget.separator</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
-  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/wibox.widget.systray.html">wibox.widget.systray</a></li>
   <li><a href="../classes/wibox.widget.textbox.html">wibox.widget.textbox</a></li>
   <li><a href="../classes/wibox.widget.textclock.html">wibox.widget.textclock</a></li>
@@ -209,10 +184,9 @@
 <div id="content">
 
 <h1>Module <code>naughty</code></h1>
-<p>Notification library.</p>
-<p> For more details on how to create notifications, see <a href="../classes/naughty.notification.html#">naughty.notification</a>.</p>
-
-<p> To send notifications from the terminal, use <code>notify-send</code>.</p>
+<p>Notification library</p>
+<p>
+</p>
     <h3>Info:</h3>
     <ul>
         <li><strong>Copyright</strong>: 2008 koniu</li>
@@ -223,96 +197,110 @@
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#connect_signal">connect_signal (name, func)</a></td>
-	<td class="summary">Connect a global signal on the notification engine.</td>
+	<td class="name" ><a href="#is_suspended">is_suspended ()</a></td>
+	<td class="summary">Notification state</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#emit_signal">emit_signal (name, ...)</a></td>
-	<td class="summary">Emit a notification signal.</td>
+	<td class="name" ><a href="#suspend">suspend ()</a></td>
+	<td class="summary">Suspend notifications</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#disconnect_signal">disconnect_signal (name, func)</a></td>
-	<td class="summary">Disconnect a signal from a source.</td>
+	<td class="name" ><a href="#resume">resume ()</a></td>
+	<td class="summary">Resume notifications</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#toggle">toggle ()</a></td>
+	<td class="summary">Toggle notification state</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#destroy">destroy (notification, reason[, keep_visible=false])</a></td>
+	<td class="summary">Destroy notification by notification object</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#destroy_all_notifications">destroy_all_notifications (screens, reason)</a></td>
 	<td class="summary">Destroy all notifications on given screens.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#get_by_id">get_by_id (id)</a></td>
-	<td class="summary">Get notification by ID</td>
-	</tr>
-</table>
-<h2><a href="#Object_properties">Object properties</a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" ><a href="#suspended">suspended</a></td>
-	<td class="summary">The global suspension state.</td>
-	</tr>
-</table>
-<h2><a href="#Signals">Signals</a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" ><a href="#added">added</a></td>
-	<td class="summary">Emitted when a notification is created.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#destroyed">destroyed</a></td>
-	<td class="summary">Emitted when a notification is destroyed.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#request::display">request::display</a></td>
-	<td class="summary">Emitted when a notification has to be displayed.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#request::preset">request::preset</a></td>
-	<td class="summary">Emitted when a notification need pre-display configuration.</td>
-	</tr>
-</table>
-<h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" ><a href="#is_suspended">is_suspended</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Notification state.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#suspend">suspend</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Suspend notifications.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#resume">resume</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Resume notifications.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#toggle">toggle</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Toggle notification state.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#destroy">destroy</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Destroy notification by notification object</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#getById">getById</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
+	<td class="name" ><a href="#getById">getById (id)</a></td>
 	<td class="summary">Get notification by ID</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#reset_timeout">reset_timeout</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
+	<td class="name" ><a href="#get_next_notification_id">get_next_notification_id ()</a></td>
+	<td class="summary">Increase notification ID by one</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#reset_timeout">reset_timeout (notification, new_timeout)</a></td>
 	<td class="summary">Set new notification timeout.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#replace_text">replace_text</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
+	<td class="name" ><a href="#replace_text">replace_text (notification, new_title, new_text)</a></td>
 	<td class="summary">Replace title and text of an existing notification.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#notify">notify</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
+	<td class="name" ><a href="#notify">notify (args)</a></td>
 	<td class="summary">Create a notification.</td>
+	</tr>
+</table>
+<h2><a href="#Theme_variables">Theme variables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_font">beautiful.notification_font</a></td>
+	<td class="summary">Notifications font.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_bg">beautiful.notification_bg</a></td>
+	<td class="summary">Notifications background color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_fg">beautiful.notification_fg</a></td>
+	<td class="summary">Notifications foreground color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_border_width">beautiful.notification_border_width</a></td>
+	<td class="summary">Notifications border width.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_border_color">beautiful.notification_border_color</a></td>
+	<td class="summary">Notifications border color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_shape">beautiful.notification_shape</a></td>
+	<td class="summary">Notifications shape.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_opacity">beautiful.notification_opacity</a></td>
+	<td class="summary">Notifications opacity.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_margin">beautiful.notification_margin</a></td>
+	<td class="summary">Notifications margin.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_width">beautiful.notification_width</a></td>
+	<td class="summary">Notifications width.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_height">beautiful.notification_height</a></td>
+	<td class="summary">Notifications height.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_max_width">beautiful.notification_max_width</a></td>
+	<td class="summary">Notifications maximum width.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_max_height">beautiful.notification_max_height</a></td>
+	<td class="summary">Notifications maximum height.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_icon_size">beautiful.notification_icon_size</a></td>
+	<td class="summary">Notifications icon size.</td>
 	</tr>
 </table>
 <h2><a href="#Tables">Tables</a></h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#config">config</a></td>
-	<td class="summary">Naughty configuration - a table containing common popup settings.</td>
+	<td class="summary">Naughty configuration &ndash; a table containing common popup settings.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#config.presets">config.presets</a></td>
@@ -321,10 +309,6 @@
 	<tr>
 	<td class="name" ><a href="#config.defaults">config.defaults</a></td>
 	<td class="summary">Defaults for <a href="../libraries/naughty.html#notify">naughty.notify</a>.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#notification_closed_reason">notification_closed_reason</a></td>
-	<td class="summary">The reason why a notification is to be closed.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#notifications">notifications</a></td>
@@ -340,58 +324,13 @@
     Methods
     <dl class="function">
     <dt>
-    <a name = "connect_signal"></a>
-    <strong>connect_signal (name, func)</strong>
+    <a name = "is_suspended"></a>
+    <strong>is_suspended ()</strong>
     </dt>
     <dd>
-    Connect a global signal on the notification engine. </p>
-
-<p> Functions connected to this signal source will be executed when any
- notification object emit the signal.</p>
-
-<p> It is also used for some generic notification signals such as
- <a href="../libraries/naughty.html#request::display">request::display</a>.
+    Notification state
 
 
-    <ul>
-        <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         The name of the signal
-        </li>
-        <li><span class="parameter">func</span>
-            <span class="types"><span class="type">function</span></span>
-         The function to attach
-        </li>
-    </ul>
-
-
-
-
-    <h3>Usage:</h3>
-    <ul>
-        <pre class="example">naughty.connect_signal(<span class="string">"added"</span>, <span class="keyword">function</span>(notif)
-   <span class="comment">-- do something
-</span><span class="keyword">end</span>)</pre>
-    </ul>
-
-</dd>
-    <dt>
-    <a name = "emit_signal"></a>
-    <strong>emit_signal (name, ...)</strong>
-    </dt>
-    <dd>
-    Emit a notification signal.
-
-
-    <ul>
-        <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         The signal name.
-        </li>
-        <li><span class="parameter">...</span>
-         The signal callback arguments
-        </li>
-    </ul>
 
 
 
@@ -399,29 +338,72 @@
 
 </dd>
     <dt>
-    <a name = "disconnect_signal"></a>
-    <strong>disconnect_signal (name, func)</strong>
+    <a name = "suspend"></a>
+    <strong>suspend ()</strong>
     </dt>
     <dd>
-    Disconnect a signal from a source.
+    Suspend notifications
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "resume"></a>
+    <strong>resume ()</strong>
+    </dt>
+    <dd>
+    Resume notifications
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "toggle"></a>
+    <strong>toggle ()</strong>
+    </dt>
+    <dd>
+    Toggle notification state
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "destroy"></a>
+    <strong>destroy (notification, reason[, keep_visible=false])</strong>
+    </dt>
+    <dd>
+    Destroy notification by notification object
 
 
     <ul>
-        <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         The name of the signal
+        <li><span class="parameter">notification</span>
+         Notification object to be destroyed
         </li>
-        <li><span class="parameter">func</span>
-            <span class="types"><span class="type">function</span></span>
-         The attached function
+        <li><span class="parameter">reason</span>
+         One of the reasons from notificationClosedReason
+        </li>
+        <li><span class="parameter">keep_visible</span>
+         If true, keep the notification visible
+         (<em>default</em> false)
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><span class="type">boolean</span></span>
-        If the disconnection was successful
+        True if the popup was successfully destroyed, nil otherwise
     </ol>
 
 
@@ -438,12 +420,12 @@
 
     <ul>
         <li><span class="parameter">screens</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Table of screens on which notifications should be
  destroyed. If nil, destroy notifications on all screens.
         </li>
         <li><span class="parameter">reason</span>
-            <span class="types"><a class="type" href="../classes/naughty.notification.html#">naughty.notification_closed_reason</a></span>
+            <span class="types"><span class="type">naughty.notificationClosedReason</span></span>
          Reason for closing
  notifications.
         </li>
@@ -458,16 +440,12 @@
     </ol>
 
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../libraries/naughty.html#notification_closed_reason">notification_closed_reason</a>
-    </ul>
 
 
 </dd>
     <dt>
-    <a name = "get_by_id"></a>
-    <strong>get_by_id (id)</strong>
+    <a name = "getById"></a>
+    <strong>getById (id)</strong>
     </dt>
     <dd>
     Get notification by ID
@@ -489,253 +467,14 @@
 
 
 </dd>
-</dl>
-    <h2 class="section-header "><a name="Object_properties"></a>Object properties</h2>
-
-    <dl class="function">
     <dt>
-    <a name = "suspended"></a>
-    <strong>suspended</strong>
+    <a name = "get_next_notification_id"></a>
+    <strong>get_next_notification_id ()</strong>
     </dt>
     <dd>
-    The global suspension state. </p>
+    Increase notification ID by one
 
-<p> When suspended, no notification widget should interrupt the user. This is
- useful when watching movies or doing presentations.
 
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">boolean</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-</dl>
-    <h2 class="section-header "><a name="Signals"></a>Signals</h2>
-
-    <dl class="function">
-    <dt>
-    <a name = "added"></a>
-    <strong>added</strong>
-    </dt>
-    <dd>
-    Emitted when a notification is created.
-
-
-    <h3>Arguments:</h3>
-    <ul>
-        <li><span class="parameter">notification</span>
-            <span class="types"><a class="type" href="../classes/naughty.notification.html#">naughty.notification</a></span>
-         The notification object
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "destroyed"></a>
-    <strong>destroyed</strong>
-    </dt>
-    <dd>
-    Emitted when a notification is destroyed.
-
-
-    <h3>Arguments:</h3>
-    <ul>
-        <li><span class="parameter">notification</span>
-            <span class="types"><a class="type" href="../classes/naughty.notification.html#">naughty.notification</a></span>
-         The notification object
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "request::display"></a>
-    <strong>request::display</strong>
-    </dt>
-    <dd>
-
-<p>Emitted when a notification has to be displayed. </p>
-
-<p> To add an handler, use:</p>
-
-<pre><code>naughty.connect_signal("request::display", function(notification, args)
-    -- do something
-end)
-</code></pre>
-
-
-
-
-    <h3>Arguments:</h3>
-    <ul>
-        <li><span class="parameter">notification</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-         The <a href="../classes/naughty.notification.html#">naughty.notification</a> object.
-        </li>
-        <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-         Any arguments passed to the <a href="../libraries/naughty.html#notify">naughty.notify</a> function,
-  including, but not limited to all <a href="../classes/naughty.notification.html#">naughty.notification</a> properties.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "request::preset"></a>
-    <strong>request::preset</strong>
-    </dt>
-    <dd>
-    Emitted when a notification need pre-display configuration.
-
-
-    <h3>Arguments:</h3>
-    <ul>
-        <li><span class="parameter">notification</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-         The <a href="../classes/naughty.notification.html#">naughty.notification</a> object.
-        </li>
-        <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-         Any arguments passed to the <a href="../libraries/naughty.html#notify">naughty.notify</a> function,
-  including, but not limited to all <a href="../classes/naughty.notification.html#">naughty.notification</a> properties.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-</dl>
-    <h2 class="section-header "><a name="Deprecated_functions"></a>Deprecated functions</h2>
-
-    <dl class="function">
-    <dt>
-    <a name = "is_suspended"></a>
-    <strong>is_suspended</a> <i class="deprecated_label">[deprecated]</i><a></strong>
-    </dt>
-    <dd>
-    Notification state. </p>
-
-<p> This function is deprecated, use <a href="../libraries/naughty.html#suspended">naughty.suspended</a>.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "suspend"></a>
-    <strong>suspend</a> <i class="deprecated_label">[deprecated]</i><a></strong>
-    </dt>
-    <dd>
-    Suspend notifications. </p>
-
-<p> This function is deprecated, use <code>naughty.suspended = true</code>.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "resume"></a>
-    <strong>resume</a> <i class="deprecated_label">[deprecated]</i><a></strong>
-    </dt>
-    <dd>
-    Resume notifications. </p>
-
-<p> This function is deprecated, use <code>naughty.suspended = false</code>.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "toggle"></a>
-    <strong>toggle</a> <i class="deprecated_label">[deprecated]</i><a></strong>
-    </dt>
-    <dd>
-    Toggle notification state. </p>
-
-<p> This function is deprecated, use <code>naughty.suspended = not naughty.suspended</code>.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "destroy"></a>
-    <strong>destroy</a> <i class="deprecated_label">[deprecated]</i><a></strong>
-    </dt>
-    <dd>
-    Destroy notification by notification object  This function is deprecated in favor of
- <code>notification:destroy(reason, keep_visible)</code>.
-
-
-    <h3>param:</h3>
-    <ul>
-        <li><span class="parameter">notification</span>
-         Notification object to be destroyed
-        </li>
-        <li><span class="parameter">reason</span>
-         One of the reasons from <a href="../libraries/naughty.html#notification_closed_reason">notification_closed_reason</a>
-        </li>
-        <li><span class="parameter">keep_visible</span>
-         If true, keep the notification visible
-         (<em>default</em> false)
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "getById"></a>
-    <strong>getById</a> <i class="deprecated_label">[deprecated]</i><a></strong>
-    </dt>
-    <dd>
-    Get notification by ID
-
-
-    <h3>param:</h3>
-    <ul>
-        <li><span class="parameter">id</span>
-         ID of the notification
-        </li>
-    </ul>
 
 
 
@@ -744,15 +483,12 @@ end)
 </dd>
     <dt>
     <a name = "reset_timeout"></a>
-    <strong>reset_timeout</a> <i class="deprecated_label">[deprecated]</i><a></strong>
+    <strong>reset_timeout (notification, new_timeout)</strong>
     </dt>
     <dd>
-    Set new notification timeout. </p>
-
-<p> This function is deprecated, use <code>notification:reset_timeout(new_timeout)</code>.
+    Set new notification timeout.
 
 
-    <h3>param:</h3>
     <ul>
         <li><span class="parameter">notification</span>
             <span class="types"><span class="type">notification</span></span>
@@ -764,6 +500,11 @@ end)
         </li>
     </ul>
 
+    <h3>Returns:</h3>
+    <ol>
+
+        None.
+    </ol>
 
 
 
@@ -771,31 +512,32 @@ end)
 </dd>
     <dt>
     <a name = "replace_text"></a>
-    <strong>replace_text</a> <i class="deprecated_label">[deprecated]</i><a></strong>
+    <strong>replace_text (notification, new_title, new_text)</strong>
     </dt>
     <dd>
-    Replace title and text of an existing notification. </p>
-
-<p> This function is deprecated, use <code>notification.text = new_text</code> and
- <code>notification.title = new_title</code>
+    Replace title and text of an existing notification.
 
 
-    <h3>param:</h3>
     <ul>
         <li><span class="parameter">notification</span>
             <span class="types"><span class="type">notification</span></span>
          Notification object, which contents are to be replaced.
         </li>
         <li><span class="parameter">new_title</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          New title of notification. If not specified, old title remains unchanged.
         </li>
         <li><span class="parameter">new_text</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          New text of notification. If not specified, old text remains unchanged.
         </li>
     </ul>
 
+    <h3>Returns:</h3>
+    <ol>
+
+        None.
+    </ol>
 
 
 
@@ -803,31 +545,22 @@ end)
 </dd>
     <dt>
     <a name = "notify"></a>
-    <strong>notify</a> <i class="deprecated_label">[deprecated]</i><a></strong>
+    <strong>notify (args)</strong>
     </dt>
     <dd>
-
-<p>Create a notification. </p>
-
-<p> This function is deprecated, create notification objects instead:</p>
-
-<pre><code>local notif = naughty.notification(args)
-</code></pre>
+    Create a notification.
 
 
-
-
-    <h3>param:</h3>
     <ul>
         <li><span class="parameter">args</span> The argument table containing any of the arguments below.
         <ul>
         <li><span class="parameter">text</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Text of the notification.
          (<em>default</em> "")
         </li>
         <li><span class="parameter">title</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Title of the notification.
          (<em>optional</em>)
         </li>
@@ -848,7 +581,7 @@ end)
          (<em>default</em> focused)
         </li>
         <li><span class="parameter">position</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Corner of the workarea displaying the popups.
    Values: <code>&quot;top_right&quot;</code>, <code>&quot;top_left&quot;</code>, <code>&quot;bottom_left&quot;</code>,
    <code>&quot;bottom_right&quot;</code>, <code>&quot;top_middle&quot;</code>, <code>&quot;bottom_middle&quot;</code>.
@@ -869,13 +602,23 @@ end)
          Popup width.
          (<em>default</em> `beautiful.notification_width` or auto)
         </li>
+        <li><span class="parameter">max_height</span>
+            <span class="types"><span class="type">int</span></span>
+         Popup maximum height.
+         (<em>default</em> `beautiful.notification_max_height` or auto)
+        </li>
+        <li><span class="parameter">max_width</span>
+            <span class="types"><span class="type">int</span></span>
+         Popup maximum width.
+         (<em>default</em> `beautiful.notification_max_width` or auto)
+        </li>
         <li><span class="parameter">font</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Notification font.
          (<em>default</em> `beautiful.notification_font` or `beautiful.font` or `awesome.font`)
         </li>
         <li><span class="parameter">icon</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Path to icon.
          (<em>optional</em>)
         </li>
@@ -885,12 +628,12 @@ end)
          (<em>optional</em>)
         </li>
         <li><span class="parameter">fg</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Foreground color.
          (<em>default</em> `beautiful.notification_fg` or `beautiful.fg_focus` or `'#ffffff'`)
         </li>
         <li><span class="parameter">bg</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Background color.
          (<em>default</em> `beautiful.notification_fg` or `beautiful.bg_focus` or `'#535d6c'`)
         </li>
@@ -900,7 +643,7 @@ end)
          (<em>default</em> `beautiful.notification_border_width` or 1)
         </li>
         <li><span class="parameter">border_color</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Border color.
          (<em>default</em> `beautiful.notification_border_color` or `beautiful.border_focus` or `'#535d6c'`)
         </li>
@@ -924,7 +667,7 @@ end)
          Function to run on left click.  The notification
    object will be passed to it as an argument.
    You need to call e.g.
-   <code>notification.die(naughty.notification_closed_reason.dismissedByUser)</code> from
+   <code>notification.die(naughty.notificationClosedReason.dismissedByUser)</code> from
    there to dismiss the notification yourself.
          (<em>optional</em>)
         </li>
@@ -934,7 +677,7 @@ end)
          (<em>optional</em>)
         </li>
         <li><span class="parameter">preset</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Table with any of the above parameters.
    Note: Any parameters specified directly in args will override ones defined
    in the preset.
@@ -953,7 +696,7 @@ end)
          (<em>optional</em>)
         </li>
         <li><span class="parameter">actions</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Mapping that maps a string to a callback when this
    action is selected.
          (<em>optional</em>)
@@ -967,6 +710,13 @@ end)
         </li></ul>
     </ul>
 
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types">optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        The notification object, or nil in case a notification was
+   not displayed.
+    </ol>
 
 
 
@@ -974,6 +724,302 @@ end)
     <ul>
         <pre class="example">naughty.notify({ title = <span class="string">"Achtung!"</span>, text = <span class="string">"You're idling"</span>, timeout = <span class="number">0</span> })</pre>
     </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Theme_variables"></a>Theme variables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "beautiful.notification_font"></a>
+    <strong>beautiful.notification_font</strong>
+    </dt>
+    <dd>
+    Notifications font.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_font</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">lgi.Pango.FontDescription</span></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_bg"></a>
+    <strong>beautiful.notification_bg</strong>
+    </dt>
+    <dd>
+    Notifications background color.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_bg</span>
+            <span class="types"><span class="type">color</span></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_fg"></a>
+    <strong>beautiful.notification_fg</strong>
+    </dt>
+    <dd>
+    Notifications foreground color.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_fg</span>
+            <span class="types"><span class="type">color</span></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_border_width"></a>
+    <strong>beautiful.notification_border_width</strong>
+    </dt>
+    <dd>
+    Notifications border width.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_border_width</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_border_color"></a>
+    <strong>beautiful.notification_border_color</strong>
+    </dt>
+    <dd>
+    Notifications border color.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_border_color</span>
+            <span class="types"><span class="type">color</span></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_shape"></a>
+    <strong>beautiful.notification_shape</strong>
+    </dt>
+    <dd>
+    Notifications shape.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_shape</span>
+            <span class="types"><span class="type">gears.shape</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.shape.html#">gears.shape</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_opacity"></a>
+    <strong>beautiful.notification_opacity</strong>
+    </dt>
+    <dd>
+    Notifications opacity.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_opacity</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_margin"></a>
+    <strong>beautiful.notification_margin</strong>
+    </dt>
+    <dd>
+    Notifications margin.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_margin</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_width"></a>
+    <strong>beautiful.notification_width</strong>
+    </dt>
+    <dd>
+    Notifications width.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_width</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_height"></a>
+    <strong>beautiful.notification_height</strong>
+    </dt>
+    <dd>
+    Notifications height.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_height</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_max_width"></a>
+    <strong>beautiful.notification_max_width</strong>
+    </dt>
+    <dd>
+    Notifications maximum width.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_max_width</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_max_height"></a>
+    <strong>beautiful.notification_max_height</strong>
+    </dt>
+    <dd>
+    Notifications maximum height.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_max_height</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_icon_size"></a>
+    <strong>beautiful.notification_icon_size</strong>
+    </dt>
+    <dd>
+    Notifications icon size.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">notification_icon_size</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+        </li>
+    </ul>
+
+
+
+
 
 </dd>
 </dl>
@@ -985,7 +1031,7 @@ end)
     <strong>config</strong>
     </dt>
     <dd>
-    Naughty configuration - a table containing common popup settings.
+    Naughty configuration &ndash; a table containing common popup settings.
 
 
     <h3>Fields:</h3>
@@ -993,7 +1039,7 @@ end)
         <li><span class="parameter">padding</span>
             <span class="types"><span class="type">int</span></span>
          Space between popups and edge of the
-   workarea.
+  workarea.
          (<em>default</em> apply_dpi(4))
         </li>
         <li><span class="parameter">spacing</span>
@@ -1002,40 +1048,42 @@ end)
          (<em>default</em> apply_dpi(1))
         </li>
         <li><span class="parameter">icon_dirs</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          List of directories
-   that will be checked by <code>getIcon()</code>.
+  that will be checked by <code>getIcon()</code>.
          (<em>default</em> {"/usr/share/pixmaps/"})
         </li>
         <li><span class="parameter">icon_formats</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          List of formats that will be
-   checked by <code>getIcon()</code>.
+  checked by <code>getIcon()</code>.
          (<em>default</em> { "png")
         </li>
         <li><span class="parameter">notify_callback</span>
             <span class="types"><span class="type">function</span></span>
          Callback used to modify or reject
- notifications, e.g.</p>
-<pre><code> naughty.config.notify_callback = function(args)
-     args.text = 'prefix: ' .. args.text
-     return args
- end
+notifications, e.g.</p>
+
+<pre><code>naughty.config.notify_callback = function(args)
+    args.text = 'prefix: ' .. args.text
+    return args
+end
 </code></pre>
-<p>   To reject a notification return <code>nil</code> from the callback.
-   If the notification is a freedesktop notification received via DBUS, you can
-   access the freedesktop hints via <code>args.freedesktop_hints</code> if any where
-   specified.
+
+<p>  To reject a notification return <code>nil</code> from the callback.
+  If the notification is a freedesktop notification received via DBUS, you can
+  access the freedesktop hints via <code>args.freedesktop_hints</code> if any where
+  specified.
          (<em>optional</em>)
         </li>
         <li><span class="parameter">presets</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Notification presets.  See <a href="../libraries/naughty.html#config.presets">config.presets</a>.
         </li>
         <li><span class="parameter">defaults</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Default values for the params to <code>notify()</code>.  These can
-   optionally be overridden by specifying a preset.  See <a href="../libraries/naughty.html#config.defaults">config.defaults</a>.
+  optionally be overridden by specifying a preset.  See <a href="../libraries/naughty.html#config.defaults">config.defaults</a>.
         </li>
     </ul>
 
@@ -1054,7 +1102,7 @@ end)
  parameters for <code>notify()</code>, overriding the default values
  (<code>naughty.config.defaults</code>).</p>
 
-<p> You have to pass a reference of a preset in your <code>notify()</code> as the <a href="../libraries/naughty.html#request::preset">preset</a>
+<p> You have to pass a reference of a preset in your <code>notify()</code> as the <code>preset</code>
  argument.</p>
 
 <p> The presets <code>&quot;low&quot;</code>, <code>&quot;normal&quot;</code> and <code>&quot;critical&quot;</code> are used for notifications
@@ -1069,12 +1117,11 @@ end)
             <span class="types"><span class="type">int</span></span>
 
 
-
          (<em>default</em> 5)
         </li>
         </li></ul>
         <li><span class="parameter">normal</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The default preset for every notification without a
    preset that will also be used for normal urgency level.
          (<em>default</em> empty)
@@ -1083,22 +1130,19 @@ end)
    level.
         <ul>
         <li><span class="parameter">bg</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> "#ff0000")
         </li>
         <li><span class="parameter">fg</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> "#ffffff")
         </li>
         <li><span class="parameter">timeout</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> 0)
@@ -1125,12 +1169,10 @@ end)
             <span class="types"><span class="type">int</span></span>
 
 
-
          (<em>default</em> 5)
         </li>
         <li><span class="parameter">text</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> "")
@@ -1144,12 +1186,10 @@ end)
             <span class="types"><span class="type">boolean</span></span>
 
 
-
          (<em>default</em> true)
         </li>
         <li><span class="parameter">margin</span>
             <span class="types"><span class="type">int</span></span>
-
 
 
          (<em>default</em> apply_dpi(5))
@@ -1158,64 +1198,13 @@ end)
             <span class="types"><span class="type">int</span></span>
 
 
-
          (<em>default</em> apply_dpi(1))
         </li>
         <li><span class="parameter">position</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> "top_right")
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "notification_closed_reason"></a>
-    <strong>notification_closed_reason</strong>
-    </dt>
-    <dd>
-    The reason why a notification is to be closed.
- See <a href="https://developer.gnome.org/notification-spec/#signals">the specification</a>
- for more details.
-
-
-    <h3>Fields:</h3>
-    <ul>
-        <li><span class="parameter">silent</span>
-            <span class="types"><span class="type">number</span></span>
-
-
-
-        </li>
-        <li><span class="parameter">expired</span>
-            <span class="types"><span class="type">number</span></span>
-
-
-
-        </li>
-        <li><span class="parameter">dismissed_by_user</span>
-            <span class="types"><span class="type">number</span></span>
-
-
-
-        </li>
-        <li><span class="parameter">dismissed_by_command</span>
-            <span class="types"><span class="type">number</span></span>
-
-
-
-        </li>
-        <li><span class="parameter">undefined</span>
-            <span class="types"><span class="type">number</span></span>
-
-
-
         </li>
     </ul>
 
@@ -1230,7 +1219,7 @@ end)
     </dt>
     <dd>
     Index of notifications per screen and position.
- See config table for valid 'position' values.
+ See config table for valid &lsquo;position&rsquo; values.
  Each element is a table consisting of:
 
 
@@ -1265,7 +1254,7 @@ end)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-01-25 03:50:29 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

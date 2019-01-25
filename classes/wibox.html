@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Class wibox - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -42,7 +42,10 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
+  <li><a href="../classes/awful.spawn.factory.html">awful.spawn.factory</a></li>
+  <li><a href="../classes/awful.spawn.future.html">awful.spawn.future</a></li>
   <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
@@ -65,27 +68,19 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
-  <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
-  <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
-  <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
-  <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
   <li><a href="../classes/tag.html">tag</a></li>
   <li><strong>wibox</strong></li>
   <li><a href="../classes/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
   <li><a href="../classes/wibox.container.background.html">wibox.container.background</a></li>
-  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
@@ -93,7 +88,6 @@
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
-  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.layout.align.html">wibox.layout.align</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
@@ -112,7 +106,6 @@
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.separator.html">wibox.widget.separator</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
-  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/wibox.widget.systray.html">wibox.widget.systray</a></li>
   <li><a href="../classes/wibox.widget.textbox.html">wibox.widget.textbox</a></li>
   <li><a href="../classes/wibox.widget.textclock.html">wibox.widget.textclock</a></li>
@@ -126,7 +119,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -143,24 +135,12 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
-  <li><a href="../libraries/dynamite.html">dynamite</a></li>
-  <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
-  <li><a href="../libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
-  <li><a href="../libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
-  <li><a href="../libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
-  <li><a href="../libraries/dynamite.utils.html">dynamite.utils</a></li>
-  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
-  <li><a href="../libraries/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
-  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -168,16 +148,13 @@
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
-  <li><a href="../libraries/lib.dynamite.base.html">lib.dynamite.base</a></li>
-  <li><a href="../libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
-  <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
-  <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
+  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -209,10 +186,8 @@
 
 <h1>Class <code>wibox</code></h1>
 <p>
-
 </p>
 <p>
-
 </p>
     <h3>Info:</h3>
     <ul>
@@ -256,7 +231,7 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.type">type</a></td>
-	<td class="summary">The window type (desktop, normal, dock, ...).</td>
+	<td class="summary">The window type (desktop, normal, dock, &hellip;).</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.x">x</a></td>
@@ -280,7 +255,7 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.drawable">drawable</a></td>
-	<td class="summary">The wibox's <a href="../classes/drawable.html#">drawable</a>.</td>
+	<td class="summary">The wibox&rsquo;s <a href="../classes/drawable.html#">drawable</a>.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget">widget</a></td>
@@ -292,19 +267,19 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.shape_bounding">shape_bounding</a></td>
-	<td class="summary">The wibox's bounding shape as a (native) cairo surface.</td>
+	<td class="summary">The wibox&rsquo;s bounding shape as a (native) cairo surface.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.shape_clip">shape_clip</a></td>
-	<td class="summary">The wibox's clip shape as a (native) cairo surface.</td>
+	<td class="summary">The wibox&rsquo;s clip shape as a (native) cairo surface.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.shape_input">shape_input</a></td>
-	<td class="summary">The wibox's input shape as a (native) cairo surface.</td>
+	<td class="summary">The wibox&rsquo;s input shape as a (native) cairo surface.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.shape">shape</a></td>
-	<td class="summary">The wibar's shape.</td>
+	<td class="summary">The wibar&rsquo;s shape.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.input_passthrough">input_passthrough</a></td>
@@ -388,14 +363,13 @@
     <ul>
         <li><span class="parameter">args</span>
 
-
         <ul>
         <li><span class="parameter">border_width</span>
             <span class="types"><span class="type">integer</span></span>
          Border width.
         </li>
         <li><span class="parameter">border_color</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Border color.
         </li>
         <li><span class="parameter">ontop</span>
@@ -404,7 +378,7 @@
          (<em>default</em> false)
         </li>
         <li><span class="parameter">cursor</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The mouse cursor.
         </li>
         <li><span class="parameter">visible</span>
@@ -417,7 +391,7 @@
          (<em>default</em> 1)
         </li>
         <li><span class="parameter">type</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The window type (desktop, normal, dock, …).
         </li>
         <li><span class="parameter">x</span>
@@ -498,13 +472,12 @@
     <strong>border_width</strong>
     </dt>
     <dd>
-
-<p>Border width. </p>
+    <p>Border width. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li>*property::border_width*</li>
+<li><em>property::border_width</em></li>
 </ul>
 
 
@@ -513,7 +486,6 @@
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">integer</span>
-
 
 
         </li>
@@ -529,8 +501,7 @@
     <strong>border_color</strong>
     </dt>
     <dd>
-
-<p>Border color. </p>
+    <p>Border color. </p>
 
 <p> Please note that this property only support string based 24 bit or 32 bit
  colors:</p>
@@ -552,7 +523,7 @@ Green   Alpha
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li>*property::border_color*</li>
+<li><em>property::border_color</em></li>
 </ul>
 
 
@@ -561,7 +532,6 @@ Green   Alpha
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -577,13 +547,12 @@ Green   Alpha
     <strong>ontop</strong>
     </dt>
     <dd>
-
-<p>On top of other windows. </p>
+    <p>On top of other windows. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::ontop</em></li>
+<li><em>property::ontop</em></li>
 </ul>
 
 
@@ -592,7 +561,6 @@ Green   Alpha
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -608,13 +576,12 @@ Green   Alpha
     <strong>cursor</strong>
     </dt>
     <dd>
-
-<p>The mouse cursor. </p>
+    <p>The mouse cursor. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::cursor</em></li>
+<li><em>property::cursor</em></li>
 </ul>
 
 
@@ -623,7 +590,6 @@ Green   Alpha
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -643,13 +609,12 @@ Green   Alpha
     <strong>visible</strong>
     </dt>
     <dd>
-
-<p>Visibility. </p>
+    <p>Visibility. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::visible</em></li>
+<li><em>property::visible</em></li>
 </ul>
 
 
@@ -658,7 +623,6 @@ Green   Alpha
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -674,13 +638,12 @@ Green   Alpha
     <strong>opacity</strong>
     </dt>
     <dd>
-
-<p>The opacity of the wibox, between 0 and 1. </p>
+    <p>The opacity of the wibox, between 0 and 1. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::opacity</em></li>
+<li><em>property::opacity</em></li>
 </ul>
 
 
@@ -704,13 +667,12 @@ Green   Alpha
     <strong>type</strong>
     </dt>
     <dd>
-
-<p>The window type (desktop, normal, dock, ...). </p>
+    <p>The window type (desktop, normal, dock, &hellip;). </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::type</em></li>
+<li><em>property::type</em></li>
 </ul>
 
 
@@ -719,7 +681,6 @@ Green   Alpha
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -739,13 +700,12 @@ Green   Alpha
     <strong>x</strong>
     </dt>
     <dd>
-
-<p>The x coordinates. </p>
+    <p>The x coordinates. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::x</em></li>
+<li><em>property::x</em></li>
 </ul>
 
 
@@ -754,7 +714,6 @@ Green   Alpha
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">integer</span>
-
 
 
         </li>
@@ -770,13 +729,12 @@ Green   Alpha
     <strong>y</strong>
     </dt>
     <dd>
-
-<p>The y coordinates. </p>
+    <p>The y coordinates. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::y</em></li>
+<li><em>property::y</em></li>
 </ul>
 
 
@@ -785,7 +743,6 @@ Green   Alpha
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">integer</span>
-
 
 
         </li>
@@ -801,13 +758,12 @@ Green   Alpha
     <strong>width</strong>
     </dt>
     <dd>
-
-<p>The width of the wibox. </p>
+    <p>The width of the wibox. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::width</em></li>
+<li><em>property::width</em></li>
 </ul>
 
 
@@ -816,7 +772,6 @@ Green   Alpha
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">width</span>
-
 
 
         </li>
@@ -832,13 +787,12 @@ Green   Alpha
     <strong>height</strong>
     </dt>
     <dd>
-
-<p>The height of the wibox. </p>
+    <p>The height of the wibox. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::height</em></li>
+<li><em>property::height</em></li>
 </ul>
 
 
@@ -847,7 +801,6 @@ Green   Alpha
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">height</span>
-
 
 
         </li>
@@ -871,7 +824,6 @@ Green   Alpha
         <li><span class="parameter">screen</span>
 
 
-
         </li>
     </ul>
 
@@ -885,13 +837,12 @@ Green   Alpha
     <strong>drawable</strong>
     </dt>
     <dd>
-
-<p>The wibox's <a href="../classes/drawable.html#">drawable</a>. </p>
+    <p>The wibox&rsquo;s <a href="../classes/drawable.html#">drawable</a>. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::drawable</em></li>
+<li><em>property::drawable</em></li>
 </ul>
 
 
@@ -901,7 +852,6 @@ Green   Alpha
     <ul>
         <li><span class="parameter">drawable</span>
             <span class="types"><a class="type" href="../classes/drawable.html#">drawable</a></span>
-
 
 
         </li>
@@ -925,7 +875,6 @@ Green   Alpha
         <li><span class="parameter">widget</span>
 
 
-
         </li>
     </ul>
 
@@ -939,13 +888,12 @@ Green   Alpha
     <strong>window</strong>
     </dt>
     <dd>
-
-<p>The X window id. </p>
+    <p>The X window id. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::window</em></li>
+<li><em>property::window</em></li>
 </ul>
 
 
@@ -954,7 +902,6 @@ Green   Alpha
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -974,13 +921,12 @@ Green   Alpha
     <strong>shape_bounding</strong>
     </dt>
     <dd>
-
-<p>The wibox's bounding shape as a (native) cairo surface. </p>
+    <p>The wibox&rsquo;s bounding shape as a (native) cairo surface. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li>*property::shape_bounding*</li>
+<li><em>property::shape_bounding</em></li>
 </ul>
 
 
@@ -997,13 +943,12 @@ Green   Alpha
     <strong>shape_clip</strong>
     </dt>
     <dd>
-
-<p>The wibox's clip shape as a (native) cairo surface. </p>
+    <p>The wibox&rsquo;s clip shape as a (native) cairo surface. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li>*property::shape_clip*</li>
+<li><em>property::shape_clip</em></li>
 </ul>
 
 
@@ -1020,13 +965,12 @@ Green   Alpha
     <strong>shape_input</strong>
     </dt>
     <dd>
-
-<p>The wibox's input shape as a (native) cairo surface. </p>
+    <p>The wibox&rsquo;s input shape as a (native) cairo surface. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li>*property::shape_input*</li>
+<li><em>property::shape_input</em></li>
 </ul>
 
 
@@ -1043,13 +987,12 @@ Green   Alpha
     <strong>shape</strong>
     </dt>
     <dd>
-
-<p>The wibar's shape. </p>
+    <p>The wibar&rsquo;s shape. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::shape</em></li>
+<li><em>property::shape</em></li>
 </ul>
 
 
@@ -1059,7 +1002,6 @@ Green   Alpha
     <ul>
         <li><span class="parameter">shape</span>
             <span class="types"><span class="type">gears.shape</span></span>
-
 
 
         </li>
@@ -1075,8 +1017,7 @@ Green   Alpha
     <strong>input_passthrough</strong>
     </dt>
     <dd>
-
-<p>Forward the inputs to the client below the wibox. </p>
+    <p>Forward the inputs to the client below the wibox. </p>
 
 <p> This replace the <a href="../classes/wibox.html#wibox.shape_input">shape_input</a> mask with an empty area. All mouse and
  keyboard events are sent to the object (such as a client) positioned below
@@ -1087,7 +1028,7 @@ Green   Alpha
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li>*property::input_passthrough*</li>
+<li><em>property::input_passthrough</em></li>
 </ul>
 
 
@@ -1096,7 +1037,6 @@ Green   Alpha
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
          (<em>default</em> false)
@@ -1256,7 +1196,7 @@ Green   Alpha
     <strong>wibox:geometry (A)</strong>
     </dt>
     <dd>
-    Get or set wibox geometry.  That's the same as accessing or setting the x,
+    Get or set wibox geometry.  That&rsquo;s the same as accessing or setting the x,
  y, width or height properties of a wibox.
 
 
@@ -1347,7 +1287,7 @@ Green   Alpha
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          A sorted table of widgets positions. The first element is the biggest
  container while the last is the topmost widget. The table contains <em>x</em>, <em>y</em>,
  <em>width</em>, <em>height</em> and <em>widget</em>.
@@ -1387,11 +1327,11 @@ Green   Alpha
 
     <ul>
         <li><span class="parameter">path</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The path.
         </li>
         <li><span class="parameter">context</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          A widget context.
          (<em>default</em> nil)
         </li>
@@ -1415,7 +1355,6 @@ Green   Alpha
         <li><span class="parameter">wibox</span>
 
 
-
         </li>
     </ul>
 
@@ -1431,7 +1370,7 @@ Green   Alpha
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-01-25 03:50:29 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

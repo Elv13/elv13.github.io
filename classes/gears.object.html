@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Class gears.object - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -34,13 +34,17 @@
 <ul>
 <li><a href="#Functions">Functions</a></li>
 <li><a href="#Methods">Methods</a></li>
+<li><a href="#lib_gears_object_properties_Functions">lib.gears.object.properties Functions</a></li>
 </ul>
 
 
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
+  <li><a href="../classes/awful.spawn.factory.html">awful.spawn.factory</a></li>
+  <li><a href="../classes/awful.spawn.future.html">awful.spawn.future</a></li>
   <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
@@ -63,27 +67,19 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><strong>gears.object</strong></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
-  <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
-  <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
-  <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
-  <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
   <li><a href="../classes/tag.html">tag</a></li>
   <li><a href="../classes/wibox.html">wibox</a></li>
   <li><a href="../classes/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
   <li><a href="../classes/wibox.container.background.html">wibox.container.background</a></li>
-  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
@@ -91,7 +87,6 @@
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
-  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.layout.align.html">wibox.layout.align</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
@@ -110,7 +105,6 @@
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.separator.html">wibox.widget.separator</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
-  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/wibox.widget.systray.html">wibox.widget.systray</a></li>
   <li><a href="../classes/wibox.widget.textbox.html">wibox.widget.textbox</a></li>
   <li><a href="../classes/wibox.widget.textclock.html">wibox.widget.textclock</a></li>
@@ -124,7 +118,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -141,24 +134,12 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
-  <li><a href="../libraries/dynamite.html">dynamite</a></li>
-  <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
-  <li><a href="../libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
-  <li><a href="../libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
-  <li><a href="../libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
-  <li><a href="../libraries/dynamite.utils.html">dynamite.utils</a></li>
-  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
-  <li><a href="../libraries/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
-  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -166,16 +147,13 @@
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
-  <li><a href="../libraries/lib.dynamite.base.html">lib.dynamite.base</a></li>
-  <li><a href="../libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
-  <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
-  <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
+  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -209,13 +187,6 @@
 <p>The object oriented programming base class used by various Awesome
  widgets and components.</p>
 <p> It provide basic observer pattern, signaling and dynamic properties.</p>
-
-<p> Note that it is also possible to listen to signal on the parent class too.
- In that case, the signal handler first argument will be the object sending
- the signal and all other arguments will be the same as they are when
- connecting directly to the object.</p>
-
-<p> </p>
     <h3>Info:</h3>
     <ul>
         <li><strong>Copyright</strong>: 2010 Uli Schlachter</li>
@@ -253,6 +224,13 @@
 	<td class="summary">Helper function to get the module name out of <code>debug.getinfo</code>.</td>
 	</tr>
 </table>
+<h2><a href="#lib_gears_object_properties_Functions">lib.gears.object.properties Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#gears.object.properties.capi_index_fallback">gears.object.properties.capi_index_fallback (class[, args={}])</a></td>
+	<td class="summary">Add the missing properties handler to a CAPI object such as client/tag/screen.</td>
+	</tr>
+</table>
 
 <br/>
 <br/>
@@ -266,15 +244,11 @@
     <strong>gears.object ([args={}])</strong>
     </dt>
     <dd>
-
-<p>Returns a new object.  You can call <code>:emit_signal()</code>, <code>:disconnect_signal()</code>
+    <p>Returns a new object.  You can call <code>:emit_signal()</code>, <code>:disconnect_signal()</code>
   and <code>:connect_signal()</code> on the resulting object.</p>
 
 <p> Note that <code>args.enable_auto_signals</code> is only supported when
  <code>args.enable_properties</code> is true.</p>
-
-
-
 
 <p><strong>Usage example output</strong>:</p>
 
@@ -291,8 +265,6 @@ a cow
 
 
 
-
-
     <ul>
         <li><span class="parameter">args</span> The arguments
         <ul>
@@ -303,13 +275,12 @@ a cow
         </li>
         <li><span class="parameter">enable_auto_signals</span>
             <span class="types"><span class="type">boolean</span></span>
-         Generate "property::xxxx" signals
+         Generate &ldquo;property::xxxx&rdquo; signals
    when an unknown property is set.
          (<em>default</em> false)
         </li>
         <li><span class="parameter">class</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
 
 
          (<em>default</em> nil)
@@ -320,7 +291,7 @@ a cow
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         A new object
     </ol>
 
@@ -339,7 +310,7 @@ a cow
 <span class="keyword">function</span> class:set_foo(value)
     <span class="global">print</span>(<span class="string">'In set foo'</span>, value)
     <span class="comment">-- In case it is necessary to bypass the object property system, use
-</span>    <span class="comment">-- <a href="https://www.lua.org/manual/5.3/manual.html#pdf-rawset">rawset</a>
+</span>    <span class="comment">-- <a href="https://www.lua.org/manual/5.1/manual.html#pdf-rawset">rawset</a>
 </span>    <span class="global">rawset</span>(self, <span class="string">'_foo'</span>, value)
     <span class="comment">-- When using custom accessors, the signals need to be handled manually
 </span>    self:emit_signal(<span class="string">'property::foo'</span>, value)
@@ -376,10 +347,7 @@ o.something = <span class="string">'a cow'</span>
     <strong>gears.object:connect_signal (name, func)</strong>
     </dt>
     <dd>
-
-<p>Connect to a signal. </p>
-
-
+    <p>Connect to a signal. </p>
 
 <p><strong>Usage example output</strong>:</p>
 
@@ -389,11 +357,9 @@ In slot [obj]   foo bar 42
 
 
 
-
-
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal
         </li>
         <li><span class="parameter">func</span>
@@ -437,7 +403,7 @@ o:connect_signal(<span class="string">'my_signal'</span>, slot)
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal
         </li>
         <li><span class="parameter">func</span>
@@ -461,7 +427,7 @@ o:connect_signal(<span class="string">'my_signal'</span>, slot)
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal
         </li>
         <li><span class="parameter">func</span>
@@ -485,7 +451,7 @@ o:connect_signal(<span class="string">'my_signal'</span>, slot)
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal
         </li>
         <li><span class="parameter">...</span>
@@ -520,8 +486,8 @@ o:connect_signal(<span class="string">'my_signal'</span>, slot)
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-        The module name, e.g. "wibox.container.background".
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        The module name, e.g. &ldquo;wibox.container.background&rdquo;.
     </ol>
 
 
@@ -537,13 +503,57 @@ mt.__tostring = <span class="keyword">function</span>(o)
 
 </dd>
 </dl>
+    <h2 class="section-header "><a name="lib_gears_object_properties_Functions"></a>lib.gears.object.properties Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "gears.object.properties.capi_index_fallback"></a>
+    <strong>gears.object.properties.capi_index_fallback (class[, args={}])</strong>
+    </dt>
+    <dd>
+    <p>Add the missing properties handler to a CAPI object such as client/tag/screen.
+ Valid args:</p>
+
+<ul>
+<li><strong>getter</strong>: A smart getter (handle property getter itself)</li>
+<li><strong>getter_fallback</strong>: A dumb getter method (don&rsquo;t handle individual property getter)</li>
+<li><strong>getter_class</strong>: A module with individual property getter/setter</li>
+<li><strong>getter_prefix</strong>: A special getter prefix (like &ldquo;get&rdquo; or &ldquo;get_&rdquo; (default))</li>
+<li><strong>setter</strong>: A smart setter (handle property setter itself)</li>
+<li><strong>setter_fallback</strong>: A dumb setter method (don&rsquo;t handle individual property setter)</li>
+<li><strong>setter_class</strong>: A module with individual property getter/setter</li>
+<li><strong>setter_prefix</strong>: A special setter prefix (like &ldquo;set&rdquo; or &ldquo;set_&rdquo; (default))</li>
+<li><strong>auto_emit</strong>: Emit &ldquo;property::___&rdquo; automatically (default: false). This is
+  ignored when setter_fallback is set or a setter is found</li>
+</ul>
+
+
+
+
+    <ul>
+        <li><span class="parameter">class</span>
+         A standard luaobject derived object
+        </li>
+        <li><span class="parameter">args</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A set of accessors configuration parameters
+         (<em>default</em> {})
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
 
 
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-01-25 03:50:29 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

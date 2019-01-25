@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Class awful.titlebar - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -42,7 +42,10 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
+  <li><a href="../classes/awful.spawn.factory.html">awful.spawn.factory</a></li>
+  <li><a href="../classes/awful.spawn.future.html">awful.spawn.future</a></li>
   <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><strong>awful.titlebar</strong></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
@@ -65,27 +68,19 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
-  <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
-  <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
-  <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
-  <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
   <li><a href="../classes/tag.html">tag</a></li>
   <li><a href="../classes/wibox.html">wibox</a></li>
   <li><a href="../classes/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
   <li><a href="../classes/wibox.container.background.html">wibox.container.background</a></li>
-  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
@@ -93,7 +88,6 @@
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
-  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.layout.align.html">wibox.layout.align</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
@@ -112,7 +106,6 @@
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.separator.html">wibox.widget.separator</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
-  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/wibox.widget.systray.html">wibox.widget.systray</a></li>
   <li><a href="../classes/wibox.widget.textbox.html">wibox.widget.textbox</a></li>
   <li><a href="../classes/wibox.widget.textclock.html">wibox.widget.textclock</a></li>
@@ -126,7 +119,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -143,24 +135,12 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
-  <li><a href="../libraries/dynamite.html">dynamite</a></li>
-  <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
-  <li><a href="../libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
-  <li><a href="../libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
-  <li><a href="../libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
-  <li><a href="../libraries/dynamite.utils.html">dynamite.utils</a></li>
-  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
-  <li><a href="../libraries/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
-  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -168,16 +148,13 @@
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
-  <li><a href="../libraries/lib.dynamite.base.html">lib.dynamite.base</a></li>
-  <li><a href="../libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
-  <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
-  <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
+  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -209,18 +186,12 @@
 
 <h1>Class <code>awful.titlebar</code></h1>
 <p>Titlebars for awful.</p>
-<p>
-
-<p><strong>Create a titlebar:</strong></p>
+<p><p><strong>Create a titlebar:</strong></p>
 
 <p> This example reproduces what the default <a href="../sample files/rc.lua.html#">rc.lua</a> does. It shows how to
  handle the titlebars on a lower level.</p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_titlebar_default.svg" alt="Usage example"/></p>
-
-
+<p><img src="../images/AUTOGEN_awful_titlebar_default.svg" alt="Usage example" /></p>
 
 <pre>
 <span class="comment">-- Create a titlebar for the client.
@@ -281,7 +252,7 @@ top_titlebar : setup {
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#awful.titlebar">awful.titlebar (c[, args={}])</a></td>
-	<td class="summary">Get a client's titlebar.</td>
+	<td class="summary">Get a client&rsquo;s titlebar.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#titlebar.widget.titlewidget">titlebar.widget.titlewidget (c)</a></td>
@@ -360,282 +331,286 @@ top_titlebar : setup {
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_normal">beautiful.titlebar_floating_button_normal</a></td>
-	<td class="summary">floating<em>button</em>normal.</td>
+	<td class="summary">floating_button_normal.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_normal">beautiful.titlebar_maximized_button_normal</a></td>
-	<td class="summary">maximized<em>button</em>normal.</td>
+	<td class="summary">maximized_button_normal.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_minimize_button_normal">beautiful.titlebar_minimize_button_normal</a></td>
-	<td class="summary">minimize<em>button</em>normal.</td>
+	<td class="summary">minimize_button_normal.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_minimize_button_normal_hover">beautiful.titlebar_minimize_button_normal_hover</a></td>
-	<td class="summary">minimize<em>button</em>normal_hover.</td>
+	<td class="summary">minimize_button_normal_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_minimize_button_normal_press">beautiful.titlebar_minimize_button_normal_press</a></td>
-	<td class="summary">minimize<em>button</em>normal_press.</td>
+	<td class="summary">minimize_button_normal_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_close_button_normal">beautiful.titlebar_close_button_normal</a></td>
-	<td class="summary">close<em>button</em>normal.</td>
+	<td class="summary">close_button_normal.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_close_button_normal_hover">beautiful.titlebar_close_button_normal_hover</a></td>
-	<td class="summary">close<em>button</em>normal_hover.</td>
+	<td class="summary">close_button_normal_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_close_button_normal_press">beautiful.titlebar_close_button_normal_press</a></td>
-	<td class="summary">close<em>button</em>normal_press.</td>
+	<td class="summary">close_button_normal_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_normal">beautiful.titlebar_ontop_button_normal</a></td>
-	<td class="summary">ontop<em>button</em>normal.</td>
+	<td class="summary">ontop_button_normal.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_normal">beautiful.titlebar_sticky_button_normal</a></td>
-	<td class="summary">sticky<em>button</em>normal.</td>
+	<td class="summary">sticky_button_normal.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_focus">beautiful.titlebar_floating_button_focus</a></td>
-	<td class="summary">floating<em>button</em>focus.</td>
+	<td class="summary">floating_button_focus.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_focus">beautiful.titlebar_maximized_button_focus</a></td>
-	<td class="summary">maximized<em>button</em>focus.</td>
+	<td class="summary">maximized_button_focus.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_minimize_button_focus">beautiful.titlebar_minimize_button_focus</a></td>
-	<td class="summary">minimize<em>button</em>focus.</td>
+	<td class="summary">minimize_button_focus.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_minimize_button_focus_hover">beautiful.titlebar_minimize_button_focus_hover</a></td>
-	<td class="summary">minimize<em>button</em>focus_hover.</td>
+	<td class="summary">minimize_button_focus_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_minimize_button_focus_press">beautiful.titlebar_minimize_button_focus_press</a></td>
-	<td class="summary">minimize<em>button</em>focus_press.</td>
+	<td class="summary">minimize_button_focus_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_close_button_focus">beautiful.titlebar_close_button_focus</a></td>
-	<td class="summary">close<em>button</em>focus.</td>
+	<td class="summary">close_button_focus.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_close_button_focus_hover">beautiful.titlebar_close_button_focus_hover</a></td>
-	<td class="summary">close<em>button</em>focus_hover.</td>
+	<td class="summary">close_button_focus_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_close_button_focus_press">beautiful.titlebar_close_button_focus_press</a></td>
-	<td class="summary">close<em>button</em>focus_press.</td>
+	<td class="summary">close_button_focus_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_focus">beautiful.titlebar_ontop_button_focus</a></td>
-	<td class="summary">ontop<em>button</em>focus.</td>
+	<td class="summary">ontop_button_focus.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_focus">beautiful.titlebar_sticky_button_focus</a></td>
-	<td class="summary">sticky<em>button</em>focus.</td>
+	<td class="summary">sticky_button_focus.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_normal_active">beautiful.titlebar_floating_button_normal_active</a></td>
-	<td class="summary">floating<em>button</em>normal_active.</td>
+	<td class="summary">floating_button_normal_active.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_normal_active_hover">beautiful.titlebar_floating_button_normal_active_hover</a></td>
-	<td class="summary">floating<em>button</em>normal<em>active</em>hover.</td>
+	<td class="summary">floating_button_normal_active_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_normal_active_press">beautiful.titlebar_floating_button_normal_active_press</a></td>
-	<td class="summary">floating<em>button</em>normal<em>active</em>press.</td>
+	<td class="summary">floating_button_normal_active_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_normal_active">beautiful.titlebar_maximized_button_normal_active</a></td>
-	<td class="summary">maximized<em>button</em>normal_active.</td>
+	<td class="summary">maximized_button_normal_active.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_normal_active_hover">beautiful.titlebar_maximized_button_normal_active_hover</a></td>
-	<td class="summary">maximized<em>button</em>normal<em>active</em>hover.</td>
+	<td class="summary">maximized_button_normal_active_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_normal_active_press">beautiful.titlebar_maximized_button_normal_active_press</a></td>
-	<td class="summary">maximized<em>button</em>normal<em>active</em>press.</td>
+	<td class="summary">maximized_button_normal_active_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_normal_active">beautiful.titlebar_ontop_button_normal_active</a></td>
-	<td class="summary">ontop<em>button</em>normal_active.</td>
+	<td class="summary">ontop_button_normal_active.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_normal_active_hover">beautiful.titlebar_ontop_button_normal_active_hover</a></td>
-	<td class="summary">ontop<em>button</em>normal<em>active</em>hover.</td>
+	<td class="summary">ontop_button_normal_active_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_normal_active_press">beautiful.titlebar_ontop_button_normal_active_press</a></td>
-	<td class="summary">ontop<em>button</em>normal<em>active</em>press.</td>
+	<td class="summary">ontop_button_normal_active_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_normal_active">beautiful.titlebar_sticky_button_normal_active</a></td>
-	<td class="summary">sticky<em>button</em>normal_active.</td>
+	<td class="summary">sticky_button_normal_active.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_normal_active_hover">beautiful.titlebar_sticky_button_normal_active_hover</a></td>
-	<td class="summary">sticky<em>button</em>normal<em>active</em>hover.</td>
+	<td class="summary">sticky_button_normal_active_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_normal_active_press">beautiful.titlebar_sticky_button_normal_active_press</a></td>
-	<td class="summary">sticky<em>button</em>normal<em>active</em>press.</td>
+	<td class="summary">sticky_button_normal_active_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_focus_active">beautiful.titlebar_floating_button_focus_active</a></td>
-	<td class="summary">floating<em>button</em>focus_active.</td>
+	<td class="summary">floating_button_focus_active.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_focus_active_hover">beautiful.titlebar_floating_button_focus_active_hover</a></td>
-	<td class="summary">floating<em>button</em>focus<em>active</em>hover.</td>
+	<td class="summary">floating_button_focus_active_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_focus_active_press">beautiful.titlebar_floating_button_focus_active_press</a></td>
-	<td class="summary">floating<em>button</em>focus<em>active</em>press.</td>
+	<td class="summary">floating_button_focus_active_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_focus_active">beautiful.titlebar_maximized_button_focus_active</a></td>
-	<td class="summary">maximized<em>button</em>focus_active.</td>
+	<td class="summary">maximized_button_focus_active.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_focus_active_hover">beautiful.titlebar_maximized_button_focus_active_hover</a></td>
-	<td class="summary">maximized<em>button</em>focus<em>active</em>hover.</td>
+	<td class="summary">maximized_button_focus_active_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_focus_active_press">beautiful.titlebar_maximized_button_focus_active_press</a></td>
-	<td class="summary">maximized<em>button</em>focus<em>active</em>press.</td>
+	<td class="summary">maximized_button_focus_active_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_focus_active">beautiful.titlebar_ontop_button_focus_active</a></td>
-	<td class="summary">ontop<em>button</em>focus_active.</td>
+	<td class="summary">ontop_button_focus_active.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_focus_active_hover">beautiful.titlebar_ontop_button_focus_active_hover</a></td>
-	<td class="summary">ontop<em>button</em>focus<em>active</em>hover.</td>
+	<td class="summary">ontop_button_focus_active_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_focus_active_press">beautiful.titlebar_ontop_button_focus_active_press</a></td>
-	<td class="summary">ontop<em>button</em>focus<em>active</em>press.</td>
+	<td class="summary">ontop_button_focus_active_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_focus_active">beautiful.titlebar_sticky_button_focus_active</a></td>
-	<td class="summary">sticky<em>button</em>focus_active.</td>
+	<td class="summary">sticky_button_focus_active.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_focus_active_hover">beautiful.titlebar_sticky_button_focus_active_hover</a></td>
-	<td class="summary">sticky<em>button</em>focus<em>active</em>hover.</td>
+	<td class="summary">sticky_button_focus_active_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_focus_active_press">beautiful.titlebar_sticky_button_focus_active_press</a></td>
-	<td class="summary">sticky<em>button</em>focus<em>active</em>press.</td>
+	<td class="summary">sticky_button_focus_active_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_normal_inactive">beautiful.titlebar_floating_button_normal_inactive</a></td>
-	<td class="summary">floating<em>button</em>normal_inactive.</td>
+	<td class="summary">floating_button_normal_inactive.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_normal_inactive_hover">beautiful.titlebar_floating_button_normal_inactive_hover</a></td>
-	<td class="summary">floating<em>button</em>normal<em>inactive</em>hover.</td>
+	<td class="summary">floating_button_normal_inactive_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_normal_inactive_press">beautiful.titlebar_floating_button_normal_inactive_press</a></td>
-	<td class="summary">floating<em>button</em>normal<em>inactive</em>press.</td>
+	<td class="summary">floating_button_normal_inactive_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_normal_inactive">beautiful.titlebar_maximized_button_normal_inactive</a></td>
-	<td class="summary">maximized<em>button</em>normal_inactive.</td>
+	<td class="summary">maximized_button_normal_inactive.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_normal_inactive_hover">beautiful.titlebar_maximized_button_normal_inactive_hover</a></td>
-	<td class="summary">maximized<em>button</em>normal<em>inactive</em>hover.</td>
+	<td class="summary">maximized_button_normal_inactive_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_normal_inactive_press">beautiful.titlebar_maximized_button_normal_inactive_press</a></td>
-	<td class="summary">maximized<em>button</em>normal<em>inactive</em>press.</td>
+	<td class="summary">maximized_button_normal_inactive_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_normal_inactive">beautiful.titlebar_ontop_button_normal_inactive</a></td>
-	<td class="summary">ontop<em>button</em>normal_inactive.</td>
+	<td class="summary">ontop_button_normal_inactive.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_normal_inactive_hover">beautiful.titlebar_ontop_button_normal_inactive_hover</a></td>
-	<td class="summary">ontop<em>button</em>normal<em>inactive</em>hover.</td>
+	<td class="summary">ontop_button_normal_inactive_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_normal_inactive_press">beautiful.titlebar_ontop_button_normal_inactive_press</a></td>
-	<td class="summary">ontop<em>button</em>normal<em>inactive</em>press.</td>
+	<td class="summary">ontop_button_normal_inactive_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_normal_inactive">beautiful.titlebar_sticky_button_normal_inactive</a></td>
-	<td class="summary">sticky<em>button</em>normal_inactive.</td>
+	<td class="summary">sticky_button_normal_inactive.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_normal_inactive_hover">beautiful.titlebar_sticky_button_normal_inactive_hover</a></td>
-	<td class="summary">sticky<em>button</em>normal<em>inactive</em>hover.</td>
+	<td class="summary">sticky_button_normal_inactive_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_normal_inactive_press">beautiful.titlebar_sticky_button_normal_inactive_press</a></td>
-	<td class="summary">sticky<em>button</em>normal<em>inactive</em>press.</td>
+	<td class="summary">sticky_button_normal_inactive_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_focus_inactive">beautiful.titlebar_floating_button_focus_inactive</a></td>
-	<td class="summary">floating<em>button</em>focus_inactive.</td>
+	<td class="summary">floating_button_focus_inactive.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_focus_inactive_hover">beautiful.titlebar_floating_button_focus_inactive_hover</a></td>
-	<td class="summary">floating<em>button</em>focus<em>inactive</em>hover.</td>
+	<td class="summary">floating_button_focus_inactive_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_floating_button_focus_inactive_press">beautiful.titlebar_floating_button_focus_inactive_press</a></td>
-	<td class="summary">floating<em>button</em>focus<em>inactive</em>press.</td>
+	<td class="summary">floating_button_focus_inactive_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_focus_inactive">beautiful.titlebar_maximized_button_focus_inactive</a></td>
-	<td class="summary">maximized<em>button</em>focus_inactive.</td>
+	<td class="summary">maximized_button_focus_inactive.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_focus_inactive_hover">beautiful.titlebar_maximized_button_focus_inactive_hover</a></td>
-	<td class="summary">maximized<em>button</em>focus<em>inactive</em>hover.</td>
+	<td class="summary">maximized_button_focus_inactive_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_maximized_button_focus_inactive_press">beautiful.titlebar_maximized_button_focus_inactive_press</a></td>
-	<td class="summary">maximized<em>button</em>focus<em>inactive</em>press.</td>
+	<td class="summary">maximized_button_focus_inactive_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_focus_inactive">beautiful.titlebar_ontop_button_focus_inactive</a></td>
-	<td class="summary">ontop<em>button</em>focus_inactive.</td>
+	<td class="summary">ontop_button_focus_inactive.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_focus_inactive_hover">beautiful.titlebar_ontop_button_focus_inactive_hover</a></td>
-	<td class="summary">ontop<em>button</em>focus<em>inactive</em>hover.</td>
+	<td class="summary">ontop_button_focus_inactive_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_ontop_button_focus_inactive_press">beautiful.titlebar_ontop_button_focus_inactive_press</a></td>
-	<td class="summary">ontop<em>button</em>focus<em>inactive</em>press.</td>
+	<td class="summary">ontop_button_focus_inactive_press.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_focus_inactive">beautiful.titlebar_sticky_button_focus_inactive</a></td>
-	<td class="summary">sticky<em>button</em>focus_inactive.</td>
+	<td class="summary">sticky_button_focus_inactive.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_focus_inactive_hover">beautiful.titlebar_sticky_button_focus_inactive_hover</a></td>
-	<td class="summary">sticky<em>button</em>focus<em>inactive</em>hover.</td>
+	<td class="summary">sticky_button_focus_inactive_hover.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.titlebar_sticky_button_focus_inactive_press">beautiful.titlebar_sticky_button_focus_inactive_press</a></td>
-	<td class="summary">sticky<em>button</em>focus<em>inactive</em>press.</td>
+	<td class="summary">sticky_button_focus_inactive_press.</td>
 	</tr>
 </table>
 <h2><a href="#Fields">Fields</a></h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#awful.titlebar.enable_tooltip">awful.titlebar.enable_tooltip</a></td>
-	<td class="summary">Show tooltips when hover on titlebar buttons (defaults to 'true')</td>
+	<td class="summary">Show tooltips when hover on titlebar buttons.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#awful.titlebar.fallback_name">awful.titlebar.fallback_name</a></td>
+	<td class="summary">Title to display if client name is not set.</td>
 	</tr>
 </table>
 <h2><a href="#Methods">Methods</a></h2>
@@ -646,15 +621,15 @@ top_titlebar : setup {
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.titlebar:show">awful.titlebar:show (c[, position])</a></td>
-	<td class="summary">Show a client's titlebar.</td>
+	<td class="summary">Show a client&rsquo;s titlebar.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.titlebar:hide">awful.titlebar:hide (c[, position])</a></td>
-	<td class="summary">Hide a client's titlebar.</td>
+	<td class="summary">Hide a client&rsquo;s titlebar.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.titlebar:toggle">awful.titlebar:toggle (c[, position])</a></td>
-	<td class="summary">Toggle a client's titlebar, hiding it if it is visible, otherwise showing it.</td>
+	<td class="summary">Toggle a client&rsquo;s titlebar, hiding it if it is visible, otherwise showing it.</td>
 	</tr>
 </table>
 
@@ -670,7 +645,7 @@ top_titlebar : setup {
     <strong>awful.titlebar (c[, args={}])</strong>
     </dt>
     <dd>
-    Get a client's titlebar.
+    Get a client&rsquo;s titlebar.
 
 
     <ul>
@@ -686,56 +661,49 @@ top_titlebar : setup {
          (<em>default</em> font.height*1.5)
         </li>
         <li><span class="parameter">position</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-        " values are <code>top</code>,
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        &ldquo; values are <code>top</code>,
  <code>left</code>, <code>right</code> and <code>bottom</code>.
          (<em>default</em> top)
         </li>
         <li><span class="parameter">bg_normal</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> top)
         </li>
         <li><span class="parameter">bg_focus</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> top)
         </li>
         <li><span class="parameter">bgimage_normal</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> top)
         </li>
         <li><span class="parameter">bgimage_focus</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> top)
         </li>
         <li><span class="parameter">fg_normal</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> top)
         </li>
         <li><span class="parameter">fg_focus</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> top)
         </li>
         <li><span class="parameter">font</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> top)
@@ -807,10 +775,10 @@ top_titlebar : setup {
     <dd>
     Create a new button widget.  A button widget displays an image and reacts to
  mouse clicks. Please note that the caller has to make sure that this widget
- gets redrawn when needed by calling the returned widget's update() function.
+ gets redrawn when needed by calling the returned widget&rsquo;s update() function.
  The selector function should return a value describing a state. If the value
- is a boolean, either "active" or "inactive" are used. The actual image is
- then found in the theme as "titlebar<em>[name]</em>button<em>[normal/focus]</em>[state]".
+ is a boolean, either &ldquo;active&rdquo; or &ldquo;inactive&rdquo; are used. The actual image is
+ then found in the theme as &ldquo;titlebar<em>[name]</em>button<em>[normal/focus]</em>[state]&rdquo;.
  If that value does not exist, the focused state is ignored for the next try.
 
 
@@ -819,7 +787,7 @@ top_titlebar : setup {
          The client for which a button is created.
         </li>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Name of the button, used for accessing the theme and
    in the tooltip.
         </li>
@@ -972,7 +940,6 @@ top_titlebar : setup {
         <li><span class="parameter">color</span>
 
 
-
         </li>
     </ul>
 
@@ -996,7 +963,6 @@ top_titlebar : setup {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
 
 
         </li>
@@ -1024,7 +990,6 @@ top_titlebar : setup {
         <li><span class="parameter">surface</span>
 
 
-
         </li>
     </ul>
 
@@ -1048,7 +1013,6 @@ top_titlebar : setup {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
 
 
         </li>
@@ -1076,7 +1040,6 @@ top_titlebar : setup {
         <li><span class="parameter">color</span>
 
 
-
         </li>
     </ul>
 
@@ -1100,7 +1063,6 @@ top_titlebar : setup {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1128,7 +1090,6 @@ top_titlebar : setup {
         <li><span class="parameter">color</span>
 
 
-
         </li>
     </ul>
 
@@ -1152,7 +1113,6 @@ top_titlebar : setup {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">color</span>
-
 
 
         </li>
@@ -1180,7 +1140,6 @@ top_titlebar : setup {
         <li><span class="parameter">surface</span>
 
 
-
         </li>
     </ul>
 
@@ -1198,13 +1157,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_normal</strong>
     </dt>
     <dd>
-    floating<em>button</em>normal.
+    floating_button_normal.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1224,13 +1182,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_normal</strong>
     </dt>
     <dd>
-    maximized<em>button</em>normal.
+    maximized_button_normal.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1250,13 +1207,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_minimize_button_normal</strong>
     </dt>
     <dd>
-    minimize<em>button</em>normal.
+    minimize_button_normal.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1276,13 +1232,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_minimize_button_normal_hover</strong>
     </dt>
     <dd>
-    minimize<em>button</em>normal_hover.
+    minimize_button_normal_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1302,13 +1257,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_minimize_button_normal_press</strong>
     </dt>
     <dd>
-    minimize<em>button</em>normal_press.
+    minimize_button_normal_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1328,13 +1282,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_close_button_normal</strong>
     </dt>
     <dd>
-    close<em>button</em>normal.
+    close_button_normal.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1354,13 +1307,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_close_button_normal_hover</strong>
     </dt>
     <dd>
-    close<em>button</em>normal_hover.
+    close_button_normal_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1380,13 +1332,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_close_button_normal_press</strong>
     </dt>
     <dd>
-    close<em>button</em>normal_press.
+    close_button_normal_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1406,13 +1357,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_normal</strong>
     </dt>
     <dd>
-    ontop<em>button</em>normal.
+    ontop_button_normal.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1432,13 +1382,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_normal</strong>
     </dt>
     <dd>
-    sticky<em>button</em>normal.
+    sticky_button_normal.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1458,13 +1407,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_focus</strong>
     </dt>
     <dd>
-    floating<em>button</em>focus.
+    floating_button_focus.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1484,13 +1432,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_focus</strong>
     </dt>
     <dd>
-    maximized<em>button</em>focus.
+    maximized_button_focus.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1510,13 +1457,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_minimize_button_focus</strong>
     </dt>
     <dd>
-    minimize<em>button</em>focus.
+    minimize_button_focus.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1536,13 +1482,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_minimize_button_focus_hover</strong>
     </dt>
     <dd>
-    minimize<em>button</em>focus_hover.
+    minimize_button_focus_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1562,13 +1507,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_minimize_button_focus_press</strong>
     </dt>
     <dd>
-    minimize<em>button</em>focus_press.
+    minimize_button_focus_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1588,13 +1532,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_close_button_focus</strong>
     </dt>
     <dd>
-    close<em>button</em>focus.
+    close_button_focus.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1614,13 +1557,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_close_button_focus_hover</strong>
     </dt>
     <dd>
-    close<em>button</em>focus_hover.
+    close_button_focus_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1640,13 +1582,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_close_button_focus_press</strong>
     </dt>
     <dd>
-    close<em>button</em>focus_press.
+    close_button_focus_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1666,13 +1607,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_focus</strong>
     </dt>
     <dd>
-    ontop<em>button</em>focus.
+    ontop_button_focus.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1692,13 +1632,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_focus</strong>
     </dt>
     <dd>
-    sticky<em>button</em>focus.
+    sticky_button_focus.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1718,13 +1657,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_normal_active</strong>
     </dt>
     <dd>
-    floating<em>button</em>normal_active.
+    floating_button_normal_active.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1744,13 +1682,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_normal_active_hover</strong>
     </dt>
     <dd>
-    floating<em>button</em>normal<em>active</em>hover.
+    floating_button_normal_active_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1770,13 +1707,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_normal_active_press</strong>
     </dt>
     <dd>
-    floating<em>button</em>normal<em>active</em>press.
+    floating_button_normal_active_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1796,13 +1732,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_normal_active</strong>
     </dt>
     <dd>
-    maximized<em>button</em>normal_active.
+    maximized_button_normal_active.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1822,13 +1757,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_normal_active_hover</strong>
     </dt>
     <dd>
-    maximized<em>button</em>normal<em>active</em>hover.
+    maximized_button_normal_active_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1848,13 +1782,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_normal_active_press</strong>
     </dt>
     <dd>
-    maximized<em>button</em>normal<em>active</em>press.
+    maximized_button_normal_active_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1874,13 +1807,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_normal_active</strong>
     </dt>
     <dd>
-    ontop<em>button</em>normal_active.
+    ontop_button_normal_active.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1900,13 +1832,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_normal_active_hover</strong>
     </dt>
     <dd>
-    ontop<em>button</em>normal<em>active</em>hover.
+    ontop_button_normal_active_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1926,13 +1857,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_normal_active_press</strong>
     </dt>
     <dd>
-    ontop<em>button</em>normal<em>active</em>press.
+    ontop_button_normal_active_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1952,13 +1882,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_normal_active</strong>
     </dt>
     <dd>
-    sticky<em>button</em>normal_active.
+    sticky_button_normal_active.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1978,13 +1907,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_normal_active_hover</strong>
     </dt>
     <dd>
-    sticky<em>button</em>normal<em>active</em>hover.
+    sticky_button_normal_active_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2004,13 +1932,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_normal_active_press</strong>
     </dt>
     <dd>
-    sticky<em>button</em>normal<em>active</em>press.
+    sticky_button_normal_active_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2030,13 +1957,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_focus_active</strong>
     </dt>
     <dd>
-    floating<em>button</em>focus_active.
+    floating_button_focus_active.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2056,13 +1982,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_focus_active_hover</strong>
     </dt>
     <dd>
-    floating<em>button</em>focus<em>active</em>hover.
+    floating_button_focus_active_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2082,13 +2007,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_focus_active_press</strong>
     </dt>
     <dd>
-    floating<em>button</em>focus<em>active</em>press.
+    floating_button_focus_active_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2108,13 +2032,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_focus_active</strong>
     </dt>
     <dd>
-    maximized<em>button</em>focus_active.
+    maximized_button_focus_active.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2134,13 +2057,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_focus_active_hover</strong>
     </dt>
     <dd>
-    maximized<em>button</em>focus<em>active</em>hover.
+    maximized_button_focus_active_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2160,13 +2082,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_focus_active_press</strong>
     </dt>
     <dd>
-    maximized<em>button</em>focus<em>active</em>press.
+    maximized_button_focus_active_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2186,13 +2107,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_focus_active</strong>
     </dt>
     <dd>
-    ontop<em>button</em>focus_active.
+    ontop_button_focus_active.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2212,13 +2132,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_focus_active_hover</strong>
     </dt>
     <dd>
-    ontop<em>button</em>focus<em>active</em>hover.
+    ontop_button_focus_active_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2238,13 +2157,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_focus_active_press</strong>
     </dt>
     <dd>
-    ontop<em>button</em>focus<em>active</em>press.
+    ontop_button_focus_active_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2264,13 +2182,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_focus_active</strong>
     </dt>
     <dd>
-    sticky<em>button</em>focus_active.
+    sticky_button_focus_active.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2290,13 +2207,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_focus_active_hover</strong>
     </dt>
     <dd>
-    sticky<em>button</em>focus<em>active</em>hover.
+    sticky_button_focus_active_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2316,13 +2232,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_focus_active_press</strong>
     </dt>
     <dd>
-    sticky<em>button</em>focus<em>active</em>press.
+    sticky_button_focus_active_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2342,13 +2257,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_normal_inactive</strong>
     </dt>
     <dd>
-    floating<em>button</em>normal_inactive.
+    floating_button_normal_inactive.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2368,13 +2282,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_normal_inactive_hover</strong>
     </dt>
     <dd>
-    floating<em>button</em>normal<em>inactive</em>hover.
+    floating_button_normal_inactive_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2394,13 +2307,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_normal_inactive_press</strong>
     </dt>
     <dd>
-    floating<em>button</em>normal<em>inactive</em>press.
+    floating_button_normal_inactive_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2420,13 +2332,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_normal_inactive</strong>
     </dt>
     <dd>
-    maximized<em>button</em>normal_inactive.
+    maximized_button_normal_inactive.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2446,13 +2357,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_normal_inactive_hover</strong>
     </dt>
     <dd>
-    maximized<em>button</em>normal<em>inactive</em>hover.
+    maximized_button_normal_inactive_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2472,13 +2382,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_normal_inactive_press</strong>
     </dt>
     <dd>
-    maximized<em>button</em>normal<em>inactive</em>press.
+    maximized_button_normal_inactive_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2498,13 +2407,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_normal_inactive</strong>
     </dt>
     <dd>
-    ontop<em>button</em>normal_inactive.
+    ontop_button_normal_inactive.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2524,13 +2432,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_normal_inactive_hover</strong>
     </dt>
     <dd>
-    ontop<em>button</em>normal<em>inactive</em>hover.
+    ontop_button_normal_inactive_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2550,13 +2457,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_normal_inactive_press</strong>
     </dt>
     <dd>
-    ontop<em>button</em>normal<em>inactive</em>press.
+    ontop_button_normal_inactive_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2576,13 +2482,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_normal_inactive</strong>
     </dt>
     <dd>
-    sticky<em>button</em>normal_inactive.
+    sticky_button_normal_inactive.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2602,13 +2507,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_normal_inactive_hover</strong>
     </dt>
     <dd>
-    sticky<em>button</em>normal<em>inactive</em>hover.
+    sticky_button_normal_inactive_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2628,13 +2532,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_normal_inactive_press</strong>
     </dt>
     <dd>
-    sticky<em>button</em>normal<em>inactive</em>press.
+    sticky_button_normal_inactive_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2654,13 +2557,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_focus_inactive</strong>
     </dt>
     <dd>
-    floating<em>button</em>focus_inactive.
+    floating_button_focus_inactive.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2680,13 +2582,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_focus_inactive_hover</strong>
     </dt>
     <dd>
-    floating<em>button</em>focus<em>inactive</em>hover.
+    floating_button_focus_inactive_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2706,13 +2607,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_floating_button_focus_inactive_press</strong>
     </dt>
     <dd>
-    floating<em>button</em>focus<em>inactive</em>press.
+    floating_button_focus_inactive_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2732,13 +2632,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_focus_inactive</strong>
     </dt>
     <dd>
-    maximized<em>button</em>focus_inactive.
+    maximized_button_focus_inactive.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2758,13 +2657,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_focus_inactive_hover</strong>
     </dt>
     <dd>
-    maximized<em>button</em>focus<em>inactive</em>hover.
+    maximized_button_focus_inactive_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2784,13 +2682,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_maximized_button_focus_inactive_press</strong>
     </dt>
     <dd>
-    maximized<em>button</em>focus<em>inactive</em>press.
+    maximized_button_focus_inactive_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2810,13 +2707,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_focus_inactive</strong>
     </dt>
     <dd>
-    ontop<em>button</em>focus_inactive.
+    ontop_button_focus_inactive.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2836,13 +2732,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_focus_inactive_hover</strong>
     </dt>
     <dd>
-    ontop<em>button</em>focus<em>inactive</em>hover.
+    ontop_button_focus_inactive_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2862,13 +2757,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_ontop_button_focus_inactive_press</strong>
     </dt>
     <dd>
-    ontop<em>button</em>focus<em>inactive</em>press.
+    ontop_button_focus_inactive_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2888,13 +2782,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_focus_inactive</strong>
     </dt>
     <dd>
-    sticky<em>button</em>focus_inactive.
+    sticky_button_focus_inactive.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2914,13 +2807,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_focus_inactive_hover</strong>
     </dt>
     <dd>
-    sticky<em>button</em>focus<em>inactive</em>hover.
+    sticky_button_focus_inactive_hover.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2940,13 +2832,12 @@ top_titlebar : setup {
     <strong>beautiful.titlebar_sticky_button_focus_inactive_press</strong>
     </dt>
     <dd>
-    sticky<em>button</em>focus<em>inactive</em>press.
+    sticky_button_focus_inactive_press.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2970,7 +2861,21 @@ top_titlebar : setup {
     <strong>awful.titlebar.enable_tooltip</strong>
     </dt>
     <dd>
-    Show tooltips when hover on titlebar buttons (defaults to 'true')
+    Show tooltips when hover on titlebar buttons.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "awful.titlebar.fallback_name"></a>
+    <strong>awful.titlebar.fallback_name</strong>
+    </dt>
+    <dd>
+    Title to display if client name is not set.
 
 
 
@@ -3008,7 +2913,7 @@ top_titlebar : setup {
     <strong>awful.titlebar:show (c[, position])</strong>
     </dt>
     <dd>
-    Show a client's titlebar.
+    Show a client&rsquo;s titlebar.
 
 
     <ul>
@@ -3016,8 +2921,8 @@ top_titlebar : setup {
          The client whose titlebar is modified
         </li>
         <li><span class="parameter">position</span>
-         The position of the titlebar. Must be one of "left",
-   "right", "top", "bottom". Default is "top".
+         The position of the titlebar. Must be one of &ldquo;left&rdquo;,
+   &ldquo;right&rdquo;, &ldquo;top&rdquo;, &ldquo;bottom&rdquo;. Default is &ldquo;top&rdquo;.
          (<em>optional</em>)
         </li>
     </ul>
@@ -3032,7 +2937,7 @@ top_titlebar : setup {
     <strong>awful.titlebar:hide (c[, position])</strong>
     </dt>
     <dd>
-    Hide a client's titlebar.
+    Hide a client&rsquo;s titlebar.
 
 
     <ul>
@@ -3040,8 +2945,8 @@ top_titlebar : setup {
          The client whose titlebar is modified
         </li>
         <li><span class="parameter">position</span>
-         The position of the titlebar. Must be one of "left",
-   "right", "top", "bottom". Default is "top".
+         The position of the titlebar. Must be one of &ldquo;left&rdquo;,
+   &ldquo;right&rdquo;, &ldquo;top&rdquo;, &ldquo;bottom&rdquo;. Default is &ldquo;top&rdquo;.
          (<em>optional</em>)
         </li>
     </ul>
@@ -3056,7 +2961,7 @@ top_titlebar : setup {
     <strong>awful.titlebar:toggle (c[, position])</strong>
     </dt>
     <dd>
-    Toggle a client's titlebar, hiding it if it is visible, otherwise showing it.
+    Toggle a client&rsquo;s titlebar, hiding it if it is visible, otherwise showing it.
 
 
     <ul>
@@ -3064,8 +2969,8 @@ top_titlebar : setup {
          The client whose titlebar is modified
         </li>
         <li><span class="parameter">position</span>
-         The position of the titlebar. Must be one of "left",
-   "right", "top", "bottom". Default is "top".
+         The position of the titlebar. Must be one of &ldquo;left&rdquo;,
+   &ldquo;right&rdquo;, &ldquo;top&rdquo;, &ldquo;bottom&rdquo;. Default is &ldquo;top&rdquo;.
          (<em>optional</em>)
         </li>
     </ul>
@@ -3082,7 +2987,7 @@ top_titlebar : setup {
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-01-25 03:50:29 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Class screen - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -44,7 +44,10 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
+  <li><a href="../classes/awful.spawn.factory.html">awful.spawn.factory</a></li>
+  <li><a href="../classes/awful.spawn.future.html">awful.spawn.future</a></li>
   <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
@@ -67,27 +70,19 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
-  <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
-  <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
-  <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
-  <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><strong>screen</strong></li>
   <li><a href="../classes/signals.html">signals</a></li>
   <li><a href="../classes/tag.html">tag</a></li>
   <li><a href="../classes/wibox.html">wibox</a></li>
   <li><a href="../classes/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
   <li><a href="../classes/wibox.container.background.html">wibox.container.background</a></li>
-  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
@@ -95,7 +90,6 @@
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
-  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.layout.align.html">wibox.layout.align</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
@@ -114,7 +108,6 @@
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.separator.html">wibox.widget.separator</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
-  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/wibox.widget.systray.html">wibox.widget.systray</a></li>
   <li><a href="../classes/wibox.widget.textbox.html">wibox.widget.textbox</a></li>
   <li><a href="../classes/wibox.widget.textclock.html">wibox.widget.textclock</a></li>
@@ -128,7 +121,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -145,24 +137,12 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
-  <li><a href="../libraries/dynamite.html">dynamite</a></li>
-  <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
-  <li><a href="../libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
-  <li><a href="../libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
-  <li><a href="../libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
-  <li><a href="../libraries/dynamite.utils.html">dynamite.utils</a></li>
-  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
-  <li><a href="../libraries/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
-  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -170,16 +150,13 @@
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
-  <li><a href="../libraries/lib.dynamite.base.html">lib.dynamite.base</a></li>
-  <li><a href="../libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
-  <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
-  <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
+  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -216,15 +193,14 @@
 <p> To get a callback for all
  current and future screens, use <a href="../classes/screen.html#awful.screen.connect_for_each_screen">awful.screen.connect_for_each_screen</a>:</p>
 
-
 <pre>
 awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <span class="comment">-- do something
 </span><span class="keyword">end</span>)
 </pre>
 
-<p> It is also possible loop over all current screens using:</p>
 
+<p> It is also possible loop over all current screens using:</p>
 
 <pre>
 <span class="keyword">for</span> s <span class="keyword">in</span> screen <span class="keyword">do</span>
@@ -232,8 +208,9 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 </span><span class="keyword">end</span>
 </pre>
 
+
 <p> Most basic Awesome objects also have a screen property, see <a href="../libraries/mouse.html#screen">mouse.screen</a>
- <a href="../classes/client.html#client.screen">client.screen</a>, <a href="../classes/wibox.html#wibox.screen">wibox.screen</a> and <a href="../classes/tag.html#tag.screen">tag.screen</a>.</p>
+ <a href="../classes/client.html#client.screen">client.screen</a>, <a href="../classes/wibox.html#wibox.screen">wibox.screen</a> and <a href="../classes/tag.html#request::screen">tag.screen</a>.</p>
 
 <p> Furthermore to the classes described here, one can also use signals as
  described in <a href="../classes/signals.html#">signals</a>.</p>
@@ -272,7 +249,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.screen.disconnect_for_each_screen">awful.screen.disconnect_for_each_screen (func)</a></td>
-	<td class="summary">Undo the effect of connect<em>for</em>each_screen.</td>
+	<td class="summary">Undo the effect of connect_for_each_screen.</td>
 	</tr>
 </table>
 <h2><a href="#Object_properties">Object properties</a></h2>
@@ -336,7 +313,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 	<tr>
 	<td class="name" ><a href="#screen.primary_changed">primary_changed</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
@@ -534,7 +510,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 
     <ul>
         <li><span class="parameter">dir</span>
-         The direction, can be either "up", "down", "left" or "right".
+         The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
         </li>
         <li><span class="parameter">_screen</span>
          Screen.
@@ -581,7 +557,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 
     <ul>
         <li><span class="parameter">args</span>
-
 
         <ul>
         <li><span class="parameter">client</span>
@@ -638,7 +613,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>awful.screen.disconnect_for_each_screen (func)</strong>
     </dt>
     <dd>
-    Undo the effect of connect<em>for</em>each_screen.
+    Undo the effect of connect_for_each_screen.
 
 
     <ul>
@@ -667,8 +642,9 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::geometry</em></li>
+<li><em>property::geometry</em></li>
 </ul>
+
 
 <p> <strong>Immutable:</strong> true
 
@@ -676,7 +652,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">table</span>
-
 
         <ul>
         <li><span class="parameter">x</span>
@@ -711,12 +686,13 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     The internal screen number. </p>
 
 <ul>
-    <li>The indeces are a continuous sequence from 1 to <code>screen.count()</code>.</li>
-    <li>It is <strong>NOT</strong> related to the actual screen position relative to each
-    other.</li>
-    <li>1 is <strong>NOT</strong> necessarily the primary screen.</li>
-    <li>When screens are added and removed indices <strong>CAN</strong> change.</li>
+<li>The indeces are a continuous sequence from 1 to <code>screen.count()</code>.</li>
+<li>It is <strong>NOT</strong> related to the actual screen position relative to each
+other.</li>
+<li>1 is <strong>NOT</strong> necessarily the primary screen.</li>
+<li>When screens are added and removed indices <strong>CAN</strong> change.</li>
 </ul>
+
 
 <p> If you really want to keep an array of screens you should use something
  along:</p>
@@ -745,7 +721,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
         <li><span class="parameter">integer</span>
 
 
-
         </li>
     </ul>
 
@@ -771,8 +746,9 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::outputs</em></li>
+<li><em>property::outputs</em></li>
 </ul>
+
 
 <p> <strong>Immutable:</strong> true
 
@@ -781,10 +757,9 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <ul>
         <li><span class="parameter">table</span>
 
-
         <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          A table with the screen name as key (like <code>eDP1</code> on a laptop)
         </li>
         <li><span class="parameter">name.mm_width</span>
@@ -808,8 +783,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>workarea</strong>
     </dt>
     <dd>
-
-<p>The screen workarea. </p>
+    <p>The screen workarea. </p>
 
 <p> The workarea is a subsection of the screen where clients can be placed. It
  usually excludes the toolbars (see <a href="../classes/awful.wibar.html#">awful.wibar</a>) and dockable clients
@@ -820,7 +794,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::workarea</em></li>
+<li><em>property::workarea</em></li>
 </ul>
 
 
@@ -829,7 +803,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">table</span>
-
 
         <ul>
         <li><span class="parameter">x</span>
@@ -865,22 +838,14 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>padding</strong>
     </dt>
     <dd>
+    <p>The screen padding. </p>
 
-<p>The screen padding. </p>
-
-<p> This adds a "buffer" section on each side of the screen.</p>
-
-<p> Here is the property effect on a layout:</p>
-
-
-
-<p><img src="../images/AUTOGEN_dynamite_suit_tile_padding.svg" alt="Usage example"/></p>
-
+<p> This adds a &ldquo;buffer&rdquo; section on each side of the screen.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::padding</em></li>
+<li><em>property::padding</em></li>
 </ul>
 
 
@@ -889,7 +854,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">table</span>
-
 
         <ul>
         <li><span class="parameter">left</span>
@@ -946,7 +910,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <ul>
          <li><a href="../classes/screen.html#screen.all_clients">all_clients</a></li>
          <li><a href="../classes/screen.html#screen.hidden_clients">hidden_clients</a></li>
-         <li><a href="../classes/client.html#awful.client.property.get">client.get</a></li>
+         <li><a href="../classes/client.html#awful.client.dockable.get">client.get</a></li>
     </ul>
 
 
@@ -974,7 +938,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <ul>
          <li><a href="../classes/screen.html#screen.clients">clients</a></li>
          <li><a href="../classes/screen.html#screen.all_clients">all_clients</a></li>
-         <li><a href="../classes/client.html#awful.client.property.get">client.get</a></li>
+         <li><a href="../classes/client.html#awful.client.dockable.get">client.get</a></li>
     </ul>
 
 
@@ -1000,7 +964,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <ul>
          <li><a href="../classes/screen.html#screen.clients">clients</a></li>
          <li><a href="../classes/screen.html#screen.hidden_clients">hidden_clients</a></li>
-         <li><a href="../classes/client.html#awful.client.property.get">client.get</a></li>
+         <li><a href="../classes/client.html#awful.client.dockable.get">client.get</a></li>
     </ul>
 
 
@@ -1010,15 +974,14 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>tiled_clients</strong>
     </dt>
     <dd>
-
-<p>Tiled clients for the screen. </p>
+    <p>Tiled clients for the screen. </p>
 
 <p> Same as <a href="../classes/screen.html#screen.clients">clients</a>, but excluding:</p>
 
 <ul>
-    <li>fullscreen clients</li>
-    <li>maximized clients</li>
-    <li>floating clients</li>
+<li>fullscreen clients</li>
+<li>maximized clients</li>
+<li>floating clients</li>
 </ul>
 
 
@@ -1043,14 +1006,13 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <dd>
     A list of all tags on the screen. </p>
 
-<p> This property is read only, use <a href="../classes/tag.html#tag.screen">tag.screen</a>, <code>awful.tag.add</code>,
+<p> This property is read only, use <a href="../classes/tag.html#request::screen">tag.screen</a>, <code>awful.tag.add</code>,
  <code>awful.tag.new</code> or <code>t:delete()</code> to alter this list.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">table</span>
-
 
 
         </li>
@@ -1074,7 +1036,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
         <li><span class="parameter">table</span>
 
 
-
         </li>
     </ul>
 
@@ -1082,7 +1043,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 
     <h3>See also:</h3>
     <ul>
-         <li><a href="../classes/tag.html#awful.tag.selected">tag.selected</a></li>
+         <li><a href="../classes/tag.html#tag.selected">tag.selected</a></li>
          <li><a href="../classes/client.html#client:to_selected_tags">client.to_selected_tags</a></li>
     </ul>
 
@@ -1098,8 +1059,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 
     <h3>Type:</h3>
     <ul>
-        <li><span class="parameter">table</span>
-
+        <li><span class="parameter">tag</span>
 
 
         </li>
@@ -1109,7 +1069,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 
     <h3>See also:</h3>
     <ul>
-         <li><a href="../classes/tag.html#awful.tag.selected">tag.selected</a></li>
+         <li><a href="../classes/tag.html#tag.selected">tag.selected</a></li>
          <li><a href="../classes/screen.html#screen.selected_tags">selected_tags</a></li>
     </ul>
 
@@ -1138,7 +1098,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <strong>primary_changed</strong>
     </dt>
     <dd>
-
 
 
 
@@ -1278,8 +1237,8 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
          The screen object to change the padding on
         </li>
         <li><span class="parameter">padding</span>
-         The padding, a table with 'top', 'left', 'right' and/or
- 'bottom' or a number value to apply set the same padding on all sides. Can be
+         The padding, a table with &lsquo;top&rsquo;, &lsquo;left&rsquo;, &lsquo;right&rsquo; and/or
+ &lsquo;bottom&rsquo; or a number value to apply set the same padding on all sides. Can be
   nil if you only want to retrieve padding
          (<em>default</em> nil)
         </li>
@@ -1309,7 +1268,6 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <ul>
         <li><span class="parameter">primary</span>
             <span class="types"><a class="type" href="../classes/screen.html#">screen</a></span>
-
 
 
         </li>
@@ -1500,7 +1458,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
     <ul>
         <li><span class="parameter">s</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          A screen to swap with.
         </li>
     </ul>
@@ -1520,7 +1478,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -1544,7 +1502,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">...</span>
@@ -1569,7 +1527,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -1629,7 +1587,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
          Screen.
         </li>
         <li><span class="parameter">dir</span>
-         The direction, can be either "up", "down", "left" or "right".
+         The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
         </li>
     </ul>
 
@@ -1676,7 +1634,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <dd>
     Get a placement bounding geometry. </p>
 
-<p> This method computes the different variants of the "usable" screen geometry.
+<p> This method computes the different variants of the &ldquo;usable&rdquo; screen geometry.
 
 
     <ul>
@@ -1684,16 +1642,16 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
         <ul>
         <li><span class="parameter">honor_padding</span>
             <span class="types"><span class="type">boolean</span></span>
-         Whether to honor the screen's padding.
+         Whether to honor the screen&rsquo;s padding.
          (<em>default</em> false)
         </li>
         <li><span class="parameter">honor_workarea</span>
             <span class="types"><span class="type">boolean</span></span>
-         Whether to honor the screen's workarea.
+         Whether to honor the screen&rsquo;s workarea.
          (<em>default</em> false)
         </li>
         <li><span class="parameter">margins</span>
-            <span class="types"><span class="type">int</span> or <a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><span class="type">int</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Apply some margins on the output.
    This can either be a number or a table with <em>left</em>, <em>right</em>, <em>top</em>
    and <em>bottom</em> keys.
@@ -1701,7 +1659,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
         </li>
         <li><span class="parameter">tag</span>
             <span class="types"><a class="type" href="../classes/tag.html#">tag</a></span>
-         Use this tag's screen.
+         Use this tag&rsquo;s screen.
          (<em>optional</em>)
         </li>
         <li><span class="parameter">parent</span>
@@ -1710,7 +1668,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
          (<em>optional</em>)
         </li>
         <li><span class="parameter">bounding_rect</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          A bounding rectangle. This parameter is
    incompatible with <code>honor_workarea</code>.
          (<em>optional</em>)
@@ -1721,7 +1679,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         A table with <em>x</em>, <em>y</em>, <em>width</em> and <em>height</em>.
     </ol>
 
@@ -1760,7 +1718,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         The clients list.
     </ol>
 
@@ -1789,7 +1747,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         The clients list.
     </ol>
 
@@ -1818,7 +1776,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         The clients list.
     </ol>
 
@@ -1871,7 +1829,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-01-25 03:50:29 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
