@@ -25,24 +25,39 @@
 </symbol>
 </g>
 <clipPath id="clip1">
-  <path d="M 51 10 L 101 10 L 101 29 L 51 29 Z M 51 10 "/>
+  <rect x="0" y="0" width="50" height="19"/>
 </clipPath>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<g id="surface9" clip-path="url(#clip1)" filter="url(#alpha)">
+<rect x="0" y="0" width="50" height="19" style="fill:rgb(0%,0%,0%);fill-opacity:1;stroke:none;"/>
+</g>
+<mask id="mask0">
+<use xlink:href="#surface9"/>
+</mask>
+<clipPath id="clip2">
+  <rect x="0" y="0" width="50" height="19"/>
+</clipPath>
+<g id="surface8" clip-path="url(#clip2)">
+<rect x="0" y="0" width="50" height="19" style="fill:rgb(66.666667%,0%,100%);fill-opacity:0.490196;stroke:none;"/>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="5" y="13.15625"/>
+  <use xlink:href="#glyph0-2" x="11.526367" y="13.15625"/>
+  <use xlink:href="#glyph0-3" x="14.490234" y="13.15625"/>
+  <use xlink:href="#glyph0-4" x="17.454102" y="13.15625"/>
+  <use xlink:href="#glyph0-4" x="23.386719" y="13.15625"/>
+  <use xlink:href="#glyph0-5" x="29.319336" y="13.15625"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-6" x="31.689453" y="13.15625"/>
+</g>
+</g>
 </defs>
 <g id="surface3">
-<g clip-path="url(#clip1)" clip-rule="nonzero">
-<rect x="0" y="0" width="200" height="50" style="fill:rgb(66.666667%,0%,100%);fill-opacity:0.490196;stroke:none;"/>
-</g>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph0-1" x="56" y="23.15625"/>
-  <use xlink:href="#glyph0-2" x="62.526367" y="23.15625"/>
-  <use xlink:href="#glyph0-3" x="65.490234" y="23.15625"/>
-  <use xlink:href="#glyph0-4" x="68.454102" y="23.15625"/>
-  <use xlink:href="#glyph0-4" x="74.386719" y="23.15625"/>
-  <use xlink:href="#glyph0-5" x="80.319336" y="23.15625"/>
-</g>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph0-6" x="82.689453" y="23.15625"/>
-</g>
+<path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.266667;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 0.75 0.75 L 199.25 0.75 L 199.25 49.25 L 0.75 49.25 Z M 0.75 0.75 "/>
+<path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.2;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 10 10 L 190 10 L 190 40 L 10 40 Z M 10 10 "/>
+<use xlink:href="#surface8" transform="matrix(1,0,0,1,51,10)" mask="url(#mask0)"/>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 50 10 L 50 20 L 53 18 L 56 22 L 58 22 L 55 18 L 59 18 Z M 50 10 "/>
 </g>
 </svg>

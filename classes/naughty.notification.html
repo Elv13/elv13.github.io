@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Class naughty.notification - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -34,6 +34,7 @@
 <ul>
 <li><a href="#Functions">Functions</a></li>
 <li><a href="#Object_properties">Object properties</a></li>
+<li><a href="#Deprecated_object_properties">Deprecated object properties</a></li>
 <li><a href="#Signals">Signals</a></li>
 <li><a href="#Theme_variables">Theme variables</a></li>
 <li><a href="#Methods">Methods</a></li>
@@ -43,8 +44,8 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -66,18 +67,21 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../classes/naughty.list.notifications.html">naughty.list.notifications</a></li>
   <li><strong>naughty.notification</strong></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
   <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
   <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
@@ -127,7 +131,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -144,8 +147,6 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/dynamite.html">dynamite</a></li>
   <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
@@ -161,7 +162,6 @@
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -179,6 +179,9 @@
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
+  <li><a href="../libraries/naughty.container.html">naughty.container</a></li>
+  <li><a href="../libraries/naughty.list.html">naughty.list</a></li>
+  <li><a href="../libraries/naughty.widget.html">naughty.widget</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -213,9 +216,11 @@
 <p> This class creates individual notification objects that can be manipulated
  to extend the default behavior.</p>
 
-<p> This class doesn't define the actual widget, but is rather intended as a data
+<p> This class doesn&rsquo;t define the actual widget, but is rather intended as a data
  object to hold the properties. All examples assume the default widgets, but
  the whole implementation can be replaced.</p>
+
+<p><img src="../images/AUTOGEN_naughty_actions.svg" alt="Usage example" /></p>
     <h3>Info:</h3>
     <ul>
         <li><strong>Copyright</strong>: 2008 koniu,2017 Emmanuel Lepage Vallee</li>
@@ -226,20 +231,12 @@
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#naughty.notification">naughty.notification (args)</a></td>
+	<td class="name" ><a href="#naughty.notification">naughty.notification (args[, opt=""])</a></td>
 	<td class="summary">Create a notification.</td>
 	</tr>
 </table>
 <h2><a href="#Object_properties">Object properties</a></h2>
 <table class="function_list">
-	<tr>
-	<td class="name" ><a href="#naughty.notification.text">text</a></td>
-	<td class="summary">Unique identifier of the notification.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#naughty.notification.text">text</a></td>
-	<td class="summary">Text of the notification.</td>
-	</tr>
 	<tr>
 	<td class="name" ><a href="#naughty.notification.title">title</a></td>
 	<td class="summary">Title of the notification.</td>
@@ -344,6 +341,17 @@
 	<td class="name" ><a href="#naughty.notification.suspended">suspended</a></td>
 	<td class="summary">Tell if the notification is currently suspended (read only).</td>
 	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.notification.is_expired">is_expired</a></td>
+	<td class="summary">If the notification is expired.</td>
+	</tr>
+</table>
+<h2><a href="#Deprecated_object_properties">Deprecated object properties</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#naughty.notification.text">text</a></td>
+	<td class="summary">Text of the notification.</td>
+	</tr>
 </table>
 <h2><a href="#Signals">Signals</a></h2>
 <table class="function_list">
@@ -384,7 +392,7 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.notification_margin">beautiful.notification_margin</a></td>
-	<td class="summary">Notifications margin.</td>
+	<td class="summary">The margins inside of the notification widget (or popup).</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#beautiful.notification_width">beautiful.notification_width</a></td>
@@ -394,12 +402,16 @@
 	<td class="name" ><a href="#beautiful.notification_height">beautiful.notification_height</a></td>
 	<td class="summary">Notifications height.</td>
 	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_spacing">beautiful.notification_spacing</a></td>
+	<td class="summary">The spacing between the notifications.</td>
+	</tr>
 </table>
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#naughty.notification:destroy">naughty.notification:destroy (reason[, keep_visible=false])</a></td>
-	<td class="summary">Destroy notification by notification object</td>
+	<td class="summary">Destroy notification by notification object.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#naughty.notification:reset_timeout">naughty.notification:reset_timeout (new_timeout)</a></td>
@@ -416,7 +428,7 @@
     <dl class="function">
     <dt>
     <a name = "naughty.notification"></a>
-    <strong>naughty.notification (args)</strong>
+    <strong>naughty.notification (args[, opt=""])</strong>
     </dt>
     <dd>
     Create a notification.
@@ -425,89 +437,6 @@
     <ul>
         <li><span class="parameter">args</span> The argument table containing any of the arguments below.
         <ul>
-        <li><span class="parameter">text</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         Text of the notification.
-         (<em>default</em> "")
-        </li>
-        <li><span class="parameter">title</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         Title of the notification.
-         (<em>optional</em>)
-        </li>
-        <li><span class="parameter">timeout</span>
-            <span class="types"><span class="type">int</span></span>
-         Time in seconds after which popup expires.
-   Set 0 for no timeout.
-         (<em>default</em> 5)
-        </li>
-        <li><span class="parameter">hover_timeout</span>
-            <span class="types"><span class="type">int</span></span>
-         Delay in seconds after which hovered popup disappears.
-         (<em>optional</em>)
-        </li>
-        <li><span class="parameter">screen</span>
-            <span class="types"><span class="type">integer</span> or <a class="type" href="../classes/screen.html#">screen</a></span>
-         Target screen for the notification.
-         (<em>default</em> focused)
-        </li>
-        <li><span class="parameter">position</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         Corner of the workarea displaying the popups.
-   Values: <code>&quot;top_right&quot;</code>, <code>&quot;top_left&quot;</code>, <code>&quot;bottom_left&quot;</code>,
-   <code>&quot;bottom_right&quot;</code>, <code>&quot;top_middle&quot;</code>, <code>&quot;bottom_middle&quot;</code>.
-         (<em>default</em> "top_right")
-        </li>
-        <li><span class="parameter">ontop</span>
-            <span class="types"><span class="type">bool</span></span>
-         Boolean forcing popups to display on top.
-         (<em>default</em> true)
-        </li>
-        <li><span class="parameter">height</span>
-            <span class="types"><span class="type">int</span></span>
-         Popup height.
-         (<em>default</em> `beautiful.notification_height` or auto)
-        </li>
-        <li><span class="parameter">width</span>
-            <span class="types"><span class="type">int</span></span>
-         Popup width.
-         (<em>default</em> `beautiful.notification_width` or auto)
-        </li>
-        <li><span class="parameter">font</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         Notification font.
-         (<em>default</em> `beautiful.notification_font` or `beautiful.font` or `awesome.font`)
-        </li>
-        <li><span class="parameter">icon</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         Path to icon.
-         (<em>optional</em>)
-        </li>
-        <li><span class="parameter">icon_size</span>
-            <span class="types"><span class="type">int</span></span>
-         Desired icon size in px.
-         (<em>optional</em>)
-        </li>
-        <li><span class="parameter">fg</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         Foreground color.
-         (<em>default</em> `beautiful.notification_fg` or `beautiful.fg_focus` or `'#ffffff'`)
-        </li>
-        <li><span class="parameter">bg</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         Background color.
-         (<em>default</em> `beautiful.notification_fg` or `beautiful.bg_focus` or `'#535d6c'`)
-        </li>
-        <li><span class="parameter">border_width</span>
-            <span class="types"><span class="type">int</span></span>
-         Border width.
-         (<em>default</em> `beautiful.notification_border_width` or 1)
-        </li>
-        <li><span class="parameter">border_color</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         Border color.
-         (<em>default</em> `beautiful.notification_border_color` or `beautiful.border_focus` or `'#535d6c'`)
-        </li>
         <li><span class="parameter">shape</span>
             <span class="types"><span class="type">gears.shape</span></span>
          Widget shape.
@@ -538,7 +467,7 @@
          (<em>optional</em>)
         </li>
         <li><span class="parameter">preset</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Table with any of the above parameters.
    Note: Any parameters specified directly in args will override ones defined
    in the preset.
@@ -557,9 +486,8 @@
          (<em>optional</em>)
         </li>
         <li><span class="parameter">actions</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-         Mapping that maps a string to a callback when this
-   action is selected.
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A list of <a href="../classes/naughty.action.html#">naughty.action</a>s.
          (<em>optional</em>)
         </li>
         <li><span class="parameter">ignore_suspend</span>
@@ -569,12 +497,17 @@
          (<em>default</em> false)
         </li>
         </li></ul>
+        <li><span class="parameter">opt</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        =<a href="../classes/naughty.notification.html#beautiful.notification_border_color">beautiful.notification_border_color</a> or
+   <a href="../libraries/beautiful.html#border_focus">beautiful.border_focus</a> or <code>&apos;#535d6c&apos;</code>] args.border_color Border color.
+        </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types">optional <a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types">optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         The notification object, or nil in case a notification was
    not displayed.
     </ol>
@@ -583,7 +516,7 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">naughty.notify({ title = <span class="string">"Achtung!"</span>, text = <span class="string">"You're idling"</span>, timeout = <span class="number">0</span> })</pre>
+        <pre class="example">naughty.notify({ title = <span class="string">"Achtung!"</span>, message = <span class="string">"You're idling"</span>, timeout = <span class="number">0</span> })</pre>
     </ul>
 
 </dd>
@@ -592,71 +525,18 @@
 
     <dl class="function">
     <dt>
-    <a name = "naughty.notification.text"></a>
-    <strong>text</strong>
-    </dt>
-    <dd>
-    Unique identifier of the notification.
- This is the equivalent to a PID as allows external applications to select
- notifications.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">string</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../classes/naughty.notification.html#naughty.notification.title">title</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "naughty.notification.text"></a>
-    <strong>text</strong>
-    </dt>
-    <dd>
-    Text of the notification.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">string</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../classes/naughty.notification.html#naughty.notification.title">title</a>
-    </ul>
-
-
-</dd>
-    <dt>
     <a name = "naughty.notification.title"></a>
     <strong>title</strong>
     </dt>
     <dd>
-    Title of the notification.
+    Title of the notification. </p>
+
+<p><img src="../images/AUTOGEN_naughty_helloworld.svg" alt="Usage example" />
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -681,7 +561,6 @@
         <li><span class="parameter">number</span>
 
 
-
         </li>
     </ul>
 
@@ -701,7 +580,6 @@
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
-
 
 
         </li>
@@ -725,7 +603,6 @@
         <li><span class="parameter">screen</span>
 
 
-
         </li>
     </ul>
 
@@ -739,24 +616,35 @@
     <strong>position</strong>
     </dt>
     <dd>
-
-<p>Corner of the workarea displaying the popups. </p>
+    <p>Corner of the workarea displaying the popups. </p>
 
 <p> The possible values are:</p>
 
 <ul>
-    <li>*top_right*</li>
-    <li>*top_left*</li>
-    <li>*bottom_left*</li>
-    <li>*bottom_right*</li>
-    <li>*top_middle*</li>
-    <li>*bottom_middle*</li>
+<li><em>top_right</em></li>
+<li><em>top_left</em></li>
+<li><em>bottom_left</em></li>
+<li><em>bottom_right</em></li>
+<li><em>top_middle</em></li>
+<li><em>bottom_middle</em></li>
 </ul>
 
 
+<p><img src="../images/AUTOGEN_awful_notification_box_corner.svg" alt="Usage example" /></p>
 
-
-
+<pre><code>for _, pos in ipairs {
+    'top_left'   , 'top_middle'   , 'top_right',
+    'bottom_left', 'bottom_middle', 'bottom_right',
+} do
+    for i=1, 3 do
+        naughty.notification {
+            position = pos,
+            title    = pos .. ' ' .. i,
+            message  = ever_longer_messages(i)
+        }
+    end
+end
+</code></pre>
 
 
 
@@ -765,12 +653,15 @@
         <li><span class="parameter">string</span>
 
 
-
         </li>
     </ul>
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/awful.placement.html#next_to">awful.placement.next_to</a>
+    </ul>
 
 
 </dd>
@@ -787,7 +678,6 @@
         <li><span class="parameter">boolean</span>
 
 
-
         </li>
     </ul>
 
@@ -801,7 +691,27 @@
     <strong>height</strong>
     </dt>
     <dd>
-    Popup height.
+    <p>Popup height. </p>
+
+<p><img src="../images/AUTOGEN_awful_notification_geometry.svg" alt="Usage example" /></p>
+
+<pre><code>for _, pos in ipairs {
+    'top_left'   , 'top_middle'   , 'top_right',
+    'bottom_left', 'bottom_middle', 'bottom_right',
+} do
+    for i=1, 2 do
+        naughty.notification {
+            position = pos,
+            title    = pos .. ' ' .. i,
+            width    = 50*i,
+            height   = 50*i,
+            message  = 'This is a very, very, very, '..
+                'very, very very long message',
+        }
+    end
+end
+</code></pre>
+
 
 
     <h3>Type:</h3>
@@ -809,12 +719,15 @@
         <li><span class="parameter">number</span>
 
 
-
         </li>
     </ul>
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/naughty.notification.html#naughty.notification.width">width</a>
+    </ul>
 
 
 </dd>
@@ -831,12 +744,15 @@
         <li><span class="parameter">number</span>
 
 
-
         </li>
     </ul>
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/naughty.notification.html#naughty.notification.height">height</a>
+    </ul>
 
 
 </dd>
@@ -845,13 +761,14 @@
     <strong>font</strong>
     </dt>
     <dd>
-    Notification font.
+    Notification font. </p>
+
+<p><img src="../images/AUTOGEN_naughty_colors.svg" alt="Usage example" />
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -863,13 +780,14 @@
     <h3>Usage:</h3>
     <ul>
         <pre class="example"><span class="keyword">local</span> text = <span class="string">[[An &lt;b&gt;important&lt;/b&gt;;&lt;i&gt;notification&lt;/i&gt;;]]</span>
-<span class="global">require</span>(<span class="string">'naughty.notification'</span>) {
+
+<span class="global">require</span>(<span class="string">'naughty'</span>).notification {
     title        = <span class="string">'Hello world!'</span>,
     text         = text,
     icon         = beautiful.icon,
     bg           = <span class="string">'#0000ff'</span>,
     fg           = <span class="string">'#ff0000'</span>,
-    fond         = <span class="string">'verdana 14'</span>,
+    font         = <span class="string">'verdana 14'</span>,
     border_width = <span class="number">1</span>,
     border_color = <span class="string">'#ff0000'</span>
 }</pre>
@@ -887,8 +805,7 @@
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">icon</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">surface</span></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">surface</span></span>
 
 
         </li>
@@ -912,7 +829,6 @@
         <li><span class="parameter">number</span>
 
 
-
         </li>
     </ul>
 
@@ -926,14 +842,34 @@
     <strong>fg</strong>
     </dt>
     <dd>
-    Foreground color.
+    Foreground color. </p>
+
+<p><img src="../images/AUTOGEN_awful_notification_fg.svg" alt="Usage example" /></p>
+
+<pre><code>-- A notification popup using the default widget_template.
+naughty.connect_signal('request::display', function(n)
+    naughty.layout.box {notification = n}
+end)
+
+-- Notifications as widgets for any &lt;a href="../classes/wibox.html#"&gt;wibox&lt;/a&gt;/&lt;a href="../classes/awful.wibar.html#"&gt;awful.wibar&lt;/a&gt;/&lt;a href="../classes/awful.popup.html#"&gt;awful.popup&lt;/a&gt;
+some_wibar.widget = naughty.list.notifications {}
+
+for _, color in ipairs {'#ff0000', '#00ff00', '#0000ff'} do
+    naughty.notification {
+        title   = 'A '.. color ..' notification',
+        message = 'Message',
+        fg      = color,
+    }
+end
+</code></pre>
+
+<p> require(&lsquo;gears.timer&rsquo;).run_delayed_calls_now()
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">fg</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a>, <span class="type">color</span> or <span class="type">pattern</span></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a>, <span class="type">color</span> or <span class="type">pattern</span></span>
 
 
         </li>
@@ -943,7 +879,8 @@
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/naughty.notification.html#naughty.notification.title">title</a>
+         <li><a href="../classes/naughty.notification.html#naughty.notification.title">title</a></li>
+         <li><a href="../libraries/gears.color.html#">gears.color</a></li>
     </ul>
 
 
@@ -953,14 +890,33 @@
     <strong>bg</strong>
     </dt>
     <dd>
-    Background color.
+    Background color. </p>
+
+<p><img src="../images/AUTOGEN_awful_notification_bg.svg" alt="Usage example" /></p>
+
+<pre><code>-- A notification popup using the default widget_template.
+naughty.connect_signal('request::display', function(n)
+    naughty.layout.box {notification = n}
+end)
+
+-- Notifications as widgets for any &lt;a href="../classes/wibox.html#"&gt;wibox&lt;/a&gt;/&lt;a href="../classes/awful.wibar.html#"&gt;awful.wibar&lt;/a&gt;/&lt;a href="../classes/awful.popup.html#"&gt;awful.popup&lt;/a&gt;
+some_wibar.widget = naughty.list.notifications {}
+
+for _, color in ipairs {'#ff0000', '#00ff00', '#0000ff'} do
+    naughty.notification {
+        title = 'A '.. color ..' notification',
+        bg    = color,
+    }
+end
+</code></pre>
+
+<p> require(&lsquo;gears.timer&rsquo;).run_delayed_calls_now()
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">bg</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a>, <span class="type">color</span> or <span class="type">pattern</span></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a>, <span class="type">color</span> or <span class="type">pattern</span></span>
 
 
         </li>
@@ -970,7 +926,8 @@
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/naughty.notification.html#naughty.notification.title">title</a>
+         <li><a href="../classes/naughty.notification.html#naughty.notification.title">title</a></li>
+         <li><a href="../libraries/gears.color.html#">gears.color</a></li>
     </ul>
 
 
@@ -986,7 +943,6 @@
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
-
 
 
         </li>
@@ -1006,13 +962,33 @@
     <strong>border_color</strong>
     </dt>
     <dd>
-    Border color.
+    Border color. </p>
+
+<p><img src="../images/AUTOGEN_awful_notification_border_color.svg" alt="Usage example" /></p>
+
+<pre><code>-- A notification popup using the default widget_template.
+naughty.connect_signal('request::display', function(n)
+    naughty.layout.box {notification = n}
+end)
+
+-- Notifications as widgets for any &lt;a href="../classes/wibox.html#"&gt;wibox&lt;/a&gt;/&lt;a href="../classes/awful.wibar.html#"&gt;awful.wibar&lt;/a&gt;/&lt;a href="../classes/awful.popup.html#"&gt;awful.popup&lt;/a&gt;
+some_wibar.widget = naughty.list.notifications {}
+
+for bw, color in ipairs {'#ff0000', '#00ff00', '#0000ff'} do
+    naughty.notification {
+        title        = 'A '.. color ..' notification',
+        border_color = color,
+        border_width = bw*2,
+    }
+end
+</code></pre>
+
+<p> require(&lsquo;gears.timer&rsquo;).run_delayed_calls_now()
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -1022,7 +998,8 @@
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/naughty.notification.html#naughty.notification.title">title</a>
+         <li><a href="../classes/naughty.notification.html#naughty.notification.title">title</a></li>
+         <li><a href="../libraries/gears.color.html#">gears.color</a></li>
     </ul>
 
 
@@ -1032,38 +1009,77 @@
     <strong>shape</strong>
     </dt>
     <dd>
-    Widget shape.
+    <p>Widget shape. </p>
 
+<p> Note that when using a custom <code>request::display</code> handler or <code>naughty.rules</code>,
+ choosing between multiple shapes depending on the content can be done using
+ expressions like:</p>
 
+<pre><code>-- The notification object is called &lt;code&gt;n&lt;/code&gt;
+shape = #n.actions &gt; 0 and
+    gears.shape.rounded_rect or gears.shape.rounded_bar,
+</code></pre>
 
+<p><img src="../images/AUTOGEN_awful_notification_shape.svg" alt="Usage example" /></p>
 
+<pre><code>-- A notification popup using the default widget_template.
+naughty.connect_signal('request::display', function(n)
+    naughty.layout.box {notification = n}
+end)
 
+-- Notifications as widgets for any &lt;a href="../classes/wibox.html#"&gt;wibox&lt;/a&gt;/&lt;a href="../classes/awful.wibar.html#"&gt;awful.wibar&lt;/a&gt;/&lt;a href="../classes/awful.popup.html#"&gt;awful.popup&lt;/a&gt;
+some_wibar.widget = naughty.list.notifications {}
 
-    <h3>Usage:</h3>
-    <ul>
-        <pre class="example"><span class="keyword">local</span> text = <span class="string">[[An &lt;b&gt;important&lt;/b&gt;;&lt;i&gt;notification&lt;/i&gt;;]]</span>
-<span class="keyword">local</span> shapes = {
+local shapes = {
+    gears.shape.octogon,
+    gears.shape.rounded_rect,
+    gears.shape.rounded_bar
+}
+
+for idx=1, 3 do
+    naughty.notification {
+        title        = 'A notification',
+        border_color = '#0000ff',
+        border_width = idx*2,
+        shape        = shapes[idx],
+    }
+end
+</code></pre>
+
+<p> require(&lsquo;gears.timer&rsquo;).run_delayed_calls_now()</p>
+
+<p><img src="../images/AUTOGEN_naughty_shape.svg" alt="Usage example" /></p>
+
+<pre><code>local text = [[An &lt;b&gt;important&lt;/b&gt;;   &lt;i&gt;notification&lt;/i&gt;;   ]]
+
+local shapes = {
     gears.shape.rounded_rect,
     gears.shape.hexagon,
     gears.shape.octogon,
-    <span class="keyword">function</span>(cr, w, h)
-        <span class="keyword">return</span> gears.shape.infobubble(cr, w, h, <span class="number">20</span>, <span class="number">10</span>, w/<span class="number">2</span> - <span class="number">10</span>)
-    <span class="keyword">end</span>
+    function(cr, w, h)
+        return gears.shape.infobubble(cr, w, h, 20, 10, w/2 - 10)
+    end
 }
-<span class="keyword">for</span> _, s <span class="keyword">in</span> <span class="global">ipairs</span>(shapes) <span class="keyword">do</span>
-    naughty.notification {
-        title        = <span class="string">'Hello world!'</span>,
+
+for _, s in ipairs(shapes) do
+    naughty.notify {
+        title        = 'Hello world!',
         text         = text,
         icon         = beautiful.icon,
-        border_width = <span class="number">1</span>,
-        border_color = <span class="string">'#ff0000'</span>,
         shape        = s,
-        border_width = <span class="number">3</span>,
+        border_width = 3,
         border_color = beautiful.bg_highlight,
-        margin       = <span class="number">15</span>,
+        margin       = 15,
     }
-<span class="keyword">end</span></pre>
-    </ul>
+end
+</code></pre>
+
+
+
+
+
+
+
 
 </dd>
     <dt>
@@ -1091,14 +1107,40 @@
     <strong>margin</strong>
     </dt>
     <dd>
-    Widget margin.
+    Widget margin. </p>
+
+<p><img src="../images/AUTOGEN_awful_notification_margin.svg" alt="Usage example" /></p>
+
+<pre><code>-- A notification popup using the default widget_template.
+naughty.connect_signal('request::display', function(n)
+    naughty.layout.box {notification = n}
+end)
+
+-- Notifications as widgets for any &lt;a href="../classes/wibox.html#"&gt;wibox&lt;/a&gt;/&lt;a href="../classes/awful.wibar.html#"&gt;awful.wibar&lt;/a&gt;/&lt;a href="../classes/awful.popup.html#"&gt;awful.popup&lt;/a&gt;
+some_wibar.widget = naughty.list.notifications {
+    base_layout = wibox.widget {
+         spacing = beautiful.notification_spacing,
+         layout  = wibox.layout.fixed.horizontal
+    },
+}
+
+for margin = 10, 20, 5 do
+    naughty.notification {
+        title        = 'A notification',
+        margin       = margin,
+        border_width = 1,
+        border_color = '#ff0000',
+    }
+end
+</code></pre>
+
+<p> require(&lsquo;gears.timer&rsquo;).run_delayed_calls_now()
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">margin</span>
-            <span class="types"><span class="type">number</span> or <a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-
+            <span class="types"><span class="type">number</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
 
 
         </li>
@@ -1126,7 +1168,6 @@
         <li><span class="parameter">function</span>
 
 
-
         </li>
     </ul>
 
@@ -1146,7 +1187,6 @@
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">function</span>
-
 
 
         </li>
@@ -1172,7 +1212,6 @@
         <li><span class="parameter">table</span>
 
 
-
         </li>
     </ul>
 
@@ -1192,7 +1231,6 @@
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
-
 
 
         </li>
@@ -1218,7 +1256,6 @@
         <li><span class="parameter">function</span>
 
 
-
         </li>
     </ul>
 
@@ -1240,7 +1277,6 @@
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">table</span>
-
 
 
         </li>
@@ -1267,7 +1303,6 @@
         <li><span class="parameter">boolean</span>
 
 
-
         </li>
     </ul>
 
@@ -1291,12 +1326,68 @@
         <li><span class="parameter">boolean</span>
 
 
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.notification.is_expired"></a>
+    <strong>is_expired</strong>
+    </dt>
+    <dd>
+    If the notification is expired.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+
 
         </li>
     </ul>
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/naughty.html#expiration_paused">naughty.expiration_paused</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Deprecated_object_properties"></a>Deprecated object properties</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "naughty.notification.text"></a>
+    <strong>text</strong>
+    </dt>
+    <dd>
+    Text of the notification. </p>
+
+<p> This exists only for the pre-AwesomeWM v4.4 new notification implementation.
+ Please always use <a href="../classes/naughty.notification.html#naughty.notification.title">title</a>.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/naughty.notification.html#naughty.notification.title">title</a>
+    </ul>
 
 
 </dd>
@@ -1312,9 +1403,24 @@
     Emitted when the notification is destroyed.
 
 
+    <h3>Arguments:</h3>
+    <ul>
+        <li><span class="parameter">reason</span>
+            <span class="types"><span class="type">number</span></span>
+         Why it was destroyed
+        </li>
+        <li><span class="parameter">keep_visible</span>
+            <span class="types"><span class="type">boolean</span></span>
+         If it was kept visible.
+        </li>
+    </ul>
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/naughty.html#notification_closed_reason">naughty.notification_closed_reason</a>
+    </ul>
 
 
 </dd>
@@ -1333,8 +1439,7 @@
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">notification_font</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">lgi.Pango.FontDescription</span></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">lgi.Pango.FontDescription</span></span>
 
 
         </li>
@@ -1359,7 +1464,6 @@
             <span class="types"><span class="type">color</span></span>
 
 
-
         </li>
     </ul>
 
@@ -1380,7 +1484,6 @@
     <ul>
         <li><span class="parameter">notification_fg</span>
             <span class="types"><span class="type">color</span></span>
-
 
 
         </li>
@@ -1405,7 +1508,6 @@
             <span class="types"><span class="type">int</span></span>
 
 
-
         </li>
     </ul>
 
@@ -1428,7 +1530,6 @@
             <span class="types"><span class="type">color</span></span>
 
 
-
         </li>
     </ul>
 
@@ -1449,7 +1550,6 @@
     <ul>
         <li><span class="parameter">notification_shape</span>
             <span class="types"><span class="type">gears.shape</span></span>
-
 
 
          (<em>optional</em>)
@@ -1479,7 +1579,6 @@
             <span class="types"><span class="type">int</span></span>
 
 
-
          (<em>optional</em>)
         </li>
     </ul>
@@ -1494,14 +1593,13 @@
     <strong>beautiful.notification_margin</strong>
     </dt>
     <dd>
-    Notifications margin.
+    The margins inside of the notification widget (or popup).
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">notification_margin</span>
             <span class="types"><span class="type">int</span></span>
-
 
 
         </li>
@@ -1526,7 +1624,6 @@
             <span class="types"><span class="type">int</span></span>
 
 
-
         </li>
     </ul>
 
@@ -1549,12 +1646,37 @@
             <span class="types"><span class="type">int</span></span>
 
 
-
         </li>
     </ul>
 
 
 
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_spacing"></a>
+    <strong>beautiful.notification_spacing</strong>
+    </dt>
+    <dd>
+    The spacing between the notifications.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+         (<em>default</em> 2)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.surface.html#">gears.surface</a>
+    </ul>
 
 
 </dd>
@@ -1567,12 +1689,12 @@
     <strong>naughty.notification:destroy (reason[, keep_visible=false])</strong>
     </dt>
     <dd>
-    Destroy notification by notification object
+    Destroy notification by notification object.
 
 
     <ul>
         <li><span class="parameter">reason</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          One of the reasons from <code>notification_closed_reason</code>
         </li>
         <li><span class="parameter">keep_visible</span>
@@ -1585,7 +1707,7 @@
     <h3>Returns:</h3>
     <ol>
 
-        True if the popup was successfully destroyed, nil otherwise
+        True if the popup was successfully destroyed, false otherwise
     </ol>
 
 
@@ -1619,7 +1741,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-03-13 15:48:50 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

@@ -34,6 +34,7 @@
 <ul>
 <li><a href="#Functions">Functions</a></li>
 <li><a href="#Object_properties">Object properties</a></li>
+<li><a href="#Deprecated_object_properties">Deprecated object properties</a></li>
 <li><a href="#Signals">Signals</a></li>
 <li><a href="#Methods">Methods</a></li>
 </ul>
@@ -44,9 +45,6 @@
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.factory.html">awful.spawn.factory</a></li>
-  <li><a href="../classes/awful.spawn.future.html">awful.spawn.future</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -75,12 +73,23 @@
   <li><a href="../classes/key.html">key</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../classes/naughty.list.notifications.html">naughty.list.notifications</a></li>
+  <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
+  <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
+  <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
+  <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
   <li><a href="../classes/tag.html">tag</a></li>
   <li><a href="../classes/wibox.html">wibox</a></li>
   <li><a href="../classes/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
   <li><strong>wibox.container.background</strong></li>
+  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
   <li><a href="../classes/wibox.container.constraint.html">wibox.container.constraint</a></li>
   <li><a href="../classes/wibox.container.margin.html">wibox.container.margin</a></li>
   <li><a href="../classes/wibox.container.mirror.html">wibox.container.mirror</a></li>
@@ -88,6 +97,7 @@
   <li><a href="../classes/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../classes/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../classes/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.layout.align.html">wibox.layout.align</a></li>
   <li><a href="../classes/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
@@ -106,6 +116,7 @@
   <li><a href="../classes/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
   <li><a href="../classes/wibox.widget.separator.html">wibox.widget.separator</a></li>
   <li><a href="../classes/wibox.widget.slider.html">wibox.widget.slider</a></li>
+  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/wibox.widget.systray.html">wibox.widget.systray</a></li>
   <li><a href="../classes/wibox.widget.textbox.html">wibox.widget.textbox</a></li>
   <li><a href="../classes/wibox.widget.textclock.html">wibox.widget.textclock</a></li>
@@ -136,6 +147,15 @@
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
+  <li><a href="../libraries/dynamite.html">dynamite</a></li>
+  <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
+  <li><a href="../libraries/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
+  <li><a href="../libraries/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
+  <li><a href="../libraries/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../libraries/dynamite.utils.html">dynamite.utils</a></li>
+  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
+  <li><a href="../libraries/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
+  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.color.html">gears.color</a></li>
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
@@ -148,13 +168,19 @@
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/gears.table.html">gears.table</a></li>
   <li><a href="../libraries/gears.wallpaper.html">gears.wallpaper</a></li>
+  <li><a href="../libraries/lib.dynamite.base.html">lib.dynamite.base</a></li>
+  <li><a href="../libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
+  <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
+  <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
   <li><a href="../libraries/menubar.html">menubar</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/mouse.html">mouse</a></li>
   <li><a href="../libraries/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
-  <li><a href="../libraries/naughty.dbus.html">naughty.dbus</a></li>
+  <li><a href="../libraries/naughty.container.html">naughty.container</a></li>
+  <li><a href="../libraries/naughty.list.html">naughty.list</a></li>
+  <li><a href="../libraries/naughty.widget.html">naughty.widget</a></li>
   <li><a href="../libraries/root.html">root</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.hierarchy.html">wibox.hierarchy</a></li>
@@ -218,19 +244,19 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.container.background.shape">shape</a></td>
-	<td class="summary">The background shap     e.</td>
+	<td class="summary">The background shape.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#wibox.container.background.shape_border_width">shape_border_width</a></td>
-	<td class="summary">When a <a href="../classes/wibox.container.background.html#wibox.container.background.shape">shape</a> is set, also draw a border.</td>
+	<td class="name" ><a href="#wibox.container.background.border_width">border_width</a></td>
+	<td class="summary">Add a border of a specific width.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#wibox.container.background.shape_border_color">shape_border_color</a></td>
-	<td class="summary">When a <a href="../classes/wibox.container.background.html#wibox.container.background.shape">shape</a> is set, also draw a border.</td>
+	<td class="name" ><a href="#wibox.container.background.border_color">border_color</a></td>
+	<td class="summary">Set the color for the border.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#wibox.container.background.shape_clip">shape_clip</a></td>
-	<td class="summary">When a <a href="../classes/wibox.container.background.html#wibox.container.background.shape">shape</a> is set, make sure nothing is drawn outside of it.</td>
+	<td class="name" ><a href="#wibox.container.background.border_strategy">border_strategy</a></td>
+	<td class="summary">How the border width affects when contained widget.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.container.background.bgimage">bgimage</a></td>
@@ -253,6 +279,17 @@
 	<tr>
 	<td class="name" ><a href="#wibox.container.background.visible">visible</a></td>
 	<td class="summary">The widget visibility.</td>
+	</tr>
+</table>
+<h2><a href="#Deprecated_object_properties">Deprecated object properties</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#wibox.container.background.shape_border_width">shape_border_width</a></td>
+	<td class="summary">When a <a href="../classes/wibox.container.background.html#wibox.container.background.shape">shape</a> is set, also draw a border.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#wibox.container.background.shape_border_color">shape_border_color</a></td>
+	<td class="summary">When a <a href="../classes/wibox.container.background.html#wibox.container.background.shape">shape</a> is set, also draw a border.</td>
 	</tr>
 </table>
 <h2><a href="#Signals">Signals</a></h2>
@@ -492,7 +529,7 @@ parent : setup {
     <strong>shape</strong>
     </dt>
     <dd>
-    The background shap     e. </p>
+    The background shape. </p>
 
 <p> Use <a href="../classes/wibox.container.background.html#wibox.container.background:set_shape">set_shape</a> to set additional shape paramaters.</p>
 
@@ -555,11 +592,13 @@ parent : setup {
 
 </dd>
     <dt>
-    <a name = "wibox.container.background.shape_border_width"></a>
-    <strong>shape_border_width</strong>
+    <a name = "wibox.container.background.border_width"></a>
+    <strong>border_width</strong>
     </dt>
     <dd>
-    When a <a href="../classes/wibox.container.background.html#wibox.container.background.shape">shape</a> is set, also draw a border. </p>
+    Add a border of a specific width. </p>
+
+<p> If the shape is set, the border will also be shaped.</p>
 
 <p> See <a href="../classes/wibox.container.background.html#wibox.container.background.shape">wibox.container.background.shape</a> for an usage example.
 
@@ -568,21 +607,26 @@ parent : setup {
     <ul>
         <li><span class="parameter">width</span>
             <span class="types"><span class="type">number</span></span>
-         The border width
+         The border width.
+         (<em>default</em> 0)
         </li>
     </ul>
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/wibox.container.background.html#wibox.container.background.border_color">border_color</a>
+    </ul>
 
 
 </dd>
     <dt>
-    <a name = "wibox.container.background.shape_border_color"></a>
-    <strong>shape_border_color</strong>
+    <a name = "wibox.container.background.border_color"></a>
+    <strong>border_color</strong>
     </dt>
     <dd>
-    When a <a href="../classes/wibox.container.background.html#wibox.container.background.shape">shape</a> is set, also draw a border. </p>
+    Set the color for the border. </p>
 
 <p> See <a href="../classes/wibox.container.background.html#wibox.container.background.shape">wibox.container.background.shape</a> for an usage example.
 
@@ -599,62 +643,41 @@ parent : setup {
 
     <h3>See also:</h3>
     <ul>
-         <a href="../libraries/gears.color.html#">gears.color</a>
+         <li><a href="../libraries/gears.color.html#">gears.color</a></li>
+         <li><a href="../classes/wibox.container.background.html#wibox.container.background.border_width">border_width</a></li>
     </ul>
 
 
 </dd>
     <dt>
-    <a name = "wibox.container.background.shape_clip"></a>
-    <strong>shape_clip</strong>
+    <a name = "wibox.container.background.border_strategy"></a>
+    <strong>border_strategy</strong>
     </dt>
     <dd>
-    When a <a href="../classes/wibox.container.background.html#wibox.container.background.shape">shape</a> is set, make sure nothing is drawn outside of it. </p>
+    <p>How the border width affects when contained widget. </p>
 
-<p><img src="../images/AUTOGEN_wibox_container_background_clip.svg" alt="Usage example" />
+<p> The valid values are:</p>
+
+<ul>
+<li><em>none</em>: Just apply the border, do not affect the content size (default).</li>
+<li><em>inner</em>: Squeeze the size of the content by the border width.</li>
+</ul>
+
+
 
 
     <h3>Type:</h3>
     <ul>
-        <li><span class="parameter">value</span>
-            <span class="types"><span class="type">boolean</span></span>
-         If the shape clip is enable
+        <li><span class="parameter">string</span>
+
+
+         (<em>default</em> "none")
         </li>
     </ul>
 
 
 
 
-    <h3>Usage:</h3>
-    <ul>
-        <pre class="example">parent : setup {
-    {
-        <span class="comment">-- Some content may be outside of the shape
-</span>        {
-            text   = <span class="string">'Hello\nworld!'</span>,
-            widget = wibox.widget.textbox
-        },
-        shape              = gears.shape.circle,
-        bg                 = beautiful.bg_normal,
-        shape_border_color = beautiful.border_color,
-        widget             = wibox.container.background
-    },
-    {
-        <span class="comment">-- To solve this, clip the content
-</span>        {
-            text   = <span class="string">'Hello\nworld!'</span>,
-            widget = wibox.widget.textbox
-        },
-        shape_clip         = <span class="keyword">true</span>,
-        shape              = gears.shape.circle,
-        bg                 = beautiful.bg_normal,
-        shape_border_color = beautiful.border_color,
-        widget             = wibox.container.background
-    },
-    spacing = <span class="number">10</span>,
-    layout  = wibox.layout.fixed.vertical
-}</pre>
-    </ul>
 
 </dd>
     <dt>
@@ -765,6 +788,65 @@ parent : setup {
 
 
 
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Deprecated_object_properties"></a>Deprecated object properties</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "wibox.container.background.shape_border_width"></a>
+    <strong>shape_border_width</strong>
+    </dt>
+    <dd>
+    When a <a href="../classes/wibox.container.background.html#wibox.container.background.shape">shape</a> is set, also draw a border. </p>
+
+<p> See <a href="../classes/wibox.container.background.html#wibox.container.background.shape">wibox.container.background.shape</a> for an usage example.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+            <span class="types"><span class="type">number</span></span>
+         The border width
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/wibox.container.background.html#wibox.container.background.border_width">border_width</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "wibox.container.background.shape_border_color"></a>
+    <strong>shape_border_color</strong>
+    </dt>
+    <dd>
+    When a <a href="../classes/wibox.container.background.html#wibox.container.background.shape">shape</a> is set, also draw a border. </p>
+
+<p> See <a href="../classes/wibox.container.background.html#wibox.container.background.shape">wibox.container.background.shape</a> for an usage example.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">fg</span>
+         The border color, pattern or gradient
+         (<em>default</em> self._private.foreground)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../libraries/gears.color.html#">gears.color</a></li>
+         <li><a href="../classes/wibox.container.background.html#wibox.container.background.border_color">border_color</a></li>
+    </ul>
 
 
 </dd>
@@ -1331,7 +1413,7 @@ parent : setup {
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-01-25 03:50:29 </i>
+<i style="float:right;">Last updated 2019-03-13 15:48:50 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
