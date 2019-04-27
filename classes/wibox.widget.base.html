@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Class wibox.widget.base - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -41,8 +41,8 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -64,18 +64,21 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../classes/naughty.list.notifications.html">naughty.list.notifications</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
   <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
   <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
@@ -125,7 +128,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -142,8 +144,6 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/dynamite.html">dynamite</a></li>
   <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
@@ -158,8 +158,8 @@
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -208,10 +208,8 @@
 
 <h1>Class <code>wibox.widget.base</code></h1>
 <p>
-
 </p>
 <p>
-
 </p>
     <h3>Info:</h3>
     <ul>
@@ -274,11 +272,11 @@
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:buttons">wibox.widget.base:buttons (_buttons)</a></td>
-	<td class="summary">Set/get a widget's buttons.</td>
+	<td class="summary">Set/get a widget&rsquo;s buttons.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:set_visible">wibox.widget.base:set_visible (b)</a></td>
-	<td class="summary">Set a widget's visibility.</td>
+	<td class="summary">Set a widget&rsquo;s visibility.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:get_visible">wibox.widget.base:get_visible ()</a></td>
@@ -286,31 +284,31 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:set_opacity">wibox.widget.base:set_opacity (o)</a></td>
-	<td class="summary">Set a widget's opacity.</td>
+	<td class="summary">Set a widget&rsquo;s opacity.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:get_opacity">wibox.widget.base:get_opacity ()</a></td>
-	<td class="summary">Get the widget's opacity.</td>
+	<td class="summary">Get the widget&rsquo;s opacity.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:set_forced_width">wibox.widget.base:set_forced_width ([width])</a></td>
-	<td class="summary">Set the widget's forced width.</td>
+	<td class="summary">Set the widget&rsquo;s forced width.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:get_forced_width">wibox.widget.base:get_forced_width ()</a></td>
-	<td class="summary">Get the widget's forced width.</td>
+	<td class="summary">Get the widget&rsquo;s forced width.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:set_height">wibox.widget.base:set_height ([height])</a></td>
-	<td class="summary">Set the widget's forced height.</td>
+	<td class="summary">Set the widget&rsquo;s forced height.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:get_forced_height">wibox.widget.base:get_forced_height ()</a></td>
-	<td class="summary">Get the widget's forced height.</td>
+	<td class="summary">Get the widget&rsquo;s forced height.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:get_children">wibox.widget.base:get_children ()</a></td>
-	<td class="summary">Get the widget's direct children widgets.</td>
+	<td class="summary">Get the widget&rsquo;s direct children widgets.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.widget.base:set_children">wibox.widget.base:set_children (children)</a></td>
@@ -370,7 +368,7 @@
     <dd>
     Fit a widget for the given available width and height. </p>
 
-<p> This calls the widget's <code>:fit</code> callback and caches the result for later use.
+<p> This calls the widget&rsquo;s <code>:fit</code> callback and caches the result for later use.
  Never call <code>:fit</code> directly, but always through this function!
 
 
@@ -380,7 +378,7 @@
          The parent widget which requests this information.
         </li>
         <li><span class="parameter">context</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The context in which we are fit.
         </li>
         <li><span class="parameter">widget</span>
@@ -419,9 +417,9 @@
     <dd>
     Lay out a widget for the given available width and height. </p>
 
-<p> This calls the widget's <code>:layout</code> callback and caches the result for later
+<p> This calls the widget&rsquo;s <code>:layout</code> callback and caches the result for later
  use.  Never call <code>:layout</code> directly, but always through this function!
- However, normally there shouldn't be any reason why you need to use this
+ However, normally there shouldn&rsquo;t be any reason why you need to use this
  function.
 
 
@@ -431,7 +429,7 @@
          The parent widget which requests this information.
         </li>
         <li><span class="parameter">context</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The context in which we are laid out.
         </li>
         <li><span class="parameter">widget</span>
@@ -452,8 +450,8 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-        The result from the widget's <code>:layout</code> callback.
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        The result from the widget&rsquo;s <code>:layout</code> callback.
     </ol>
 
 
@@ -481,7 +479,7 @@
     <strong>wibox.widget.base.place_widget_via_matrix (widget, mat, width, height)</strong>
     </dt>
     <dd>
-    Create widget placement information.  This should be used in a widget's
+    Create widget placement information.  This should be used in a widget&rsquo;s
  <code>:layout()</code> callback.
 
 
@@ -491,7 +489,7 @@
          The widget that should be placed.
         </li>
         <li><span class="parameter">mat</span>
-         A matrix transforming from the parent widget's coordinate
+         A matrix transforming from the parent widget&rsquo;s coordinate
    system. For example, use matrix.create_translate(1, 2) to draw a
    widget at position (1, 2) relative to the parent widget.
         </li>
@@ -510,7 +508,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         An opaque object that can be returned from <code>:layout()</code>.
     </ol>
 
@@ -523,7 +521,7 @@
     <strong>wibox.widget.base.place_widget_at (widget, x, y, width, height)</strong>
     </dt>
     <dd>
-    Create widget placement information.  This should be used for a widget's
+    Create widget placement information.  This should be used for a widget&rsquo;s
  <code>:layout()</code> callback.
 
 
@@ -555,7 +553,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         An opaque object that can be returned from <code>:layout()</code>.
     </ol>
 
@@ -575,7 +573,7 @@
 
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          A table containing the widgets disposition.
         </li>
     </ul>
@@ -604,7 +602,7 @@
          (<em>optional</em>)
         </li>
         <li><span class="parameter">widget_name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Name of the widget.  If not set, it will be
    set automatically via <a href="../classes/gears.object.html#gears.object:modulename">gears.object.modulename</a>.
          (<em>optional</em>)
@@ -618,7 +616,7 @@
          (<em>default</em> false)
         </li>
         <li><span class="parameter">class</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The widget class
          (<em>default</em> nil)
         </li>
@@ -691,12 +689,12 @@
     <strong>wibox.widget.base:buttons (_buttons)</strong>
     </dt>
     <dd>
-    Set/get a widget's buttons.
+    Set/get a widget&rsquo;s buttons.
 
 
     <ul>
         <li><span class="parameter">_buttons</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The table of buttons that is bound to the widget.
         </li>
     </ul>
@@ -711,7 +709,7 @@
     <strong>wibox.widget.base:set_visible (b)</strong>
     </dt>
     <dd>
-    Set a widget's visibility.
+    Set a widget&rsquo;s visibility.
 
 
     <ul>
@@ -741,7 +739,6 @@
            <span class="types"><span class="type">boolean</span></span>
 
 
-
     </ol>
 
 
@@ -753,7 +750,7 @@
     <strong>wibox.widget.base:set_opacity (o)</strong>
     </dt>
     <dd>
-    Set a widget's opacity.
+    Set a widget&rsquo;s opacity.
 
 
     <ul>
@@ -774,7 +771,7 @@
     <strong>wibox.widget.base:get_opacity ()</strong>
     </dt>
     <dd>
-    Get the widget's opacity.
+    Get the widget&rsquo;s opacity.
 
 
 
@@ -794,7 +791,7 @@
     <strong>wibox.widget.base:set_forced_width ([width])</strong>
     </dt>
     <dd>
-    Set the widget's forced width.
+    Set the widget&rsquo;s forced width.
 
 
     <ul>
@@ -820,11 +817,11 @@
     <strong>wibox.widget.base:get_forced_width ()</strong>
     </dt>
     <dd>
-    Get the widget's forced width. </p>
+    Get the widget&rsquo;s forced width. </p>
 
 <p> Note that widget instances can be used in different places simultaneously,
  and therefore can have multiple dimensions.
- If there is no forced width/height, then the only way to get the widget's
+ If there is no forced width/height, then the only way to get the widget&rsquo;s
  actual size is during a <code>mouse::enter</code>, <code>mouse::leave</code> or button event.
 
 
@@ -849,7 +846,7 @@
     <strong>wibox.widget.base:set_height ([height])</strong>
     </dt>
     <dd>
-    Set the widget's forced height.
+    Set the widget&rsquo;s forced height.
 
 
     <ul>
@@ -875,11 +872,11 @@
     <strong>wibox.widget.base:get_forced_height ()</strong>
     </dt>
     <dd>
-    Get the widget's forced height. </p>
+    Get the widget&rsquo;s forced height. </p>
 
 <p> Note that widget instances can be used in different places simultaneously,
  and therefore can have multiple dimensions.
- If there is no forced width/height, then the only way to get the widget's
+ If there is no forced width/height, then the only way to get the widget&rsquo;s
  actual size is during a <code>mouse::enter</code>, <code>mouse::leave</code> or button event.
 
 
@@ -900,7 +897,7 @@
     <strong>wibox.widget.base:get_children ()</strong>
     </dt>
     <dd>
-    Get the widget's direct children widgets. </p>
+    Get the widget&rsquo;s direct children widgets. </p>
 
 <p> This method should be re-implemented by the relevant widgets.
 
@@ -909,7 +906,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         The children
     </ol>
 
@@ -930,7 +927,7 @@
 
     <ul>
         <li><span class="parameter">children</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          A table composed of valid widgets.
         </li>
     </ul>
@@ -957,7 +954,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         The children
     </ol>
 
@@ -970,22 +967,21 @@
     <strong>wibox.widget.base:emit_signal_recursive (signal_name, ...)</strong>
     </dt>
     <dd>
-
-<p>Emit a signal and ensure all parent widgets in the hierarchies also
+    <p>Emit a signal and ensure all parent widgets in the hierarchies also
  forward the signal.  This is useful to track signals when there is a dynamic
  set of containers and layouts wrapping the widget.</p>
 
 <p> Note that this function has some flaws:</p>
 
 <ol>
-    <li>The signal is only forwarded once the widget tree has been built. This
-    happens after all currently scheduled functions have been executed.
-    Therefore, it will not start to work right away.</li>
-    <li>In case the widget is present multiple times in a single widget tree,
-    this function will also forward the signal multiple times (once per upward
-    tree path).</li>
-    <li>If the widget is removed from the widget tree, the signal is still
-    forwarded for some time, similar to the first case.</li>
+<li>The signal is only forwarded once the widget tree has been built. This
+happens after all currently scheduled functions have been executed.
+Therefore, it will not start to work right away.</li>
+<li>In case the widget is present multiple times in a single widget tree,
+this function will also forward the signal multiple times (once per upward
+tree path).</li>
+<li>If the widget is removed from the widget tree, the signal is still
+forwarded for some time, similar to the first case.</li>
 </ol>
 
 
@@ -993,8 +989,7 @@
 
     <ul>
         <li><span class="parameter">signal_name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
         </li>
@@ -1028,7 +1023,7 @@
         </li>
         <li><span class="parameter">...</span>
             <span class="types"><a class="type" href="../classes/wibox.widget.html">widget</a></span>
-         Additional widgets to add at the end of the "path"
+         Additional widgets to add at the end of the &ldquo;path&rdquo;
          (<em>optional</em>)
         </li>
     </ul>
@@ -1042,8 +1037,8 @@
            <span class="types"><a class="type" href="../classes/wibox.widget.html">widget</a></span>
         The parent widget.</li>
         <li>
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-        The path between "self" and "widget".</li>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        The path between &ldquo;self&rdquo; and &ldquo;widget&rdquo;.</li>
     </ol>
 
 
@@ -1062,8 +1057,8 @@
 
     <ul>
         <li><span class="parameter">args</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-         A table containing the widget's disposition.
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A table containing the widget&rsquo;s disposition.
         </li>
     </ul>
 
@@ -1077,16 +1072,15 @@
     <strong>wibox.widget.base:make_widget_from_value (wdg[, ...=nil])</strong>
     </dt>
     <dd>
-
-<p>Create a widget from an undetermined value. </p>
+    <p>Create a widget from an undetermined value. </p>
 
 <p> The value can be:</p>
 
 <ul>
-    <li>A widget (in which case nothing new is created)</li>
-    <li>A declarative construct</li>
-    <li>A constructor function</li>
-    <li>A metaobject</li>
+<li>A widget (in which case nothing new is created)</li>
+<li>A declarative construct</li>
+<li>A constructor function</li>
+<li>A metaobject</li>
 </ul>
 
 
@@ -1120,7 +1114,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-04-27 18:56:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Module awful.hotkeys_popup.widget - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -46,7 +46,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><strong>awful.hotkeys_popup.widget</strong></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -63,8 +62,6 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/dynamite.html">dynamite</a></li>
   <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
@@ -79,8 +76,8 @@
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -110,8 +107,8 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -133,18 +130,21 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../classes/naughty.list.notifications.html">naughty.list.notifications</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
   <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
   <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
@@ -209,7 +209,6 @@
 <h1>Module <code>awful.hotkeys_popup.widget</code></h1>
 <p>Popup widget which shows current hotkeys and their descriptions.</p>
 <p>
-
 </p>
     <h3>Info:</h3>
     <ul>
@@ -225,7 +224,7 @@
 	<td class="summary">Create an instance of widget with hotkeys help.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#widget_instance:show_help">widget_instance:show_help ([c[, s]])</a></td>
+	<td class="name" ><a href="#widget_instance:show_help">widget_instance:show_help ([c[, s[, show_args]]])</a></td>
 	<td class="summary">Show popup with hotkeys help.</td>
 	</tr>
 	<tr>
@@ -237,7 +236,7 @@
 	<td class="summary">Add hotkey group rules for third-party applications.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#show_help">show_help ([c[, s]])</a></td>
+	<td class="name" ><a href="#show_help">show_help ([c[, s[, args]]])</a></td>
 	<td class="summary">Show popup with hotkeys help (default widget instance will be used).</td>
 	</tr>
 	<tr>
@@ -302,7 +301,7 @@
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#hide_without_description">hide_without_description</a></td>
-	<td class="summary">Don't show hotkeys without descriptions.</td>
+	<td class="summary">Don&rsquo;t show hotkeys without descriptions.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#merge_duplicates">merge_duplicates</a></td>
@@ -331,7 +330,7 @@
         <ul>
         <li><span class="parameter">hide_without_description</span>
             <span class="types"><span class="type">boolean</span></span>
-         Don't show hotkeys without descriptions.
+         Don&rsquo;t show hotkeys without descriptions.
          (<em>optional</em>)
         </li>
         <li><span class="parameter">merge_duplicates</span>
@@ -376,12 +375,12 @@
          (<em>optional</em>)
         </li>
         <li><span class="parameter">font</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">lgi.Pango.FontDescription</span></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">lgi.Pango.FontDescription</span></span>
          Main widget font.
          (<em>optional</em>)
         </li>
         <li><span class="parameter">description_font</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">lgi.Pango.FontDescription</span></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">lgi.Pango.FontDescription</span></span>
          Font used for hotkeys' descriptions.
          (<em>optional</em>)
         </li>
@@ -408,12 +407,12 @@
          (<em>optional</em>)
         </li>
         <li><span class="parameter">labels</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Labels used for displaying human-readable keynames.
          (<em>optional</em>)
         </li>
         <li><span class="parameter">group_rules</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Rules for showing 3rd-party hotkeys. @see <code>awful.hotkeys_popup.keys.vim</code>.
          (<em>optional</em>)
         </li>
@@ -432,7 +431,7 @@
 </dd>
     <dt>
     <a name = "widget_instance:show_help"></a>
-    <strong>widget_instance:show_help ([c[, s]])</strong>
+    <strong>widget_instance:show_help ([c[, s[, show_args]]])</strong>
     </dt>
     <dd>
     Show popup with hotkeys help.
@@ -449,6 +448,15 @@
          Screen.
          (<em>optional</em>)
         </li>
+        <li><span class="parameter">show_args</span> Additional arguments.
+        <ul>
+        <li><span class="parameter">show_awesome_keys</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Show AwesomeWM hotkeys.
+ When set to <code>false</code> only app-specific hotkeys will be shown.
+         (<em>default</em> true)
+        </li>
+        </li></ul>
     </ul>
 
 
@@ -466,7 +474,7 @@
 
     <ul>
         <li><span class="parameter">hotkeys</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Table with bindings,
  see <code>awful.hotkeys_popup.key.vim</code> as an example.
         </li>
@@ -487,11 +495,11 @@
 
     <ul>
         <li><span class="parameter">group</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          hotkeys group name,
         </li>
         <li><span class="parameter">data</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          rule data for the group
  see <code>awful.hotkeys_popup.key.vim</code> as an example.
         </li>
@@ -504,7 +512,7 @@
 </dd>
     <dt>
     <a name = "show_help"></a>
-    <strong>show_help ([c[, s]])</strong>
+    <strong>show_help ([c[, s[, args]]])</strong>
     </dt>
     <dd>
     Show popup with hotkeys help (default widget instance will be used).
@@ -521,6 +529,15 @@
          Screen.
          (<em>optional</em>)
         </li>
+        <li><span class="parameter">args</span> Additional arguments.
+        <ul>
+        <li><span class="parameter">show_awesome_keys</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Show AwesomeWM hotkeys.
+ When set to <code>false</code> only app-specific hotkeys will be shown.
+         (<em>default</em> true)
+        </li>
+        </li></ul>
     </ul>
 
 
@@ -539,7 +556,7 @@
 
     <ul>
         <li><span class="parameter">hotkeys</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Table with bindings,
  see <code>awful.hotkeys_popup.key.vim</code> as an example.
         </li>
@@ -561,11 +578,11 @@
 
     <ul>
         <li><span class="parameter">group</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          rule group name,
         </li>
         <li><span class="parameter">data</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          rule data for the group
  see <code>awful.hotkeys_popup.key.vim</code> as an example.
         </li>
@@ -594,7 +611,6 @@
             <span class="types"><span class="type">color</span></span>
 
 
-
         </li>
     </ul>
 
@@ -615,7 +631,6 @@
     <ul>
         <li><span class="parameter">hotkeys_fg</span>
             <span class="types"><span class="type">color</span></span>
-
 
 
         </li>
@@ -640,7 +655,6 @@
             <span class="types"><span class="type">int</span></span>
 
 
-
         </li>
     </ul>
 
@@ -663,7 +677,6 @@
             <span class="types"><span class="type">color</span></span>
 
 
-
         </li>
     </ul>
 
@@ -684,7 +697,6 @@
     <ul>
         <li><span class="parameter">hotkeys_shape</span>
             <span class="types"><span class="type">gears.shape</span></span>
-
 
 
          (<em>optional</em>)
@@ -714,7 +726,6 @@
             <span class="types"><span class="type">color</span></span>
 
 
-
         </li>
     </ul>
 
@@ -735,7 +746,6 @@
     <ul>
         <li><span class="parameter">hotkeys_label_bg</span>
             <span class="types"><span class="type">color</span></span>
-
 
 
         </li>
@@ -760,7 +770,6 @@
             <span class="types"><span class="type">color</span></span>
 
 
-
         </li>
     </ul>
 
@@ -780,8 +789,7 @@
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">hotkeys_font</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">lgi.Pango.FontDescription</span></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">lgi.Pango.FontDescription</span></span>
 
 
         </li>
@@ -803,8 +811,7 @@
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">hotkeys_description_font</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">lgi.Pango.FontDescription</span></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">lgi.Pango.FontDescription</span></span>
 
 
         </li>
@@ -829,7 +836,6 @@
             <span class="types"><span class="type">int</span></span>
 
 
-
         </li>
     </ul>
 
@@ -847,7 +853,7 @@
     <strong>hide_without_description</strong>
     </dt>
     <dd>
-    Don't show hotkeys without descriptions.
+    Don&rsquo;t show hotkeys without descriptions.
 
 
 
@@ -878,7 +884,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-04-27 18:56:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

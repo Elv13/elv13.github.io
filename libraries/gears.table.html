@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Module gears.table - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -44,7 +44,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -61,8 +60,6 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/dynamite.html">dynamite</a></li>
   <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
@@ -77,8 +74,8 @@
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -108,8 +105,8 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -131,18 +128,21 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../classes/naughty.list.notifications.html">naughty.list.notifications</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
   <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
   <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
@@ -207,15 +207,14 @@
 <h1>Module <code>gears.table</code></h1>
 <p>Table module for gears</p>
 <p>
-
 </p>
 
 
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#join">join (args)</a></td>
-	<td class="summary">Join all tables given as parameters.</td>
+	<td class="name" ><a href="#join">join (...)</a></td>
+	<td class="summary">Join all tables given as arguments.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#crush">crush (t, set[, raw=false])</a></td>
@@ -223,39 +222,43 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#from_sparse">from_sparse (t)</a></td>
-	<td class="summary">Pack all elements with an integer key into a new table
- While both lua and luajit implement __len over sparse
- table, the standard define it as an implementation
- detail.</td>
+	<td class="summary">Pack all elements with an integer key into a new table.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#hasitem">hasitem (t, item)</a></td>
 	<td class="summary">Check if a table has an item and return its key.</td>
 	</tr>
 	<tr>
+	<td class="name" ><a href="#gtable.find_keys">gtable.find_keys (t, matcher[, ordered=false[, max=nil]])</a></td>
+	<td class="summary">Get all matching table keys for a <a href="../libraries/gears.matcher.html">matcher</a> function.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#gtable.find_first_key">gtable.find_first_key (t, matcher[, ordered=false])</a></td>
+	<td class="summary">Find the first key that matches a function.</td>
+	</tr>
+	<tr>
 	<td class="name" ><a href="#keys">keys (t)</a></td>
-	<td class="summary">Get a sorted table with all integer keys from a table</td>
+	<td class="summary">Get a sorted table with all integer keys from a table.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#keys_filter">keys_filter (t, ...)</a></td>
-	<td class="summary">Filter a tables keys for certain content types</td>
+	<td class="summary">Filter a table&rsquo;s keys for certain content type.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#reverse">reverse (t)</a></td>
-	<td class="summary">Reverse a table</td>
+	<td class="summary">Reverse a table.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#clone">clone (t, deep)</a></td>
-	<td class="summary">Clone a table</td>
+	<td class="name" ><a href="#clone">clone (t[, deep=true])</a></td>
+	<td class="summary">Clone a table.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#iterate">iterate (t[, filter=nil], start[, step_size=1[, cycle=false]])</a></td>
-	<td class="summary">Returns an iterator to cycle through, starting from the first element or the
- given index, all elements of a table that match a given criteria.</td>
+	<td class="summary">Iterate over a table.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#merge">merge (t, set)</a></td>
-	<td class="summary">Merge items from the one table to another one</td>
+	<td class="summary">Merge items from one table to another one.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#map">map (f, tbl)</a></td>
@@ -272,23 +275,25 @@
     <dl class="function">
     <dt>
     <a name = "join"></a>
-    <strong>join (args)</strong>
+    <strong>join (...)</strong>
     </dt>
     <dd>
-    Join all tables given as parameters.
- This will iterate all tables and insert all their keys into a new table.
+    Join all tables given as arguments.
+ This will iterate over all tables and insert their entries into a new table.
 
 
     <ul>
-        <li><span class="parameter">args</span>
-         A list of tables to join
+        <li><span class="parameter">...</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Tables to join.
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
-        A new table containing all keys from the arguments.
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        A new table containing all entries from the arguments.
     </ol>
 
 
@@ -302,20 +307,20 @@
     <dd>
     Override elements in the first table by the one in the second. </p>
 
-<p> Note that this method doesn't copy entries found in <code>__index</code>.
+<p> Note that this method doesn&rsquo;t copy entries found in <code>__index</code>.
 
 
     <ul>
         <li><span class="parameter">t</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          the table to be overriden
         </li>
         <li><span class="parameter">set</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          the table used to override members of <code>t</code>
         </li>
         <li><span class="parameter">raw</span>
-            <span class="types"><span class="type">boolean</span></span>
+            <span class="types"><span class="type">bool</span></span>
          Use rawset (avoid the metatable)
          (<em>default</em> false)
         </li>
@@ -324,7 +329,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         t (for convenience)
     </ol>
 
@@ -337,26 +342,26 @@
     <strong>from_sparse (t)</strong>
     </dt>
     <dd>
-    Pack all elements with an integer key into a new table
+    Pack all elements with an integer key into a new table.
  While both lua and luajit implement __len over sparse
- table, the standard define it as an implementation
- detail. </p>
+ tables, the standard defines it as an implementation
+ detail.</p>
 
-<p> This function remove any non numeric keys from the value set
+<p> This function removes any entries with non-numeric keys.
 
 
     <ul>
         <li><span class="parameter">t</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-         A potentially sparse table
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A potentially sparse table.
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-        A packed table with all numeric keys
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        A packed table with only numeric keys.
     </ol>
 
 
@@ -373,6 +378,7 @@
 
     <ul>
         <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The table.
         </li>
         <li><span class="parameter">item</span>
@@ -383,7 +389,94 @@
     <h3>Returns:</h3>
     <ol>
 
-        The key were the item is found, or nil if not found.
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">number</span></span>
+        The key of the item.
+    </ol>
+     <h3>Or</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "gtable.find_keys"></a>
+    <strong>gtable.find_keys (t, matcher[, ordered=false[, max=nil]])</strong>
+    </dt>
+    <dd>
+    Get all matching table keys for a <a href="../libraries/gears.matcher.html">matcher</a> function.
+
+
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The table.
+        </li>
+        <li><span class="parameter">matcher</span>
+            <span class="types"><span class="type">function</span></span>
+         A function taking the key and value as arguments and
+   returning a boolean.
+        </li>
+        <li><span class="parameter">ordered</span>
+            <span class="types"><span class="type">boolean</span></span>
+         If true, only look for continuous
+   numeric keys.
+         (<em>default</em> false)
+        </li>
+        <li><span class="parameter">max</span>
+            <span class="types"><span class="type">number</span></span>
+         The maximum number of entries to find.
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> or <span class="type">nil</span></span>
+        An ordered table with all the keys or <code>nil</code> if none were
+   found.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "gtable.find_first_key"></a>
+    <strong>gtable.find_first_key (t, matcher[, ordered=false])</strong>
+    </dt>
+    <dd>
+    Find the first key that matches a function.
+
+
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The table.
+        </li>
+        <li><span class="parameter">matcher</span>
+            <span class="types"><span class="type">function</span></span>
+         A function taking the key and value as arguments and
+   returning a boolean.
+        </li>
+        <li><span class="parameter">ordered</span>
+            <span class="types"><span class="type">boolean</span></span>
+         If true, only look for continuous
+   numeric keys.
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        The table key or nil
     </ol>
 
 
@@ -395,18 +488,20 @@
     <strong>keys (t)</strong>
     </dt>
     <dd>
-    Get a sorted table with all integer keys from a table
+    Get a sorted table with all integer keys from a table.
 
 
     <ul>
         <li><span class="parameter">t</span>
-         the table for which the keys to get
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The table for which the keys to get.
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         A table with keys
     </ol>
 
@@ -419,22 +514,25 @@
     <strong>keys_filter (t, ...)</strong>
     </dt>
     <dd>
-    Filter a tables keys for certain content types
+    Filter a table&rsquo;s keys for certain content type.
 
 
     <ul>
         <li><span class="parameter">t</span>
-         The table to retrieve the keys for
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The table to retrieve the keys for.
         </li>
         <li><span class="parameter">...</span>
-         the types to look for
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The types to look for.
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
-        A filtered table with keys
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        A filtered table.
     </ol>
 
 
@@ -446,19 +544,21 @@
     <strong>reverse (t)</strong>
     </dt>
     <dd>
-    Reverse a table
+    Reverse a table.
 
 
     <ul>
         <li><span class="parameter">t</span>
-         the table to reverse
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The table to reverse.
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
-        the reversed table
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        A reversed table.
     </ol>
 
 
@@ -467,25 +567,29 @@
 </dd>
     <dt>
     <a name = "clone"></a>
-    <strong>clone (t, deep)</strong>
+    <strong>clone (t[, deep=true])</strong>
     </dt>
     <dd>
-    Clone a table
+    Clone a table.
 
 
     <ul>
         <li><span class="parameter">t</span>
-         the table to clone
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The table to clone.
         </li>
         <li><span class="parameter">deep</span>
-         Create a deep clone? (default: true)
+            <span class="types"><span class="type">bool</span></span>
+         Create a deep clone?
+         (<em>default</em> true)
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
-        a clone of t
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        A clone of <code>t</code>.
     </ol>
 
 
@@ -497,15 +601,15 @@
     <strong>iterate (t[, filter=nil], start[, step_size=1[, cycle=false]])</strong>
     </dt>
     <dd>
-    Returns an iterator to cycle through, starting from the first element or the
- given index, all elements of a table that match a given criteria.
+    Iterate over a table.
+ Returns an iterator to cycle through all elements of a table that match a
+ given criteria, starting from the first element or the given index.
 
 
     <ul>
         <li><span class="parameter">t</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-
-<pre><code>  the table to iterate
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        <pre><code>  the table to iterate
 </code></pre>
 
         </li>
@@ -543,25 +647,25 @@
     <strong>merge (t, set)</strong>
     </dt>
     <dd>
-    Merge items from the one table to another one
+    Merge items from one table to another one.
 
 
     <ul>
         <li><span class="parameter">t</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-         the container table
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The container table
         </li>
         <li><span class="parameter">set</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-         the mixin table
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The mixin table.
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-        Return <code>t</code> for convenience
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        (for convenience)
     </ol>
 
 
@@ -573,26 +677,28 @@
     <strong>map (f, tbl)</strong>
     </dt>
     <dd>
-    Map a function to a table.  The function is applied to each value
- on the table, returning a table of the results.
+    Map a function to a table.
+ The function is applied to each value on the table, returning a modified
+ table.
 
 
     <ul>
         <li><span class="parameter">f</span>
             <span class="types"><span class="type">function</span></span>
-         the function to be applied to each value on the table
+         The function to be applied to each value in the table.
         </li>
         <li><span class="parameter">tbl</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-         the container table whose values will be operated on
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The container table whose values will be operated on.
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-        Return a table of the results
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
     </ol>
 
 
@@ -606,7 +712,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-04-27 18:56:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Class drawable - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -40,8 +40,8 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -63,18 +63,21 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><strong>drawable</strong></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../classes/naughty.list.notifications.html">naughty.list.notifications</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
   <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
   <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
@@ -124,7 +127,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -141,8 +143,6 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/dynamite.html">dynamite</a></li>
   <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
@@ -157,8 +157,8 @@
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -221,67 +221,56 @@
 	<tr>
 	<td class="name" ><a href="#button::press">button::press</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#button::release">button::release</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#mouse::enter">mouse::enter</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#mouse::leave">mouse::leave</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#mouse::move">mouse::move</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#property::geometry">property::geometry</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#property::height">property::height</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#property::width">property::width</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#property::x">property::x</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#property::y">property::y</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#property::surface">property::surface</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 </table>
@@ -305,7 +294,7 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#drawable:refresh">drawable:refresh ()</a></td>
-	<td class="summary">Refresh a drawable's content.</td>
+	<td class="summary">Refresh a drawable&rsquo;s content.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#drawable:geometry">drawable:geometry ()</a></td>
@@ -334,14 +323,12 @@
 
 
 
-
 </dd>
     <dt>
     <a name = "button::release"></a>
     <strong>button::release</strong>
     </dt>
     <dd>
-
 
 
 
@@ -366,14 +353,12 @@
 
 
 
-
 </dd>
     <dt>
     <a name = "mouse::leave"></a>
     <strong>mouse::leave</strong>
     </dt>
     <dd>
-
 
 
 
@@ -398,14 +383,12 @@
 
 
 
-
 </dd>
     <dt>
     <a name = "property::geometry"></a>
     <strong>property::geometry</strong>
     </dt>
     <dd>
-
 
 
 
@@ -430,14 +413,12 @@
 
 
 
-
 </dd>
     <dt>
     <a name = "property::width"></a>
     <strong>property::width</strong>
     </dt>
     <dd>
-
 
 
 
@@ -462,7 +443,6 @@
 
 
 
-
 </dd>
     <dt>
     <a name = "property::y"></a>
@@ -478,14 +458,12 @@
 
 
 
-
 </dd>
     <dt>
     <a name = "property::surface"></a>
     <strong>property::surface</strong>
     </dt>
     <dd>
-
 
 
 
@@ -578,8 +556,8 @@
     <strong>drawable:refresh ()</strong>
     </dt>
     <dd>
-    Refresh a drawable's content.  This has to be called whenever some drawing to
- the drawable's surface has been done and should become visible.
+    Refresh a drawable&rsquo;s content.  This has to be called whenever some drawing to
+ the drawable&rsquo;s surface has been done and should become visible.
 
 
 
@@ -600,7 +578,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         A table with drawable coordinates and geometry.
     </ol>
 
@@ -615,7 +593,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-04-27 18:56:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

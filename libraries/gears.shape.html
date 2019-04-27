@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Module gears.shape - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -44,7 +44,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -61,8 +60,6 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/dynamite.html">dynamite</a></li>
   <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
@@ -77,8 +74,8 @@
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><strong>gears.shape</strong></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -108,8 +105,8 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -131,18 +128,21 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../classes/naughty.list.notifications.html">naughty.list.notifications</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
   <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
   <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
@@ -206,10 +206,7 @@
 
 <h1>Module <code>gears.shape</code></h1>
 <p>Module dedicated to gather common shape painters.</p>
-<p>
-
-
-<p> It add the concept of "shape" to Awesome. A shape can be applied to a
+<p><p> It add the concept of &ldquo;shape&rdquo; to Awesome. A shape can be applied to a
  background, a margin, a mask or a drawable shape bounding.</p>
 
 <p> The functions exposed by this module always take a context as first
@@ -224,9 +221,8 @@
  in another function calling <code>cr:rotate()</code> (or any other transformation
  matrix).</p>
 
-<p> To specialize a shape where the API doesn't allows extra arguments to be
+<p> To specialize a shape where the API doesn&rsquo;t allows extra arguments to be
  passed, it is possible to wrap the shape function like:</p>
-
 
 <pre>
 <span class="keyword">local</span> new_shape = <span class="keyword">function</span>(cr, width, height)
@@ -234,20 +230,22 @@
 <span class="keyword">end</span>
 </pre>
 
+
 <p> Many elements can be shaped. This include:</p>
 
 <ul>
-    <li><a href="../classes/client.html#">client</a>s (see <a href="../libraries/gears.surface.html#apply_shape_bounding">gears.surface.apply_shape_bounding</a>)</li>
-    <li><a href="../classes/wibox.html#">wibox</a>es (see <a href="../classes/wibox.html#wibox.shape">wibox.shape</a>)</li>
-    <li>All widgets (see <a href="../classes/wibox.container.background.html#">wibox.container.background</a>)</li>
-    <li>The progressbar (see <a href="../classes/wibox.widget.progressbar.html#wibox.widget.progressbar.bar_shape">wibox.widget.progressbar.bar_shape</a>)</li>
-    <li>The graph (see <a href="../classes/wibox.widget.graph.html#wibox.widget.graph.step_shape">wibox.widget.graph.step_shape</a>)</li>
-    <li>The checkboxes (see <a href="../classes/wibox.widget.checkbox.html#wibox.widget.checkbox.check_shape">wibox.widget.checkbox.check_shape</a>)</li>
-    <li>Images (see <a href="../classes/wibox.widget.imagebox.html#wibox.widget.imagebox.clip_shape">wibox.widget.imagebox.clip_shape</a>)</li>
-    <li>The taglist tags (see <a href="../classes/awful.widget.taglist.html#">awful.widget.taglist</a>)</li>
-    <li>The tasklist clients (see <a href="../classes/awful.widget.tasklist.html#">awful.widget.tasklist</a>)</li>
-    <li>The tooltips (see <a href="../classes/awful.tooltip.html#">awful.tooltip</a>)</li>
+<li><a href="../classes/client.html#">client</a>s (see <a href="../libraries/gears.surface.html#apply_shape_bounding">gears.surface.apply_shape_bounding</a>)</li>
+<li><a href="../classes/wibox.html#">wibox</a>es (see <a href="../classes/wibox.html#wibox.shape">wibox.shape</a>)</li>
+<li>All widgets (see <a href="../classes/wibox.container.background.html#">wibox.container.background</a>)</li>
+<li>The progressbar (see <a href="../classes/wibox.widget.progressbar.html#wibox.widget.progressbar.bar_shape">wibox.widget.progressbar.bar_shape</a>)</li>
+<li>The graph (see <a href="../classes/wibox.widget.graph.html#wibox.widget.graph.step_shape">wibox.widget.graph.step_shape</a>)</li>
+<li>The checkboxes (see <a href="../classes/wibox.widget.checkbox.html#wibox.widget.checkbox.check_shape">wibox.widget.checkbox.check_shape</a>)</li>
+<li>Images (see <a href="../classes/wibox.widget.imagebox.html#wibox.widget.imagebox.clip_shape">wibox.widget.imagebox.clip_shape</a>)</li>
+<li>The taglist tags (see <a href="../classes/awful.widget.taglist.html#">awful.widget.taglist</a>)</li>
+<li>The tasklist clients (see <a href="../classes/awful.widget.tasklist.html#">awful.widget.tasklist</a>)</li>
+<li>The tooltips (see <a href="../classes/awful.tooltip.html#">awful.tooltip</a>)</li>
 </ul>
+
 </p>
     <h3>Info:</h3>
     <ul>
@@ -352,9 +350,7 @@
     Add a rounded rectangle to the current path.
  Note: If the radius is bigger than either half side, it will be reduced.</p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_rounded_rect.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_rounded_rect.svg" alt="Usage example" />
 
 
     <ul>
@@ -393,9 +389,7 @@ shape.transform(shape.rounded_rect) : translate(<span class="number">0</span>,<s
     <dd>
     Add a rectangle delimited by 2 180 degree arcs to the path. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_rounded_bar.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_rounded_bar.svg" alt="Usage example" />
 
 
     <ul>
@@ -428,9 +422,7 @@ shape.rounded_bar(cr, <span class="number">70</span>, <span class="number">20</s
     <dd>
     A rounded rect with only some of the corners rounded. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_partially_rounded_rect.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_partially_rounded_rect.svg" alt="Usage example" />
 
 
     <ul>
@@ -485,9 +477,7 @@ shape.partially_rounded_rect(cr, <span class="number">70</span>, <span class="nu
     <dd>
     A rounded rectangle with a triangle at the top. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_infobubble.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_infobubble.svg" alt="Usage example" />
 
 
     <ul>
@@ -539,9 +529,7 @@ shape.transform(shape.infobubble)
     <dd>
     A rectangle terminated by an arrow. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_rectangular_tag.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_rectangular_tag.svg" alt="Usage example" />
 
 
     <ul>
@@ -581,9 +569,7 @@ shape.transform(shape.rectangular_tag) : translate(<span class="number">0</span>
     <dd>
     A simple arrow shape. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_arrow.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_arrow.svg" alt="Usage example" />
 
 
     <ul>
@@ -633,9 +619,7 @@ shape.transform(shape.arrow) : rotate_at(<span class="number">35</span>,<span cl
     <dd>
     A squeezed hexagon filling the rectangle. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_hexagon.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_hexagon.svg" alt="Usage example" />
 
 
     <ul>
@@ -670,9 +654,7 @@ shape.transform(shape.hexagon) : rotate_at(<span class="number">35</span>,<span 
     <dd>
     Double arrow popularized by the vim-powerline module. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_powerline.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_powerline.svg" alt="Usage example" />
 
 
     <ul>
@@ -712,9 +694,7 @@ shape.transform(shape.powerline) : translate(<span class="number">0</span>, <spa
     <dd>
     An isosceles triangle. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_isosceles_triangle.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_isosceles_triangle.svg" alt="Usage example" />
 
 
     <ul>
@@ -749,9 +729,7 @@ shape.transform(shape.isosceles_triangle) : rotate_at(<span class="number">35</s
     <dd>
     A cross (<strong>+</strong>) symbol. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_cross.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_cross.svg" alt="Usage example" />
 
 
     <ul>
@@ -791,9 +769,7 @@ shape.transform(shape.cross) : scale(<span class="number">0.5</span>, <span clas
     <dd>
     A similar shape to the <a href="../libraries/gears.shape.html#module.rounded_rect">rounded_rect</a>, but with sharp corners. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_octogon.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_octogon.svg" alt="Usage example" />
 
 
     <ul>
@@ -810,7 +786,6 @@ shape.transform(shape.cross) : scale(<span class="number">0.5</span>, <span clas
         </li>
         <li><span class="parameter">corner_radius</span>
             <span class="types"><span class="type">number</span></span>
-
 
 
         </li>
@@ -834,9 +809,7 @@ shape.transform(shape.octogon) : translate(<span class="number">0</span>, <span 
     <dd>
     A circle shape. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_circle.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_circle.svg" alt="Usage example" />
 
 
     <ul>
@@ -876,9 +849,7 @@ shape.transform(shape.circle) : scale(<span class="number">0.5</span>, <span cla
     <dd>
     A simple rectangle. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_rectangle.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_rectangle.svg" alt="Usage example" />
 
 
     <ul>
@@ -914,9 +885,7 @@ shape.transform(shape.rectangle) : scale(<span class="number">0.5</span>, <span 
     A diagonal parallelogram with the bottom left corner at x=0 and top right
  at x=width. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_parallelogram.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_parallelogram.svg" alt="Usage example" />
 
 
     <ul>
@@ -956,9 +925,7 @@ shape.transform(shape.parallelogram) : scale(<span class="number">0.5</span>, <s
     <dd>
     A losange. </p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_losange.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_losange.svg" alt="Usage example" />
 
 
     <ul>
@@ -995,9 +962,7 @@ shape.transform(shape.losange) : scale(<span class="number">0.5</span>, <span cl
 
 <p> The pie center is the center of the area.</p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_pie.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_pie.svg" alt="Usage example" />
 
 
     <ul>
@@ -1049,9 +1014,7 @@ shape.pie(cr,<span class="number">70</span>,<span class="number">70</span>, <spa
 
 <p> The pie center is the center of the area.</p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_arc.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_arc.svg" alt="Usage example" />
 
 
     <ul>
@@ -1112,12 +1075,10 @@ shape.arc(cr,<span class="number">70</span>,<span class="number">70</span>, <spa
     A partial rounded bar.  How much of the rounded bar is visible depends on
  the given percentage value.</p>
 
-<p> Note that this shape is not closed and thus filling it doesn't make much
+<p> Note that this shape is not closed and thus filling it doesn&rsquo;t make much
  sense.</p>
 
-
-
-<p><img src="../images/AUTOGEN_gears_shape_radial_progress.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_gears_shape_radial_progress.svg" alt="Usage example" />
 
 
     <ul>
@@ -1190,7 +1151,7 @@ shape.radial_progress(cr, <span class="number">70</span>, <span class="number">2
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-04-27 18:56:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

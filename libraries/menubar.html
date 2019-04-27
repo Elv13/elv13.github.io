@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Module menubar - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -33,6 +33,7 @@
 <h2>Contents</h2>
 <ul>
 <li><a href="#Functions">Functions</a></li>
+<li><a href="#Theme_variables">Theme variables</a></li>
 <li><a href="#Deprecated_functions">Deprecated functions</a></li>
 <li><a href="#Tables">Tables</a></li>
 <li><a href="#Fields">Fields</a></li>
@@ -47,7 +48,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -64,8 +64,6 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/dynamite.html">dynamite</a></li>
   <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
@@ -80,8 +78,8 @@
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -111,8 +109,8 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -134,18 +132,21 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../classes/naughty.list.notifications.html">naughty.list.notifications</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
   <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
   <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
@@ -209,20 +210,22 @@
 
 <h1>Module <code>menubar</code></h1>
 <p>Menubar module, which aims to provide a freedesktop menu alternative</p>
-<p>
-<h2> List of menubar keybindings:</h2>
+<p><p> List of menubar keybindings:</p>
+
+<hr />
 
 <ul>
-    <li>"Left"  | "C-j" select an item on the left</li>
-    <li>"Right" | "C-k" select an item on the right</li>
-    <li>"Backspace"     exit the current category if we are in any</li>
-    <li>"Escape"        exit the current directory or exit menubar</li>
-    <li>"Home"          select the first item</li>
-    <li>"End"           select the last</li>
-    <li>"Return"        execute the entry</li>
-    <li>"C-Return"      execute the command with awful.spawn</li>
-    <li>"C-M-Return"    execute the command in a terminal</li>
+<li> &ldquo;Left&rdquo;  | &ldquo;C-j&rdquo; select an item on the left</li>
+<li> &ldquo;Right&rdquo; | &ldquo;C-k&rdquo; select an item on the right</li>
+<li> &ldquo;Backspace&rdquo;     exit the current category if we are in any</li>
+<li> &ldquo;Escape&rdquo;        exit the current directory or exit menubar</li>
+<li> &ldquo;Home&rdquo;          select the first item</li>
+<li> &ldquo;End&rdquo;           select the last</li>
+<li> &ldquo;Return&rdquo;        execute the entry</li>
+<li> &ldquo;C-Return&rdquo;      execute the command with awful.spawn</li>
+<li> &ldquo;C-M-Return&rdquo;    execute the command in a terminal</li>
 </ul>
+
 </p>
     <h3>Info:</h3>
     <ul>
@@ -235,7 +238,7 @@
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#refresh">refresh ([scr])</a></td>
-	<td class="summary">Refresh menubar's cache by reloading .desktop files.</td>
+	<td class="summary">Refresh menubar&rsquo;s cache by reloading .desktop files.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#show">show ([scr])</a></td>
@@ -244,6 +247,33 @@
 	<tr>
 	<td class="name" ><a href="#hide">hide ()</a></td>
 	<td class="summary">Hide the menubar.</td>
+	</tr>
+</table>
+<h2><a href="#Theme_variables">Theme variables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#beautiful.menubar_fg_normal">beautiful.menubar_fg_normal</a></td>
+	<td class="summary">Menubar normal text color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.menubar_bg_normal">beautiful.menubar_bg_normal</a></td>
+	<td class="summary">Menubar normal background color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.menubar_border_width">beautiful.menubar_border_width</a></td>
+	<td class="summary">Menubar border width.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.menubar_border_color">beautiful.menubar_border_color</a></td>
+	<td class="summary">Menubar border color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.menubar_fg_normal">beautiful.menubar_fg_normal</a></td>
+	<td class="summary">Menubar selected item text color.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.menubar_bg_normal">beautiful.menubar_bg_normal</a></td>
+	<td class="summary">Menubar selected item background color.</td>
 	</tr>
 </table>
 <h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
@@ -283,11 +313,11 @@
 	</tr>
 	<tr>
 	<td class="name" ><a href="#right_label">right_label</a></td>
-	<td class="summary">Label used for "Next page", default "▶▶".</td>
+	<td class="summary">Label used for &ldquo;Next page&rdquo;, default &ldquo;▶▶&rdquo;.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#left_label">left_label</a></td>
-	<td class="summary">Label used for "Previous page", default "◀◀".</td>
+	<td class="summary">Label used for &ldquo;Previous page&rdquo;, default &ldquo;◀◀&rdquo;.</td>
 	</tr>
 </table>
 
@@ -303,7 +333,7 @@
     <strong>refresh ([scr])</strong>
     </dt>
     <dd>
-    Refresh menubar's cache by reloading .desktop files.
+    Refresh menubar&rsquo;s cache by reloading .desktop files.
 
 
     <ul>
@@ -354,6 +384,103 @@
 
 </dd>
 </dl>
+    <h2 class="section-header "><a name="Theme_variables"></a>Theme variables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "beautiful.menubar_fg_normal"></a>
+    <strong>beautiful.menubar_fg_normal</strong>
+    </dt>
+    <dd>
+    Menubar normal text color.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.menubar_bg_normal"></a>
+    <strong>beautiful.menubar_bg_normal</strong>
+    </dt>
+    <dd>
+    Menubar normal background color.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.menubar_border_width"></a>
+    <strong>beautiful.menubar_border_width</strong>
+    </dt>
+    <dd>
+    Menubar border width.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">menubar_border_width</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+         (<em>default</em> 0)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.menubar_border_color"></a>
+    <strong>beautiful.menubar_border_color</strong>
+    </dt>
+    <dd>
+    Menubar border color.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.menubar_fg_normal"></a>
+    <strong>beautiful.menubar_fg_normal</strong>
+    </dt>
+    <dd>
+    Menubar selected item text color.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.menubar_bg_normal"></a>
+    <strong>beautiful.menubar_bg_normal</strong>
+    </dt>
+    <dd>
+    Menubar selected item background color.
+
+
+
+
+
+
+
+</dd>
+</dl>
     <h2 class="section-header "><a name="Deprecated_functions"></a>Deprecated functions</h2>
 
     <dl class="function">
@@ -389,7 +516,7 @@
     </dt>
     <dd>
     Specifies the geometry of the menubar.  This is a table with the keys
- x, y, width and height. Missing values are replaced via the screen's
+ x, y, width and height. Missing values are replaced via the screen&rsquo;s
  geometry. However, missing height is replaced by the font size.
 
 
@@ -437,7 +564,6 @@
             <span class="types"><span class="type">boolean</span></span>
 
 
-
          (<em>default</em> true)
         </li>
     </ul>
@@ -459,7 +585,6 @@
     <ul>
         <li><span class="parameter">show_categories</span>
             <span class="types"><span class="type">boolean</span></span>
-
 
 
          (<em>default</em> true)
@@ -484,7 +609,6 @@
             <span class="types"><span class="type">number</span></span>
 
 
-
         </li>
     </ul>
 
@@ -498,13 +622,12 @@
     <strong>right_label</strong>
     </dt>
     <dd>
-    Label used for "Next page", default "▶▶".
+    Label used for &ldquo;Next page&rdquo;, default &ldquo;▶▶&rdquo;.
 
 
     <ul>
         <li><span class="parameter">right_label</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> "▶▶")
@@ -521,13 +644,12 @@
     <strong>left_label</strong>
     </dt>
     <dd>
-    Label used for "Previous page", default "◀◀".
+    Label used for &ldquo;Previous page&rdquo;, default &ldquo;◀◀&rdquo;.
 
 
     <ul>
         <li><span class="parameter">left_label</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
          (<em>default</em> "◀◀")
@@ -546,7 +668,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-04-27 18:56:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

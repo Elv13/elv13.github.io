@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Class naughty.widget.icon - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -41,8 +41,8 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -64,18 +64,21 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../classes/naughty.list.notifications.html">naughty.list.notifications</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
   <li><strong>naughty.widget.icon</strong></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
   <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
@@ -125,7 +128,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -142,8 +144,6 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/dynamite.html">dynamite</a></li>
   <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
@@ -158,8 +158,8 @@
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -208,33 +208,33 @@
 
 <h1>Class <code>naughty.widget.icon</code></h1>
 <p>A notification square icon.</p>
-<p>
-
-
 <p> This widget is a specialized <a href="../classes/wibox.widget.imagebox.html#">wibox.widget.imagebox</a> with the following extra
  features:</p>
 
 <ul>
-    <li>Honor the <a href="../libraries/beautiful.html#">beautiful</a> notification variables.</li>
-    <li>Restrict the size avoid huge notifications</li>
-    <li>Provides some strategies to handle small icons</li>
-    <li>React to the <a href="../classes/naughty.notification.html#">naughty.notification</a> object icon changes.</li>
+<li>Honor the <a href="../libraries/beautiful.html#">beautiful</a> notification variables.</li>
+<li>Restrict the size avoid huge notifications</li>
+<li>Provides some strategies to handle small icons</li>
+<li>React to the <a href="../classes/naughty.notification.html#">naughty.notification</a> object icon changes.</li>
 </ul>
 
 
-
-</p>
+<p><img src="../images/AUTOGEN_wibox_nwidget_icon_simple.svg" alt="Usage example" /></p>
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/wibox.widget.imagebox.html#">wibox.widget.imagebox</a>
+    </ul>
     <h3>Usage:</h3>
     <ul>
         <pre class="example">local notif = naughty.notification {
-    title = &apos;A notification&apos;,
-    text  = &apos;This notification has actions!&apos;,
-    icon  = beautiful.awesome_icon,
+    title   = &apos;A notification&apos;,
+    message = &apos;This notification has actions!&apos;,
+    icon    = beautiful.awesome_icon,
 }
+
 wibox.widget {
-    resize_strategy = strategy,
-    notification    = notif,
-    widget          = naughty.widget.icon,
+    notification = notif,
+    widget       = naughty.widget.icon,
 }
 </pre>
     </ul>
@@ -311,7 +311,7 @@ wibox.widget {
 	</tr>
 	<tr>
 	<td class="name" ><a href="#naughty.widget.icon:buttons">naughty.widget.icon:buttons (_buttons)</a></td>
-	<td class="summary">Set/get a widget's buttons.</td>
+	<td class="summary">Set/get a widget&rsquo;s buttons.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#naughty.widget.icon:emit_signal_recursive">naughty.widget.icon:emit_signal_recursive (signal_name, ...)</a></td>
@@ -363,13 +363,16 @@ wibox.widget {
 <p> Valid values are:</p>
 
 <ul>
-    <li><strong>scale</strong>: Scale the icon up to the optimal size.</li>
-    <li><strong>center</strong>: Keep the icon size and draw it in the center</li>
-    <li><strong>resize</strong>: Change the size of the widget itself (<em>default</em>).</li>
+<li><strong>scale</strong>: Scale the icon up to the optimal size.</li>
+<li><strong>center</strong>: Keep the icon size and draw it in the center</li>
+<li><strong>resize</strong>: Change the size of the widget itself (<em>default</em>).</li>
 </ul>
 
+
 <p> Note that the size upper bound is defined by
- <code>beautiful.notification_icon_size</code>.
+ <code>beautiful.notification_icon_size</code>.</p>
+
+<p><img src="../images/AUTOGEN_wibox_nwidget_icon_strategy.svg" alt="Usage example" />
 
 
     <h3>Type:</h3>
@@ -377,15 +380,11 @@ wibox.widget {
         <li><span class="parameter">string</span>
 
 
-
         </li>
     </ul>
 
 
 
-    <h3>See also:</h3>
-    <ul>
-    </ul>
 
 
 </dd>
@@ -464,7 +463,6 @@ wibox.widget {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -546,7 +544,7 @@ wibox.widget {
          The button number.
         </li>
         <li><span class="parameter">mods</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The modifiers (mod4, mod1 (alt), Control, Shift)
         </li>
         <li><span class="parameter">find_widgets_result</span> The entry from the result of
@@ -564,7 +562,7 @@ wibox.widget {
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -633,7 +631,7 @@ wibox.widget {
          The button number.
         </li>
         <li><span class="parameter">mods</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The modifiers (mod4, mod1 (alt), Control, Shift)
         </li>
         <li><span class="parameter">find_widgets_result</span> The entry from the result of
@@ -651,7 +649,7 @@ wibox.widget {
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -720,7 +718,7 @@ wibox.widget {
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -789,7 +787,7 @@ wibox.widget {
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -852,7 +850,7 @@ wibox.widget {
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         The children
     </ol>
 
@@ -885,7 +883,7 @@ wibox.widget {
     <strong>naughty.widget.icon:buttons (_buttons)</strong>
     </dt>
     <dd>
-    Set/get a widget's buttons.
+    Set/get a widget&rsquo;s buttons.
 
 
     <ul>
@@ -911,8 +909,7 @@ wibox.widget {
 
     <ul>
         <li><span class="parameter">signal_name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
         </li>
@@ -936,7 +933,7 @@ wibox.widget {
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">...</span>
@@ -961,7 +958,7 @@ wibox.widget {
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -992,7 +989,7 @@ wibox.widget {
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -1013,7 +1010,7 @@ wibox.widget {
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-04-27 18:56:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

@@ -4,6 +4,6 @@
 <image id="image5" width="22" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAIAAABL1vtsAAAABmJLR0QA/wD/AP+gvaeTAAAAQUlEQVQ4jWM0NzdnoAwwUah/1AhqG8H4//9/4lVbWFhgMWI0XQw/I1hwSZw4cQKrOGbSwGkE1lSE1dzBERbDxggAF2YLHQjOKHUAAAAASUVORK5CYII="/>
 </defs>
 <g id="surface2">
-<use xlink:href="#image5"/>
+<use xlink:href="#image5" transform="matrix(1,0,0,1,5,0)"/>
 </g>
 </svg>

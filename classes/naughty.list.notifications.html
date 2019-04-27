@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Class naughty.list.notifications - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -35,6 +35,8 @@
 <li><a href="#Functions">Functions</a></li>
 <li><a href="#Object_properties">Object properties</a></li>
 <li><a href="#Signals">Signals</a></li>
+<li><a href="#Theme_variables">Theme variables</a></li>
+<li><a href="#List_filters">List filters</a></li>
 <li><a href="#Methods">Methods</a></li>
 </ul>
 
@@ -42,8 +44,8 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -65,18 +67,21 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><strong>naughty.list.notifications</strong></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><strong>naughty.widget.actionlist</strong></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
   <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
   <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
@@ -126,7 +131,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -143,8 +147,6 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/dynamite.html">dynamite</a></li>
   <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
@@ -159,8 +161,8 @@
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -207,81 +209,94 @@
 
 <div id="content">
 
-<h1>Class <code>naughty.widget.actionlist</code></h1>
-<p>Manage a notification action list.</p>
-<p> A notification action is a "button" that will trigger an action on the sender
- process. <code>notify-send</code> doesn't support action, but <code>libnotify</code> based
- applications do.</p>
-
-
-
-
-
+<h1>Class <code>naughty.list.notifications</code></h1>
+<p>Get a list of all currently active notifications.</p>
+<p><img src="../images/AUTOGEN_awful_notification_notificationlist_bottombar.svg" alt="Usage example" /></p>
 
 <pre>
-<span class="keyword">local</span> notif = naughty.notification {
-    title = <span class="string">'A notification'</span>,
-    text = <span class="string">'This notification has actions!'</span>,
-    actions = {
-        [<span class="string">'Accept'</span>] = <span class="keyword">function</span>() <span class="keyword">end</span>,
-        [<span class="string">'Refuse'</span>] = <span class="keyword">function</span>() <span class="keyword">end</span>,
-        [<span class="string">'Ignore'</span>] = <span class="keyword">function</span>() <span class="keyword">end</span>,
-    }
+<span class="comment">-- This awful.wibar will be placed at the bottom and contain the notifications.
+</span><span class="keyword">local</span> notif_wb = awful.wibar {
+    position = <span class="string">'bottom'</span>,
+    height   = <span class="number">48</span>,
+    visible  = #naughty.active &gt; <span class="number">0</span>,
 }
-wibox.widget {
-    notification = notif,
-    widget = naughty.widget.actionlist,
+
+notif_wb:setup {
+    <span class="keyword">nil</span>,
+    {
+        base_layout = wibox.widget {
+            spacing_widget = wibox.widget {
+                orientation = <span class="string">'vertical'</span>,
+                span_ratio  = <span class="number">0.5</span>,
+                widget      = wibox.widget.separator,
+            },
+            forced_height = <span class="number">30</span>,
+            spacing       = <span class="number">3</span>,
+            layout        = wibox.layout.flex.horizontal
+        },
+        widget_template = {
+            {
+                naughty.widget.icon,
+                {
+                    naughty.widget.title,
+                    naughty.widget.message,
+                    {
+                        layout = wibox.widget {
+                            <span class="comment">-- Adding the <a href="../classes/wibox.widget.html#">wibox.widget</a> allows to share a
+</span>                            <span class="comment">-- single instance for all spacers.
+</span>                            spacing_widget = wibox.widget {
+                                orientation = <span class="string">'vertical'</span>,
+                                span_ratio  = <span class="number">0.9</span>,
+                                widget      = wibox.widget.separator,
+                            },
+                            spacing = <span class="number">3</span>,
+                            layout  = wibox.layout.flex.horizontal
+                        },
+                        widget = naughty.list.widgets,
+                    },
+                    layout = wibox.layout.align.vertical
+                },
+                spacing = <span class="number">10</span>,
+                fill_space = <span class="keyword">true</span>,
+                layout  = wibox.layout.fixed.horizontal
+            },
+            margins = <span class="number">5</span>,
+            widget  = wibox.container.margin
+        },
+        widget = naughty.list.notifications,
+    },
+    <span class="comment">-- Add a button to dismiss all notifications, because why not.
+</span>    {
+        {
+            text   = <span class="string">'Dismiss all'</span>,
+            align  = <span class="string">'center'</span>,
+            valign = <span class="string">'center'</span>,
+            widget = wibox.widget.textbox
+        },
+        buttons = gears.<span class="global">table</span>.join(
+            awful.button({ }, <span class="number">1</span>, <span class="keyword">function</span>() naughty.destroy_all_notifications() <span class="keyword">end</span>)
+        ),
+        forced_width       = <span class="number">75</span>,
+        shape              = gears.shape.rounded_bar,
+        shape_border_width = <span class="number">1</span>,
+        shape_border_color = beautiful.bg_highlight,
+        widget = wibox.container.background
+    },
+    layout = wibox.layout.align.horizontal
 }
+
+<span class="comment">-- We don't want to have that bar all the time, only when there is content.
+</span>naughty.connect_signal(<span class="string">'property::active'</span>, <span class="keyword">function</span>()
+    notif_wb.visible = #naughty.active &gt; <span class="number">0</span>
+<span class="keyword">end</span>)
 </pre>
 
-<p> Here's a more customized example:</p>
 
-
-
-
-
-<p> --
- --     local notif = naughty.notification {
- --         title = 'A notification',
- --         text = 'This notification has actions!',
- --         actions = {
- --             ['Accept'] = function() end,
- --             ['Refuse'] = function() end,
- --             ['Ignore'] = function() end,
- --         }
- --     }
- --
- --
- --     wibox.widget {
- --         notification = notif,
- --         base<em>layout = wibox.widget {
- --             spacing        = 3,
- --             spacing</em>widget = wibox.widget{
- --                 orientation = 'horizontal',
- --                 widget      = wibox.widget.separator,
- --             },
- --             layout         = wibox.layout.fixed.vertical
- --         },
- --         widget<em>template = {
- --             {
- --                 {
- --                     {
- --                         id     = 'text</em>role',
- --                         widget = wibox.widget.textbox
- --                     },
- --                     widget = wibox.container.place
- --                 },
- --                 shape              = gears.shape.rounded<em>rect,
- --                 shape</em>border<em>width = 2,
- --                 shape</em>border<em>color = beautiful.bg</em>normal,
- --                 forced_height      = 30,
- --                 widget             = wibox.container.background,
- --             },
- --             margins = 4,
- --             widget  = wibox.container.margin,
- --         },
- --         widget = naughty.widget.actionlist,
- --     }</p>
+<p> require(&lsquo;gears.timer&rsquo;).run_delayed_calls_now()</p>
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/awful.widget.common.html#">awful.widget.common</a>
+    </ul>
     <h3>Info:</h3>
     <ul>
         <li><strong>Copyright</strong>: 2017 Emmanuel Lepage Vallee</li>
@@ -292,38 +307,72 @@ wibox.widget {
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist">naughty.widget.actionlist (args, widget_template)</a></td>
-	<td class="summary">Create an action list.</td>
+	<td class="name" ><a href="#naughty.list.notifications">naughty.list.notifications (args, widget_template)</a></td>
+	<td class="summary">Create an notification list.</td>
 	</tr>
 </table>
 <h2><a href="#Object_properties">Object properties</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist.notification">notification</a></td>
-	<td class="summary">The actionlist parent notification.</td>
+	<td class="name" ><a href="#naughty.list.notifications.notification">notification</a></td>
+	<td class="summary">The notificationlist parent notification.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist.layout">layout</a></td>
-	<td class="summary">The actionlist layout.</td>
+	<td class="name" ><a href="#naughty.list.notifications.layout">layout</a></td>
+	<td class="summary">The notificationlist layout.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist.widget_template">widget_template</a></td>
-	<td class="summary">The actionlist parent notification.</td>
+	<td class="name" ><a href="#naughty.list.notifications.widget_template">widget_template</a></td>
+	<td class="summary">The notificationlist parent notification.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist.forced_height">forced_height</a></td>
+	<td class="name" ><a href="#naughty.list.notifications.style">style</a></td>
+	<td class="summary">A table with values to override each <code>beautiful.notification_action</code> values.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.list.notifications.client">client</a></td>
+	<td class="summary">Restrict the list to notifications attached to this client.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.list.notifications.clients">clients</a></td>
+	<td class="summary">Note that this will only works when no filters are applied.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.list.notifications.tag">tag</a></td>
+	<td class="summary">Note that this will only works when no filters are applied.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.list.notifications.tags">tags</a></td>
+	<td class="summary">Note that this will only works when no filters are applied.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.list.notifications.screen">screen</a></td>
+	<td class="summary">Note that this will only works when no filters are applied.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.list.notifications.base_layout">base_layout</a></td>
+	<td class="summary">
+</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.list.notifications.filter">filter</a></td>
+	<td class="summary">
+</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.list.notifications.forced_height">forced_height</a></td>
 	<td class="summary">Force a widget height.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist.forced_width">forced_width</a></td>
+	<td class="name" ><a href="#naughty.list.notifications.forced_width">forced_width</a></td>
 	<td class="summary">Force a widget width.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist.opacity">opacity</a></td>
+	<td class="name" ><a href="#naughty.list.notifications.opacity">opacity</a></td>
 	<td class="summary">The widget opacity (transparency).</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist.visible">visible</a></td>
+	<td class="name" ><a href="#naughty.list.notifications.visible">visible</a></td>
 	<td class="summary">The widget visibility.</td>
 	</tr>
 </table>
@@ -354,35 +403,106 @@ wibox.widget {
 	<td class="summary">When the mouse leave a widget.</td>
 	</tr>
 </table>
+<h2><a href="#Theme_variables">Theme variables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_shape_normal">beautiful.notification_shape_normal</a></td>
+	<td class="summary">The shape used for a normal notification.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_shape_selected">beautiful.notification_shape_selected</a></td>
+	<td class="summary">The shape used for a selected notification.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_shape_border_color_normal">beautiful.notification_shape_border_color_normal</a></td>
+	<td class="summary">The shape border color for normal notifications.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_shape_border_color_selected">beautiful.notification_shape_border_color_selected</a></td>
+	<td class="summary">The shape border color for selected notifications.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_shape_border_width_normal">beautiful.notification_shape_border_width_normal</a></td>
+	<td class="summary">The shape border width for normal notifications.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_shape_border_width_selected">beautiful.notification_shape_border_width_selected</a></td>
+	<td class="summary">The shape border width for selected notifications.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_icon_size_normal">beautiful.notification_icon_size_normal</a></td>
+	<td class="summary">The notification icon size.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_icon_size_selected">beautiful.notification_icon_size_selected</a></td>
+	<td class="summary">The notification icon size.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_bg_normal">beautiful.notification_bg_normal</a></td>
+	<td class="summary">The background color for normal notifications.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_bg_selected">beautiful.notification_bg_selected</a></td>
+	<td class="summary">The background color for selected notifications.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_fg_normal">beautiful.notification_fg_normal</a></td>
+	<td class="summary">The foreground color for normal notifications.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_fg_selected">beautiful.notification_fg_selected</a></td>
+	<td class="summary">The foreground color for selected notifications.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_bgimage_normal">beautiful.notification_bgimage_normal</a></td>
+	<td class="summary">The background image for normal notifications.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#beautiful.notification_bgimage_selected">beautiful.notification_bgimage_selected</a></td>
+	<td class="summary">The background image for selected notifications.</td>
+	</tr>
+</table>
+<h2><a href="#List_filters">List filters</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#naughty.list.notifications.filter.all">naughty.list.notifications.filter.all</a></td>
+	<td class="summary">
+</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#naughty.list.notifications.filter.most_recent">naughty.list.notifications.filter.most_recent</a></td>
+	<td class="summary">Only get the most recent notification(s).</td>
+	</tr>
+</table>
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist:get_all_children">naughty.widget.actionlist:get_all_children ()</a></td>
+	<td class="name" ><a href="#naughty.list.notifications:get_all_children">naughty.list.notifications:get_all_children ()</a></td>
 	<td class="summary">Get all direct and indirect children widgets.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist:setup">naughty.widget.actionlist:setup (args)</a></td>
+	<td class="name" ><a href="#naughty.list.notifications:setup">naughty.list.notifications:setup (args)</a></td>
 	<td class="summary">Set a declarative widget hierarchy description.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist:buttons">naughty.widget.actionlist:buttons (_buttons)</a></td>
-	<td class="summary">Set/get a widget's buttons.</td>
+	<td class="name" ><a href="#naughty.list.notifications:buttons">naughty.list.notifications:buttons (_buttons)</a></td>
+	<td class="summary">Set/get a widget&rsquo;s buttons.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist:emit_signal_recursive">naughty.widget.actionlist:emit_signal_recursive (signal_name, ...)</a></td>
+	<td class="name" ><a href="#naughty.list.notifications:emit_signal_recursive">naughty.list.notifications:emit_signal_recursive (signal_name, ...)</a></td>
 	<td class="summary">Emit a signal and ensure all parent widgets in the hierarchies also
  forward the signal.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist:emit_signal">naughty.widget.actionlist:emit_signal (name, ...)</a></td>
+	<td class="name" ><a href="#naughty.list.notifications:emit_signal">naughty.list.notifications:emit_signal (name, ...)</a></td>
 	<td class="summary">Emit a signal.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist:connect_signal">naughty.widget.actionlist:connect_signal (name, func)</a></td>
+	<td class="name" ><a href="#naughty.list.notifications:connect_signal">naughty.list.notifications:connect_signal (name, func)</a></td>
 	<td class="summary">Connect to a signal.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#naughty.widget.actionlist:weak_connect_signal">naughty.widget.actionlist:weak_connect_signal (name, func)</a></td>
+	<td class="name" ><a href="#naughty.list.notifications:weak_connect_signal">naughty.list.notifications:weak_connect_signal (name, func)</a></td>
 	<td class="summary">Connect to a signal weakly.</td>
 	</tr>
 </table>
@@ -395,30 +515,119 @@ wibox.widget {
     Methods
     <dl class="function">
     <dt>
-    <a name = "naughty.widget.actionlist"></a>
-    <strong>naughty.widget.actionlist (args, widget_template)</strong>
+    <a name = "naughty.list.notifications"></a>
+    <strong>naughty.list.notifications (args, widget_template)</strong>
     </dt>
     <dd>
-    Create an action list.
+    Create an notification list.
 
 
     <ul>
         <li><span class="parameter">args</span>
 
-
         <ul>
-        <li><span class="parameter">notification</span>
-            <span class="types"><a class="type" href="../classes/naughty.notification.html#">naughty.notification</a></span>
-         The notification/
-        </li>
-        <li><span class="parameter">layout</span>
+        <li><span class="parameter">base_layout</span>
             <span class="types"><span class="type">widget</span></span>
-         The action layout.
+         The notification list base_layout.
+        </li>
+        <li><span class="parameter">filter</span>
+            <span class="types"><span class="type">widget</span></span>
+         The list filter.
+        </li>
+        <li><span class="parameter">client</span>
+            <span class="types"><a class="type" href="../classes/client.html#">client</a></span>
+         Create a notification list only for that client.
+        </li>
+        <li><span class="parameter">clients</span>
+            <span class="types"><a class="type" href="../classes/client.html#">client</a></span>
+         Create a notification list only for those clients.
+        </li>
+        <li><span class="parameter">tag</span>
+            <span class="types"><a class="type" href="../classes/client.html#">client</a></span>
+         Create a notification list only for that tag.
+        </li>
+        <li><span class="parameter">tags</span>
+            <span class="types"><a class="type" href="../classes/client.html#">client</a></span>
+         Create a notification list only for those tags.
+        </li>
+        <li><span class="parameter">screen</span>
+            <span class="types"><a class="type" href="../classes/client.html#">client</a></span>
+         Create a notification list only for that screen.
+        </li>
+        <li><span class="parameter">style</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Override the beautiful values.
+        </li>
+        <li><span class="parameter">style.shape_normal</span>
+            <span class="types"><span class="type">gears.shape</span></span>
+
+
+        </li>
+        <li><span class="parameter">style.shape_selected</span>
+            <span class="types"><span class="type">gears.shape</span></span>
+
+
+        </li>
+        <li><span class="parameter">style.shape_border_color_normal</span>
+            <span class="types"><span class="type">gears.color</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+        </li>
+        <li><span class="parameter">style.shape_border_color_selected</span>
+            <span class="types"><span class="type">gears.color</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+        </li>
+        <li><span class="parameter">style.shape_border_width_normal</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+        </li>
+        <li><span class="parameter">style.shape_border_width_selected</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+        </li>
+        <li><span class="parameter">style.icon_size</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+        </li>
+        <li><span class="parameter">style.bg_normal</span>
+            <span class="types"><span class="type">gears.color</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+        </li>
+        <li><span class="parameter">style.bg_selected</span>
+            <span class="types"><span class="type">gears.color</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+        </li>
+        <li><span class="parameter">style.fg_normal</span>
+            <span class="types"><span class="type">gears.color</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+        </li>
+        <li><span class="parameter">style.fg_selected</span>
+            <span class="types"><span class="type">gears.color</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+        </li>
+        <li><span class="parameter">style.bgimage_normal</span>
+            <span class="types"><span class="type">gears.surface</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+        </li>
+        <li><span class="parameter">style.bgimage_selected</span>
+            <span class="types"><span class="type">gears.surface</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
         </li>
         </li></ul>
         <li><span class="parameter">widget_template</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-         A custom widget to be used for each action.
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A custom widget to be used for each
+  notifications.
          (<em>optional</em>)
         </li>
     </ul>
@@ -427,7 +636,7 @@ wibox.widget {
     <ol>
 
            <span class="types"><span class="type">widget</span></span>
-        The action widget.
+        The notification list widget.
     </ol>
 
 
@@ -439,17 +648,16 @@ wibox.widget {
 
     <dl class="function">
     <dt>
-    <a name = "naughty.widget.actionlist.notification"></a>
+    <a name = "naughty.list.notifications.notification"></a>
     <strong>notification</strong>
     </dt>
     <dd>
-    The actionlist parent notification.
+    The notificationlist parent notification.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">notification</span>
-
 
 
         </li>
@@ -465,11 +673,11 @@ wibox.widget {
 
 </dd>
     <dt>
-    <a name = "naughty.widget.actionlist.layout"></a>
+    <a name = "naughty.list.notifications.layout"></a>
     <strong>layout</strong>
     </dt>
     <dd>
-    The actionlist layout.
+    The notificationlist layout.
  If no layout is specified, a <a href="../classes/wibox.layout.fixed.html#wibox.layout.fixed.vertical">wibox.layout.fixed.vertical</a> will be created
  automatically.
 
@@ -477,7 +685,6 @@ wibox.widget {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">widget</span>
-
 
 
         </li>
@@ -493,17 +700,16 @@ wibox.widget {
 
 </dd>
     <dt>
-    <a name = "naughty.widget.actionlist.widget_template"></a>
+    <a name = "naughty.list.notifications.widget_template"></a>
     <strong>widget_template</strong>
     </dt>
     <dd>
-    The actionlist parent notification.
+    The notificationlist parent notification.
 
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">table</span>
-
 
 
         </li>
@@ -515,7 +721,155 @@ wibox.widget {
 
 </dd>
     <dt>
-    <a name = "naughty.widget.actionlist.forced_height"></a>
+    <a name = "naughty.list.notifications.style"></a>
+    <strong>style</strong>
+    </dt>
+    <dd>
+    A table with values to override each <code>beautiful.notification_action</code> values.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.list.notifications.client"></a>
+    <strong>client</strong>
+    </dt>
+    <dd>
+    Restrict the list to notifications attached to this client. </p>
+
+<p> Note that this will only works when no filters are applied. The explicit
+ filter always have priority over this.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/naughty.list.notifications.html#naughty.list.notifications.filter">filter</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "naughty.list.notifications.clients"></a>
+    <strong>clients</strong>
+    </dt>
+    <dd>
+    Note that this will only works when no filters are applied.  The explicit
+ filter always have priority over this.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/naughty.list.notifications.html#naughty.list.notifications.filter">filter</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "naughty.list.notifications.tag"></a>
+    <strong>tag</strong>
+    </dt>
+    <dd>
+    Note that this will only works when no filters are applied.  The explicit
+ filter always have priority over this.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/naughty.list.notifications.html#naughty.list.notifications.filter">filter</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "naughty.list.notifications.tags"></a>
+    <strong>tags</strong>
+    </dt>
+    <dd>
+    Note that this will only works when no filters are applied.  The explicit
+ filter always have priority over this.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/naughty.list.notifications.html#naughty.list.notifications.filter">filter</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "naughty.list.notifications.screen"></a>
+    <strong>screen</strong>
+    </dt>
+    <dd>
+    Note that this will only works when no filters are applied.  The explicit
+ filter always have priority over this.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/naughty.list.notifications.html#naughty.list.notifications.filter">filter</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "naughty.list.notifications.base_layout"></a>
+    <strong>base_layout</strong>
+    </dt>
+    <dd>
+
+
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.list.notifications.filter"></a>
+    <strong>filter</strong>
+    </dt>
+    <dd>
+
+
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.list.notifications.forced_height"></a>
     <strong>forced_height</strong>
     </dt>
     <dd>
@@ -536,7 +890,7 @@ wibox.widget {
 
 </dd>
     <dt>
-    <a name = "naughty.widget.actionlist.forced_width"></a>
+    <a name = "naughty.list.notifications.forced_width"></a>
     <strong>forced_width</strong>
     </dt>
     <dd>
@@ -557,7 +911,7 @@ wibox.widget {
 
 </dd>
     <dt>
-    <a name = "naughty.widget.actionlist.opacity"></a>
+    <a name = "naughty.list.notifications.opacity"></a>
     <strong>opacity</strong>
     </dt>
     <dd>
@@ -579,7 +933,7 @@ wibox.widget {
 
 </dd>
     <dt>
-    <a name = "naughty.widget.actionlist.visible"></a>
+    <a name = "naughty.list.notifications.visible"></a>
     <strong>visible</strong>
     </dt>
     <dd>
@@ -589,7 +943,6 @@ wibox.widget {
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -620,7 +973,7 @@ wibox.widget {
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/naughty.widget.actionlist.html#widget::redraw_needed">widget::redraw_needed</a>
+         <a href="../classes/naughty.list.notifications.html#widget::redraw_needed">widget::redraw_needed</a>
     </ul>
 
 
@@ -641,7 +994,7 @@ wibox.widget {
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/naughty.widget.actionlist.html#widget::layout_changed">widget::layout_changed</a>
+         <a href="../classes/naughty.list.notifications.html#widget::layout_changed">widget::layout_changed</a>
     </ul>
 
 
@@ -671,7 +1024,7 @@ wibox.widget {
          The button number.
         </li>
         <li><span class="parameter">mods</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The modifiers (mod4, mod1 (alt), Control, Shift)
         </li>
         <li><span class="parameter">find_widgets_result</span> The entry from the result of
@@ -689,7 +1042,7 @@ wibox.widget {
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -758,7 +1111,7 @@ wibox.widget {
          The button number.
         </li>
         <li><span class="parameter">mods</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The modifiers (mod4, mod1 (alt), Control, Shift)
         </li>
         <li><span class="parameter">find_widgets_result</span> The entry from the result of
@@ -776,7 +1129,7 @@ wibox.widget {
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -845,7 +1198,7 @@ wibox.widget {
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -914,7 +1267,7 @@ wibox.widget {
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -959,12 +1312,338 @@ wibox.widget {
 
 </dd>
 </dl>
+    <h2 class="section-header "><a name="Theme_variables"></a>Theme variables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "beautiful.notification_shape_normal"></a>
+    <strong>beautiful.notification_shape_normal</strong>
+    </dt>
+    <dd>
+    The shape used for a normal notification.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.shape.html#">gears.shape</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_shape_selected"></a>
+    <strong>beautiful.notification_shape_selected</strong>
+    </dt>
+    <dd>
+    The shape used for a selected notification.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.shape.html#">gears.shape</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_shape_border_color_normal"></a>
+    <strong>beautiful.notification_shape_border_color_normal</strong>
+    </dt>
+    <dd>
+    The shape border color for normal notifications.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_shape_border_color_selected"></a>
+    <strong>beautiful.notification_shape_border_color_selected</strong>
+    </dt>
+    <dd>
+    The shape border color for selected notifications.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_shape_border_width_normal"></a>
+    <strong>beautiful.notification_shape_border_width_normal</strong>
+    </dt>
+    <dd>
+    The shape border width for normal notifications.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+         (<em>default</em> 0)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_shape_border_width_selected"></a>
+    <strong>beautiful.notification_shape_border_width_selected</strong>
+    </dt>
+    <dd>
+    The shape border width for selected notifications.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+         (<em>default</em> 0)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_icon_size_normal"></a>
+    <strong>beautiful.notification_icon_size_normal</strong>
+    </dt>
+    <dd>
+    The notification icon size.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+         (<em>default</em> 0)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_icon_size_selected"></a>
+    <strong>beautiful.notification_icon_size_selected</strong>
+    </dt>
+    <dd>
+    The notification icon size.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+         (<em>default</em> 0)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_bg_normal"></a>
+    <strong>beautiful.notification_bg_normal</strong>
+    </dt>
+    <dd>
+    The background color for normal notifications.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_bg_selected"></a>
+    <strong>beautiful.notification_bg_selected</strong>
+    </dt>
+    <dd>
+    The background color for selected notifications.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_fg_normal"></a>
+    <strong>beautiful.notification_fg_normal</strong>
+    </dt>
+    <dd>
+    The foreground color for normal notifications.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_fg_selected"></a>
+    <strong>beautiful.notification_fg_selected</strong>
+    </dt>
+    <dd>
+    The foreground color for selected notifications.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_bgimage_normal"></a>
+    <strong>beautiful.notification_bgimage_normal</strong>
+    </dt>
+    <dd>
+    The background image for normal notifications.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.surface.html#">gears.surface</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "beautiful.notification_bgimage_selected"></a>
+    <strong>beautiful.notification_bgimage_selected</strong>
+    </dt>
+    <dd>
+    The background image for selected notifications.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.surface.html#">gears.surface</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="List_filters"></a>List filters</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "naughty.list.notifications.filter.all"></a>
+    <strong>naughty.list.notifications.filter.all</strong>
+    </dt>
+    <dd>
+
+
+
+
+    <ul>
+        <li><span class="parameter">n</span>
+         The notification.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.list.notifications.filter.most_recent"></a>
+    <strong>naughty.list.notifications.filter.most_recent</strong>
+    </dt>
+    <dd>
+    <p>Only get the most recent notification(s). </p>
+
+<p> To set the count, the function needs to be wrapped:</p>
+
+<pre><code>filter = function(n) return naughty.list.notifications.filter.most_recent(n, 3) end
+</code></pre>
+
+
+
+    <ul>
+        <li><span class="parameter">n</span>
+         The notification.
+        </li>
+        <li><span class="parameter">count</span>
+            <span class="types"><span class="type">number</span></span>
+         The number of recent notifications to allow.
+         (<em>default</em> 1)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
     <h2 class="section-header "><a name="Methods"></a>Methods</h2>
 
     <dl class="function">
     <dt>
-    <a name = "naughty.widget.actionlist:get_all_children"></a>
-    <strong>naughty.widget.actionlist:get_all_children ()</strong>
+    <a name = "naughty.list.notifications:get_all_children"></a>
+    <strong>naughty.list.notifications:get_all_children ()</strong>
     </dt>
     <dd>
     Get all direct and indirect children widgets.
@@ -977,7 +1656,7 @@ wibox.widget {
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         The children
     </ol>
 
@@ -986,8 +1665,8 @@ wibox.widget {
 
 </dd>
     <dt>
-    <a name = "naughty.widget.actionlist:setup"></a>
-    <strong>naughty.widget.actionlist:setup (args)</strong>
+    <a name = "naughty.list.notifications:setup"></a>
+    <strong>naughty.list.notifications:setup (args)</strong>
     </dt>
     <dd>
     Set a declarative widget hierarchy description.
@@ -1006,11 +1685,11 @@ wibox.widget {
 
 </dd>
     <dt>
-    <a name = "naughty.widget.actionlist:buttons"></a>
-    <strong>naughty.widget.actionlist:buttons (_buttons)</strong>
+    <a name = "naughty.list.notifications:buttons"></a>
+    <strong>naughty.list.notifications:buttons (_buttons)</strong>
     </dt>
     <dd>
-    Set/get a widget's buttons.
+    Set/get a widget&rsquo;s buttons.
 
 
     <ul>
@@ -1025,8 +1704,8 @@ wibox.widget {
 
 </dd>
     <dt>
-    <a name = "naughty.widget.actionlist:emit_signal_recursive"></a>
-    <strong>naughty.widget.actionlist:emit_signal_recursive (signal_name, ...)</strong>
+    <a name = "naughty.list.notifications:emit_signal_recursive"></a>
+    <strong>naughty.list.notifications:emit_signal_recursive (signal_name, ...)</strong>
     </dt>
     <dd>
     Emit a signal and ensure all parent widgets in the hierarchies also
@@ -1036,8 +1715,7 @@ wibox.widget {
 
     <ul>
         <li><span class="parameter">signal_name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
         </li>
@@ -1052,8 +1730,8 @@ wibox.widget {
 
 </dd>
     <dt>
-    <a name = "naughty.widget.actionlist:emit_signal"></a>
-    <strong>naughty.widget.actionlist:emit_signal (name, ...)</strong>
+    <a name = "naughty.list.notifications:emit_signal"></a>
+    <strong>naughty.list.notifications:emit_signal (name, ...)</strong>
     </dt>
     <dd>
     Emit a signal.
@@ -1061,7 +1739,7 @@ wibox.widget {
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">...</span>
@@ -1077,8 +1755,8 @@ wibox.widget {
 
 </dd>
     <dt>
-    <a name = "naughty.widget.actionlist:connect_signal"></a>
-    <strong>naughty.widget.actionlist:connect_signal (name, func)</strong>
+    <a name = "naughty.list.notifications:connect_signal"></a>
+    <strong>naughty.list.notifications:connect_signal (name, func)</strong>
     </dt>
     <dd>
     Connect to a signal.
@@ -1086,7 +1764,7 @@ wibox.widget {
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -1101,8 +1779,8 @@ wibox.widget {
 
 </dd>
     <dt>
-    <a name = "naughty.widget.actionlist:weak_connect_signal"></a>
-    <strong>naughty.widget.actionlist:weak_connect_signal (name, func)</strong>
+    <a name = "naughty.list.notifications:weak_connect_signal"></a>
+    <strong>naughty.list.notifications:weak_connect_signal (name, func)</strong>
     </dt>
     <dd>
     Connect to a signal weakly. </p>
@@ -1117,7 +1795,7 @@ wibox.widget {
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -1138,7 +1816,7 @@ wibox.widget {
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-04-27 18:56:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

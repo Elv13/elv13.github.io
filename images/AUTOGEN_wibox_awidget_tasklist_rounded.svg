@@ -31,126 +31,128 @@
 </symbol>
 </g>
 <clipPath id="clip1">
-  <path d="M 0 0 L 130 0 L 130 18 L 0 18 Z M 0 0 "/>
+  <rect x="0" y="0" width="130" height="18"/>
 </clipPath>
-<clipPath id="clip2">
-  <path d="M 0.5 9 C 0.5 4.304688 4.304688 0.5 9 0.5 L 121 0.5 C 125.695312 0.5 129.5 4.304688 129.5 9 C 129.5 13.695312 125.695312 17.5 121 17.5 L 9 17.5 C 4.304688 17.5 0.5 13.695312 0.5 9 Z M 0.5 9 "/>
-</clipPath>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<g id="surface15" clip-path="url(#clip1)" filter="url(#alpha)">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 0 9 C 0 4.03125 4.03125 0 9 0 L 121 0 C 125.96875 0 130 4.03125 130 9 C 130 13.96875 125.96875 18 121 18 L 9 18 C 4.03125 18 0 13.96875 0 9 Z M 0 9 "/>
+</g>
+<mask id="mask0">
+<use xlink:href="#surface15"/>
+</mask>
 <clipPath id="clip3">
   <path d="M 12 2 L 26 2 L 26 16 L 12 16 Z M 12 2 "/>
 </clipPath>
-<image id="image8" width="22" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAIAAABL1vtsAAAABmJLR0QA/wD/AP+gvaeTAAAAQUlEQVQ4jWM0NzdnoAwwUah/1AhqG8H4//9/4lVbWFhgMWI0XQw/I1hwSZw4cQKrOGbSwGkE1lSE1dzBERbDxggAF2YLHQjOKHUAAAAASUVORK5CYII="/>
+<image id="image12" width="22" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAIAAABL1vtsAAAABmJLR0QA/wD/AP+gvaeTAAAAQUlEQVQ4jWM0NzdnoAwwUah/1AhqG8H4//9/4lVbWFhgMWI0XQw/I1hwSZw4cQKrOGbSwGkE1lSE1dzBERbDxggAF2YLHQjOKHUAAAAASUVORK5CYII="/>
+<clipPath id="clip2">
+  <rect x="0" y="0" width="130" height="18"/>
+</clipPath>
+<g id="surface14" clip-path="url(#clip2)">
+<rect x="0" y="0" width="130" height="18" style="fill:rgb(38.039216%,50.588235%,100%);fill-opacity:0.490196;stroke:none;"/>
+<g clip-path="url(#clip3)" clip-rule="nonzero">
+<use xlink:href="#image12" transform="matrix(0.636364,0,0,0.636364,12,2)"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="28" y="12.65625"/>
+  <use xlink:href="#glyph0-2" x="30.963867" y="12.65625"/>
+  <use xlink:href="#glyph0-3" x="38.666992" y="12.65625"/>
+  <use xlink:href="#glyph0-4" x="41.037109" y="12.65625"/>
+  <use xlink:href="#glyph0-5" x="43.407227" y="12.65625"/>
+  <use xlink:href="#glyph0-6" x="49.339844" y="12.65625"/>
+  <use xlink:href="#glyph0-7" x="55.272461" y="12.65625"/>
+  <use xlink:href="#glyph0-1" x="58.236328" y="12.65625"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-8" x="61.200195" y="12.65625"/>
+</g>
+</g>
 <clipPath id="clip4">
-  <path d="M 0 0 L 130 0 L 130 18 L 0 18 Z M 0 0 "/>
+  <rect x="0" y="0" width="130" height="18"/>
 </clipPath>
-<clipPath id="clip5">
-  <path d="M 140 0 L 270 0 L 270 18 L 140 18 Z M 140 0 "/>
-</clipPath>
+<g id="surface21" clip-path="url(#clip4)" filter="url(#alpha)">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 0 9 C 0 4.03125 4.03125 0 9 0 L 121 0 C 125.96875 0 130 4.03125 130 9 C 130 13.96875 125.96875 18 121 18 L 9 18 C 4.03125 18 0 13.96875 0 9 Z M 0 9 "/>
+</g>
+<mask id="mask1">
+<use xlink:href="#surface21"/>
+</mask>
 <clipPath id="clip6">
-  <path d="M 140.5 9 C 140.5 4.304688 144.304688 0.5 149 0.5 L 261 0.5 C 265.695312 0.5 269.5 4.304688 269.5 9 C 269.5 13.695312 265.695312 17.5 261 17.5 L 149 17.5 C 144.304688 17.5 140.5 13.695312 140.5 9 Z M 140.5 9 "/>
+  <path d="M 12 2 L 26 2 L 26 16 L 12 16 Z M 12 2 "/>
 </clipPath>
+<image id="image12" width="22" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAIAAABL1vtsAAAABmJLR0QA/wD/AP+gvaeTAAAAQUlEQVQ4jWM0NzdnoAwwUah/1AhqG8H4//9/4lVbWFhgMWI0XQw/I1hwSZw4cQKrOGbSwGkE1lSE1dzBERbDxggAF2YLHQjOKHUAAAAASUVORK5CYII="/>
+<clipPath id="clip5">
+  <rect x="0" y="0" width="130" height="18"/>
+</clipPath>
+<g id="surface20" clip-path="url(#clip5)">
+<rect x="0" y="0" width="130" height="18" style="fill:rgb(38.039216%,50.588235%,100%);fill-opacity:0.490196;stroke:none;"/>
+<g clip-path="url(#clip6)" clip-rule="nonzero">
+<use xlink:href="#image12" transform="matrix(0.636364,0,0,0.636364,12,2)"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="28" y="12.65625"/>
+  <use xlink:href="#glyph0-2" x="30.963867" y="12.65625"/>
+  <use xlink:href="#glyph0-3" x="38.666992" y="12.65625"/>
+  <use xlink:href="#glyph0-4" x="41.037109" y="12.65625"/>
+  <use xlink:href="#glyph0-5" x="43.407227" y="12.65625"/>
+  <use xlink:href="#glyph0-6" x="49.339844" y="12.65625"/>
+  <use xlink:href="#glyph0-7" x="55.272461" y="12.65625"/>
+  <use xlink:href="#glyph0-1" x="58.236328" y="12.65625"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-8" x="61.200195" y="12.65625"/>
+</g>
+</g>
 <clipPath id="clip7">
-  <path d="M 152 2 L 166 2 L 166 16 L 152 16 Z M 152 2 "/>
-</clipPath>
-<clipPath id="clip8">
-  <path d="M 140 0 L 270 0 L 270 18 L 140 18 Z M 140 0 "/>
-</clipPath>
-<clipPath id="clip9">
   <path d="M 132.5 6 L 137.5 6 L 137.5 12 L 132.5 12 Z M 132.5 6 "/>
 </clipPath>
+<clipPath id="clip8">
+  <rect x="0" y="0" width="130" height="18"/>
+</clipPath>
+<g id="surface27" clip-path="url(#clip8)" filter="url(#alpha)">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 0 9 C 0 4.03125 4.03125 0 9 0 L 121 0 C 125.96875 0 130 4.03125 130 9 C 130 13.96875 125.96875 18 121 18 L 9 18 C 4.03125 18 0 13.96875 0 9 Z M 0 9 "/>
+</g>
+<mask id="mask2">
+<use xlink:href="#surface27"/>
+</mask>
 <clipPath id="clip10">
-  <path d="M 280 0 L 410 0 L 410 18 L 280 18 Z M 280 0 "/>
+  <path d="M 12 2 L 26 2 L 26 16 L 12 16 Z M 12 2 "/>
 </clipPath>
+<image id="image12" width="22" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAIAAABL1vtsAAAABmJLR0QA/wD/AP+gvaeTAAAAQUlEQVQ4jWM0NzdnoAwwUah/1AhqG8H4//9/4lVbWFhgMWI0XQw/I1hwSZw4cQKrOGbSwGkE1lSE1dzBERbDxggAF2YLHQjOKHUAAAAASUVORK5CYII="/>
+<clipPath id="clip9">
+  <rect x="0" y="0" width="130" height="18"/>
+</clipPath>
+<g id="surface26" clip-path="url(#clip9)">
+<rect x="0" y="0" width="130" height="18" style="fill:rgb(66.666667%,0%,100%);fill-opacity:0.490196;stroke:none;"/>
+<g clip-path="url(#clip10)" clip-rule="nonzero">
+<use xlink:href="#image12" transform="matrix(0.636364,0,0,0.636364,12,2)"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="28" y="12.65625"/>
+  <use xlink:href="#glyph0-2" x="30.963867" y="12.65625"/>
+  <use xlink:href="#glyph0-3" x="38.666992" y="12.65625"/>
+  <use xlink:href="#glyph0-4" x="41.037109" y="12.65625"/>
+  <use xlink:href="#glyph0-5" x="43.407227" y="12.65625"/>
+  <use xlink:href="#glyph0-6" x="49.339844" y="12.65625"/>
+  <use xlink:href="#glyph0-7" x="55.272461" y="12.65625"/>
+  <use xlink:href="#glyph0-1" x="58.236328" y="12.65625"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-8" x="61.200195" y="12.65625"/>
+</g>
+</g>
 <clipPath id="clip11">
-  <path d="M 280.5 9 C 280.5 4.304688 284.304688 0.5 289 0.5 L 401 0.5 C 405.695312 0.5 409.5 4.304688 409.5 9 C 409.5 13.695312 405.695312 17.5 401 17.5 L 289 17.5 C 284.304688 17.5 280.5 13.695312 280.5 9 Z M 280.5 9 "/>
-</clipPath>
-<clipPath id="clip12">
-  <path d="M 292 2 L 306 2 L 306 16 L 292 16 Z M 292 2 "/>
-</clipPath>
-<clipPath id="clip13">
-  <path d="M 280 0 L 410 0 L 410 18 L 280 18 Z M 280 0 "/>
-</clipPath>
-<clipPath id="clip14">
   <path d="M 272.5 6 L 277.5 6 L 277.5 12 L 272.5 12 Z M 272.5 6 "/>
 </clipPath>
 </defs>
-<g id="surface5">
-<g clip-path="url(#clip1)" clip-rule="nonzero">
-<g clip-path="url(#clip2)" clip-rule="nonzero">
-<rect x="0" y="0" width="410" height="28" style="fill:rgb(38.039216%,50.588235%,100%);fill-opacity:0.494118;stroke:none;"/>
-</g>
-</g>
-<g clip-path="url(#clip3)" clip-rule="nonzero">
-<use xlink:href="#image8" transform="matrix(0.636364,0,0,0.636364,12,2)"/>
-</g>
-<g style="fill:rgb(0%,0%,0.392157%);fill-opacity:1;">
-  <use xlink:href="#glyph0-1" x="28" y="12.65625"/>
-  <use xlink:href="#glyph0-2" x="30.964844" y="12.65625"/>
-  <use xlink:href="#glyph0-3" x="38.671875" y="12.65625"/>
-  <use xlink:href="#glyph0-4" x="41.042969" y="12.65625"/>
-  <use xlink:href="#glyph0-5" x="43.414062" y="12.65625"/>
-  <use xlink:href="#glyph0-6" x="49.349609" y="12.65625"/>
-  <use xlink:href="#glyph0-7" x="55.285156" y="12.65625"/>
-  <use xlink:href="#glyph0-1" x="58.25" y="12.65625"/>
-</g>
-<g style="fill:rgb(0%,0%,0.392157%);fill-opacity:1;">
-  <use xlink:href="#glyph0-8" x="61.214844" y="12.65625"/>
-</g>
-<g clip-path="url(#clip4)" clip-rule="nonzero">
-<path style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(46.666667%,46.666667%,46.666667%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0.5 9 C 0.5 4.304688 4.304688 0.5 9 0.5 L 121 0.5 C 125.695312 0.5 129.5 4.304688 129.5 9 C 129.5 13.695312 125.695312 17.5 121 17.5 L 9 17.5 C 4.304688 17.5 0.5 13.695312 0.5 9 Z M 0.5 9 "/>
-</g>
-<g clip-path="url(#clip5)" clip-rule="nonzero">
-<g clip-path="url(#clip6)" clip-rule="nonzero">
-<rect x="0" y="0" width="410" height="28" style="fill:rgb(38.039216%,50.588235%,100%);fill-opacity:0.494118;stroke:none;"/>
-</g>
-</g>
+<g id="surface8">
+<use xlink:href="#surface14" mask="url(#mask0)"/>
+<use xlink:href="#surface20" transform="matrix(1,0,0,1,140,0)" mask="url(#mask1)"/>
 <g clip-path="url(#clip7)" clip-rule="nonzero">
-<use xlink:href="#image8" transform="matrix(0.636364,0,0,0.636364,152,2)"/>
-</g>
-<g style="fill:rgb(0%,0%,0.392157%);fill-opacity:1;">
-  <use xlink:href="#glyph0-1" x="168" y="12.65625"/>
-  <use xlink:href="#glyph0-2" x="170.964844" y="12.65625"/>
-  <use xlink:href="#glyph0-3" x="178.671875" y="12.65625"/>
-  <use xlink:href="#glyph0-4" x="181.042969" y="12.65625"/>
-  <use xlink:href="#glyph0-5" x="183.414062" y="12.65625"/>
-  <use xlink:href="#glyph0-6" x="189.349609" y="12.65625"/>
-  <use xlink:href="#glyph0-7" x="195.285156" y="12.65625"/>
-  <use xlink:href="#glyph0-1" x="198.25" y="12.65625"/>
-</g>
-<g style="fill:rgb(0%,0%,0.392157%);fill-opacity:1;">
-  <use xlink:href="#glyph0-8" x="201.214844" y="12.65625"/>
-</g>
-<g clip-path="url(#clip8)" clip-rule="nonzero">
-<path style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(46.666667%,46.666667%,46.666667%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0.5 9 C 0.5 4.304688 4.304688 0.5 9 0.5 L 121 0.5 C 125.695312 0.5 129.5 4.304688 129.5 9 C 129.5 13.695312 125.695312 17.5 121 17.5 L 9 17.5 C 4.304688 17.5 0.5 13.695312 0.5 9 Z M 0.5 9 " transform="matrix(1,0,0,1,140,0)"/>
-</g>
-<g clip-path="url(#clip9)" clip-rule="nonzero">
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 137.5 9 C 137.5 12.332031 132.5 12.332031 132.5 9 C 132.5 5.667969 137.5 5.667969 137.5 9 Z M 137.5 9 "/>
 </g>
-<g clip-path="url(#clip10)" clip-rule="nonzero">
+<use xlink:href="#surface26" transform="matrix(1,0,0,1,280,0)" mask="url(#mask2)"/>
 <g clip-path="url(#clip11)" clip-rule="nonzero">
-<rect x="0" y="0" width="410" height="28" style="fill:rgb(66.666667%,0%,100%);fill-opacity:0.494118;stroke:none;"/>
-</g>
-</g>
-<g clip-path="url(#clip12)" clip-rule="nonzero">
-<use xlink:href="#image8" transform="matrix(0.636364,0,0,0.636364,292,2)"/>
-</g>
-<g style="fill:rgb(0%,0%,0.392157%);fill-opacity:1;">
-  <use xlink:href="#glyph0-1" x="308" y="12.65625"/>
-  <use xlink:href="#glyph0-2" x="310.964844" y="12.65625"/>
-  <use xlink:href="#glyph0-3" x="318.671875" y="12.65625"/>
-  <use xlink:href="#glyph0-4" x="321.042969" y="12.65625"/>
-  <use xlink:href="#glyph0-5" x="323.414062" y="12.65625"/>
-  <use xlink:href="#glyph0-6" x="329.349609" y="12.65625"/>
-  <use xlink:href="#glyph0-7" x="335.285156" y="12.65625"/>
-  <use xlink:href="#glyph0-1" x="338.25" y="12.65625"/>
-</g>
-<g style="fill:rgb(0%,0%,0.392157%);fill-opacity:1;">
-  <use xlink:href="#glyph0-8" x="341.214844" y="12.65625"/>
-</g>
-<g clip-path="url(#clip13)" clip-rule="nonzero">
-<path style="fill:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(46.666667%,46.666667%,46.666667%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0.5 9 C 0.5 4.304688 4.304688 0.5 9 0.5 L 121 0.5 C 125.695312 0.5 129.5 4.304688 129.5 9 C 129.5 13.695312 125.695312 17.5 121 17.5 L 9 17.5 C 4.304688 17.5 0.5 13.695312 0.5 9 Z M 0.5 9 " transform="matrix(1,0,0,1,280,0)"/>
-</g>
-<g clip-path="url(#clip14)" clip-rule="nonzero">
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 277.5 9 C 277.5 12.332031 272.5 12.332031 272.5 9 C 272.5 5.667969 277.5 5.667969 277.5 9 Z M 277.5 9 "/>
 </g>
 </g>

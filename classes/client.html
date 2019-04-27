@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Class client - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -38,6 +38,7 @@
 <li><a href="#Theme_variables">Theme variables</a></li>
 <li><a href="#Deprecated_functions">Deprecated functions</a></li>
 <li><a href="#Layout_related_functions">Layout related functions</a></li>
+<li><a href="#Extra_properties_available_in_awful_rules_and_awful_spawn">Extra properties available in awful.rules and awful.spawn</a></li>
 <li><a href="#Tables">Tables</a></li>
 <li><a href="#Fields">Fields</a></li>
 <li><a href="#Methods">Methods</a></li>
@@ -50,8 +51,8 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -73,18 +74,21 @@
   <li><strong>client</strong></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../classes/naughty.list.notifications.html">naughty.list.notifications</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
   <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
   <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
@@ -134,7 +138,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -151,8 +154,6 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/dynamite.html">dynamite</a></li>
   <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
@@ -167,8 +168,8 @@
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -223,16 +224,16 @@
  command line applications).
  Clients are usually grouped by classes.
  A class is the name used by X11 to help the window manager distinguish
- between windows and write rules for them.  A client's behavior is also
+ between windows and write rules for them.  A client&rsquo;s behavior is also
  defined by its <a href="../classes/client.html#client.type">type</a> and <a href="../classes/client.html#client.size_hints">size_hints</a> properties.
  See the <code>xprop</code> command line application to query properties for a client.</p>
 
-<p> <img src="../images/client_geo.svg" alt="Client geometry"/></p>
+<p> <img src="../images/client_geo.svg" alt="Client geometry" /></p>
 
-<p> The client's <code>:geometry()</code> function returns a table with <em>x</em>, <em>y</em>, <em>width</em>
+<p> The client&rsquo;s <code>:geometry()</code> function returns a table with <em>x</em>, <em>y</em>, <em>width</em>
  and <em>height</em>.  The area returned <strong>excludes the border width</strong>.
- All clients also have a <a href="../classes/client.html#client.shape_bounding">shape_bounding</a> and <a href="../classes/client.html#client.shape_clip">shape_clip</a> used to "crop" the
- client's content.
+ All clients also have a <a href="../classes/client.html#client.shape_bounding">shape_bounding</a> and <a href="../classes/client.html#client.shape_clip">shape_clip</a> used to &ldquo;crop&rdquo; the
+ client&rsquo;s content.
  Finally, each clients can have titlebars (see <a href="../classes/awful.titlebar.html#">awful.titlebar</a>).</p>
 
 <p> Additionally to the classes described here, one can also use signals as
@@ -246,7 +247,6 @@
  context.
  To get the currently focused client:</p>
 
-
 <pre>
 <span class="keyword">local</span> c = client.focus
 <span class="keyword">if</span> c <span class="keyword">then</span>
@@ -254,8 +254,8 @@
 </span><span class="keyword">end</span>
 </pre>
 
-<p> To get a list of all clients, use <a href="../classes/client.html#client:get">client:get</a>:</p>
 
+<p> To get a list of all clients, use <a href="../classes/client.html#client:get">client:get</a>:</p>
 
 <pre>
 <span class="keyword">for</span> _, c <span class="keyword">in</span> <span class="global">ipairs</span>(client.get()) <span class="keyword">do</span>
@@ -263,8 +263,8 @@
 </span><span class="keyword">end</span>
 </pre>
 
-<p> To execute a callback when a new client is added, use the <a href="../classes/client.html#client.manage">manage</a> signal:</p>
 
+<p> To execute a callback when a new client is added, use the <a href="../classes/client.html#client.manage">manage</a> signal:</p>
 
 <pre>
 client.connect_signal(<span class="string">"manage"</span>, <span class="keyword">function</span>(c)
@@ -272,8 +272,8 @@ client.connect_signal(<span class="string">"manage"</span>, <span class="keyword
 </span><span class="keyword">end</span>)
 </pre>
 
-<p> To be notified when a property of a client changed:</p>
 
+<p> To be notified when a property of a client changed:</p>
 
 <pre>
 client.connect_signal(<span class="string">"property::name"</span>, <span class="keyword">function</span>(c)
@@ -281,14 +281,15 @@ client.connect_signal(<span class="string">"property::name"</span>, <span class=
 </span><span class="keyword">end</span>)
 </pre>
 
-<p> To be notified when a property of a specific client <code>c</code> changed:</p>
 
+<p> To be notified when a property of a specific client <code>c</code> changed:</p>
 
 <pre>
 c:connect_signal(<span class="string">"property::name"</span>, <span class="keyword">function</span>()
     <span class="comment">-- do something
 </span><span class="keyword">end</span>)
 </pre>
+
 
 <p> To get all the clients for a screen use either <a href="../classes/screen.html#screen.clients">screen.clients</a> or
  <a href="../classes/screen.html#screen.tiled_clients">screen.tiled_clients</a>.</p>
@@ -337,10 +338,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<td class="name" ><a href="#awful.client.iterate">awful.client.iterate (filter, start, s)</a></td>
 	<td class="summary">Returns an iterator to cycle through, starting from the client in focus or
  the given index, all clients that match a given criteria.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#awful.client.run_or_raise">awful.client.run_or_raise (cmd, matcher, merge)</a></td>
-	<td class="summary">Switch to a client matching the given condition if running, else spawn it.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.focus.history.disable_tracking">awful.client.focus.history.disable_tracking ()</a></td>
@@ -486,6 +483,10 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<td class="summary">A table with size hints of the client.</td>
 	</tr>
 	<tr>
+	<td class="name" ><a href="#client.motif_wm_hints">motif_wm_hints</a></td>
+	<td class="summary">The motif WM hints of the client.</td>
+	</tr>
+	<tr>
 	<td class="name" ><a href="#client.sticky">sticky</a></td>
 	<td class="summary">Set the client sticky, i.e.</td>
 	</tr>
@@ -499,23 +500,23 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.shape_bounding">shape_bounding</a></td>
-	<td class="summary">The client's bounding shape as set by awesome as a (native) cairo surface.</td>
+	<td class="summary">The client&rsquo;s bounding shape as set by awesome as a (native) cairo surface.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.shape_clip">shape_clip</a></td>
-	<td class="summary">The client's clip shape as set by awesome as a (native) cairo surface.</td>
+	<td class="summary">The client&rsquo;s clip shape as set by awesome as a (native) cairo surface.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.shape_input">shape_input</a></td>
-	<td class="summary">The client's input shape as set by awesome as a (native) cairo surface.</td>
+	<td class="summary">The client&rsquo;s input shape as set by awesome as a (native) cairo surface.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.client_shape_bounding">client_shape_bounding</a></td>
-	<td class="summary">The client's bounding shape as set by the program as a (native) cairo surface.</td>
+	<td class="summary">The client&rsquo;s bounding shape as set by the program as a (native) cairo surface.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.client_shape_clip">client_shape_clip</a></td>
-	<td class="summary">The client's clip shape as set by the program as a (native) cairo surface.</td>
+	<td class="summary">The client&rsquo;s clip shape as set by the program as a (native) cairo surface.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.startup_id">startup_id</a></td>
@@ -570,6 +571,10 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<td class="summary">If the client is dockable.</td>
 	</tr>
 	<tr>
+	<td class="name" ><a href="#client.requests_no_titlebar">requests_no_titlebar</a></td>
+	<td class="summary">If the client requests not to be decorated with a titlebar.</td>
+	</tr>
+	<tr>
 	<td class="name" ><a href="#client.shape">shape</a></td>
 	<td class="summary">Set the client shape.</td>
 	</tr>
@@ -595,37 +600,31 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<tr>
 	<td class="name" ><a href="#button::press">button::press</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#button::release">button::release</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#mouse::enter">mouse::enter</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#mouse::leave">mouse::leave</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#mouse::move">mouse::move</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#property::window">property::window</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
@@ -635,19 +634,16 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<tr>
 	<td class="name" ><a href="#request::geometry">request::geometry</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#request::tag">request::tag</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#request::urgent">request::urgent</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
@@ -661,7 +657,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<tr>
 	<td class="name" ><a href="#client.unmanage">unmanage</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
@@ -671,13 +666,11 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<tr>
 	<td class="name" ><a href="#client.raised">raised</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client.lowered">lowered</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
@@ -756,11 +749,11 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.mark">awful.client.mark</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Mark a client, and then call 'marked' hook.</td>
+	<td class="summary">Mark a client, and then call &lsquo;marked&rsquo; hook.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.unmark">awful.client.unmark</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Unmark a client and then call 'unmarked' hook.</td>
+	<td class="summary">Unmark a client and then call &lsquo;unmarked&rsquo; hook.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.ismarked">awful.client.ismarked</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
@@ -784,15 +777,15 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.floating.toggle">awful.client.floating.toggle</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Toggle the floating state of a client between 'auto' and 'true'.</td>
+	<td class="summary">Toggle the floating state of a client between &lsquo;auto&rsquo; and &lsquo;true&rsquo;.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.dockable.get">awful.client.dockable.get</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Get a client's dockable state.</td>
+	<td class="summary">Get a client&rsquo;s dockable state.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.dockable.set">awful.client.dockable.set</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Set a client's dockable state, overriding auto-detection.</td>
+	<td class="summary">Set a client&rsquo;s dockable state, overriding auto-detection.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.property.get">awful.client.property.get</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
@@ -801,6 +794,10 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<tr>
 	<td class="name" ><a href="#awful.client.property.set">awful.client.property.set</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
 	<td class="summary">Set a client property.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#awful.client.run_or_raise">awful.client.run_or_raise</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
+	<td class="summary">Switch to a client matching the given condition if running, else spawn it.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.get_transient_for_matching">awful.client.get_transient_for_matching</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
@@ -827,7 +824,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.idx">awful.client.idx</a></td>
-	<td class="summary">Calculate a client's column number, index in that column, and
+	<td class="summary">Calculate a client&rsquo;s column number, index in that column, and
  number of visible clients in this column.</td>
 	</tr>
 	<tr>
@@ -839,10 +836,53 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	<td class="summary">Change window factor of a client.</td>
 	</tr>
 </table>
+<h2><a href="#Extra_properties_available_in_awful_rules_and_awful_spawn">Extra properties available in awful.rules and awful.spawn</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#client.placement">placement</a></td>
+	<td class="summary">The client default placement on the screen.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client.honor_padding">honor_padding</a></td>
+	<td class="summary">When applying the placement, honor the screen padding.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client.honor_workarea">honor_workarea</a></td>
+	<td class="summary">When applying the placement, honor the screen work area.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client.tag">tag</a></td>
+	<td class="summary">The client default tag.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client.tags">tags</a></td>
+	<td class="summary">The client default tags.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client.new_tag">new_tag</a></td>
+	<td class="summary">Create a new tag for this client.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client.switch_to_tags">switch_to_tags</a></td>
+	<td class="summary">Unselect the current tags and select this client tags.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client.focus">focus</a></td>
+	<td class="summary">Define if the client should grab focus by default.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client.titlebars_enabled">titlebars_enabled</a></td>
+	<td class="summary">Should this client have a titlebar by default.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#client.callback">callback</a></td>
+	<td class="summary">A function to call when this client is ready.</td>
+	</tr>
+</table>
 <h2><a href="#Tables">Tables</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" ><a href="#client.object">client.object</a></td>
+	<td class="name" ><a href="#awful.object">awful.object</a></td>
 	<td class="summary">Client class.</td>
 	</tr>
 </table>
@@ -913,7 +953,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client:get_icon">client:get_icon (index)</a></td>
-	<td class="summary">Get the client's n-th icon.</td>
+	<td class="summary">Get the client&rsquo;s n-th icon.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#client:disconnect_signal">client:disconnect_signal (name, func)</a></td>
@@ -1007,19 +1047,19 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#awful.client.shape.get_transformed">awful.client.shape.get_transformed (c, shape_name)</a></td>
-	<td class="summary">Get one of a client's shapes and transform it to include window decorations.</td>
+	<td class="summary">Get one of a client&rsquo;s shapes and transform it to include window decorations.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.shape.update.all">awful.client.shape.update.all (c)</a></td>
-	<td class="summary">Update all of a client's shapes from the shapes the client set itself.</td>
+	<td class="summary">Update all of a client&rsquo;s shapes from the shapes the client set itself.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.shape.update.bounding">awful.client.shape.update.bounding (c)</a></td>
-	<td class="summary">Update a client's bounding shape from the shape the client set itself.</td>
+	<td class="summary">Update a client&rsquo;s bounding shape from the shape the client set itself.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.client.shape.update.clip">awful.client.shape.update.clip (c)</a></td>
-	<td class="summary">Update a client's clip shape from the shape the client set itself.</td>
+	<td class="summary">Update a client&rsquo;s clip shape from the shape the client set itself.</td>
 	</tr>
 </table>
 <h2><a href="#lib_awful_client_urgent_Functions">lib.awful.client.urgent Functions</a></h2>
@@ -1064,7 +1104,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
          The index.  Use 1 to get the next, -1 to get the previous.
         </li>
         <li><span class="parameter">sel</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client.
          (<em>optional</em>)
         </li>
@@ -1102,11 +1142,11 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
     <ul>
         <li><span class="parameter">dir</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         The direction, can be either "up", "down", "left" or "right".
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client.
          (<em>default</em> focused)
         </li>
@@ -1132,10 +1172,10 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
     <ul>
         <li><span class="parameter">dir</span>
-         The direction, can be either "up", "down", "left" or "right".
+         The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
         </li>
         <li><span class="parameter">sel</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client.
          (<em>optional</em>)
         </li>
@@ -1159,7 +1199,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
          The index.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client, otherwise focused one is used.
          (<em>optional</em>)
         </li>
@@ -1255,7 +1295,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
         </li>
         <li><span class="parameter">kind</span>
          The type (used for register_xproperty).
-   One of "string", "number" or "boolean".
+   One of &ldquo;string&rdquo;, &ldquo;number&rdquo; or &ldquo;boolean&rdquo;.
         </li>
     </ul>
 
@@ -1299,46 +1339,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 <span class="keyword">for</span> c <span class="keyword">in</span> awful.client.iterate(urxvt) <span class="keyword">do</span>
   c.minimized = <span class="keyword">false</span>
 <span class="keyword">end</span></pre>
-    </ul>
-
-</dd>
-    <dt>
-    <a name = "awful.client.run_or_raise"></a>
-    <strong>awful.client.run_or_raise (cmd, matcher, merge)</strong>
-    </dt>
-    <dd>
-    Switch to a client matching the given condition if running, else spawn it.
- If multiple clients match the given condition then the next one is
- focussed.
-
-
-    <ul>
-        <li><span class="parameter">cmd</span>
-         the command to execute
-        </li>
-        <li><span class="parameter">matcher</span>
-         a function that returns true to indicate a matching client
-        </li>
-        <li><span class="parameter">merge</span>
-            <span class="types"><span class="type">bool</span> or <span class="type">function</span></span>
-         If true then merge tags (select the client's
-   first tag additionally) when the client is not visible.
-   If it is a function, it will be called with the client as argument.
-        </li>
-    </ul>
-
-
-
-
-    <h3>Usage:</h3>
-    <ul>
-        <pre class="example"><span class="comment">-- run or raise urxvt (perhaps, with tabs) on modkey + semicolon
-</span>awful.key({ modkey, }, <span class="string">'semicolon'</span>, <span class="keyword">function</span> ()
-    <span class="keyword">local</span> matcher = <span class="keyword">function</span> (c)
-        <span class="keyword">return</span> awful.rules.match(c, {class = <span class="string">'URxvt'</span>})
-    <span class="keyword">end</span>
-    awful.client.run_or_raise(<span class="string">'urxvt'</span>, matcher)
-<span class="keyword">end</span>);</pre>
     </ul>
 
 </dd>
@@ -1420,13 +1420,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>window</strong>
     </dt>
     <dd>
-
-<p>The X window id. </p>
+    <p>The X window id. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::window</em></li>
+<li><em>property::window</em></li>
 </ul>
 
 
@@ -1435,7 +1434,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -1451,13 +1449,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>name</strong>
     </dt>
     <dd>
-
-<p>The client title. </p>
+    <p>The client title. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::name</em></li>
+<li><em>property::name</em></li>
 </ul>
 
 
@@ -1466,7 +1463,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -1482,13 +1478,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>skip_taskbar</strong>
     </dt>
     <dd>
-
-<p>True if the client does not want to be in taskbar. </p>
+    <p>True if the client does not want to be in taskbar. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::skip_taskbar</em></li>
+<li><em>property::skip_taskbar</em></li>
 </ul>
 
 
@@ -1497,7 +1492,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -1513,33 +1507,33 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>type</strong>
     </dt>
     <dd>
-
-<p>The window type. </p>
+    <p>The window type. </p>
 
 <p> Valid types are:</p>
 
 <ul>
-    <li><strong>desktop</strong>: The root client, it cannot be moved or resized.</li>
-    <li><strong>dock</strong>: A client attached to the side of the screen.</li>
-    <li><strong>splash</strong>: A client, usually without titlebar shown when an application starts.</li>
-    <li><strong>dialog</strong>: A dialog, see <a href="../classes/client.html#client.transient_for">transient_for</a>.</li>
-    <li><strong>menu</strong>: A context menu.</li>
-    <li><strong>toolbar</strong>: A floating toolbar.</li>
-    <li><strong>utility</strong>:</li>
-    <li><strong>dropdown_menu</strong>: A context menu attached to a parent position.</li>
-    <li><strong>popup_menu</strong>: A context menu.</li>
-    <li><strong>notification</strong>: A notification popup.</li>
-    <li><strong>combo</strong>: A combobox list menu.</li>
-    <li><strong>dnd</strong>: A drag and drop indicator.</li>
-    <li><strong>normal</strong>: A normal application main window.</li>
+<li><strong>desktop</strong>: The root client, it cannot be moved or resized.</li>
+<li><strong>dock</strong>: A client attached to the side of the screen.</li>
+<li><strong>splash</strong>: A client, usually without titlebar shown when an application starts.</li>
+<li><strong>dialog</strong>: A dialog, see <a href="../classes/client.html#client.transient_for">transient_for</a>.</li>
+<li><strong>menu</strong>: A context menu.</li>
+<li><strong>toolbar</strong>: A floating toolbar.</li>
+<li><strong>utility</strong>:</li>
+<li><strong>dropdown_menu</strong>: A context menu attached to a parent position.</li>
+<li><strong>popup_menu</strong>: A context menu.</li>
+<li><strong>notification</strong>: A notification popup.</li>
+<li><strong>combo</strong>: A combobox list menu.</li>
+<li><strong>dnd</strong>: A drag and drop indicator.</li>
+<li><strong>normal</strong>: A normal application main window.</li>
 </ul>
+
 
 <p> More information can be found <a href="https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html#idm140200472629520">here</a></p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::type</em></li>
+<li><em>property::type</em></li>
 </ul>
 
 
@@ -1548,7 +1542,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -1564,17 +1557,15 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>class</strong>
     </dt>
     <dd>
+    <p>The client class. </p>
 
-<p>The client class. </p>
-
-<p> If the client has multiple classes, the first one is used.</p>
-
-<p> To get a client class from the command line, use the <code>xprop</code> command.</p>
+<p> To get a client class from the command line, use the command <code>xprop
+ WM_CLASS</code>. The class will be the second string.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::class</em></li>
+<li><em>property::class</em></li>
 </ul>
 
 
@@ -1583,7 +1574,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -1599,13 +1589,15 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>instance</strong>
     </dt>
     <dd>
+    <p>The client instance. </p>
 
-<p>The client instance. </p>
+<p> To get a client instance from the command line, use the command <code>xprop
+ WM_CLASS</code>. The instance will be the first string.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::instance</em></li>
+<li><em>property::instance</em></li>
 </ul>
 
 
@@ -1614,7 +1606,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -1630,13 +1621,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>pid</strong>
     </dt>
     <dd>
-
-<p>The client PID, if available. </p>
+    <p>The client PID, if available. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::pid</em></li>
+<li><em>property::pid</em></li>
 </ul>
 
 
@@ -1645,7 +1635,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
-
 
 
         </li>
@@ -1661,13 +1650,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>role</strong>
     </dt>
     <dd>
-
-<p>The window role, if available. </p>
+    <p>The window role, if available. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::role</em></li>
+<li><em>property::role</em></li>
 </ul>
 
 
@@ -1676,7 +1664,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -1692,13 +1679,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>machine</strong>
     </dt>
     <dd>
-
-<p>The machine client is running on. </p>
+    <p>The machine client is running on. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::machine</em></li>
+<li><em>property::machine</em></li>
 </ul>
 
 
@@ -1707,7 +1693,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -1723,13 +1708,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>icon_name</strong>
     </dt>
     <dd>
-
-<p>The client name when iconified. </p>
+    <p>The client name when iconified. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::icon_name</em></li>
+<li><em>property::icon_name</em></li>
 </ul>
 
 
@@ -1738,7 +1722,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -1754,13 +1737,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>icon</strong>
     </dt>
     <dd>
-
-<p>The client icon as a surface. </p>
+    <p>The client icon as a surface. </p>
 
 <p> This property holds the client icon closest to the size configured via
  <a href="../libraries/awesome.html#set_preferred_icon_size">awesome.set_preferred_icon_size</a>.</p>
 
-<p> It is not a path or an "real" file. Rather, it is already a bitmap surface.</p>
+<p> It is not a path or an &ldquo;real&rdquo; file. Rather, it is already a bitmap surface.</p>
 
 <p> Typically you would want to use <a href="../classes/awful.widget.clienticon.html#">awful.widget.clienticon</a> to get this as a
  widget.</p>
@@ -1780,7 +1762,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::icon</em></li>
+<li><em>property::icon</em></li>
 </ul>
 
 
@@ -1789,7 +1771,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -1809,14 +1790,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>icon_sizes</strong>
     </dt>
     <dd>
-
-<p>The available sizes of client icons.  This is a table where each entry
+    <p>The available sizes of client icons.  This is a table where each entry
  contains the width and height of an icon.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::icon_sizes</em></li>
+<li><em>property::icon_sizes</em></li>
 </ul>
 
 
@@ -1825,8 +1805,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">sizes</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
 
 
         </li>
@@ -1846,13 +1825,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>screen</strong>
     </dt>
     <dd>
-
-<p>Client screen. </p>
+    <p>Client screen. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::screen</em></li>
+<li><em>property::screen</em></li>
 </ul>
 
 
@@ -1861,7 +1839,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">screen</span>
-
 
 
         </li>
@@ -1877,14 +1854,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>hidden</strong>
     </dt>
     <dd>
-
-<p>Define if the client must be hidden, i.e.  never mapped,
+    <p>Define if the client must be hidden, i.e.  never mapped,
    invisible in taskbar.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::hidden</em></li>
+<li><em>property::hidden</em></li>
 </ul>
 
 
@@ -1893,7 +1869,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -1909,14 +1884,13 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>minimized</strong>
     </dt>
     <dd>
-
-<p>Define it the client must be iconify, i.e.  only visible in
+    <p>Define it the client must be iconify, i.e.  only visible in
    taskbar.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::minimized</em></li>
+<li><em>property::minimized</em></li>
 </ul>
 
 
@@ -1925,7 +1899,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -1941,8 +1914,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>size_hints_honor</strong>
     </dt>
     <dd>
-
-<p>Honor size hints, e.g.  respect size ratio.</p>
+    <p>Honor size hints, e.g.  respect size ratio.</p>
 
 <p> For example, a terminal such as <code>xterm</code> require the client size to be a
  multiple of the character size. Honoring size hints will cause the terminal
@@ -1953,7 +1925,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::size_hints_honor</em></li>
+<li><em>property::size_hints_honor</em></li>
 </ul>
 
 
@@ -1962,7 +1934,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -1990,7 +1961,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
         <li><span class="parameter">integer</span>
 
 
-
         </li>
     </ul>
 
@@ -2004,13 +1974,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>border_color</strong>
     </dt>
     <dd>
-
-<p>The client border color. </p>
+    <p>The client border color. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::border_color</em></li>
+<li><em>property::border_color</em></li>
 </ul>
 
 
@@ -2038,13 +2007,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>urgent</strong>
     </dt>
     <dd>
-
-<p>The client urgent state. </p>
+    <p>The client urgent state. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::urgent</em></li>
+<li><em>property::urgent</em></li>
 </ul>
 
 
@@ -2053,7 +2021,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -2069,8 +2036,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>content</strong>
     </dt>
     <dd>
-
-<p>A cairo surface for the client window content. </p>
+    <p>A cairo surface for the client window content. </p>
 
 <p> To get the screenshot, use:</p>
 
@@ -2084,11 +2050,9 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
 
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2104,13 +2068,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>opacity</strong>
     </dt>
     <dd>
-
-<p>The client opacity. </p>
+    <p>The client opacity. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::opacity</em></li>
+<li><em>property::opacity</em></li>
 </ul>
 
 
@@ -2141,7 +2104,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
         <li><span class="parameter">boolean</span>
 
 
-
         </li>
     </ul>
 
@@ -2155,13 +2117,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>above</strong>
     </dt>
     <dd>
-
-<p>The client is above normal windows. </p>
+    <p>The client is above normal windows. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::above</em></li>
+<li><em>property::above</em></li>
 </ul>
 
 
@@ -2170,7 +2131,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -2186,13 +2146,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>below</strong>
     </dt>
     <dd>
-
-<p>The client is below normal windows. </p>
+    <p>The client is below normal windows. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::below</em></li>
+<li><em>property::below</em></li>
 </ul>
 
 
@@ -2201,7 +2160,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -2217,13 +2175,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>fullscreen</strong>
     </dt>
     <dd>
-
-<p>The client is fullscreen or not. </p>
+    <p>The client is fullscreen or not. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::fullscreen</em></li>
+<li><em>property::fullscreen</em></li>
 </ul>
 
 
@@ -2232,7 +2189,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -2248,13 +2204,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>maximized</strong>
     </dt>
     <dd>
-
-<p>The client is maximized (horizontally and vertically) or not. </p>
+    <p>The client is maximized (horizontally and vertically) or not. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::maximized</em></li>
+<li><em>property::maximized</em></li>
 </ul>
 
 
@@ -2263,7 +2218,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -2279,13 +2233,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>maximized_horizontal</strong>
     </dt>
     <dd>
-
-<p>The client is maximized horizontally or not. </p>
+    <p>The client is maximized horizontally or not. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::maximized_horizontal</em></li>
+<li><em>property::maximized_horizontal</em></li>
 </ul>
 
 
@@ -2294,7 +2247,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -2310,13 +2262,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>maximized_vertical</strong>
     </dt>
     <dd>
-
-<p>The client is maximized vertically or not. </p>
+    <p>The client is maximized vertically or not. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::maximized_vertical</em></li>
+<li><em>property::maximized_vertical</em></li>
 </ul>
 
 
@@ -2325,7 +2276,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -2341,13 +2291,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>transient_for</strong>
     </dt>
     <dd>
-
-<p>The client the window is transient for. </p>
+    <p>The client the window is transient for. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::transient_for</em></li>
+<li><em>property::transient_for</em></li>
 </ul>
 
 
@@ -2356,7 +2305,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">client</span>
-
 
 
         </li>
@@ -2372,13 +2320,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>group_window</strong>
     </dt>
     <dd>
-
-<p>Window identification unique to a group of windows. </p>
+    <p>Window identification unique to a group of windows. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::group_window</em></li>
+<li><em>property::group_window</em></li>
 </ul>
 
 
@@ -2387,7 +2334,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">client</span>
-
 
 
         </li>
@@ -2411,7 +2357,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
         <li><span class="parameter">client</span>
 
 
-
         </li>
     </ul>
 
@@ -2425,13 +2370,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>size_hints</strong>
     </dt>
     <dd>
-
-<p>A table with size hints of the client. </p>
+    <p>A table with size hints of the client. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::size_hints</em></li>
+<li><em>property::size_hints</em></li>
 </ul>
 
 
@@ -2441,11 +2385,9 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <ul>
         <li><span class="parameter">table</span>
 
-
         <ul>
         <li><span class="parameter">user_position</span>
             <span class="types"><span class="type">integer</span></span>
-
 
 
         </li>
@@ -2453,11 +2395,9 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
             <span class="types"><span class="type">integer</span></span>
 
 
-
         </li>
         <li><span class="parameter">program_position</span>
             <span class="types"><span class="type">integer</span></span>
-
 
 
         </li>
@@ -2465,11 +2405,9 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
             <span class="types"><span class="type">integer</span></span>
 
 
-
         </li>
         <li><span class="parameter">max_width</span>
             <span class="types"><span class="type">integer</span></span>
-
 
 
         </li>
@@ -2477,11 +2415,9 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
             <span class="types"><span class="type">integer</span></span>
 
 
-
         </li>
         <li><span class="parameter">min_width</span>
             <span class="types"><span class="type">integer</span></span>
-
 
 
         </li>
@@ -2489,17 +2425,14 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
             <span class="types"><span class="type">integer</span></span>
 
 
-
         </li>
         <li><span class="parameter">width_inc</span>
             <span class="types"><span class="type">integer</span></span>
 
 
-
         </li>
         <li><span class="parameter">height_inc</span>
             <span class="types"><span class="type">integer</span></span>
-
 
 
         </li>
@@ -2516,17 +2449,161 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
 </dd>
     <dt>
-    <a name = "client.sticky"></a>
-    <strong>sticky</strong>
+    <a name = "client.motif_wm_hints"></a>
+    <strong>motif_wm_hints</strong>
     </dt>
     <dd>
+    <p>The motif WM hints of the client. </p>
 
-<p>Set the client sticky, i.e.  available on all tags.</p>
+<p> This is nil if the client has no motif hints. Otherwise, this is a table that
+ contains the present properties. Note that awesome provides these properties
+ as-is and does not interpret them for you. For example, if the function table
+ only has &ldquo;resize&rdquo; set to true, this means that the window requests to be only
+ resizable, but asks for the other functions not to be able. If however both
+ &ldquo;resize&rdquo; and &ldquo;all&rdquo; are set, this means that all but the resize function
+ should be enabled.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::sticky</em></li>
+<li><em>property::motif_wm_hints</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+        <ul>
+        <li><span class="parameter">functions</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">functions.all</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">functions.resize</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">functions.move</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">functions.minimize</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">functions.maximize</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">functions.close</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">decorations</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">decorations.all</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">decorations.border</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">decorations.resizeh</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">decorations.title</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">decorations.menu</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">decorations.minimize</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">decorations.maximize</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">input_mode</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">status</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">status.tearoff_window</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+         (<em>optional</em>)
+        </li>
+        </li></ul>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "client.sticky"></a>
+    <strong>sticky</strong>
+    </dt>
+    <dd>
+    <p>Set the client sticky, i.e.  available on all tags.</p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::sticky</em></li>
 </ul>
 
 
@@ -2535,7 +2612,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -2551,13 +2627,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>modal</strong>
     </dt>
     <dd>
-
-<p>Indicate if the client is modal. </p>
+    <p>Indicate if the client is modal. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::modal</em></li>
+<li><em>property::modal</em></li>
 </ul>
 
 
@@ -2566,7 +2641,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -2582,13 +2656,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>focusable</strong>
     </dt>
     <dd>
-
-<p>True if the client can receive the input focus. </p>
+    <p>True if the client can receive the input focus. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::focusable</em></li>
+<li><em>property::focusable</em></li>
 </ul>
 
 
@@ -2597,7 +2670,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -2613,13 +2685,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>shape_bounding</strong>
     </dt>
     <dd>
-
-<p>The client's bounding shape as set by awesome as a (native) cairo surface. </p>
+    <p>The client&rsquo;s bounding shape as set by awesome as a (native) cairo surface. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::shape_bounding</em></li>
+<li><em>property::shape_bounding</em></li>
 </ul>
 
 
@@ -2628,7 +2699,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2648,13 +2718,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>shape_clip</strong>
     </dt>
     <dd>
-
-<p>The client's clip shape as set by awesome as a (native) cairo surface. </p>
+    <p>The client&rsquo;s clip shape as set by awesome as a (native) cairo surface. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::shape_clip</em></li>
+<li><em>property::shape_clip</em></li>
 </ul>
 
 
@@ -2663,7 +2732,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2679,13 +2747,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>shape_input</strong>
     </dt>
     <dd>
-
-<p>The client's input shape as set by awesome as a (native) cairo surface. </p>
+    <p>The client&rsquo;s input shape as set by awesome as a (native) cairo surface. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::shape_input</em></li>
+<li><em>property::shape_input</em></li>
 </ul>
 
 
@@ -2694,7 +2761,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2710,13 +2776,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client_shape_bounding</strong>
     </dt>
     <dd>
-
-<p>The client's bounding shape as set by the program as a (native) cairo surface. </p>
+    <p>The client&rsquo;s bounding shape as set by the program as a (native) cairo surface. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::shape_client_bounding</em></li>
+<li><em>property::shape_client_bounding</em></li>
 </ul>
 
 
@@ -2725,7 +2790,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2741,13 +2805,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>client_shape_clip</strong>
     </dt>
     <dd>
-
-<p>The client's clip shape as set by the program as a (native) cairo surface. </p>
+    <p>The client&rsquo;s clip shape as set by the program as a (native) cairo surface. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::shape_client_clip</em></li>
+<li><em>property::shape_client_clip</em></li>
 </ul>
 
 
@@ -2756,7 +2819,6 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-
 
 
         </li>
@@ -2772,8 +2834,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <strong>startup_id</strong>
     </dt>
     <dd>
-
-<p>The FreeDesktop StartId. </p>
+    <p>The FreeDesktop StartId. </p>
 
 <p> When a client is spawned (like using a terminal or <a href="../libraries/awful.spawn.html#">awful.spawn</a>, a startup
  notification identifier is created. When the client is created, this
@@ -2784,7 +2845,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
  loading and also to attach some properties to the newly created client (like
  a <a href="../classes/tag.html#">tag</a> or <a href="../classes/client.html#client.floating">floating</a> state).</p>
 
-<p> Some applications, like <code>xterm</code>, don't support startup notification. While
+<p> Some applications, like <code>xterm</code>, don&rsquo;t support startup notification. While
  not perfect, the addition the following code to <a href="../sample files/rc.lua.html#">rc.lua</a> will mitigate the
  issue. Please note that this code is Linux specific.</p>
 
@@ -2830,7 +2891,7 @@ awful.rules.add_rule_source(
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::startup_id</em></li>
+<li><em>property::startup_id</em></li>
 </ul>
 
 
@@ -2839,7 +2900,6 @@ awful.rules.add_rule_source(
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -2859,8 +2919,7 @@ awful.rules.add_rule_source(
     <strong>valid</strong>
     </dt>
     <dd>
-
-<p>If the client that this object refers to is still managed by awesome. </p>
+    <p>If the client that this object refers to is still managed by awesome. </p>
 
 <p> To avoid errors, use:</p>
 
@@ -2870,7 +2929,7 @@ awful.rules.add_rule_source(
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::valid</em></li>
+<li><em>property::valid</em></li>
 </ul>
 
 
@@ -2879,7 +2938,6 @@ awful.rules.add_rule_source(
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -2895,13 +2953,12 @@ awful.rules.add_rule_source(
     <strong>first_tag</strong>
     </dt>
     <dd>
-
-<p>The first tag of the client.   Optimized form of <code>c:tags()[1]</code>.</p>
+    <p>The first tag of the client.   Optimized form of <code>c:tags()[1]</code>.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::first_tag</em></li>
+<li><em>property::first_tag</em></li>
 </ul>
 
 
@@ -2910,7 +2967,6 @@ awful.rules.add_rule_source(
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">tag</span>
-
 
 
         </li>
@@ -2926,15 +2982,14 @@ awful.rules.add_rule_source(
     <strong>marked</strong>
     </dt>
     <dd>
-
-<p>If a client is marked or not. </p>
+    <p>If a client is marked or not. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>marked</em> (for legacy reasons, use <code>property::marked</code>)</li>
-    <li><em>unmarked</em> (for legacy reasons, use <code>property::marked</code>)</li>
-    <li><em>property::marked</em></li>
+<li><em>marked</em> (for legacy reasons, use <code>property::marked</code>)</li>
+<li><em>unmarked</em> (for legacy reasons, use <code>property::marked</code>)</li>
+<li><em>property::marked</em></li>
 </ul>
 
 
@@ -2943,7 +2998,6 @@ awful.rules.add_rule_source(
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -2964,8 +3018,9 @@ awful.rules.add_rule_source(
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li>*property::is_fixed*</li>
+<li><em>property::is_fixed</em></li>
 </ul>
+
 
 <p> This property is read only.
 
@@ -3056,8 +3111,7 @@ awful.rules.add_rule_source(
     <strong>floating</strong>
     </dt>
     <dd>
-
-<p>The client floating state.
+    <p>The client floating state.
  If the client is part of the tiled layout or free floating.</p>
 
 <p> Note that some windows might be floating even if you
@@ -3067,7 +3121,7 @@ awful.rules.add_rule_source(
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::floating</em></li>
+<li><em>property::floating</em></li>
 </ul>
 
 
@@ -3090,13 +3144,12 @@ awful.rules.add_rule_source(
     <strong>x</strong>
     </dt>
     <dd>
-
-<p>The x coordinates. </p>
+    <p>The x coordinates. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::x</em></li>
+<li><em>property::x</em></li>
 </ul>
 
 
@@ -3105,7 +3158,6 @@ awful.rules.add_rule_source(
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">integer</span>
-
 
 
         </li>
@@ -3121,13 +3173,12 @@ awful.rules.add_rule_source(
     <strong>y</strong>
     </dt>
     <dd>
-
-<p>The y coordinates. </p>
+    <p>The y coordinates. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::y</em></li>
+<li><em>property::y</em></li>
 </ul>
 
 
@@ -3136,7 +3187,6 @@ awful.rules.add_rule_source(
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">integer</span>
-
 
 
         </li>
@@ -3152,13 +3202,12 @@ awful.rules.add_rule_source(
     <strong>width</strong>
     </dt>
     <dd>
-
-<p>The width of the client. </p>
+    <p>The width of the client. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::width</em></li>
+<li><em>property::width</em></li>
 </ul>
 
 
@@ -3167,7 +3216,6 @@ awful.rules.add_rule_source(
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">width</span>
-
 
 
         </li>
@@ -3183,13 +3231,12 @@ awful.rules.add_rule_source(
     <strong>height</strong>
     </dt>
     <dd>
-
-<p>The height of the client. </p>
+    <p>The height of the client. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::height</em></li>
+<li><em>property::height</em></li>
 </ul>
 
 
@@ -3198,7 +3245,6 @@ awful.rules.add_rule_source(
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">height</span>
-
 
 
         </li>
@@ -3214,19 +3260,18 @@ awful.rules.add_rule_source(
     <strong>dockable</strong>
     </dt>
     <dd>
-
-<p>If the client is dockable. </p>
+    <p>If the client is dockable. </p>
 
 <p> A dockable client is an application confined to the edge of the screen. The
  space it occupies is substracted from the <a href="../classes/screen.html#screen.workarea">screen.workarea</a>.</p>
 
-<p> Clients with a type of "utility", "toolbar" or "dock" are dockable by
+<p> Clients with a type of &ldquo;utility&rdquo;, &ldquo;toolbar&rdquo; or &ldquo;dock&rdquo; are dockable by
  default.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::dockable</em></li>
+<li><em>property::dockable</em></li>
 </ul>
 
 
@@ -3236,6 +3281,38 @@ awful.rules.add_rule_source(
     <ul>
         <li><span class="parameter">boolean</span>
          The dockable state
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "client.requests_no_titlebar"></a>
+    <strong>requests_no_titlebar</strong>
+    </dt>
+    <dd>
+    <p>If the client requests not to be decorated with a titlebar. </p>
+
+<p> The motif wm hints allow a client to request not to be decorated by the WM in
+ various ways. This property uses the motif MWM_DECOR_TITLE hint and
+ interprets it as the client (not) wanting a titlebar.</p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::requests_no_titlebar</em></li>
+</ul>
+
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+         Whether the client requests not to get a titlebar
         </li>
     </ul>
 
@@ -3354,14 +3431,12 @@ awful.rules.add_rule_source(
 
 
 
-
 </dd>
     <dt>
     <a name = "button::release"></a>
     <strong>button::release</strong>
     </dt>
     <dd>
-
 
 
 
@@ -3386,14 +3461,12 @@ awful.rules.add_rule_source(
 
 
 
-
 </dd>
     <dt>
     <a name = "mouse::leave"></a>
     <strong>mouse::leave</strong>
     </dt>
     <dd>
-
 
 
 
@@ -3418,14 +3491,12 @@ awful.rules.add_rule_source(
 
 
 
-
 </dd>
     <dt>
     <a name = "property::window"></a>
     <strong>property::window</strong>
     </dt>
     <dd>
-
 
 
 
@@ -3446,28 +3517,29 @@ awful.rules.add_rule_source(
 <p> <strong>Contexts are:</strong></p>
 
 <ul>
-    <li><em>ewmh</em>: When a client asks for focus (from <code>X11</code> events).</li>
-    <li>*autofocus.check_focus*: When autofocus is enabled (from
-    <code>awful.autofocus</code>).</li>
-    <li>*autofocus.check<em>focus</em>tag*: When autofocus is enabled
-    (from <code>awful.autofocus</code>).</li>
-    <li><em>client.jumpto</em>: When a custom lua extension asks a client to be focused
-    (from <a href="../classes/client.html#client:jump_to">client.jump_to</a>).</li>
-    <li>*client.swap.global_bydirection*: When client swapping requires a focus
-    change (from <a href="../classes/client.html#awful.client.swap.bydirection">awful.client.swap.bydirection</a>).</li>
-    <li><em>client.movetotag</em>: When a client is moved to a new tag
-    (from <a href="../classes/client.html#client:move_to_tag">client.move_to_tag</a>).</li>
-    <li><em>client.movetoscreen</em>: When the client is moved to a new screen
-    (from <a href="../classes/client.html#client:move_to_screen">client.move_to_screen</a>).</li>
-    <li><em>client.focus.byidx</em>: When selecting a client using its index
-    (from <a href="../classes/client.html#awful.client.focus.byidx">awful.client.focus.byidx</a>).</li>
-    <li><em>client.focus.history.previous</em>: When cycling through history
-    (from <a href="../classes/client.html#awful.client.focus.history.previous">awful.client.focus.history.previous</a>).</li>
-    <li><em>menu.clients</em>: When using the builtin client menu
-    (from <a href="../libraries/awful.menu.html#clients">awful.menu.clients</a>).</li>
-    <li><em>rules</em>: When a new client is focused from a rule (from <a href="../libraries/awful.rules.html#">awful.rules</a>).</li>
-    <li><em>screen.focus</em>: When a screen is focused (from <code>awful.screen.focus</code>).</li>
+<li><em>ewmh</em>: When a client asks for focus (from <code>X11</code> events).</li>
+<li><em>autofocus.check_focus</em>: When autofocus is enabled (from
+<code>awful.autofocus</code>).</li>
+<li><em>autofocus.check_focus_tag</em>: When autofocus is enabled
+(from <code>awful.autofocus</code>).</li>
+<li><em>client.jumpto</em>: When a custom lua extension asks a client to be focused
+(from <a href="../classes/client.html#client:jump_to">client.jump_to</a>).</li>
+<li><em>client.swap.global_bydirection</em>: When client swapping requires a focus
+change (from <a href="../classes/client.html#awful.client.swap.bydirection">awful.client.swap.bydirection</a>).</li>
+<li><em>client.movetotag</em>: When a client is moved to a new tag
+(from <a href="../classes/client.html#client:move_to_tag">client.move_to_tag</a>).</li>
+<li><em>client.movetoscreen</em>: When the client is moved to a new screen
+(from <a href="../classes/client.html#client:move_to_screen">client.move_to_screen</a>).</li>
+<li><em>client.focus.byidx</em>: When selecting a client using its index
+(from <a href="../classes/client.html#awful.client.focus.byidx">awful.client.focus.byidx</a>).</li>
+<li><em>client.focus.history.previous</em>: When cycling through history
+(from <a href="../classes/client.html#awful.client.focus.history.previous">awful.client.focus.history.previous</a>).</li>
+<li><em>menu.clients</em>: When using the builtin client menu
+(from <a href="../libraries/awful.menu.html#clients">awful.menu.clients</a>).</li>
+<li><em>rules</em>: When a new client is focused from a rule (from <a href="../libraries/awful.rules.html#">awful.rules</a>).</li>
+<li><em>screen.focus</em>: When a screen is focused (from <code>awful.screen.focus</code>).</li>
 </ul>
+
 
 <p> Default implementation: <a href="../libraries/awful.ewmh.html#awful.ewmh.activate">awful.ewmh.activate</a>.</p>
 
@@ -3477,7 +3549,7 @@ awful.rules.add_rule_source(
     <h3>Arguments:</h3>
     <ul>
         <li><span class="parameter">context</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The context where this signal was used.
         </li>
         <li><span class="parameter">hints</span> A table with additional hints:
@@ -3504,7 +3576,6 @@ awful.rules.add_rule_source(
 
 
 
-
     <h3>Arguments:</h3>
     <ul>
         <li><span class="parameter">c</span>
@@ -3512,12 +3583,12 @@ awful.rules.add_rule_source(
          The client
         </li>
         <li><span class="parameter">context</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Why and what to resize. This is used for the
    handlers to know if they are capable of applying the new geometry.
         </li>
         <li><span class="parameter">Additional</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          arguments. Each context handler may
    interpret this differently.
          (<em>default</em> {})
@@ -3543,14 +3614,12 @@ awful.rules.add_rule_source(
 
 
 
-
 </dd>
     <dt>
     <a name = "request::urgent"></a>
     <strong>request::urgent</strong>
     </dt>
     <dd>
-
 
 
 
@@ -3610,7 +3679,6 @@ awful.rules.add_rule_source(
 
 
 
-
 </dd>
     <dt>
     <a name = "client.untagged"></a>
@@ -3647,14 +3715,12 @@ awful.rules.add_rule_source(
 
 
 
-
 </dd>
     <dt>
     <a name = "client.lowered"></a>
     <strong>lowered</strong>
     </dt>
     <dd>
-
 
 
 
@@ -3678,7 +3744,7 @@ awful.rules.add_rule_source(
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/client.html#request::geometry">client.geometry</a>
+         <a href="../classes/client.html#client:geometry">client.geometry</a>
     </ul>
 
 
@@ -3696,7 +3762,7 @@ awful.rules.add_rule_source(
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/client.html#request::geometry">client.geometry</a>
+         <a href="../classes/client.html#client:geometry">client.geometry</a>
     </ul>
 
 
@@ -3726,12 +3792,12 @@ awful.rules.add_rule_source(
     <h3>Arguments:</h3>
     <ul>
         <li><span class="parameter">content</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         The context (like "rules")
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The context (like &ldquo;rules&rdquo;)
          (<em>default</em> nil)
         </li>
         <li><span class="parameter">hints</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          Some hints.
          (<em>default</em> nil)
         </li>
@@ -3787,7 +3853,6 @@ awful.rules.add_rule_source(
         <li><span class="parameter">string</span>
 
 
-
         </li>
     </ul>
 
@@ -3807,7 +3872,6 @@ awful.rules.add_rule_source(
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -3831,7 +3895,6 @@ awful.rules.add_rule_source(
         <li><span class="parameter">integer</span>
 
 
-
         </li>
     </ul>
 
@@ -3851,7 +3914,6 @@ awful.rules.add_rule_source(
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -3878,12 +3940,12 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          the client to jump to
         </li>
         <li><span class="parameter">merge</span>
             <span class="types"><span class="type">bool</span> or <span class="type">function</span></span>
-         If true then merge tags (select the client's
+         If true then merge tags (select the client&rsquo;s
    first tag additionally) when the client is not visible.
    If it is a function, it will be called with the client and its first
    tag as arguments.
@@ -3983,7 +4045,7 @@ awful.rules.add_rule_source(
          The relative height.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client, otherwise focused one is used.
          (<em>optional</em>)
         </li>
@@ -4012,7 +4074,7 @@ awful.rules.add_rule_source(
          The tag to move the client to.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client to move, otherwise the focused one is used.
          (<em>optional</em>)
         </li>
@@ -4041,7 +4103,7 @@ awful.rules.add_rule_source(
          The tag to toggle.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client to toggle, otherwise the focused one is used.
          (<em>optional</em>)
         </li>
@@ -4067,7 +4129,7 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client to move.
         </li>
         <li><span class="parameter">s</span>
@@ -4090,13 +4152,13 @@ awful.rules.add_rule_source(
     <strong>awful.client.mark</a> <i class="deprecated_label">[deprecated]</i><a></strong>
     </dt>
     <dd>
-    Mark a client, and then call 'marked' hook.
+    Mark a client, and then call &lsquo;marked&rsquo; hook.
 
 
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client to mark, the focused one if not specified.
         </li>
     </ul>
@@ -4111,13 +4173,13 @@ awful.rules.add_rule_source(
     <strong>awful.client.unmark</a> <i class="deprecated_label">[deprecated]</i><a></strong>
     </dt>
     <dd>
-    Unmark a client and then call 'unmarked' hook.
+    Unmark a client and then call &lsquo;unmarked&rsquo; hook.
 
 
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client to unmark, or the focused one if not specified.
         </li>
     </ul>
@@ -4138,7 +4200,7 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client to check, or the focused one otherwise.
         </li>
     </ul>
@@ -4159,7 +4221,7 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client to toggle mark.
         </li>
     </ul>
@@ -4181,7 +4243,7 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          A client.
         </li>
         <li><span class="parameter">s</span>
@@ -4206,7 +4268,7 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client.
         </li>
     </ul>
@@ -4232,7 +4294,7 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          A client.
         </li>
     </ul>
@@ -4251,14 +4313,14 @@ awful.rules.add_rule_source(
     <strong>awful.client.floating.toggle</a> <i class="deprecated_label">[deprecated]</i><a></strong>
     </dt>
     <dd>
-    Toggle the floating state of a client between 'auto' and 'true'.
+    Toggle the floating state of a client between &lsquo;auto&rsquo; and &lsquo;true&rsquo;.
  Use <code>c.floating = not c.floating</code>
 
 
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          A client.
         </li>
     </ul>
@@ -4277,13 +4339,13 @@ awful.rules.add_rule_source(
     <strong>awful.client.dockable.get</a> <i class="deprecated_label">[deprecated]</i><a></strong>
     </dt>
     <dd>
-    Get a client's dockable state.
+    Get a client&rsquo;s dockable state.
 
 
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          A client.
         </li>
     </ul>
@@ -4298,7 +4360,7 @@ awful.rules.add_rule_source(
     <strong>awful.client.dockable.set</a> <i class="deprecated_label">[deprecated]</i><a></strong>
     </dt>
     <dd>
-    Set a client's dockable state, overriding auto-detection. </p>
+    Set a client&rsquo;s dockable state, overriding auto-detection. </p>
 
 <p> With this enabled you can dock windows by moving them from the center
  to the edge of the workarea.
@@ -4307,7 +4369,7 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          A client.
         </li>
         <li><span class="parameter">value</span>
@@ -4333,7 +4395,7 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client.
         </li>
         <li><span class="parameter">prop</span>
@@ -4360,7 +4422,7 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client.
         </li>
         <li><span class="parameter">prop</span>
@@ -4377,6 +4439,53 @@ awful.rules.add_rule_source(
 
 </dd>
     <dt>
+    <a name = "awful.client.run_or_raise"></a>
+    <strong>awful.client.run_or_raise</a> <i class="deprecated_label">[deprecated]</i><a></strong>
+    </dt>
+    <dd>
+    Switch to a client matching the given condition if running, else spawn it.
+ If multiple clients match the given condition then the next one is
+ focussed.
+
+
+    <h3>param:</h3>
+    <ul>
+        <li><span class="parameter">cmd</span>
+         the command to execute
+        </li>
+        <li><span class="parameter">matcher</span>
+         a function that returns true to indicate a matching client
+        </li>
+        <li><span class="parameter">merge</span>
+            <span class="types"><span class="type">bool</span> or <span class="type">function</span></span>
+         If true then merge tags (select the client&rsquo;s
+   first tag additionally) when the client is not visible.
+   If it is a function, it will be called with the client as argument.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../libraries/awful.spawn.html#once">awful.spawn.once</a></li>
+         <li><a href="../libraries/awful.spawn.html#single_instance">awful.spawn.single_instance</a></li>
+         <li><a href="../libraries/awful.spawn.html#raise_or_spawn">awful.spawn.raise_or_spawn</a></li>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="comment">-- run or raise urxvt (perhaps, with tabs) on modkey + semicolon
+</span>awful.key({ modkey, }, <span class="string">'semicolon'</span>, <span class="keyword">function</span> ()
+    <span class="keyword">local</span> matcher = <span class="keyword">function</span> (c)
+        <span class="keyword">return</span> awful.rules.match(c, {class = <span class="string">'URxvt'</span>})
+    <span class="keyword">end</span>
+    awful.client.run_or_raise(<span class="string">'urxvt'</span>, matcher)
+<span class="keyword">end</span>);</pre>
+    </ul>
+
+</dd>
+    <dt>
     <a name = "awful.client.get_transient_for_matching"></a>
     <strong>awful.client.get_transient_for_matching</a> <i class="deprecated_label">[deprecated]</i><a></strong>
     </dt>
@@ -4387,7 +4496,7 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client.
         </li>
         <li><span class="parameter">matcher</span>
@@ -4417,11 +4526,11 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The child client (having transient_for).
         </li>
         <li><span class="parameter">c2</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The parent client to check.
         </li>
     </ul>
@@ -4471,7 +4580,7 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The window to set as master.
         </li>
     </ul>
@@ -4492,7 +4601,7 @@ awful.rules.add_rule_source(
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The window to set as slave.
         </li>
     </ul>
@@ -4507,14 +4616,14 @@ awful.rules.add_rule_source(
     <strong>awful.client.idx</strong>
     </dt>
     <dd>
-    Calculate a client's column number, index in that column, and
+    Calculate a client&rsquo;s column number, index in that column, and
  number of visible clients in this column.
 
 
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          the client
         </li>
     </ul>
@@ -4538,7 +4647,7 @@ awful.rules.add_rule_source(
          the window factor value
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          the client
         </li>
     </ul>
@@ -4560,12 +4669,12 @@ awful.rules.add_rule_source(
     <ul>
         <li><span class="parameter">add</span>
             <span class="types"><span class="type">number</span></span>
-         Amount to increase/decrease the client's window factor.
+         Amount to increase/decrease the client&rsquo;s window factor.
    Should be between <code>-current_window_factor</code> and something close to
    infinite.  The normalisation then ensures that the sum of all factors is 1.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          the client
         </li>
     </ul>
@@ -4576,15 +4685,319 @@ awful.rules.add_rule_source(
 
 </dd>
 </dl>
+    <h2 class="section-header "><a name="Extra_properties_available_in_awful_rules_and_awful_spawn"></a>Extra properties available in awful.rules and awful.spawn</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "client.placement"></a>
+    <strong>placement</strong>
+    </dt>
+    <dd>
+    <p>The client default placement on the screen. </p>
+
+<p> The default config uses:</p>
+
+<pre><code>awful.placement.no_overlap+awful.placement.no_offscreen
+</code></pre>
+
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/awful.placement.html#">awful.placement</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "client.honor_padding"></a>
+    <strong>honor_padding</strong>
+    </dt>
+    <dd>
+    When applying the placement, honor the screen padding.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+
+
+         (<em>default</em> true)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/awful.placement.html#">awful.placement</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "client.honor_workarea"></a>
+    <strong>honor_workarea</strong>
+    </dt>
+    <dd>
+    When applying the placement, honor the screen work area. </p>
+
+<p> The workarea is the part of the screen that excludes the bars and docks.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+
+
+         (<em>default</em> true)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/awful.placement.html#">awful.placement</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "client.tag"></a>
+    <strong>tag</strong>
+    </dt>
+    <dd>
+    The client default tag.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">tag</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../classes/tag.html#">tag</a></li>
+         <li><a href="../classes/client.html#client.new_tag">new_tag</a></li>
+         <li><a href="../classes/client.html#client:tags">tags</a></li>
+         <li><a href="../classes/client.html#client.switch_to_tags">switch_to_tags</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "client.tags"></a>
+    <strong>tags</strong>
+    </dt>
+    <dd>
+    The client default tags. </p>
+
+<p> Avoid using the tag and tags properties at the same time, it will cause
+ issues.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+         (<em>default</em> {tag})
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../classes/tag.html#">tag</a></li>
+         <li><a href="../classes/client.html#client.new_tag">new_tag</a></li>
+         <li><a href="../classes/client.html#client:tags">tags</a></li>
+         <li><a href="../classes/client.html#client.switch_to_tags">switch_to_tags</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "client.new_tag"></a>
+    <strong>new_tag</strong>
+    </dt>
+    <dd>
+    <p>Create a new tag for this client. </p>
+
+<p> If the value is <code>true</code>, the new tag will be named after the client <a href="../classes/client.html#client.class">class</a>.
+ If it is a string, it will be the tag name.</p>
+
+<p> If a table is used, all of its properties will be passed to the tag
+ constructor:</p>
+
+<pre><code>new_tag = {
+    name     = "My new tag!", -- The tag name.
+    layout   = awful.layout.suit.max, -- Set the tag layout.
+    volatile = true, -- Remove the tag when the client is closed.
+}
+</code></pre>
+
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">new_tag</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a>, <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">boolean</span></span>
+
+
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../classes/tag.html#">tag</a></li>
+         <li><a href="../classes/client.html#client:tags">tags</a></li>
+         <li><a href="../classes/client.html#client.switch_to_tags">switch_to_tags</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "client.switch_to_tags"></a>
+    <strong>switch_to_tags</strong>
+    </dt>
+    <dd>
+    Unselect the current tags and select this client tags.
+ Note that this property was called <code>switchtotag</code> in previous Awesome versions.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+
+
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/tag.html#tag.selected">tag.selected</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "client.focus"></a>
+    <strong>focus</strong>
+    </dt>
+    <dd>
+    Define if the client should grab focus by default. </p>
+
+<p> The <a href="../classes/client.html#request::activate">request::activate</a> context for this call is <code>rules</code>.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+
+
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "client.titlebars_enabled"></a>
+    <strong>titlebars_enabled</strong>
+    </dt>
+    <dd>
+    Should this client have a titlebar by default.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+
+
+         (<em>default</em> false)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/awful.titlebar.html#">awful.titlebar</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "client.callback"></a>
+    <strong>callback</strong>
+    </dt>
+    <dd>
+    A function to call when this client is ready. </p>
+
+<p> It can be useful to set extra properties or perform actions.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/awful.spawn.html#">awful.spawn</a>
+    </ul>
+
+
+</dd>
+</dl>
     <h2 class="section-header "><a name="Tables"></a>Tables</h2>
 
     <dl class="function">
     <dt>
-    <a name = "client.object"></a>
-    <strong>client.object</strong>
+    <a name = "awful.object"></a>
+    <strong>awful.object</strong>
     </dt>
     <dd>
-    Client class.
+    Client class. </p>
+
+<p> This table allow to add more dynamic properties to the clients. For example,
+ doing:</p>
+
+<pre><code> function awful.client.object.set_my_cool_property(c, value)
+     -- Some logic code
+     c._my_secret_my_cool_property = value
+     c:emit_signal("property::my_cool_property)
+ end
+
+ function awful.client.object.get_my_cool_property()
+     return c._my_secret_my_cool_property
+ end
+</code></pre>
+
+<p> Will add a new &ldquo;my_cool_property&rdquo; dyanmic property to all client. These
+ methods will be called when an user does <code>c.my_cool_property = &quot;something&quot;</code>
+ or set them in <code>awdul.rules</code>.</p>
+
+<p> Note that doing this isn&rsquo;t required to set random properties to the client,
+ it is only useful when setting or getting these properties require code to
+ executed.
 
 
 
@@ -4608,7 +5021,6 @@ awful.rules.add_rule_source(
     <ul>
         <li><span class="parameter">focus</span>
             <span class="types"><a class="type" href="../classes/client.html#">client</a></span>
-
 
 
         </li>
@@ -4715,7 +5127,7 @@ awful.rules.add_rule_source(
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         A table with clients.
     </ol>
 
@@ -4766,7 +5178,7 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          A client to swap with.
         </li>
     </ul>
@@ -4781,15 +5193,14 @@ awful.rules.add_rule_source(
     <strong>client:tags (tags_table)</strong>
     </dt>
     <dd>
-
-<p>Access or set the client tags. </p>
+    <p>Access or set the client tags. </p>
 
 <p> Use the <a href="../classes/client.html#client.first_tag">first_tag</a> field to access the first tag of a client directly.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::tags</em></li>
+<li><em>property::tags</em></li>
 </ul>
 
 
@@ -4797,7 +5208,7 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">tags_table</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          A table with tags to set, or <code>nil</code> to get the
    current tags.
         </li>
@@ -4806,7 +5217,7 @@ awful.rules.add_rule_source(
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         A table with all tags.
     </ol>
 
@@ -4866,7 +5277,7 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">geo</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a> or <span class="type">nil</span></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> or <span class="type">nil</span></span>
          A table with new coordinates, or nil.
         </li>
     </ul>
@@ -4874,7 +5285,7 @@ awful.rules.add_rule_source(
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         A table with client geometry and coordinates.
     </ol>
 
@@ -4940,13 +5351,12 @@ awful.rules.add_rule_source(
     <strong>client:get_icon (index)</strong>
     </dt>
     <dd>
-
-<p>Get the client's n-th icon. </p>
+    <p>Get the client&rsquo;s n-th icon. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::icon</em></li>
+<li><em>property::icon</em></li>
 </ul>
 
 
@@ -4981,7 +5391,7 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -5005,7 +5415,7 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">...</span>
@@ -5030,7 +5440,7 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -5056,7 +5466,7 @@ awful.rules.add_rule_source(
     <ul>
         <li><span class="parameter">merge</span>
             <span class="types"><span class="type">bool</span> or <span class="type">function</span></span>
-         If true then merge tags (select the client's
+         If true then merge tags (select the client&rsquo;s
    first tag additionally) when the client is not visible.
    If it is a function, it will be called with the client and its first
    tag as arguments.
@@ -5103,7 +5513,7 @@ awful.rules.add_rule_source(
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/client.html#request::geometry">geometry</a>
+         <a href="../classes/client.html#client:geometry">geometry</a>
     </ul>
 
 
@@ -5229,7 +5639,7 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">c2</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The parent client to check.
         </li>
     </ul>
@@ -5259,7 +5669,7 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client that must be removed.
         </li>
     </ul>
@@ -5282,7 +5692,7 @@ awful.rules.add_rule_source(
          The index.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client.
          (<em>optional</em>)
         </li>
@@ -5305,7 +5715,7 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          A client.
         </li>
     </ul>
@@ -5313,7 +5723,7 @@ awful.rules.add_rule_source(
     <h3>Returns:</h3>
     <ol>
 
-        The same client if it's ok, nil otherwise.
+        The same client if it&rsquo;s ok, nil otherwise.
     </ol>
 
 
@@ -5330,7 +5740,7 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client that has been focused.
         </li>
     </ul>
@@ -5369,7 +5779,7 @@ awful.rules.add_rule_source(
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+           <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
         A client.
     </ol>
 
@@ -5409,7 +5819,7 @@ awful.rules.add_rule_source(
         <li><span class="parameter">filter</span>
             <span class="types"><span class="type">function</span></span>
          A function returning a boolean to either
-  accept or reject the client. If it's rejected, it will keep searching until
+  accept or reject the client. If it&rsquo;s rejected, it will keep searching until
   it runs out of options.
          (<em>default</em> nil)
         </li>
@@ -5443,7 +5853,7 @@ awful.rules.add_rule_source(
         <li><span class="parameter">filter</span>
             <span class="types"><span class="type">function</span></span>
          A function returning a boolean to either
-  accept or reject the client. If it's rejected, it will keep searching until
+  accept or reject the client. If it&rsquo;s rejected, it will keep searching until
   it runs out of options.
          (<em>default</em> nil)
         </li>
@@ -5470,12 +5880,12 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">dir</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The direction, can be either
    <code>&quot;up&quot;</code>, <code>&quot;down&quot;</code>, <code>&quot;left&quot;</code> or <code>&quot;right&quot;</code>.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client.
          (<em>optional</em>)
         </li>
@@ -5501,10 +5911,10 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">dir</span>
-         The direction, can be either "up", "down", "left" or "right".
+         The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client.
          (<em>optional</em>)
         </li>
@@ -5529,17 +5939,17 @@ awful.rules.add_rule_source(
     <strong>awful.client.shape.get_transformed (c, shape_name)</strong>
     </dt>
     <dd>
-    Get one of a client's shapes and transform it to include window decorations.
+    Get one of a client&rsquo;s shapes and transform it to include window decorations.
 
 
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client whose shape should be retrieved
         </li>
         <li><span class="parameter">shape_name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-         Either "bounding" or "clip"
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Either &ldquo;bounding&rdquo; or &ldquo;clip&rdquo;
         </li>
     </ul>
 
@@ -5553,12 +5963,12 @@ awful.rules.add_rule_source(
     <strong>awful.client.shape.update.all (c)</strong>
     </dt>
     <dd>
-    Update all of a client's shapes from the shapes the client set itself.
+    Update all of a client&rsquo;s shapes from the shapes the client set itself.
 
 
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client to act on
         </li>
     </ul>
@@ -5573,12 +5983,12 @@ awful.rules.add_rule_source(
     <strong>awful.client.shape.update.bounding (c)</strong>
     </dt>
     <dd>
-    Update a client's bounding shape from the shape the client set itself.
+    Update a client&rsquo;s bounding shape from the shape the client set itself.
 
 
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client to act on
         </li>
     </ul>
@@ -5593,12 +6003,12 @@ awful.rules.add_rule_source(
     <strong>awful.client.shape.update.clip (c)</strong>
     </dt>
     <dd>
-    Update a client's clip shape from the shape the client set itself.
+    Update a client&rsquo;s clip shape from the shape the client set itself.
 
 
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client to act on
         </li>
     </ul>
@@ -5624,7 +6034,7 @@ awful.rules.add_rule_source(
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+           <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
         The first urgent client.
     </ol>
 
@@ -5643,7 +6053,7 @@ awful.rules.add_rule_source(
     <ul>
         <li><span class="parameter">merge</span>
             <span class="types"><span class="type">bool</span> or <span class="type">function</span></span>
-         If true then merge tags (select the client's
+         If true then merge tags (select the client&rsquo;s
    first tag additionally) when the client is not visible.
    If it is a function, it will be called with the client as argument.
         </li>
@@ -5664,7 +6074,7 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client object.
         </li>
         <li><span class="parameter">prop</span>
@@ -5687,7 +6097,7 @@ awful.rules.add_rule_source(
 
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The client object.
         </li>
     </ul>
@@ -5704,7 +6114,7 @@ awful.rules.add_rule_source(
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-04-27 18:56:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

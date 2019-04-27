@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Topic 00-authors.md - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -61,7 +61,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -78,8 +77,6 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/dynamite.html">dynamite</a></li>
   <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
@@ -94,8 +91,8 @@
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -125,8 +122,8 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -148,18 +145,21 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../classes/naughty.list.notifications.html">naughty.list.notifications</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
   <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
   <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
@@ -206,54 +206,59 @@
 
 <div id="content">
 
-
-<h1>Authors</h1>
+    <h1>Authors</h1>
 
 <p><a name="Awesome___awesome_window_manager"></a></p>
-<h2>Awesome - awesome window manager</h2>
+
+<h2>Awesome &ndash; awesome window manager</h2>
 
 <p><strong>Maintainer</strong>:</p>
 
 <ul>
-    <li>© 2009- <a href="mailto:psychon@znc.in">Uli Schlachter</a></li>
+<li>© 2009- <a href="mailto:psychon%40znc.in">Uli Schlachter</a></li>
 </ul>
+
 
 <p><strong>Main contributors</strong>:</p>
 
 <ul>
-    <li>© 2013- <a href="mailto:elv1313@gmail.com">Emmanuel Lepage-Vallee</a></li>
-    <li>© 2014- <a href="https://daniel.hahler.de">Daniel Hahler</a></li>
-    <li>© 2014- <a href="mailto:actionless.loveless@gmail.com">Yauhen Kirylau</a></li>
+<li>© 2013- <a href="mailto:elv1313%40gmail.com">Emmanuel Lepage-Vallee</a></li>
+<li>© 2014- <a href="https://daniel.hahler.de">Daniel Hahler</a></li>
+<li>© 2014- <a href="mailto:actionless.loveless%40gmail.com">Yauhen Kirylau</a></li>
 </ul>
+
 
 <p><strong>Original author</strong>:</p>
 
 <ul>
-    <li>© 2007-2009 <a href="mailto:julien@danjou.info">Julien Danjou</a></li>
+<li>© 2007-2009 <a href="mailto:julien%40danjou.info">Julien Danjou</a></li>
 </ul>
+
 
 <p><strong>Past contributors</strong>:</p>
 
 <ul>
-    <li>© 2007-2008 <a href="mailto:mac@calmar.ws">Marco Candrian</a></li>
-    <li>© 2007 <a href="mailto:aldo@nullcube.com">Aldo Cortesi</a></li>
-    <li>© 2008 <a href="mailto:lucasdevries@gmail.com">Lucas de Vries</a></li>
-    <li>© 2008 <a href="mailto:madcoder@debian.org">Pierre Habouzit</a></li>
-    <li>© 2008 <a href="mailto:felix.morency@gmail.com">Félix C. Morency</a></li>
-    <li>© 2008 <a href="mailto:mg@ebfe.org">Michael Gehring</a></li>
-    <li>© 2008 <a href="mailto:hun@n-dimensional.de">Hans Ulrich Niedermann</a></li>
-    <li>© 2007-2009 <a href="mailto:ntarmos@ceid.upatras.gr">Nikos Ntarmos</a></li>
-    <li>© 2008-2009 <a href="mailto:damien.leone@gmail.com">Damien Leone</a></li>
-    <li>© 2008-2009 <a href="mailto:madman2003@gmail.com">Maarten Maathuis</a></li>
-    <li>© 2008-2010 <a href="mailto:gkusnierz@gmail.com">koniu</a></li>
-    <li>© 2007-2011 <a href="mailto:arnau@debian.org">Arnaud Fontaine</a></li>
-    <li>© 2008-2012 <a href="mailto:farhaven@googlemail.com">Gregor Best</a></li>
+<li>© 2007-2008 <a href="mailto:mac%40calmar.ws">Marco Candrian</a></li>
+<li>© 2007 <a href="mailto:aldo%40nullcube.com">Aldo Cortesi</a></li>
+<li>© 2008 <a href="mailto:lucasdevries%40gmail.com">Lucas de Vries</a></li>
+<li>© 2008 <a href="mailto:madcoder%40debian.org">Pierre Habouzit</a></li>
+<li>© 2008 <a href="mailto:felix.morency%40gmail.com">Félix C. Morency</a></li>
+<li>© 2008 <a href="mailto:mg%40ebfe.org">Michael Gehring</a></li>
+<li>© 2008 <a href="mailto:hun%40n-dimensional.de">Hans Ulrich Niedermann</a></li>
+<li>© 2007-2009 <a href="mailto:ntarmos%40ceid.upatras.gr">Nikos Ntarmos</a></li>
+<li>© 2008-2009 <a href="mailto:damien.leone%40gmail.com">Damien Leone</a></li>
+<li>© 2008-2009 <a href="mailto:madman2003%40gmail.com">Maarten Maathuis</a></li>
+<li>© 2008-2010 <a href="mailto:gkusnierz%40gmail.com">koniu</a></li>
+<li>© 2007-2011 <a href="mailto:arnau%40debian.org">Arnaud Fontaine</a></li>
+<li>© 2008-2012 <a href="mailto:farhaven%40googlemail.com">Gregor Best</a></li>
 </ul>
+
 
 <p>For a complete list of contributors, see our
 <a href="https://github.com/awesomeWM/awesome/graphs/contributors">GitHub page</a>.</p>
 
 <p><a name="License"></a></p>
+
 <h2>License</h2>
 
 <p>This program is free software; you can redistribute it and/or modify
@@ -271,20 +276,22 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.</p>
 
 <p><a name="Originally_based_on_dwm_code"></a></p>
+
 <h2>Originally based on dwm code</h2>
 
 <p>MIT/X Consortium License</p>
 
 <ul>
-    <li>© 2006-2007 <a href="mailto:garbeam@gmail.com">Anselm R. Garbe</a></li>
-    <li>© 2006-2007 <a href="mailto:a.h.vandijk@gmail.com">Sander van Dijk</a></li>
-    <li>© 2006-2007 <a href="mailto:jukka@salmi.ch">Jukka Salmi</a></li>
-    <li>© 2007 <a href="mailto:dfenze@gmail.com">Premysl Hruby</a></li>
-    <li>© 2007 <a href="mailto:nszabolcs@gmail.com">Szabolcs Nagy</a></li>
+<li>© 2006-2007 <a href="mailto:garbeam%40gmail.com">Anselm R. Garbe</a></li>
+<li>© 2006-2007 <a href="mailto:a.h.vandijk%40gmail.com">Sander van Dijk</a></li>
+<li>© 2006-2007 <a href="mailto:jukka%40salmi.ch">Jukka Salmi</a></li>
+<li>© 2007 <a href="mailto:dfenze%40gmail.com">Premysl Hruby</a></li>
+<li>© 2007 <a href="mailto:nszabolcs%40gmail.com">Szabolcs Nagy</a></li>
 </ul>
 
+
 <p>Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the "Software"),
+copy of this software and associated documentation files (the &ldquo;Software&rdquo;),
 to deal in the Software without restriction, including without limitation
 the rights to use, copy, modify, merge, publish, distribute, sublicense,
 and/or sell copies of the Software, and to permit persons to whom the
@@ -298,7 +305,7 @@ all copies or substantial portions of the Software.</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-04-27 18:56:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

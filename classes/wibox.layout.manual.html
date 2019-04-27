@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Class wibox.layout.manual - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -42,8 +42,8 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -65,18 +65,21 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../classes/naughty.list.notifications.html">naughty.list.notifications</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
   <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
   <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
@@ -126,7 +129,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -143,8 +145,6 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/dynamite.html">dynamite</a></li>
   <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
@@ -159,8 +159,8 @@
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -212,9 +212,7 @@
 <p> Use cases include desktop icons, complex custom composed widgets, a floating
  client layout and fine grained control over the output.</p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_defaults_manual.svg" alt="Usage example"/></p>
+<p><img src="../images/AUTOGEN_wibox_layout_defaults_manual.svg" alt="Usage example" /></p>
     <h3>Usage:</h3>
     <ul>
         <pre class="example">local w1, w2 = generic_widget(), generic_widget()
@@ -335,7 +333,7 @@ wibox.layout {
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.layout.manual:buttons">wibox.layout.manual:buttons (_buttons)</a></td>
-	<td class="summary">Set/get a widget's buttons.</td>
+	<td class="summary">Set/get a widget&rsquo;s buttons.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#wibox.layout.manual:emit_signal_recursive">wibox.layout.manual:emit_signal_recursive (signal_name, ...)</a></td>
@@ -374,42 +372,48 @@ wibox.layout {
  geometry format used elsewhere in Awesome.</p>
 
 <ul>
-    <li><em>x</em>: The horizontal position.</li>
-    <li><em>y</em>: The vertical position.</li>
-    <li><em>width</em>: The width.</li>
-    <li><em>height</em>: The height.</li>
+<li><em>x</em>: The horizontal position.</li>
+<li><em>y</em>: The vertical position.</li>
+<li><em>width</em>: The width.</li>
+<li><em>height</em>: The height.</li>
 </ul>
+
 
 <p> If a function is used, it follows the same prototype as <a href="../libraries/awful.placement.html#">awful.placement</a>
  functions.</p>
 
 <ul>
-    <li><em>geo</em>:
-    <ul>
-        <li><em>x</em>: The horizontal position (always 0).</li>
-        <li><em>y</em>: The vertical position (always 0).</li>
-        <li><em>width</em>: The width.</li>
-        <li><em>height</em>: The height.</li>
-        <li><em>geometry</em>: A function to get or set the geometry (for compatibility).
-        The function is compatible with the <a href="../libraries/awful.placement.html#">awful.placement</a> prototype.</li>
-    </ul></li>
-    <li><em>args</em>:
-    <ul>
-        <li><em>parent</em> The layout own geometry
-        <ul>
-            <li><em>x</em>: The horizontal position (always 0).</li>
-            <li><em>y</em>: The vertical position (always 0).</li>
-            <li><em>width</em>: The width.</li>
-            <li><em>height</em>: The height.</li>
-            <li><em>geometry</em>: A function to get or set the geometry (for compatibility)
-            The function is compatible with the <a href="../libraries/awful.placement.html#">awful.placement</a> prototype.</li>
-        </ul></li>
-    </ul></li>
+<li><em>geo</em>:
+
+<ul>
+<li><em>x</em>: The horizontal position (always 0).</li>
+<li><em>y</em>: The vertical position (always 0).</li>
+<li><em>width</em>: The width.</li>
+<li><em>height</em>: The height.</li>
+<li><em>geometry</em>: A function to get or set the geometry (for compatibility).
+The function is compatible with the <a href="../libraries/awful.placement.html#">awful.placement</a> prototype.</li>
+</ul>
+</li>
+<li><em>args</em>:
+
+<ul>
+<li><em>parent</em> The layout own geometry
+
+<ul>
+<li><em>x</em>: The horizontal position (always 0).</li>
+<li><em>y</em>: The vertical position (always 0).</li>
+<li><em>width</em>: The width.</li>
+<li><em>height</em>: The height.</li>
+<li><em>geometry</em>: A function to get or set the geometry (for compatibility)
+The function is compatible with the <a href="../libraries/awful.placement.html#">awful.placement</a> prototype.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 
-
-<p><img src="../images/AUTOGEN_wibox_layout_manual_add_at.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_wibox_layout_manual_add_at.svg" alt="Usage example" />
 
 
     <ul>
@@ -418,7 +422,7 @@ wibox.layout {
          The widget.
         </li>
         <li><span class="parameter">point</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a> or <span class="type">function</span></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> or <span class="type">function</span></span>
          Either an <code>{x=x,y=y}</code> table or a function
   returning the new geometry.
         </li>
@@ -481,7 +485,7 @@ l:add_at(w4, awful.placement.centered + awful.placement.maximize_horizontally)</
          The widget index.
         </li>
         <li><span class="parameter">point</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a> or <span class="type">function</span></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> or <span class="type">function</span></span>
          A new point value.
         </li>
     </ul>
@@ -502,9 +506,7 @@ l:add_at(w4, awful.placement.centered + awful.placement.maximize_horizontally)</
     <dd>
     Move a widget. </p>
 
-
-
-<p><img src="../images/AUTOGEN_wibox_layout_manual_move_widget.svg" alt="Usage example"/>
+<p><img src="../images/AUTOGEN_wibox_layout_manual_move_widget.svg" alt="Usage example" />
 
 
     <ul>
@@ -513,7 +515,7 @@ l:add_at(w4, awful.placement.centered + awful.placement.maximize_horizontally)</
          The widget.
         </li>
         <li><span class="parameter">point</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a> or <span class="type">function</span></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> or <span class="type">function</span></span>
          A new point value.
         </li>
     </ul>
@@ -621,7 +623,6 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
         <li><span class="parameter">boolean</span>
 
 
-
         </li>
     </ul>
 
@@ -701,7 +702,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
          The button number.
         </li>
         <li><span class="parameter">mods</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The modifiers (mod4, mod1 (alt), Control, Shift)
         </li>
         <li><span class="parameter">find_widgets_result</span> The entry from the result of
@@ -719,7 +720,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -788,7 +789,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
          The button number.
         </li>
         <li><span class="parameter">mods</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The modifiers (mod4, mod1 (alt), Control, Shift)
         </li>
         <li><span class="parameter">find_widgets_result</span> The entry from the result of
@@ -806,7 +807,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -875,7 +876,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -944,7 +945,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
         <li><span class="parameter">hierarchy</span>
             <span class="types"><span class="type">wibox.hierarchy</span></span>
          The hierarchy
- managing the widget's geometry.
+ managing the widget&rsquo;s geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1082,7 +1083,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
 
     <ul>
         <li><span class="parameter">widget</span>
-         ... Widgets that should be removed (must at least be one)
+         &hellip; Widgets that should be removed (must at least be one)
         </li>
     </ul>
 
@@ -1112,7 +1113,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
         The children
     </ol>
 
@@ -1145,7 +1146,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
     <strong>wibox.layout.manual:buttons (_buttons)</strong>
     </dt>
     <dd>
-    Set/get a widget's buttons.
+    Set/get a widget&rsquo;s buttons.
 
 
     <ul>
@@ -1171,8 +1172,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
 
     <ul>
         <li><span class="parameter">signal_name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
-
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
 
 
         </li>
@@ -1196,7 +1196,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">...</span>
@@ -1221,7 +1221,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -1252,7 +1252,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -1273,7 +1273,7 @@ l:move_widget(w1, awful.placement.bottom_right)</pre>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-04-27 18:56:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

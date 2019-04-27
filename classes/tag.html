@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <head>
-    <title>awesome API documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Class tag - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
 </head>
 <body>
@@ -45,8 +45,8 @@
 <h2>Classes</h2>
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
+  <li><a href="../classes/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../classes/awful.popup.html">awful.popup</a></li>
-  <li><a href="../classes/awful.spawn.watcher.html">awful.spawn.watcher</a></li>
   <li><a href="../classes/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../classes/awful.tooltip.html">awful.tooltip</a></li>
   <li><a href="../classes/awful.wibar.html">awful.wibar</a></li>
@@ -68,18 +68,21 @@
   <li><a href="../classes/client.html">client</a></li>
   <li><a href="../classes/drawable.html">drawable</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/gears.object.html">gears.object</a></li>
   <li><a href="../classes/gears.timer.html">gears.timer</a></li>
   <li><a href="../classes/key.html">key</a></li>
-  <li><a href="../classes/keygrabber.html">keygrabber</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/naughty.action.html">naughty.action</a></li>
+  <li><a href="../classes/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../classes/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../classes/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../classes/naughty.list.notifications.html">naughty.list.notifications</a></li>
   <li><a href="../classes/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../classes/naughty.widget.actionlist.html">naughty.widget.actionlist</a></li>
-  <li><a href="../classes/naughty.widget.box.html">naughty.widget.box</a></li>
+  <li><a href="../classes/naughty.widget.background.html">naughty.widget.background</a></li>
   <li><a href="../classes/naughty.widget.icon.html">naughty.widget.icon</a></li>
-  <li><a href="../classes/naughty.widget.legacy.html">naughty.widget.legacy</a></li>
   <li><a href="../classes/naughty.widget.message.html">naughty.widget.message</a></li>
   <li><a href="../classes/naughty.widget.title.html">naughty.widget.title</a></li>
   <li><a href="../classes/screen.html">screen</a></li>
@@ -129,7 +132,6 @@
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
-  <li><a href="../libraries/awful.hotkeys_popup.keys.termite.html">awful.hotkeys_popup.keys.termite</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
   <li><a href="../libraries/awful.key.html">awful.key</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
@@ -146,8 +148,6 @@
   <li><a href="../libraries/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../libraries/beautiful.html">beautiful</a></li>
   <li><a href="../libraries/beautiful.gtk.html">beautiful.gtk</a></li>
-  <li><a href="../libraries/beautiful.theme_assets.html">beautiful.theme_assets</a></li>
-  <li><a href="../libraries/beautiful.xresources.html">beautiful.xresources</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
   <li><a href="../libraries/dynamite.html">dynamite</a></li>
   <li><a href="../libraries/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
@@ -162,8 +162,8 @@
   <li><a href="../libraries/gears.debug.html">gears.debug</a></li>
   <li><a href="../libraries/gears.filesystem.html">gears.filesystem</a></li>
   <li><a href="../libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../libraries/gears.object.properties.html">gears.object.properties</a></li>
   <li><a href="../libraries/gears.protected_call.html">gears.protected_call</a></li>
   <li><a href="../libraries/gears.shape.html">gears.shape</a></li>
   <li><a href="../libraries/gears.sort.html">gears.sort</a></li>
@@ -215,12 +215,11 @@
 
 <p> Furthermore to the classes described here, one can also use signals as
  described in <a href="../classes/signals.html#">signals</a>.</p>
-<p> <img src="../images/tag_props.svg" alt="Client geometry"/></p>
+<p> <img src="../images/tag_props.svg" alt="Client geometry" /></p>
 
 <p> <strong>Creating tags</strong>:</p>
 
 <p> The default config initializes tags like this:</p>
-
 
 <pre>
 awful.tag(
@@ -230,9 +229,9 @@ awful.tag(
 )
 </pre>
 
+
 <p> If you wish to have tags with different properties, then <a href="../classes/tag.html#awful.tag.add">awful.tag.add</a> is
  a better choice:</p>
-
 
 <pre>
 awful.tag.add(<span class="string">"First tag"</span>, {
@@ -252,17 +251,18 @@ awful.tag.add(<span class="string">"Second tag"</span>, {
 })
 </pre>
 
-<p> Note: the example above sets "First tag" to be selected explicitly,
+
+<p> Note: the example above sets &ldquo;First tag&rdquo; to be selected explicitly,
  because otherwise you will find yourself without any selected tag.</p>
 
 <p> <strong>Accessing tags</strong>:</p>
 
-<p> To access the "current tags", use</p>
-
+<p> To access the &ldquo;current tags&rdquo;, use</p>
 
 <pre>
 <span class="keyword">local</span> tags = awful.screen.focused().selected_tags
 </pre>
+
 
 <p> See: <code>awful.screen.focused</code></p>
 
@@ -270,53 +270,52 @@ awful.tag.add(<span class="string">"Second tag"</span>, {
 
 <p> To ignore the corner case where multiple tags are selected:</p>
 
-
 <pre>
 <span class="keyword">local</span> t = awful.screen.focused().selected_tag
 </pre>
+
 
 <p> See: <a href="../classes/screen.html#screen.selected_tag">screen.selected_tag</a></p>
 
 <p> To get all tags for the focused screen:</p>
 
-
 <pre>
 <span class="keyword">local</span> tags = awful.screen.focused().tags
 </pre>
+
 
 <p> See: <a href="../classes/screen.html#screen.tags">screen.tags</a></p>
 
 <p> To get all tags:</p>
 
-
 <pre>
 <span class="keyword">local</span> tags = root.tags()
 </pre>
 
-<p> To get the current tag of the focused client:</p>
 
+<p> To get the current tag of the focused client:</p>
 
 <pre>
 <span class="keyword">local</span> t = client.focus <span class="keyword">and</span> client.focus.first_tag <span class="keyword">or</span> <span class="keyword">nil</span>
 </pre>
+
 
 <p> See: <a href="../classes/client.html#client.focus">client.focus</a>
  See: <a href="../classes/client.html#client.first_tag">client.first_tag</a></p>
 
 <p> To get a tag from its name:</p>
 
-
 <pre>
 <span class="keyword">local</span> t = awful.tag.find_by_name(awful.screen.focused(), <span class="string">"name"</span>)
 </pre>
 
+
 <p> <strong>Common shortcuts</strong>:</p>
 
 <p> Here is a few useful shortcuts not part of the default <a href="../sample files/rc.lua.html#">rc.lua</a>. Add these
- functions above <code>-- {{{ Key bindings</code>:</p>
+ functions above <code>&mdash; {{{ Key bindings</code>:</p>
 
 <p> Delete the current tag</p>
-
 
 <pre>
 <span class="keyword">local</span> <span class="keyword">function</span> delete_tag()
@@ -326,8 +325,8 @@ awful.tag.add(<span class="string">"Second tag"</span>, {
 <span class="keyword">end</span>
 </pre>
 
-<p> Create a new tag at the end of the list</p>
 
+<p> Create a new tag at the end of the list</p>
 
 <pre>
 <span class="keyword">local</span> <span class="keyword">function</span> add_tag()
@@ -337,8 +336,8 @@ awful.tag.add(<span class="string">"Second tag"</span>, {
 <span class="keyword">end</span>
 </pre>
 
-<p> Rename the current tag</p>
 
+<p> Rename the current tag</p>
 
 <pre>
 <span class="keyword">local</span> <span class="keyword">function</span> rename_tag()
@@ -357,8 +356,8 @@ awful.tag.add(<span class="string">"Second tag"</span>, {
 <span class="keyword">end</span>
 </pre>
 
-<p> Move the focused client to a new tag</p>
 
+<p> Move the focused client to a new tag</p>
 
 <pre>
 <span class="keyword">local</span> <span class="keyword">function</span> move_to_new_tag()
@@ -371,8 +370,8 @@ awful.tag.add(<span class="string">"Second tag"</span>, {
 <span class="keyword">end</span>
 </pre>
 
-<p> Copy the current tag at the end of the list</p>
 
+<p> Copy the current tag at the end of the list</p>
 
 <pre>
 <span class="keyword">local</span> <span class="keyword">function</span> copy_tag()
@@ -386,8 +385,8 @@ awful.tag.add(<span class="string">"Second tag"</span>, {
 <span class="keyword">end</span>
 </pre>
 
-<p> And, in the <code>globalkeys</code> table:</p>
 
+<p> And, in the <code>globalkeys</code> table:</p>
 
 <pre>
 awful.key({ modkey,           }, <span class="string">"a"</span>, add_tag,
@@ -401,6 +400,7 @@ awful.key({ modkey, <span class="string">"Mod1"</span>   }, <span class="string"
 awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string">"r"</span>, rename_tag,
           {description = <span class="string">"rename the current tag"</span>, group = <span class="string">"tag"</span>}),
 </pre>
+
 
 <p> See the
  <a href="../documentation/05-awesomerc.md.html#global_keybindings">
@@ -450,7 +450,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	<tr>
 	<td class="name" ><a href="#awful.tag.togglemfpol">awful.tag.togglemfpol (t)</a></td>
 	<td class="summary">Toggle size fill policy for the master client(s)
- between "expand" and "master<em>width</em>factor".</td>
+ between &ldquo;expand&rdquo; and &ldquo;master_width_factor&rdquo;.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.tag.incnmaster">awful.tag.incnmaster (add[, t[, sensible=false]])</a></td>
@@ -477,7 +477,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	<td class="summary">View previous tag.</td>
 	</tr>
 	<tr>
-	<td class="name" ><a href="#awful.tag.viewmore">awful.tag.viewmore (tags[, screen])</a></td>
+	<td class="name" ><a href="#awful.tag.viewmore">awful.tag.viewmore (tags[, screen[, maximum=#tags]])</a></td>
 	<td class="summary">View only a set of tags.</td>
 	</tr>
 	<tr>
@@ -521,6 +521,10 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	<td class="summary">The tag client layout.</td>
 	</tr>
 	<tr>
+	<td class="name" ><a href="#tag.layouts">layouts</a></td>
+	<td class="summary">The (proposed) list of available layouts for this tag.</td>
+	</tr>
+	<tr>
 	<td class="name" ><a href="#tag.volatile">volatile</a></td>
 	<td class="summary">Define if the tag must be deleted when the last client is untagged.</td>
 	</tr>
@@ -554,7 +558,6 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	<tr>
 	<td class="name" ><a href="#request::select">request::select</a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
@@ -629,11 +632,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.tag.setscreen">awful.tag.setscreen</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Set a tag's screen</td>
+	<td class="summary">Set a tag&rsquo;s screen</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.tag.getscreen">awful.tag.getscreen</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Get a tag's screen</td>
+	<td class="summary">Get a tag&rsquo;s screen</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.tag.selectedlist">awful.tag.selectedlist</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
@@ -682,7 +685,6 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	<tr>
 	<td class="name" ><a href="#awful.tag.setnmaster">awful.tag.setnmaster</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
 	<td class="summary">
-
 </td>
 	</tr>
 	<tr>
@@ -707,7 +709,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.tag.getidx">awful.tag.getidx</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
-	<td class="summary">Get a tag's index in the gettags() table.</td>
+	<td class="summary">Get a tag&rsquo;s index in the gettags() table.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.tag.viewonly">awful.tag.viewonly</a> <i class="deprecated_label">[deprecated]</i><a></a></td>
@@ -793,8 +795,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>awful.tag.add (name, props)</strong>
     </dt>
     <dd>
-
-<p>Add a tag. </p>
+    <p>Add a tag. </p>
 
 <p> This function allow to create tags from a set of properties:</p>
 
@@ -803,7 +804,6 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     layout = awful.layout.suit.max,
 })
 </code></pre>
-
 
 
 
@@ -825,7 +825,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#awful.tag.delete">tag.delete</a>
+         <a href="../classes/tag.html#tag:delete">tag.delete</a>
     </ul>
 
 
@@ -914,7 +914,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
          The screen.
         </li>
         <li><span class="parameter">idx</span>
-         Index in history. Defaults to "previous" which is a special index
+         Index in history. Defaults to &ldquo;previous&rdquo; which is a special index
  toggling between last two selected sets of tags. Number (eg 1) will go back
  to the given index in history.
         </li>
@@ -946,7 +946,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#tag.master_width_factor">master_width_factor</a>
+         <a href="../classes/tag.html#beautiful.master_width_factor">master_width_factor</a>
     </ul>
 
 
@@ -983,7 +983,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     </dt>
     <dd>
     Toggle size fill policy for the master client(s)
- between "expand" and "master<em>width</em>factor".
+ between &ldquo;expand&rdquo; and &ldquo;master_width_factor&rdquo;.
 
 
     <ul>
@@ -1030,7 +1030,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#beautiful.master_count">master_count</a>
+         <a href="../classes/tag.html#tag.master_count">master_count</a>
     </ul>
 
 
@@ -1154,10 +1154,14 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 </dd>
     <dt>
     <a name = "awful.tag.viewmore"></a>
-    <strong>awful.tag.viewmore (tags[, screen])</strong>
+    <strong>awful.tag.viewmore (tags[, screen[, maximum=#tags]])</strong>
     </dt>
     <dd>
-    View only a set of tags.
+    View only a set of tags. </p>
+
+<p> If <code>maximum</code> is set, there will be a limit on the number of new tag being
+ selected. The tags already selected do not count. To do nothing if one or
+ more of the tags are already selected, set <code>maximum</code> to zero.
 
 
     <ul>
@@ -1167,6 +1171,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
         <li><span class="parameter">screen</span>
          The screen of the tags.
          (<em>optional</em>)
+        </li>
+        <li><span class="parameter">maximum</span>
+            <span class="types"><span class="type">number</span></span>
+         The maximum number of tags to select.
+         (<em>default</em> #tags)
         </li>
     </ul>
 
@@ -1194,7 +1203,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#awful.tag.selected">selected</a>
+         <a href="../classes/tag.html#tag.selected">selected</a>
     </ul>
 
 
@@ -1214,13 +1223,12 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
          The screen concerned, or all if nil.
         </li>
         <li><span class="parameter">signal</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The signal name.
          (<em>optional</em>)
         </li>
         <li><span class="parameter">Callback</span>
             <span class="types"><span class="type">function</span></span>
-
 
 
          (<em>optional</em>)
@@ -1241,13 +1249,12 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>name</strong>
     </dt>
     <dd>
-
-<p>Tag name. </p>
+    <p>Tag name. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::name</em></li>
+<li><em>property::name</em></li>
 </ul>
 
 
@@ -1256,7 +1263,6 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-
 
 
         </li>
@@ -1272,13 +1278,12 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>selected</strong>
     </dt>
     <dd>
-
-<p>True if the tag is selected to be viewed. </p>
+    <p>True if the tag is selected to be viewed. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::selected</em></li>
+<li><em>property::selected</em></li>
 </ul>
 
 
@@ -1287,7 +1292,6 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -1303,13 +1307,12 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>activated</strong>
     </dt>
     <dd>
-
-<p>True if the tag is active and can be used. </p>
+    <p>True if the tag is active and can be used. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::activated</em></li>
+<li><em>property::activated</em></li>
 </ul>
 
 
@@ -1318,7 +1321,6 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -1334,15 +1336,14 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>index</strong>
     </dt>
     <dd>
-
-<p>The tag index. </p>
+    <p>The tag index. </p>
 
 <p> The index is the position as shown in the <a href="../classes/awful.widget.taglist.html#">awful.widget.taglist</a>.</p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::index</em></li>
+<li><em>property::index</em></li>
 </ul>
 
 
@@ -1351,7 +1352,6 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">integer</span>
-
 
 
         </li>
@@ -1367,13 +1367,12 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>screen</strong>
     </dt>
     <dd>
-
-<p>The tag screen. </p>
+    <p>The tag screen. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::screen</em></li>
+<li><em>property::screen</em></li>
 </ul>
 
 
@@ -1382,7 +1381,6 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">screen</span>
-
 
 
         </li>
@@ -1402,8 +1400,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>master_width_factor</strong>
     </dt>
     <dd>
-
-<p>The tag master width factor. </p>
+    <p>The tag master width factor. </p>
 
 <p> The master width factor is one of the 5 main properties used to configure
  the <a href="../classes/tag.html#tag.layout">layout</a>. Each layout interpret (or ignore) this property differenly.</p>
@@ -1413,23 +1410,17 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 <p> Here is the property effect on the tiled layouts:</p>
 
-
-
-<p><img src="../images/AUTOGEN_dynamite_suit_tile_mwfact.svg" alt="Usage example"/></p>
-
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_mwfact.svg" alt="Usage example" /></p>
 
 <p> Here is the property effect on the magnifier layout:</p>
 
-
-
-<p><img src="../images/AUTOGEN_dynamite_suit_magnifier_mwfact.svg" alt="Usage example"/></p>
-
+<p><img src="../images/AUTOGEN_dynamite_suit_magnifier_mwfact.svg" alt="Usage example" /></p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::mwfact</em> (deprecated)</li>
-    <li>*property::master<em>width</em>factor*</li>
+<li><em>property::mwfact</em> (deprecated)</li>
+<li><em>property::master_width_factor</em></li>
 </ul>
 
 
@@ -1446,7 +1437,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <li><a href="../classes/tag.html#beautiful.master_count">master_count</a></li>
+         <li><a href="../classes/tag.html#tag.master_count">master_count</a></li>
          <li><a href="../classes/tag.html#tag.column_count">column_count</a></li>
          <li><a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a></li>
          <li><a href="../classes/tag.html#tag.gap">gap</a></li>
@@ -1459,8 +1450,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>layout</strong>
     </dt>
     <dd>
-
-<p>The tag client layout. </p>
+    <p>The tag client layout. </p>
 
 <p> This property hold the layout. A layout can be either stateless or stateful.
  Stateless layouts are used by default by Awesome. They tile clients without
@@ -1477,26 +1467,24 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
  fields:</p>
 
 <ul>
-    <li><strong>name</strong> (<em>string</em>): The layout name. This should be unique.</li>
-    <li><strong>arrange</strong> (<em>function</em>): The function called when the clients need to be
-     placed. The only parameter is a table or arguments returned by
-     <a href="../libraries/awful.layout.html#parameters">awful.layout.parameters</a></li>
+<li><strong>name</strong> (<em>string</em>): The layout name. This should be unique.</li>
+<li><strong>arrange</strong> (<em>function</em>): The function called when the clients need to be
+  placed. The only parameter is a table or arguments returned by
+  <a href="../libraries/awful.layout.html#parameters">awful.layout.parameters</a></li>
 </ul>
+
 
 <p> <strong>Stateful layouts:</strong></p>
 
 <p> The stateful layouts API is the same as stateless, but they are a function
  returining a layout instead of a layout itself. They also should have an
- <code>is_dynamic = true</code> property. If they don't, <a href="../libraries/awful.tag.html#">awful.tag</a> will create a new
+ <code>is_dynamic = true</code> property. If they don&rsquo;t, <a href="../libraries/awful.tag.html#">awful.tag</a> will create a new
  instance everytime the layout is set. If they do, the instance will be
  cached and re-used.</p>
 
 <p> Here is a simple stateful layout example:</p>
 
-
-
-<p><img src="../images/AUTOGEN_awful_tag_simple_layout.svg" alt="Usage example"/></p>
-
+<p><img src="../images/AUTOGEN_awful_tag_simple_layout.svg" alt="Usage example" /></p>
 
 <pre><code> local t = mouse.screen.selected_tag --luacheck: no unused
  -- The first argument (_) is a tag, it is here unused.
@@ -1508,7 +1496,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::layout</em></li>
+<li><em>property::layout</em></li>
 </ul>
 
 
@@ -1532,14 +1520,48 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 </dd>
     <dt>
+    <a name = "tag.layouts"></a>
+    <strong>layouts</strong>
+    </dt>
+    <dd>
+    The (proposed) list of available layouts for this tag. </p>
+
+<p> This property allows to define a subset (or superset) of layouts available
+ in the &ldquo;rotation table&rdquo;. In the default configuration file, <code>Mod4+Space</code>
+ and <code>Mod4+Shift+Space</code> are used to switch between tags. The
+ <a href="../classes/awful.widget.layoutlist.html#">awful.widget.layoutlist</a> also uses this as its default layout filter.</p>
+
+<p> By default, it will be the same as <a href="../libraries/awful.layout.html#layouts">awful.layout.layouts</a> unless there the
+ a layout not present is used. If that&rsquo;s the case they will be added at the
+ front of the list.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../libraries/awful.layout.html#layouts">awful.layout.layouts</a></li>
+         <li><a href="../classes/tag.html#tag.layout">layout</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
     <a name = "tag.volatile"></a>
     <strong>volatile</strong>
     </dt>
     <dd>
+    <p>Define if the tag must be deleted when the last client is untagged. </p>
 
-<p>Define if the tag must be deleted when the last client is untagged. </p>
-
-<p> This is useful to create "throw-away" tags for operation like 50/50
+<p> This is useful to create &ldquo;throw-away&rdquo; tags for operation like 50/50
  side-by-side views.</p>
 
 <pre><code>local t = awful.tag.add("Temporary", {
@@ -1555,7 +1577,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::volatile</em></li>
+<li><em>property::volatile</em></li>
 </ul>
 
 
@@ -1564,7 +1586,6 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
-
 
 
         </li>
@@ -1580,8 +1601,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>gap</strong>
     </dt>
     <dd>
-
-<p>The gap (spacing, also called <a href="../classes/tag.html#beautiful.useless_gap">useless_gap</a>) between clients. </p>
+    <p>The gap (spacing, also called <a href="../classes/tag.html#beautiful.useless_gap">useless_gap</a>) between clients. </p>
 
 <p> This property allow to waste space on the screen in the name of style,
  unicorns and readability.</p>
@@ -1589,15 +1609,12 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 <p> Note that pixels cannot be divided, the gap will be rounded to the closest
  multiplier of 2.</p>
 
-
-
-<p><img src="../images/AUTOGEN_dynamite_suit_tile_gap.svg" alt="Usage example"/></p>
-
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_gap.svg" alt="Usage example" /></p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li>*property::useless_gap*</li>
+<li><em>property::useless_gap</em></li>
 </ul>
 
 
@@ -1624,13 +1641,12 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>gap_single_client</strong>
     </dt>
     <dd>
-
-<p>Enable gaps for a single client. </p>
+    <p>Enable gaps for a single client. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::gap_single_client</em></li>
+<li><em>property::gap_single_client</em></li>
 </ul>
 
 
@@ -1653,21 +1669,21 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>master_fill_policy</strong>
     </dt>
     <dd>
+    <p>Set size fill policy for the master client(s). </p>
 
-<p>Set size fill policy for the master client(s). </p>
-
-<p> <em>* Possible values</em>*:</p>
+<p> <strong> Possible values</strong>:</p>
 
 <ul>
-    <li><em>expand</em>: Take all the space</li>
-    <li>*master<em>width</em>factor*: Only take the ratio defined by the
-    <a href="../classes/tag.html#tag.master_width_factor">master_width_factor</a></li>
+<li><em>expand</em>: Take all the space</li>
+<li><em>master_width_factor</em>: Only take the ratio defined by the
+<a href="../classes/tag.html#beautiful.master_width_factor">master_width_factor</a></li>
 </ul>
+
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li>*property::master<em>fill</em>policy*</li>
+<li><em>property::master_fill_policy</em></li>
 </ul>
 
 
@@ -1676,7 +1692,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-         "expand" or "master<em>width</em>factor"
+         &ldquo;expand&rdquo; or &ldquo;master_width_factor&rdquo;
         </li>
     </ul>
 
@@ -1690,21 +1706,17 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>master_count</strong>
     </dt>
     <dd>
-
-<p>Set the number of master windows. </p>
+    <p>Set the number of master windows. </p>
 
 <p> Here is the property effect on the tiled layouts:</p>
 
-
-
-<p><img src="../images/AUTOGEN_dynamite_suit_tile_nmaster.svg" alt="Usage example"/></p>
-
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_nmaster.svg" alt="Usage example" /></p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::nmaster</em> (deprecated)</li>
-    <li>*property::master_count*</li>
+<li><em>property::nmaster</em> (deprecated)</li>
+<li><em>property::master_count</em></li>
 </ul>
 
 
@@ -1727,13 +1739,12 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>icon</strong>
     </dt>
     <dd>
-
-<p>Set the tag icon. </p>
+    <p>Set the tag icon. </p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::icon</em></li>
+<li><em>property::icon</em></li>
 </ul>
 
 
@@ -1757,21 +1768,17 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>column_count</strong>
     </dt>
     <dd>
-
-<p>Set the number of columns. </p>
+    <p>Set the number of columns. </p>
 
 <p> Here is the property effect on the tiled layouts:</p>
 
-
-
-<p><img src="../images/AUTOGEN_dynamite_suit_tile_ncol.svg" alt="Usage example"/></p>
-
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_ncol.svg" alt="Usage example" /></p>
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-    <li><em>property::ncol</em> (deprecated)</li>
-    <li>*property::column_count*</li>
+<li><em>property::ncol</em> (deprecated)</li>
+<li><em>property::column_count</em></li>
 </ul>
 
 
@@ -1808,7 +1815,6 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 
-
 </dd>
     <dt>
     <a name = "tag.tagged"></a>
@@ -1821,7 +1827,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>Arguments:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The tagged client.
         </li>
     </ul>
@@ -1842,7 +1848,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>Arguments:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../classes/client.html#client.object">client.object</a></span>
+            <span class="types"><a class="type" href="../classes/client.html#awful.object">client.object</a></span>
          The untagged client.
         </li>
     </ul>
@@ -1947,7 +1953,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <li><a href="../classes/tag.html#tag.master_width_factor">master_width_factor</a></li>
+         <li><a href="../classes/tag.html#beautiful.master_width_factor">master_width_factor</a></li>
          <li><a href="../classes/tag.html#tag.gap">gap</a></li>
     </ul>
 
@@ -2008,15 +2014,14 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>beautiful.master_fill_policy</strong>
     </dt>
     <dd>
+    <p>The default fill policy. </p>
 
-<p>The default fill policy. </p>
-
-<p> <em>* Possible values</em>*:</p>
+<p> <strong> Possible values</strong>:</p>
 
 <ul>
-    <li><em>expand</em>: Take all the space</li>
-    <li>*master<em>width</em>factor*: Only take the ratio defined by the
-    <a href="../classes/tag.html#tag.master_width_factor">master_width_factor</a></li>
+<li><em>expand</em>: Take all the space</li>
+<li><em>master_width_factor</em>: Only take the ratio defined by the
+<a href="../classes/tag.html#beautiful.master_width_factor">master_width_factor</a></li>
 </ul>
 
 
@@ -2025,7 +2030,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
-         (default: "expand")
+         (default: &ldquo;expand&rdquo;)
         </li>
     </ul>
 
@@ -2057,7 +2062,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#beautiful.master_count">master_count</a>
+         <a href="../classes/tag.html#tag.master_count">master_count</a>
     </ul>
 
 
@@ -2140,7 +2145,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#awful.tag.swap">tag.swap</a>
+         <a href="../classes/tag.html#tag:swap">tag.swap</a>
     </ul>
 
 
@@ -2167,7 +2172,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#awful.tag.delete">tag.delete</a>
+         <a href="../classes/tag.html#tag:delete">tag.delete</a>
     </ul>
 
 
@@ -2202,7 +2207,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>awful.tag.setscreen</a> <i class="deprecated_label">[deprecated]</i><a></strong>
     </dt>
     <dd>
-    Set a tag's screen
+    Set a tag&rsquo;s screen
 
 
     <h3>param:</h3>
@@ -2229,7 +2234,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>awful.tag.getscreen</a> <i class="deprecated_label">[deprecated]</i><a></strong>
     </dt>
     <dd>
-    Get a tag's screen
+    Get a tag&rsquo;s screen
 
 
     <h3>param:</h3>
@@ -2320,7 +2325,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>See also:</h3>
     <ul>
          <li><a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a></li>
-         <li><a href="../classes/tag.html#tag.master_width_factor">master_width_factor</a></li>
+         <li><a href="../classes/tag.html#beautiful.master_width_factor">master_width_factor</a></li>
     </ul>
 
 
@@ -2345,7 +2350,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <li><a href="../classes/tag.html#tag.master_width_factor">master_width_factor</a></li>
+         <li><a href="../classes/tag.html#beautiful.master_width_factor">master_width_factor</a></li>
          <li><a href="../classes/tag.html#beautiful.master_fill_policy">master_fill_policy</a></li>
     </ul>
 
@@ -2501,10 +2506,10 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">policy</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Can be set to
- "expand" (fill all the available workarea) or
- "master<em>width</em>factor" (fill only an area inside the master width factor)
+ &ldquo;expand&rdquo; (fill all the available workarea) or
+ &ldquo;master_width_factor&rdquo; (fill only an area inside the master width factor)
         </li>
         <li><span class="parameter">t</span>
             <span class="types"><a class="type" href="../classes/tag.html#">tag</a></span>
@@ -2557,7 +2562,6 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 
-
     <h3>param:</h3>
     <ul>
         <li><span class="parameter">nmaster</span>
@@ -2573,7 +2577,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#beautiful.master_count">master_count</a>
+         <a href="../classes/tag.html#tag.master_count">master_count</a>
     </ul>
 
 
@@ -2598,7 +2602,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#beautiful.master_count">master_count</a>
+         <a href="../classes/tag.html#tag.master_count">master_count</a>
     </ul>
 
 
@@ -2711,7 +2715,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>awful.tag.getidx</a> <i class="deprecated_label">[deprecated]</i><a></strong>
     </dt>
     <dd>
-    Get a tag's index in the gettags() table.
+    Get a tag&rsquo;s index in the gettags() table.
 
 
     <h3>param:</h3>
@@ -2794,7 +2798,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
          The tag.
         </li>
         <li><span class="parameter">prop</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The property name.
         </li>
     </ul>
@@ -2871,7 +2875,6 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
             <span class="types"><span class="type">integer</span></span>
 
 
-
          (<em>default</em> 20)
         </li>
     </ul>
@@ -2886,8 +2889,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>awful.tag.layouts</strong>
     </dt>
     <dd>
-
-<p>An ordered list of layouts.
+    <p>An ordered list of layouts.
  <code>awful.tag.layout</code> Is usually defined in <a href="../sample files/rc.lua.html#">rc.lua</a>. It store the list of
  layouts used when selecting the previous and next layouts. This is the
  default:</p>
@@ -2912,7 +2914,6 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
      -- awful.layout.suit.corner.se,
  }
 </code></pre>
-
 
 
 
@@ -2980,7 +2981,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -3004,7 +3005,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">...</span>
@@ -3029,7 +3030,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -3071,14 +3072,12 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>tag:delete ([fallback_tag=awful.tag.find_fallback()[, force=false]])</strong>
     </dt>
     <dd>
-
-<p>Delete a tag. </p>
+    <p>Delete a tag. </p>
 
 <p> To delete the current tag:</p>
 
 <pre><code>mouse.screen.selected_tag:delete()
 </code></pre>
-
 
 
 
@@ -3102,7 +3101,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
          Returns true if the tag is successfully deleted.
  If there are no clients exclusively on this tag then delete it. Any
- stickied clients are assigned to the optional 'fallback_tag'.
+ stickied clients are assigned to the optional &lsquo;fallback_tag&rsquo;.
  If after deleting the tag there is no selected tag, try and restore from
  history or select the first tag on the screen.
     </ol>
@@ -3130,7 +3129,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
          The screen of the tag
         </li>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          The name of the tag
         </li>
     </ul>
@@ -3169,7 +3168,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../classes/tag.html#awful.tag.selected">selected</a>
+         <a href="../classes/tag.html#tag.selected">selected</a>
     </ul>
 
 
@@ -3181,7 +3180,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-08-06 18:05:07 </i>
+<i style="float:right;">Last updated 2019-04-27 18:56:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
