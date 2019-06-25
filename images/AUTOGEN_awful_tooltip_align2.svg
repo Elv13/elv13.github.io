@@ -130,8 +130,6 @@
 </g>
 </defs>
 <g id="surface7">
-<path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.266667;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 0.75 0.75 L 299.25 0.75 L 299.25 74.25 L 0.75 74.25 Z M 0.75 0.75 "/>
-<path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.2;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 10 10 L 290 10 L 290 65 L 10 65 Z M 10 10 "/>
 <use xlink:href="#surface12" transform="matrix(1,0,0,1,101,26)" mask="url(#mask0)"/>
 <use xlink:href="#surface18" transform="matrix(1,0,0,1,126,26)" mask="url(#mask1)"/>
 <use xlink:href="#surface24" transform="matrix(1,0,0,1,104,36)" mask="url(#mask2)"/>

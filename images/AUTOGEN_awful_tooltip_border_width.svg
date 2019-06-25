@@ -74,8 +74,6 @@
 </g>
 </defs>
 <g id="surface6">
-<path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.266667;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 0.75 0.75 L 639.25 0.75 L 639.25 54.25 L 0.75 54.25 Z M 0.75 0.75 "/>
-<path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.2;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 10 10 L 630 10 L 630 45 L 10 45 Z M 10 10 "/>
 <use xlink:href="#surface14" transform="matrix(1,0,0,1,0,26)" mask="url(#mask0)"/>
 <use xlink:href="#surface23" transform="matrix(1,0,0,1,128,26)" mask="url(#mask1)"/>
 <use xlink:href="#surface32" transform="matrix(1,0,0,1,256,26)" mask="url(#mask2)"/>

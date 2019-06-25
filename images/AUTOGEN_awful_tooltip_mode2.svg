@@ -55,12 +55,10 @@
 </g>
 </defs>
 <g id="surface4">
-<path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.266667;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 0.75 0.75 L 199.25 0.75 L 199.25 99.25 L 0.75 99.25 Z M 0.75 0.75 "/>
-<path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.2;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 10 10 L 190 10 L 190 90 L 10 90 Z M 10 10 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(38.039216%,50.588235%,100%);fill-opacity:0.490196;" d="M 50 25 L 150 25 L 150 69 L 50 69 Z M 50 25 "/>
 <use xlink:href="#surface9" transform="matrix(1,0,0,1,50,69)" mask="url(#mask0)"/>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 50 10 L 50 20 L 53 18 L 56 22 L 58 22 L 55 18 L 59 18 Z M 50 10 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,0%,0%);fill-opacity:1;" d="M 75 35 L 75 45 L 78 43 L 81 47 L 83 47 L 80 43 L 84 43 Z M 75 35 "/>
-<path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(100%,0%,0%);stroke-opacity:1;stroke-dasharray:1,1;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 50 10 L 75 35 "/>
+<path style="fill:none;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(100%,0%,0%);stroke-opacity:1;stroke-dasharray:1,1;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 50 10 L 75 35 "/>
 </g>
 </svg>
