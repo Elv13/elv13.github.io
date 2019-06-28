@@ -34,6 +34,7 @@
 <ul>
 <li><a href="#Functions">Functions</a></li>
 <li><a href="#Object_methods">Object methods </a></li>
+<li><a href="#Signals">Signals</a></li>
 <li><a href="#Rule_components">Rule components</a></li>
 </ul>
 
@@ -47,11 +48,11 @@
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
-  <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
-  <li><a href="../libraries/awful.tag.rules.html">awful.tag.rules</a></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
+  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
+  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><strong>gears.matcher</strong></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
@@ -59,6 +60,14 @@
   <li><a href="../libraries/naughty.html">naughty</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.widget.html">wibox.widget</a></li>
+</ul>
+<h2>Declarative rules</h2>
+<ul class="nowrap">
+  <li><a href="../declarative rules/ruled.client.html">ruled.client</a></li>
+  <li><a href="../declarative rules/ruled.clipboard.html">ruled.clipboard</a></li>
+  <li><a href="../declarative rules/ruled.notifications.html">ruled.notifications</a></li>
+  <li><a href="../declarative rules/ruled.screen.html">ruled.screen</a></li>
+  <li><a href="../declarative rules/ruled.tag.html">ruled.tag</a></li>
 </ul>
 <h2>Widgets</h2>
 <ul class="nowrap">
@@ -164,6 +173,16 @@
   <li><a href="../theme related libraries/gears.color.html">gears.color</a></li>
   <li><a href="../theme related libraries/gears.shape.html">gears.shape</a></li>
 </ul>
+<h2>Client tiling</h2>
+<ul class="nowrap">
+  <li><a href="../client tiling/dynamite.html">dynamite</a></li>
+  <li><a href="../client tiling/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
+  <li><a href="../client tiling/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
+  <li><a href="../client tiling/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
+  <li><a href="../client tiling/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../client tiling/dynamite.utils.html">dynamite.utils</a></li>
+  <li><a href="../client tiling/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
+</ul>
 <h2>Sample files</h2>
 <ul class="nowrap">
   <li><a href="../sample files/rc.lua.html">rc.lua</a></li>
@@ -173,15 +192,21 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.key.html">awful.key</a></li>
+  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
+  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
+  <li><a href="../classes/wibox.container.scale.html">wibox.container.scale</a></li>
+  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.hierarchy.html">wibox.hierarchy</a></li>
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
+  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/xproperties.html">xproperties</a></li>
 </ul>
 <h2>Documentation</h2>
@@ -209,7 +234,7 @@
 <p> Sources
  =======</p>
 
-<p> This module holds the business logic used by <a href="../libraries/awful.rules.html#">awful.rules</a>. It provides an
+<p> This module holds the business logic used by <code>awful.rules</code>. It provides an
  object on which one can add sets of rules or, alternatively, functions.
  In this module, the sets of rules or custom functions are called sources.</p>
 
@@ -286,10 +311,9 @@
 </pre>
 
 
-<p> More examples are available in <a href="../libraries/awful.rules.html#">awful.rules</a>.</p>
+<p> More examples are available in <code>awful.rules</code>.</p>
     <h3>See also:</h3>
     <ul>
-         <a href="../libraries/awful.rules.html#">awful.rules</a>
     </ul>
     <h3>Info:</h3>
     <ul>
@@ -313,6 +337,10 @@
 	<td class="summary">Check if an object matches a given set of rules.</td>
 	</tr>
 	<tr>
+	<td class="name" ><a href="#add_property_matcher"><span class='function_modname'>gears.matcher.</span>add_property_matcher (name, f)</a></td>
+	<td class="summary">Assign a function to match an object property against a value.</td>
+	</tr>
+	<tr>
 	<td class="name" ><a href="#add_matching_rules"><span class='function_modname'>gears.matcher.</span>add_matching_rules (name, rules[, depends_on={}[, precede={}]])</a></td>
 	<td class="summary">Add a set of matching rules.</td>
 	</tr>
@@ -327,6 +355,18 @@
 	<tr>
 	<td class="name" ><a href="#apply"><span class='function_modname'>gears.matcher.</span>apply (o)</a></td>
 	<td class="summary">Apply awful.rules.rules to an object.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#append_rule"><span class='function_modname'>gears.matcher.</span>append_rule (string, table)</a></td>
+	<td class="summary">Add a new rule to the default set.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#append_rules"><span class='function_modname'>gears.matcher.</span>append_rules (string, table)</a></td>
+	<td class="summary">Add a new rules to the default set.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#remove_rule"><span class='function_modname'>gears.matcher.</span>remove_rule (string, string)</a></td>
+	<td class="summary">Remove a new rule to the default set.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#gears.matcher">gears.matcher ()</a></td>
@@ -346,6 +386,29 @@
 	<tr>
 	<td class="name" ><a href="#weak_connect_signal">:weak_connect_signal <span class='function_args'>(name, func)</span></a></td>
 	<td class="summary">Connect to a signal weakly.</td>
+	</tr>
+</table>
+<h2><a href="#Signals">Signals</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#rule::appended">rule::appended</a></td>
+	<td class="summary">A rule has been added to a set of matching rules.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#rule::removed">rule::removed</a></td>
+	<td class="summary">A rule has been removed to a set of matching rules.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#matching_function::added">matching_function::added</a></td>
+	<td class="summary">A matching source function has been added.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#matching_rules::added">matching_rules::added</a></td>
+	<td class="summary">A matching source table has been added.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#matching_source::removed">matching_source::removed</a></td>
+	<td class="summary">A matching source function has been removed.</td>
 	</tr>
 </table>
 <h2><a href="#Rule_components">Rule components</a></h2>
@@ -374,6 +437,10 @@
 	<td class="name" ><a href="#except_any">except_any</a></td>
 	<td class="summary">The negative equivalent of <a href="../libraries/gears.matcher.html#rule_any">rule_any</a>.</td>
 	</tr>
+	<tr>
+	<td class="name" ><a href="#id">id</a></td>
+	<td class="summary">An identifier for this rule.</td>
+	</tr>
 </table>
 
 <br/>
@@ -381,7 +448,7 @@
 
 
     <h2 class="section-header "><a name="Functions"></a>Functions</h2>
-
+    Methods
     <dl class="function">
     <dt>
     <a name = "matches_rule"></a>
@@ -433,7 +500,8 @@
         <li><span class="parameter">rules</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The rules to check. List with &ldquo;rule&rdquo;, &ldquo;rule_any&rdquo;,
-  &ldquo;except&rdquo; and &ldquo;except_any&rdquo; keys.
+  &ldquo;except&rdquo; and &ldquo;except_any&rdquo; keys. If no rules are provided, the default set
+  will be used.
          (<em>default</em> nil)
         </li>
     </ul>
@@ -478,6 +546,59 @@
 
 
 
+
+</dd>
+    <dt>
+    <a name = "add_property_matcher"></a>
+    <strong><span class='function_modname'>gears.matcher.</span>add_property_matcher (name, f)</strong>
+    </dt>
+    <dd>
+    Assign a function to match an object property against a value. </p>
+
+<p> The default matcher uses the <code>==</code> operator for all types. It also uses the
+ <code>:match()</code> method for string and allows pattern matching.</p>
+
+<p> Custom property matcher are useful when objects are compared. This avoids
+ having to implement custom metatable for everything.</p>
+
+<p> The <code>f</code> function receives 3 arguments:</p>
+
+<ul>
+<li>The object to match against (anything)</li>
+<li>The value to compare</li>
+<li>The property/field name.</li>
+</ul>
+
+
+<p> It should return <code>true</code> if it matches and <code>false</code> otherwise.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The property name.
+        </li>
+        <li><span class="parameter">f</span>
+            <span class="types"><span class="type">function</span></span>
+         The matching function.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="comment">-- Manually match the screen in various ways.
+</span>matcher:add_property_matcher(<span class="string">"screen"</span>, <span class="keyword">function</span>(c, value)
+   <span class="keyword">return</span> c.screen == value
+       <span class="keyword">or</span> screen[c.screen] == value
+       <span class="keyword">or</span> c.screen.outputs[value] ~= <span class="keyword">nil</span>
+       <span class="keyword">or</span> value == <span class="string">"any"</span>
+       <span class="keyword">or</span> (value == <span class="string">"primary"</span> <span class="keyword">and</span> c.screen == screen.primary)
+<span class="keyword">end</span>)</pre>
+    </ul>
 
 </dd>
     <dt>
@@ -637,6 +758,75 @@
 
 </dd>
     <dt>
+    <a name = "append_rule"></a>
+    <strong><span class='function_modname'>gears.matcher.</span>append_rule (string, table)</strong>
+    </dt>
+    <dd>
+    Add a new rule to the default set.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">string</span>
+         The source name.
+        </li>
+        <li><span class="parameter">table</span>
+         rule A valid rule.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "append_rules"></a>
+    <strong><span class='function_modname'>gears.matcher.</span>append_rules (string, table)</strong>
+    </dt>
+    <dd>
+    Add a new rules to the default set.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">string</span>
+         The source name.
+        </li>
+        <li><span class="parameter">table</span>
+         rule A table with rules.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "remove_rule"></a>
+    <strong><span class='function_modname'>gears.matcher.</span>remove_rule (string, string)</strong>
+    </dt>
+    <dd>
+    Remove a new rule to the default set.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">string</span>
+        |table rule An existing rule or its <a href="../libraries/gears.matcher.html#id">id</a>.
+        </li>
+        <li><span class="parameter">string</span>
+        |table rule An existing rule or its <a href="../libraries/gears.matcher.html#id">id</a>.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
     <a name = "gears.matcher"></a>
     <strong>gears.matcher ()</strong>
     </dt>
@@ -739,6 +929,144 @@
 
 
 
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Signals"></a>Signals</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "rule::appended"></a>
+    <strong>rule::appended</strong>
+    </dt>
+    <dd>
+    A rule has been added to a set of matching rules.
+
+
+    <h3>Arguments:</h3>
+    <ul>
+        <li><span class="parameter">rule</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The rule.
+        </li>
+        <li><span class="parameter">source</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The matching rules source name.
+        </li>
+        <li><span class="parameter">content</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The matching rules source content.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../libraries/gears.matcher.html#append_rule">append_rule</a></li>
+         <li><a href="../libraries/gears.matcher.html#append_rules">append_rules</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "rule::removed"></a>
+    <strong>rule::removed</strong>
+    </dt>
+    <dd>
+    A rule has been removed to a set of matching rules.
+
+
+    <h3>Arguments:</h3>
+    <ul>
+        <li><span class="parameter">rule</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The rule.
+        </li>
+        <li><span class="parameter">source</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The matching rules source name.
+        </li>
+        <li><span class="parameter">content</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The matching rules source content.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.matcher.html#remove_rule">remove_rule</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "matching_function::added"></a>
+    <strong>matching_function::added</strong>
+    </dt>
+    <dd>
+    A matching source function has been added.
+
+
+    <h3>Arguments:</h3>
+    <ul>
+        <li><span class="parameter">callback</span>
+            <span class="types"><span class="type">function</span></span>
+         The callback.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.matcher.html#add_matching_function">add_matching_function</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "matching_rules::added"></a>
+    <strong>matching_rules::added</strong>
+    </dt>
+    <dd>
+    A matching source table has been added.
+
+
+    <h3>Arguments:</h3>
+    <ul>
+        <li><span class="parameter">callback</span>
+            <span class="types"><span class="type">function</span></span>
+         The callback.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.matcher.html#add_matching_rules">add_matching_rules</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "matching_source::removed"></a>
+    <strong>matching_source::removed</strong>
+    </dt>
+    <dd>
+    A matching source function has been removed.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+    </ul>
 
 
 </dd>
@@ -902,6 +1230,33 @@
 
 
 </dd>
+    <dt>
+    <a name = "id"></a>
+    <strong>id</strong>
+    </dt>
+    <dd>
+    An identifier for this rule. </p>
+
+<p> It can be anything. It will be compared with the <code>==</code> operator. Strings are
+ highly recommended.</p>
+
+<p> Setting an <a href="../libraries/gears.matcher.html#id">id</a> is useful to be able to remove the rule by using its id
+ instead of a table reference. Modules can also listen to <a href="../libraries/gears.matcher.html#rule::appended">rule::appended</a> and
+ modify or disable a rule.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+        |string|number|function
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
 </dl>
 
 
@@ -909,7 +1264,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-06-27 03:34:11 </i>
+<i style="float:right;">Last updated 2019-06-28 01:40:17 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
