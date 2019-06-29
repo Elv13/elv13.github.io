@@ -5,6 +5,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Coreclassmod tag - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+  <script>
+    var st = document.createElement('style')
+    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
+    var deprecated_shown = false
+    st.appendChild(show_dep)
+
+    function show_deprecated() {
+      if (deprecated_shown)
+        document.getElementsByTagName('head')[0].removeChild(st);
+      else
+        document.getElementsByTagName('head')[0].appendChild(st);
+      deprecated_shown = !deprecated_shown
+    }
+  </script>
 </head>
 <body>
 
@@ -237,11 +251,24 @@
 <h1>Module: <code>tag</code></h1>
 <p>awesome tag API</p>
 
-<p> Furthermore to the classes described here, one can also use signals as
- described in <a href="../classes/signals.html#">signals</a>.</p>
+<p> What is a tag?</p>
+<p> ==============</p>
+
+<p> In AwesomeWM, a <a href="../core components/tag.html#">tag</a> is a group of clients. It can either be used as labels
+ or as more classical workspaces depending on how they are configured.</p>
+
 <p> <img src="../images/tag_props.svg" alt="Client geometry" /></p>
 
-<p> <strong>Creating tags</strong>:</p>
+<ul>
+<li>A <strong>tag</strong> can be attached to <strong>multiple clients</strong></li>
+<li>A <strong>client</strong> can be attached to <strong>multiple tags</strong></li>
+<li>A <strong>tag</strong> can only be in 1 screen <em>any given time</em>, but can be moved</li>
+<li>All <strong>clients</strong> attached to a tag <strong>must be in the same screen as the tag</strong></li>
+</ul>
+
+
+<p> Creating tags
+ =============</p>
 
 <p> The default config initializes tags like this:</p>
 
@@ -279,7 +306,8 @@ awful.tag.add(<span class="string">"Second tag"</span>, {
 <p> Note: the example above sets &ldquo;First tag&rdquo; to be selected explicitly,
  because otherwise you will find yourself without any selected tag.</p>
 
-<p> <strong>Accessing tags</strong>:</p>
+<p> Accessing tags
+ ==============</p>
 
 <p> To access the &ldquo;current tags&rdquo;, use</p>
 
@@ -334,7 +362,8 @@ awful.tag.add(<span class="string">"Second tag"</span>, {
 </pre>
 
 
-<p> <strong>Common shortcuts</strong>:</p>
+<p> Common keybindings code
+ =======================</p>
 
 <p> Here is a few useful shortcuts not part of the default <a href="../sample files/rc.lua.html#">rc.lua</a>. Add these
  functions above <code>&mdash; {{{ Key bindings</code>:</p>
@@ -504,21 +533,27 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     </ul>
 
 
-<h2><a href="#Constructors">Constructors</a></h2>
+<h2>
+    <a href="#Constructors">Constructors</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#awful.tag.add">awful.tag.add <span class='function_args'>(name, props)</span></a></td>
 	<td class="summary">Add a tag.</td>
 	</tr>
 </table>
-<h2><a href="#Functions">Functions</a></h2>
+<h2>
+    <a href="#Functions">Functions</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#tag.object.get_state"><span class='function_modname'>tag.</span>object.get_state (t, classes)</a></td>
 	<td class="summary">The tag state.</td>
 	</tr>
 </table>
-<h2><a href="#Static_module_functions">Static module functions</a></h2>
+<h2>
+    <a href="#Static_module_functions">Static module functions</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#instances"><span class='function_modname'>tag.</span>instances <span class='function_args'>()</span></a></td>
@@ -583,7 +618,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.tag.viewidx">awful.tag.viewidx <span class='function_args'>(i[, screen])</span></a></td>
-	<td class="summary">View a tag by its taglist index.</td>
+	<td class="summary">Select a tag relative to the currently selected one.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#awful.tag.viewnext">awful.tag.viewnext <span class='function_args'>(screen)</span></a></td>
@@ -607,7 +642,9 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
  future.</td>
 	</tr>
 </table>
-<h2><a href="#Object_properties">Object properties</a></h2>
+<h2>
+    <a href="#Object_properties">Object properties</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="shortname" ><a href="#name">name</a></td>
@@ -690,7 +727,9 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	<td class="summary">Set the number of columns.</td>
 	</tr>
 </table>
-<h2><a href="#Object_methods">Object methods </a></h2>
+<h2>
+    <a href="#Object_methods">Object methods </a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#clients">:clients <span class='function_args'>([clients_table=nil])</span></a></td>
@@ -721,7 +760,9 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	<td class="summary">Connect to a signal weakly.</td>
 	</tr>
 </table>
-<h2><a href="#Signals">Signals</a></h2>
+<h2>
+    <a href="#Signals">Signals</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#request::select">request::select</a></td>
@@ -753,7 +794,9 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	<td class="summary">Emitted after <a href="../core components/tag.html#request::screen">request::screen</a> if no new screen has been set.</td>
 	</tr>
 </table>
-<h2><a href="#Theme_variables">Theme variables</a></h2>
+<h2>
+    <a href="#Theme_variables">Theme variables</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="shortname" ><a href="#beautiful.master_width_factor">beautiful.master_width_factor</a></td>
@@ -786,8 +829,12 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	<td class="summary">The default number of columns.</td>
 	</tr>
 </table>
-<h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
-<table class="function_list">
+<h2>
+    <a class="deprecated_h2" onclick="show_deprecated()">
+      Click to display deprecated functions
+    </a>
+</h2>
+<table class="function_list deprecated_block show_deprecated">
 	<tr>
 	<td class="name" ><a href="#awful.tag.move">awful.tag.move<i class="deprecated_label"> [deprecated]</i></a></td>
 	<td class="summary">Move a tag to an absolute position in the screen[]:tags() table.</td>
@@ -906,7 +953,9 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 	<td class="summary">Tag a client with the set of current tags.</td>
 	</tr>
 </table>
-<h2><a href="#Fields">Fields</a></h2>
+<h2>
+    <a href="#Fields">Fields</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="shortname" ><a href="#awful.tag.history.limit"><span class='function_modname'>tag.</span>awful.tag.history.limit</a></td>
@@ -1101,18 +1150,54 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>awful.tag.new <span class='function_args'>(names, screen, layout)</span></strong>
     </dt>
     <dd>
-    Create a set of tags and attach it to a screen.
+    <p>Create a set of tags and attach it to a screen. </p>
+
+<p> This is what&rsquo;s performed by the default config:</p>
+
+<p><img src="../images/AUTOGEN_ruled_tag_default_config.svg" alt="Usage example" /></p>
+
+<pre><code> -- Calling awful.tag.new
+ awful.tag({ '1', '2', '3', '4', '5', '6', '7', '8', '9' }, screen[1], awful.layout.layouts[1])
+</code></pre>
+
+<p> It is also possible to set multiple layouts:</p>
+
+<p><img src="../images/AUTOGEN_ruled_tag_new_with_layouts.svg" alt="Usage example" /></p>
+
+<pre><code> local some_layouts = {
+     awful.layout.suit.fair,
+     awful.layout.suit.spiral,
+     awful.layout.suit.spiral.dwindle,
+     awful.layout.suit.magnifier,
+     awful.layout.suit.corner.nw,
+     awful.layout.suit.max.fullscreen,
+ }
+
+ -- Calling awful.tag.new
+ awful.tag({ 'one', 'two', 'three', 'four', 'five' }, screen[1], some_layouts)
+
+ -- Add some clients
+ for _, t in ipairs(screen[1].tags) do
+     for i = 1, 5 do
+         awful.spawn('xterm', {tag = t})
+     end
+ end
+</code></pre>
+
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">names</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The tag name, in a table
         </li>
         <li><span class="parameter">screen</span>
+            <span class="types"><a class="type" href="../core components/tag.html#screen">screen</a> or <span class="type">nil</span></span>
          The tag screen, or 1 if not set.
         </li>
         <li><span class="parameter">layout</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          The layout or layout table to set for this tags by default.
         </li>
     </ul>
@@ -1385,7 +1470,21 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>awful.tag.viewnone <span class='function_args'>([screen])</span></strong>
     </dt>
     <dd>
-    View no tag.
+    <p>View no tag. </p>
+
+<p><img src="../images/AUTOGEN_ruled_tag_viewnone.svg" alt="Usage example" /></p>
+
+<pre><code> -- Calling awful.tag.new
+ awful.tag({ 'one', 'two', 'three', 'four' }, screen[1])
+
+ -- Manually select some tags (tag 1 was auto selected).
+ screen[1].tags[3].selected = true
+ screen[1].tags[4].selected = true
+
+ -- Deselect all tags.
+ awful.tag.viewnone()
+</code></pre>
+
 
 
     <h3>Parameters:</h3>
@@ -1407,7 +1506,23 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>awful.tag.viewidx <span class='function_args'>(i[, screen])</span></strong>
     </dt>
     <dd>
-    View a tag by its taglist index. </p>
+    Select a tag relative to the currently selected one. </p>
+
+<p> Note that this doesn&rsquo;t work well with multiple selection.</p>
+
+<p><img src="../images/AUTOGEN_ruled_tag_viewidx.svg" alt="Usage example" /></p>
+
+<pre><code> -- Calling awful.tag.new
+ awful.tag({ 'one', 'two', 'three', 'four' }, screen[1])
+
+ screen[1].tags[2]:view_only()
+
+ -- Select the tag relative to idx 2.
+ awful.tag.viewidx(2)
+
+ -- Select the tag relative to idx -2.
+ awful.tag.viewidx(-2)
+</code></pre>
 
 <p> This is equivalent to <code>screen.tags[i]:view_only()</code>
 
@@ -1415,9 +1530,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">i</span>
+            <span class="types"><span class="type">number</span></span>
          The <strong>relative</strong> index to see.
         </li>
         <li><span class="parameter">screen</span>
+            <span class="types"><a class="type" href="../core components/tag.html#screen">screen</a></span>
          The screen.
          (<em>optional</em>)
         </li>
@@ -1427,7 +1544,9 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
     <h3>See also:</h3>
     <ul>
-         <a href="../core components/screen.html#tags">screen.tags</a>
+         <li><a href="../core components/screen.html#tags">screen.tags</a></li>
+         <li><a href="../core components/tag.html#awful.tag.viewnext">awful.tag.viewnext</a></li>
+         <li><a href="../core components/tag.html#awful.tag.viewprev">awful.tag.viewprev</a></li>
     </ul>
 
 
@@ -1437,18 +1556,41 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>awful.tag.viewnext <span class='function_args'>(screen)</span></strong>
     </dt>
     <dd>
-    View next tag.  This is the same as tag.viewidx(1).
+    <p>View next tag.  This is the same as tag.viewidx(1).</p>
+
+<p> Note that this doesn&rsquo;t work well with multiple selection.</p>
+
+<p><img src="../images/AUTOGEN_ruled_tag_viewnext.svg" alt="Usage example" /></p>
+
+<pre><code> -- Calling awful.tag.new
+ awful.tag({ 'one', 'two', 'three', 'four' }, screen[1])
+
+ screen[1].tags[3]:view_only()
+
+ -- Select the next tag.
+ awful.tag.viewnext()
+
+ -- Select the next tag (again).
+ awful.tag.viewnext()
+</code></pre>
+
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">screen</span>
+            <span class="types"><a class="type" href="../core components/tag.html#screen">screen</a></span>
          The screen.
         </li>
     </ul>
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core components/tag.html#awful.tag.viewidx">awful.tag.viewidx</a></li>
+         <li><a href="../core components/tag.html#awful.tag.viewprev">awful.tag.viewprev</a></li>
+    </ul>
 
 
 </dd>
@@ -1457,18 +1599,41 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>awful.tag.viewprev <span class='function_args'>(screen)</span></strong>
     </dt>
     <dd>
-    View previous tag.  This is the same a tag.viewidx(-1).
+    <p>View previous tag.  This is the same a tag.viewidx(-1).</p>
+
+<p> Note that this doesn&rsquo;t work well with multiple selection.</p>
+
+<p><img src="../images/AUTOGEN_ruled_tag_viewprev.svg" alt="Usage example" /></p>
+
+<pre><code> -- Calling awful.tag.new
+ awful.tag({ 'one', 'two', 'three', 'four' }, screen[1])
+
+ screen[1].tags[2]:view_only()
+
+ -- Select the previous tag.
+ awful.tag.viewprev()
+
+ -- Select the previous tag (again).
+ awful.tag.viewprev()
+</code></pre>
+
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">screen</span>
+            <span class="types"><a class="type" href="../core components/tag.html#screen">screen</a></span>
          The screen.
         </li>
     </ul>
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core components/tag.html#awful.tag.viewidx">awful.tag.viewidx</a></li>
+         <li><a href="../core components/tag.html#awful.tag.viewnext">awful.tag.viewnext</a></li>
+    </ul>
 
 
 </dd>
@@ -1487,9 +1652,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">tags</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          A table with tags to view only.
         </li>
         <li><span class="parameter">screen</span>
+            <span class="types"><a class="type" href="../core components/tag.html#screen">screen</a></span>
          The screen of the tags.
          (<em>optional</em>)
         </li>
@@ -1575,6 +1742,17 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <dd>
     <p>Tag name. </p>
 
+<p> <img src="../images/AUTOGEN_ruled_tag_name.svg" alt="Usage example" /></p>
+
+<pre><code>  -- Calling awful.tag.new
+  awful.tag({ 'one', 'two', 'three', 'four' }, screen[1])
+
+  screen[1].tags[2]:view_only()
+
+  -- Change the name to New*tag*name.
+  screen[1].tags[2].name = 'New*tag*name'
+</code></pre>
+
 <p> <strong>Signal:</strong></p>
 
 <ul>
@@ -1597,6 +1775,17 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     </dt>
     <dd>
     <p>True if the tag is selected to be viewed. </p>
+
+<p> <img src="../images/AUTOGEN_ruled_tag_selected.svg" alt="Usage example" /></p>
+
+<pre><code>  -- Calling awful.tag.new
+  awful.tag({ 'one', 'two', 'three', 'four' }, screen[1])
+
+  -- Change the selection.
+  screen[1].tags[1].selected = not screen[1].tags[1].selected
+  screen[1].tags[2].selected = true
+  screen[1].tags[3].selected = true
+</code></pre>
 
 <p> <strong>Signal:</strong></p>
 
@@ -1645,6 +1834,18 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <p>The tag index. </p>
 
 <p> The index is the position as shown in the <a href="../widgets/awful.widget.taglist.html#">awful.widget.taglist</a>.</p>
+
+<p><img src="../images/AUTOGEN_ruled_tag_index.svg" alt="Usage example" /></p>
+
+<pre><code> -- Calling awful.tag.new
+ awful.tag({ 'one', 'two', 'three', 'four' }, screen[1])
+
+ -- Send the first tag to index 3.
+ screen[1].tags[1].index = 3
+
+ -- Send the first tag to index 3.
+ screen[1].tags[4].index = 1
+</code></pre>
 
 <p> <strong>Signal:</strong></p>
 
@@ -1849,7 +2050,9 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 <p> By default, it will be the same as <a href="../libraries/awful.layout.html#awful.layout.layouts">awful.layout.layouts</a> unless there the
  a layout not present is used. If that&rsquo;s the case they will be added at the
- front of the list.
+ front of the list.</p>
+
+<p> This will be taken into account when calling <a href="../libraries/awful.layout.html#awful.layout.inc">awful.layout.inc</a>.
 
 
 
@@ -1858,9 +2061,25 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <h3>See also:</h3>
     <ul>
          <li><a href="../libraries/awful.layout.html#awful.layout.layouts">awful.layout.layouts</a></li>
+         <li><a href="../libraries/awful.layout.html#awful.layout.inc">awful.layout.inc</a></li>
+         <li><a href="../widgets/awful.widget.layoutlist.html#">awful.widget.layoutlist</a></li>
          <li><a href="../core components/tag.html#layout">layout</a></li>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> t = aw_tag.add(<span class="string">"My new tag"</span>, {
+    layout  = awful.layout.suit.tile,
+    layouts = {
+        awful.layout.suit.tile,
+        awful.layout.suit.spiral,
+        awful.layout.suit.spiral.dwindle,
+        awful.layout.suit.magnifier,
+        awful.layout.suit.corner.nw,
+        awful.layout.suit.max.fullscreen,
+    }
+})</pre>
+    </ul>
 
 </dd>
     <dt>
@@ -1872,17 +2091,60 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <p>Define if the tag must be deleted when the last client is untagged. </p>
 
 <p> This is useful to create &ldquo;throw-away&rdquo; tags for operation like 50/50
- side-by-side views.</p>
+ (Windows &ldquo;Aero Snap) side-by-side views. This keybinding code for this is:</p>
 
-<pre><code>local t = awful.tag.add("Temporary", {
-     screen   = client.focus.screen,
-     volatile = true,
-     clients  = {
-         client.focus,
-         awful.client.focus.history.get(client.focus.screen, 1)
-     }
-}
+<pre><code>local function aero_tag()
+    local c = client.focus
+
+    if not c then return end
+
+    local c2 = awful.client.focus.history.list[2]
+
+    if (not c2) or c2 == c then return end
+
+    local t = aw_tag.add("Aero", {
+        screen              = c.screen,
+        volatile            = true,
+        layout              = awful.layout.suit.tile,
+        master_width_factor = 0.5
+    })
+
+    t:clients({c, c2})
+
+    t:view_only()
+end
 </code></pre>
+
+<p><img src="../images/AUTOGEN_ruled_tag_volatile.svg" alt="Usage example" /></p>
+
+<pre><code> -- Create a non-volatile and a volatile tag.
+ awful.tag.add('Non-Volatile', {
+     screen   = screen[1],
+     layout   = awful.layout.suit.corner.nw,
+     volatile = false,
+ })
+
+ awful.tag.add('Volatile', {
+     screen   = screen[1],
+     layout   = awful.layout.suit.corner.nw,
+     volatile = true,
+ })
+
+ -- Add some clients.
+ for _, t in ipairs(screen[1].tags) do
+     for i = 1, 5 do
+         awful.spawn('xterm', {tag = t})
+     end
+ end
+
+ -- Kill all clients.
+ while #client.get() ~= 0 do
+     client.get()[1]:kill()
+ end
+</code></pre>
+
+<p> As you can see, the &ldquo;Volatile&rdquo; tag has been automatically discarded while
+ the &ldquo;Non-volatile&rdquo; tag is still there (but with zero clients).</p>
 
 <p> <strong>Signal:</strong></p>
 
@@ -1896,6 +2158,10 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../core components/tag.html#delete">delete</a>
+    </ul>
 
 
 </dd>
@@ -2143,12 +2409,25 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>:swap <span class='function_args'>(tag2)</span></strong>
     </dt>
     <dd>
-    Swap 2 tags.
+    <p>Swap 2 tags. </p>
+
+<p><img src="../images/AUTOGEN_ruled_tag_swap.svg" alt="Usage example" /></p>
+
+<pre><code> -- Calling awful.tag.new
+ awful.tag({ 'one', 'two', 'three', 'four' }, screen[1])
+
+ screen[1].tags[2]:view_only()
+
+ -- Swap tag 2 with tag 4.
+ screen[1].tags[2]:swap(screen[1].tags[4])
+</code></pre>
+
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">tag2</span>
+            <span class="types"><span class="type">tag</span></span>
          The second tag
         </li>
     </ul>
@@ -2169,9 +2448,15 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <dd>
     <p>Delete a tag. </p>
 
-<p> To delete the current tag:</p>
+<p><img src="../images/AUTOGEN_ruled_tag_delete.svg" alt="Usage example" /></p>
 
-<pre><code>mouse.screen.selected_tag:delete()
+<pre><code> -- Calling awful.tag.new
+ awful.tag({ 'one', 'two', 'three', 'four' }, screen[1])
+
+ screen[1].tags[2]:view_only()
+
+ -- Delete the selected tag.
+ mouse.screen.selected_tag:delete()
 </code></pre>
 
 
@@ -2216,7 +2501,21 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
     <strong>:view_only <span class='function_args'>()</span></strong>
     </dt>
     <dd>
-    View only a tag.
+    <p>View only a tag. </p>
+
+<p><img src="../images/AUTOGEN_ruled_tag_view_only.svg" alt="Usage example" /></p>
+
+<pre><code> -- Calling awful.tag.new
+ awful.tag({ 'one', 'two', 'three', 'four' }, screen[1])
+
+ -- Manually select some tags (tag 1 was auto selected).
+ screen[1].tags[3].selected = true
+ screen[1].tags[4].selected = true
+
+ -- Call :view_only() on the second tag.
+ screen[1].tags[2]:view_only()
+</code></pre>
+
 
 
 
@@ -2613,14 +2912,14 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 </dd>
 </dl>
-    <h2 class="section-header "><a name="Deprecated_functions"></a>Deprecated functions</h2>
+    <h2 class="section-header  deprecated_block show_deprecated"><a name="Deprecated_functions"></a>Deprecated functions</h2>
 
     <dl class="function">
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.move"></a>
     <strong>awful.tag.move<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Move a tag to an absolute position in the screen[]:tags() table.
 
 
@@ -2644,11 +2943,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.swap"></a>
     <strong>awful.tag.swap<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Swap 2 tags
 
 
@@ -2671,11 +2970,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.delete"></a>
     <strong>awful.tag.delete<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Delete a tag.
 
 
@@ -2707,11 +3006,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.gettags"></a>
     <strong>awful.tag.gettags<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get a list of all tags on a screen
 
 
@@ -2737,11 +3036,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.setscreen"></a>
     <strong>awful.tag.setscreen<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Set a tag&rsquo;s screen
 
 
@@ -2764,11 +3063,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.getscreen"></a>
     <strong>awful.tag.getscreen<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get a tag&rsquo;s screen
 
 
@@ -2794,11 +3093,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.selectedlist"></a>
     <strong>awful.tag.selectedlist<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Return a table with all visible tags
 
 
@@ -2823,11 +3122,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.selected"></a>
     <strong>awful.tag.selected<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Return only the first visible tag.
 
 
@@ -2847,11 +3146,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.setmwfact"></a>
     <strong>awful.tag.setmwfact<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Set master width factor.
 
 
@@ -2875,11 +3174,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.getmwfact"></a>
     <strong>awful.tag.getmwfact<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get master width factor.
 
 
@@ -2901,11 +3200,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.setlayout"></a>
     <strong>awful.tag.setlayout<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Set layout.
 
 
@@ -2933,11 +3232,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.setvolatile"></a>
     <strong>awful.tag.setvolatile<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Set if the tag must be deleted when the last client is untagged
 
 
@@ -2961,11 +3260,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.getvolatile"></a>
     <strong>awful.tag.getvolatile<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get if the tag must be deleted when the last client closes
 
 
@@ -2991,11 +3290,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.setgap"></a>
     <strong>awful.tag.setgap<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Set the spacing between clients
 
 
@@ -3018,11 +3317,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.getgap"></a>
     <strong>awful.tag.getgap<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the spacing between clients.
 
 
@@ -3051,11 +3350,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.setmfpol"></a>
     <strong>awful.tag.setmfpol<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Set size fill policy for the master client(s)
 
 
@@ -3083,11 +3382,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.getmfpol"></a>
     <strong>awful.tag.getmfpol<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get size fill policy for the master client(s)
 
 
@@ -3117,11 +3416,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.setnmaster"></a>
     <strong>awful.tag.setnmaster<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
 
 
 
@@ -3146,11 +3445,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.getnmaster"></a>
     <strong>awful.tag.getnmaster<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the number of master windows.
 
 
@@ -3171,11 +3470,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.seticon"></a>
     <strong>awful.tag.seticon<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Set the tag icon
 
 
@@ -3198,11 +3497,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.geticon"></a>
     <strong>awful.tag.geticon<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the tag icon
 
 
@@ -3222,11 +3521,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.setncol"></a>
     <strong>awful.tag.setncol<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Set number of column windows.
 
 
@@ -3249,11 +3548,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.getncol"></a>
     <strong>awful.tag.getncol<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get number of column windows.
 
 
@@ -3274,11 +3573,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.getidx"></a>
     <strong>awful.tag.getidx<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get a tag&rsquo;s index in the gettags() table.
 
 
@@ -3303,17 +3602,18 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.viewonly"></a>
     <strong>awful.tag.viewonly<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     View only a tag.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">t</span>
+            <span class="types"><span class="type">tag</span></span>
          The tag object.
         </li>
     </ul>
@@ -3327,11 +3627,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.getdata"></a>
     <strong>awful.tag.getdata<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get tag data table. </p>
 
 <p> Do not use.
@@ -3355,11 +3655,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.getproperty"></a>
     <strong>awful.tag.getproperty<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get a tag property. </p>
 
 <p> Use <code>_tag.prop</code> directly.
@@ -3387,11 +3687,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.setproperty"></a>
     <strong>awful.tag.setproperty<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Set a tag property.
  This properties are internal to awful. Some are used to draw taglist, or to
  handle layout, etc.</p>
@@ -3417,11 +3717,11 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.tag.withcurrent"></a>
     <strong>awful.tag.withcurrent<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Tag a client with the set of current tags.
 
 
@@ -3503,7 +3803,7 @@ awful.key({ modkey, <span class="string">"Shift"</span>   }, <span class="string
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-06-28 01:40:17 </i>
+<i style="float:right;">Last updated 2019-06-29 02:33:51 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

@@ -5,6 +5,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Coreclassmod awful.keygrabber - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+  <script>
+    var st = document.createElement('style')
+    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
+    var deprecated_shown = false
+    st.appendChild(show_dep)
+
+    function show_deprecated() {
+      if (deprecated_shown)
+        document.getElementsByTagName('head')[0].removeChild(st);
+      else
+        document.getElementsByTagName('head')[0].appendChild(st);
+      deprecated_shown = !deprecated_shown
+    }
+  </script>
 </head>
 <body>
 
@@ -360,14 +374,18 @@ mykeygrabber:connect_signal(<span class="string">"Escape::pressed"</span>, <span
     </ul>
 
 
-<h2><a href="#Constructors">Constructors</a></h2>
+<h2>
+    <a href="#Constructors">Constructors</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#awful.keygrabber">awful.keygrabber <span class='function_args'>(args)</span></a></td>
 	<td class="summary">A wrapper around the keygrabber to make it easier to add keybindings.</td>
 	</tr>
 </table>
-<h2><a href="#Static_module_functions">Static module functions</a></h2>
+<h2>
+    <a href="#Static_module_functions">Static module functions</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#connect_signal"><span class='function_modname'>awful.keygrabber.</span>connect_signal <span class='function_args'>(name, callback)</span></a></td>
@@ -382,7 +400,9 @@ mykeygrabber:connect_signal(<span class="string">"Escape::pressed"</span>, <span
 	<td class="summary">Emit a signal on the keygrabber module itself.</td>
 	</tr>
 </table>
-<h2><a href="#Object_properties">Object properties</a></h2>
+<h2>
+    <a href="#Object_properties">Object properties</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="shortname" ><a href="#timeout">timeout</a></td>
@@ -435,7 +455,9 @@ mykeygrabber:connect_signal(<span class="string">"Escape::pressed"</span>, <span
 	<td class="summary">The sequence of keys recorded since the start of the keygrabber.</td>
 	</tr>
 </table>
-<h2><a href="#Object_methods">Object methods </a></h2>
+<h2>
+    <a href="#Object_methods">Object methods </a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#start">:start <span class='function_args'>()</span></a></td>
@@ -462,7 +484,9 @@ mykeygrabber:connect_signal(<span class="string">"Escape::pressed"</span>, <span
 	<td class="summary">Connect to a signal weakly.</td>
 	</tr>
 </table>
-<h2><a href="#Signals">Signals</a></h2>
+<h2>
+    <a href="#Signals">Signals</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#property::current_instance">property::current_instance</a></td>
@@ -477,8 +501,12 @@ mykeygrabber:connect_signal(<span class="string">"Escape::pressed"</span>, <span
 	<td class="summary">When the keygrabber stops.</td>
 	</tr>
 </table>
-<h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
-<table class="function_list">
+<h2>
+    <a class="deprecated_h2" onclick="show_deprecated()">
+      Click to display deprecated functions
+    </a>
+</h2>
+<table class="function_list deprecated_block show_deprecated">
 	<tr>
 	<td class="name" ><a href="#stop">awful.keygrabber.stop<i class="deprecated_label"> [deprecated]</i></a></td>
 	<td class="summary">Stop grabbing the keyboard for the provided callback.</td>
@@ -488,7 +516,9 @@ mykeygrabber:connect_signal(<span class="string">"Escape::pressed"</span>, <span
 	<td class="summary">A lower level API to interact with the keygrabber directly.</td>
 	</tr>
 </table>
-<h2><a href="#Callback_functions_prototype">Callback functions prototype</a></h2>
+<h2>
+    <a href="#Callback_functions_prototype">Callback functions prototype</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#start_callback">start_callback</a></td>
@@ -513,7 +543,9 @@ mykeygrabber:connect_signal(<span class="string">"Escape::pressed"</span>, <span
  when a key was released.</td>
 	</tr>
 </table>
-<h2><a href="#Fields">Fields</a></h2>
+<h2>
+    <a href="#Fields">Fields</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="shortname" ><a href="#current_instance"><span class='function_modname'>awful.keygrabber.</span>current_instance</a></td>
@@ -1288,14 +1320,14 @@ pressed.</li>
 
 </dd>
 </dl>
-    <h2 class="section-header "><a name="Deprecated_functions"></a>Deprecated functions</h2>
+    <h2 class="section-header  deprecated_block show_deprecated"><a name="Deprecated_functions"></a>Deprecated functions</h2>
 
     <dl class="function">
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "stop"></a>
     <strong>awful.keygrabber.stop<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Stop grabbing the keyboard for the provided callback. </p>
 
 <p> When no callback is given, the last grabber gets removed (last one added to
@@ -1315,11 +1347,11 @@ pressed.</li>
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "run"></a>
     <strong>awful.keygrabber.run<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     A lower level API to interact with the keygrabber directly. </p>
 
 <p> Grab keyboard input and read pressed keys, calling the least callback
@@ -1611,7 +1643,7 @@ pressed.</li>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-06-28 01:40:17 </i>
+<i style="float:right;">Last updated 2019-06-29 02:33:51 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

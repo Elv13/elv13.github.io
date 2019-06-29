@@ -5,6 +5,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Coreclassmod mouse - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+  <script>
+    var st = document.createElement('style')
+    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
+    var deprecated_shown = false
+    st.appendChild(show_dep)
+
+    function show_deprecated() {
+      if (deprecated_shown)
+        document.getElementsByTagName('head')[0].removeChild(st);
+      else
+        document.getElementsByTagName('head')[0].appendChild(st);
+      deprecated_shown = !deprecated_shown
+    }
+  </script>
 </head>
 <body>
 
@@ -285,7 +299,9 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     </ul>
 
 
-<h2><a href="#Functions">Functions</a></h2>
+<h2>
+    <a href="#Functions">Functions</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#naughty.connect_signal">naughty.connect_signal (name, func)</a></td>
@@ -300,7 +316,9 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 	<td class="summary">Disconnect a signal from a source.</td>
 	</tr>
 </table>
-<h2><a href="#Static_module_functions">Static module functions</a></h2>
+<h2>
+    <a href="#Static_module_functions">Static module functions</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#object_under_pointer"><span class='function_modname'>mouse.</span>object_under_pointer <span class='function_args'>()</span></a></td>
@@ -323,7 +341,9 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 	<td class="summary">Get or set the mouse coords.</td>
 	</tr>
 </table>
-<h2><a href="#Object_properties">Object properties</a></h2>
+<h2>
+    <a href="#Object_properties">Object properties</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="shortname" ><a href="#screen">screen</a></td>
@@ -376,14 +396,18 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 	<td class="summary">True if the middle mouse button is pressed.</td>
 	</tr>
 </table>
-<h2><a href="#Request_handlers">Request handlers</a></h2>
+<h2>
+    <a href="#Request_handlers">Request handlers</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#awful.mouse.resize_handler">awful.mouse.resize_handler</a></td>
 	<td class="summary">Default handler for <code>request::geometry</code> signals with &ldquo;mouse.resize&rdquo; context.</td>
 	</tr>
 </table>
-<h2><a href="#Theme_variables">Theme variables</a></h2>
+<h2>
+    <a href="#Theme_variables">Theme variables</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="shortname" ><a href="#beautiful.snap_bg">beautiful.snap_bg</a></td>
@@ -406,8 +430,12 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 	<td class="summary">The gap between snapped contents.</td>
 	</tr>
 </table>
-<h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
-<table class="function_list">
+<h2>
+    <a class="deprecated_h2" onclick="show_deprecated()">
+      Click to display deprecated functions
+    </a>
+</h2>
+<table class="function_list deprecated_block show_deprecated">
 	<tr>
 	<td class="name" ><a href="#awful.mouse.client_under_pointer">awful.mouse.client_under_pointer<i class="deprecated_label"> [deprecated]</i></a></td>
 	<td class="summary">Get the client object under the pointer.</td>
@@ -421,7 +449,9 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 	<td class="summary">Get a client corner coordinates.</td>
 	</tr>
 </table>
-<h2><a href="#Fields">Fields</a></h2>
+<h2>
+    <a href="#Fields">Fields</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="shortname" ><a href="#awful.mouse.snap.default_distance"><span class='function_modname'>mouse.</span>awful.mouse.snap.default_distance</a></td>
@@ -444,7 +474,9 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 	<td class="summary">Enable changing tag when a client is dragged to the edge of the screen.</td>
 	</tr>
 </table>
-<h2><a href="#lib_awful_mouse_resize_Functions">lib.awful.mouse.resize Functions</a></h2>
+<h2>
+    <a href="#lib_awful_mouse_resize_Functions">lib.awful.mouse.resize Functions</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="shortname" ><a href="#beautiful.cursor_mouse_resize">beautiful.cursor_mouse_resize</a></td>
@@ -478,7 +510,9 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 	<td class="summary">Resize the drawable.</td>
 	</tr>
 </table>
-<h2><a href="#lib_awful_mouse_snap_Functions">lib.awful.mouse.snap Functions</a></h2>
+<h2>
+    <a href="#lib_awful_mouse_snap_Functions">lib.awful.mouse.snap Functions</a>
+</h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#awful.mouse.snap">awful.mouse.snap (c, snap, x, y, fixed_x, fixed_y)</a></td>
@@ -1080,14 +1114,14 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 
 </dd>
 </dl>
-    <h2 class="section-header "><a name="Deprecated_functions"></a>Deprecated functions</h2>
+    <h2 class="section-header  deprecated_block show_deprecated"><a name="Deprecated_functions"></a>Deprecated functions</h2>
 
     <dl class="function">
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.mouse.client_under_pointer"></a>
     <strong>awful.mouse.client_under_pointer<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the client object under the pointer.
 
 
@@ -1106,11 +1140,11 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.mouse.client.dragtotag.border"></a>
     <strong>awful.mouse.client.dragtotag.border<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Move a client to a tag by dragging it onto the left / right side of the screen.
 
 
@@ -1126,11 +1160,11 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.mouse.client.corner"></a>
     <strong>awful.mouse.client.corner<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get a client corner coordinates.
 
 
@@ -1464,7 +1498,7 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-06-28 01:40:17 </i>
+<i style="float:right;">Last updated 2019-06-29 02:33:51 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
