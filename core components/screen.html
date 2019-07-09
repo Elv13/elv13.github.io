@@ -479,6 +479,11 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 	<td class="summary">The screen workarea.</td>
 	</tr>
 	<tr>
+	<td class="shortname" ><a href="#tiling_area">tiling_area</a></td>
+	<td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+	<td class="summary">The area where clients can be tiled.</td>
+	</tr>
+	<tr>
 	<td class="shortname" ><a href="#padding">padding</a></td>
 	<td class="summarytype" nowrap><span class='summary_type'>table</span></td>
 	<td class="summary">The screen padding.</td>
@@ -555,11 +560,11 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#fake_remove">:fake_remove <span class='function_args'>()</span></a></td>
-	<td class="summary">Remove a screen.</td>
+	<td class="summary">Remove a screen now.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#fake_resize">:fake_resize <span class='function_args'>(x, y, width, height)</span></a></td>
-	<td class="summary">Fake-resize a screen</td>
+	<td class="summary">Resize a screen.</td>
 	</tr>
 	<tr>
 	<td class="name" ><a href="#swap">:swap <span class='function_args'>(s)</span></a></td>
@@ -1259,6 +1264,8 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <dd>
     The screen coordinates. </p>
 
+<p> <img src="../images/AUTOGEN_screen_geometry.svg" alt="Usage example" /></p>
+
 <p> <strong>Signal:</strong></p>
 
 <ul>
@@ -1295,7 +1302,7 @@ other.</li>
 <p> If you really want to keep an array of screens you should use something
  along:</p>
 
-<pre><code> local myscreens = setmetatable({}. {__mode="k"})
+<pre><code> local myscreens = setmetatable({}, {__mode="k"})
  myscreens[ screen[1] ] = "mydata"
 </code></pre>
 
@@ -1336,7 +1343,25 @@ other.</li>
  usually excludes the toolbars (see <a href="../popups and bars/awful.wibar.html#">awful.wibar</a>) and dockable clients
  (see <a href="../core components/client.html#dockable">client.dockable</a>) like WindowMaker DockAPP.</p>
 
-<p> It can be modified be altering the <a href="../popups and bars/wibox.html#">wibox</a> or <a href="../core components/client.html#">client</a> struts.</p>
+<p> It can be modified be altering the <a href="../popups and bars/wibox.html#struts">wibox.struts</a> or <a href="../core components/client.html#struts">client.struts</a>.</p>
+
+<p> <img src="../images/AUTOGEN_screen_workarea.svg" alt="Usage example" /></p>
+
+<pre><code>  -- With a padding, the tiled clients wont use 20px at the top and bottom
+  -- and 40px on the left and right.
+  screen[1].padding = {
+      left   = 40,
+      right  = 40,
+      top    = 20,
+      bottom = 20,
+  }
+
+  -- This will shift the workarea by 24px at the top.
+  awful.wibar {
+      position = 'top',
+      height   = 24,
+  }
+</code></pre>
 
 <p> <strong>Signal:</strong></p>
 
@@ -1358,6 +1383,32 @@ other.</li>
 
 </dd>
     <dt>
+    <a name = "tiling_area"></a>
+    <strong>tiling_area</strong>
+    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    </dt>
+    <dd>
+    The area where clients can be tiled. </p>
+
+<p> This property holds the (read only) area where clients can be tiled. Use
+ the <a href="../core components/screen.html#padding">padding</a> property, <a href="../popups and bars/wibox.html#struts">wibox.struts</a> and <a href="../core components/client.html#struts">client.struts</a> to modify this
+ area.</p>
+
+<p><img src="../images/AUTOGEN_screen_tiling_area.svg" alt="Usage example" />
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core components/screen.html#padding">padding</a></li>
+         <li><a href="../core components/screen.html#get_bounding_geometry">get_bounding_geometry</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
     <a name = "padding"></a>
     <strong>padding</strong>
     <span class="proptype">(<span class='summary_type'>table</span>)</span>
@@ -1366,6 +1417,18 @@ other.</li>
     <p>The screen padding. </p>
 
 <p> This adds a &ldquo;buffer&rdquo; section on each side of the screen.</p>
+
+<p><img src="../images/AUTOGEN_screen_padding.svg" alt="Usage example" /></p>
+
+<pre><code> -- With a padding, the tiled clients wont use 20px at the top and bottom
+ -- and 40px on the left and right.
+ screen[1].padding = {
+     left   = 40,
+     right  = 40,
+     top    = 20,
+     bottom = 20,
+ }
+</code></pre>
 
 <p> Here is the property effect on a layout:</p>
 
@@ -1720,13 +1783,19 @@ other.</li>
     <strong>:fake_remove <span class='function_args'>()</span></strong>
     </dt>
     <dd>
-    Remove a screen.
+    Remove a screen now. </p>
+
+<p> <img src="../images/AUTOGEN_ruled_screen_fake_remove.svg" alt="Usage example" />
 
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">screen[<span class="number">2</span>]:fake_remove()</pre>
+    </ul>
 
 </dd>
     <dt>
@@ -1734,7 +1803,12 @@ other.</li>
     <strong>:fake_resize <span class='function_args'>(x, y, width, height)</span></strong>
     </dt>
     <dd>
-    Fake-resize a screen
+    Resize a screen. </p>
+
+<p> Calling this will resize the screen even if it no longer matches the viewport
+ size.</p>
+
+<p> <img src="../images/AUTOGEN_ruled_screen_fake_resize.svg" alt="Usage example" />
 
 
     <h3>Parameters:</h3>
@@ -1760,6 +1834,10 @@ other.</li>
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">screen[<span class="number">1</span>]:fake_resize(<span class="number">100</span>, <span class="number">0</span>, <span class="number">1024</span>, <span class="number">768</span>)</pre>
+    </ul>
 
 </dd>
     <dt>
@@ -1767,7 +1845,9 @@ other.</li>
     <strong>:swap <span class='function_args'>(s)</span></strong>
     </dt>
     <dd>
-    Swap a screen with another one in global screen list.
+    Swap a screen with another one in global screen list. </p>
+
+<p> <img src="../images/AUTOGEN_ruled_screen_swap.svg" alt="Usage example" />
 
 
     <h3>Parameters:</h3>
@@ -1781,6 +1861,10 @@ other.</li>
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">screen[<span class="number">2</span>]:swap(screen[<span class="number">1</span>])</pre>
+    </ul>
 
 </dd>
     <dt>
@@ -2808,7 +2892,7 @@ end
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-06-29 02:33:51 </i>
+<i style="float:right;">Last updated 2019-07-09 15:48:31 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
