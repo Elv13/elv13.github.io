@@ -5,29 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Module awful.spawn - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
-
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
 </head>
 <body>
 
 <div id="container">
 
 <div id="product">
-	<div id="product_logo"></div>
-	<div id="product_name"><big><b></b></big></div>
-	<div id="product_description"></div>
+    <div id="product_logo"></div>
+    <div id="product_name"><big><b></b></big></div>
+    <div id="product_description"></div>
 </div> <!-- id="product" -->
 
 
@@ -46,13 +32,13 @@
 
 <h2>Contents</h2>
 <ul>
-<li><a href="#Functions">Functions</a></li>
-<li><a href="#Signals">Signals</a></li>
+<li><a href="#Static_module_functions">Static module functions</a></li>
 </ul>
 
 
 <h2>Libraries</h2>
 <ul class="nowrap">
+  <li><a href="../libraries/awesome.html">awesome</a></li>
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
@@ -60,11 +46,10 @@
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
+  <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><strong>awful.spawn</strong></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
-  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
-  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
@@ -72,14 +57,6 @@
   <li><a href="../libraries/naughty.html">naughty</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.widget.html">wibox.widget</a></li>
-</ul>
-<h2>Declarative rules</h2>
-<ul class="nowrap">
-  <li><a href="../declarative rules/ruled.client.html">ruled.client</a></li>
-  <li><a href="../declarative rules/ruled.clipboard.html">ruled.clipboard</a></li>
-  <li><a href="../declarative rules/ruled.notifications.html">ruled.notifications</a></li>
-  <li><a href="../declarative rules/ruled.screen.html">ruled.screen</a></li>
-  <li><a href="../declarative rules/ruled.tag.html">ruled.tag</a></li>
 </ul>
 <h2>Widgets</h2>
 <ul class="nowrap">
@@ -113,87 +90,76 @@
 </ul>
 <h2>Widget containers</h2>
 <ul class="nowrap">
-  <li><a href="../widget containers/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
-  <li><a href="../widget containers/naughty.widget.background.html">naughty.widget.background</a></li>
-  <li><a href="../widget containers/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
-  <li><a href="../widget containers/wibox.container.background.html">wibox.container.background</a></li>
-  <li><a href="../widget containers/wibox.container.constraint.html">wibox.container.constraint</a></li>
-  <li><a href="../widget containers/wibox.container.margin.html">wibox.container.margin</a></li>
-  <li><a href="../widget containers/wibox.container.mirror.html">wibox.container.mirror</a></li>
-  <li><a href="../widget containers/wibox.container.place.html">wibox.container.place</a></li>
-  <li><a href="../widget containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
-  <li><a href="../widget containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
-  <li><a href="../widget containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
+  <li><a href="../widget_containers/naughty.widget.background.html">naughty.widget.background</a></li>
+  <li><a href="../widget_containers/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
+  <li><a href="../widget_containers/wibox.container.background.html">wibox.container.background</a></li>
+  <li><a href="../widget_containers/wibox.container.constraint.html">wibox.container.constraint</a></li>
+  <li><a href="../widget_containers/wibox.container.margin.html">wibox.container.margin</a></li>
+  <li><a href="../widget_containers/wibox.container.mirror.html">wibox.container.mirror</a></li>
+  <li><a href="../widget_containers/wibox.container.place.html">wibox.container.place</a></li>
+  <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
+  <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
+  <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
-  <li><a href="../widget layouts/wibox.layout.align.html">wibox.layout.align</a></li>
-  <li><a href="../widget layouts/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
-  <li><a href="../widget layouts/wibox.layout.flex.html">wibox.layout.flex</a></li>
-  <li><a href="../widget layouts/wibox.layout.grid.html">wibox.layout.grid</a></li>
-  <li><a href="../widget layouts/wibox.layout.manual.html">wibox.layout.manual</a></li>
-  <li><a href="../widget layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
-  <li><a href="../widget layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
+  <li><a href="../widget_layouts/wibox.layout.align.html">wibox.layout.align</a></li>
+  <li><a href="../widget_layouts/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
+  <li><a href="../widget_layouts/wibox.layout.flex.html">wibox.layout.flex</a></li>
+  <li><a href="../widget_layouts/wibox.layout.grid.html">wibox.layout.grid</a></li>
+  <li><a href="../widget_layouts/wibox.layout.manual.html">wibox.layout.manual</a></li>
+  <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
+  <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
 <h2>Core components</h2>
 <ul class="nowrap">
-  <li><a href="../core components/awesome.html">awesome</a></li>
-  <li><a href="../core components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core components/button.html">button</a></li>
-  <li><a href="../core components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core components/drawable.html">drawable</a></li>
-  <li><a href="../core components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core components/key.html">key</a></li>
-  <li><a href="../core components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core components/root.html">root</a></li>
-  <li><a href="../core components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/button.html">button</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/key.html">key</a></li>
+  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
 </ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
-  <li><a href="../popups and bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
-  <li><a href="../popups and bars/awful.menu.html">awful.menu</a></li>
-  <li><a href="../popups and bars/awful.popup.html">awful.popup</a></li>
-  <li><a href="../popups and bars/awful.titlebar.html">awful.titlebar</a></li>
-  <li><a href="../popups and bars/awful.tooltip.html">awful.tooltip</a></li>
-  <li><a href="../popups and bars/awful.wibar.html">awful.wibar</a></li>
-  <li><a href="../popups and bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
-  <li><a href="../popups and bars/menubar.html">menubar</a></li>
-  <li><a href="../popups and bars/naughty.layout.box.html">naughty.layout.box</a></li>
-  <li><a href="../popups and bars/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
-  <li><a href="../popups and bars/wibox.html">wibox</a></li>
+  <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
+  <li><a href="../popups_and_bars/awful.menu.html">awful.menu</a></li>
+  <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
+  <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
+  <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
+  <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
+  <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
+  <li><a href="../popups_and_bars/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../popups_and_bars/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../popups_and_bars/wibox.html">wibox</a></li>
 </ul>
 <h2>Utility libraries</h2>
 <ul class="nowrap">
-  <li><a href="../utility libraries/gears.debug.html">gears.debug</a></li>
-  <li><a href="../utility libraries/gears.filesystem.html">gears.filesystem</a></li>
-  <li><a href="../utility libraries/gears.geometry.html">gears.geometry</a></li>
-  <li><a href="../utility libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../utility libraries/gears.object.html">gears.object</a></li>
-  <li><a href="../utility libraries/gears.protected_call.html">gears.protected_call</a></li>
-  <li><a href="../utility libraries/gears.sort.html">gears.sort</a></li>
-  <li><a href="../utility libraries/gears.string.html">gears.string</a></li>
-  <li><a href="../utility libraries/gears.table.html">gears.table</a></li>
-  <li><a href="../utility libraries/gears.wallpaper.html">gears.wallpaper</a></li>
+  <li><a href="../utility_libraries/gears.debug.html">gears.debug</a></li>
+  <li><a href="../utility_libraries/gears.filesystem.html">gears.filesystem</a></li>
+  <li><a href="../utility_libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../utility_libraries/gears.math.html">gears.math</a></li>
+  <li><a href="../utility_libraries/gears.object.html">gears.object</a></li>
+  <li><a href="../utility_libraries/gears.protected_call.html">gears.protected_call</a></li>
+  <li><a href="../utility_libraries/gears.sort.html">gears.sort</a></li>
+  <li><a href="../utility_libraries/gears.string.html">gears.string</a></li>
+  <li><a href="../utility_libraries/gears.table.html">gears.table</a></li>
+  <li><a href="../utility_libraries/gears.wallpaper.html">gears.wallpaper</a></li>
 </ul>
 <h2>Theme related libraries</h2>
 <ul class="nowrap">
-  <li><a href="../theme related libraries/beautiful.html">beautiful</a></li>
-  <li><a href="../theme related libraries/gears.color.html">gears.color</a></li>
-  <li><a href="../theme related libraries/gears.shape.html">gears.shape</a></li>
-</ul>
-<h2>Client tiling</h2>
-<ul class="nowrap">
-  <li><a href="../client tiling/dynamite.html">dynamite</a></li>
-  <li><a href="../client tiling/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
-  <li><a href="../client tiling/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
-  <li><a href="../client tiling/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
-  <li><a href="../client tiling/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
-  <li><a href="../client tiling/dynamite.utils.html">dynamite.utils</a></li>
-  <li><a href="../client tiling/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
+  <li><a href="../theme_related_libraries/beautiful.html">beautiful</a></li>
+  <li><a href="../theme_related_libraries/gears.color.html">gears.color</a></li>
+  <li><a href="../theme_related_libraries/gears.shape.html">gears.shape</a></li>
 </ul>
 <h2>Sample files</h2>
 <ul class="nowrap">
@@ -204,21 +170,15 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
-  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
-  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
-  <li><a href="../classes/wibox.container.scale.html">wibox.container.scale</a></li>
-  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.hierarchy.html">wibox.hierarchy</a></li>
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
-  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/xproperties.html">xproperties</a></li>
 </ul>
 <h2>Documentation</h2>
@@ -266,7 +226,7 @@ any other unix shell language syntax</li>
  <code>bash</code>, <code>zsh</code>, <code>busybox sh</code> or <code>Debian ash</code>.</p>
 
 <p> If you wish to open a process in a terminal window, check that your terminal
- emulator supports the common <a href="../libraries/awful.spawn.html#single_instance">-e</a> option. If it does, then something like
+ emulator supports the common <a href="../libraries/awful.spawn.html#awful.spawn.once">-e</a> option. If it does, then something like
  this should work:</p>
 
 <pre>
@@ -291,8 +251,8 @@ awful.spawn(terminal..<span class="string">" -e my_command"</span>)
 
 <p> A <em>client</em> corresponds to a <em>window</em>. It is owned by a process. It can have
  both a parent and one or many children. A <em>client</em> has a <em>class</em>, an
- <em>instance</em>, a <em>role</em>, and a <em>type</em>. See <a href="../core components/client.html#class">client.class</a>, <a href="../core components/client.html#instance">client.instance</a>,
- <a href="../core components/client.html#role">client.role</a> and <a href="../core components/client.html#type">client.type</a> for more information about these properties.</p>
+ <em>instance</em>, a <em>role</em>, and a <em>type</em>. See <a href="../core_components/client.html#class">client.class</a>, <a href="../core_components/client.html#instance">client.instance</a>,
+ <a href="../core_components/client.html#role">client.role</a> and <a href="../core_components/client.html#type">client.type</a> for more information about these properties.</p>
 
 <p> <strong>Understanding blocking versus asynchronous execution</strong>:</p>
 
@@ -304,7 +264,7 @@ awful.spawn(terminal..<span class="string">" -e my_command"</span>)
  Awesome thread. This works perfectly and avoid blocking Awesome.</p>
 
 <p> If you want to update the text of a <a href="../widgets/wibox.widget.textbox.html#">wibox.widget.textbox</a> with the output
- of a shell command, you should use the <a href="../libraries/awful.spawn.html#easy_async_with_shell">awful.spawn.easy_async_with_shell</a>
+ of a shell command, you should use the <a href="../libraries/awful.spawn.html#awful.spawn.easy_async_with_shell">awful.spawn.easy_async_with_shell</a>
  command. It is strongly recommanded not to use <a href="https://www.lua.org/manual/5.1/manual.html#pdf-io.popen">io.popen</a> is explained in the
  &ldquo;Getting a command&rsquo;s output&rdquo; section. Asynchronous execution is at first a
  bit tricky to understand if you never used that before. The example below
@@ -329,11 +289,11 @@ mylabel.text = <span class="global">io</span>.popen(<span class="string">"cat /t
 </pre>
 
 
-<p> Then the label will be <strong>empty</strong>. <a href="../libraries/awful.spawn.html#">awful.spawn</a> and <a href="../libraries/awful.spawn.html#with_shell">awful.spawn.with_shell</a>
+<p> Then the label will be <strong>empty</strong>. <a href="../libraries/awful.spawn.html#">awful.spawn</a> and <a href="../libraries/awful.spawn.html#awful.spawn.with_shell">awful.spawn.with_shell</a>
  will <strong>not</strong> block and thus the <a href="https://www.lua.org/manual/5.1/manual.html#pdf-io.popen">io.popen</a> will be executed before
  <code>sleep 1</code> finishes. This is why we have async functions to execute shell
  commands. There are many variants with difference characteristics and
- complexity. <a href="../libraries/awful.spawn.html#easy_async">awful.spawn.easy_async</a> is the most common as it is good enough
+ complexity. <a href="../libraries/awful.spawn.html#awful.spawn.easy_async">awful.spawn.easy_async</a> is the most common as it is good enough
  for the general &ldquo;I want to execute a command and do something with the
  output when it finishes&rdquo;.</p>
 
@@ -366,7 +326,7 @@ awful.spawn.easy_async_with_shell(command, <span class="keyword">function</span>
  <code>Gio</code> libraries directly. This is usually very complicated, but gives a lot
  of control on the command execution.</p>
 
-<p> This modules provides <a href="../libraries/awful.spawn.html#with_line_callback">with_line_callback</a> and <a href="../libraries/awful.spawn.html#easy_async">easy_async</a> for convenience.
+<p> This modules provides <a href="../libraries/awful.spawn.html#awful.spawn.with_line_callback">with_line_callback</a> and <a href="../libraries/awful.spawn.html#awful.spawn.easy_async">easy_async</a> for convenience.
  First, lets add this bash command to <a href="../sample files/rc.lua.html#">rc.lua</a>:</p>
 
 <pre>
@@ -385,7 +345,7 @@ awful.spawn.easy_async_with_shell(command, <span class="keyword">function</span>
  were executed synchronously, but will not block it at all using the
  asynchronous functions.</p>
 
-<p> <a href="../libraries/awful.spawn.html#with_line_callback">with_line_callback</a> will execute the callbacks every time a new line is
+<p> <a href="../libraries/awful.spawn.html#awful.spawn.with_line_callback">with_line_callback</a> will execute the callbacks every time a new line is
  printed by the command:</p>
 
 <pre>
@@ -400,7 +360,7 @@ awful.spawn.with_line_callback(noisy, {
 </pre>
 
 
-<p> If only the full output is needed, then <a href="../libraries/awful.spawn.html#easy_async">easy_async</a> is the right choice:</p>
+<p> If only the full output is needed, then <a href="../libraries/awful.spawn.html#awful.spawn.easy_async">easy_async</a> is the right choice:</p>
 
 <pre>
 awful.spawn.easy_async(noisy, <span class="keyword">function</span>(stdout, stderr, reason, exit_code)
@@ -455,7 +415,7 @@ DESKTOP_STARTUP_ID=<span class="string">"something_TIME$(date '+%s')"</span> my_
 
 <p> This should (if the program correctly implements the protocol) result in
  <code>c.startup_id</code> to at least match <code>something</code>.
- This identifier can then be used in <code>awful.rules</code> to configure the client.</p>
+ This identifier can then be used in <a href="../libraries/awful.rules.html#">awful.rules</a> to configure the client.</p>
 
 <p> Awesome can automatically set the <code>DESKTOP_STARTUP_ID</code> variable. This is used
  by <a href="../libraries/awful.spawn.html#">awful.spawn</a> to specify additional rules for the startup. For example:</p>
@@ -482,80 +442,79 @@ awesome-client <span class="string">'awful=require("awful");
 
 
 <p> This table contains the client properties that are valid when used the
- <code>sn_rules</code> or <code>prop</code> function argument. They are the same as in <code>awful.rules</code>.</p>
+ <code>sn_rules</code> or <code>prop</code> function argument. They are the same as in <a href="../libraries/awful.rules.html#">awful.rules</a>.</p>
 
 <table class='widget_list' border=1>
  <tr>
   <th align='center'>Name</th>
   <th align='center'>Description</th>
  </tr>
-   <tr><td><a href='../core%20components/client.html#placement'>placement</a></td><td>The client default placement on the screen</td></tr>
-   <tr><td><a href='../core%20components/client.html#honor_padding'>honor\_padding</a></td><td>When applying the placement, honor the screen padding</td></tr>
-   <tr><td><a href='../core%20components/client.html#honor_workarea'>honor\_workarea</a></td><td>When applying the placement, honor the screen work area</td></tr>
-   <tr><td><a href='../core%20components/client.html#tag'>tag</a></td><td>The client default tag</td></tr>
-   <tr><td><a href='../core%20components/client.html#tags'>tags</a></td><td>The client default tags</td></tr>
-   <tr><td><a href='../core%20components/client.html#new_tag'>new\_tag</a></td><td>Create a new tag for this client</td></tr>
-   <tr><td><a href='../core%20components/client.html#switch_to_tags'>switch\_to\_tags</a></td><td>Unselect the current tags and select this client tags</td></tr>
-   <tr><td><a href='../core%20components/client.html#focus'>focus</a></td><td>Define if the client should grab focus by default</td></tr>
-   <tr><td><a href='../core%20components/client.html#titlebars_enabled'>titlebars\_enabled</a></td><td>Should this client have a titlebar by default</td></tr>
-   <tr><td><a href='../core%20components/client.html#callback'>callback</a></td><td>A function to call when this client is ready</td></tr>
-   <tr><td><a href='../core%20components/client.html#granted_requests'>granted\_requests</a></td><td>This property allows to contextually enable or disable some client requests</td></tr>
-   <tr><td><a href='../core%20components/client.html#marked'>marked</a></td><td>If a client is marked or not</td></tr>
-   <tr><td><a href='../core%20components/client.html#is_fixed'>is\_fixed</a></td><td>Return if a client has a fixed size or not</td></tr>
-   <tr><td><a href='../core%20components/client.html#immobilized_horizontal'>immobilized\_horizontal</a></td><td>Is the client immobilized horizontally?</td></tr>
-   <tr><td><a href='../core%20components/client.html#immobilized_vertical'>immobilized\_vertical</a></td><td>Is the client immobilized vertically?</td></tr>
-   <tr><td><a href='../core%20components/client.html#floating'>floating</a></td><td>The client floating state</td></tr>
-   <tr><td><a href='../core%20components/client.html#x'>x</a></td><td>The x coordinates</td></tr>
-   <tr><td><a href='../core%20components/client.html#y'>y</a></td><td>The y coordinates</td></tr>
-   <tr><td><a href='../core%20components/client.html#width'>width</a></td><td>The width of the client</td></tr>
-   <tr><td><a href='../core%20components/client.html#height'>height</a></td><td>The height of the client</td></tr>
-   <tr><td><a href='../core%20components/client.html#dockable'>dockable</a></td><td>If the client is dockable</td></tr>
-   <tr><td><a href='../core%20components/client.html#requests_no_titlebar'>requests\_no\_titlebar</a></td><td>If the client requests not to be decorated with a titlebar</td></tr>
-   <tr><td><a href='../core%20components/client.html#shape'>shape</a></td><td>Set the client shape</td></tr>
-   <tr><td><a href='../core%20components/client.html#window'>window</a></td><td>The X window id</td></tr>
-   <tr><td><a href='../core%20components/client.html#name'>name</a></td><td>The client title</td></tr>
-   <tr><td><a href='../core%20components/client.html#skip_taskbar'>skip\_taskbar</a></td><td>True if the client does not want to be in taskbar</td></tr>
-   <tr><td><a href='../core%20components/client.html#type'>type</a></td><td>The window type</td></tr>
-   <tr><td><a href='../core%20components/client.html#class'>class</a></td><td>The client class</td></tr>
-   <tr><td><a href='../core%20components/client.html#instance'>instance</a></td><td>The client instance</td></tr>
-   <tr><td><a href='../core%20components/client.html#pid'>pid</a></td><td>The client PID, if available</td></tr>
-   <tr><td><a href='../core%20components/client.html#role'>role</a></td><td>The window role, if available</td></tr>
-   <tr><td><a href='../core%20components/client.html#machine'>machine</a></td><td>The machine client is running on</td></tr>
-   <tr><td><a href='../core%20components/client.html#icon_name'>icon\_name</a></td><td>The client name when iconified</td></tr>
-   <tr><td><a href='../core%20components/client.html#icon'>icon</a></td><td>The client icon as a surface</td></tr>
-   <tr><td><a href='../core%20components/client.html#icon_sizes'>icon\_sizes</a></td><td>The available sizes of client icons</td></tr>
-   <tr><td><a href='../core%20components/client.html#screen'>screen</a></td><td>Client screen</td></tr>
-   <tr><td><a href='../core%20components/client.html#hidden'>hidden</a></td><td>Define if the client must be hidden, i</td></tr>
-   <tr><td><a href='../core%20components/client.html#minimized'>minimized</a></td><td>Define it the client must be iconify, i</td></tr>
-   <tr><td><a href='../core%20components/client.html#size_hints_honor'>size\_hints\_honor</a></td><td>Honor size hints, e</td></tr>
-   <tr><td><a href='../core%20components/client.html#border_width'>border\_width</a></td><td>The client border width</td></tr>
-   <tr><td><a href='../core%20components/client.html#border_color'>border\_color</a></td><td>The client border color</td></tr>
-   <tr><td><a href='../core%20components/client.html#urgent'>urgent</a></td><td>The client urgent state</td></tr>
-   <tr><td><a href='../core%20components/client.html#content'>content</a></td><td>A cairo surface for the client window content</td></tr>
-   <tr><td><a href='../core%20components/client.html#opacity'>opacity</a></td><td>The client opacity</td></tr>
-   <tr><td><a href='../core%20components/client.html#ontop'>ontop</a></td><td>The client is on top of every other windows</td></tr>
-   <tr><td><a href='../core%20components/client.html#above'>above</a></td><td>The client is above normal windows</td></tr>
-   <tr><td><a href='../core%20components/client.html#below'>below</a></td><td>The client is below normal windows</td></tr>
-   <tr><td><a href='../core%20components/client.html#fullscreen'>fullscreen</a></td><td>The client is fullscreen or not</td></tr>
-   <tr><td><a href='../core%20components/client.html#maximized'>maximized</a></td><td>The client is maximized (horizontally and vertically) or not</td></tr>
-   <tr><td><a href='../core%20components/client.html#maximized_horizontal'>maximized\_horizontal</a></td><td>The client is maximized horizontally or not</td></tr>
-   <tr><td><a href='../core%20components/client.html#maximized_vertical'>maximized\_vertical</a></td><td>The client is maximized vertically or not</td></tr>
-   <tr><td><a href='../core%20components/client.html#transient_for'>transient\_for</a></td><td>The client the window is transient for</td></tr>
-   <tr><td><a href='../core%20components/client.html#group_window'>group\_window</a></td><td>Window identification unique to a group of windows</td></tr>
-   <tr><td><a href='../core%20components/client.html#leader_window'>leader\_window</a></td><td>Identification unique to windows spawned by the same command</td></tr>
-   <tr><td><a href='../core%20components/client.html#size_hints'>size\_hints</a></td><td>A table with size hints of the client</td></tr>
-   <tr><td><a href='../core%20components/client.html#motif_wm_hints'>motif\_wm\_hints</a></td><td>The motif WM hints of the client</td></tr>
-   <tr><td><a href='../core%20components/client.html#sticky'>sticky</a></td><td>Set the client sticky, i</td></tr>
-   <tr><td><a href='../core%20components/client.html#modal'>modal</a></td><td>Indicate if the client is modal</td></tr>
-   <tr><td><a href='../core%20components/client.html#focusable'>focusable</a></td><td>True if the client can receive the input focus</td></tr>
-   <tr><td><a href='../core%20components/client.html#shape_bounding'>shape\_bounding</a></td><td>The client's bounding shape as set by awesome as a (native) cairo surface</td></tr>
-   <tr><td><a href='../core%20components/client.html#shape_clip'>shape\_clip</a></td><td>The client's clip shape as set by awesome as a (native) cairo surface</td></tr>
-   <tr><td><a href='../core%20components/client.html#shape_input'>shape\_input</a></td><td>The client's input shape as set by awesome as a (native) cairo surface</td></tr>
-   <tr><td><a href='../core%20components/client.html#client_shape_bounding'>client\_shape\_bounding</a></td><td>The client's bounding shape as set by the program as a (native) cairo surface</td></tr>
-   <tr><td><a href='../core%20components/client.html#client_shape_clip'>client\_shape\_clip</a></td><td>The client's clip shape as set by the program as a (native) cairo surface</td></tr>
-   <tr><td><a href='../core%20components/client.html#startup_id'>startup\_id</a></td><td>The FreeDesktop StartId</td></tr>
-   <tr><td><a href='../core%20components/client.html#valid'>valid</a></td><td>If the client that this object refers to is still managed by awesome</td></tr>
-   <tr><td><a href='../core%20components/client.html#first_tag'>first\_tag</a></td><td>The first tag of the client</td></tr>
+   <tr><td><a href='../core_components/client.html#placement'>placement</a></td><td>The client default placement on the screen</td></tr>
+   <tr><td><a href='../core_components/client.html#honor_padding'>honor\_padding</a></td><td>When applying the placement, honor the screen padding</td></tr>
+   <tr><td><a href='../core_components/client.html#honor_workarea'>honor\_workarea</a></td><td>When applying the placement, honor the screen work area</td></tr>
+   <tr><td><a href='../core_components/client.html#tag'>tag</a></td><td>The client default tag</td></tr>
+   <tr><td><a href='../core_components/client.html#tags'>tags</a></td><td>The client default tags</td></tr>
+   <tr><td><a href='../core_components/client.html#new_tag'>new\_tag</a></td><td>Create a new tag for this client</td></tr>
+   <tr><td><a href='../core_components/client.html#switch_to_tags'>switch\_to\_tags</a></td><td>Unselect the current tags and select this client tags</td></tr>
+   <tr><td><a href='../core_components/client.html#focus'>focus</a></td><td>Define if the client should grab focus by default</td></tr>
+   <tr><td><a href='../core_components/client.html#titlebars_enabled'>titlebars\_enabled</a></td><td>Should this client have a titlebar by default</td></tr>
+   <tr><td><a href='../core_components/client.html#callback'>callback</a></td><td>A function to call when this client is ready</td></tr>
+   <tr><td><a href='../core_components/client.html#marked'>marked</a></td><td>If a client is marked or not</td></tr>
+   <tr><td><a href='../core_components/client.html#is_fixed'>is\_fixed</a></td><td>Return if a client has a fixed size or not</td></tr>
+   <tr><td><a href='../core_components/client.html#immobilized_horizontal'>immobilized\_horizontal</a></td><td>Is the client immobilized horizontally?</td></tr>
+   <tr><td><a href='../core_components/client.html#immobilized_vertical'>immobilized\_vertical</a></td><td>Is the client immobilized vertically?</td></tr>
+   <tr><td><a href='../core_components/client.html#floating'>floating</a></td><td>The client floating state</td></tr>
+   <tr><td><a href='../core_components/client.html#x'>x</a></td><td>The x coordinates</td></tr>
+   <tr><td><a href='../core_components/client.html#y'>y</a></td><td>The y coordinates</td></tr>
+   <tr><td><a href='../core_components/client.html#width'>width</a></td><td>The width of the client</td></tr>
+   <tr><td><a href='../core_components/client.html#height'>height</a></td><td>The height of the client</td></tr>
+   <tr><td><a href='../core_components/client.html#dockable'>dockable</a></td><td>If the client is dockable</td></tr>
+   <tr><td><a href='../core_components/client.html#requests_no_titlebar'>requests\_no\_titlebar</a></td><td>If the client requests not to be decorated with a titlebar</td></tr>
+   <tr><td><a href='../core_components/client.html#shape'>shape</a></td><td>Set the client shape</td></tr>
+   <tr><td><a href='../core_components/client.html#window'>window</a></td><td>The X window id</td></tr>
+   <tr><td><a href='../core_components/client.html#name'>name</a></td><td>The client title</td></tr>
+   <tr><td><a href='../core_components/client.html#skip_taskbar'>skip\_taskbar</a></td><td>True if the client does not want to be in taskbar</td></tr>
+   <tr><td><a href='../core_components/client.html#type'>type</a></td><td>The window type</td></tr>
+   <tr><td><a href='../core_components/client.html#class'>class</a></td><td>The client class</td></tr>
+   <tr><td><a href='../core_components/client.html#instance'>instance</a></td><td>The client instance</td></tr>
+   <tr><td><a href='../core_components/client.html#pid'>pid</a></td><td>The client PID, if available</td></tr>
+   <tr><td><a href='../core_components/client.html#role'>role</a></td><td>The window role, if available</td></tr>
+   <tr><td><a href='../core_components/client.html#machine'>machine</a></td><td>The machine client is running on</td></tr>
+   <tr><td><a href='../core_components/client.html#icon_name'>icon\_name</a></td><td>The client name when iconified</td></tr>
+   <tr><td><a href='../core_components/client.html#icon'>icon</a></td><td>The client icon as a surface</td></tr>
+   <tr><td><a href='../core_components/client.html#icon_sizes'>icon\_sizes</a></td><td>The available sizes of client icons</td></tr>
+   <tr><td><a href='../core_components/client.html#screen'>screen</a></td><td>Client screen</td></tr>
+   <tr><td><a href='../core_components/client.html#hidden'>hidden</a></td><td>Define if the client must be hidden, i</td></tr>
+   <tr><td><a href='../core_components/client.html#minimized'>minimized</a></td><td>Define it the client must be iconify, i</td></tr>
+   <tr><td><a href='../core_components/client.html#size_hints_honor'>size\_hints\_honor</a></td><td>Honor size hints, e</td></tr>
+   <tr><td><a href='../core_components/client.html#border_width'>border\_width</a></td><td>The client border width</td></tr>
+   <tr><td><a href='../core_components/client.html#border_color'>border\_color</a></td><td>The client border color</td></tr>
+   <tr><td><a href='../core_components/client.html#urgent'>urgent</a></td><td>The client urgent state</td></tr>
+   <tr><td><a href='../core_components/client.html#content'>content</a></td><td>A cairo surface for the client window content</td></tr>
+   <tr><td><a href='../core_components/client.html#opacity'>opacity</a></td><td>The client opacity</td></tr>
+   <tr><td><a href='../core_components/client.html#ontop'>ontop</a></td><td>The client is on top of every other windows</td></tr>
+   <tr><td><a href='../core_components/client.html#above'>above</a></td><td>The client is above normal windows</td></tr>
+   <tr><td><a href='../core_components/client.html#below'>below</a></td><td>The client is below normal windows</td></tr>
+   <tr><td><a href='../core_components/client.html#fullscreen'>fullscreen</a></td><td>The client is fullscreen or not</td></tr>
+   <tr><td><a href='../core_components/client.html#maximized'>maximized</a></td><td>The client is maximized (horizontally and vertically) or not</td></tr>
+   <tr><td><a href='../core_components/client.html#maximized_horizontal'>maximized\_horizontal</a></td><td>The client is maximized horizontally or not</td></tr>
+   <tr><td><a href='../core_components/client.html#maximized_vertical'>maximized\_vertical</a></td><td>The client is maximized vertically or not</td></tr>
+   <tr><td><a href='../core_components/client.html#transient_for'>transient\_for</a></td><td>The client the window is transient for</td></tr>
+   <tr><td><a href='../core_components/client.html#group_window'>group\_window</a></td><td>Window identification unique to a group of windows</td></tr>
+   <tr><td><a href='../core_components/client.html#leader_window'>leader\_window</a></td><td>Identification unique to windows spawned by the same command</td></tr>
+   <tr><td><a href='../core_components/client.html#size_hints'>size\_hints</a></td><td>A table with size hints of the client</td></tr>
+   <tr><td><a href='../core_components/client.html#motif_wm_hints'>motif\_wm\_hints</a></td><td>The motif WM hints of the client</td></tr>
+   <tr><td><a href='../core_components/client.html#sticky'>sticky</a></td><td>Set the client sticky, i</td></tr>
+   <tr><td><a href='../core_components/client.html#modal'>modal</a></td><td>Indicate if the client is modal</td></tr>
+   <tr><td><a href='../core_components/client.html#focusable'>focusable</a></td><td>True if the client can receive the input focus</td></tr>
+   <tr><td><a href='../core_components/client.html#shape_bounding'>shape\_bounding</a></td><td>The client's bounding shape as set by awesome as a (native) cairo surface</td></tr>
+   <tr><td><a href='../core_components/client.html#shape_clip'>shape\_clip</a></td><td>The client's clip shape as set by awesome as a (native) cairo surface</td></tr>
+   <tr><td><a href='../core_components/client.html#shape_input'>shape\_input</a></td><td>The client's input shape as set by awesome as a (native) cairo surface</td></tr>
+   <tr><td><a href='../core_components/client.html#client_shape_bounding'>client\_shape\_bounding</a></td><td>The client's bounding shape as set by the program as a (native) cairo surface</td></tr>
+   <tr><td><a href='../core_components/client.html#client_shape_clip'>client\_shape\_clip</a></td><td>The client's clip shape as set by the program as a (native) cairo surface</td></tr>
+   <tr><td><a href='../core_components/client.html#startup_id'>startup\_id</a></td><td>The FreeDesktop StartId</td></tr>
+   <tr><td><a href='../core_components/client.html#valid'>valid</a></td><td>If the client that this object refers to is still managed by awesome</td></tr>
+   <tr><td><a href='../core_components/client.html#first_tag'>first\_tag</a></td><td>The first tag of the client</td></tr>
  </table>
 
 </p>
@@ -566,67 +525,56 @@ awesome-client <span class="string">'awful=require("awful");
     </ul>
 
 
-<h2>
-    <a href="#Functions">Functions</a>
-</h2>
+<h2><a href="#Static_module_functions">Static module functions</a></h2>
 <table class="function_list">
-	<tr>
-	<td class="name" ><a href="#spawn"><span class='function_modname'>awful.spawn.</span>spawn (cmd[, sn_rules=true[, callback]])</a></td>
-	<td class="summary">Spawn a program, and optionally apply properties and/or run a callback.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#with_shell"><span class='function_modname'>awful.spawn.</span>with_shell (cmd)</a></td>
-	<td class="summary">Spawn a program using the shell.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#with_line_callback"><span class='function_modname'>awful.spawn.</span>with_line_callback (cmd, callbacks)</a></td>
-	<td class="summary">Spawn a program and asynchronously capture its output line by line.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#easy_async"><span class='function_modname'>awful.spawn.</span>easy_async (cmd, callback)</a></td>
-	<td class="summary">Asynchronously spawn a program and capture its output.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#easy_async_with_shell"><span class='function_modname'>awful.spawn.</span>easy_async_with_shell (cmd, callback)</a></td>
-	<td class="summary">Call <a href="../libraries/awful.spawn.html#easy_async">spawn.easy_async</a> with a shell.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#read_lines"><span class='function_modname'>awful.spawn.</span>read_lines (input_stream, line_callback[, done_callback[, close=false]])</a></td>
-	<td class="summary">Read lines from a Gio input stream</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#once"><span class='function_modname'>awful.spawn.</span>once (cmd[, rules[, matcher[, unique_id[, callback]]]])</a></td>
-	<td class="summary">Spawn a command if it has not been spawned before.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#single_instance"><span class='function_modname'>awful.spawn.</span>single_instance (cmd[, rules[, matcher[, unique_id[, callback]]]])</a></td>
-	<td class="summary">Spawn a command if an instance is not already running.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#raise_or_spawn"><span class='function_modname'>awful.spawn.</span>raise_or_spawn (cmd, rules[, matcher[, unique_id[, callback]]])</a></td>
-	<td class="summary">Raise a client if it exists or spawn a new one then raise it.</td>
-	</tr>
-</table>
-<h2>
-    <a href="#Signals">Signals</a>
-</h2>
-<table class="function_list">
-	<tr>
-	<td class="name" ><a href="#request::autostart">request::autostart</a></td>
-	<td class="summary">Emitted the first time Awesome is started.</td>
-	</tr>
+    <tr>
+      <td class="name" ><a href="#awful.spawn">awful.spawn <span class='function_args'>(cmd[, sn_rules=true[, callback]])</span></a></td>
+      <td class="summary">Spawn a program, and optionally apply properties and/or run a callback.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#awful.spawn.with_shell"><span class='function_modname'>awful.spawn.</span>with_shell <span class='function_args'>(cmd)</span></a></td>
+      <td class="summary">Spawn a program using the shell.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#awful.spawn.with_line_callback"><span class='function_modname'>awful.spawn.</span>with_line_callback <span class='function_args'>(cmd, callbacks)</span></a></td>
+      <td class="summary">Spawn a program and asynchronously capture its output line by line.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#awful.spawn.easy_async"><span class='function_modname'>awful.spawn.</span>easy_async <span class='function_args'>(cmd, callback)</span></a></td>
+      <td class="summary">Asynchronously spawn a program and capture its output.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#awful.spawn.easy_async_with_shell"><span class='function_modname'>awful.spawn.</span>easy_async_with_shell <span class='function_args'>(cmd, callback)</span></a></td>
+      <td class="summary">Call <a href="../libraries/awful.spawn.html#awful.spawn.easy_async">spawn.easy_async</a> with a shell.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#awful.spawn.read_lines"><span class='function_modname'>awful.spawn.</span>read_lines <span class='function_args'>(input_stream, line_callback[, done_callback[, close=false]])</span></a></td>
+      <td class="summary">Read lines from a Gio input stream</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#awful.spawn.once"><span class='function_modname'>awful.spawn.</span>once <span class='function_args'>(cmd[, rules[, matcher[, unique_id[, callback]]]])</span></a></td>
+      <td class="summary">Spawn a command if it has not been spawned before.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#awful.spawn.single_instance"><span class='function_modname'>awful.spawn.</span>single_instance <span class='function_args'>(cmd[, rules[, matcher[, unique_id[, callback]]]])</span></a></td>
+      <td class="summary">Spawn a command if an instance is not already running.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#awful.spawn.raise_or_spawn"><span class='function_modname'>awful.spawn.</span>raise_or_spawn <span class='function_args'>(cmd, rules[, matcher[, unique_id[, callback]]])</span></a></td>
+      <td class="summary">Raise a client if it exists or spawn a new one then raise it.</td>
+    </tr>
 </table>
 
 <br/>
 <br/>
 
 
-    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
-    Methods
+    <h2 class="section-header "><a name="Static_module_functions"></a>Static module functions</h2>
+
     <dl class="function">
     <dt>
-    <a name = "spawn"></a>
-    <strong><span class='function_modname'>awful.spawn.</span>spawn (cmd[, sn_rules=true[, callback]])</strong>
+    <a name = "awful.spawn"></a>
+    <strong>awful.spawn <span class='function_args'>(cmd[, sn_rules=true[, callback]])</span></strong>
     </dt>
     <dd>
     Spawn a program, and optionally apply properties and/or run a callback. </p>
@@ -634,7 +582,7 @@ awesome-client <span class="string">'awful=require("awful");
 <p> Applying properties or running a callback requires the program/client to
  support startup notifications.</p>
 
-<p> See <code>awful.rules.execute</code> for more details about the format of <code>sn_rules</code>.
+<p> See <a href="../libraries/awful.rules.html#awful.rules.execute">awful.rules.execute</a> for more details about the format of <code>sn_rules</code>.
 
 
     <h3>Parameters:</h3>
@@ -678,8 +626,8 @@ awesome-client <span class="string">'awful=require("awful");
 
 </dd>
     <dt>
-    <a name = "with_shell"></a>
-    <strong><span class='function_modname'>awful.spawn.</span>with_shell (cmd)</strong>
+    <a name = "awful.spawn.with_shell"></a>
+    <strong><span class='function_modname'>awful.spawn.</span>with_shell <span class='function_args'>(cmd)</span></strong>
     </dt>
     <dd>
     Spawn a program using the shell.
@@ -700,8 +648,8 @@ awesome-client <span class="string">'awful=require("awful");
 
 </dd>
     <dt>
-    <a name = "with_line_callback"></a>
-    <strong><span class='function_modname'>awful.spawn.</span>with_line_callback (cmd, callbacks)</strong>
+    <a name = "awful.spawn.with_line_callback"></a>
+    <strong><span class='function_modname'>awful.spawn.</span>with_line_callback <span class='function_args'>(cmd, callbacks)</span></strong>
     </dt>
     <dd>
     Spawn a program and asynchronously capture its output line by line.
@@ -766,12 +714,12 @@ awesome-client <span class="string">'awful=require("awful");
 
 </dd>
     <dt>
-    <a name = "easy_async"></a>
-    <strong><span class='function_modname'>awful.spawn.</span>easy_async (cmd, callback)</strong>
+    <a name = "awful.spawn.easy_async"></a>
+    <strong><span class='function_modname'>awful.spawn.</span>easy_async <span class='function_args'>(cmd, callback)</span></strong>
     </dt>
     <dd>
     Asynchronously spawn a program and capture its output.
- (wraps <a href="../libraries/awful.spawn.html#with_line_callback">spawn.with_line_callback</a>).
+ (wraps <a href="../libraries/awful.spawn.html#awful.spawn.with_line_callback">spawn.with_line_callback</a>).
 
 
     <h3>Parameters:</h3>
@@ -821,17 +769,17 @@ awesome-client <span class="string">'awful=require("awful");
 
     <h3>See also:</h3>
     <ul>
-         <a href="../libraries/awful.spawn.html#with_line_callback">spawn.with_line_callback</a>
+         <a href="../libraries/awful.spawn.html#awful.spawn.with_line_callback">spawn.with_line_callback</a>
     </ul>
 
 
 </dd>
     <dt>
-    <a name = "easy_async_with_shell"></a>
-    <strong><span class='function_modname'>awful.spawn.</span>easy_async_with_shell (cmd, callback)</strong>
+    <a name = "awful.spawn.easy_async_with_shell"></a>
+    <strong><span class='function_modname'>awful.spawn.</span>easy_async_with_shell <span class='function_args'>(cmd, callback)</span></strong>
     </dt>
     <dd>
-    Call <a href="../libraries/awful.spawn.html#easy_async">spawn.easy_async</a> with a shell.
+    Call <a href="../libraries/awful.spawn.html#awful.spawn.easy_async">spawn.easy_async</a> with a shell.
  This calls <code>cmd</code> with <code>$SHELL -c</code> (via <a href="../libraries/awful.util.html#shell">awful.util.shell</a>).
 
 
@@ -882,14 +830,14 @@ awesome-client <span class="string">'awful=require("awful");
 
     <h3>See also:</h3>
     <ul>
-         <a href="../libraries/awful.spawn.html#with_line_callback">spawn.with_line_callback</a>
+         <a href="../libraries/awful.spawn.html#awful.spawn.with_line_callback">spawn.with_line_callback</a>
     </ul>
 
 
 </dd>
     <dt>
-    <a name = "read_lines"></a>
-    <strong><span class='function_modname'>awful.spawn.</span>read_lines (input_stream, line_callback[, done_callback[, close=false]])</strong>
+    <a name = "awful.spawn.read_lines"></a>
+    <strong><span class='function_modname'>awful.spawn.</span>read_lines <span class='function_args'>(input_stream, line_callback[, done_callback[, close=false]])</span></strong>
     </dt>
     <dd>
     Read lines from a Gio input stream
@@ -925,8 +873,8 @@ awesome-client <span class="string">'awful=require("awful");
 
 </dd>
     <dt>
-    <a name = "once"></a>
-    <strong><span class='function_modname'>awful.spawn.</span>once (cmd[, rules[, matcher[, unique_id[, callback]]]])</strong>
+    <a name = "awful.spawn.once"></a>
+    <strong><span class='function_modname'>awful.spawn.</span>once <span class='function_args'>(cmd[, rules[, matcher[, unique_id[, callback]]]])</span></strong>
     </dt>
     <dd>
     Spawn a command if it has not been spawned before. </p>
@@ -938,10 +886,10 @@ awesome-client <span class="string">'awful=require("awful");
  command and rules, you need to specify an UID or only the first one will be
  executed.</p>
 
-<p> The <code>rules</code> are standard <code>awful.rules</code>.</p>
+<p> The <a href="../libraries/awful.rules.html">rules</a> are standard <a href="../libraries/awful.rules.html#">awful.rules</a>.</p>
 
 <p> This function depends on the startup notification protocol to be correctly
- implemented by the command. See <a href="../core components/client.html#startup_id">client.startup_id</a> for more information.
+ implemented by the command. See <a href="../core_components/client.html#startup_id">client.startup_id</a> for more information.
  Note that this also wont work with shell or terminal commands.
 
 
@@ -979,24 +927,25 @@ awesome-client <span class="string">'awful=require("awful");
 
     <h3>See also:</h3>
     <ul>
+         <a href="../libraries/awful.rules.html#">awful.rules</a>
     </ul>
 
 
 </dd>
     <dt>
-    <a name = "single_instance"></a>
-    <strong><span class='function_modname'>awful.spawn.</span>single_instance (cmd[, rules[, matcher[, unique_id[, callback]]]])</strong>
+    <a name = "awful.spawn.single_instance"></a>
+    <strong><span class='function_modname'>awful.spawn.</span>single_instance <span class='function_args'>(cmd[, rules[, matcher[, unique_id[, callback]]]])</span></strong>
     </dt>
     <dd>
     Spawn a command if an instance is not already running. </p>
 
-<p> This is like <a href="../libraries/awful.spawn.html#once">awful.spawn.once</a>, but will spawn new instances if the previous
+<p> This is like <a href="../libraries/awful.spawn.html#awful.spawn.once">awful.spawn.once</a>, but will spawn new instances if the previous
  has finished.</p>
 
-<p> The <code>rules</code> are standard <code>awful.rules</code>.</p>
+<p> The <a href="../libraries/awful.rules.html">rules</a> are standard <a href="../libraries/awful.rules.html#">awful.rules</a>.</p>
 
 <p> This function depends on the startup notification protocol to be correctly
- implemented by the command. See <a href="../core components/client.html#startup_id">client.startup_id</a> for more information.
+ implemented by the command. See <a href="../core_components/client.html#startup_id">client.startup_id</a> for more information.
  Note that this also wont work with shell or terminal commands.</p>
 
 <p> Note that multiple instances can still be spawned if the command is called
@@ -1037,19 +986,20 @@ awesome-client <span class="string">'awful=require("awful");
 
     <h3>See also:</h3>
     <ul>
+         <a href="../libraries/awful.rules.html#">awful.rules</a>
     </ul>
 
 
 </dd>
     <dt>
-    <a name = "raise_or_spawn"></a>
-    <strong><span class='function_modname'>awful.spawn.</span>raise_or_spawn (cmd, rules[, matcher[, unique_id[, callback]]])</strong>
+    <a name = "awful.spawn.raise_or_spawn"></a>
+    <strong><span class='function_modname'>awful.spawn.</span>raise_or_spawn <span class='function_args'>(cmd, rules[, matcher[, unique_id[, callback]]])</span></strong>
     </dt>
     <dd>
     Raise a client if it exists or spawn a new one then raise it. </p>
 
 <p> This function depends on the startup notification protocol to be correctly
- implemented by the command. See <a href="../core components/client.html#startup_id">client.startup_id</a> for more information.
+ implemented by the command. See <a href="../core_components/client.html#startup_id">client.startup_id</a> for more information.
  Note that this also wont work with shell or terminal commands.
 
 
@@ -1092,38 +1042,8 @@ awesome-client <span class="string">'awful=require("awful");
 
     <h3>See also:</h3>
     <ul>
+         <a href="../libraries/awful.rules.html#">awful.rules</a>
     </ul>
-
-
-</dd>
-</dl>
-    <h2 class="section-header "><a name="Signals"></a>Signals</h2>
-
-    <dl class="function">
-    <dt>
-    <a name = "request::autostart"></a>
-    <strong>request::autostart</strong>
-    </dt>
-    <dd>
-    Emitted the first time Awesome is started. </p>
-
-<p> This signal can be used to detect when executing some task needs to be
- done only once. It will not be emitted when awesome is restarted. It will
- also not be emitted if Awesome is killed, another window manager used and
- Awesome gets started again.</p>
-
-<p> Please note that there is a concept called a session manager. Many existing
- projects, including some display manager (DM), come with one. In theory, it
- is the session manager job to handle autostarting programs. There is no way
- for Awesome to detect if the &ldquo;autostart&rdquo; program list has already been
- executed by something else. However, it is very common for Awesome to be used
- without a session manager. It is also useful, for the sake of self-contained
- <a href="../sample files/rc.lua.html#">rc.lua</a> scripts, to have this capability built-in. Use with restraint.
-
-
-
-
-
 
 
 </dd>
@@ -1134,7 +1054,7 @@ awesome-client <span class="string">'awful=require("awful");
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-09 15:48:31 </i>
+<i style="float:right;">Last updated 2019-07-12 18:22:06 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

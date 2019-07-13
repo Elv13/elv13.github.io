@@ -5,29 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Class wibox.widget.base - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
-
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
 </head>
 <body>
 
 <div id="container">
 
 <div id="product">
-	<div id="product_logo"></div>
-	<div id="product_name"><big><b></b></big></div>
-	<div id="product_description"></div>
+    <div id="product_logo"></div>
+    <div id="product_name"><big><b></b></big></div>
+    <div id="product_description"></div>
 </div> <!-- id="product" -->
 
 
@@ -56,30 +42,16 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
-  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
-  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
-  <li><a href="../classes/wibox.container.scale.html">wibox.container.scale</a></li>
-  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.hierarchy.html">wibox.hierarchy</a></li>
   <li><strong>wibox.widget.base</strong></li>
-  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/xproperties.html">xproperties</a></li>
-</ul>
-<h2>Declarative rules</h2>
-<ul class="nowrap">
-  <li><a href="../declarative rules/ruled.client.html">ruled.client</a></li>
-  <li><a href="../declarative rules/ruled.clipboard.html">ruled.clipboard</a></li>
-  <li><a href="../declarative rules/ruled.notifications.html">ruled.notifications</a></li>
-  <li><a href="../declarative rules/ruled.screen.html">ruled.screen</a></li>
-  <li><a href="../declarative rules/ruled.tag.html">ruled.tag</a></li>
 </ul>
 <h2>Widgets</h2>
 <ul class="nowrap">
@@ -113,90 +85,80 @@
 </ul>
 <h2>Widget containers</h2>
 <ul class="nowrap">
-  <li><a href="../widget containers/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
-  <li><a href="../widget containers/naughty.widget.background.html">naughty.widget.background</a></li>
-  <li><a href="../widget containers/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
-  <li><a href="../widget containers/wibox.container.background.html">wibox.container.background</a></li>
-  <li><a href="../widget containers/wibox.container.constraint.html">wibox.container.constraint</a></li>
-  <li><a href="../widget containers/wibox.container.margin.html">wibox.container.margin</a></li>
-  <li><a href="../widget containers/wibox.container.mirror.html">wibox.container.mirror</a></li>
-  <li><a href="../widget containers/wibox.container.place.html">wibox.container.place</a></li>
-  <li><a href="../widget containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
-  <li><a href="../widget containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
-  <li><a href="../widget containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
+  <li><a href="../widget_containers/naughty.widget.background.html">naughty.widget.background</a></li>
+  <li><a href="../widget_containers/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
+  <li><a href="../widget_containers/wibox.container.background.html">wibox.container.background</a></li>
+  <li><a href="../widget_containers/wibox.container.constraint.html">wibox.container.constraint</a></li>
+  <li><a href="../widget_containers/wibox.container.margin.html">wibox.container.margin</a></li>
+  <li><a href="../widget_containers/wibox.container.mirror.html">wibox.container.mirror</a></li>
+  <li><a href="../widget_containers/wibox.container.place.html">wibox.container.place</a></li>
+  <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
+  <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
+  <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
-  <li><a href="../widget layouts/wibox.layout.align.html">wibox.layout.align</a></li>
-  <li><a href="../widget layouts/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
-  <li><a href="../widget layouts/wibox.layout.flex.html">wibox.layout.flex</a></li>
-  <li><a href="../widget layouts/wibox.layout.grid.html">wibox.layout.grid</a></li>
-  <li><a href="../widget layouts/wibox.layout.manual.html">wibox.layout.manual</a></li>
-  <li><a href="../widget layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
-  <li><a href="../widget layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
+  <li><a href="../widget_layouts/wibox.layout.align.html">wibox.layout.align</a></li>
+  <li><a href="../widget_layouts/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
+  <li><a href="../widget_layouts/wibox.layout.flex.html">wibox.layout.flex</a></li>
+  <li><a href="../widget_layouts/wibox.layout.grid.html">wibox.layout.grid</a></li>
+  <li><a href="../widget_layouts/wibox.layout.manual.html">wibox.layout.manual</a></li>
+  <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
+  <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
 <h2>Core components</h2>
 <ul class="nowrap">
-  <li><a href="../core components/awesome.html">awesome</a></li>
-  <li><a href="../core components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core components/button.html">button</a></li>
-  <li><a href="../core components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core components/drawable.html">drawable</a></li>
-  <li><a href="../core components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core components/key.html">key</a></li>
-  <li><a href="../core components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core components/root.html">root</a></li>
-  <li><a href="../core components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/button.html">button</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/key.html">key</a></li>
+  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
 </ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
-  <li><a href="../popups and bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
-  <li><a href="../popups and bars/awful.menu.html">awful.menu</a></li>
-  <li><a href="../popups and bars/awful.popup.html">awful.popup</a></li>
-  <li><a href="../popups and bars/awful.titlebar.html">awful.titlebar</a></li>
-  <li><a href="../popups and bars/awful.tooltip.html">awful.tooltip</a></li>
-  <li><a href="../popups and bars/awful.wibar.html">awful.wibar</a></li>
-  <li><a href="../popups and bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
-  <li><a href="../popups and bars/menubar.html">menubar</a></li>
-  <li><a href="../popups and bars/naughty.layout.box.html">naughty.layout.box</a></li>
-  <li><a href="../popups and bars/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
-  <li><a href="../popups and bars/wibox.html">wibox</a></li>
+  <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
+  <li><a href="../popups_and_bars/awful.menu.html">awful.menu</a></li>
+  <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
+  <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
+  <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
+  <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
+  <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
+  <li><a href="../popups_and_bars/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../popups_and_bars/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../popups_and_bars/wibox.html">wibox</a></li>
 </ul>
 <h2>Utility libraries</h2>
 <ul class="nowrap">
-  <li><a href="../utility libraries/gears.debug.html">gears.debug</a></li>
-  <li><a href="../utility libraries/gears.filesystem.html">gears.filesystem</a></li>
-  <li><a href="../utility libraries/gears.geometry.html">gears.geometry</a></li>
-  <li><a href="../utility libraries/gears.math.html">gears.math</a></li>
-  <li><a href="../utility libraries/gears.object.html">gears.object</a></li>
-  <li><a href="../utility libraries/gears.protected_call.html">gears.protected_call</a></li>
-  <li><a href="../utility libraries/gears.sort.html">gears.sort</a></li>
-  <li><a href="../utility libraries/gears.string.html">gears.string</a></li>
-  <li><a href="../utility libraries/gears.table.html">gears.table</a></li>
-  <li><a href="../utility libraries/gears.wallpaper.html">gears.wallpaper</a></li>
+  <li><a href="../utility_libraries/gears.debug.html">gears.debug</a></li>
+  <li><a href="../utility_libraries/gears.filesystem.html">gears.filesystem</a></li>
+  <li><a href="../utility_libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../utility_libraries/gears.math.html">gears.math</a></li>
+  <li><a href="../utility_libraries/gears.object.html">gears.object</a></li>
+  <li><a href="../utility_libraries/gears.protected_call.html">gears.protected_call</a></li>
+  <li><a href="../utility_libraries/gears.sort.html">gears.sort</a></li>
+  <li><a href="../utility_libraries/gears.string.html">gears.string</a></li>
+  <li><a href="../utility_libraries/gears.table.html">gears.table</a></li>
+  <li><a href="../utility_libraries/gears.wallpaper.html">gears.wallpaper</a></li>
 </ul>
 <h2>Theme related libraries</h2>
 <ul class="nowrap">
-  <li><a href="../theme related libraries/beautiful.html">beautiful</a></li>
-  <li><a href="../theme related libraries/gears.color.html">gears.color</a></li>
-  <li><a href="../theme related libraries/gears.shape.html">gears.shape</a></li>
-</ul>
-<h2>Client tiling</h2>
-<ul class="nowrap">
-  <li><a href="../client tiling/dynamite.html">dynamite</a></li>
-  <li><a href="../client tiling/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
-  <li><a href="../client tiling/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
-  <li><a href="../client tiling/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
-  <li><a href="../client tiling/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
-  <li><a href="../client tiling/dynamite.utils.html">dynamite.utils</a></li>
-  <li><a href="../client tiling/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
+  <li><a href="../theme_related_libraries/beautiful.html">beautiful</a></li>
+  <li><a href="../theme_related_libraries/gears.color.html">gears.color</a></li>
+  <li><a href="../theme_related_libraries/gears.shape.html">gears.shape</a></li>
 </ul>
 <h2>Libraries</h2>
 <ul class="nowrap">
+  <li><a href="../libraries/awesome.html">awesome</a></li>
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
@@ -204,11 +166,10 @@
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
+  <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
-  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
-  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
@@ -254,125 +215,119 @@
     </ul>
 
 
-<h2>
-    <a href="#Constructors">Constructors</a>
-</h2>
+<h2><a href="#Constructors">Constructors</a></h2>
 <table class="function_list">
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.make_widget_declarative"><span class='function_modname'>wibox.widget.base.</span>make_widget_declarative <span class='function_args'>(args)</span></a></td>
-	<td class="summary">Create a widget from a declarative description.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.make_widget_from_value"><span class='function_modname'>wibox.widget.base.</span>make_widget_from_value <span class='function_args'>(wdg[, ...=nil])</span></a></td>
-	<td class="summary">Create a widget from an undetermined value.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.make_widget"><span class='function_modname'>wibox.widget.base.</span>make_widget <span class='function_args'>([proxy[, widget_name[, args={}]]])</span></a></td>
-	<td class="summary">Create an empty widget skeleton.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.empty_widget"><span class='function_modname'>wibox.widget.base.</span>empty_widget <span class='function_args'>()</span></a></td>
-	<td class="summary">Generate an empty widget which takes no space and displays nothing.</td>
-	</tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.make_widget_declarative"><span class='function_modname'>wibox.widget.base.</span>make_widget_declarative <span class='function_args'>(args)</span></a></td>
+      <td class="summary">Create a widget from a declarative description.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.make_widget_from_value"><span class='function_modname'>wibox.widget.base.</span>make_widget_from_value <span class='function_args'>(wdg[, ...=nil])</span></a></td>
+      <td class="summary">Create a widget from an undetermined value.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.make_widget"><span class='function_modname'>wibox.widget.base.</span>make_widget <span class='function_args'>([proxy[, widget_name[, args={}]]])</span></a></td>
+      <td class="summary">Create an empty widget skeleton.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.empty_widget"><span class='function_modname'>wibox.widget.base.</span>empty_widget <span class='function_args'>()</span></a></td>
+      <td class="summary">Generate an empty widget which takes no space and displays nothing.</td>
+    </tr>
 </table>
-<h2>
-    <a href="#Static_module_functions">Static module functions</a>
-</h2>
+<h2><a href="#Static_module_functions">Static module functions</a></h2>
 <table class="function_list">
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.rect_to_device_geometry"><span class='function_modname'>wibox.widget.base.</span>rect_to_device_geometry <span class='function_args'>()</span></a></td>
-	<td class="summary">Figure out the geometry in the device coordinate space.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.fit_widget"><span class='function_modname'>wibox.widget.base.</span>fit_widget <span class='function_args'>(parent, context, widget, width, height)</span></a></td>
-	<td class="summary">Fit a widget for the given available width and height.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.layout_widget"><span class='function_modname'>wibox.widget.base.</span>layout_widget <span class='function_args'>(parent, context, widget, width, height)</span></a></td>
-	<td class="summary">Lay out a widget for the given available width and height.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.handle_button"><span class='function_modname'>wibox.widget.base.</span>handle_button <span class='function_args'>()</span></a></td>
-	<td class="summary">Handle a button event on a widget.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.place_widget_via_matrix"><span class='function_modname'>wibox.widget.base.</span>place_widget_via_matrix <span class='function_args'>(widget, mat, width, height)</span></a></td>
-	<td class="summary">Create widget placement information.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.place_widget_at"><span class='function_modname'>wibox.widget.base.</span>place_widget_at <span class='function_args'>(widget, x, y, width, height)</span></a></td>
-	<td class="summary">Create widget placement information.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.check_widget"><span class='function_modname'>wibox.widget.base.</span>check_widget <span class='function_args'>()</span></a></td>
-	<td class="summary">Do some sanity checking on a widget.</td>
-	</tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.rect_to_device_geometry"><span class='function_modname'>wibox.widget.base.</span>rect_to_device_geometry <span class='function_args'>()</span></a></td>
+      <td class="summary">Figure out the geometry in the device coordinate space.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.fit_widget"><span class='function_modname'>wibox.widget.base.</span>fit_widget <span class='function_args'>(parent, context, widget, width, height)</span></a></td>
+      <td class="summary">Fit a widget for the given available width and height.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.layout_widget"><span class='function_modname'>wibox.widget.base.</span>layout_widget <span class='function_args'>(parent, context, widget, width, height)</span></a></td>
+      <td class="summary">Lay out a widget for the given available width and height.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.handle_button"><span class='function_modname'>wibox.widget.base.</span>handle_button <span class='function_args'>()</span></a></td>
+      <td class="summary">Handle a button event on a widget.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.place_widget_via_matrix"><span class='function_modname'>wibox.widget.base.</span>place_widget_via_matrix <span class='function_args'>(widget, mat, width, height)</span></a></td>
+      <td class="summary">Create widget placement information.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.place_widget_at"><span class='function_modname'>wibox.widget.base.</span>place_widget_at <span class='function_args'>(widget, x, y, width, height)</span></a></td>
+      <td class="summary">Create widget placement information.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.check_widget"><span class='function_modname'>wibox.widget.base.</span>check_widget <span class='function_args'>()</span></a></td>
+      <td class="summary">Do some sanity checking on a widget.</td>
+    </tr>
 </table>
-<h2>
-    <a href="#Object_methods">Object methods </a>
-</h2>
+<h2><a href="#Object_methods">Object methods </a></h2>
 <table class="function_list">
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.buttons">:buttons <span class='function_args'>(_buttons)</span></a></td>
-	<td class="summary">Set/get a widget&rsquo;s buttons.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.set_visible">:set_visible <span class='function_args'>(b)</span></a></td>
-	<td class="summary">Set a widget&rsquo;s visibility.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.get_visible">:get_visible <span class='function_args'>()</span></a></td>
-	<td class="summary">Is the widget visible?</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.set_opacity">:set_opacity <span class='function_args'>(o)</span></a></td>
-	<td class="summary">Set a widget&rsquo;s opacity.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.get_opacity">:get_opacity <span class='function_args'>()</span></a></td>
-	<td class="summary">Get the widget&rsquo;s opacity.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.set_forced_width">:set_forced_width <span class='function_args'>([width])</span></a></td>
-	<td class="summary">Set the widget&rsquo;s forced width.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.get_forced_width">:get_forced_width <span class='function_args'>()</span></a></td>
-	<td class="summary">Get the widget&rsquo;s forced width.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.set_height">:set_height <span class='function_args'>([height])</span></a></td>
-	<td class="summary">Set the widget&rsquo;s forced height.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.get_forced_height">:get_forced_height <span class='function_args'>()</span></a></td>
-	<td class="summary">Get the widget&rsquo;s forced height.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.get_children">:get_children <span class='function_args'>()</span></a></td>
-	<td class="summary">Get the widget&rsquo;s direct children widgets.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.set_children">:set_children <span class='function_args'>(children)</span></a></td>
-	<td class="summary">Replace the layout children.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.get_all_children">:get_all_children <span class='function_args'>()</span></a></td>
-	<td class="summary">Get all direct and indirect children widgets.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.emit_signal_recursive">:emit_signal_recursive <span class='function_args'>(signal_name, ...)</span></a></td>
-	<td class="summary">Emit a signal and ensure all parent widgets in the hierarchies also
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.buttons">:wibox.widget.base.buttons <span class='function_args'>(_buttons)</span></a></td>
+      <td class="summary">Set/get a widget&rsquo;s buttons.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.set_visible">:wibox.widget.base.set_visible <span class='function_args'>(b)</span></a></td>
+      <td class="summary">Set a widget&rsquo;s visibility.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.get_visible">:wibox.widget.base.get_visible <span class='function_args'>()</span></a></td>
+      <td class="summary">Is the widget visible?</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.set_opacity">:wibox.widget.base.set_opacity <span class='function_args'>(o)</span></a></td>
+      <td class="summary">Set a widget&rsquo;s opacity.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.get_opacity">:wibox.widget.base.get_opacity <span class='function_args'>()</span></a></td>
+      <td class="summary">Get the widget&rsquo;s opacity.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.set_forced_width">:wibox.widget.base.set_forced_width <span class='function_args'>([width])</span></a></td>
+      <td class="summary">Set the widget&rsquo;s forced width.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.get_forced_width">:wibox.widget.base.get_forced_width <span class='function_args'>()</span></a></td>
+      <td class="summary">Get the widget&rsquo;s forced width.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.set_height">:wibox.widget.base.set_height <span class='function_args'>([height])</span></a></td>
+      <td class="summary">Set the widget&rsquo;s forced height.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.get_forced_height">:wibox.widget.base.get_forced_height <span class='function_args'>()</span></a></td>
+      <td class="summary">Get the widget&rsquo;s forced height.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.get_children">:wibox.widget.base.get_children <span class='function_args'>()</span></a></td>
+      <td class="summary">Get the widget&rsquo;s direct children widgets.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.set_children">:wibox.widget.base.set_children <span class='function_args'>(children)</span></a></td>
+      <td class="summary">Replace the layout children.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.get_all_children">:wibox.widget.base.get_all_children <span class='function_args'>()</span></a></td>
+      <td class="summary">Get all direct and indirect children widgets.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.emit_signal_recursive">:wibox.widget.base.emit_signal_recursive <span class='function_args'>(signal_name, ...)</span></a></td>
+      <td class="summary">Emit a signal and ensure all parent widgets in the hierarchies also
  forward the signal.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.index">:index <span class='function_args'>(widget[, recursive[, ...]])</span></a></td>
-	<td class="summary">Get the index of a widget.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#wibox.widget.base.setup">:setup <span class='function_args'>(args)</span></a></td>
-	<td class="summary">Set a declarative widget hierarchy description.</td>
-	</tr>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.index">:wibox.widget.base.index <span class='function_args'>(widget[, recursive[, ...]])</span></a></td>
+      <td class="summary">Get the index of a widget.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#wibox.widget.base.setup">:wibox.widget.base.setup <span class='function_args'>(args)</span></a></td>
+      <td class="summary">Set a declarative widget hierarchy description.</td>
+    </tr>
 </table>
 
 <br/>
@@ -468,7 +423,7 @@
         <li><span class="parameter">widget_name</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
          Name of the widget.  If not set, it will be
-   set automatically via <a href="../utility libraries/gears.object.html#modulename">gears.object.modulename</a>.
+   set automatically via <a href="../utility_libraries/gears.object.html#modulename">gears.object.modulename</a>.
          (<em>optional</em>)
         </li>
         <li><span class="parameter">args</span> Widget settings
@@ -757,7 +712,7 @@
     <dl class="function">
     <dt>
     <a name = "wibox.widget.base.buttons"></a>
-    <strong>:buttons <span class='function_args'>(_buttons)</span></strong>
+    <strong>:wibox.widget.base.buttons <span class='function_args'>(_buttons)</span></strong>
     </dt>
     <dd>
     Set/get a widget&rsquo;s buttons.
@@ -778,7 +733,7 @@
 </dd>
     <dt>
     <a name = "wibox.widget.base.set_visible"></a>
-    <strong>:set_visible <span class='function_args'>(b)</span></strong>
+    <strong>:wibox.widget.base.set_visible <span class='function_args'>(b)</span></strong>
     </dt>
     <dd>
     Set a widget&rsquo;s visibility.
@@ -799,7 +754,7 @@
 </dd>
     <dt>
     <a name = "wibox.widget.base.get_visible"></a>
-    <strong>:get_visible <span class='function_args'>()</span></strong>
+    <strong>:wibox.widget.base.get_visible <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Is the widget visible?
@@ -820,7 +775,7 @@
 </dd>
     <dt>
     <a name = "wibox.widget.base.set_opacity"></a>
-    <strong>:set_opacity <span class='function_args'>(o)</span></strong>
+    <strong>:wibox.widget.base.set_opacity <span class='function_args'>(o)</span></strong>
     </dt>
     <dd>
     Set a widget&rsquo;s opacity.
@@ -842,7 +797,7 @@
 </dd>
     <dt>
     <a name = "wibox.widget.base.get_opacity"></a>
-    <strong>:get_opacity <span class='function_args'>()</span></strong>
+    <strong>:wibox.widget.base.get_opacity <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Get the widget&rsquo;s opacity.
@@ -862,7 +817,7 @@
 </dd>
     <dt>
     <a name = "wibox.widget.base.set_forced_width"></a>
-    <strong>:set_forced_width <span class='function_args'>([width])</span></strong>
+    <strong>:wibox.widget.base.set_forced_width <span class='function_args'>([width])</span></strong>
     </dt>
     <dd>
     Set the widget&rsquo;s forced width.
@@ -889,7 +844,7 @@
 </dd>
     <dt>
     <a name = "wibox.widget.base.get_forced_width"></a>
-    <strong>:get_forced_width <span class='function_args'>()</span></strong>
+    <strong>:wibox.widget.base.get_forced_width <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Get the widget&rsquo;s forced width. </p>
@@ -918,7 +873,7 @@
 </dd>
     <dt>
     <a name = "wibox.widget.base.set_height"></a>
-    <strong>:set_height <span class='function_args'>([height])</span></strong>
+    <strong>:wibox.widget.base.set_height <span class='function_args'>([height])</span></strong>
     </dt>
     <dd>
     Set the widget&rsquo;s forced height.
@@ -945,7 +900,7 @@
 </dd>
     <dt>
     <a name = "wibox.widget.base.get_forced_height"></a>
-    <strong>:get_forced_height <span class='function_args'>()</span></strong>
+    <strong>:wibox.widget.base.get_forced_height <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Get the widget&rsquo;s forced height. </p>
@@ -970,7 +925,7 @@
 </dd>
     <dt>
     <a name = "wibox.widget.base.get_children"></a>
-    <strong>:get_children <span class='function_args'>()</span></strong>
+    <strong>:wibox.widget.base.get_children <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Get the widget&rsquo;s direct children widgets. </p>
@@ -992,7 +947,7 @@
 </dd>
     <dt>
     <a name = "wibox.widget.base.set_children"></a>
-    <strong>:set_children <span class='function_args'>(children)</span></strong>
+    <strong>:wibox.widget.base.set_children <span class='function_args'>(children)</span></strong>
     </dt>
     <dd>
     Replace the layout children. </p>
@@ -1016,7 +971,7 @@
 </dd>
     <dt>
     <a name = "wibox.widget.base.get_all_children"></a>
-    <strong>:get_all_children <span class='function_args'>()</span></strong>
+    <strong>:wibox.widget.base.get_all_children <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Get all direct and indirect children widgets. </p>
@@ -1041,7 +996,7 @@
 </dd>
     <dt>
     <a name = "wibox.widget.base.emit_signal_recursive"></a>
-    <strong>:emit_signal_recursive <span class='function_args'>(signal_name, ...)</span></strong>
+    <strong>:wibox.widget.base.emit_signal_recursive <span class='function_args'>(signal_name, ...)</span></strong>
     </dt>
     <dd>
     <p>Emit a signal and ensure all parent widgets in the hierarchies also
@@ -1083,7 +1038,7 @@ forwarded for some time, similar to the first case.</li>
 </dd>
     <dt>
     <a name = "wibox.widget.base.index"></a>
-    <strong>:index <span class='function_args'>(widget[, recursive[, ...]])</span></strong>
+    <strong>:wibox.widget.base.index <span class='function_args'>(widget[, recursive[, ...]])</span></strong>
     </dt>
     <dd>
     Get the index of a widget.
@@ -1126,7 +1081,7 @@ forwarded for some time, similar to the first case.</li>
 </dd>
     <dt>
     <a name = "wibox.widget.base.setup"></a>
-    <strong>:setup <span class='function_args'>(args)</span></strong>
+    <strong>:wibox.widget.base.setup <span class='function_args'>(args)</span></strong>
     </dt>
     <dd>
     Set a declarative widget hierarchy description. </p>
@@ -1154,7 +1109,7 @@ forwarded for some time, similar to the first case.</li>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-09 15:48:31 </i>
+<i style="float:right;">Last updated 2019-07-12 18:22:06 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
