@@ -5,6 +5,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Module awful.util - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+  <script>
+    var st = document.createElement('style')
+    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
+    var deprecated_shown = false
+    st.appendChild(show_dep)
+
+    function show_deprecated() {
+      if (deprecated_shown)
+        document.getElementsByTagName('head')[0].removeChild(st);
+      else
+        document.getElementsByTagName('head')[0].appendChild(st);
+      deprecated_shown = !deprecated_shown
+    }
+  </script>
 </head>
 <body>
 
@@ -40,7 +54,6 @@
 
 <h2>Libraries</h2>
 <ul class="nowrap">
-  <li><a href="../libraries/awesome.html">awesome</a></li>
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
@@ -48,10 +61,11 @@
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
-  <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
   <li><strong>awful.util</strong></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
+  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
+  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
@@ -59,6 +73,14 @@
   <li><a href="../libraries/naughty.html">naughty</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.widget.html">wibox.widget</a></li>
+</ul>
+<h2>Declarative rules</h2>
+<ul class="nowrap">
+  <li><a href="../declarative_rules/ruled.client.html">ruled.client</a></li>
+  <li><a href="../declarative_rules/ruled.clipboard.html">ruled.clipboard</a></li>
+  <li><a href="../declarative_rules/ruled.notifications.html">ruled.notifications</a></li>
+  <li><a href="../declarative_rules/ruled.screen.html">ruled.screen</a></li>
+  <li><a href="../declarative_rules/ruled.tag.html">ruled.tag</a></li>
 </ul>
 <h2>Widgets</h2>
 <ul class="nowrap">
@@ -116,6 +138,7 @@
 </ul>
 <h2>Core components</h2>
 <ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
   <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../core_components/button.html">button</a></li>
   <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
@@ -163,6 +186,16 @@
   <li><a href="../theme_related_libraries/gears.color.html">gears.color</a></li>
   <li><a href="../theme_related_libraries/gears.shape.html">gears.shape</a></li>
 </ul>
+<h2>Client tiling</h2>
+<ul class="nowrap">
+  <li><a href="../client_tiling/dynamite.html">dynamite</a></li>
+  <li><a href="../client_tiling/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
+  <li><a href="../client_tiling/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
+  <li><a href="../client_tiling/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
+  <li><a href="../client_tiling/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../client_tiling/dynamite.utils.html">dynamite.utils</a></li>
+  <li><a href="../client_tiling/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
+</ul>
 <h2>Sample files</h2>
 <ul class="nowrap">
   <li><a href="../sample files/rc.lua.html">rc.lua</a></li>
@@ -172,15 +205,21 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.key.html">awful.key</a></li>
+  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
+  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
+  <li><a href="../classes/wibox.container.scale.html">wibox.container.scale</a></li>
+  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.hierarchy.html">wibox.hierarchy</a></li>
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
+  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/xproperties.html">xproperties</a></li>
 </ul>
 <h2>Documentation</h2>
@@ -214,7 +253,9 @@
     </ul>
 
 
-<h2><a href="#Static_module_functions">Static module functions</a></h2>
+<h2>
+    <a href="#Static_module_functions">Static module functions</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#awful.util.eval"><span class='function_modname'>awful.util.</span>eval <span class='function_args'>()</span></a></td>
@@ -233,8 +274,12 @@
       <td class="summary">Search for an icon and return the full path.</td>
     </tr>
 </table>
-<h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
-<table class="function_list">
+<h2>
+    <a class="deprecated_h2" onclick="show_deprecated()">
+      Click to display deprecated functions
+    </a>
+</h2>
+<table class="function_list deprecated_block show_deprecated">
     <tr>
       <td class="name" ><a href="#awful.util.pread">awful.util.pread<i class="deprecated_label"> [deprecated]</i></a></td>
       <td class="summary">Execute a system command and road the output.</td>
@@ -372,7 +417,9 @@
       <td class="summary">Round a number to an integer.</td>
     </tr>
 </table>
-<h2><a href="#Fields">Fields</a></h2>
+<h2>
+    <a href="#Fields">Fields</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#shell"><span class='function_modname'>awful.util.</span>shell</a></td>
@@ -490,17 +537,17 @@
 
 </dd>
 </dl>
-    <h2 class="section-header "><a name="Deprecated_functions"></a>Deprecated functions</h2>
+    <h2 class="section-header  deprecated_block show_deprecated"><a name="Deprecated_functions"></a>Deprecated functions</h2>
 
     <dl class="function">
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.util.pread"></a>
     <strong>awful.util.pread<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Execute a system command and road the output.
  This function implementation <strong>has been removed</strong> and no longer
- do anything. Use <a href="../libraries/awful.spawn.html#awful.spawn.easy_async">awful.spawn.easy_async</a>.
+ do anything. Use <a href="../libraries/awful.spawn.html#easy_async">awful.spawn.easy_async</a>.
 
 
 
@@ -509,11 +556,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "deprecate"></a>
     <strong>awful.util.deprecate<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Display a deprecation notice, but only once per traceback.
 
 
@@ -547,11 +594,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "deprecate_class"></a>
     <strong>awful.util.deprecate_class<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Create a class proxy with deprecation messages.
  This is useful when a class has moved somewhere else.
 
@@ -587,11 +634,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "ensure_pango_color"></a>
     <strong>awful.util.ensure_pango_color<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get a valid color for Pango markup
 
 
@@ -621,11 +668,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "cycle"></a>
     <strong>awful.util.cycle<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Make i cycle.
 
 
@@ -653,11 +700,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "mkdir"></a>
     <strong>awful.util.mkdir<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Create a directory
 
 
@@ -682,11 +729,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "escape"></a>
     <strong>awful.util.escape<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Escape a string from XML char.
  Useful to set raw text in textbox.
 
@@ -712,11 +759,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "unescape"></a>
     <strong>awful.util.unescape<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Unescape a string from entities.
 
 
@@ -741,11 +788,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "get_xdg_config_home"></a>
     <strong>awful.util.get_xdg_config_home<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the config home according to the XDG basedir specification.
 
 
@@ -764,11 +811,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "get_xdg_cache_home"></a>
     <strong>awful.util.get_xdg_cache_home<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the cache home according to the XDG basedir specification.
 
 
@@ -787,11 +834,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "get_configuration_dir"></a>
     <strong>awful.util.get_configuration_dir<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the path to the user&rsquo;s config dir.
  This is the directory containing the configuration file (&ldquo;rc.lua&rdquo;).
 
@@ -811,11 +858,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "get_cache_dir"></a>
     <strong>awful.util.get_cache_dir<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the path to a directory that should be used for caching data.
 
 
@@ -834,11 +881,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "get_themes_dir"></a>
     <strong>awful.util.get_themes_dir<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the path to the directory where themes are installed.
 
 
@@ -857,11 +904,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "get_awesome_icon_dir"></a>
     <strong>awful.util.get_awesome_icon_dir<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the path to the directory where our icons are installed.
 
 
@@ -880,11 +927,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "getdir"></a>
     <strong>awful.util.getdir<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the user&rsquo;s config or cache dir.
  It first checks XDG_CONFIG_HOME / XDG_CACHE_HOME, but then goes with the
  default paths.
@@ -911,11 +958,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "file_readable"></a>
     <strong>awful.util.file_readable<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Check if a file exists, is readable and not a directory.
 
 
@@ -940,11 +987,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "dir_readable"></a>
     <strong>awful.util.dir_readable<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Check if a path exists, is readable and is a directory.
 
 
@@ -971,11 +1018,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "is_dir"></a>
     <strong>awful.util.is_dir<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Check if a path is a directory.
 
 
@@ -1003,11 +1050,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "subsets"></a>
     <strong>awful.util.subsets<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Return all subsets of a specific set.
  This function, giving a set, will return all subset it.
  For example, if we consider a set with value { 10, 15, 34 },
@@ -1036,11 +1083,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.util.get_rectangle_in_direction"></a>
     <strong>awful.util.get_rectangle_in_direction<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the nearest rectangle in the given direction.  Every rectangle is specified as a table
  with &lsquo;x&rsquo;, &lsquo;y&rsquo;, &lsquo;width&rsquo;, &lsquo;height&rsquo; keys, the same as client or screen geometries.
 
@@ -1072,11 +1119,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "util.table.join"></a>
     <strong>util.table.join<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Join all tables given as parameters.
  This will iterate all tables and insert all their keys into a new table.
 
@@ -1102,11 +1149,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "util.table.crush"></a>
     <strong>util.table.crush<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Override elements in the first table by the one in the second. </p>
 
 <p> Note that this method doesn&rsquo;t copy entries found in <code>__index</code>.
@@ -1144,11 +1191,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "util.table.from_sparse"></a>
     <strong>util.table.from_sparse<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Pack all elements with an integer key into a new table
  While both lua and luajit implement __len over sparse
  table, the standard define it as an implementation
@@ -1180,11 +1227,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "util.table.hasitem"></a>
     <strong>util.table.hasitem<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Check if a table has an item and return its key.
 
 
@@ -1212,11 +1259,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "linewrap"></a>
     <strong>awful.util.linewrap<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Split a string into multiple lines
 
 
@@ -1247,11 +1294,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "linecount"></a>
     <strong>awful.util.linecount<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Count number of lines in a string
 
 
@@ -1278,11 +1325,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "util.table.keys"></a>
     <strong>util.table.keys<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get a sorted table with all integer keys from a table
 
 
@@ -1307,11 +1354,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "util.table.keys_filter"></a>
     <strong>util.table.keys_filter<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Filter a tables keys for certain content types
 
 
@@ -1339,11 +1386,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "util.table.reverse"></a>
     <strong>util.table.reverse<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Reverse a table
 
 
@@ -1368,11 +1415,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "util.table.clone"></a>
     <strong>util.table.clone<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Clone a table
 
 
@@ -1400,11 +1447,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "util.table.iterate"></a>
     <strong>util.table.iterate<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Returns an iterator to cycle through, starting from the first element or the
  given index, all elements of a table that match a given criteria.
 
@@ -1434,11 +1481,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "util.table.merge"></a>
     <strong>util.table.merge<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Merge items from the one table to another one
 
 
@@ -1469,11 +1516,11 @@
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "round"></a>
     <strong>awful.util.round<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Round a number to an integer.
 
 
@@ -1528,7 +1575,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-12 18:22:06 </i>
+<i style="float:right;">Last updated 2019-07-16 00:41:08 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

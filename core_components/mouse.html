@@ -5,6 +5,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Coreclassmod mouse - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+  <script>
+    var st = document.createElement('style')
+    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
+    var deprecated_shown = false
+    st.appendChild(show_dep)
+
+    function show_deprecated() {
+      if (deprecated_shown)
+        document.getElementsByTagName('head')[0].removeChild(st);
+      else
+        document.getElementsByTagName('head')[0].appendChild(st);
+      deprecated_shown = !deprecated_shown
+    }
+  </script>
 </head>
 <body>
 
@@ -32,6 +46,7 @@
 
 <h2>Contents</h2>
 <ul>
+<li><a href="#Functions">Functions</a></li>
 <li><a href="#Static_module_functions">Static module functions</a></li>
 <li><a href="#Object_properties">Object properties</a></li>
 <li><a href="#Request_handlers">Request handlers</a></li>
@@ -45,6 +60,7 @@
 
 <h2>Core components</h2>
 <ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
   <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../core_components/button.html">button</a></li>
   <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
@@ -58,6 +74,14 @@
   <li><a href="../core_components/root.html">root</a></li>
   <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
   <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Declarative rules</h2>
+<ul class="nowrap">
+  <li><a href="../declarative_rules/ruled.client.html">ruled.client</a></li>
+  <li><a href="../declarative_rules/ruled.clipboard.html">ruled.clipboard</a></li>
+  <li><a href="../declarative_rules/ruled.notifications.html">ruled.notifications</a></li>
+  <li><a href="../declarative_rules/ruled.screen.html">ruled.screen</a></li>
+  <li><a href="../declarative_rules/ruled.tag.html">ruled.tag</a></li>
 </ul>
 <h2>Widgets</h2>
 <ul class="nowrap">
@@ -146,9 +170,18 @@
   <li><a href="../theme_related_libraries/gears.color.html">gears.color</a></li>
   <li><a href="../theme_related_libraries/gears.shape.html">gears.shape</a></li>
 </ul>
+<h2>Client tiling</h2>
+<ul class="nowrap">
+  <li><a href="../client_tiling/dynamite.html">dynamite</a></li>
+  <li><a href="../client_tiling/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
+  <li><a href="../client_tiling/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
+  <li><a href="../client_tiling/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
+  <li><a href="../client_tiling/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../client_tiling/dynamite.utils.html">dynamite.utils</a></li>
+  <li><a href="../client_tiling/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
+</ul>
 <h2>Libraries</h2>
 <ul class="nowrap">
-  <li><a href="../libraries/awesome.html">awesome</a></li>
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
@@ -156,10 +189,11 @@
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
-  <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
+  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
+  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
@@ -177,15 +211,21 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.key.html">awful.key</a></li>
+  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
+  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
+  <li><a href="../classes/wibox.container.scale.html">wibox.container.scale</a></li>
+  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.hierarchy.html">wibox.hierarchy</a></li>
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
+  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/xproperties.html">xproperties</a></li>
 </ul>
 <h2>Documentation</h2>
@@ -259,7 +299,26 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     </ul>
 
 
-<h2><a href="#Static_module_functions">Static module functions</a></h2>
+<h2>
+    <a href="#Functions">Functions</a>
+</h2>
+<table class="function_list">
+    <tr>
+      <td class="name" ><a href="#naughty.connect_signal">naughty.connect_signal (name, func)</a></td>
+      <td class="summary">Connect a global signal on the module.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#naughty.emit_signal">naughty.emit_signal (name, ...)</a></td>
+      <td class="summary">Emit a module signal.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#naughty.disconnect_signal">naughty.disconnect_signal (name, func)</a></td>
+      <td class="summary">Disconnect a signal from a source.</td>
+    </tr>
+</table>
+<h2>
+    <a href="#Static_module_functions">Static module functions</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#object_under_pointer"><span class='function_modname'>mouse.</span>object_under_pointer <span class='function_args'>()</span></a></td>
@@ -282,7 +341,9 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
       <td class="summary">Get or set the mouse coords.</td>
     </tr>
 </table>
-<h2><a href="#Object_properties">Object properties</a></h2>
+<h2>
+    <a href="#Object_properties">Object properties</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#screen">screen</a></td>
@@ -335,14 +396,18 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
       <td class="summary">True if the middle mouse button is pressed.</td>
     </tr>
 </table>
-<h2><a href="#Request_handlers">Request handlers</a></h2>
+<h2>
+    <a href="#Request_handlers">Request handlers</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#awful.mouse.resize_handler">awful.mouse.resize_handler</a></td>
       <td class="summary">Default handler for <code>request::geometry</code> signals with &ldquo;mouse.resize&rdquo; context.</td>
     </tr>
 </table>
-<h2><a href="#Theme_variables">Theme variables</a></h2>
+<h2>
+    <a href="#Theme_variables">Theme variables</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#beautiful.snap_bg">beautiful.snap_bg</a></td>
@@ -365,8 +430,12 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
       <td class="summary">The gap between snapped contents.</td>
     </tr>
 </table>
-<h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
-<table class="function_list">
+<h2>
+    <a class="deprecated_h2" onclick="show_deprecated()">
+      Click to display deprecated functions
+    </a>
+</h2>
+<table class="function_list deprecated_block show_deprecated">
     <tr>
       <td class="name" ><a href="#awful.mouse.client_under_pointer">awful.mouse.client_under_pointer<i class="deprecated_label"> [deprecated]</i></a></td>
       <td class="summary">Get the client object under the pointer.</td>
@@ -380,7 +449,9 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
       <td class="summary">Get a client corner coordinates.</td>
     </tr>
 </table>
-<h2><a href="#Fields">Fields</a></h2>
+<h2>
+    <a href="#Fields">Fields</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#awful.mouse.snap.default_distance"><span class='function_modname'>mouse.</span>awful.mouse.snap.default_distance</a></td>
@@ -403,7 +474,9 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
       <td class="summary">Enable changing tag when a client is dragged to the edge of the screen.</td>
     </tr>
 </table>
-<h2><a href="#lib_awful_mouse_resize_Functions">lib.awful.mouse.resize Functions</a></h2>
+<h2>
+    <a href="#lib_awful_mouse_resize_Functions">lib.awful.mouse.resize Functions</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#beautiful.cursor_mouse_resize">beautiful.cursor_mouse_resize</a></td>
@@ -437,7 +510,9 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
       <td class="summary">Resize the drawable.</td>
     </tr>
 </table>
-<h2><a href="#lib_awful_mouse_snap_Functions">lib.awful.mouse.snap Functions</a></h2>
+<h2>
+    <a href="#lib_awful_mouse_snap_Functions">lib.awful.mouse.snap Functions</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#awful.mouse.snap">awful.mouse.snap (c, snap, x, y, fixed_x, fixed_y)</a></td>
@@ -449,6 +524,102 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 <br/>
 
 
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "naughty.connect_signal"></a>
+    <strong>naughty.connect_signal (name, func)</strong>
+    </dt>
+    <dd>
+    Connect a global signal on the module. </p>
+
+<p> Functions connected to this signal source will be executed when any
+ module object emits the signal.</p>
+
+<p> It is also used for some generic module signals such as
+ <code>request::display</code>.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The name of the signal
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         The function to attach
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">naughty.connect_signal(\"added\", <span class="keyword">function</span>(notif)
+   <span class="comment">-- do something
+</span><span class="keyword">end</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "naughty.emit_signal"></a>
+    <strong>naughty.emit_signal (name, ...)</strong>
+    </dt>
+    <dd>
+    Emit a module signal.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The signal name.
+        </li>
+        <li><span class="parameter">...</span>
+         The signal callback arguments
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "naughty.disconnect_signal"></a>
+    <strong>naughty.disconnect_signal (name, func)</strong>
+    </dt>
+    <dd>
+    Disconnect a signal from a source.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The name of the signal
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         The attached function
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        If the disconnection was successful
+    </ol>
+
+
+
+
+</dd>
+</dl>
     <h2 class="section-header "><a name="Static_module_functions"></a>Static module functions</h2>
 
     <dl class="function">
@@ -464,7 +635,7 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a> or <span class="type">nil</span></span>
+           <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a> or <span class="type">nil</span></span>
         A client or nil.
     </ol>
 
@@ -943,14 +1114,14 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 
 </dd>
 </dl>
-    <h2 class="section-header "><a name="Deprecated_functions"></a>Deprecated functions</h2>
+    <h2 class="section-header  deprecated_block show_deprecated"><a name="Deprecated_functions"></a>Deprecated functions</h2>
 
     <dl class="function">
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.mouse.client_under_pointer"></a>
     <strong>awful.mouse.client_under_pointer<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the client object under the pointer.
 
 
@@ -969,11 +1140,11 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.mouse.client.dragtotag.border"></a>
     <strong>awful.mouse.client.dragtotag.border<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Move a client to a tag by dragging it onto the left / right side of the screen.
 
 
@@ -989,11 +1160,11 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.mouse.client.corner"></a>
     <strong>awful.mouse.client.corner<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get a client corner coordinates.
 
 
@@ -1327,7 +1498,7 @@ clientbuttons = awful.util.<span class="global">table</span>.join(
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-12 18:22:06 </i>
+<i style="float:right;">Last updated 2019-07-16 00:41:08 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

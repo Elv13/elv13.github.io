@@ -5,6 +5,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Coreclassmod naughty.notification - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+  <script>
+    var st = document.createElement('style')
+    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
+    var deprecated_shown = false
+    st.appendChild(show_dep)
+
+    function show_deprecated() {
+      if (deprecated_shown)
+        document.getElementsByTagName('head')[0].removeChild(st);
+      else
+        document.getElementsByTagName('head')[0].appendChild(st);
+      deprecated_shown = !deprecated_shown
+    }
+  </script>
 </head>
 <body>
 
@@ -43,6 +57,7 @@
 
 <h2>Core components</h2>
 <ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
   <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../core_components/button.html">button</a></li>
   <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
@@ -56,6 +71,14 @@
   <li><a href="../core_components/root.html">root</a></li>
   <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
   <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Declarative rules</h2>
+<ul class="nowrap">
+  <li><a href="../declarative_rules/ruled.client.html">ruled.client</a></li>
+  <li><a href="../declarative_rules/ruled.clipboard.html">ruled.clipboard</a></li>
+  <li><a href="../declarative_rules/ruled.notifications.html">ruled.notifications</a></li>
+  <li><a href="../declarative_rules/ruled.screen.html">ruled.screen</a></li>
+  <li><a href="../declarative_rules/ruled.tag.html">ruled.tag</a></li>
 </ul>
 <h2>Widgets</h2>
 <ul class="nowrap">
@@ -144,9 +167,18 @@
   <li><a href="../theme_related_libraries/gears.color.html">gears.color</a></li>
   <li><a href="../theme_related_libraries/gears.shape.html">gears.shape</a></li>
 </ul>
+<h2>Client tiling</h2>
+<ul class="nowrap">
+  <li><a href="../client_tiling/dynamite.html">dynamite</a></li>
+  <li><a href="../client_tiling/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
+  <li><a href="../client_tiling/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
+  <li><a href="../client_tiling/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
+  <li><a href="../client_tiling/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../client_tiling/dynamite.utils.html">dynamite.utils</a></li>
+  <li><a href="../client_tiling/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
+</ul>
 <h2>Libraries</h2>
 <ul class="nowrap">
-  <li><a href="../libraries/awesome.html">awesome</a></li>
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
@@ -154,10 +186,11 @@
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
-  <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
+  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
+  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
@@ -175,15 +208,21 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.key.html">awful.key</a></li>
+  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
+  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
+  <li><a href="../classes/wibox.container.scale.html">wibox.container.scale</a></li>
+  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.hierarchy.html">wibox.hierarchy</a></li>
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
+  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/xproperties.html">xproperties</a></li>
 </ul>
 <h2>Documentation</h2>
@@ -223,14 +262,18 @@
     </ul>
 
 
-<h2><a href="#Constructors">Constructors</a></h2>
+<h2>
+    <a href="#Constructors">Constructors</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#naughty.notification">naughty.notification <span class='function_args'>(args[, opt=""])</span></a></td>
       <td class="summary">Create a notification.</td>
     </tr>
 </table>
-<h2><a href="#Object_properties">Object properties</a></h2>
+<h2>
+    <a href="#Object_properties">Object properties</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#title">title</a></td>
@@ -249,8 +292,13 @@
     </tr>
     <tr>
       <td class="shortname" ><a href="#category">category</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
+      <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> nil</span></td>
       <td class="summary">The notification category.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#resident">resident</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td class="summary">True if the notification should be kept when an action is pressed.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#hover_timeout">hover_timeout</a></td>
@@ -290,12 +338,27 @@
     <tr>
       <td class="shortname" ><a href="#icon">icon</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> surface</span></td>
-      <td class="summary">Path to icon.</td>
+      <td class="summary">&ldquo;All in one&rdquo; way to access the default image or icon.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#icon_size">icon_size</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
       <td class="summary">Desired icon size in px.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#app_icon">app_icon</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
+      <td class="summary">The icon provided in the <a href="../core_components/naughty.notification.html#app_icon">app_icon</a> field of the DBus notification.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#image">image</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> surface</span></td>
+      <td class="summary">The notification image.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#images">images</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>nil <i>or</i> table</span></td>
+      <td class="summary">The notification (animated) images.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#fg">fg</a></td>
@@ -367,9 +430,33 @@
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
       <td class="summary">If the timeout needs to be reset when a property changes.</td>
     </tr>
+    <tr>
+      <td class="shortname" ><a href="#clients">clients</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td class="summary">A list of clients associated with this notification.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#max_width">max_width</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td class="summary">The maximum popup width.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#app_name">app_name</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
+      <td class="summary">The application name specified by the notification.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#widget_template">widget_template</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td class="summary">The widget template used to represent the notification.</td>
+    </tr>
 </table>
-<h2><a href="#Deprecated_object_properties">Deprecated object properties</a></h2>
-<table class="function_list">
+<h2>
+    <a class="deprecated_h2" onclick="show_deprecated()">
+      Click to display deprecated object properties
+    </a>
+</h2>
+<table class="function_list deprecated_block show_deprecated">
     <tr>
       <td class="shortname" ><a href="#text">text</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
@@ -386,7 +473,9 @@
       <td class="summary">Function to run when notification is destroyed.</td>
     </tr>
 </table>
-<h2><a href="#Object_methods">Object methods </a></h2>
+<h2>
+    <a href="#Object_methods">Object methods </a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#destroy">:destroy <span class='function_args'>(reason[, keep_visible=false])</span></a></td>
@@ -409,14 +498,18 @@
       <td class="summary">Connect to a signal weakly.</td>
     </tr>
 </table>
-<h2><a href="#Signals">Signals</a></h2>
+<h2>
+    <a href="#Signals">Signals</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#destroyed">destroyed</a></td>
       <td class="summary">Emitted when the notification is destroyed.</td>
     </tr>
 </table>
-<h2><a href="#Theme_variables">Theme variables</a></h2>
+<h2>
+    <a href="#Theme_variables">Theme variables</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#beautiful.notification_font">beautiful.notification_font</a></td>
@@ -615,7 +708,7 @@
     <span class="proptype">(<span class='summary_type'>string</span>)</span>
     </dt>
     <dd>
-    <p>The notification urgency level. </p>
+    The notification urgency level. </p>
 
 <p> The default urgency levels are:</p>
 
@@ -626,18 +719,24 @@
 </ul>
 
 
+<p> It is possible to add more urgency levels by adding them to the
+ <code>naughty.dbus.config.mapping</code> list, but this might causes clashes with
+ other notification providers so it is to be avoided.
 
 
 
 
 
+    <h3>See also:</h3>
+    <ul>
+    </ul>
 
 
 </dd>
     <dt>
     <a name = "category"></a>
     <strong>category</strong>
-    <span class="proptype">(<span class='summary_type'>string</span>)</span>
+    <span class="proptype">(<span class='summary_type'>string <i>or</i> nil</span>)</span>
     </dt>
     <dd>
     The notification category. </p>
@@ -671,6 +770,25 @@
  <tr><td><b>transfer.complete</b></td><td>A file transfer or download complete notification.</td></tr>
  <tr><td><b>transfer.error</b></td><td>A file transfer or download error.</td></tr>
  </table>
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "resident"></a>
+    <strong>resident</strong>
+    <span class="proptype">(<span class='summary_type'>boolean</span>)</span>
+    </dt>
+    <dd>
+    True if the notification should be kept when an action is pressed. </p>
+
+<p> By default, invoking an action will destroy the notification. Some actions,
+ like the &ldquo;Snooze&rdquo; action of alarm clock, will cause the notification to
+ be updated with a date further in the future.
 
 
 
@@ -869,12 +987,35 @@ end
     <span class="proptype">(<span class='summary_type'>string <i>or</i> surface</span>)</span>
     </dt>
     <dd>
-    Path to icon.
+    <p>&ldquo;All in one&rdquo; way to access the default image or icon. </p>
+
+<p> A notification can provide a combination of an icon, a static image, or if
+ enabled, a looping animation. Add to that the ability to import the icon
+ information from the client or from a <code>.desktop</code> file, there is multiple
+ conflicting sources of &ldquo;icons&rdquo;.</p>
+
+<p> On the other hand, the vast majority of notifications don&rsquo;t multiple or
+ ambiguous sources of icons. This property will pick the first of the
+ following.</p>
+
+<ul>
+<li>The <a href="../core_components/naughty.notification.html#image">image</a>.</li>
+<li>The <a href="../core_components/naughty.notification.html#app_icon">app_icon</a>.</li>
+<li>The <a href="../core_components/naughty.notification.html#icon">icon</a> from a client with <code>normal</code> type.</li>
+<li>The <a href="../core_components/naughty.notification.html#icon">icon</a> of a client with <code>dialog</code> type.</li>
+</ul>
 
 
 
 
 
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core_components/naughty.notification.html#app_icon">app_icon</a></li>
+         <li><a href="../core_components/naughty.notification.html#image">image</a></li>
+    </ul>
 
 
 </dd>
@@ -885,6 +1026,64 @@ end
     </dt>
     <dd>
     Desired icon size in px.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "app_icon"></a>
+    <strong>app_icon</strong>
+    <span class="proptype">(<span class='summary_type'>string</span>)</span>
+    </dt>
+    <dd>
+    The icon provided in the <a href="../core_components/naughty.notification.html#app_icon">app_icon</a> field of the DBus notification. </p>
+
+<p> This should always be either the URI (path) to an icon or a valid XDG
+ icon name to be fetched from the theme.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "image"></a>
+    <strong>image</strong>
+    <span class="proptype">(<span class='summary_type'>string <i>or</i> surface</span>)</span>
+    </dt>
+    <dd>
+    The notification image. </p>
+
+<p> This is usually provided as a <a href="../libraries/gears.surface.html#">gears.surface</a> object. The image is used
+ instead of the <a href="../core_components/naughty.notification.html#app_icon">app_icon</a> by notification assets which are auto-generated
+ or stored elsewhere than the filesystem (databases, web, Android phones, etc).
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "images"></a>
+    <strong>images</strong>
+    <span class="proptype">(<span class='summary_type'>nil <i>or</i> table</span>)</span>
+    </dt>
+    <dd>
+    The notification (animated) images. </p>
+
+<p> Note that calling this without first setting
+ <a href="../libraries/naughty.html#image_animations_enabled">naughty.image_animations_enabled</a> to true will throw an exception.</p>
+
+<p> Also note that there is <em>zero</em> support for this anywhere else in <a href="../libraries/naughty.html#">naughty</a>
+ and very, very few applications support this.
 
 
 
@@ -1304,8 +1503,85 @@ end
 
 
 </dd>
+    <dt>
+    <a name = "clients"></a>
+    <strong>clients</strong>
+    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    </dt>
+    <dd>
+    A list of clients associated with this notification. </p>
+
+<p> When used with DBus notifications, this returns all clients sharing the PID
+ of the notification sender. Note that this is highly unreliable.
+ Applications that use a different process to send the notification or
+ applications (and scripts) calling the <code>notify-send</code> command wont have any
+ client.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "max_width"></a>
+    <strong>max_width</strong>
+    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    </dt>
+    <dd>
+    The maximum popup width. </p>
+
+<p> Some notifications have overlong message, cap them to this width. Note that
+ this is ignored by <a href="../widgets/naughty.list.notifications.html#">naughty.list.notifications</a> because it delegate this
+ decision to the layout.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "app_name"></a>
+    <strong>app_name</strong>
+    <span class="proptype">(<span class='summary_type'>string</span>)</span>
+    </dt>
+    <dd>
+    The application name specified by the notification. </p>
+
+<p> This can be anything. It is usually less relevant than the <a href="../core_components/naughty.notification.html#clients">clients</a>
+ property, but can sometime to specified for remote or headless notifications.
+ In these case, it helps to triage and detect the notification from the rules.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "widget_template"></a>
+    <strong>widget_template</strong>
+    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    </dt>
+    <dd>
+    The widget template used to represent the notification. </p>
+
+<p> Some notifications, such as chat messages or music applications are better
+ off with a specialized notification widget.
+
+
+
+
+
+
+
+</dd>
 </dl>
-    <h2 class="section-header "><a name="Deprecated_object_properties"></a>Deprecated object properties</h2>
+    <h2 class="section-header  deprecated_block show_deprecated"><a name="Deprecated_object_properties"></a>Deprecated object properties</h2>
 
     <dl class="function">
     <dt>
@@ -1728,7 +2004,7 @@ end
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-12 18:22:06 </i>
+<i style="float:right;">Last updated 2019-07-16 00:41:08 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

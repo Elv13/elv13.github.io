@@ -5,6 +5,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Coreclassmod screen - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+  <script>
+    var st = document.createElement('style')
+    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
+    var deprecated_shown = false
+    st.appendChild(show_dep)
+
+    function show_deprecated() {
+      if (deprecated_shown)
+        document.getElementsByTagName('head')[0].removeChild(st);
+      else
+        document.getElementsByTagName('head')[0].appendChild(st);
+      deprecated_shown = !deprecated_shown
+    }
+  </script>
 </head>
 <body>
 
@@ -37,6 +51,7 @@
 <li><a href="#Object_properties">Object properties</a></li>
 <li><a href="#Object_methods">Object methods </a></li>
 <li><a href="#Signals">Signals</a></li>
+<li><a href="#Request_handlers">Request handlers</a></li>
 <li><a href="#Deprecated_functions">Deprecated functions</a></li>
 <li><a href="#Fields">Fields</a></li>
 </ul>
@@ -44,6 +59,7 @@
 
 <h2>Core components</h2>
 <ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
   <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../core_components/button.html">button</a></li>
   <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
@@ -57,6 +73,14 @@
   <li><a href="../core_components/root.html">root</a></li>
   <li><strong>screen<span class='listplusign'> and awful.screen</span></strong></li>
   <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Declarative rules</h2>
+<ul class="nowrap">
+  <li><a href="../declarative_rules/ruled.client.html">ruled.client</a></li>
+  <li><a href="../declarative_rules/ruled.clipboard.html">ruled.clipboard</a></li>
+  <li><a href="../declarative_rules/ruled.notifications.html">ruled.notifications</a></li>
+  <li><a href="../declarative_rules/ruled.screen.html">ruled.screen</a></li>
+  <li><a href="../declarative_rules/ruled.tag.html">ruled.tag</a></li>
 </ul>
 <h2>Widgets</h2>
 <ul class="nowrap">
@@ -145,9 +169,18 @@
   <li><a href="../theme_related_libraries/gears.color.html">gears.color</a></li>
   <li><a href="../theme_related_libraries/gears.shape.html">gears.shape</a></li>
 </ul>
+<h2>Client tiling</h2>
+<ul class="nowrap">
+  <li><a href="../client_tiling/dynamite.html">dynamite</a></li>
+  <li><a href="../client_tiling/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
+  <li><a href="../client_tiling/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
+  <li><a href="../client_tiling/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
+  <li><a href="../client_tiling/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../client_tiling/dynamite.utils.html">dynamite.utils</a></li>
+  <li><a href="../client_tiling/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
+</ul>
 <h2>Libraries</h2>
 <ul class="nowrap">
-  <li><a href="../libraries/awesome.html">awesome</a></li>
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
@@ -155,10 +188,11 @@
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
-  <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
+  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
+  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
@@ -176,15 +210,21 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.key.html">awful.key</a></li>
+  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
+  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
+  <li><a href="../classes/wibox.container.scale.html">wibox.container.scale</a></li>
+  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.hierarchy.html">wibox.hierarchy</a></li>
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
+  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/xproperties.html">xproperties</a></li>
 </ul>
 <h2>Documentation</h2>
@@ -208,10 +248,10 @@
 <div id="content">
 
 <h1>Module: <code>screen</code></h1>
-<p>awesome screen API</p>
+<p>The AwesomeWM screen API.</p>
+<p> This document describe how to use and manage screens.</p>
 
-<p> Screen objects can be added and removed over time.</p>
-<p> To get a callback for all
+<p> Screen objects can be added and removed over time. To get a callback for all
  current and future screens, use <a href="../core_components/screen.html#awful.screen.connect_for_each_screen">awful.screen.connect_for_each_screen</a>:</p>
 
 <pre>
@@ -235,6 +275,105 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 
 <p> Furthermore to the classes described here, one can also use signals as
  described in <a href="../classes/signals.html#">signals</a>.</p>
+
+<p> Lifecycle
+ =========</p>
+
+<p> The following diagram shows the various signals involved in the creation
+ of screens:</p>
+
+<p>  <img src="../images/add_screen.svg" alt="Screen creation" /></p>
+
+<p> The following diagram shows what happen when the (physical) monitor areas
+ change:</p>
+
+<p>  <img src="../images/change_screen.svg" alt="Screen creation" /></p>
+
+<p> See the documentation for the various signals to know more about how to
+ change the decision taken during the screen creation.</p>
+
+<p> <img src="../images/AUTOGEN_uml_nav_tables_screen.svg" alt="Usage example" />
+ Core components relationship
+ ===
+ <table><tr>
+ <td valign='top'><table class='widget_list' border=1>
+   <colgroup span='3'></colgroup>
+  <tr><th align='center' colspan=3 scope=colgroup>Acquire other objects from a screen</th></tr>
+  <tr style='font-weight: bold
+ '>
+   <th align='center'>Class</th>
+   <th align='center'></th>
+   <th align='center'>Property</th>
+  </tr>
+ <tr>
+   <td>tag</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_screen1.svg'></td>
+   <td>s.tags</td>
+  </tr>
+ <tr>
+   <td>tag</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_screen2.svg'></td>
+   <td>s.selected_tag</td>
+  </tr>
+ <tr>
+   <td>tag</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_screen3.svg'></td>
+   <td>s.selected_tags</td>
+  </tr>
+ <tr>
+   <td>client</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_screen4.svg'></td>
+   <td>s.clients</td>
+  </tr>
+ <tr>
+   <td>client</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_screen5.svg'></td>
+   <td>s.hidden_clients</td>
+  </tr>
+ <tr>
+   <td>client</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_screen6.svg'></td>
+   <td>s.tiled_clients</td>
+  </tr>
+ </table></td>
+ <td valign='top'><table class='widget_list' border=1>
+   <colgroup span='3'></colgroup>
+  <tr><th align='center' colspan=3 scope=colgroup>Acquire a screen from other objects</th></tr>
+  <tr style='font-weight: bold
+ '>
+   <th align='center'>Class</th>
+   <th align='center'></th>
+   <th align='center'>Property</th>
+  </tr>
+ <tr>
+   <td>tag</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_screen7.svg'></td>
+   <td>t.screen</td>
+  </tr>
+ <tr>
+   <td>client</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_screen8.svg'></td>
+   <td>c.screen</td>
+  </tr>
+ <tr>
+   <td>naughty.notification</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_screen9.svg'></td>
+   <td>n.screen</td>
+  </tr>
+ <tr>
+   <td>mouse</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_screen10.svg'></td>
+   <td>mouse.screen</td>
+  </tr>
+ </table></td>
+ </tr><tr>
+   <td colspan=2 style='color:#00000044'>
+   <b>Legend:</b> <i>c</i>: a client object, <i>t</i>: a tag object,
+   <i>s</i>: a screen object, <i>k</i>: an awful.key object,
+   <i>b</i>: a awful.button object, <i>n</i>: a naughty.notification object
+   </td>
+  </tr>
+ </table></p>
     <h3>Info:</h3>
     <ul>
         <li><strong>Copyright</strong>: 2008-2009 Julien Danjou</li>
@@ -242,14 +381,18 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     </ul>
 
 
-<h2><a href="#Constructors">Constructors</a></h2>
+<h2>
+    <a href="#Constructors">Constructors</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#fake_add"><span class='function_modname'>screen.</span>fake_add <span class='function_args'>(x, y, width, height)</span></a></td>
       <td class="summary">Add a fake screen.</td>
     </tr>
 </table>
-<h2><a href="#Static_module_functions">Static module functions</a></h2>
+<h2>
+    <a href="#Static_module_functions">Static module functions</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#instances"><span class='function_modname'>screen.</span>instances <span class='function_args'>()</span></a></td>
@@ -316,7 +459,9 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
       <td class="summary">Enable the automatic calculation of the screen DPI (experimental).</td>
     </tr>
 </table>
-<h2><a href="#Object_properties">Object properties</a></h2>
+<h2>
+    <a href="#Object_properties">Object properties</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#geometry">geometry</a></td>
@@ -329,20 +474,24 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
       <td class="summary">The internal screen number.</td>
     </tr>
     <tr>
-      <td class="shortname" ><a href="#outputs">outputs</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">If RANDR information is available, a list of outputs
-   for this screen and their size in mm.</td>
-    </tr>
-    <tr>
       <td class="shortname" ><a href="#workarea">workarea</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
       <td class="summary">The screen workarea.</td>
     </tr>
     <tr>
+      <td class="shortname" ><a href="#tiling_area">tiling_area</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td class="summary">The area where clients can be tiled.</td>
+    </tr>
+    <tr>
       <td class="shortname" ><a href="#padding">padding</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
       <td class="summary">The screen padding.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#outputs">outputs</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td class="summary">A list of outputs for this screen with their size in mm.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#clients">clients</a></td>
@@ -380,20 +529,42 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
       <td class="summary">The first selected tag.</td>
     </tr>
     <tr>
+      <td class="shortname" ><a href="#persistent">persistent</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>N/A</span></td>
+      <td class="summary">Is this screen supposed to survive being unplugged.</td>
+    </tr>
+    <tr>
       <td class="shortname" ><a href="#dpi">dpi</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
       <td class="summary">The number of pixels per inch of the screen.</td>
     </tr>
+    <tr>
+      <td class="shortname" ><a href="#minimum_dpi">minimum_dpi</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td class="summary">The lowest density DPI from all of the (physical) outputs.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#maximum_dpi">maximum_dpi</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td class="summary">The highest density DPI from all of the (physical) outputs.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#preferred_dpi">preferred_dpi</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td class="summary">The preferred DPI from all of the (physical) outputs.</td>
+    </tr>
 </table>
-<h2><a href="#Object_methods">Object methods </a></h2>
+<h2>
+    <a href="#Object_methods">Object methods </a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#fake_remove">:fake_remove <span class='function_args'>()</span></a></td>
-      <td class="summary">Remove a screen.</td>
+      <td class="summary">Remove a screen now.</td>
     </tr>
     <tr>
       <td class="name" ><a href="#fake_resize">:fake_resize <span class='function_args'>(x, y, width, height)</span></a></td>
-      <td class="summary">Fake-resize a screen</td>
+      <td class="summary">Resize a screen.</td>
     </tr>
     <tr>
       <td class="name" ><a href="#swap">:swap <span class='function_args'>(s)</span></a></td>
@@ -420,6 +591,10 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
       <td class="summary">Get tiled clients for the screen.</td>
     </tr>
     <tr>
+      <td class="name" ><a href="#split">:split <span class='function_args'>([ratios[, mode]])</span></a></td>
+      <td class="summary">Split the screen into multiple screens.</td>
+    </tr>
+    <tr>
       <td class="name" ><a href="#emit_signal">:emit_signal <span class='function_args'>(name, ...)</span></a></td>
       <td class="summary">Emit a signal.</td>
     </tr>
@@ -432,8 +607,18 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
       <td class="summary">Connect to a signal weakly.</td>
     </tr>
 </table>
-<h2><a href="#Signals">Signals</a></h2>
+<h2>
+    <a href="#Signals">Signals</a>
+</h2>
 <table class="function_list">
+    <tr>
+      <td class="name" ><a href="#scanning">scanning</a></td>
+      <td class="summary">AwesomeWM is about to scan for existing screens.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#scanned">scanned</a></td>
+      <td class="summary">AwesomeWM is done scanning for screens.</td>
+    </tr>
     <tr>
       <td class="name" ><a href="#primary_changed">primary_changed</a></td>
       <td class="summary">
@@ -456,6 +641,10 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
       <td class="summary">When 2 screens are swapped</td>
     </tr>
     <tr>
+      <td class="name" ><a href="#property::areas">property::areas</a></td>
+      <td class="summary">This signal is emitted when the list of physical screen areas changes.</td>
+    </tr>
+    <tr>
       <td class="name" ><a href="#request::desktop_decoration">request::desktop_decoration</a></td>
       <td class="summary">Emitted when a new screen is added.</td>
     </tr>
@@ -464,12 +653,45 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
       <td class="summary">Emitted when a new screen needs a wallpaper.</td>
     </tr>
     <tr>
+      <td class="name" ><a href="#request::create">request::create</a></td>
+      <td class="summary">When a new physical monitor area has been added.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#request::remove">request::remove</a></td>
+      <td class="summary">When a physical monitor area has been removed.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#request::resize">request::resize</a></td>
+      <td class="summary">When a physical monitor area resolution has changed or it has been replaced.</td>
+    </tr>
+    <tr>
       <td class="name" ><a href="#tag::history::update">tag::history::update</a></td>
       <td class="summary">When the tag history changed.</td>
     </tr>
 </table>
-<h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
+<h2>
+    <a href="#Request_handlers">Request handlers</a>
+</h2>
 <table class="function_list">
+    <tr>
+      <td class="name" ><a href="#awful.screen.create_screen_handler">awful.screen.create_screen_handler</a></td>
+      <td class="summary">Default handler for <a href="../core_components/screen.html#request::create">request::create</a>.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#awful.screen.remove_screen_handler">awful.screen.remove_screen_handler</a></td>
+      <td class="summary">Default handler for <a href="../core_components/screen.html#request::remove">request::remove</a>.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#awful.screen.resize_screen_handler">awful.screen.resize_screen_handler</a></td>
+      <td class="summary">Default handler for <a href="../core_components/screen.html#request::resize">request::resize</a>.</td>
+    </tr>
+</table>
+<h2>
+    <a class="deprecated_h2" onclick="show_deprecated()">
+      Click to display deprecated functions
+    </a>
+</h2>
+<table class="function_list deprecated_block show_deprecated">
     <tr>
       <td class="name" ><a href="#awful.screen.getdistance_sq">awful.screen.getdistance_sq<i class="deprecated_label"> [deprecated]</i></a></td>
       <td class="summary">Get the square distance between a <a href="../core_components/screen.html#">screen</a> and a point.</td>
@@ -479,12 +701,19 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
       <td class="summary">Get or set the screen padding.</td>
     </tr>
 </table>
-<h2><a href="#Fields">Fields</a></h2>
+<h2>
+    <a href="#Fields">Fields</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#primary"><span class='function_modname'>screen.</span>primary</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>screen</span></td>
       <td class="summary">The primary screen.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#automatic_factory"><span class='function_modname'>screen.</span>automatic_factory</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>N/A</span></td>
+      <td class="summary">If <a href="../core_components/screen.html#">screen</a> objects are created automatically when new areas are detected.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#awful.screen.default_focused_args"><span class='function_modname'>screen.</span>awful.screen.default_focused_args</a></td>
@@ -1035,6 +1264,8 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <dd>
     The screen coordinates. </p>
 
+<p> <img src="../images/AUTOGEN_screen_geometry.svg" alt="Usage example" /></p>
+
 <p> <strong>Signal:</strong></p>
 
 <ul>
@@ -1071,7 +1302,7 @@ other.</li>
 <p> If you really want to keep an array of screens you should use something
  along:</p>
 
-<pre><code> local myscreens = setmetatable({}. {__mode="k"})
+<pre><code> local myscreens = setmetatable({}, {__mode="k"})
  myscreens[ screen[1] ] = "mydata"
 </code></pre>
 
@@ -1101,33 +1332,6 @@ other.</li>
 
 </dd>
     <dt>
-    <a name = "outputs"></a>
-    <strong>outputs</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
-    </dt>
-    <dd>
-    If RANDR information is available, a list of outputs
-   for this screen and their size in mm. </p>
-
-<p> Please note that the table content may vary.</p>
-
-<p> <strong>Signal:</strong></p>
-
-<ul>
-<li><em>property::outputs</em></li>
-</ul>
-
-
-<p> <strong>Immutable:</strong> true
-
-
-
-
-
-
-
-</dd>
-    <dt>
     <a name = "workarea"></a>
     <strong>workarea</strong>
     <span class="proptype">(<span class='summary_type'>table</span>)</span>
@@ -1139,7 +1343,25 @@ other.</li>
  usually excludes the toolbars (see <a href="../popups_and_bars/awful.wibar.html#">awful.wibar</a>) and dockable clients
  (see <a href="../core_components/client.html#dockable">client.dockable</a>) like WindowMaker DockAPP.</p>
 
-<p> It can be modified be altering the <a href="../popups_and_bars/wibox.html#">wibox</a> or <a href="../core_components/client.html#">client</a> struts.</p>
+<p> It can be modified be altering the <a href="../popups_and_bars/wibox.html#struts">wibox.struts</a> or <a href="../core_components/client.html#struts">client.struts</a>.</p>
+
+<p> <img src="../images/AUTOGEN_screen_workarea.svg" alt="Usage example" /></p>
+
+<pre><code>  -- With a padding, the tiled clients wont use 20px at the top and bottom
+  -- and 40px on the left and right.
+  screen[1].padding = {
+      left   = 40,
+      right  = 40,
+      top    = 20,
+      bottom = 20,
+  }
+
+  -- This will shift the workarea by 24px at the top.
+  awful.wibar {
+      position = 'top',
+      height   = 24,
+  }
+</code></pre>
 
 <p> <strong>Signal:</strong></p>
 
@@ -1161,6 +1383,32 @@ other.</li>
 
 </dd>
     <dt>
+    <a name = "tiling_area"></a>
+    <strong>tiling_area</strong>
+    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    </dt>
+    <dd>
+    The area where clients can be tiled. </p>
+
+<p> This property holds the (read only) area where clients can be tiled. Use
+ the <a href="../core_components/screen.html#padding">padding</a> property, <a href="../popups_and_bars/wibox.html#struts">wibox.struts</a> and <a href="../core_components/client.html#struts">client.struts</a> to modify this
+ area.</p>
+
+<p><img src="../images/AUTOGEN_screen_tiling_area.svg" alt="Usage example" />
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core_components/screen.html#padding">padding</a></li>
+         <li><a href="../core_components/screen.html#get_bounding_geometry">get_bounding_geometry</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
     <a name = "padding"></a>
     <strong>padding</strong>
     <span class="proptype">(<span class='summary_type'>table</span>)</span>
@@ -1170,6 +1418,22 @@ other.</li>
 
 <p> This adds a &ldquo;buffer&rdquo; section on each side of the screen.</p>
 
+<p><img src="../images/AUTOGEN_screen_padding.svg" alt="Usage example" /></p>
+
+<pre><code> -- With a padding, the tiled clients wont use 20px at the top and bottom
+ -- and 40px on the left and right.
+ screen[1].padding = {
+     left   = 40,
+     right  = 40,
+     top    = 20,
+     bottom = 20,
+ }
+</code></pre>
+
+<p> Here is the property effect on a layout:</p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_padding.svg" alt="Usage example" /></p>
+
 <p> <strong>Signal:</strong></p>
 
 <ul>
@@ -1177,6 +1441,34 @@ other.</li>
 </ul>
 
 
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "outputs"></a>
+    <strong>outputs</strong>
+    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    </dt>
+    <dd>
+    A list of outputs for this screen with their size in mm. </p>
+
+<p> This information is only available when RANDR is used to manage the screens.</p>
+
+<p> Please note that the table content may vary.</p>
+
+<p> <strong>Signal:</strong></p>
+
+<ul>
+<li><em>property::outputs</em></li>
+</ul>
+
+
+<p> <strong>Immutable:</strong> true
 
 
 
@@ -1367,12 +1659,107 @@ other.</li>
 
 </dd>
     <dt>
+    <a name = "persistent"></a>
+    <strong>persistent</strong>
+    <span class="proptype">(<span class='summary_type'>N/A</span>)</span>
+    </dt>
+    <dd>
+    Is this screen supposed to survive being unplugged. </p>
+
+<p> Is the output area corresponding to this screen is removed, then pick
+ another screen to remove and move this one to the area previously occupied
+ by the other screen.</p>
+
+<p>TODO
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core_components/screen.html#request::remove">request::remove</a></li>
+         <li><a href="../core_components/screen.html#request::resize">request::resize</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
     <a name = "dpi"></a>
     <strong>dpi</strong>
     <span class="proptype">(<span class='summary_type'>number</span>)</span>
     </dt>
     <dd>
-    The number of pixels per inch of the screen.
+    The number of pixels per inch of the screen. </p>
+
+<p> Unless manually overriden, the dpi will be computed using the output side is
+ <code>autodpi</code> is <code>true</code> or otherwise the X11 fallback (usually 96).
+
+
+    <h3>Type constraints:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+         the DPI value.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "minimum_dpi"></a>
+    <strong>minimum_dpi</strong>
+    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    </dt>
+    <dd>
+    The lowest density DPI from all of the (physical) outputs.
+
+
+    <h3>Type constraints:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+         the DPI value.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "maximum_dpi"></a>
+    <strong>maximum_dpi</strong>
+    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    </dt>
+    <dd>
+    The highest density DPI from all of the (physical) outputs.
+
+
+    <h3>Type constraints:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+         the DPI value.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "preferred_dpi"></a>
+    <strong>preferred_dpi</strong>
+    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    </dt>
+    <dd>
+    The preferred DPI from all of the (physical) outputs. </p>
+
+<p> This is computed by normalizing all output to fill the area, then picking
+ the lowest of the resulting virtual DPIs.
 
 
     <h3>Type constraints:</h3>
@@ -1396,13 +1783,19 @@ other.</li>
     <strong>:fake_remove <span class='function_args'>()</span></strong>
     </dt>
     <dd>
-    Remove a screen.
+    Remove a screen now. </p>
+
+<p> <img src="../images/AUTOGEN_ruled_screen_fake_remove.svg" alt="Usage example" />
 
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">screen[<span class="number">2</span>]:fake_remove()</pre>
+    </ul>
 
 </dd>
     <dt>
@@ -1410,7 +1803,12 @@ other.</li>
     <strong>:fake_resize <span class='function_args'>(x, y, width, height)</span></strong>
     </dt>
     <dd>
-    Fake-resize a screen
+    Resize a screen. </p>
+
+<p> Calling this will resize the screen even if it no longer matches the viewport
+ size.</p>
+
+<p> <img src="../images/AUTOGEN_ruled_screen_fake_resize.svg" alt="Usage example" />
 
 
     <h3>Parameters:</h3>
@@ -1436,6 +1834,10 @@ other.</li>
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">screen[<span class="number">1</span>]:fake_resize(<span class="number">100</span>, <span class="number">0</span>, <span class="number">1024</span>, <span class="number">768</span>)</pre>
+    </ul>
 
 </dd>
     <dt>
@@ -1443,13 +1845,15 @@ other.</li>
     <strong>:swap <span class='function_args'>(s)</span></strong>
     </dt>
     <dd>
-    Swap a screen with another one in global screen list.
+    Swap a screen with another one in global screen list. </p>
+
+<p> <img src="../images/AUTOGEN_ruled_screen_swap.svg" alt="Usage example" />
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">s</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          A screen to swap with.
         </li>
     </ul>
@@ -1457,6 +1861,10 @@ other.</li>
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">screen[<span class="number">2</span>]:swap(screen[<span class="number">1</span>])</pre>
+    </ul>
 
 </dd>
     <dt>
@@ -1607,6 +2015,51 @@ other.</li>
 
 </dd>
     <dt>
+    <a name = "split"></a>
+    <strong>:split <span class='function_args'>([ratios[, mode]])</span></strong>
+    </dt>
+    <dd>
+    <p>Split the screen into multiple screens. </p>
+
+<p> This is useful to turn ultrawide monitors into something more useful without
+ fancy client layouts:</p>
+
+<p><img src="../images/AUTOGEN_awful_screen_split1.svg" alt="Usage example" /></p>
+
+<pre><code> screen[1]:split({1/5, 3/5, 1/5})
+</code></pre>
+
+<p> It can also be used to turn a vertical &ldquo;side&rdquo; screen into 2 smaller screens:</p>
+
+<p><img src="../images/AUTOGEN_awful_screen_split2.svg" alt="Usage example" /></p>
+
+<pre><code> screen[1]:split()
+</code></pre>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ratios</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The different ratios to split into. If none is
+  provided, it is split in half.
+         (<em>optional</em>)
+        </li>
+        <li><span class="parameter">mode</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Either &ldquo;vertical&rdquo; or &ldquo;horizontal&rdquo;. If none is
+  specified, it will split along the longest axis.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
     <a name = "emit_signal"></a>
     <strong>:emit_signal <span class='function_args'>(name, ...)</span></strong>
     </dt>
@@ -1694,6 +2147,61 @@ other.</li>
 
     <dl class="function">
     <dt>
+    <a name = "scanning"></a>
+    <strong>scanning</strong>
+    </dt>
+    <dd>
+    AwesomeWM is about to scan for existing screens. </p>
+
+<p> Connect to this signal when code needs to be executed after the Lua context
+ is initialized and modules are loaded, but before screens are added.</p>
+
+<p> To manage screens manually, set <code>screen.automatic_factory = false</code> and
+ connect to the <a href="../core_components/screen.html#property::areas">property::areas</a> signal. It is then possible to use
+ <a href="../core_components/screen.html#fake_add">screen.fake_add</a> to create virtual screens. Be careful when using this,
+ when done incorrectly, no screens will be created. Using Awesome with zero
+ screens is <strong>not</strong> supported.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core_components/screen.html#property::areas">property::areas</a></li>
+         <li><a href="../core_components/screen.html#fake_add">screen.fake_add</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "scanned"></a>
+    <strong>scanned</strong>
+    </dt>
+    <dd>
+    AwesomeWM is done scanning for screens. </p>
+
+<p> Connect to this signal to execute code after the screens have been created,
+ but before the clients are added. This signal can also be used to split
+ physical screens into multiple virtual screens before the clients (and their
+ rules) are executed.</p>
+
+<p> Note that if no screens exist at this point, the fallback code will be
+ triggered and the default (detected) screens will be added.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core_components/screen.html#fake_resize">screen.fake_resize</a></li>
+         <li><a href="../core_components/screen.html#fake_add">screen.fake_add</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
     <a name = "primary_changed"></a>
     <strong>primary_changed</strong>
     </dt>
@@ -1776,6 +2284,46 @@ other.</li>
 
 </dd>
     <dt>
+    <a name = "property::areas"></a>
+    <strong>property::areas</strong>
+    </dt>
+    <dd>
+    <p>This signal is emitted when the list of physical screen areas changes. </p>
+
+<p> Each area in the list corresponds to a <strong>physical</strong> screen rectangle, which
+ is <strong>not</strong> the <a href="../core_components/screen.html#property::areas">areas</a> property of the <a href="../core_components/screen.html#">screen</a> objects.</p>
+
+<p> Each entry in the <a href="../core_components/screen.html#property::areas">areas</a> entry has the following keys:</p>
+
+<ul>
+<li><a href="../core_components/screen.html#geometry">geometry</a> <em>(table)</em>: A table with an <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.</li>
+<li><a href="../core_components/screen.html#outputs">outputs</a> <em>(table)</em>: All outputs sharing this area.</li>
+<li><a href="../core_components/screen.html#maximum_dpi">maximum_dpi</a> <em>(number)</em>: The DPI of the most dense output.</li>
+<li><a href="../core_components/screen.html#minimum_dpi">minimum_dpi</a> <em>(number)</em>: The DPI of the least dense output.</li>
+<li><a href="../core_components/screen.html#preferred_dpi">preferred_dpi</a> <em>(number)</em>: The optimal DPI.</li>
+</ul>
+
+
+
+
+    <h3>Arguments:</h3>
+    <ul>
+        <li><span class="parameter">areas</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A table containing all physical areas.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../core_components/screen.html#automatic_factory">automatic_factory</a>
+    </ul>
+
+
+</dd>
+    <dt>
     <a name = "request::desktop_decoration"></a>
     <strong>request::desktop_decoration</strong>
     </dt>
@@ -1830,6 +2378,262 @@ other.</li>
 
 </dd>
     <dt>
+    <a name = "request::create"></a>
+    <strong>request::create</strong>
+    </dt>
+    <dd>
+    <p>When a new physical monitor area has been added. </p>
+
+<p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
+
+<p> The default handler will create a screen that fills the area.</p>
+
+<p> To disconnect the default handler, use:</p>
+
+<pre><code>screen.disconnect_signal(
+    "request::create", awful.screen.create_screen_handler
+)
+</code></pre>
+
+
+
+    <h3>Arguments:</h3>
+    <ul>
+        <li><span class="parameter">area</span>
+
+        <ul>
+        <li><span class="parameter">geometry</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A table with <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.
+        </li>
+        <li><span class="parameter">outputs</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A table with the monitor name and possibly the
+  <code>mm_width</code> and <code>mm_height</code> values if they are available.
+        </li>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">number</span></span>
+         An identifier for this area (by pixel resolution). It
+  will not change when outputs are modified, but will change when the
+  resolution changes. Note that if it fully disappear, the next time an area
+  with the same resolution appears, it will have a different <code>id</code>.
+        </li>
+        <li><span class="parameter">minimum_dpi</span>
+            <span class="types"><span class="type">number</span></span>
+         The least dense DPI.
+        </li>
+        <li><span class="parameter">maximum_dpi</span>
+            <span class="types"><span class="type">number</span></span>
+         The most dense DPI.
+        </li>
+        <li><span class="parameter">preferred_dpi</span>
+            <span class="types"><span class="type">number</span></span>
+         The relative least dense DPI.
+        </li>
+        </li></ul>
+        <li><span class="parameter">args</span>
+
+        <ul>
+        <li><span class="parameter">context</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Why was this signal sent.
+        </li>
+        </li></ul>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core_components/screen.html#outputs">outputs</a></li>
+         <li><a href="../core_components/screen.html#awful.screen.create_screen_handler">awful.screen.create_screen_handler</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "request::remove"></a>
+    <strong>request::remove</strong>
+    </dt>
+    <dd>
+    <p>When a physical monitor area has been removed. </p>
+
+<p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
+
+<p> If you replace the default handler, it is up to you to find the screen(s)
+ associated with this area.</p>
+
+<p> To disconnect the default handler, use:</p>
+
+<pre><code>screen.disconnect_signal(
+    "request::remove", awful.screen.remove_screen_handler
+)
+</code></pre>
+
+
+
+    <h3>Arguments:</h3>
+    <ul>
+        <li><span class="parameter">area</span>
+
+        <ul>
+        <li><span class="parameter">geometry</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A table with <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.
+        </li>
+        <li><span class="parameter">outputs</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A table with the monitor name and possibly the
+  <code>mm_width</code> and <code>mm_height</code> values if they are available.
+        </li>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">number</span></span>
+         An identifier for this area (by pixel resolution). It
+  will not change when outputs are modified, but will change when the
+  resolution changes. Note that if it fully disappear, the next time an area
+  with the same resolution appears, it will have a different <code>id</code>.
+        </li>
+        <li><span class="parameter">minimum_dpi</span>
+            <span class="types"><span class="type">number</span></span>
+         The least dense DPI.
+        </li>
+        <li><span class="parameter">maximum_dpi</span>
+            <span class="types"><span class="type">number</span></span>
+         The most dense DPI.
+        </li>
+        <li><span class="parameter">preferred_dpi</span>
+            <span class="types"><span class="type">number</span></span>
+         The relative least dense DPI.
+        </li>
+        </li></ul>
+        <li><span class="parameter">args</span>
+
+        <ul>
+        <li><span class="parameter">context</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Why was this signal sent.
+        </li>
+        </li></ul>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../core_components/screen.html#awful.screen.remove_screen_handler">awful.screen.remove_screen_handler</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "request::resize"></a>
+    <strong>request::resize</strong>
+    </dt>
+    <dd>
+    <p>When a physical monitor area resolution has changed or it has been replaced. </p>
+
+<p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
+
+<p> Note that given the areas are not the same, the <code>id</code> wont be the same. Also
+ note that if multiple new areas fit within a single &ldquo;old&rdquo; area, the resized
+ screen will be the one with the largest total overlapping area
+ (<code>intersection.width*intersection.height</code>), regardless of the outputs names.</p>
+
+<p> To disconnect the default handler, use:</p>
+
+<pre><code>screen.disconnect_signal(
+    "request::resize", awful.screen.resize_screen_handler
+)
+</code></pre>
+
+
+
+    <h3>Arguments:</h3>
+    <ul>
+        <li><span class="parameter">old_area</span>
+
+        <ul>
+        <li><span class="parameter">geometry</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A table with <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.
+        </li>
+        <li><span class="parameter">outputs</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A table with the monitor name and possibly the
+  <code>mm_width</code> and <code>mm_height</code> values if they are available.
+        </li>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">number</span></span>
+         An identifier for this area (by pixel resolution). It
+  will not change when outputs are modified, but will change when the
+  resolution changes. Note that if it fully disappear, the next time an area
+  with the same resolution appears, it will have a different <code>id</code>.
+        </li>
+        <li><span class="parameter">minimum_dpi</span>
+            <span class="types"><span class="type">number</span></span>
+         The least dense DPI.
+        </li>
+        <li><span class="parameter">maximum_dpi</span>
+            <span class="types"><span class="type">number</span></span>
+         The most dense DPI.
+        </li>
+        <li><span class="parameter">preferred_dpi</span>
+            <span class="types"><span class="type">number</span></span>
+         The relative least dense DPI.
+        </li>
+        </li></ul>
+        <li><span class="parameter">new_area</span>
+
+        <ul>
+        <li><span class="parameter">geometry</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A table with <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.
+        </li>
+        <li><span class="parameter">outputs</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         A table with the monitor name and possibly the
+  <code>mm_width</code> and <code>mm_height</code> values if they are available.
+        </li>
+        <li><span class="parameter">id</span>
+            <span class="types"><span class="type">number</span></span>
+         An identifier for this area (by pixel resolution). It
+  will not change when outputs are modified, but will change when the
+  resolution changes. Note that if it fully disappear, the next time an area
+  with the same resolution appears, it will have a different <code>id</code>.
+        </li>
+        <li><span class="parameter">minimum_dpi</span>
+            <span class="types"><span class="type">number</span></span>
+         The least dense DPI.
+        </li>
+        <li><span class="parameter">maximum_dpi</span>
+            <span class="types"><span class="type">number</span></span>
+         The most dense DPI.
+        </li>
+        <li><span class="parameter">preferred_dpi</span>
+            <span class="types"><span class="type">number</span></span>
+         The relative least dense DPI.
+        </li>
+        </li></ul>
+        <li><span class="parameter">args</span>
+
+        <ul>
+        <li><span class="parameter">context</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Why was this signal sent.
+        </li>
+        </li></ul>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../core_components/screen.html#awful.screen.resize_screen_handler">awful.screen.resize_screen_handler</a>
+    </ul>
+
+
+</dd>
+    <dt>
     <a name = "tag::history::update"></a>
     <strong>tag::history::update</strong>
     </dt>
@@ -1844,14 +2648,120 @@ other.</li>
 
 </dd>
 </dl>
-    <h2 class="section-header "><a name="Deprecated_functions"></a>Deprecated functions</h2>
+    <h2 class="section-header "><a name="Request_handlers"></a>Request handlers</h2>
 
     <dl class="function">
     <dt>
+    <a name = "awful.screen.create_screen_handler"></a>
+    <strong>awful.screen.create_screen_handler</strong>
+    </dt>
+    <dd>
+    Default handler for <a href="../core_components/screen.html#request::create">request::create</a>. </p>
+
+<p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
+
+<p> A simplified implementation looks like:</p>
+
+<pre><code>function(area --[[, args]])
+    local geo = area.geometry
+    local s = screen.fake_add(geo.x, geo.y, geo.width, geo.height)
+    s.outputs = area.outputs
+end
+</code></pre>
+
+<p> If you implement this by hand, you must also implement handler for the
+ <a href="../core_components/screen.html#request::remove">request::remove</a> and <a href="../core_components/screen.html#request::resize">request::resize</a>.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../core_components/screen.html#request::create">request::create</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "awful.screen.remove_screen_handler"></a>
+    <strong>awful.screen.remove_screen_handler</strong>
+    </dt>
+    <dd>
+    <p>Default handler for <a href="../core_components/screen.html#request::remove">request::remove</a>. </p>
+
+<p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
+
+<p> A simplified version of the logic is:</p>
+
+<pre><code>function (area --[[, args]])
+    local geo = area.geometry
+    for s in screen do
+        if gears.geometry.rectangle.are_equal(geo, s.geometry) then
+            s:fake_remove()
+            return
+        end
+    end
+end
+</code></pre>
+
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../core_components/screen.html#request::remove">request::remove</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "awful.screen.resize_screen_handler"></a>
+    <strong>awful.screen.resize_screen_handler</strong>
+    </dt>
+    <dd>
+    <p>Default handler for <a href="../core_components/screen.html#request::resize">request::resize</a>. </p>
+
+<p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
+
+<p> A simplified version of the logic is:</p>
+
+<pre><code>function (old_area, new_area --[[, args]])
+    local old_geo, new_geo = old_area.geometry, new_area.geometry
+    for s in screen do
+        local sgeo = new_area.geometry
+        if gears.geometry.rectangle.are_equal(old_geo, s.geometry) then
+            s:fake_resize(
+                sgeo.x, sgeo.y, sgeo.width, sgeo.height
+            )
+        end
+    end
+end
+</code></pre>
+
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../core_components/screen.html#request::resize">request::resize</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2 class="section-header  deprecated_block show_deprecated"><a name="Deprecated_functions"></a>Deprecated functions</h2>
+
+    <dl class="function">
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.screen.getdistance_sq"></a>
     <strong>awful.screen.getdistance_sq<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get the square distance between a <a href="../core_components/screen.html#">screen</a> and a point.
 
 
@@ -1882,11 +2792,11 @@ other.</li>
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.screen.padding"></a>
     <strong>awful.screen.padding<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get or set the screen padding.
 
 
@@ -1938,6 +2848,29 @@ other.</li>
 
 </dd>
     <dt>
+    <a name = "automatic_factory"></a>
+    <strong><span class='function_modname'>screen.</span>automatic_factory</strong>
+    <span class="proptype">(<span class='summary_type'>N/A</span>)</span>
+    </dt>
+    <dd>
+    If <a href="../core_components/screen.html#">screen</a> objects are created automatically when new areas are detected. </p>
+
+<p> Be very, very careful when setting this to false. You might end up with
+ no screens. This is <strong>not</strong> supported. Always connect to the <a href="../core_components/screen.html#scanned">scanned</a>
+ signal to make sure to create a fallback screen if none were created.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../core_components/screen.html#property::areas">property::areas</a>
+    </ul>
+
+
+</dd>
+    <dt>
     <a name = "awful.screen.default_focused_args"></a>
     <strong><span class='function_modname'>screen.</span>awful.screen.default_focused_args</strong>
     <span class="proptype">(<span class='summary_type'>N/A</span>)</span>
@@ -1959,7 +2892,7 @@ other.</li>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-12 18:22:06 </i>
+<i style="float:right;">Last updated 2019-07-16 00:41:08 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

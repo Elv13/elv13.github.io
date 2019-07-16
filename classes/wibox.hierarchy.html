@@ -5,6 +5,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Class wibox.hierarchy - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+  <script>
+    var st = document.createElement('style')
+    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
+    var deprecated_shown = false
+    st.appendChild(show_dep)
+
+    function show_deprecated() {
+      if (deprecated_shown)
+        document.getElementsByTagName('head')[0].removeChild(st);
+      else
+        document.getElementsByTagName('head')[0].appendChild(st);
+      deprecated_shown = !deprecated_shown
+    }
+  </script>
 </head>
 <body>
 
@@ -42,16 +56,30 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.key.html">awful.key</a></li>
+  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
+  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
+  <li><a href="../classes/wibox.container.scale.html">wibox.container.scale</a></li>
+  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><strong>wibox.hierarchy</strong></li>
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
+  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/xproperties.html">xproperties</a></li>
+</ul>
+<h2>Declarative rules</h2>
+<ul class="nowrap">
+  <li><a href="../declarative_rules/ruled.client.html">ruled.client</a></li>
+  <li><a href="../declarative_rules/ruled.clipboard.html">ruled.clipboard</a></li>
+  <li><a href="../declarative_rules/ruled.notifications.html">ruled.notifications</a></li>
+  <li><a href="../declarative_rules/ruled.screen.html">ruled.screen</a></li>
+  <li><a href="../declarative_rules/ruled.tag.html">ruled.tag</a></li>
 </ul>
 <h2>Widgets</h2>
 <ul class="nowrap">
@@ -109,6 +137,7 @@
 </ul>
 <h2>Core components</h2>
 <ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
   <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../core_components/button.html">button</a></li>
   <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
@@ -156,9 +185,18 @@
   <li><a href="../theme_related_libraries/gears.color.html">gears.color</a></li>
   <li><a href="../theme_related_libraries/gears.shape.html">gears.shape</a></li>
 </ul>
+<h2>Client tiling</h2>
+<ul class="nowrap">
+  <li><a href="../client_tiling/dynamite.html">dynamite</a></li>
+  <li><a href="../client_tiling/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
+  <li><a href="../client_tiling/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
+  <li><a href="../client_tiling/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
+  <li><a href="../client_tiling/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../client_tiling/dynamite.utils.html">dynamite.utils</a></li>
+  <li><a href="../client_tiling/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
+</ul>
 <h2>Libraries</h2>
 <ul class="nowrap">
-  <li><a href="../libraries/awesome.html">awesome</a></li>
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
@@ -166,10 +204,11 @@
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
-  <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
+  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
+  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
@@ -215,14 +254,18 @@
     </ul>
 
 
-<h2><a href="#Constructors">Constructors</a></h2>
+<h2>
+    <a href="#Constructors">Constructors</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#wibox.hierarchy.new"><span class='function_modname'>wibox.hierarchy.</span>new <span class='function_args'>(context, widget, width, height, redraw_callback, layout_callback, callback_arg)</span></a></td>
       <td class="summary">Create a new widget hierarchy that has no parent.</td>
     </tr>
 </table>
-<h2><a href="#Static_module_functions">Static module functions</a></h2>
+<h2>
+    <a href="#Static_module_functions">Static module functions</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#wibox.hierarchy.count_widget"><span class='function_modname'>wibox.hierarchy.</span>count_widget <span class='function_args'>(widget)</span></a></td>
@@ -230,56 +273,58 @@
  occurrences.</td>
     </tr>
 </table>
-<h2><a href="#Object_methods">Object methods </a></h2>
+<h2>
+    <a href="#Object_methods">Object methods </a>
+</h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#wibox.hierarchy.update">:wibox.hierarchy.update <span class='function_args'>(context, widget, width, height[, region])</span></a></td>
+      <td class="name" ><a href="#wibox.hierarchy.update">:update <span class='function_args'>(context, widget, width, height[, region])</span></a></td>
       <td class="summary">Update a widget hierarchy with some new state.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#wibox.hierarchy.get_widget">:wibox.hierarchy.get_widget <span class='function_args'>()</span></a></td>
+      <td class="name" ><a href="#wibox.hierarchy.get_widget">:get_widget <span class='function_args'>()</span></a></td>
       <td class="summary">Get the widget that this hierarchy manages.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#wibox.hierarchy.get_matrix_to_parent">:wibox.hierarchy.get_matrix_to_parent <span class='function_args'>()</span></a></td>
+      <td class="name" ><a href="#wibox.hierarchy.get_matrix_to_parent">:get_matrix_to_parent <span class='function_args'>()</span></a></td>
       <td class="summary">Get a matrix that transforms to the parent&rsquo;s coordinate space from this
  hierarchy&rsquo;s coordinate system.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#wibox.hierarchy.get_matrix_to_device">:wibox.hierarchy.get_matrix_to_device <span class='function_args'>()</span></a></td>
+      <td class="name" ><a href="#wibox.hierarchy.get_matrix_to_device">:get_matrix_to_device <span class='function_args'>()</span></a></td>
       <td class="summary">Get a matrix that transforms to the base of this hierarchy&rsquo;s coordinate
  system (aka the coordinate system of the device that this
  hierarchy is applied upon) from this hierarchy&rsquo;s coordinate system.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#wibox.hierarchy.get_matrix_from_parent">:wibox.hierarchy.get_matrix_from_parent <span class='function_args'>()</span></a></td>
+      <td class="name" ><a href="#wibox.hierarchy.get_matrix_from_parent">:get_matrix_from_parent <span class='function_args'>()</span></a></td>
       <td class="summary">Get a matrix that transforms from the parent&rsquo;s coordinate space into this
  hierarchy&rsquo;s coordinate system.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#wibox.hierarchy.get_matrix_from_device">:wibox.hierarchy.get_matrix_from_device <span class='function_args'>()</span></a></td>
+      <td class="name" ><a href="#wibox.hierarchy.get_matrix_from_device">:get_matrix_from_device <span class='function_args'>()</span></a></td>
       <td class="summary">Get a matrix that transforms from the base of this hierarchy&rsquo;s coordinate
  system (aka the coordinate system of the device that this
  hierarchy is applied upon) into this hierarchy&rsquo;s coordinate system.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#wibox.hierarchy.get_draw_extents">:wibox.hierarchy.get_draw_extents <span class='function_args'>()</span></a></td>
+      <td class="name" ><a href="#wibox.hierarchy.get_draw_extents">:get_draw_extents <span class='function_args'>()</span></a></td>
       <td class="summary">Get the extents that this hierarchy possibly draws to (in the current coordinate space).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#wibox.hierarchy.get_size">:wibox.hierarchy.get_size <span class='function_args'>()</span></a></td>
+      <td class="name" ><a href="#wibox.hierarchy.get_size">:get_size <span class='function_args'>()</span></a></td>
       <td class="summary">Get the size that this hierarchy logically covers (in the current coordinate space).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#wibox.hierarchy.get_children">:wibox.hierarchy.get_children <span class='function_args'>()</span></a></td>
+      <td class="name" ><a href="#wibox.hierarchy.get_children">:get_children <span class='function_args'>()</span></a></td>
       <td class="summary">Get a list of all children.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#wibox.hierarchy.get_count">:wibox.hierarchy.get_count <span class='function_args'>(widget)</span></a></td>
+      <td class="name" ><a href="#wibox.hierarchy.get_count">:get_count <span class='function_args'>(widget)</span></a></td>
       <td class="summary">Count how often this widget is visible inside this hierarchy.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#wibox.hierarchy.draw">:wibox.hierarchy.draw <span class='function_args'>(context, cr)</span></a></td>
+      <td class="name" ><a href="#wibox.hierarchy.draw">:draw <span class='function_args'>(context, cr)</span></a></td>
       <td class="summary">Draw a hierarchy to some cairo context.</td>
     </tr>
 </table>
@@ -368,7 +413,7 @@
     <dl class="function">
     <dt>
     <a name = "wibox.hierarchy.update"></a>
-    <strong>:wibox.hierarchy.update <span class='function_args'>(context, widget, width, height[, region])</span></strong>
+    <strong>:update <span class='function_args'>(context, widget, width, height[, region])</span></strong>
     </dt>
     <dd>
     Update a widget hierarchy with some new state.
@@ -407,7 +452,7 @@
 </dd>
     <dt>
     <a name = "wibox.hierarchy.get_widget"></a>
-    <strong>:wibox.hierarchy.get_widget <span class='function_args'>()</span></strong>
+    <strong>:get_widget <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Get the widget that this hierarchy manages.
@@ -421,7 +466,7 @@
 </dd>
     <dt>
     <a name = "wibox.hierarchy.get_matrix_to_parent"></a>
-    <strong>:wibox.hierarchy.get_matrix_to_parent <span class='function_args'>()</span></strong>
+    <strong>:get_matrix_to_parent <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Get a matrix that transforms to the parent&rsquo;s coordinate space from this
@@ -441,7 +486,7 @@
 </dd>
     <dt>
     <a name = "wibox.hierarchy.get_matrix_to_device"></a>
-    <strong>:wibox.hierarchy.get_matrix_to_device <span class='function_args'>()</span></strong>
+    <strong>:get_matrix_to_device <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Get a matrix that transforms to the base of this hierarchy&rsquo;s coordinate
@@ -462,7 +507,7 @@
 </dd>
     <dt>
     <a name = "wibox.hierarchy.get_matrix_from_parent"></a>
-    <strong>:wibox.hierarchy.get_matrix_from_parent <span class='function_args'>()</span></strong>
+    <strong>:get_matrix_from_parent <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Get a matrix that transforms from the parent&rsquo;s coordinate space into this
@@ -482,7 +527,7 @@
 </dd>
     <dt>
     <a name = "wibox.hierarchy.get_matrix_from_device"></a>
-    <strong>:wibox.hierarchy.get_matrix_from_device <span class='function_args'>()</span></strong>
+    <strong>:get_matrix_from_device <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Get a matrix that transforms from the base of this hierarchy&rsquo;s coordinate
@@ -503,7 +548,7 @@
 </dd>
     <dt>
     <a name = "wibox.hierarchy.get_draw_extents"></a>
-    <strong>:wibox.hierarchy.get_draw_extents <span class='function_args'>()</span></strong>
+    <strong>:get_draw_extents <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Get the extents that this hierarchy possibly draws to (in the current coordinate space).
@@ -524,7 +569,7 @@
 </dd>
     <dt>
     <a name = "wibox.hierarchy.get_size"></a>
-    <strong>:wibox.hierarchy.get_size <span class='function_args'>()</span></strong>
+    <strong>:get_size <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Get the size that this hierarchy logically covers (in the current coordinate space).
@@ -543,7 +588,7 @@
 </dd>
     <dt>
     <a name = "wibox.hierarchy.get_children"></a>
-    <strong>:wibox.hierarchy.get_children <span class='function_args'>()</span></strong>
+    <strong>:get_children <span class='function_args'>()</span></strong>
     </dt>
     <dd>
     Get a list of all children.
@@ -562,7 +607,7 @@
 </dd>
     <dt>
     <a name = "wibox.hierarchy.get_count"></a>
-    <strong>:wibox.hierarchy.get_count <span class='function_args'>(widget)</span></strong>
+    <strong>:get_count <span class='function_args'>(widget)</span></strong>
     </dt>
     <dd>
     Count how often this widget is visible inside this hierarchy.  This function
@@ -588,7 +633,7 @@
 </dd>
     <dt>
     <a name = "wibox.hierarchy.draw"></a>
-    <strong>:wibox.hierarchy.draw <span class='function_args'>(context, cr)</span></strong>
+    <strong>:draw <span class='function_args'>(context, cr)</span></strong>
     </dt>
     <dd>
     Draw a hierarchy to some cairo context.
@@ -618,7 +663,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-12 18:22:06 </i>
+<i style="float:right;">Last updated 2019-07-16 00:41:08 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

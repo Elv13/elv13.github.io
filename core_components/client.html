@@ -5,6 +5,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Coreclassmod client - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+  <script>
+    var st = document.createElement('style')
+    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
+    var deprecated_shown = false
+    st.appendChild(show_dep)
+
+    function show_deprecated() {
+      if (deprecated_shown)
+        document.getElementsByTagName('head')[0].removeChild(st);
+      else
+        document.getElementsByTagName('head')[0].appendChild(st);
+      deprecated_shown = !deprecated_shown
+    }
+  </script>
 </head>
 <body>
 
@@ -32,6 +46,7 @@
 
 <h2>Contents</h2>
 <ul>
+<li><a href="#Functions">Functions</a></li>
 <li><a href="#Static_module_functions">Static module functions</a></li>
 <li><a href="#Object_properties">Object properties</a></li>
 <li><a href="#Object_methods">Object methods </a></li>
@@ -50,6 +65,7 @@
 
 <h2>Core components</h2>
 <ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
   <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
   <li><a href="../core_components/button.html">button</a></li>
   <li><strong>client<span class='listplusign'> and awful.client</span></strong></li>
@@ -63,6 +79,14 @@
   <li><a href="../core_components/root.html">root</a></li>
   <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
   <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Declarative rules</h2>
+<ul class="nowrap">
+  <li><a href="../declarative_rules/ruled.client.html">ruled.client</a></li>
+  <li><a href="../declarative_rules/ruled.clipboard.html">ruled.clipboard</a></li>
+  <li><a href="../declarative_rules/ruled.notifications.html">ruled.notifications</a></li>
+  <li><a href="../declarative_rules/ruled.screen.html">ruled.screen</a></li>
+  <li><a href="../declarative_rules/ruled.tag.html">ruled.tag</a></li>
 </ul>
 <h2>Widgets</h2>
 <ul class="nowrap">
@@ -151,9 +175,18 @@
   <li><a href="../theme_related_libraries/gears.color.html">gears.color</a></li>
   <li><a href="../theme_related_libraries/gears.shape.html">gears.shape</a></li>
 </ul>
+<h2>Client tiling</h2>
+<ul class="nowrap">
+  <li><a href="../client_tiling/dynamite.html">dynamite</a></li>
+  <li><a href="../client_tiling/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
+  <li><a href="../client_tiling/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
+  <li><a href="../client_tiling/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
+  <li><a href="../client_tiling/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../client_tiling/dynamite.utils.html">dynamite.utils</a></li>
+  <li><a href="../client_tiling/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
+</ul>
 <h2>Libraries</h2>
 <ul class="nowrap">
-  <li><a href="../libraries/awesome.html">awesome</a></li>
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
   <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
   <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
@@ -161,10 +194,11 @@
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
-  <li><a href="../libraries/awful.rules.html">awful.rules</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
+  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
+  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
@@ -182,15 +216,21 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.key.html">awful.key</a></li>
+  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
+  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
+  <li><a href="../classes/wibox.container.scale.html">wibox.container.scale</a></li>
+  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.hierarchy.html">wibox.hierarchy</a></li>
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
+  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/xproperties.html">xproperties</a></li>
 </ul>
 <h2>Documentation</h2>
@@ -290,6 +330,84 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 
 <p> To get all the clients for a screen use either <a href="../core_components/screen.html#clients">screen.clients</a> or
  <a href="../core_components/screen.html#tiled_clients">screen.tiled_clients</a>.</p>
+
+<p> <img src="../images/AUTOGEN_uml_nav_tables_client.svg" alt="Usage example" />
+ Core components relationship
+ ===
+ <table><tr>
+ <td valign='top'><table class='widget_list' border=1>
+   <colgroup span='3'></colgroup>
+  <tr><th align='center' colspan=3 scope=colgroup>Acquire other objects from a client</th></tr>
+  <tr style='font-weight: bold
+ '>
+   <th align='center'>Class</th>
+   <th align='center'></th>
+   <th align='center'>Property</th>
+  </tr>
+ <tr>
+   <td>tag</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_client1.svg'></td>
+   <td>c.tags</td>
+  </tr>
+ <tr>
+   <td>screen</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_client2.svg'></td>
+   <td>c.screen</td>
+  </tr>
+ <tr>
+   <td>awful.key</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_client3.svg'></td>
+   <td>c:keys()</td>
+  </tr>
+ <tr>
+   <td>awful.button</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_client4.svg'></td>
+   <td>c:buttons()</td>
+  </tr>
+ </table></td>
+ <td valign='top'><table class='widget_list' border=1>
+   <colgroup span='3'></colgroup>
+  <tr><th align='center' colspan=3 scope=colgroup>Acquire a client from other objects</th></tr>
+  <tr style='font-weight: bold
+ '>
+   <th align='center'>Class</th>
+   <th align='center'></th>
+   <th align='center'>Property</th>
+  </tr>
+ <tr>
+   <td>tag</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_client5.svg'></td>
+   <td>t:clients()</td>
+  </tr>
+ <tr>
+   <td>screen</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_client6.svg'></td>
+   <td>s.clients</td>
+  </tr>
+ <tr>
+   <td>screen</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_client7.svg'></td>
+   <td>s.hidden_clients</td>
+  </tr>
+ <tr>
+   <td>screen</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_client8.svg'></td>
+   <td>s.tiled_clients</td>
+  </tr>
+ <tr>
+   <td>mouse</td>
+   <td><img src='../images/AUTOGEN_uml_nav_tables_client9.svg'></td>
+   <td>mouse.current_client</td>
+  </tr>
+ </table></td>
+ </tr><tr>
+   <td colspan=2 style='color:#00000044'>
+   <b>Legend:</b> <i>c</i>: a client object, <i>t</i>: a tag object,
+   <i>s</i>: a screen object, <i>k</i>: an awful.key object,
+   <i>b</i>: a awful.button object, <i>n</i>: a naughty.notification object
+   </td>
+  </tr>
+ </table></p>
     <h3>Info:</h3>
     <ul>
         <li><strong>Copyright</strong>: 2008-2009 Julien Danjou</li>
@@ -297,7 +415,30 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     </ul>
 
 
-<h2><a href="#Static_module_functions">Static module functions</a></h2>
+<h2>
+    <a href="#Functions">Functions</a>
+</h2>
+<table class="function_list">
+    <tr>
+      <td class="name" ><a href="#client.object:check_allowed_requests">:check_allowed_requests (request[, context=""[, hints={}]])</a></td>
+      <td class="summary">Use the common filtering system to allow or deny various requests.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#add_request_filter"><span class='function_modname'>client.</span>add_request_filter (f[, context])</a></td>
+      <td class="summary">Add an activate (focus stealing) filter function.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#remove_request_filter"><span class='function_modname'>client.</span>remove_request_filter (f[, context])</a></td>
+      <td class="summary">Remove an activate (focus stealing) filter function.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#grant_requests"><span class='function_modname'>client.</span>grant_requests ()</a></td>
+      <td class="summary">Block a contextual request.</td>
+    </tr>
+</table>
+<h2>
+    <a href="#Static_module_functions">Static module functions</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#instances"><span class='function_modname'>client.</span>instances <span class='function_args'>()</span></a></td>
@@ -364,7 +505,9 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
       <td class="summary">Is history tracking enabled?</td>
     </tr>
 </table>
-<h2><a href="#Object_properties">Object properties</a></h2>
+<h2>
+    <a href="#Object_properties">Object properties</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#window">window</a></td>
@@ -647,7 +790,9 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
       <td class="summary">Set the client shape.</td>
     </tr>
 </table>
-<h2><a href="#Object_methods">Object methods </a></h2>
+<h2>
+    <a href="#Object_methods">Object methods </a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#struts">:struts <span class='function_args'>(struts)</span></a></td>
@@ -746,8 +891,18 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
       <td class="summary">Connect to a signal weakly.</td>
     </tr>
 </table>
-<h2><a href="#Signals">Signals</a></h2>
+<h2>
+    <a href="#Signals">Signals</a>
+</h2>
 <table class="function_list">
+    <tr>
+      <td class="name" ><a href="#scanning">scanning</a></td>
+      <td class="summary">AwesomeWM is about to scan for existing clients.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#scanned">scanned</a></td>
+      <td class="summary">AwesomeWM is done scanning for clients.</td>
+    </tr>
     <tr>
       <td class="name" ><a href="#focus">focus</a></td>
       <td class="summary">When a client gains focus.</td>
@@ -865,7 +1020,9 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
       <td class="summary">The client unmarked signal (deprecated).</td>
     </tr>
 </table>
-<h2><a href="#Theme_variables">Theme variables</a></h2>
+<h2>
+    <a href="#Theme_variables">Theme variables</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#beautiful.border_focus">beautiful.border_focus</a></td>
@@ -888,8 +1045,12 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
       <td class="summary">The border color when the client is focused.</td>
     </tr>
 </table>
-<h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
-<table class="function_list">
+<h2>
+    <a class="deprecated_h2" onclick="show_deprecated()">
+      Click to display deprecated functions
+    </a>
+</h2>
+<table class="function_list deprecated_block show_deprecated">
     <tr>
       <td class="name" ><a href="#awful.client.jumpto">awful.client.jumpto<i class="deprecated_label"> [deprecated]</i></a></td>
       <td class="summary">Jump to the given client.</td>
@@ -983,7 +1144,9 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
       <td class="summary">Is a client transient for another one?</td>
     </tr>
 </table>
-<h2><a href="#Layout_related_functions">Layout related functions</a></h2>
+<h2>
+    <a href="#Layout_related_functions">Layout related functions</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#awful.client.getmaster">awful.client.getmaster</a></td>
@@ -1011,7 +1174,9 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
       <td class="summary">Change window factor of a client.</td>
     </tr>
 </table>
-<h2><a href="#Extra_properties_available_in_awful_rules_and_awful_spawn">Extra properties available in awful.rules and awful.spawn</a></h2>
+<h2>
+    <a href="#Extra_properties_available_in_awful_rules_and_awful_spawn">Extra properties available in awful.rules and awful.spawn</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#placement">placement</a></td>
@@ -1053,15 +1218,23 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
       <td class="name" ><a href="#callback">callback</a></td>
       <td class="summary">A function to call when this client is ready.</td>
     </tr>
+    <tr>
+      <td class="name" ><a href="#granted_requests">granted_requests</a></td>
+      <td class="summary">This property allows to contextually enable or disable some client requests.</td>
+    </tr>
 </table>
-<h2><a href="#Tables">Tables</a></h2>
+<h2>
+    <a href="#Tables">Tables</a>
+</h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#awful.object">awful.object</a></td>
+      <td class="name" ><a href="#awful.client.object">awful.client.object</a></td>
       <td class="summary">Client class.</td>
     </tr>
 </table>
-<h2><a href="#Fields">Fields</a></h2>
+<h2>
+    <a href="#Fields">Fields</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#focus"><span class='function_modname'>client.</span>focus</a></td>
@@ -1069,7 +1242,9 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
       <td class="summary">The focused <a href="../core_components/client.html#">client</a> or nil (in case there is none).</td>
     </tr>
 </table>
-<h2><a href="#lib_awful_client_focus_Functions">lib.awful.client.focus Functions</a></h2>
+<h2>
+    <a href="#lib_awful_client_focus_Functions">lib.awful.client.focus Functions</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#awful.client.focus.history.delete">awful.client.focus.history.delete (c)</a></td>
@@ -1096,6 +1271,14 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
       <td class="summary">Focus the previous client in history.</td>
     </tr>
     <tr>
+      <td class="name" ><a href="#focus.history.select_previous">focus.history.select_previous ([wrap=true[, filter=nil]])</a></td>
+      <td class="summary">Select the previous client relative to the focused one.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#focus.history.select_next">focus.history.select_next ([wrap=true[, filter=nil]])</a></td>
+      <td class="summary">Select the next client relative to the focused one.</td>
+    </tr>
+    <tr>
       <td class="name" ><a href="#awful.client.focus.bydirection">awful.client.focus.bydirection (dir[, c[, stacked=false]])</a></td>
       <td class="summary">Focus a client by the given direction.</td>
     </tr>
@@ -1104,7 +1287,9 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
       <td class="summary">Focus a client by the given direction.</td>
     </tr>
 </table>
-<h2><a href="#lib_awful_client_shape_Functions">lib.awful.client.shape Functions</a></h2>
+<h2>
+    <a href="#lib_awful_client_shape_Functions">lib.awful.client.shape Functions</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#awful.client.shape.get_transformed">awful.client.shape.get_transformed (c, shape_name)</a></td>
@@ -1123,7 +1308,9 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
       <td class="summary">Update a client&rsquo;s clip shape from the shape the client set itself.</td>
     </tr>
 </table>
-<h2><a href="#lib_awful_client_urgent_Functions">lib.awful.client.urgent Functions</a></h2>
+<h2>
+    <a href="#lib_awful_client_urgent_Functions">lib.awful.client.urgent Functions</a>
+</h2>
 <table class="function_list">
     <tr>
       <td class="name" ><a href="#awful.urgent.get">awful.urgent.get ()</a></td>
@@ -1147,6 +1334,176 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
 <br/>
 
 
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "client.object:check_allowed_requests"></a>
+    <strong>:check_allowed_requests (request[, context=""[, hints={}]])</strong>
+    </dt>
+    <dd>
+    Use the common filtering system to allow or deny various requests. </p>
+
+<p> Each request:: handler should call this.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">request</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The request name (like <em>request::activate</em>).
+        </li>
+        <li><span class="parameter">context</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The request context, if any.
+         (<em>default</em> "")
+        </li>
+        <li><span class="parameter">hints</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         The request context hints, if any.
+         (<em>default</em> {})
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span> or <span class="type">nil</span></span>
+        True if the request is explicitly granted, false if
+  the request is explicitly denied and nil if nothing matches the request.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "add_request_filter"></a>
+    <strong><span class='function_modname'>client.</span>add_request_filter (f[, context])</strong>
+    </dt>
+    <dd>
+    <p>Add an activate (focus stealing) filter function. </p>
+
+<p> The callback takes the following parameters:</p>
+
+<ul>
+<li><strong>c</strong> (<em>client</em>) The client requesting the activation</li>
+<li><strong>context</strong> (<em>string</em>) The activation context.</li>
+<li><strong>hints</strong> (<em>table</em>) Some additional hints (depending on the context)</li>
+</ul>
+
+
+<p> If the callback returns <code>true</code>, the client will be activated. If the callback
+ returns <code>false</code>, the activation request is cancelled unless the <code>force</code> hint is
+ set. If the callback returns <code>nil</code>, the previous callback will be executed.
+ This will continue until either a callback handles the request or when it runs
+ out of callbacks. In that case, the request will be granted if the client is
+ visible.</p>
+
+<p> For example, to block Firefox from stealing the focus, use:</p>
+
+<pre><code>awful.ewmh.add_request_filter("request::activate", function(c)
+    if c.class == "Firefox" then return false end
+end, "ewmh")
+</code></pre>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">f</span>
+            <span class="types"><span class="type">function</span></span>
+         The callback
+        </li>
+        <li><span class="parameter">context</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The <a href="../core_components/client.html#request::activate">request::activate</a> context
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core_components/client.html#request::activate">request::activate</a></li>
+         <li><a href="../core_components/client.html#request::geometry">request::geometry</a></li>
+         <li><a href="../core_components/client.html#request::titlebars">request::titlebars</a></li>
+         <li><a href="../core_components/client.html#request::tag">request::tag</a></li>
+         <li><a href="../core_components/client.html#request::urgent">request::urgent</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "remove_request_filter"></a>
+    <strong><span class='function_modname'>client.</span>remove_request_filter (f[, context])</strong>
+    </dt>
+    <dd>
+    Remove an activate (focus stealing) filter function.
+ This is an helper to avoid dealing with <code>ewmh.add_request_filter</code> directly.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">f</span>
+            <span class="types"><span class="type">function</span></span>
+         The callback
+        </li>
+        <li><span class="parameter">context</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The <a href="../core_components/client.html#request::activate">request::activate</a> context
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        If the callback existed.
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core_components/client.html#request::activate">request::activate</a></li>
+         <li><a href="../core_components/client.html#request::geometry">request::geometry</a></li>
+         <li><a href="../core_components/client.html#request::titlebars">request::titlebars</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "grant_requests"></a>
+    <strong><span class='function_modname'>client.</span>grant_requests ()</strong>
+    </dt>
+    <dd>
+    Block a contextual request. </p>
+
+<p> This only works when the request handler checks uses
+ <a href="../core_components/client.html#client.object:check_allowed_requests">check_allowed_requests</a>.</p>
+
+<p> It can be used, for example, to prevent a client from resizing or moving
+ itself by blocking <a href="../core_components/client.html#request::geometry">request::geometry</a> with the <code>ewmh</code> context.</p>
+
+<p> Note that if other request filters handle the request, they may have priority
+ over this policy. This method can often be convenient, but is less powerful
+ than using a custom request filter.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core_components/client.html#client.object:check_allowed_requests">check_allowed_requests</a></li>
+         <li><a href="../core_components/client.html#granted_requests">granted_requests</a></li>
+    </ul>
+
+
+</dd>
+</dl>
     <h2 class="section-header "><a name="Static_module_functions"></a>Static module functions</h2>
 
     <dl class="function">
@@ -1295,7 +1652,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
          The index.  Use 1 to get the next, -1 to get the previous.
         </li>
         <li><span class="parameter">sel</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client.
          (<em>optional</em>)
         </li>
@@ -1338,7 +1695,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
          The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client.
          (<em>default</em> focused)
         </li>
@@ -1369,7 +1726,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
          The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
         </li>
         <li><span class="parameter">sel</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client.
          (<em>optional</em>)
         </li>
@@ -1394,7 +1751,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
          The index.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client, otherwise focused one is used.
          (<em>optional</em>)
         </li>
@@ -1863,7 +2220,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <p>The client icon as a surface. </p>
 
 <p> This property holds the client icon closest to the size configured via
- <a href="../libraries/awesome.html#set_preferred_icon_size">awesome.set_preferred_icon_size</a>.</p>
+ <a href="../core_components/awesome.html#set_preferred_icon_size">awesome.set_preferred_icon_size</a>.</p>
 
 <p> It is not a path or an &ldquo;real&rdquo; file. Rather, it is already a bitmap surface.</p>
 
@@ -1936,6 +2293,36 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     </dt>
     <dd>
     <p>Client screen. </p>
+
+<p> Here is how the screen is selected:</p>
+
+<p> <img src="../images/screen_selection.svg" alt="Client screen" /></p>
+
+<p> [1] In this order and emitting signals):</p>
+
+<ul>
+<li><a href="../core_components/client.html#struts">struts</a></li>
+<li><a href="../core_components/client.html#size_hints">size_hints</a> (no signal)</li>
+<li><a href="../core_components/client.html#urgent">urgent</a></li>
+<li><a href="../core_components/client.html#focusable">focusable</a></li>
+<li><a href="../core_components/client.html#group_window">group_window</a></li>
+<li><a href="../core_components/client.html#icon">icon</a></li>
+<li><a href="../core_components/client.html#transient_for">transient_for</a></li>
+<li><a href="../core_components/client.html#leader_window">leader_window</a> (no signal)</li>
+<li><a href="../core_components/client.html#machine">machine</a></li>
+<li><a href="../core_components/client.html#role">role</a></li>
+<li><a href="../core_components/client.html#pid">pid</a></li>
+<li><a href="../core_components/client.html#icon">icon</a></li>
+<li><a href="../core_components/client.html#name">name</a></li>
+<li><a href="../core_components/client.html#icon_name">icon_name</a></li>
+<li><a href="../core_components/client.html#class">class</a></li>
+<li><a href="../core_components/client.html#motif_wm_hints">motif_wm_hints</a></li>
+<li><a href="../core_components/client.html#opacity">opacity</a></li>
+</ul>
+
+
+<p> [2] See <a href="../libraries/awful.spawn.html#">awful.spawn</a>. This only works properly if the client supports
+ startup notifications.</p>
 
 <p> <strong>Signal:</strong></p>
 
@@ -2012,7 +2399,7 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
  multiple of the character size. Honoring size hints will cause the terminal
  window to have a small gap at the bottom.</p>
 
-<p> This is enabled by default. To disable it by default, see <a href="../libraries/awful.rules.html#">awful.rules</a>.</p>
+<p> This is enabled by default. To disable it by default, see <code>awful.rules</code>.</p>
 
 <p> <strong>Signal:</strong></p>
 
@@ -2252,6 +2639,14 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <dd>
     <p>The client is maximized (horizontally and vertically) or not. </p>
 
+<p> <img src="../images/AUTOGEN_ruled_client_maximized.svg" alt="Usage example" /></p>
+
+<pre><code>  screen[1].clients[1].maximized            = true
+  screen[2].clients[1].maximized_vertical   = true
+  screen[3].clients[1].maximized_horizontal = true
+  screen[4].clients[1].fullscreen           = true
+</code></pre>
+
 <p> <strong>Signal:</strong></p>
 
 <ul>
@@ -2275,6 +2670,14 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     <dd>
     <p>The client is maximized horizontally or not. </p>
 
+<p> <img src="../images/AUTOGEN_ruled_client_maximized_horizontal.svg" alt="Usage example" /></p>
+
+<pre><code>  screen[1].clients[1].maximized            = true
+  screen[2].clients[1].maximized_vertical   = true
+  screen[3].clients[1].maximized_horizontal = true
+  screen[4].clients[1].fullscreen           = true
+</code></pre>
+
 <p> <strong>Signal:</strong></p>
 
 <ul>
@@ -2297,6 +2700,14 @@ c:connect_signal(<span class="string">"property::name"</span>, <span class="keyw
     </dt>
     <dd>
     <p>The client is maximized vertically or not. </p>
+
+<p> <img src="../images/AUTOGEN_ruled_client_maximized_vertical.svg" alt="Usage example" /></p>
+
+<pre><code>  screen[1].clients[1].maximized            = true
+  screen[2].clients[1].maximized_vertical   = true
+  screen[3].clients[1].maximized_horizontal = true
+  screen[4].clients[1].fullscreen           = true
+</code></pre>
 
 <p> <strong>Signal:</strong></p>
 
@@ -2676,7 +3087,11 @@ local function fix_startup_id(c)
 end
 
 awful.rules.add_rule_source(
-    "snid", fix_startup_id, {}, {"awful.spawn", "awful.rules"}
+    "snid", fix_startup_id, {
+        "awful.spawn_once",
+        "awful.spawn",
+        "awful.rules"
+    }, {}
 )
 </code></pre>
 
@@ -3192,7 +3607,7 @@ awful.rules.add_rule_source(
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          A client to swap with.
         </li>
     </ul>
@@ -3592,7 +4007,7 @@ awful.rules.add_rule_source(
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c2</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The parent client to check.
         </li>
     </ul>
@@ -3695,6 +4110,39 @@ awful.rules.add_rule_source(
     <h2 class="section-header "><a name="Signals"></a>Signals</h2>
 
     <dl class="function">
+    <dt>
+    <a name = "scanning"></a>
+    <strong>scanning</strong>
+    </dt>
+    <dd>
+    AwesomeWM is about to scan for existing clients. </p>
+
+<p> Connect to this signal when code needs to be executed after screens are
+ initialized, but before clients are added.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "scanned"></a>
+    <strong>scanned</strong>
+    </dt>
+    <dd>
+    AwesomeWM is done scanning for clients. </p>
+
+<p> This is emitted before the <code>startup</code> signal and after the <a href="../core_components/client.html#scanning">scanning</a> signal.
+
+
+
+
+
+
+
+</dd>
     <dt>
     <a name = "focus"></a>
     <strong>focus</strong>
@@ -3881,14 +4329,14 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 (from <a href="../core_components/client.html#awful.client.focus.history.previous">awful.client.focus.history.previous</a>).</li>
 <li><em>menu.clients</em>: When using the builtin client menu
 (from <a href="../popups_and_bars/awful.menu.html#clients">awful.menu.clients</a>).</li>
-<li><em>rules</em>: When a new client is focused from a rule (from <a href="../libraries/awful.rules.html#">awful.rules</a>).</li>
+<li><em>rules</em>: When a new client is focused from a rule (from <code>awful.rules</code>).</li>
 <li><em>screen.focus</em>: When a screen is focused (from <code>awful.screen.focus</code>).</li>
 </ul>
 
 
 <p> Default implementation: <a href="../libraries/awful.ewmh.html#awful.ewmh.activate">awful.ewmh.activate</a>.</p>
 
-<p> To implement focus stealing filters see <a href="../libraries/awful.ewmh.html#awful.ewmh.add_activate_filter">awful.ewmh.add_activate_filter</a>.
+<p> To implement focus stealing filters see <code>awful.client.add_request_filter</code>.
 
 
     <h3>Arguments:</h3>
@@ -4246,14 +4694,14 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 </dd>
 </dl>
-    <h2 class="section-header "><a name="Deprecated_functions"></a>Deprecated functions</h2>
+    <h2 class="section-header  deprecated_block show_deprecated"><a name="Deprecated_functions"></a>Deprecated functions</h2>
 
     <dl class="function">
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.jumpto"></a>
     <strong>awful.client.jumpto<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Jump to the given client.
  Takes care of focussing the screen, the right tag, etc.
 
@@ -4261,7 +4709,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          the client to jump to
         </li>
         <li><span class="parameter">merge</span>
@@ -4282,11 +4730,11 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.visible"></a>
     <strong>awful.client.visible<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get visible clients from a screen.
 
 
@@ -4319,11 +4767,11 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.tiled"></a>
     <strong>awful.client.tiled<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get visible and tiled clients
 
 
@@ -4355,11 +4803,11 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.moveresize"></a>
     <strong>awful.client.moveresize<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Move/resize a client relative to current coordinates.
 
 
@@ -4378,7 +4826,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
          The relative height.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client, otherwise focused one is used.
          (<em>optional</em>)
         </li>
@@ -4393,11 +4841,11 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.movetotag"></a>
     <strong>awful.client.movetotag<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Move a client to a tag.
 
 
@@ -4407,7 +4855,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
          The tag to move the client to.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client to move, otherwise the focused one is used.
          (<em>optional</em>)
         </li>
@@ -4422,11 +4870,11 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.toggletag"></a>
     <strong>awful.client.toggletag<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Toggle a tag on a client.
 
 
@@ -4436,7 +4884,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
          The tag to toggle.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client to toggle, otherwise the focused one is used.
          (<em>optional</em>)
         </li>
@@ -4451,18 +4899,18 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.movetoscreen"></a>
     <strong>awful.client.movetoscreen<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Move a client to a screen.  Default is next screen, cycling.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client to move.
         </li>
         <li><span class="parameter">s</span>
@@ -4480,18 +4928,18 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.mark"></a>
     <strong>awful.client.mark<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Mark a client, and then call &lsquo;marked&rsquo; hook.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client to mark, the focused one if not specified.
         </li>
     </ul>
@@ -4501,18 +4949,18 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.unmark"></a>
     <strong>awful.client.unmark<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Unmark a client and then call &lsquo;unmarked&rsquo; hook.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client to unmark, or the focused one if not specified.
         </li>
     </ul>
@@ -4522,18 +4970,18 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.ismarked"></a>
     <strong>awful.client.ismarked<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Check if a client is marked.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client to check, or the focused one otherwise.
         </li>
     </ul>
@@ -4543,18 +4991,18 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.togglemarked"></a>
     <strong>awful.client.togglemarked<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Toggle a client as marked.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client to toggle mark.
         </li>
     </ul>
@@ -4564,11 +5012,11 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.getmarked"></a>
     <strong>awful.client.getmarked<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Return the marked clients and empty the marked table.
 
 
@@ -4583,11 +5031,11 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.floating.set"></a>
     <strong>awful.client.floating.set<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Set a client floating state, overriding auto-detection.
  Floating client are not handled by tiling layouts.
 
@@ -4595,7 +5043,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          A client.
         </li>
         <li><span class="parameter">s</span>
@@ -4608,11 +5056,11 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.isfixed"></a>
     <strong>awful.client.isfixed<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Return if a client has a fixed size or not.
  This function is deprecated, use <code>c.is_fixed</code>
 
@@ -4620,7 +5068,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client.
         </li>
     </ul>
@@ -4635,18 +5083,18 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.floating.get"></a>
     <strong>awful.client.floating.get<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get a client floating state.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          A client.
         </li>
     </ul>
@@ -4667,11 +5115,11 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.floating.toggle"></a>
     <strong>awful.client.floating.toggle<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Toggle the floating state of a client between &lsquo;auto&rsquo; and &lsquo;true&rsquo;.
  Use <code>c.floating = not c.floating</code>
 
@@ -4679,7 +5127,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          A client.
         </li>
     </ul>
@@ -4693,18 +5141,18 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.dockable.get"></a>
     <strong>awful.client.dockable.get<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get a client&rsquo;s dockable state.
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          A client.
         </li>
     </ul>
@@ -4721,11 +5169,11 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.dockable.set"></a>
     <strong>awful.client.dockable.set<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Set a client&rsquo;s dockable state, overriding auto-detection. </p>
 
 <p> With this enabled you can dock windows by moving them from the center
@@ -4735,7 +5183,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          A client.
         </li>
         <li><span class="parameter">value</span>
@@ -4748,11 +5196,11 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.property.get"></a>
     <strong>awful.client.property.get<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get a client property. </p>
 
 <p> This method is deprecated. It is now possible to use <code>c.value</code> directly.
@@ -4761,7 +5209,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client.
         </li>
         <li><span class="parameter">prop</span>
@@ -4779,11 +5227,11 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.property.set"></a>
     <strong>awful.client.property.set<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Set a client property. </p>
 
 <p> This method is deprecated. It is now possible to use <code>c.value = value</code>
@@ -4793,7 +5241,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client.
         </li>
         <li><span class="parameter">prop</span>
@@ -4809,11 +5257,11 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.run_or_raise"></a>
     <strong>awful.client.run_or_raise<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Switch to a client matching the given condition if running, else spawn it.
  If multiple clients match the given condition then the next one is
  focussed.
@@ -4839,9 +5287,9 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
     <h3>See also:</h3>
     <ul>
-         <li><a href="../libraries/awful.spawn.html#awful.spawn.once">awful.spawn.once</a></li>
-         <li><a href="../libraries/awful.spawn.html#awful.spawn.single_instance">awful.spawn.single_instance</a></li>
-         <li><a href="../libraries/awful.spawn.html#awful.spawn.raise_or_spawn">awful.spawn.raise_or_spawn</a></li>
+         <li><a href="../libraries/awful.spawn.html#once">awful.spawn.once</a></li>
+         <li><a href="../libraries/awful.spawn.html#single_instance">awful.spawn.single_instance</a></li>
+         <li><a href="../libraries/awful.spawn.html#raise_or_spawn">awful.spawn.raise_or_spawn</a></li>
     </ul>
 
     <h3>Usage:</h3>
@@ -4856,18 +5304,18 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     </ul>
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.get_transient_for_matching"></a>
     <strong>awful.client.get_transient_for_matching<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Get a matching transient_for client (if any).
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client.
         </li>
         <li><span class="parameter">matcher</span>
@@ -4892,22 +5340,22 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
-    <dt>
+    <dt class="deprecated_block show_deprecated">
     <a name = "awful.client.is_transient_for"></a>
     <strong>awful.client.is_transient_for<i class="deprecated_label"> [deprecated]</i></strong>
     </dt>
-    <dd>
+    <dd class="deprecated_block show_deprecated">
     Is a client transient for another one?
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The child client (having transient_for).
         </li>
         <li><span class="parameter">c2</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The parent client to check.
         </li>
     </ul>
@@ -4963,7 +5411,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The window to set as master.
         </li>
     </ul>
@@ -4984,7 +5432,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The window to set as slave.
         </li>
     </ul>
@@ -5006,7 +5454,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          the client
         </li>
     </ul>
@@ -5030,7 +5478,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
          the window factor value
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          the client
         </li>
     </ul>
@@ -5057,7 +5505,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
    infinite.  The normalisation then ensures that the sum of all factors is 1.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          the client
         </li>
     </ul>
@@ -5081,6 +5529,22 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 <p> The default config uses:</p>
 
 <pre><code>awful.placement.no_overlap+awful.placement.no_offscreen
+</code></pre>
+
+<p><img src="../images/AUTOGEN_ruled_client_rules_placement.svg" alt="Usage example" /></p>
+
+<pre><code>ruled.client.append_rule {
+    rule = { class = 'mplayer' },
+    properties = {
+        floating  = true,
+        placement = awful.placement.centered,
+        width     = 640,
+        height    = 480,
+    },
+}
+
+-- Spawn mplayer
+awful.spawn('mplayer')
 </code></pre>
 
 
@@ -5154,7 +5618,35 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <strong>tag</strong>
     </dt>
     <dd>
-    The client default tag.
+    <p>The client default tag. </p>
+
+<p><img src="../images/AUTOGEN_ruled_client_rules_tags.svg" alt="Usage example" /></p>
+
+<pre><code>-- Select tag by object reference:
+ruled.client.append_rule {
+    rule_any    = {
+        class = {'firefox'}
+    },
+    properties = {
+        tag = screen[1].tags[3],
+    },
+}
+
+-- Select tag by name:
+ruled.client.append_rule {
+    rule_any    = {
+        class = {'thunderbird'}
+    },
+    properties = {
+        tag = 'five',
+    },
+}
+
+-- Spawn firefox and thunderbird
+awful.spawn('firefox')
+awful.spawn('thunderbird')
+</code></pre>
+
 
 
     <h3>Type:</h3>
@@ -5222,11 +5714,43 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 <p> If a table is used, all of its properties will be passed to the tag
  constructor:</p>
 
-<pre><code>new_tag = {
-    name     = "My new tag!", -- The tag name.
-    layout   = awful.layout.suit.max, -- Set the tag layout.
-    volatile = true, -- Remove the tag when the client is closed.
+<p><img src="../images/AUTOGEN_ruled_client_rules_new_tag.svg" alt="Usage example" /></p>
+
+<pre><code>-- Create a new tags with some properties:
+ruled.client.append_rule {
+    rule = { class = 'firefox' },
+    properties = {
+        switch_to_tags = true,
+        new_tag        = {
+            name     = 'My_new_tag!', -- The tag name.
+            layout   = awful.layout.suit.max, -- Set the tag layout.
+            volatile = true, -- Remove the tag when the client is closed.
+        }
+    }
 }
+
+-- Create a new tag with just a name:
+ruled.client.append_rule {
+    rule = { class = 'thunderbird' },
+    properties = {
+        switch_to_tags = true,
+        new_tag        = 'JUST_A_NAME!',
+    }
+}
+
+-- Create a new tag using the client metadata:
+ruled.client.append_rule {
+    rule = { class = 'xterm' },
+    properties = {
+        switch_to_tags = true,
+        new_tag        = true,
+    }
+}
+
+-- Spawn firefox
+awful.spawn('firefox')
+awful.spawn('thunderbird')
+awful.spawn('xterm')
 </code></pre>
 
 
@@ -5257,8 +5781,24 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <strong>switch_to_tags</strong>
     </dt>
     <dd>
-    Unselect the current tags and select this client tags.
- Note that this property was called <code>switchtotag</code> in previous Awesome versions.
+    <p>Unselect the current tags and select this client tags.
+ Note that this property was called <code>switchtotag</code> in previous Awesome versions.</p>
+
+<p><img src="../images/AUTOGEN_ruled_client_rules_switch_to_tags.svg" alt="Usage example" /></p>
+
+<pre><code> -- Select tag by object reference:
+ ruled.client.append_rule {
+     rule = { class = 'firefox' },
+     properties = {
+         tag            = screen[1].tags[4],
+         switch_to_tags = true
+     }
+ }
+
+ -- Spawn firefox
+ awful.spawn('firefox')
+</code></pre>
+
 
 
     <h3>Type:</h3>
@@ -5349,13 +5889,49 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 
 </dd>
+    <dt>
+    <a name = "granted_requests"></a>
+    <strong>granted_requests</strong>
+    </dt>
+    <dd>
+    <p>This property allows to contextually enable or disable some client requests. </p>
+
+<p> The first table takes the request name as key and a table as the argument.
+ That table has the context as key a boolean to grant (true) or deny (false)
+ the request.</p>
+
+<pre><code>granted_requests = {
+    geometry = {
+        ewmh      = false,
+        maximized = true,
+    },
+    activate = {
+        -- Some context have &lt;code&gt;.&lt;/code&gt; in their name, use the correct Lua syntax:
+        ["client.movetotag"] = true,
+        mouse_enter          = false,
+    },
+}
+</code></pre>
+
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../core_components/client.html#client.object:check_allowed_requests">check_allowed_requests</a>
+    </ul>
+
+
+</dd>
 </dl>
     <h2 class="section-header "><a name="Tables"></a>Tables</h2>
 
     <dl class="function">
     <dt>
-    <a name = "awful.object"></a>
-    <strong>awful.object</strong>
+    <a name = "awful.client.object"></a>
+    <strong>awful.client.object</strong>
     </dt>
     <dd>
     Client class. </p>
@@ -5423,7 +5999,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client that must be removed.
         </li>
     </ul>
@@ -5447,7 +6023,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
          The index.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client.
          (<em>optional</em>)
         </li>
@@ -5471,7 +6047,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          A client.
         </li>
     </ul>
@@ -5497,7 +6073,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client that has been focused.
         </li>
     </ul>
@@ -5537,7 +6113,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+           <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
         A client.
     </ol>
 
@@ -5560,6 +6136,77 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 
 </dd>
     <dt>
+    <a name = "focus.history.select_previous"></a>
+    <strong>focus.history.select_previous ([wrap=true[, filter=nil]])</strong>
+    </dt>
+    <dd>
+    Select the previous client relative to the focused one.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">wrap</span>
+            <span class="types"><span class="type">boolean</span></span>
+         If there is no previous, select the most
+  recent one.
+         (<em>default</em> true)
+        </li>
+        <li><span class="parameter">filter</span>
+            <span class="types"><span class="type">function</span></span>
+         A function returning a boolean to either
+  accept or reject the client. If it&rsquo;s rejected, it will keep searching until
+  it runs out of options.
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">client</span></span>
+        The client
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "focus.history.select_next"></a>
+    <strong>focus.history.select_next ([wrap=true[, filter=nil]])</strong>
+    </dt>
+    <dd>
+    Select the next client relative to the focused one.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">wrap</span>
+            <span class="types"><span class="type">boolean</span></span>
+         If there is no next client, select the last one.
+         (<em>default</em> true)
+        </li>
+        <li><span class="parameter">filter</span>
+            <span class="types"><span class="type">function</span></span>
+         A function returning a boolean to either
+  accept or reject the client. If it&rsquo;s rejected, it will keep searching until
+  it runs out of options.
+         (<em>default</em> nil)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">client</span></span>
+        The client
+    </ol>
+
+
+
+
+</dd>
+    <dt>
     <a name = "awful.client.focus.bydirection"></a>
     <strong>awful.client.focus.bydirection (dir[, c[, stacked=false]])</strong>
     </dt>
@@ -5575,7 +6222,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
    <code>&quot;up&quot;</code>, <code>&quot;down&quot;</code>, <code>&quot;left&quot;</code> or <code>&quot;right&quot;</code>.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client.
          (<em>optional</em>)
         </li>
@@ -5605,7 +6252,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
          The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
         </li>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client.
          (<em>optional</em>)
         </li>
@@ -5636,7 +6283,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client whose shape should be retrieved
         </li>
         <li><span class="parameter">shape_name</span>
@@ -5661,7 +6308,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client to act on
         </li>
     </ul>
@@ -5682,7 +6329,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client to act on
         </li>
     </ul>
@@ -5703,7 +6350,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client to act on
         </li>
     </ul>
@@ -5729,7 +6376,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+           <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
         The first urgent client.
     </ol>
 
@@ -5771,7 +6418,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client object.
         </li>
         <li><span class="parameter">prop</span>
@@ -5795,7 +6442,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">c</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.object">client.object</a></span>
+            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
          The client object.
         </li>
     </ul>
@@ -5812,7 +6459,7 @@ change (from <a href="../core_components/client.html#awful.client.swap.bydirecti
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-12 18:22:06 </i>
+<i style="float:right;">Last updated 2019-07-16 00:41:08 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
