@@ -486,6 +486,10 @@
       <td class="summary">Set new notification timeout.</td>
     </tr>
     <tr>
+      <td class="name" ><a href="#append_actions">:append_actions <span class='function_args'>(new_actions)</span></a></td>
+      <td class="summary">Add more actions to the notification.</td>
+    </tr>
+    <tr>
       <td class="name" ><a href="#emit_signal">:emit_signal <span class='function_args'>(name, ...)</span></a></td>
       <td class="summary">Emit a signal.</td>
     </tr>
@@ -708,7 +712,7 @@
     <span class="proptype">(<span class='summary_type'>string</span>)</span>
     </dt>
     <dd>
-    The notification urgency level. </p>
+    <p>The notification urgency level. </p>
 
 <p> The default urgency levels are:</p>
 
@@ -719,17 +723,11 @@
 </ul>
 
 
-<p> It is possible to add more urgency levels by adding them to the
- <code>naughty.dbus.config.mapping</code> list, but this might causes clashes with
- other notification providers so it is to be avoided.
 
 
 
 
 
-    <h3>See also:</h3>
-    <ul>
-    </ul>
 
 
 </dd>
@@ -749,24 +747,35 @@
    <th align='center'>Name</th>
    <th align='center'>Description</th>
   </tr>
- <tr><td><b>device</b></td><td>A generic device-related notification that doesn&rsquo;t fit into any other category.</td></tr>
+ <tr><td><b>device</b></td><td>A generic device-related notification that
+  doesn&rsquo;t fit into any other category.</td></tr>
  <tr><td><b>device.added</b></td><td>A device, such as a USB device, was added to the system.</td></tr>
  <tr><td><b>device.error</b></td><td>A device had some kind of error.</td></tr>
  <tr><td><b>device.removed</b></td><td>A device, such as a USB device, was removed from the system.</td></tr>
- <tr><td><b>email</b></td><td>A generic e-mail-related notification that doesn&rsquo;t fit into any other category.</td></tr>
+ <tr><td><b>email</b></td><td>A generic e-mail-related notification that doesn&rsquo;t fit into
+  any other category.</td></tr>
  <tr><td><b>email.arrived</b></td><td>A new e-mail notification.</td></tr>
  <tr><td><b>email.bounced</b></td><td>A notification stating that an e-mail has bounced.</td></tr>
- <tr><td><b>im</b></td><td>A generic instant message-related notification that doesn&rsquo;t fit into any other category.</td></tr>
+ <tr><td><b>im</b></td><td>A generic instant message-related notification that doesn&rsquo;t fit into
+  any other category.</td></tr>
  <tr><td><b>im.error</b></td><td>An instant message error notification.</td></tr>
  <tr><td><b>im.received</b></td><td>A received instant message notification.</td></tr>
- <tr><td><b>network</b></td><td>A generic network notification that doesn&rsquo;t fit into any other category.</td></tr>
- <tr><td><b>network.connected</b></td><td>A network connection notification, such as successful sign-on to a network service. <br /> This should not be confused with device.added for new network devices.</td></tr>
- <tr><td><b>network.disconnected</b></td><td>A network disconnected notification. This should not be confused with <br /> device.removed for disconnected network devices.</td></tr>
+ <tr><td><b>network</b></td><td>A generic network notification that doesn&rsquo;t fit into any other
+  category.</td></tr>
+ <tr><td><b>network.connected</b></td><td>A network connection notification, such as successful
+  sign-on to a network service. <br />
+  This should not be confused with device.added for new network devices.</td></tr>
+ <tr><td><b>network.disconnected</b></td><td>A network disconnected notification. This should not
+  be confused with <br />
+  device.removed for disconnected network devices.</td></tr>
  <tr><td><b>network.error</b></td><td>A network-related or connection-related error.</td></tr>
- <tr><td><b>presence</b></td><td>A generic presence change notification that doesn&rsquo;t fit into any other category, <br />such as going away or idle.</td></tr>
+ <tr><td><b>presence</b></td><td>A generic presence change notification that doesn&rsquo;t fit into any
+  other category, <br />
+  such as going away or idle.</td></tr>
  <tr><td><b>presence.offline</b></td><td>An offline presence change notification.</td></tr>
  <tr><td><b>presence.online</b></td><td>An online presence change notification.</td></tr>
- <tr><td><b>transfer</b></td><td>A generic file transfer or download notification that doesn&rsquo;t fit into any other category.</td></tr>
+ <tr><td><b>transfer</b></td><td>A generic file transfer or download notification that doesn&rsquo;t
+  fit into any other category.</td></tr>
  <tr><td><b>transfer.complete</b></td><td>A file transfer or download complete notification.</td></tr>
  <tr><td><b>transfer.error</b></td><td>A file transfer or download error.</td></tr>
  </table>
@@ -1705,6 +1714,28 @@ end
 
 </dd>
     <dt>
+    <a name = "append_actions"></a>
+    <strong>:append_actions <span class='function_args'>(new_actions)</span></strong>
+    </dt>
+    <dd>
+    Add more actions to the notification.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">new_actions</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
     <a name = "emit_signal"></a>
     <strong>:emit_signal <span class='function_args'>(name, ...)</span></strong>
     </dt>
@@ -2004,7 +2035,7 @@ end
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-16 00:41:08 </i>
+<i style="float:right;">Last updated 2019-07-22 03:14:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

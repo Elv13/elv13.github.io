@@ -641,8 +641,8 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
       <td class="summary">When 2 screens are swapped</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#property::areas">property::areas</a></td>
-      <td class="summary">This signal is emitted when the list of physical screen areas changes.</td>
+      <td class="name" ><a href="#property::viewports">property::viewports</a></td>
+      <td class="summary">This signal is emitted when the list of physical screen viewport changes.</td>
     </tr>
     <tr>
       <td class="name" ><a href="#request::desktop_decoration">request::desktop_decoration</a></td>
@@ -654,15 +654,15 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     </tr>
     <tr>
       <td class="name" ><a href="#request::create">request::create</a></td>
-      <td class="summary">When a new physical monitor area has been added.</td>
+      <td class="summary">When a new physical viewport has been added.</td>
     </tr>
     <tr>
       <td class="name" ><a href="#request::remove">request::remove</a></td>
-      <td class="summary">When a physical monitor area has been removed.</td>
+      <td class="summary">When a physical monitor viewport has been removed.</td>
     </tr>
     <tr>
       <td class="name" ><a href="#request::resize">request::resize</a></td>
-      <td class="summary">When a physical monitor area resolution has changed or it has been replaced.</td>
+      <td class="summary">When a physical viewport resolution has changed or it has been replaced.</td>
     </tr>
     <tr>
       <td class="name" ><a href="#tag::history::update">tag::history::update</a></td>
@@ -713,7 +713,7 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <tr>
       <td class="shortname" ><a href="#automatic_factory"><span class='function_modname'>screen.</span>automatic_factory</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>N/A</span></td>
-      <td class="summary">If <a href="../core_components/screen.html#">screen</a> objects are created automatically when new areas are detected.</td>
+      <td class="summary">If <a href="../core_components/screen.html#">screen</a> objects are created automatically when new viewports are detected.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#awful.screen.default_focused_args"><span class='function_modname'>screen.</span>awful.screen.default_focused_args</a></td>
@@ -1461,6 +1461,13 @@ other.</li>
 
 <p> Please note that the table content may vary.</p>
 
+<p> An easy way to check if a screen is the laptop screen is usually:</p>
+
+<pre><code>if s.outputs["LVDS-1"] then
+    -- do something
+end
+</code></pre>
+
 <p> <strong>Signal:</strong></p>
 
 <ul>
@@ -2157,7 +2164,7 @@ other.</li>
  is initialized and modules are loaded, but before screens are added.</p>
 
 <p> To manage screens manually, set <code>screen.automatic_factory = false</code> and
- connect to the <a href="../core_components/screen.html#property::areas">property::areas</a> signal. It is then possible to use
+ connect to the <a href="../core_components/screen.html#property::viewports">property::viewports</a> signal. It is then possible to use
  <a href="../core_components/screen.html#fake_add">screen.fake_add</a> to create virtual screens. Be careful when using this,
  when done incorrectly, no screens will be created. Using Awesome with zero
  screens is <strong>not</strong> supported.
@@ -2168,7 +2175,7 @@ other.</li>
 
     <h3>See also:</h3>
     <ul>
-         <li><a href="../core_components/screen.html#property::areas">property::areas</a></li>
+         <li><a href="../core_components/screen.html#property::viewports">property::viewports</a></li>
          <li><a href="../core_components/screen.html#fake_add">screen.fake_add</a></li>
     </ul>
 
@@ -2284,20 +2291,20 @@ other.</li>
 
 </dd>
     <dt>
-    <a name = "property::areas"></a>
-    <strong>property::areas</strong>
+    <a name = "property::viewports"></a>
+    <strong>property::viewports</strong>
     </dt>
     <dd>
-    <p>This signal is emitted when the list of physical screen areas changes. </p>
+    <p>This signal is emitted when the list of physical screen viewport changes. </p>
 
-<p> Each area in the list corresponds to a <strong>physical</strong> screen rectangle, which
- is <strong>not</strong> the <a href="../core_components/screen.html#property::areas">areas</a> property of the <a href="../core_components/screen.html#">screen</a> objects.</p>
+<p> Each viewport in the list corresponds to a <strong>physical</strong> screen rectangle, which
+ is <strong>not</strong> the <a href="../core_components/screen.html#property::viewports">viewports</a> property of the <a href="../core_components/screen.html#">screen</a> objects.</p>
 
-<p> Each entry in the <a href="../core_components/screen.html#property::areas">areas</a> entry has the following keys:</p>
+<p> Each entry in the <a href="../core_components/screen.html#property::viewports">viewports</a> entry has the following keys:</p>
 
 <ul>
 <li><a href="../core_components/screen.html#geometry">geometry</a> <em>(table)</em>: A table with an <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.</li>
-<li><a href="../core_components/screen.html#outputs">outputs</a> <em>(table)</em>: All outputs sharing this area.</li>
+<li><a href="../core_components/screen.html#outputs">outputs</a> <em>(table)</em>: All outputs sharing this viewport.</li>
 <li><a href="../core_components/screen.html#maximum_dpi">maximum_dpi</a> <em>(number)</em>: The DPI of the most dense output.</li>
 <li><a href="../core_components/screen.html#minimum_dpi">minimum_dpi</a> <em>(number)</em>: The DPI of the least dense output.</li>
 <li><a href="../core_components/screen.html#preferred_dpi">preferred_dpi</a> <em>(number)</em>: The optimal DPI.</li>
@@ -2308,9 +2315,9 @@ other.</li>
 
     <h3>Arguments:</h3>
     <ul>
-        <li><span class="parameter">areas</span>
+        <li><span class="parameter">viewports</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         A table containing all physical areas.
+         A table containing all physical viewports.
         </li>
     </ul>
 
@@ -2382,11 +2389,11 @@ other.</li>
     <strong>request::create</strong>
     </dt>
     <dd>
-    <p>When a new physical monitor area has been added. </p>
+    <p>When a new physical viewport has been added. </p>
 
 <p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
 
-<p> The default handler will create a screen that fills the area.</p>
+<p> The default handler will create a screen that fills the viewport.</p>
 
 <p> To disconnect the default handler, use:</p>
 
@@ -2399,12 +2406,13 @@ other.</li>
 
     <h3>Arguments:</h3>
     <ul>
-        <li><span class="parameter">area</span>
+        <li><span class="parameter">viewport</span>
 
         <ul>
         <li><span class="parameter">geometry</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         A table with <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.
+         A table with <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code>
+  keys.
         </li>
         <li><span class="parameter">outputs</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
@@ -2413,10 +2421,11 @@ other.</li>
         </li>
         <li><span class="parameter">id</span>
             <span class="types"><span class="type">number</span></span>
-         An identifier for this area (by pixel resolution). It
+         An identifier for this viewport (by pixel
+  resolution). It
   will not change when outputs are modified, but will change when the
-  resolution changes. Note that if it fully disappear, the next time an area
-  with the same resolution appears, it will have a different <code>id</code>.
+  resolution changes. Note that if it fully disappear, the next time an
+  viewport with the same resolution appears, it will have a different <code>id</code>.
         </li>
         <li><span class="parameter">minimum_dpi</span>
             <span class="types"><span class="type">number</span></span>
@@ -2456,12 +2465,12 @@ other.</li>
     <strong>request::remove</strong>
     </dt>
     <dd>
-    <p>When a physical monitor area has been removed. </p>
+    <p>When a physical monitor viewport has been removed. </p>
 
 <p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
 
 <p> If you replace the default handler, it is up to you to find the screen(s)
- associated with this area.</p>
+ associated with this viewport.</p>
 
 <p> To disconnect the default handler, use:</p>
 
@@ -2474,12 +2483,13 @@ other.</li>
 
     <h3>Arguments:</h3>
     <ul>
-        <li><span class="parameter">area</span>
+        <li><span class="parameter">viewport</span>
 
         <ul>
         <li><span class="parameter">geometry</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         A table with <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.
+         A table with <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code>
+  keys.
         </li>
         <li><span class="parameter">outputs</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
@@ -2488,10 +2498,10 @@ other.</li>
         </li>
         <li><span class="parameter">id</span>
             <span class="types"><span class="type">number</span></span>
-         An identifier for this area (by pixel resolution). It
-  will not change when outputs are modified, but will change when the
-  resolution changes. Note that if it fully disappear, the next time an area
-  with the same resolution appears, it will have a different <code>id</code>.
+         An identifier for this viewport (by pixel
+  resolution). It will not change when outputs are modified, but will change
+  when the resolution changes. Note that if it fully disappear, the next time
+  an viewport with the same resolution appears, it will have a different <code>id</code>.
         </li>
         <li><span class="parameter">minimum_dpi</span>
             <span class="types"><span class="type">number</span></span>
@@ -2530,14 +2540,15 @@ other.</li>
     <strong>request::resize</strong>
     </dt>
     <dd>
-    <p>When a physical monitor area resolution has changed or it has been replaced. </p>
+    <p>When a physical viewport resolution has changed or it has been replaced. </p>
 
 <p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
 
-<p> Note that given the areas are not the same, the <code>id</code> wont be the same. Also
- note that if multiple new areas fit within a single &ldquo;old&rdquo; area, the resized
- screen will be the one with the largest total overlapping area
- (<code>intersection.width*intersection.height</code>), regardless of the outputs names.</p>
+<p> Note that given the viewports are not the same, the <code>id</code> wont be the same.
+ Also note that if multiple new viewports fit within a single &ldquo;old&rdquo; viewport,
+ the resized screen will be the one with the largest total overlapping
+ viewport (<code>intersection.width*intersection.height</code>), regardless of the
+ outputs names.</p>
 
 <p> To disconnect the default handler, use:</p>
 
@@ -2550,24 +2561,26 @@ other.</li>
 
     <h3>Arguments:</h3>
     <ul>
-        <li><span class="parameter">old_area</span>
+        <li><span class="parameter">old_viewport</span>
 
         <ul>
         <li><span class="parameter">geometry</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         A table with <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.
+         A table with <code>x</code>, <code>y</code>, <code>width</code> and
+  <code>height</code> keys.
         </li>
         <li><span class="parameter">outputs</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         A table with the monitor name and possibly the
-  <code>mm_width</code> and <code>mm_height</code> values if they are available.
+         A table with the monitor name and
+  possibly the <code>mm_width</code> and <code>mm_height</code> values if they are available.
         </li>
         <li><span class="parameter">id</span>
             <span class="types"><span class="type">number</span></span>
-         An identifier for this area (by pixel resolution). It
-  will not change when outputs are modified, but will change when the
-  resolution changes. Note that if it fully disappear, the next time an area
-  with the same resolution appears, it will have a different <code>id</code>.
+         An identifier for this viewport (by pixel
+  resolution). It will not change when outputs are modified, but will change
+  when the resolution changes. Note that if it fully disappear, the next
+  time an viewport with the same resolution appears, it will have a different
+  <code>id</code>.
         </li>
         <li><span class="parameter">minimum_dpi</span>
             <span class="types"><span class="type">number</span></span>
@@ -2582,24 +2595,26 @@ other.</li>
          The relative least dense DPI.
         </li>
         </li></ul>
-        <li><span class="parameter">new_area</span>
+        <li><span class="parameter">new_viewport</span>
 
         <ul>
         <li><span class="parameter">geometry</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         A table with <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.
+         A table with <code>x</code>, <code>y</code>, <code>width</code> and
+  <code>height</code> keys.
         </li>
         <li><span class="parameter">outputs</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         A table with the monitor name and possibly the
+         A table with the monitor name and
+  possibly the
   <code>mm_width</code> and <code>mm_height</code> values if they are available.
         </li>
         <li><span class="parameter">id</span>
             <span class="types"><span class="type">number</span></span>
-         An identifier for this area (by pixel resolution). It
-  will not change when outputs are modified, but will change when the
-  resolution changes. Note that if it fully disappear, the next time an area
-  with the same resolution appears, it will have a different <code>id</code>.
+         An identifier for this viewport (by pixel
+  resolution). It will not change when outputs are modified, but will change
+  when the  resolution changes. Note that if it fully disappear, the next time
+  an viewport with the same resolution appears, it will have a different <code>id</code>.
         </li>
         <li><span class="parameter">minimum_dpi</span>
             <span class="types"><span class="type">number</span></span>
@@ -2662,10 +2677,11 @@ other.</li>
 
 <p> A simplified implementation looks like:</p>
 
-<pre><code>function(area --[[, args]])
-    local geo = area.geometry
+<pre><code>function(viewport --[[, args]])
+    local geo = viewport.geometry
     local s = screen.fake_add(geo.x, geo.y, geo.width, geo.height)
-    s.outputs = area.outputs
+    s:emit_signal("request::desktop_decoration")
+    s:emit_signal("request::wallpaper")
 end
 </code></pre>
 
@@ -2694,8 +2710,8 @@ end
 
 <p> A simplified version of the logic is:</p>
 
-<pre><code>function (area --[[, args]])
-    local geo = area.geometry
+<pre><code>function (viewport --[[, args]])
+    local geo = viewport.geometry
     for s in screen do
         if gears.geometry.rectangle.are_equal(geo, s.geometry) then
             s:fake_remove()
@@ -2728,10 +2744,10 @@ end
 
 <p> A simplified version of the logic is:</p>
 
-<pre><code>function (old_area, new_area --[[, args]])
-    local old_geo, new_geo = old_area.geometry, new_area.geometry
+<pre><code>function (old_viewport, new_viewport --[[, args]])
+    local old_geo, new_geo = old_viewport.geometry, new_viewport.geometry
     for s in screen do
-        local sgeo = new_area.geometry
+        local sgeo = new_viewport.geometry
         if gears.geometry.rectangle.are_equal(old_geo, s.geometry) then
             s:fake_resize(
                 sgeo.x, sgeo.y, sgeo.width, sgeo.height
@@ -2853,7 +2869,7 @@ end
     <span class="proptype">(<span class='summary_type'>N/A</span>)</span>
     </dt>
     <dd>
-    If <a href="../core_components/screen.html#">screen</a> objects are created automatically when new areas are detected. </p>
+    If <a href="../core_components/screen.html#">screen</a> objects are created automatically when new viewports are detected. </p>
 
 <p> Be very, very careful when setting this to false. You might end up with
  no screens. This is <strong>not</strong> supported. Always connect to the <a href="../core_components/screen.html#scanned">scanned</a>
@@ -2865,7 +2881,7 @@ end
 
     <h3>See also:</h3>
     <ul>
-         <a href="../core_components/screen.html#property::areas">property::areas</a>
+         <a href="../core_components/screen.html#property::viewports">property::viewports</a>
     </ul>
 
 
@@ -2892,7 +2908,7 @@ end
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-16 00:41:08 </i>
+<i style="float:right;">Last updated 2019-07-22 03:14:14 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
