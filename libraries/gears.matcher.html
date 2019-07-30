@@ -271,64 +271,57 @@
 <p><strong>Usage example output</strong>:</p>
 
 <pre>
-dDDD    <span class="global">table</span>: <span class="number">0x55a304ee5500</span>    rule_with_id
-VID    <span class="keyword">nil</span>    rule_with_id
-VID    <span class="keyword">nil</span>    rule_with_id
-VID    rule_with_id    rule_with_id
+<span class="keyword">local</span> o = {
+    foo    = <span class="string">'bar'</span>,
+    answer = <span class="number">42</span>,
+}
 
+<span class="comment">-- This rule will match
+</span><span class="keyword">local</span> rule1 = {
+    rule = {
+        answer = <span class="number">42</span>,
+    },
+    properties = {
+        name = <span class="string">'baz'</span>,
+    },
+}
 
+<span class="comment">-- This rule will **not** match
+</span><span class="keyword">local</span> rule2 = {
+    <span class="comment">-- When the rule properties are strings, the Lua
+</span>    <span class="comment">--pattern matching is used.
+</span>    rule = {
+        foo = <span class="string">'[f]+'</span>,
+    },
+    properties = {
+        name = <span class="string">'foobar'</span>,
+    },
+}
 
- <span class="keyword">local</span> o = {
-     foo    = <span class="string">'bar'</span>,
-     answer = <span class="number">42</span>,
- }
+<span class="keyword">local</span> rules = {
+    rule1,
+    rule2,
+}
 
- <span class="comment">-- This rule will match
-</span> <span class="keyword">local</span> rule1 = {
-     rule = {
-         answer = <span class="number">42</span>,
-     },
-     properties = {
-         name = <span class="string">'baz'</span>,
-     },
- }
+<span class="keyword">local</span> matcher = gears.matcher()
 
- <span class="comment">-- This rule will **not** match
-</span> <span class="keyword">local</span> rule2 = {
-     <span class="comment">-- When the rule properties are strings, the Lua
-</span>     <span class="comment">--pattern matching is used.
-</span>     rule = {
-         foo = <span class="string">'[f]+'</span>,
-     },
-     properties = {
-         name = <span class="string">'foobar'</span>,
-     },
- }
+<span class="keyword">local</span> <span class="keyword">function</span> first_source(self, object, props, callbacks) <span class="comment">--luacheck: no unused args
+</span>    <span class="comment">-- In this callback, you can add new elements to the props and
+</span>    <span class="comment">-- callbacks tables. It is not recommended the modify <a href="../utility_libraries/gears.object.html">object</a> in
+</span>    <span class="comment">-- this callback.
+</span>    <span class="keyword">if</span> object.answer == <span class="number">42</span> <span class="keyword">then</span>
+        props.is_everything = <span class="keyword">true</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
 
- <span class="keyword">local</span> rules = {
-     rule1,
-     rule2,
- }
+<span class="comment">-- This will add a custom function to add properties to the rules.
+</span>matcher:add_matching_function(<span class="string">'first'</span>, first_source, {}, {})
 
- <span class="keyword">local</span> matcher = gears.matcher()
+<span class="comment">-- This will add the <code>rules</code> to this matcher.
+</span>matcher:add_matching_rules(<span class="string">'second'</span>, rules, {<span class="string">'first'</span>}, {})
 
- <span class="keyword">local</span> <span class="keyword">function</span> first_source(self, object, props, callbacks) <span class="comment">--luacheck: no unused args
-</span>     <span class="comment">-- In this callback, you can add new elements to the props and
-</span>     <span class="comment">-- callbacks tables. It is not recommended the modify <a href="../utility_libraries/gears.object.html">object</a> in
-</span>     <span class="comment">-- this callback.
-</span>     <span class="keyword">if</span> object.answer == <span class="number">42</span> <span class="keyword">then</span>
-         props.is_everything = <span class="keyword">true</span>
-     <span class="keyword">end</span>
- <span class="keyword">end</span>
-
- <span class="comment">-- This will add a custom function to add properties to the rules.
-</span> matcher:add_matching_function(<span class="string">'first'</span>, first_source, {}, {})
-
- <span class="comment">-- This will add the <code>rules</code> to this matcher.
-</span> matcher:add_matching_rules(<span class="string">'second'</span>, rules, {<span class="string">'first'</span>}, {})
-
- <span class="comment">-- Apply the properties to <code>o</code>
-</span> matcher:apply(o)
+<span class="comment">-- Apply the properties to <code>o</code>
+</span>matcher:apply(o)
 </pre>
 
 
@@ -469,6 +462,18 @@ VID    rule_with_id    rule_with_id
     <tr>
       <td class="name" ><a href="#except_any">except_any</a></td>
       <td class="summary">The negative equivalent of <a href="../libraries/gears.matcher.html#rule_any">rule_any</a>.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#rule_every">rule_every</a></td>
+      <td class="summary">Matches when one of every "category" of components match.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#rule_every">rule_every</a></td>
+      <td class="summary">A table which content will be compared to the target object current properties.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#rule_every">rule_every</a></td>
+      <td class="summary">A table which content will be compared to the target object current properties.</td>
     </tr>
     <tr>
       <td class="name" ><a href="#id">id</a></td>
@@ -1140,9 +1145,7 @@ VID    rule_with_id    rule_with_id
     <strong>properties</strong>
     </dt>
     <dd>
-    A table which content will be used to set the target object properties. </p>
-
-<p> foo
+    A table which content will be used to set the target object properties.
 
 
     <h3>Type:</h3>
@@ -1192,7 +1195,10 @@ VID    rule_with_id    rule_with_id
     <strong>rule</strong>
     </dt>
     <dd>
-    A table which content will be compared to the target object current properties.
+    A table which content will be compared to the target object current properties. </p>
+
+<p> The comparison operator for this section is equal to (<code>==</code>). In case of a
+ string, it will be pattern matched.
 
 
     <h3>Type:</h3>
@@ -1292,6 +1298,86 @@ VID    rule_with_id    rule_with_id
 
 </dd>
     <dt>
+    <a name = "rule_every"></a>
+    <strong>rule_every</strong>
+    </dt>
+    <dd>
+    Matches when one of every "category" of components match.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../libraries/gears.matcher.html#rule">rule</a></li>
+         <li><a href="../libraries/gears.matcher.html#except">except</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "rule_every"></a>
+    <strong>rule_every</strong>
+    </dt>
+    <dd>
+    A table which content will be compared to the target object current properties. </p>
+
+<p> The comparison operator for this section is greater than (<code>&gt;</code>).
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.matcher.html#rule">rule</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "rule_every"></a>
+    <strong>rule_every</strong>
+    </dt>
+    <dd>
+    A table which content will be compared to the target object current properties. </p>
+
+<p> The comparison operator for this section is lesser than (<code>&lt;</code>).
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.matcher.html#rule">rule</a>
+    </ul>
+
+
+</dd>
+    <dt>
     <a name = "id"></a>
     <strong>id</strong>
     </dt>
@@ -1325,7 +1411,7 @@ VID    rule_with_id    rule_with_id
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-22 03:14:14 </i>
+<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

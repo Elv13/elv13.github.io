@@ -46,8 +46,10 @@
 
 <h2>Contents</h2>
 <ul>
-<li><a href="#Functions">Functions</a></li>
+<li><a href="#Static_module_functions">Static module functions</a></li>
+<li><a href="#Rule_components">Rule components</a></li>
 <li><a href="#Rule_matching_properties">Rule matching properties</a></li>
+<li><a href="#Extra_properties_available_in_awful_rules_and_awful_spawn">Extra properties available in awful.rules and awful.spawn</a></li>
 </ul>
 
 
@@ -243,30 +245,18 @@
 
 <h1>Module: <code>ruled.screen</code></h1>
 <p>Rules for screens.</p>
-<p><table class='widget_list' border=1>
- <tr>
-  <th align='center'>Name</th>
-  <th align='center'>Description</th>
- </tr>
-   <tr><td><a href='../core_components/screen.html#tiling_area'>tiling\_area</a></td><td>The area where clients can be tiled</td></tr>
-   <tr><td><a href='../core_components/screen.html#padding'>padding</a></td><td>The screen padding</td></tr>
-   <tr><td><a href='../core_components/screen.html#outputs'>outputs</a></td><td>A list of outputs for this screen with their size in mm</td></tr>
-   <tr><td><a href='../core_components/screen.html#clients'>clients</a></td><td>The list of visible clients for the screen</td></tr>
-   <tr><td><a href='../core_components/screen.html#hidden_clients'>hidden\_clients</a></td><td>Get the list of clients assigned to the screen but not currently visible</td></tr>
-   <tr><td><a href='../core_components/screen.html#all_clients'>all\_clients</a></td><td>All clients assigned to the screen</td></tr>
-   <tr><td><a href='../core_components/screen.html#tiled_clients'>tiled\_clients</a></td><td>Tiled clients for the screen</td></tr>
-   <tr><td><a href='../core_components/screen.html#tags'>tags</a></td><td>A list of all tags on the screen</td></tr>
-   <tr><td><a href='../core_components/screen.html#selected_tags'>selected\_tags</a></td><td>A list of all selected tags on the screen</td></tr>
-   <tr><td><a href='../core_components/screen.html#selected_tag'>selected\_tag</a></td><td>The first selected tag</td></tr>
-   <tr><td><a href='../core_components/screen.html#persistent'>persistent</a></td><td>Is this screen supposed to survive being unplugged</td></tr>
-   <tr><td><a href='../core_components/screen.html#dpi'>dpi</a></td><td>The number of pixels per inch of the screen</td></tr>
-   <tr><td><a href='../core_components/screen.html#minimum_dpi'>minimum\_dpi</a></td><td>The lowest density DPI from all of the (physical) outputs</td></tr>
-   <tr><td><a href='../core_components/screen.html#maximum_dpi'>maximum\_dpi</a></td><td>The highest density DPI from all of the (physical) outputs</td></tr>
-   <tr><td><a href='../core_components/screen.html#preferred_dpi'>preferred\_dpi</a></td><td>The preferred DPI from all of the (physical) outputs</td></tr>
-   <tr><td><a href='../core_components/screen.html#geometry'>geometry</a></td><td>The screen coordinates</td></tr>
-   <tr><td><a href='../core_components/screen.html#index'>index</a></td><td>The internal screen number</td></tr>
-   <tr><td><a href='../core_components/screen.html#workarea'>workarea</a></td><td>The screen workarea</td></tr>
- </table>
+<p><p> This is why you might want to have screen rules:</p>
+
+<ul>
+<li>Attach useful names to screens so they can be easily matched by client or
+tag rules.</li>
+<li>Control the various HiDPI knobs.</li>
+<li>Define how removing viewports should affect the screens.</li>
+<li>Easily handle clone mode like when a projector is connected.</li>
+<li>Attach various custom properties to screen objects.</li>
+<li>Detect and configure various &ldquo;modes&rdquo; like work, office or portable with
+different workflows.</li>
+</ul>
 
 </p>
     <h3>Info:</h3>
@@ -277,36 +267,73 @@
 
 
 <h2>
-    <a href="#Functions">Functions</a>
+    <a href="#Static_module_functions">Static module functions</a>
 </h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#module.remove_rule_source"><span class='function_modname'>ruled.screen.</span>remove_rule_source (name)</a></td>
+      <td class="name" ><a href="#remove_rule_source"><span class='function_modname'>ruled.screen.</span>remove_rule_source <span class='function_args'>(name)</span></a></td>
       <td class="summary">Remove a source.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.apply"><span class='function_modname'>ruled.screen.</span>apply (c)</a></td>
-      <td class="summary">Apply the tag rules to a client.</td>
-    </tr>
-    <tr>
-      <td class="name" ><a href="#module.append_rule"><span class='function_modname'>ruled.screen.</span>append_rule (table)</a></td>
+      <td class="name" ><a href="#append_rule"><span class='function_modname'>ruled.screen.</span>append_rule <span class='function_args'>(table)</span></a></td>
       <td class="summary">Add a new rule to the default set.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.append_rules"><span class='function_modname'>ruled.screen.</span>append_rules (table)</a></td>
+      <td class="name" ><a href="#append_rules"><span class='function_modname'>ruled.screen.</span>append_rules <span class='function_args'>(table)</span></a></td>
       <td class="summary">Add a new rules to the default set.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.remove_rule"><span class='function_modname'>ruled.screen.</span>remove_rule (table)</a></td>
+      <td class="name" ><a href="#remove_rule"><span class='function_modname'>ruled.screen.</span>remove_rule <span class='function_args'>(table)</span></a></td>
       <td class="summary">Remove a new rule to the default set.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.get_or_create_by_name"><span class='function_modname'>ruled.screen.</span>get_or_create_by_name (name, screen, args)</a></td>
-      <td class="summary">Return an existing dynamic tag or create one.</td>
+      <td class="name" ><a href="#awful.tag.rules.add_rule_source">awful.tag.rules.add_rule_source <span class='function_args'>(name, callback, depends_on, precede)</span></a></td>
+      <td class="summary">Add a new rule source.</td>
+    </tr>
+</table>
+<h2>
+    <a href="#Rule_components">Rule components</a>
+</h2>
+<table class="function_list">
+    <tr>
+      <td class="name" ><a href="#properties">properties</a></td>
+      <td class="summary">A table which content will be used to set the target object properties.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.tag.rules.add_rule_source">awful.tag.rules.add_rule_source (name, callback, depends_on, precede)</a></td>
-      <td class="summary">Add a new rule source.</td>
+      <td class="name" ><a href="#callbacks">callbacks</a></td>
+      <td class="summary">A list of callback function to call <em>after</em> the properties have been apploed.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#rule">rule</a></td>
+      <td class="summary">A table which content will be compared to the target object current properties.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#rule_any">rule_any</a></td>
+      <td class="summary">Similar to <a href="../declarative_rules/ruled.screen.html#rule">rule</a>, but each entry is a table with multiple values.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#except">except</a></td>
+      <td class="summary">The negative equivalent of <a href="../declarative_rules/ruled.screen.html#rule">rule</a>.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#except_any">except_any</a></td>
+      <td class="summary">The negative equivalent of <a href="../declarative_rules/ruled.screen.html#rule_any">rule_any</a>.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#rule_every">rule_every</a></td>
+      <td class="summary">Matches when one of every "category" of components match.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#rule_every">rule_every</a></td>
+      <td class="summary">A table which content will be compared to the target object current properties.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#rule_every">rule_every</a></td>
+      <td class="summary">A table which content will be compared to the target object current properties.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#id">id</a></td>
+      <td class="summary">An identifier for this rule.</td>
     </tr>
 </table>
 <h2>
@@ -314,48 +341,60 @@
 </h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#area_count">area_count</a></td>
-      <td class="summary">The current number of (physical) monitor areas.</td>
+      <td class="name" ><a href="#viewport_count">viewport_count</a></td>
+      <td class="summary">The current number of (physical) monitor viewports.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#area_name">area_name</a></td>
-      <td class="summary">The name of the area.</td>
+      <td class="name" ><a href="#output_count">output_count</a></td>
+      <td class="summary">The number of output attached to the viewport.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#area_mm_width">area_mm_width</a></td>
-      <td class="summary">The physical width of the area.</td>
+      <td class="name" ><a href="#is_cloned">is_cloned</a></td>
+      <td class="summary">True if the viewport has multiple overlapping outputs.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#area_mm_heihgt">area_mm_heihgt</a></td>
-      <td class="summary">The physical height of the area.</td>
+      <td class="name" ><a href="#aspect_ratio">aspect_ratio</a></td>
+      <td class="summary">The screen aspect ratio.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#minimum_dpi..">minimum_dpi..</a></td>
-      <td class="summary">The least dense DPI of the area.</td>
+      <td class="name" ><a href="#has_name">has_name</a></td>
+      <td class="summary">Check if one of the output is named as such.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#maximum_dpi">maximum_dpi</a></td>
-      <td class="summary">The least dense DPI of the area.</td>
+      <td class="name" ><a href="#has_mm_width">has_mm_width</a></td>
+      <td class="summary">Check if one of the output has this width (in millimeters).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#preferred_dpi">preferred_dpi</a></td>
-      <td class="summary">The least dense DPI of the area.</td>
+      <td class="name" ><a href="#has_mm_height">has_mm_height</a></td>
+      <td class="summary">Check if one of the output has this height (in millimeters).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#area_count">area_count</a></td>
-      <td class="summary">The current number of (physical) monitor areas.</td>
+      <td class="name" ><a href="#has_mm_size">has_mm_size</a></td>
+      <td class="summary">Check if one of the output has this diagonal (in millimeters).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#area_name">area_name</a></td>
-      <td class="summary">The name of the area.</td>
+      <td class="name" ><a href="#has_inch_size">has_inch_size</a></td>
+      <td class="summary">Check if one of the output has this diagonal (in inches).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#area_mm_width">area_mm_width</a></td>
-      <td class="summary">The physical width of the area.</td>
+      <td class="name" ><a href="#has_dpi">has_dpi</a></td>
+      <td class="summary">Check if one of the output has this dpi (dots per inch).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#area_mm_heihgt">area_mm_heihgt</a></td>
-      <td class="summary">The physical height of the area.</td>
+      <td class="name" ><a href="#x">x</a></td>
+      <td class="summary">The viewport horizontal position (in pixels).</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#y">y</a></td>
+      <td class="summary">The viewport vertical position (in pixels).</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#width">width</a></td>
+      <td class="summary">The viewport width (in pixels).</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#height">height</a></td>
+      <td class="summary">The viewport height (in pixels).</td>
     </tr>
     <tr>
       <td class="name" ><a href="#minimum_dpi">minimum_dpi</a></td>
@@ -369,18 +408,75 @@
       <td class="name" ><a href="#preferred_dpi">preferred_dpi</a></td>
       <td class="summary">The least dense DPI of the area.</td>
     </tr>
+    <tr>
+      <td class="name" ><a href="#minimum_mm_size">minimum_mm_size</a></td>
+      <td class="summary">The smallest diagonal size (in millimeters).</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#minimum_inch_size">minimum_inch_size</a></td>
+      <td class="summary">The smallest diagonal size (in inches).</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#maximum_mm_size">maximum_mm_size</a></td>
+      <td class="summary">The largest diagonal size (in millimeters).</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#maximum_inch_size">maximum_inch_size</a></td>
+      <td class="summary">The largest diagonal size (in inches).</td>
+    </tr>
+</table>
+<h2>
+    <a href="#Extra_properties_available_in_awful_rules_and_awful_spawn">Extra properties available in awful.rules and awful.spawn</a>
+</h2>
+<table class="function_list">
+    <tr>
+      <td class="name" ><a href="#persistence_strategy">persistence_strategy</a></td>
+      <td class="summary">The strategy to use when the viewport is removed.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#screen">screen</a></td>
+      <td class="summary">A screen object (or function to pick one) to move to this viewport.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#geometry">geometry</a></td>
+      <td class="summary">The geometry for this screen.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#dpi">dpi</a></td>
+      <td class="summary">The screen DPI.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#primary">primary</a></td>
+      <td class="summary">If this screen is the primary screen.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#timeout">timeout</a></td>
+      <td class="summary">A timeout before destroying the screen once its viewport is gone.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#ignore">ignore</a></td>
+      <td class="summary">When set to true, the screen wont be created.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#name">name</a></td>
+      <td class="summary">The screen name.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#split">split</a></td>
+      <td class="summary">Split the viewport into multiple screens.</td>
+    </tr>
 </table>
 
 <br/>
 <br/>
 
 
-    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
-    Methods
+    <h2 class="section-header "><a name="Static_module_functions"></a>Static module functions</h2>
+
     <dl class="function">
     <dt>
-    <a name = "module.remove_rule_source"></a>
-    <strong><span class='function_modname'>ruled.screen.</span>remove_rule_source (name)</strong>
+    <a name = "remove_rule_source"></a>
+    <strong><span class='function_modname'>ruled.screen.</span>remove_rule_source <span class='function_args'>(name)</span></strong>
     </dt>
     <dd>
     Remove a source.
@@ -406,33 +502,8 @@
 
 </dd>
     <dt>
-    <a name = "module.apply"></a>
-    <strong><span class='function_modname'>ruled.screen.</span>apply (c)</strong>
-    </dt>
-    <dd>
-    Apply the tag rules to a client. </p>
-
-<p> This is useful when it is necessary to apply rules after a tag has been
- created. Many workflows can make use of &ldquo;blank&rdquo; tags which wont match any
- rules until later.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">c</span>
-            <span class="types"><span class="type">client</span></span>
-         The client.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "module.append_rule"></a>
-    <strong><span class='function_modname'>ruled.screen.</span>append_rule (table)</strong>
+    <a name = "append_rule"></a>
+    <strong><span class='function_modname'>ruled.screen.</span>append_rule <span class='function_args'>(table)</span></strong>
     </dt>
     <dd>
     Add a new rule to the default set.
@@ -451,8 +522,8 @@
 
 </dd>
     <dt>
-    <a name = "module.append_rules"></a>
-    <strong><span class='function_modname'>ruled.screen.</span>append_rules (table)</strong>
+    <a name = "append_rules"></a>
+    <strong><span class='function_modname'>ruled.screen.</span>append_rules <span class='function_args'>(table)</span></strong>
     </dt>
     <dd>
     Add a new rules to the default set.
@@ -471,8 +542,8 @@
 
 </dd>
     <dt>
-    <a name = "module.remove_rule"></a>
-    <strong><span class='function_modname'>ruled.screen.</span>remove_rule (table)</strong>
+    <a name = "remove_rule"></a>
+    <strong><span class='function_modname'>ruled.screen.</span>remove_rule <span class='function_args'>(table)</span></strong>
     </dt>
     <dd>
     Remove a new rule to the default set.
@@ -491,43 +562,8 @@
 
 </dd>
     <dt>
-    <a name = "module.get_or_create_by_name"></a>
-    <strong><span class='function_modname'>ruled.screen.</span>get_or_create_by_name (name, screen, args)</strong>
-    </dt>
-    <dd>
-    Return an existing dynamic tag or create one.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">name</span>
-
-
-        </li>
-        <li><span class="parameter">screen</span>
-
-
-        </li>
-        <li><span class="parameter">args</span>
-
-
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><span class="type">tag</span> or <span class="type">nil</span></span>
-        A tag or nil if the name doesn&rsquo;t exist.
-    </ol>
-
-
-
-
-</dd>
-    <dt>
     <a name = "awful.tag.rules.add_rule_source"></a>
-    <strong>awful.tag.rules.add_rule_source (name, callback, depends_on, precede)</strong>
+    <strong>awful.tag.rules.add_rule_source <span class='function_args'>(name, callback, depends_on, precede)</span></strong>
     </dt>
     <dd>
     Add a new rule source. </p>
@@ -563,7 +599,7 @@
         <li><span class="parameter">depends_on</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
          A list of names of sources this source depends on
-  (sources that must be executed <em>before</em> <code>name</code>.
+  (sources that must be executed <em>before</em> <a href="../declarative_rules/ruled.screen.html#name">name</a>.
          (<em>default</em> {})
         </li>
         <li><span class="parameter">precede</span>
@@ -574,12 +610,274 @@
         </li>
     </ul>
 
-    <h3>Returns:</h3>
-    <ol>
 
-           <span class="types"><span class="type">boolean</span></span>
-        Returns false if a dependency conflict was found.
-    </ol>
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Rule_components"></a>Rule components</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "properties"></a>
+    <strong>properties</strong>
+    </dt>
+    <dd>
+    A table which content will be used to set the target object properties.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../declarative_rules/ruled.screen.html#callbacks">callbacks</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "callbacks"></a>
+    <strong>callbacks</strong>
+    </dt>
+    <dd>
+    A list of callback function to call <em>after</em> the properties have been apploed.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../declarative_rules/ruled.screen.html#properties">properties</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "rule"></a>
+    <strong>rule</strong>
+    </dt>
+    <dd>
+    A table which content will be compared to the target object current properties. </p>
+
+<p> The comparison operator for this section is equal to (<code>==</code>). In case of a
+ string, it will be pattern matched.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../declarative_rules/ruled.screen.html#rule_any">rule_any</a></li>
+         <li><a href="../declarative_rules/ruled.screen.html#except">except</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "rule_any"></a>
+    <strong>rule_any</strong>
+    </dt>
+    <dd>
+    Similar to <a href="../declarative_rules/ruled.screen.html#rule">rule</a>, but each entry is a table with multiple values.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../declarative_rules/ruled.screen.html#rule">rule</a></li>
+         <li><a href="../declarative_rules/ruled.screen.html#except_any">except_any</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "except"></a>
+    <strong>except</strong>
+    </dt>
+    <dd>
+    The negative equivalent of <a href="../declarative_rules/ruled.screen.html#rule">rule</a>.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../declarative_rules/ruled.screen.html#rule">rule</a></li>
+         <li><a href="../declarative_rules/ruled.screen.html#except_any">except_any</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "except_any"></a>
+    <strong>except_any</strong>
+    </dt>
+    <dd>
+    The negative equivalent of <a href="../declarative_rules/ruled.screen.html#rule_any">rule_any</a>.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../declarative_rules/ruled.screen.html#rule">rule</a></li>
+         <li><a href="../declarative_rules/ruled.screen.html#except">except</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "rule_every"></a>
+    <strong>rule_every</strong>
+    </dt>
+    <dd>
+    Matches when one of every "category" of components match.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../declarative_rules/ruled.screen.html#rule">rule</a></li>
+         <li><a href="../declarative_rules/ruled.screen.html#except">except</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "rule_every"></a>
+    <strong>rule_every</strong>
+    </dt>
+    <dd>
+    A table which content will be compared to the target object current properties. </p>
+
+<p> The comparison operator for this section is greater than (<code>&gt;</code>).
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../declarative_rules/ruled.screen.html#rule">rule</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "rule_every"></a>
+    <strong>rule_every</strong>
+    </dt>
+    <dd>
+    A table which content will be compared to the target object current properties. </p>
+
+<p> The comparison operator for this section is lesser than (<code>&lt;</code>).
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../declarative_rules/ruled.screen.html#rule">rule</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "id"></a>
+    <strong>id</strong>
+    </dt>
+    <dd>
+    An identifier for this rule. </p>
+
+<p> It can be anything. It will be compared with the <code>==</code> operator. Strings are
+ highly recommended.</p>
+
+<p> Setting an <a href="../declarative_rules/ruled.screen.html#id">id</a> is useful to be able to remove the rule by using its id
+ instead of a table reference. Modules can also listen to <code>rule::appended</code> and
+ modify or disable a rule.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+        |string|number|function
+        </li>
+    </ul>
+
 
 
 
@@ -590,11 +888,13 @@
 
     <dl class="function">
     <dt>
-    <a name = "area_count"></a>
-    <strong>area_count</strong>
+    <a name = "viewport_count"></a>
+    <strong>viewport_count</strong>
     </dt>
     <dd>
-    The current number of (physical) monitor areas.
+    The current number of (physical) monitor viewports. </p>
+
+<p> Note that a viewport can have multiple outputs.
 
 
     <h3>Type:</h3>
@@ -611,14 +911,113 @@
 
 </dd>
     <dt>
-    <a name = "area_name"></a>
-    <strong>area_name</strong>
+    <a name = "output_count"></a>
+    <strong>output_count</strong>
     </dt>
     <dd>
-    The name of the area. </p>
+    The number of output attached to the viewport. </p>
 
-<p> Note that this only works in the <code>except_any</code> or <code>rule_any</code> section because
- an area can have multiple outputs.
+<p> It is normally one, but if, for example, a projector is in &ldquo;clone mode&rdquo; with
+ a laptop screen, there will be 2.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../declarative_rules/ruled.screen.html#is_cloned">is_cloned</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "is_cloned"></a>
+    <strong>is_cloned</strong>
+    </dt>
+    <dd>
+    True if the viewport has multiple overlapping outputs. </p>
+
+<p><img src="../images/AUTOGEN_ruled_screen_rules_cloned.svg" alt="Usage example" />
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../declarative_rules/ruled.screen.html#output_count">output_count</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="comment">-- Use the least dense DPI when multiple outputs are cloned.
+</span>ruled.screen.append_rule {
+    rule       = { is_cloned = <span class="keyword">true</span> },
+    properties = { dpi = <span class="keyword">function</span>(s) <span class="keyword">return</span> s.minimum_dpi <span class="keyword">end</span> },
+}</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "aspect_ratio"></a>
+    <strong>aspect_ratio</strong>
+    </dt>
+    <dd>
+    The screen aspect ratio. </p>
+
+<p> The value is obtained by dividing the width (in pixels) with the height
+ (in pixels).</p>
+
+<p> Note that the matching is permissive up to the second digit for
+ convinience. Some advertized ratios are not accurate and/or are periodic.</p>
+
+<p> This property is useful to detect ultrawide monitors and vertical monitors.</p>
+
+<p><img src="../images/AUTOGEN_ruled_screen_rules_split.svg" alt="Usage example" />
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="comment">-- Split ultrawide monitors into 3 screens.
+</span>ruled.screen.append_rule {
+    rule       = { aspect_ratio = <span class="number">21</span>/<span class="number">9</span> }, <span class="comment">-- ultrawide
+</span>    properties = { split = { ratios = {<span class="number">1</span>/<span class="number">5</span>, <span class="number">3</span>/<span class="number">5</span>, <span class="number">1</span>/<span class="number">5</span> } } },
+}</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "has_name"></a>
+    <strong>has_name</strong>
+    </dt>
+    <dd>
+    Check if one of the output is named as such.
 
 
     <h3>Type:</h3>
@@ -635,59 +1034,11 @@
 
 </dd>
     <dt>
-    <a name = "area_mm_width"></a>
-    <strong>area_mm_width</strong>
+    <a name = "has_mm_width"></a>
+    <strong>has_mm_width</strong>
     </dt>
     <dd>
-    The physical width of the area. </p>
-
-<p> Note that this only works in the <code>except_any</code> or <code>rule_any</code> section because
- an area can have multiple outputs.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">numner</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "area_mm_heihgt"></a>
-    <strong>area_mm_heihgt</strong>
-    </dt>
-    <dd>
-    The physical height of the area. </p>
-
-<p> Note that this only works in the <code>except_any</code> or <code>rule_any</code> section because
- an area can have multiple outputs.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">string</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "minimum_dpi.."></a>
-    <strong>minimum_dpi..</strong>
-    </dt>
-    <dd>
-    The least dense DPI of the area.
+    Check if one of the output has this width (in millimeters).
 
 
     <h3>Type:</h3>
@@ -704,11 +1055,11 @@
 
 </dd>
     <dt>
-    <a name = "maximum_dpi"></a>
-    <strong>maximum_dpi</strong>
+    <a name = "has_mm_height"></a>
+    <strong>has_mm_height</strong>
     </dt>
     <dd>
-    The least dense DPI of the area.
+    Check if one of the output has this height (in millimeters).
 
 
     <h3>Type:</h3>
@@ -725,11 +1076,11 @@
 
 </dd>
     <dt>
-    <a name = "preferred_dpi"></a>
-    <strong>preferred_dpi</strong>
+    <a name = "has_mm_size"></a>
+    <strong>has_mm_size</strong>
     </dt>
     <dd>
-    The least dense DPI of the area.
+    Check if one of the output has this diagonal (in millimeters).
 
 
     <h3>Type:</h3>
@@ -746,11 +1097,11 @@
 
 </dd>
     <dt>
-    <a name = "area_count"></a>
-    <strong>area_count</strong>
+    <a name = "has_inch_size"></a>
+    <strong>has_inch_size</strong>
     </dt>
     <dd>
-    The current number of (physical) monitor areas.
+    Check if one of the output has this diagonal (in inches).
 
 
     <h3>Type:</h3>
@@ -767,19 +1118,16 @@
 
 </dd>
     <dt>
-    <a name = "area_name"></a>
-    <strong>area_name</strong>
+    <a name = "has_dpi"></a>
+    <strong>has_dpi</strong>
     </dt>
     <dd>
-    The name of the area. </p>
-
-<p> Note that this only works in the <code>except_any</code> or <code>rule_any</code> section because
- an area can have multiple outputs.
+    Check if one of the output has this dpi (dots per inch).
 
 
     <h3>Type:</h3>
     <ul>
-        <li><span class="parameter">string</span>
+        <li><span class="parameter">number</span>
 
 
         </li>
@@ -791,19 +1139,16 @@
 
 </dd>
     <dt>
-    <a name = "area_mm_width"></a>
-    <strong>area_mm_width</strong>
+    <a name = "x"></a>
+    <strong>x</strong>
     </dt>
     <dd>
-    The physical width of the area. </p>
-
-<p> Note that this only works in the <code>except_any</code> or <code>rule_any</code> section because
- an area can have multiple outputs.
+    The viewport horizontal position (in pixels).
 
 
     <h3>Type:</h3>
     <ul>
-        <li><span class="parameter">numner</span>
+        <li><span class="parameter">number</span>
 
 
         </li>
@@ -815,19 +1160,58 @@
 
 </dd>
     <dt>
-    <a name = "area_mm_heihgt"></a>
-    <strong>area_mm_heihgt</strong>
+    <a name = "y"></a>
+    <strong>y</strong>
     </dt>
     <dd>
-    The physical height of the area. </p>
-
-<p> Note that this only works in the <code>except_any</code> or <code>rule_any</code> section because
- an area can have multiple outputs.
+    The viewport vertical position (in pixels).
 
 
     <h3>Type:</h3>
     <ul>
-        <li><span class="parameter">string</span>
+        <li><span class="parameter">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "width"></a>
+    <strong>width</strong>
+    </dt>
+    <dd>
+    The viewport width (in pixels).
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "height"></a>
+    <strong>height</strong>
+    </dt>
+    <dd>
+    The viewport height (in pixels).
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
 
 
         </li>
@@ -901,6 +1285,362 @@
 
 
 </dd>
+    <dt>
+    <a name = "minimum_mm_size"></a>
+    <strong>minimum_mm_size</strong>
+    </dt>
+    <dd>
+    The smallest diagonal size (in millimeters).
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "minimum_inch_size"></a>
+    <strong>minimum_inch_size</strong>
+    </dt>
+    <dd>
+    The smallest diagonal size (in inches). </p>
+
+<p><img src="../images/AUTOGEN_ruled_screen_rules_max_dpi.svg" alt="Usage example" />
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="global">print</span>(<span class="string">'\n\nRULES'</span>)
+<span class="comment">-- Use the least dense DPI when multiple outputs are cloned.
+</span>ruled.screen.append_rule {
+    rule_greater = { inch_maximum_size = <span class="number">50</span> }, <span class="comment">-- Force a low DPI for large screens.
+</span>    properties   = { dpi               = <span class="number">72</span> },
+}
+             <span class="global">print</span>(<span class="string">'\n\nDDDDD'</span>, screen[<span class="number">1</span>].data.viewport.inch_maximum_size, screen[<span class="number">1</span>].dpi)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "maximum_mm_size"></a>
+    <strong>maximum_mm_size</strong>
+    </dt>
+    <dd>
+    The largest diagonal size (in millimeters).
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "maximum_inch_size"></a>
+    <strong>maximum_inch_size</strong>
+    </dt>
+    <dd>
+    The largest diagonal size (in inches).
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Extra_properties_available_in_awful_rules_and_awful_spawn"></a>Extra properties available in awful.rules and awful.spawn</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "persistence_strategy"></a>
+    <strong>persistence_strategy</strong>
+    </dt>
+    <dd>
+    The strategy to use when the viewport is removed. </p>
+
+<p> The possible values are:</p>
+
+<ul>
+<li><strong>replace</strong>: Replace existing non-preserved screens with this screen. If no
+other non-replaceable screen exist, it will split the remaining screen to
+make room for this one.</li>
+<li><strong>destroy</strong>: Do not preserve and destroy the screen.</li>
+<li><strong>relocate</strong>: Relocate if a new viewport is added at the same time. This
+is better then viewports are simply moved
+<em>(default)</em>.</li>
+<li><strong>keep</strong>: Never destroy the screen even if it gets out of sight. It is good
+when temporarily removing a viewport only to add it back (like moving from
+work to home when both have an identical external screen).</li>
+</ul>
+
+
+<p> Note that sometime it is easier to relocate the tags than to relocate the
+ screens.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../declarative_rules/ruled.screen.html#timeout">timeout</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "screen"></a>
+    <strong>screen</strong>
+    </dt>
+    <dd>
+    A screen object (or function to pick one) to move to this viewport. </p>
+
+<p> Instead of creating a new screen object, reuse an existing one. Note that
+ that if the <a href="../core_components/screen.html#">screen</a> had a viewport that still exists, it once it is moved,
+ the rules will be applied on that viewport.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "geometry"></a>
+    <strong>geometry</strong>
+    </dt>
+    <dd>
+    The geometry for this screen. </p>
+
+<p> If none are provided, the viewport geometry will be used.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">geometry</span>
+
+        <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+        </li>
+        <li><span class="parameter">width</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+        </li>
+        <li><span class="parameter">height</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+        </li>
+        </li></ul>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dpi"></a>
+    <strong>dpi</strong>
+    </dt>
+    <dd>
+    The screen DPI.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "primary"></a>
+    <strong>primary</strong>
+    </dt>
+    <dd>
+    If this screen is the primary screen.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "timeout"></a>
+    <strong>timeout</strong>
+    </dt>
+    <dd>
+    A timeout before destroying the screen once its viewport is gone. </p>
+
+<p> Sometime, changing the screen layout can be done with multiple steps. In that
+ case, there will be a window of time where the viewports will be in the
+ &ldquo;wrong&rdquo; state. A timeout (in seconds) longer than this window of invalidity
+ will help avoid unnecessary screen creation and destruction.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ignore"></a>
+    <strong>ignore</strong>
+    </dt>
+    <dd>
+    When set to true, the screen wont be created. </p>
+
+<p> This way the viewport can be ignored. This doesn&rsquo;t prevent from moving
+ floating clients to this area or having some static fullscreen clients there
+ like Kodi. When set, there will be no screen object, so no wallpaper, wibar
+ or tiled client area for that viewport.</p>
+
+<p><img src="../images/AUTOGEN_ruled_screen_rules_ignore.svg" alt="Usage example" />
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">ruled.screen.append_rule {
+    rule       = {x      = <span class="number">1024</span> },
+    properties = {ignore = <span class="keyword">true</span> },
+}</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "name"></a>
+    <strong>name</strong>
+    </dt>
+    <dd>
+    The screen name. </p>
+
+<p> This is useful to access the screen from <a href="../declarative_rules/ruled.client.html#">ruled.client</a> or <a href="../declarative_rules/ruled.tag.html#">ruled.tag</a>
+ without having to write screen detection code.</p>
+
+<p> Note that &ldquo;primary&rdquo; and any output names are reserved and should not be used.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "split"></a>
+    <strong>split</strong>
+    </dt>
+    <dd>
+    Split the viewport into multiple screens. </p>
+
+<p> When using ultrawide monitors or rotating a secondary screen vertically, it
+ is sometime helpful to split them into virtual screens with their own tags
+ and tiled layouts.
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../core_components/screen.html#split">screen.split</a>
+    </ul>
+
+
+</dd>
 </dl>
 
 
@@ -908,7 +1648,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-22 03:14:14 </i>
+<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

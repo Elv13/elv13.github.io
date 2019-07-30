@@ -53,28 +53,8 @@
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
   <li><a href="../libraries/awful.util.html">awful.util</a></li>
   <li><a href="../libraries/dbus.html">dbus</a></li>
-  <li><a href="../libraries/dynamite.html">dynamite</a></li>
-  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
-  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
-  <li><a href="../libraries/lib.awful.screen.dpi.html">lib.awful.screen.dpi</a></li>
-  <li><a href="../libraries/lib.dynamite.html">lib.dynamite</a></li>
-  <li><a href="../libraries/lib.dynamite.base.html">lib.dynamite.base</a></li>
-  <li><a href="../libraries/lib.dynamite.layout.conditional.html">lib.dynamite.layout.conditional</a></li>
-  <li><a href="../libraries/lib.dynamite.layout.ratio.html">lib.dynamite.layout.ratio</a></li>
-  <li><a href="../libraries/lib.dynamite.layout.stack.html">lib.dynamite.layout.stack</a></li>
-  <li><a href="../libraries/lib.dynamite.layout.tabbed.html">lib.dynamite.layout.tabbed</a></li>
-  <li><a href="../libraries/lib.dynamite.resize.html">lib.dynamite.resize</a></li>
-  <li><a href="../libraries/lib.dynamite.suit.html">lib.dynamite.suit</a></li>
-  <li><a href="../libraries/lib.dynamite.utils.html">lib.dynamite.utils</a></li>
-  <li><a href="../libraries/lib.dynamite.widget.html">lib.dynamite.widget</a></li>
-  <li><a href="../libraries/lib.dynamite.widget.placeholder.html">lib.dynamite.widget.placeholder</a></li>
-  <li><a href="../libraries/lib.ruled.client.html">lib.ruled.client</a></li>
-  <li><a href="../libraries/lib.ruled.clipboard.html">lib.ruled.clipboard</a></li>
-  <li><a href="../libraries/lib.ruled.notification.html">lib.ruled.notification</a></li>
-  <li><a href="../libraries/lib.ruled.screen.html">lib.ruled.screen</a></li>
-  <li><a href="../libraries/lib.ruled.tag.html">lib.ruled.tag</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -193,21 +173,15 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.button.html">awful.button</a></li>
   <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
-  <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
-  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
-  <li><a href="../classes/wibox.container.scale.html">wibox.container.scale</a></li>
-  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
   <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
   <li><a href="../classes/wibox.hierarchy.html">wibox.hierarchy</a></li>
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
-  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/xproperties.html">xproperties</a></li>
 </ul>
 <h2>Documentation</h2>
@@ -520,6 +494,14 @@
     <tr>
       <td class="name" ><a href="#except_any">except_any</a></td>
       <td class="summary">The negative equivalent of <a href="../libraries/awful.rules.html#rule_any">rule_any</a>.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#rule_every">rule_every</a></td>
+      <td class="summary">Matches when one of every "category" of components match.</td>
+    </tr>
+    <tr>
+      <td class="name" ><a href="#id">id</a></td>
+      <td class="summary">An identifier for this rule.</td>
     </tr>
 </table>
 <h2><a href="#Tables">Tables</a></h2>
@@ -952,9 +934,7 @@
     <strong>properties</strong>
     </dt>
     <dd>
-    A table which content will be used to set the target object properties. </p>
-
-<p> foo
+    A table which content will be used to set the target object properties.
 
 
     <h3>Type:</h3>
@@ -1103,6 +1083,59 @@
 
 
 </dd>
+    <dt>
+    <a name = "rule_every"></a>
+    <strong>rule_every</strong>
+    </dt>
+    <dd>
+    Matches when one of every "category" of components match.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../libraries/awful.rules.html#rule">rule</a></li>
+         <li><a href="../libraries/awful.rules.html#except">except</a></li>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "id"></a>
+    <strong>id</strong>
+    </dt>
+    <dd>
+    An identifier for this rule. </p>
+
+<p> It can be anything. It will be compared with the <code>==</code> operator. Strings are
+ highly recommended.</p>
+
+<p> Setting an <a href="../libraries/awful.rules.html#id">id</a> is useful to be able to remove the rule by using its id
+ instead of a table reference. Modules can also listen to <code>rule::appended</code> and
+ modify or disable a rule.
+
+
+    <h3>Type:</h3>
+    <ul>
+        <li><span class="parameter">table</span>
+        |string|number|function
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
 </dl>
     <h2 class="section-header "><a name="Tables"></a>Tables</h2>
 
@@ -1210,7 +1243,7 @@ end
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-22 00:45:48 </i>
+<i style="float:right;">Last updated 2019-07-28 21:12:31 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
