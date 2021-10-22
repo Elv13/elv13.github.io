@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Coreclassmod screen - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -61,18 +60,22 @@
 <ul class="nowrap">
   <li><a href="../core_components/awesome.html">awesome</a></li>
   <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
   <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
   <li><a href="../core_components/drawable.html">drawable</a></li>
   <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
   <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
   <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
   <li><a href="../core_components/root.html">root</a></li>
   <li><strong>screen<span class='listplusign'> and awful.screen</span></strong></li>
   <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
 </ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
@@ -91,7 +94,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -125,6 +127,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -143,6 +146,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -182,10 +186,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -195,6 +198,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -208,9 +212,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -232,11 +233,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -254,14 +258,15 @@
 <p> Screen objects can be added and removed over time. To get a callback for all
  current and future screens, use <a href="../core_components/screen.html#awful.screen.connect_for_each_screen">awful.screen.connect_for_each_screen</a>:</p>
 
+
 <pre>
 awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <span class="comment">-- do something
 </span><span class="keyword">end</span>)
 </pre>
 
-
 <p> It is also possible loop over all current screens using:</p>
+
 
 <pre>
 <span class="keyword">for</span> s <span class="keyword">in</span> screen <span class="keyword">do</span>
@@ -269,476 +274,694 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
 </span><span class="keyword">end</span>
 </pre>
 
-
-<p> Most basic Awesome objects also have a screen property, see <a href="../core_components/mouse.html#screen">mouse.screen</a>
+<p> Most basic Awesome objects also have a screen property, see <a href="../input_handling/mouse.html#screen">mouse.screen</a>
  <a href="../core_components/client.html#screen">client.screen</a>, <a href="../popups_and_bars/wibox.html#screen">wibox.screen</a> and <a href="../core_components/tag.html#screen">tag.screen</a>.</p>
 
 <p> Furthermore to the classes described here, one can also use signals as
  described in <a href="../classes/signals.html#">signals</a>.</p>
 
-<p> Lifecycle
- =========</p>
 
-<p> The following diagram shows the various signals involved in the creation
- of screens:</p>
 
-<p>  <img src="../images/add_screen.svg" alt="Screen creation" /></p>
-
-<p> The following diagram shows what happen when the (physical) monitor areas
- change:</p>
-
-<p>  <img src="../images/change_screen.svg" alt="Screen creation" /></p>
-
-<p> See the documentation for the various signals to know more about how to
- change the decision taken during the screen creation.</p>
-
-<p> <img src="../images/AUTOGEN_uml_nav_tables_screen.svg" alt="Usage example" />
- Core components relationship
- ===
- <table><tr>
- <td valign='top'><table class='widget_list' border=1>
-   <colgroup span='3'></colgroup>
+<p> <img src="../images/AUTOGEN_uml_nav_tables_screen.svg" alt="Usage example"/></p>
+<h1> Core components relationship</h1>
+<p> <table><tr>
+ <td valign="top"><table class='widget_list' border=1>
+   <colgroup span="3"></colgroup>
   <tr><th align='center' colspan=3 scope=colgroup>Acquire other objects from a screen</th></tr>
-  <tr style='font-weight: bold
- '>
+  <tr style='font-weight: bold;'>
    <th align='center'>Class</th>
    <th align='center'></th>
    <th align='center'>Property</th>
   </tr>
  <tr>
    <td>tag</td>
-   <td><img src='../images/AUTOGEN_uml_nav_tables_screen1.svg'></td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen1.svg"></td>
    <td>s.tags</td>
   </tr>
  <tr>
    <td>tag</td>
-   <td><img src='../images/AUTOGEN_uml_nav_tables_screen2.svg'></td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen2.svg"></td>
    <td>s.selected_tag</td>
   </tr>
  <tr>
    <td>tag</td>
-   <td><img src='../images/AUTOGEN_uml_nav_tables_screen3.svg'></td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen3.svg"></td>
    <td>s.selected_tags</td>
   </tr>
  <tr>
    <td>client</td>
-   <td><img src='../images/AUTOGEN_uml_nav_tables_screen4.svg'></td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen4.svg"></td>
    <td>s.clients</td>
   </tr>
  <tr>
    <td>client</td>
-   <td><img src='../images/AUTOGEN_uml_nav_tables_screen5.svg'></td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen5.svg"></td>
    <td>s.hidden_clients</td>
   </tr>
  <tr>
    <td>client</td>
-   <td><img src='../images/AUTOGEN_uml_nav_tables_screen6.svg'></td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen6.svg"></td>
    <td>s.tiled_clients</td>
   </tr>
  </table></td>
- <td valign='top'><table class='widget_list' border=1>
-   <colgroup span='3'></colgroup>
+ <td valign="top"><table class='widget_list' border=1>
+   <colgroup span="3"></colgroup>
   <tr><th align='center' colspan=3 scope=colgroup>Acquire a screen from other objects</th></tr>
-  <tr style='font-weight: bold
- '>
+  <tr style='font-weight: bold;'>
    <th align='center'>Class</th>
    <th align='center'></th>
    <th align='center'>Property</th>
   </tr>
  <tr>
    <td>tag</td>
-   <td><img src='../images/AUTOGEN_uml_nav_tables_screen7.svg'></td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen7.svg"></td>
    <td>t.screen</td>
   </tr>
  <tr>
    <td>client</td>
-   <td><img src='../images/AUTOGEN_uml_nav_tables_screen8.svg'></td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen8.svg"></td>
    <td>c.screen</td>
   </tr>
  <tr>
    <td>naughty.notification</td>
-   <td><img src='../images/AUTOGEN_uml_nav_tables_screen9.svg'></td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen9.svg"></td>
    <td>n.screen</td>
   </tr>
  <tr>
    <td>mouse</td>
-   <td><img src='../images/AUTOGEN_uml_nav_tables_screen10.svg'></td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen10.svg"></td>
    <td>mouse.screen</td>
   </tr>
  </table></td>
  </tr><tr>
-   <td colspan=2 style='color:#00000044'>
+   <td colspan=2 style="color:#00000044">
    <b>Legend:</b> <i>c</i>: a client object, <i>t</i>: a tag object,
    <i>s</i>: a screen object, <i>k</i>: an awful.key object,
    <i>b</i>: a awful.button object, <i>n</i>: a naughty.notification object
    </td>
   </tr>
  </table></p>
+
+
+
+<h1> Lifecycle</h1>
+
+<p> The following diagram shows the various signals involved in the creation
+ of screens:</p>
+
+<p>  <img src="../images/add_screen.svg" alt="Screen creation"/></p>
+
+<p> The following diagram shows what happen when the (physical) monitor areas
+ change:</p>
+
+<p>  <img src="../images/change_screen.svg" alt="Screen creation"/></p>
+
+<p> See the documentation for the various signals to know more about how to
+ change the decision taken during the screen creation.</p>
+
+
+
+<p> <img src="../images/AUTOGEN_uml_nav_tables_screen.svg" alt="Usage example"/></p>
+<h1> Core components relationship</h1>
+<p> <table><tr>
+ <td valign="top"><table class='widget_list' border=1>
+   <colgroup span="3"></colgroup>
+  <tr><th align='center' colspan=3 scope=colgroup>Acquire other objects from a screen</th></tr>
+  <tr style='font-weight: bold;'>
+   <th align='center'>Class</th>
+   <th align='center'></th>
+   <th align='center'>Property</th>
+  </tr>
+ <tr>
+   <td>tag</td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen1.svg"></td>
+   <td>s.tags</td>
+  </tr>
+ <tr>
+   <td>tag</td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen2.svg"></td>
+   <td>s.selected_tag</td>
+  </tr>
+ <tr>
+   <td>tag</td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen3.svg"></td>
+   <td>s.selected_tags</td>
+  </tr>
+ <tr>
+   <td>client</td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen4.svg"></td>
+   <td>s.clients</td>
+  </tr>
+ <tr>
+   <td>client</td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen5.svg"></td>
+   <td>s.hidden_clients</td>
+  </tr>
+ <tr>
+   <td>client</td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen6.svg"></td>
+   <td>s.tiled_clients</td>
+  </tr>
+ </table></td>
+ <td valign="top"><table class='widget_list' border=1>
+   <colgroup span="3"></colgroup>
+  <tr><th align='center' colspan=3 scope=colgroup>Acquire a screen from other objects</th></tr>
+  <tr style='font-weight: bold;'>
+   <th align='center'>Class</th>
+   <th align='center'></th>
+   <th align='center'>Property</th>
+  </tr>
+ <tr>
+   <td>tag</td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen7.svg"></td>
+   <td>t.screen</td>
+  </tr>
+ <tr>
+   <td>client</td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen8.svg"></td>
+   <td>c.screen</td>
+  </tr>
+ <tr>
+   <td>naughty.notification</td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen9.svg"></td>
+   <td>n.screen</td>
+  </tr>
+ <tr>
+   <td>mouse</td>
+   <td><img src="../images/AUTOGEN_uml_nav_tables_screen10.svg"></td>
+   <td>mouse.screen</td>
+  </tr>
+ </table></td>
+ </tr><tr>
+   <td colspan=2 style="color:#00000044">
+   <b>Legend:</b> <i>c</i>: a client object, <i>t</i>: a tag object,
+   <i>s</i>: a screen object, <i>k</i>: an awful.key object,
+   <i>b</i>: a awful.button object, <i>n</i>: a naughty.notification object
+   </td>
+  </tr>
+ </table></p>
+
+<p> </p>
+    <div class="extra-header">
+
+
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2008-2009 Julien Danjou</li>
-        <li><strong>Author</strong>: Julien Danjou &lt;julien@danjou.info&gt;</li>
+                <li><strong>Copyright</strong>: 2008-2009 Julien Danjou</li>
+                <li>
+                    <strong>Originally authored by</strong>: Julien Danjou &lt;julien@danjou.info&gt;<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Constructors">Constructors</a>
-</h2>
+<h2><a href="#Constructors">Constructors</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#fake_add"><span class='function_modname'>screen.</span>fake_add <span class='function_args'>(x, y, width, height)</span></a></td>
-      <td class="summary">Add a fake screen.</td>
+      <td class="name" >
+        <a href="#fake_add"><span class='function_modname'>screen.</span>fake_add <span class='function_args'> <b>(</b>x, y, width, height<b>)</b></span></a>
+      </td>
+      <td colspan="2" class="summary">Add a fake screen.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Static_module_functions">Static module functions</a>
-</h2>
+<h2><a href="#Static_module_functions">Static module functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#instances"><span class='function_modname'>screen.</span>instances <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the number of instances.</td>
+      <td class="name" >
+        <a href="#instances"><span class='function_modname'>screen.</span>instances <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the number of instances.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#screen"><span class='function_modname'>screen.</span>screen <span class='function_args'>()</span></a></td>
-      <td class="summary">Iterate over screens.</td>
+      <td class="name" >
+        <a href="#screen"><span class='function_modname'>screen.</span>screen <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Iterate over screens.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#count"><span class='function_modname'>screen.</span>count <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the number of screens.</td>
+      <td class="name" >
+        <a href="#count"><span class='function_modname'>screen.</span>count <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the number of screens.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#disconnect_signal"><span class='function_modname'>screen.</span>disconnect_signal <span class='function_args'>(name, func)</span></a></td>
-      <td class="summary">Disconnect from a signal.</td>
+      <td class="name" >
+        <a href="#disconnect_signal"><span class='function_modname'>screen.</span>disconnect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Disconnect from a signal.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#emit_signal"><span class='function_modname'>screen.</span>emit_signal <span class='function_args'>(name, ...)</span></a></td>
-      <td class="summary">Emit a signal.</td>
+      <td class="name" >
+        <a href="#emit_signal"><span class='function_modname'>screen.</span>emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Emit a signal.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#connect_signal"><span class='function_modname'>screen.</span>connect_signal <span class='function_args'>(name, func)</span></a></td>
-      <td class="summary">Connect to a signal.</td>
+      <td class="name" >
+        <a href="#connect_signal"><span class='function_modname'>screen.</span>connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Connect to a signal.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.screen.getbycoord">awful.screen.getbycoord <span class='function_args'>(x, y)</span></a></td>
-      <td class="summary">Return the screen index corresponding to the given (pixel) coordinates.</td>
+      <td class="name" >
+        <a href="#awful.screen.getbycoord">awful.screen.getbycoord <span class='function_args'> <b>(</b>x, y<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;nil <i>or</i> number</span></span>
+      </td>
+      <td colspan="2" class="summary">Return the screen index corresponding to the given (pixel) coordinates.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.screen.focus">awful.screen.focus <span class='function_args'>(_screen)</span></a></td>
-      <td class="summary">Move the focus to a screen.</td>
+      <td class="name" >
+        <a href="#awful.screen.focus">awful.screen.focus <span class='function_args'> <b>(</b>_screen<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Move the focus to a screen.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.screen.focus_bydirection">awful.screen.focus_bydirection <span class='function_args'>(dir, _screen)</span></a></td>
-      <td class="summary">Move the focus to a screen in a specific direction.</td>
+      <td class="name" >
+        <a href="#awful.screen.focus_bydirection">awful.screen.focus_bydirection <span class='function_args'> <b>(</b>dir, _screen<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Move the focus to a screen in a specific direction.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.screen.focus_relative">awful.screen.focus_relative <span class='function_args'>(offset)</span></a></td>
-      <td class="summary">Move the focus to a screen relative to the current one,</td>
+      <td class="name" >
+        <a href="#awful.screen.focus_relative">awful.screen.focus_relative <span class='function_args'> <b>(</b>offset<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Move the focus to a screen relative to the current one,</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.screen.preferred">awful.screen.preferred <span class='function_args'>(c)</span></a></td>
-      <td class="summary">Get the preferred screen in the context of a client.</td>
+      <td class="name" >
+        <a href="#awful.screen.preferred">awful.screen.preferred <span class='function_args'> <b>(</b>c<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;screen</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the preferred screen in the context of a client.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.screen.focused">awful.screen.focused <span class='function_args'>([args])</span></a></td>
-      <td class="summary">Get the focused screen.</td>
+      <td class="name" >
+        <a href="#awful.screen.focused">awful.screen.focused <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;nil <i>or</i> screen</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the focused screen.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_bounding_geometry"><span class='function_modname'>screen.</span>get_bounding_geometry <span class='function_args'>([args={}])</span></a></td>
-      <td class="summary">Get a placement bounding geometry.</td>
+      <td class="name" >
+        <a href="#get_bounding_geometry"><span class='function_modname'>screen.</span>get_bounding_geometry <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+      </td>
+      <td colspan="2" class="summary">Get a placement bounding geometry.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.screen.connect_for_each_screen">awful.screen.connect_for_each_screen <span class='function_args'>(func)</span></a></td>
-      <td class="summary">Call a function for each existing and created-in-the-future screen.</td>
+      <td class="name" >
+        <a href="#awful.screen.connect_for_each_screen">awful.screen.connect_for_each_screen <span class='function_args'> <b>(</b>func<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Call a function for each existing and created-in-the-future screen.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.screen.disconnect_for_each_screen">awful.screen.disconnect_for_each_screen <span class='function_args'>(func)</span></a></td>
-      <td class="summary">Undo the effect of connect_for_each_screen.</td>
+      <td class="name" >
+        <a href="#awful.screen.disconnect_for_each_screen">awful.screen.disconnect_for_each_screen <span class='function_args'> <b>(</b>func<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Undo the effect of connect<em>for</em>each_screen.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.screen.set_auto_dpi_enabled">awful.screen.set_auto_dpi_enabled <span class='function_args'>(enabled)</span></a></td>
-      <td class="summary">Enable the automatic calculation of the screen DPI (experimental).</td>
+      <td class="name" >
+        <a href="#awful.screen.set_auto_dpi_enabled">awful.screen.set_auto_dpi_enabled <span class='function_args'> <b>(</b>enabled<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Enable the automatic calculation of the screen DPI (experimental).</td>
     </tr>
 </table>
-<h2>
-    <a href="#Object_properties">Object properties</a>
-</h2>
+<h2><a href="#Object_properties">Object properties</a></h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#geometry">geometry</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">The screen coordinates.</td>
+      <td colspan="2" class="summary">The screen coordinates.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#index">index</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>integer</span></td>
-      <td class="summary">The internal screen number.</td>
+      <td colspan="2" class="summary">The internal screen number.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#workarea">workarea</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">The screen workarea.</td>
+      <td colspan="2" class="summary">The screen workarea.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#tiling_area">tiling_area</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">The area where clients can be tiled.</td>
+      <td colspan="2" class="summary">The area where clients can be tiled.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#content">content</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>gears.surface</span></td>
+      <td colspan="2" class="summary">Take a screenshot of the physical screen.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#padding">padding</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">The screen padding.</td>
+      <td colspan="2" class="summary">The screen padding.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#outputs">outputs</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">A list of outputs for this screen with their size in mm.</td>
+      <td colspan="2" class="summary">A list of outputs for this screen with their size in mm.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#clients">clients</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">The list of visible clients for the screen.</td>
+      <td colspan="2" class="summary">The list of visible clients for the screen.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#hidden_clients">hidden_clients</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">Get the list of clients assigned to the screen but not currently visible.</td>
+      <td colspan="2" class="summary">Get the list of clients assigned to the screen but not currently visible.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#all_clients">all_clients</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">All clients assigned to the screen.</td>
+      <td colspan="2" class="summary">All clients assigned to the screen.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#tiled_clients">tiled_clients</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">Tiled clients for the screen.</td>
+      <td colspan="2" class="summary">Tiled clients for the screen.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#tags">tags</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">A list of all tags on the screen.</td>
+      <td colspan="2" class="summary">A list of all tags on the screen.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#selected_tags">selected_tags</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">A list of all selected tags on the screen.</td>
+      <td colspan="2" class="summary">A list of all selected tags on the screen.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#selected_tag">selected_tag</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>tag</span></td>
-      <td class="summary">The first selected tag.</td>
+      <td colspan="2" class="summary">The first selected tag.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#persistent">persistent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>N/A</span></td>
-      <td class="summary">Is this screen supposed to survive being unplugged.</td>
+      <td colspan="2" class="summary">Is this screen supposed to survive being unplugged.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#dpi">dpi</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">The number of pixels per inch of the screen.</td>
+      <td colspan="2" class="summary">The number of pixels per inch of the screen.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#minimum_dpi">minimum_dpi</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">The lowest density DPI from all of the (physical) outputs.</td>
+      <td colspan="2" class="summary">The lowest density DPI from all of the (physical) outputs.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#maximum_dpi">maximum_dpi</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">The highest density DPI from all of the (physical) outputs.</td>
+      <td colspan="2" class="summary">The highest density DPI from all of the (physical) outputs.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#preferred_dpi">preferred_dpi</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">The preferred DPI from all of the (physical) outputs.</td>
+      <td colspan="2" class="summary">The preferred DPI from all of the (physical) outputs.</td>
     </tr>
     <tr>
-      <td class="shortname" ><a href="#mm_maximum_width">mm_maximum_width</a></td>
+      <td class="shortname" ><a href="#mm_maximum_size">mm_maximum_size</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">The maximum diagonal size in millimeters.</td>
+      <td colspan="2" class="summary">The maximum diagonal size in millimeters.</td>
     </tr>
     <tr>
-      <td class="shortname" ><a href="#mm_minimum_width">mm_minimum_width</a></td>
+      <td class="shortname" ><a href="#mm_minimum_size">mm_minimum_size</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">The minimum diagonal size in millimeters.</td>
+      <td colspan="2" class="summary">The minimum diagonal size in millimeters.</td>
     </tr>
     <tr>
-      <td class="shortname" ><a href="#inch_maximum_width">inch_maximum_width</a></td>
+      <td class="shortname" ><a href="#inch_maximum_size">inch_maximum_size</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">The maximum diagonal size in inches.</td>
+      <td colspan="2" class="summary">The maximum diagonal size in inches.</td>
     </tr>
     <tr>
-      <td class="shortname" ><a href="#inch_minimum_width">inch_minimum_width</a></td>
+      <td class="shortname" ><a href="#inch_minimum_size">inch_minimum_size</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">The minimum diagonal size in inches.</td>
+      <td colspan="2" class="summary">The minimum diagonal size in inches.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Object_methods">Object methods </a>
-</h2>
+<h2><a href="#Object_methods">Object methods </a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#fake_remove">:fake_remove <span class='function_args'>()</span></a></td>
-      <td class="summary">Remove a screen now.</td>
+      <td class="name" >
+        <a href="#fake_remove">:fake_remove <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Remove a screen.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#fake_resize">:fake_resize <span class='function_args'>(x, y, width, height)</span></a></td>
-      <td class="summary">Resize a screen.</td>
+      <td class="name" >
+        <a href="#fake_resize">:fake_resize <span class='function_args'> <b>(</b>x, y, width, height<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Resize a screen.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#swap">:swap <span class='function_args'>(s)</span></a></td>
-      <td class="summary">Swap a screen with another one in global screen list.</td>
+      <td class="name" >
+        <a href="#swap">:swap <span class='function_args'> <b>(</b>s<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Swap a screen with another one in global screen list.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_square_distance">:get_square_distance <span class='function_args'>(x, y)</span></a></td>
-      <td class="summary">Get the square distance between a <a href="../core_components/screen.html#">screen</a> and a point.</td>
+      <td class="name" >
+        <a href="#get_square_distance">:get_square_distance <span class='function_args'> <b>(</b>x, y<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;number</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the square distance between a <a href="../core_components/screen.html#">screen</a> and a point.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_next_in_direction">:get_next_in_direction <span class='function_args'>(self, dir)</span></a></td>
-      <td class="summary">Get the next screen in a specific direction.</td>
+      <td class="name" >
+        <a href="#get_next_in_direction">:get_next_in_direction <span class='function_args'> <b>(</b>self, dir<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Get the next screen in a specific direction.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_clients">:get_clients <span class='function_args'>([stacked=true])</span></a></td>
-      <td class="summary">Get the list of visible clients for the screen.</td>
+      <td class="name" >
+        <a href="#get_clients">:get_clients <span class='function_args'> <b>(</b>[stacked=true]<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the list of visible clients for the screen.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_all_clients">:get_all_clients <span class='function_args'>([stacked=true])</span></a></td>
-      <td class="summary">Get all clients assigned to the screen.</td>
+      <td class="name" >
+        <a href="#get_all_clients">:get_all_clients <span class='function_args'> <b>(</b>[stacked=true]<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+      </td>
+      <td colspan="2" class="summary">Get all clients assigned to the screen.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_tiled_clients">:get_tiled_clients <span class='function_args'>([stacked=true])</span></a></td>
-      <td class="summary">Get tiled clients for the screen.</td>
+      <td class="name" >
+        <a href="#get_tiled_clients">:get_tiled_clients <span class='function_args'> <b>(</b>[stacked=true]<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+      </td>
+      <td colspan="2" class="summary">Get tiled clients for the screen.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#split">:split <span class='function_args'>([ratios[, mode]])</span></a></td>
-      <td class="summary">Split the screen into multiple screens.</td>
+      <td class="name" >
+        <a href="#split">:split <span class='function_args'> <b>(</b>[ratios[, mode]]<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Split the screen into multiple screens.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#emit_signal">:emit_signal <span class='function_args'>(name, ...)</span></a></td>
-      <td class="summary">Emit a signal.</td>
+      <td class="name" >
+        <a href="#emit_signal">:emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Emit a signal.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.object
+      </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#connect_signal">:connect_signal <span class='function_args'>(name, func)</span></a></td>
-      <td class="summary">Connect to a signal.</td>
+      <td class="name" >
+        <a href="#connect_signal">:connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Connect to a signal.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.object
+      </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#weak_connect_signal">:weak_connect_signal <span class='function_args'>(name, func)</span></a></td>
-      <td class="summary">Connect to a signal weakly.</td>
+      <td class="name" >
+        <a href="#weak_connect_signal">:weak_connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Connect to a signal weakly.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.object
+      </td>
     </tr>
 </table>
-<h2>
-    <a href="#Signals">Signals</a>
-</h2>
+<h2><a href="#Signals">Signals</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#scanning">scanning</a></td>
-      <td class="summary">AwesomeWM is about to scan for existing screens.</td>
+      <td class="name" >
+        <a href="#scanning">scanning</a>
+      </td>
+      <td colspan="2" class="summary">AwesomeWM is about to scan for existing screens.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#scanned">scanned</a></td>
-      <td class="summary">AwesomeWM is done scanning for screens.</td>
+      <td class="name" >
+        <a href="#scanned">scanned</a>
+      </td>
+      <td colspan="2" class="summary">AwesomeWM is done scanning for screens.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#primary_changed">primary_changed</a></td>
-      <td class="summary">
+      <td class="name" >
+        <a href="#primary_changed">primary_changed</a>
+      </td>
+      <td colspan="2" class="summary">
+
 </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#added">added</a></td>
-      <td class="summary">This signal is emitted when a new screen is added to the current setup.</td>
+      <td class="name" >
+        <a href="#added">added</a>
+      </td>
+      <td colspan="2" class="summary">This signal is emitted when a new screen is added to the current setup.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#removed">removed</a></td>
-      <td class="summary">This signal is emitted when a screen is removed from the setup.</td>
+      <td class="name" >
+        <a href="#removed">removed</a>
+      </td>
+      <td colspan="2" class="summary">This signal is emitted when a screen is removed from the setup.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#list">list</a></td>
-      <td class="summary">This signal is emitted when the list of available screens changes.</td>
+      <td class="name" >
+        <a href="#list">list</a>
+      </td>
+      <td colspan="2" class="summary">This signal is emitted when the list of available screens changes.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#swapped">swapped</a></td>
-      <td class="summary">When 2 screens are swapped</td>
+      <td class="name" >
+        <a href="#swapped">swapped</a>
+      </td>
+      <td colspan="2" class="summary">When 2 screens are swapped</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#property::viewports">property::viewports</a></td>
-      <td class="summary">This signal is emitted when the list of physical screen viewport changes.</td>
+      <td class="name" >
+        <a href="#property::viewports">property::viewports</a>
+      </td>
+      <td colspan="2" class="summary">This signal is emitted when the list of physical screen viewport changes.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#request::desktop_decoration">request::desktop_decoration</a></td>
-      <td class="summary">Emitted when a new screen is added.</td>
+      <td class="name" >
+        <a href="#request::desktop_decoration">request::desktop_decoration</a>
+      </td>
+      <td colspan="2" class="summary">Emitted when a new screen is added.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#request::wallpaper">request::wallpaper</a></td>
-      <td class="summary">Emitted when a new screen needs a wallpaper.</td>
+      <td class="name" >
+        <a href="#request::wallpaper">request::wallpaper</a>
+      </td>
+      <td colspan="2" class="summary">Emitted when a new screen needs a wallpaper.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#request::create">request::create</a></td>
-      <td class="summary">When a new physical viewport has been added.</td>
+      <td class="name" >
+        <a href="#request::create">request::create</a>
+      </td>
+      <td colspan="2" class="summary">When a new (physical) screen area has been added.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#request::remove">request::remove</a></td>
-      <td class="summary">When a physical monitor viewport has been removed.</td>
+      <td class="name" >
+        <a href="#request::remove">request::remove</a>
+      </td>
+      <td colspan="2" class="summary">When a physical monitor viewport has been removed.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#request::resize">request::resize</a></td>
-      <td class="summary">When a physical viewport resolution has changed or it has been replaced.</td>
+      <td class="name" >
+        <a href="#request::resize">request::resize</a>
+      </td>
+      <td colspan="2" class="summary">When a physical viewport resolution has changed or it has been replaced.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#tag::history::update">tag::history::update</a></td>
-      <td class="summary">When the tag history changed.</td>
+      <td class="name" >
+        <a href="#tag::history::update">tag::history::update</a>
+      </td>
+      <td colspan="2" class="summary">When the tag history changed.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Request_handlers">Request handlers</a>
-</h2>
+<h2><a href="#Request_handlers">Request handlers</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#awful.screen.create_screen_handler">awful.screen.create_screen_handler</a></td>
-      <td class="summary">Default handler for <a href="../core_components/screen.html#request::create">request::create</a>.</td>
+      <td class="name" >
+        <a href="#awful.screen.create_screen_handler">awful.screen.create_screen_handler</a>
+      </td>
+      <td colspan="2" class="summary">Default handler for <a href="../core_components/screen.html#request::create">request::create</a>.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.screen.remove_screen_handler">awful.screen.remove_screen_handler</a></td>
-      <td class="summary">Default handler for <a href="../core_components/screen.html#request::remove">request::remove</a>.</td>
+      <td class="name" >
+        <a href="#awful.screen.remove_screen_handler">awful.screen.remove_screen_handler</a>
+      </td>
+      <td colspan="2" class="summary">Default handler for <a href="../core_components/screen.html#request::remove">request::remove</a>.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.screen.resize_screen_handler">awful.screen.resize_screen_handler</a></td>
-      <td class="summary">Default handler for <a href="../core_components/screen.html#request::resize">request::resize</a>.</td>
+      <td class="name" >
+        <a href="#awful.screen.resize_screen_handler">awful.screen.resize_screen_handler</a>
+      </td>
+      <td colspan="2" class="summary">Default handler for <a href="../core_components/screen.html#request::resize">request::resize</a>.</td>
     </tr>
 </table>
-<h2>
-    <a class="deprecated_h2" onclick="show_deprecated()">
-      Click to display deprecated functions
-    </a>
-</h2>
-<table class="function_list deprecated_block show_deprecated">
+<h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
+<table class="function_list">
     <tr>
-      <td class="name" ><a href="#awful.screen.getdistance_sq">awful.screen.getdistance_sq<i class="deprecated_label"> [deprecated]</i></a></td>
-      <td class="summary">Get the square distance between a <a href="../core_components/screen.html#">screen</a> and a point.</td>
+      <td class="name" >
+        <a href="#awful.screen.getdistance_sq">awful.screen.getdistance_sq<i class="deprecated_label"> [deprecated]</i></a>
+      </td>
+      <td colspan="2" class="summary">Get the square distance between a <a href="../core_components/screen.html#">screen</a> and a point.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.screen.padding">awful.screen.padding<i class="deprecated_label"> [deprecated]</i></a></td>
-      <td class="summary">Get or set the screen padding.</td>
+      <td class="name" >
+        <a href="#awful.screen.padding">awful.screen.padding<i class="deprecated_label"> [deprecated]</i></a>
+      </td>
+      <td colspan="2" class="summary">Get or set the screen padding.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Fields">Fields</a>
-</h2>
+<h2><a href="#Fields">Fields</a></h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#primary"><span class='function_modname'>screen.</span>primary</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>screen</span></td>
-      <td class="summary">The primary screen.</td>
+      <td colspan="2" class="summary">The primary screen.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#automatic_factory"><span class='function_modname'>screen.</span>automatic_factory</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>N/A</span></td>
-      <td class="summary">If <a href="../core_components/screen.html#">screen</a> objects are created automatically when new viewports are detected.</td>
+      <td colspan="2" class="summary">If <a href="../core_components/screen.html#">screen</a> objects are created automatically when new viewports are detected.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#awful.screen.default_focused_args"><span class='function_modname'>screen.</span>awful.screen.default_focused_args</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>N/A</span></td>
-      <td class="summary">The defaults arguments for <a href="../core_components/screen.html#awful.screen.focused">awful.screen.focused</a>.</td>
+      <td colspan="2" class="summary">The defaults arguments for <a href="../core_components/screen.html#awful.screen.focused">awful.screen.focused</a>.</td>
     </tr>
 </table>
 
@@ -751,7 +974,9 @@ awful.screen.connect_for_each_screen(<span class="keyword">function</span>(s)
     <dl class="function">
     <dt>
     <a name = "fake_add"></a>
-    <strong><span class='function_modname'>screen.</span>fake_add <span class='function_args'>(x, y, width, height)</span></strong>
+    <strong><span class='function_modname'>screen.</span>fake_add <span class='function_args'> <b>(</b>x, y, width, height<b>)</b></span></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Add a fake screen. </p>
@@ -766,7 +991,6 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 </code></pre>
 
 <p> Both virtual screens will have their own taglist and wibars.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -797,6 +1021,10 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item590 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Static_module_functions"></a>Static module functions</h2>
@@ -804,11 +1032,13 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <dl class="function">
     <dt>
     <a name = "instances"></a>
-    <strong><span class='function_modname'>screen.</span>instances <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>screen.</span>instances <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the number of instances.
-
 
 
     <h3>Returns:</h3>
@@ -820,14 +1050,20 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item591 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "screen"></a>
-    <strong><span class='function_modname'>screen.</span>screen <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>screen.</span>screen <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Iterate over screens.
-
 
 
 
@@ -840,14 +1076,20 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 <span class="keyword">end</span></pre>
     </ul>
 
+
+    <span id=item592 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "count"></a>
-    <strong><span class='function_modname'>screen.</span>count <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>screen.</span>count <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the number of screens.
-
 
 
     <h3>Returns:</h3>
@@ -859,19 +1101,25 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item593 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "disconnect_signal"></a>
-    <strong><span class='function_modname'>screen.</span>disconnect_signal <span class='function_args'>(name, func)</span></strong>
+    <strong><span class='function_modname'>screen.</span>disconnect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Disconnect from a signal.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -884,19 +1132,25 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item594 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "emit_signal"></a>
-    <strong><span class='function_modname'>screen.</span>emit_signal <span class='function_args'>(name, ...)</span></strong>
+    <strong><span class='function_modname'>screen.</span>emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Emit a signal.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">...</span>
@@ -910,19 +1164,25 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item595 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "connect_signal"></a>
-    <strong><span class='function_modname'>screen.</span>connect_signal <span class='function_args'>(name, func)</span></strong>
+    <strong><span class='function_modname'>screen.</span>connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Connect to a signal.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -935,17 +1195,23 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item596 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.screen.getbycoord"></a>
-    <strong>awful.screen.getbycoord <span class='function_args'>(x, y)</span></strong>
+    <strong>awful.screen.getbycoord <span class='function_args'> <b>(</b>x, y<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;nil <i>or</i> number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Return the screen index corresponding to the given (pixel) coordinates. </p>
 
 <p> The number returned can be used as an index into the global
  <a href="../core_components/screen.html#">screen</a> table/object.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -969,17 +1235,24 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item597 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.screen.focus"></a>
-    <strong>awful.screen.focus <span class='function_args'>(_screen)</span></strong>
+    <strong>awful.screen.focus <span class='function_args'> <b>(</b>_screen<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+         &middot 1 permission
+    </span>
     </dt>
     <dd>
     Move the focus to a screen. </p>
 
 <p> This moves the mouse pointer to the last known position on the new screen,
  or keeps its position relative to the current focused screen.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -993,10 +1266,34 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+     <br />
+     <center id=button598>
+     <a class="show_more_button" onclick="show_extra('598')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item598 class="hide_extra">
+     <h3>Requested actions or permissions:</h3>
+     <table class='widget_list' border=1>
+         <tr style='font-weight: bold;'>
+           <th>Class</th>
+           <th>Permission</th>
+           <th>Context</th>
+           <th>Default</th>
+           <th>Description</th>
+         </tr>
+          <tr><td>client</td><td>activate</td><td>screen.focus</td><td>granted</td><td>The most recent focused client for this screen should be re-activated.</td></tr>
+     </table>
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.screen.focus_bydirection"></a>
-    <strong>awful.screen.focus_bydirection <span class='function_args'>(dir, _screen)</span></strong>
+    <strong>awful.screen.focus_bydirection <span class='function_args'> <b>(</b>dir, _screen<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Move the focus to a screen in a specific direction. </p>
@@ -1004,11 +1301,10 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 <p> This moves the mouse pointer to the last known position on the new screen,
  or keeps its position relative to the current focused screen.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">dir</span>
-         The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
+         The direction, can be either "up", "down", "left" or "right".
         </li>
         <li><span class="parameter">_screen</span>
          Screen.
@@ -1019,15 +1315,21 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item599 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.screen.focus_relative"></a>
-    <strong>awful.screen.focus_relative <span class='function_args'>(offset)</span></strong>
+    <strong>awful.screen.focus_relative <span class='function_args'> <b>(</b>offset<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Move the focus to a screen relative to the current one,  This moves the mouse pointer to the last known position on the new screen,
  or keeps its position relative to the current focused screen.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -1042,10 +1344,17 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item600 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.screen.preferred"></a>
-    <strong>awful.screen.preferred <span class='function_args'>(c)</span></strong>
+    <strong>awful.screen.preferred <span class='function_args'> <b>(</b>c<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;screen</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the preferred screen in the context of a client. </p>
@@ -1054,7 +1363,6 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
  clients being moved when Awesome is restarted.
  This is used in the default <a href="../sample files/rc.lua.html#">rc.lua</a> to ensure clients get assigned to the
  focused screen by default.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -1074,10 +1382,17 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item601 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.screen.focused"></a>
-    <strong>awful.screen.focused <span class='function_args'>([args])</span></strong>
+    <strong>awful.screen.focused <span class='function_named_args'><b>{</b>[args]<b>}</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;nil <i>or</i> screen</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the focused screen. </p>
@@ -1085,10 +1400,10 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 <p> It is possible to set <a href="../core_components/screen.html#awful.screen.default_focused_args">awful.screen.default_focused_args</a> to override the
  default settings.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
+
 
         <ul>
         <li><span class="parameter">client</span>
@@ -1116,16 +1431,22 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item602 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_bounding_geometry"></a>
-    <strong><span class='function_modname'>screen.</span>get_bounding_geometry <span class='function_args'>([args={}])</span></strong>
+    <strong><span class='function_modname'>screen.</span>get_bounding_geometry <span class='function_named_args'><b>{</b>[args]<b>}</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get a placement bounding geometry. </p>
 
-<p> This method computes the different variants of the &ldquo;usable&rdquo; screen geometry.
-
+<p> This method computes the different variants of the "usable" screen geometry.
 
     <h3>Parameters:</h3>
     <ul>
@@ -1133,16 +1454,16 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
         <ul>
         <li><span class="parameter">honor_padding</span>
             <span class="types"><span class="type">boolean</span></span>
-         Whether to honor the screen&rsquo;s padding.
+         Whether to honor the screen's padding.
          (<em>default</em> false)
         </li>
         <li><span class="parameter">honor_workarea</span>
             <span class="types"><span class="type">boolean</span></span>
-         Whether to honor the screen&rsquo;s workarea.
+         Whether to honor the screen's workarea.
          (<em>default</em> false)
         </li>
         <li><span class="parameter">margins</span>
-            <span class="types"><span class="type">int</span> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><span class="type">int</span> or <a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          Apply some margins on the output.
    This can either be a number or a table with <em>left</em>, <em>right</em>, <em>top</em>
    and <em>bottom</em> keys.
@@ -1150,7 +1471,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
         </li>
         <li><span class="parameter">tag</span>
             <span class="types"><span class="type">tag</span></span>
-         Use this tag&rsquo;s screen.
+         Use this tag's screen.
          (<em>optional</em>)
         </li>
         <li><span class="parameter">parent</span>
@@ -1159,7 +1480,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
          (<em>optional</em>)
         </li>
         <li><span class="parameter">bounding_rect</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A bounding rectangle. This parameter is
    incompatible with <code>honor_workarea</code>.
          (<em>optional</em>)
@@ -1170,7 +1491,7 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         A table with <em>x</em>, <em>y</em>, <em>width</em> and <em>height</em>.
     </ol>
 
@@ -1187,14 +1508,20 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 }</pre>
     </ul>
 
+
+    <span id=item603 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.screen.connect_for_each_screen"></a>
-    <strong>awful.screen.connect_for_each_screen <span class='function_args'>(func)</span></strong>
+    <strong>awful.screen.connect_for_each_screen <span class='function_args'> <b>(</b>func<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Call a function for each existing and created-in-the-future screen.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -1211,14 +1538,20 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item604 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.screen.disconnect_for_each_screen"></a>
-    <strong>awful.screen.disconnect_for_each_screen <span class='function_args'>(func)</span></strong>
+    <strong>awful.screen.disconnect_for_each_screen <span class='function_args'> <b>(</b>func<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    Undo the effect of connect_for_each_screen.
-
+    Undo the effect of connect<em>for</em>each_screen.
 
     <h3>Parameters:</h3>
     <ul>
@@ -1232,10 +1565,17 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item605 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.screen.set_auto_dpi_enabled"></a>
-    <strong>awful.screen.set_auto_dpi_enabled <span class='function_args'>(enabled)</span></strong>
+    <strong>awful.screen.set_auto_dpi_enabled <span class='function_args'> <b>(</b>enabled<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Enable the automatic calculation of the screen DPI (experimental). </p>
@@ -1258,7 +1598,6 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 <p> When disabled the DPI is acquired from the <code>Xft.dpi</code> X resource (xrdb),
  defaulting to 96.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">enabled</span>
@@ -1271,6 +1610,10 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
 
 
 
+
+    <span id=item606 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Object_properties"></a>Object properties</h2>
@@ -1279,45 +1622,57 @@ screen.fake_add(geo.x + new_width, geo.y, new_width2, geo.height)
     <dt>
     <a name = "geometry"></a>
     <strong>geometry</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The screen coordinates. </p>
 
-<p> <img src="../images/AUTOGEN_screen_geometry.svg" alt="Usage example" /></p>
+
+
+<p> <img src="../images/AUTOGEN_screen_geometry.svg" alt="Usage example"/></p>
+
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::geometry</em></li>
+    <li><em>property::geometry</em></li>
 </ul>
 
-
-<p> <strong>Immutable:</strong> true
-
+<p> <strong>Immutable:</strong> true</p>
 
 
 
+<p> <img src="../images/AUTOGEN_screen_geometry.svg" alt="Usage example"/>
 
 
+
+
+
+
+
+    <span id=item607 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "index"></a>
     <strong>index</strong>
-    <span class="proptype">(<span class='summary_type'>integer</span>)</span>
+    <span class="proptype"><span class='summary_type'>integer</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The internal screen number. </p>
 
 <ul>
-<li>The indeces are a continuous sequence from 1 to <code>screen.count()</code>.</li>
-<li>It is <strong>NOT</strong> related to the actual screen position relative to each
-other.</li>
-<li>1 is <strong>NOT</strong> necessarily the primary screen.</li>
-<li>When screens are added and removed indices <strong>CAN</strong> change.</li>
+    <li>The indeces are a continuous sequence from 1 to <code>screen.count()</code>.</li>
+    <li>It is <strong>NOT</strong> related to the actual screen position relative to each
+    other.</li>
+    <li>1 is <strong>NOT</strong> necessarily the primary screen.</li>
+    <li>When screens are added and removed indices <strong>CAN</strong> change.</li>
 </ul>
-
 
 <p> If you really want to keep an array of screens you should use something
  along:</p>
@@ -1343,21 +1698,27 @@ other.</li>
 
 
 
-
     <h3>See also:</h3>
     <ul>
          <a href="../core_components/screen.html#">screen</a>
     </ul>
 
 
+
+    <span id=item608 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "workarea"></a>
     <strong>workarea</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>The screen workarea. </p>
+
+<p>The screen workarea. </p>
 
 <p> The workarea is a subsection of the screen where clients can be placed. It
  usually excludes the toolbars (see <a href="../popups_and_bars/awful.wibar.html#">awful.wibar</a>) and dockable clients
@@ -1365,7 +1726,11 @@ other.</li>
 
 <p> It can be modified be altering the <a href="../popups_and_bars/wibox.html#struts">wibox.struts</a> or <a href="../core_components/client.html#struts">client.struts</a>.</p>
 
-<p> <img src="../images/AUTOGEN_screen_workarea.svg" alt="Usage example" /></p>
+
+
+<p> <img src="../images/AUTOGEN_screen_workarea.svg" alt="Usage example"/></p>
+
+
 
 <pre><code>  -- With a padding, the tiled clients wont use 20px at the top and bottom
   -- and 40px on the left and right.
@@ -1377,8 +1742,8 @@ other.</li>
   }
 
   -- This will shift the workarea by 24px at the top.
-  awful.wibar {
-      position = 'top',
+  local wibar = awful.wibar {
+      position = "top",
       height   = 24,
   }
 </code></pre>
@@ -1386,9 +1751,30 @@ other.</li>
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::workarea</em></li>
+    <li><em>property::workarea</em></li>
 </ul>
 
+
+
+<p> <img src="../images/AUTOGEN_screen_workarea.svg" alt="Usage example"/></p>
+
+
+
+<pre><code>  -- With a padding, the tiled clients wont use 20px at the top and bottom
+  -- and 40px on the left and right.
+  screen[1].padding = {
+      left   = 40,
+      right  = 40,
+      top    = 20,
+      bottom = 20,
+  }
+
+  -- This will shift the workarea by 24px at the top.
+  local wibar = awful.wibar {
+      position = "top",
+      height   = 24,
+  }
+</code></pre>
 
 
 
@@ -1401,11 +1787,17 @@ other.</li>
     </ul>
 
 
+
+    <span id=item609 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "tiling_area"></a>
     <strong>tiling_area</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The area where clients can be tiled. </p>
@@ -1414,8 +1806,9 @@ other.</li>
  the <a href="../core_components/screen.html#padding">padding</a> property, <a href="../popups_and_bars/wibox.html#struts">wibox.struts</a> and <a href="../core_components/client.html#struts">client.struts</a> to modify this
  area.</p>
 
-<p><img src="../images/AUTOGEN_screen_tiling_area.svg" alt="Usage example" />
 
+
+<p><img src="../images/AUTOGEN_screen_tiling_area.svg" alt="Usage example"/>
 
 
 
@@ -1427,18 +1820,53 @@ other.</li>
     </ul>
 
 
+
+    <span id=item610 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "content"></a>
+    <strong>content</strong>
+    <span class="proptype"><span class='summary_type'>gears.surface</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Take a screenshot of the physical screen. </p>
+
+<p> Reading this (read only) property returns a screenshot of the physical
+ (Xinerama) screen as a cairo surface.
+
+
+
+
+
+
+
+    <span id=item611 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "padding"></a>
     <strong>padding</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+         &middot 1 theme variable
+    </span>
     </dt>
     <dd>
-    <p>The screen padding. </p>
 
-<p> This adds a &ldquo;buffer&rdquo; section on each side of the screen.</p>
+<p>The screen padding. </p>
 
-<p><img src="../images/AUTOGEN_screen_padding.svg" alt="Usage example" /></p>
+<p> This adds a "buffer" section on each side of the screen.</p>
+
+
+
+<p><img src="../images/AUTOGEN_screen_padding.svg" alt="Usage example"/></p>
+
+
 
 <pre><code> -- With a padding, the tiled clients wont use 20px at the top and bottom
  -- and 40px on the left and right.
@@ -1452,34 +1880,71 @@ other.</li>
 
 <p> Here is the property effect on a layout:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_tile_padding.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_padding.svg" alt="Usage example"/></p>
+
 
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::padding</em></li>
+    <li><em>property::padding</em></li>
 </ul>
 
 
 
+<p><img src="../images/AUTOGEN_screen_padding.svg" alt="Usage example"/></p>
+
+
+
+<pre><code> -- With a padding, the tiled clients wont use 20px at the top and bottom
+ -- and 40px on the left and right.
+ screen[1].padding = {
+     left   = 40,
+     right  = 40,
+     top    = 20,
+     bottom = 20,
+ }
+</code></pre>
 
 
 
 
 
+
+
+
+     <br />
+     <center id=button612>
+     <a class="show_more_button" onclick="show_extra('612')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item612 class="hide_extra">
+     <h3>Consumed theme variables:</h3>
+     <table class='widget_list' border=1>
+         <tr style='font-weight: bold;'>
+           <th>Theme variable</th>
+           <th>Usage</th>
+         </tr>
+          <tr><td><code>beautiful.maximized_honor_padding</code></td><td>Honor the screen padding when maximizing.</td></tr>
+     </table>
+    </span>
 
 </dd>
     <dt>
     <a name = "outputs"></a>
     <strong>outputs</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     A list of outputs for this screen with their size in mm. </p>
 
-<p> This information is only available when RANDR is used to manage the screens.</p>
-
-<p> Please note that the table content may vary.</p>
+<p> Please note that the table content may vary. In some case, it might also be
+ empty.</p>
 
 <p> An easy way to check if a screen is the laptop screen is usually:</p>
 
@@ -1491,9 +1956,8 @@ end
 <p> <strong>Signal:</strong></p>
 
 <ul>
-<li><em>property::outputs</em></li>
+    <li><em>property::outputs</em></li>
 </ul>
-
 
 <p> <strong>Immutable:</strong> true
 
@@ -1503,11 +1967,16 @@ end
 
 
 
+    <span id=item613 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "clients"></a>
     <strong>clients</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The list of visible clients for the screen. </p>
@@ -1521,7 +1990,6 @@ end
  See <a href="../core_components/screen.html#get_clients">get_clients</a> if you want them in the order used in the tasklist by
  default.
 
-
     <h3>Type constraints:</h3>
     <ul>
         <li><span class="parameter">table</span>
@@ -1539,18 +2007,23 @@ end
     </ul>
 
 
+
+    <span id=item614 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "hidden_clients"></a>
     <strong>hidden_clients</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the list of clients assigned to the screen but not currently visible. </p>
 
 <p> This includes minimized clients and clients on hidden tags.
 
-
     <h3>Type constraints:</h3>
     <ul>
         <li><span class="parameter">table</span>
@@ -1568,15 +2041,20 @@ end
     </ul>
 
 
+
+    <span id=item615 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "all_clients"></a>
     <strong>all_clients</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     All clients assigned to the screen.
-
 
     <h3>Type constraints:</h3>
     <ul>
@@ -1595,25 +2073,32 @@ end
     </ul>
 
 
+
+    <span id=item616 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "tiled_clients"></a>
     <strong>tiled_clients</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>Tiled clients for the screen. </p>
+    Tiled clients for the screen. </p>
 
 <p> Same as <a href="../core_components/screen.html#clients">clients</a>, but excluding:</p>
 
 <ul>
-<li>fullscreen clients</li>
-<li>maximized clients</li>
-<li>floating clients</li>
+    <li>fullscreen clients</li>
+    <li>maximized clients</li>
+    <li>floating clients</li>
 </ul>
 
 
 
+<p><img src="../images/AUTOGEN_screen_tiled_clients.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
@@ -1626,11 +2111,17 @@ end
 
 
 
+
+    <span id=item617 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "tags"></a>
     <strong>tags</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     A list of all tags on the screen. </p>
@@ -1644,15 +2135,19 @@ end
 
 
 
+    <span id=item618 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "selected_tags"></a>
     <strong>selected_tags</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     A list of all selected tags on the screen.
-
 
 
 
@@ -1664,15 +2159,20 @@ end
     </ul>
 
 
+
+    <span id=item619 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "selected_tag"></a>
     <strong>selected_tag</strong>
-    <span class="proptype">(<span class='summary_type'>tag</span>)</span>
+    <span class="proptype"><span class='summary_type'>tag</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The first selected tag.
-
 
 
 
@@ -1684,11 +2184,17 @@ end
     </ul>
 
 
+
+    <span id=item620 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "persistent"></a>
     <strong>persistent</strong>
-    <span class="proptype">(<span class='summary_type'>N/A</span>)</span>
+    <span class="proptype"><span class='summary_type'>N/A</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Is this screen supposed to survive being unplugged. </p>
@@ -1702,7 +2208,6 @@ end
 
 
 
-
     <h3>See also:</h3>
     <ul>
          <li><a href="../core_components/screen.html#request::remove">request::remove</a></li>
@@ -1710,18 +2215,26 @@ end
     </ul>
 
 
+
+    <span id=item621 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "dpi"></a>
     <strong>dpi</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The number of pixels per inch of the screen. </p>
 
-<p> Unless manually overriden, the dpi will be computed using the output side is
- <code>autodpi</code> is <code>true</code> or otherwise the X11 fallback (usually 96).
-
+<p> The default DPI comes from the X11 server. In most case, it will be 96. If
+ <code>autodpi</code> is set to <code>true</code> on the screen, it will use the least dense dpi
+ from the screen outputs. Most of the time, screens only have a single output,
+ however it will have two (or more) when "clone mode" is used (eg, when a
+ screen is duplicated on a projector).
 
     <h3>Type constraints:</h3>
     <ul>
@@ -1733,16 +2246,21 @@ end
 
 
 
+
+
+    <span id=item622 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "minimum_dpi"></a>
     <strong>minimum_dpi</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The lowest density DPI from all of the (physical) outputs.
-
 
     <h3>Type constraints:</h3>
     <ul>
@@ -1754,16 +2272,21 @@ end
 
 
 
+
+
+    <span id=item623 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "maximum_dpi"></a>
     <strong>maximum_dpi</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The highest density DPI from all of the (physical) outputs.
-
 
     <h3>Type constraints:</h3>
     <ul>
@@ -1776,11 +2299,17 @@ end
 
 
 
+
+    <span id=item624 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "preferred_dpi"></a>
     <strong>preferred_dpi</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The preferred DPI from all of the (physical) outputs. </p>
@@ -1788,7 +2317,6 @@ end
 <p> This is computed by normalizing all output to fill the area, then picking
  the lowest of the resulting virtual DPIs.
 
-
     <h3>Type constraints:</h3>
     <ul>
         <li><span class="parameter">number</span>
@@ -1800,11 +2328,17 @@ end
 
 
 
+
+    <span id=item625 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "mm_maximum_width"></a>
-    <strong>mm_maximum_width</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    <a name = "mm_maximum_size"></a>
+    <strong>mm_maximum_size</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The maximum diagonal size in millimeters.
@@ -1815,11 +2349,16 @@ end
 
 
 
+    <span id=item626 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "mm_minimum_width"></a>
-    <strong>mm_minimum_width</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    <a name = "mm_minimum_size"></a>
+    <strong>mm_minimum_size</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The minimum diagonal size in millimeters.
@@ -1830,11 +2369,16 @@ end
 
 
 
+    <span id=item627 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "inch_maximum_width"></a>
-    <strong>inch_maximum_width</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    <a name = "inch_maximum_size"></a>
+    <strong>inch_maximum_size</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The maximum diagonal size in inches.
@@ -1845,11 +2389,16 @@ end
 
 
 
+    <span id=item628 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "inch_minimum_width"></a>
-    <strong>inch_minimum_width</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    <a name = "inch_minimum_size"></a>
+    <strong>inch_minimum_size</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The minimum diagonal size in inches.
@@ -1860,6 +2409,9 @@ end
 
 
 
+    <span id=item629 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Object_methods"></a>Object methods </h2>
@@ -1867,12 +2419,17 @@ end
     <dl class="function">
     <dt>
     <a name = "fake_remove"></a>
-    <strong>:fake_remove <span class='function_args'>()</span></strong>
+    <strong>:fake_remove <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    Remove a screen now. </p>
+    Remove a screen. </p>
 
-<p> <img src="../images/AUTOGEN_ruled_screen_fake_remove.svg" alt="Usage example" />
+
+
+<p> <img src="../images/AUTOGEN_sequences_screen_fake_remove.svg" alt="Usage example"/>
 
 
 
@@ -1884,10 +2441,17 @@ end
         <pre class="example">screen[<span class="number">2</span>]:fake_remove()</pre>
     </ul>
 
+
+    <span id=item630 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "fake_resize"></a>
-    <strong>:fake_resize <span class='function_args'>(x, y, width, height)</span></strong>
+    <strong>:fake_resize <span class='function_args'> <b>(</b>x, y, width, height<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Resize a screen. </p>
@@ -1895,7 +2459,9 @@ end
 <p> Calling this will resize the screen even if it no longer matches the viewport
  size.</p>
 
-<p> <img src="../images/AUTOGEN_ruled_screen_fake_resize.svg" alt="Usage example" />
+
+
+<p> <img src="../images/AUTOGEN_sequences_screen_fake_resize.svg" alt="Usage example"/>
 
 
     <h3>Parameters:</h3>
@@ -1926,21 +2492,30 @@ end
         <pre class="example">screen[<span class="number">1</span>]:fake_resize(<span class="number">100</span>, <span class="number">0</span>, <span class="number">1024</span>, <span class="number">768</span>)</pre>
     </ul>
 
+
+    <span id=item631 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "swap"></a>
-    <strong>:swap <span class='function_args'>(s)</span></strong>
+    <strong>:swap <span class='function_args'> <b>(</b>s<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Swap a screen with another one in global screen list. </p>
 
-<p> <img src="../images/AUTOGEN_ruled_screen_swap.svg" alt="Usage example" />
+
+
+<p> <img src="../images/AUTOGEN_sequences_screen_swap.svg" alt="Usage example"/>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">s</span>
-            <span class="types"><a class="type" href="../core_components/client.html#awful.client.object">client.object</a></span>
+            <span class="types"><span class="type">client</span></span>
          A screen to swap with.
         </li>
     </ul>
@@ -1953,14 +2528,20 @@ end
         <pre class="example">screen[<span class="number">2</span>]:swap(screen[<span class="number">1</span>])</pre>
     </ul>
 
+
+    <span id=item632 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_square_distance"></a>
-    <strong>:get_square_distance <span class='function_args'>(x, y)</span></strong>
+    <strong>:get_square_distance <span class='function_args'> <b>(</b>x, y<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the square distance between a <a href="../core_components/screen.html#">screen</a> and a point.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -1984,10 +2565,17 @@ end
 
 
 
+
+    <span id=item633 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_next_in_direction"></a>
-    <strong>:get_next_in_direction <span class='function_args'>(self, dir)</span></strong>
+    <strong>:get_next_in_direction <span class='function_args'> <b>(</b>self, dir<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the next screen in a specific direction. </p>
@@ -1995,14 +2583,13 @@ end
 <p> This gets the next screen relative to this one in
  the specified direction.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">self</span>
          Screen.
         </li>
         <li><span class="parameter">dir</span>
-         The direction, can be either &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo; or &ldquo;right&rdquo;.
+         The direction, can be either "up", "down", "left" or "right".
         </li>
     </ul>
 
@@ -2010,17 +2597,23 @@ end
 
 
 
+
+    <span id=item634 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_clients"></a>
-    <strong>:get_clients <span class='function_args'>([stacked=true])</span></strong>
+    <strong>:get_clients <span class='function_args'> <b>(</b>[stacked=true]<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the list of visible clients for the screen. </p>
 
 <p> This is used by <a href="../core_components/screen.html#clients">screen.clients</a> internally (with <code>stacked=true</code>).
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">stacked</span>
@@ -2033,24 +2626,30 @@ end
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         The clients list.
     </ol>
 
 
 
 
+
+    <span id=item635 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_all_clients"></a>
-    <strong>:get_all_clients <span class='function_args'>([stacked=true])</span></strong>
+    <strong>:get_all_clients <span class='function_args'> <b>(</b>[stacked=true]<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get all clients assigned to the screen. </p>
 
 <p> This is used by <a href="../core_components/screen.html#all_clients">all_clients</a> internally (with <code>stacked=true</code>).
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">stacked</span>
@@ -2063,24 +2662,30 @@ end
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         The clients list.
     </ol>
 
 
 
 
+
+    <span id=item636 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_tiled_clients"></a>
-    <strong>:get_tiled_clients <span class='function_args'>([stacked=true])</span></strong>
+    <strong>:get_tiled_clients <span class='function_args'> <b>(</b>[stacked=true]<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get tiled clients for the screen. </p>
 
 <p> This is used by <code>tiles_clients</code> internally (with <code>stacked=true</code>).
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">stacked</span>
@@ -2093,32 +2698,46 @@ end
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         The clients list.
     </ol>
 
 
 
 
+
+    <span id=item637 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "split"></a>
-    <strong>:split <span class='function_args'>([ratios[, mode]])</span></strong>
+    <strong>:split <span class='function_args'> <b>(</b>[ratios[, mode]]<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>Split the screen into multiple screens. </p>
+
+<p>Split the screen into multiple screens. </p>
 
 <p> This is useful to turn ultrawide monitors into something more useful without
  fancy client layouts:</p>
 
-<p><img src="../images/AUTOGEN_awful_screen_split1.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_awful_screen_split1.svg" alt="Usage example"/></p>
+
 
 <pre><code> screen[1]:split({1/5, 3/5, 1/5})
 </code></pre>
 
-<p> It can also be used to turn a vertical &ldquo;side&rdquo; screen into 2 smaller screens:</p>
+<p> It can also be used to turn a vertical "side" screen into 2 smaller screens:</p>
 
-<p><img src="../images/AUTOGEN_awful_screen_split2.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_awful_screen_split2.svg" alt="Usage example"/></p>
+
 
 <pre><code> screen[1]:split()
 </code></pre>
@@ -2128,14 +2747,14 @@ end
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">ratios</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          The different ratios to split into. If none is
   provided, it is split in half.
          (<em>optional</em>)
         </li>
         <li><span class="parameter">mode</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Either &ldquo;vertical&rdquo; or &ldquo;horizontal&rdquo;. If none is
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Either "vertical" or "horizontal". If none is
   specified, it will split along the longest axis.
          (<em>optional</em>)
         </li>
@@ -2145,19 +2764,26 @@ end
 
 
 
+
+    <span id=item638 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "emit_signal"></a>
-    <strong>:emit_signal <span class='function_args'>(name, ...)</span></strong>
+    <strong>:emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.object
+    </span>
     </dt>
     <dd>
     Emit a signal.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">...</span>
@@ -2171,19 +2797,26 @@ end
 
 
 
+
+    <span id=item639 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "connect_signal"></a>
-    <strong>:connect_signal <span class='function_args'>(name, func)</span></strong>
+    <strong>:connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.object
+    </span>
     </dt>
     <dd>
     Connect to a signal.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -2196,10 +2829,18 @@ end
 
 
 
+
+    <span id=item640 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "weak_connect_signal"></a>
-    <strong>:weak_connect_signal <span class='function_args'>(name, func)</span></strong>
+    <strong>:weak_connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.object
+    </span>
     </dt>
     <dd>
     Connect to a signal weakly. </p>
@@ -2211,11 +2852,10 @@ end
  Only use this function if you really, really, really know what you
  are doing.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -2228,6 +2868,10 @@ end
 
 
 
+
+    <span id=item641 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Signals"></a>Signals</h2>
@@ -2236,6 +2880,8 @@ end
     <dt>
     <a name = "scanning"></a>
     <strong>scanning</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     AwesomeWM is about to scan for existing screens. </p>
@@ -2252,7 +2898,6 @@ end
 
 
 
-
     <h3>See also:</h3>
     <ul>
          <li><a href="../core_components/screen.html#property::viewports">property::viewports</a></li>
@@ -2260,10 +2905,16 @@ end
     </ul>
 
 
+
+    <span id=item642 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "scanned"></a>
     <strong>scanned</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     AwesomeWM is done scanning for screens. </p>
@@ -2279,7 +2930,6 @@ end
 
 
 
-
     <h3>See also:</h3>
     <ul>
          <li><a href="../core_components/screen.html#fake_resize">screen.fake_resize</a></li>
@@ -2287,10 +2937,16 @@ end
     </ul>
 
 
+
+    <span id=item643 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "primary_changed"></a>
     <strong>primary_changed</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
 
@@ -2302,10 +2958,16 @@ end
 
 
 
+
+    <span id=item644 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "added"></a>
     <strong>added</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     This signal is emitted when a new screen is added to the current setup.
@@ -2316,10 +2978,16 @@ end
 
 
 
+    <span id=item645 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "removed"></a>
     <strong>removed</strong>
+    <span class="baseclass" >
+         &middot 1 permission
+    </span>
     </dt>
     <dd>
     This signal is emitted when a screen is removed from the setup.
@@ -2329,11 +2997,33 @@ end
 
 
 
+     <br />
+     <center id=button646>
+     <a class="show_more_button" onclick="show_extra('646')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item646 class="hide_extra">
+     <h3>Requested actions or permissions:</h3>
+     <table class='widget_list' border=1>
+         <tr style='font-weight: bold;'>
+           <th>Class</th>
+           <th>Permission</th>
+           <th>Context</th>
+           <th>Default</th>
+           <th>Description</th>
+         </tr>
+          <tr><td>tag</td><td>screen</td><td>removed</td><td>granted</td><td>When a screen is removed, <code>request::screen</code> is called on all screen tags to try to relocate them.</td></tr>
+     </table>
+    </span>
 
 </dd>
     <dt>
     <a name = "list"></a>
     <strong>list</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     This signal is emitted when the list of available screens changes.
@@ -2344,14 +3034,18 @@ end
 
 
 
+    <span id=item647 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "swapped"></a>
     <strong>swapped</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     When 2 screens are swapped
-
 
     <h3>Arguments:</h3>
     <ul>
@@ -2369,13 +3063,20 @@ end
 
 
 
+
+    <span id=item648 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "property::viewports"></a>
     <strong>property::viewports</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>This signal is emitted when the list of physical screen viewport changes. </p>
+
+<p>This signal is emitted when the list of physical screen viewport changes. </p>
 
 <p> Each viewport in the list corresponds to a <strong>physical</strong> screen rectangle, which
  is <strong>not</strong> the <a href="../core_components/screen.html#property::viewports">viewports</a> property of the <a href="../core_components/screen.html#">screen</a> objects.</p>
@@ -2383,20 +3084,19 @@ end
 <p> Each entry in the <a href="../core_components/screen.html#property::viewports">viewports</a> entry has the following keys:</p>
 
 <ul>
-<li><a href="../core_components/screen.html#geometry">geometry</a> <em>(table)</em>: A table with an <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.</li>
-<li><a href="../core_components/screen.html#outputs">outputs</a> <em>(table)</em>: All outputs sharing this viewport.</li>
-<li><a href="../core_components/screen.html#maximum_dpi">maximum_dpi</a> <em>(number)</em>: The DPI of the most dense output.</li>
-<li><a href="../core_components/screen.html#minimum_dpi">minimum_dpi</a> <em>(number)</em>: The DPI of the least dense output.</li>
-<li><a href="../core_components/screen.html#preferred_dpi">preferred_dpi</a> <em>(number)</em>: The optimal DPI.</li>
+    <li><a href="../core_components/screen.html#geometry">geometry</a> <em>(table)</em>: A table with an <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.</li>
+    <li><a href="../core_components/screen.html#outputs">outputs</a> <em>(table)</em>: All outputs sharing this viewport.</li>
+    <li><a href="../core_components/screen.html#maximum_dpi">maximum_dpi</a> <em>(number)</em>: The DPI of the most dense output.</li>
+    <li><a href="../core_components/screen.html#minimum_dpi">minimum_dpi</a> <em>(number)</em>: The DPI of the least dense output.</li>
+    <li><a href="../core_components/screen.html#preferred_dpi">preferred_dpi</a> <em>(number)</em>: The optimal DPI.</li>
 </ul>
-
 
 
 
     <h3>Arguments:</h3>
     <ul>
         <li><span class="parameter">viewports</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table containing all physical viewports.
         </li>
     </ul>
@@ -2409,10 +3109,17 @@ end
     </ul>
 
 
+
+    <span id=item649 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "request::desktop_decoration"></a>
     <strong>request::desktop_decoration</strong>
+    <span class="baseclass" >
+         &middot 1 permission
+    </span>
     </dt>
     <dd>
     Emitted when a new screen is added. </p>
@@ -2423,12 +3130,11 @@ end
 
 <p> The only default implementation is the one provided by <a href="../sample files/rc.lua.html#">rc.lua</a>.
 
-
     <h3>Arguments:</h3>
     <ul>
-        <li><span class="parameter">s</span>
-            <span class="types"><a class="type" href="../core_components/screen.html#screen">screen</a></span>
-         The screen object.
+        <li><span class="parameter">context</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The context.
         </li>
     </ul>
 
@@ -2436,10 +3142,34 @@ end
 
 
 
+     <br />
+     <center id=button650>
+     <a class="show_more_button" onclick="show_extra('650')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item650 class="hide_extra">
+     <h3>Requested actions or permissions:</h3>
+     <table class='widget_list' border=1>
+         <tr style='font-weight: bold;'>
+           <th>Class</th>
+           <th>Permission</th>
+           <th>Context</th>
+           <th>Default</th>
+           <th>Description</th>
+         </tr>
+          <tr><td>screen</td><td>wallpaper</td><td>added</td><td>granted</td><td>When the decorations needs to be added to a new screen.</td></tr>
+     </table>
+    </span>
+
 </dd>
     <dt>
     <a name = "request::wallpaper"></a>
     <strong>request::wallpaper</strong>
+    <span class="baseclass" >
+         &middot 3 permissions
+    </span>
     </dt>
     <dd>
     Emitted when a new screen needs a wallpaper. </p>
@@ -2450,12 +3180,11 @@ end
 
 <p> The only default implementation is the one provided by <a href="../sample files/rc.lua.html#">rc.lua</a>.
 
-
     <h3>Arguments:</h3>
     <ul>
-        <li><span class="parameter">s</span>
-            <span class="types"><a class="type" href="../core_components/screen.html#screen">screen</a></span>
-         The screen object.
+        <li><span class="parameter">context</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The context.
         </li>
     </ul>
 
@@ -2463,17 +3192,46 @@ end
 
 
 
+     <br />
+     <center id=button651>
+     <a class="show_more_button" onclick="show_extra('651')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item651 class="hide_extra">
+     <h3>Requested actions or permissions:</h3>
+     <table class='widget_list' border=1>
+         <tr style='font-weight: bold;'>
+           <th>Class</th>
+           <th>Permission</th>
+           <th>Context</th>
+           <th>Default</th>
+           <th>Description</th>
+         </tr>
+          <tr><td>screen</td><td>wallpaper</td><td>added</td><td>granted</td><td>When the wallpaper needs to be added to a new screen.</td></tr>
+          <tr><td>screen</td><td>wallpaper</td><td>geometry</td><td>granted</td><td>When the wallpaper needs to be updated because the resolution changed.</td></tr>
+          <tr><td>screen</td><td>wallpaper</td><td>dpi</td><td>granted</td><td>When the wallpaper needs to be updated because the DPI changed.</td></tr>
+     </table>
+    </span>
+
 </dd>
     <dt>
     <a name = "request::create"></a>
     <strong>request::create</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>When a new physical viewport has been added. </p>
 
-<p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
+<p>When a new (physical) screen area has been added. </p>
 
-<p> The default handler will create a screen that fills the viewport.</p>
+<p> Important: This only exists when Awesome is started with <code>--screen off</code>.
+ Please also note that this doesn't mean it will appear when a screen is
+ physically plugged. Depending on the configuration a tool like <code>arandr</code> or
+ the <code>xrandr</code> command is needed.</p>
+
+<p> The default handler will create a screen that fills the area.</p>
 
 <p> To disconnect the default handler, use:</p>
 
@@ -2488,14 +3246,15 @@ end
     <ul>
         <li><span class="parameter">viewport</span>
 
+
         <ul>
         <li><span class="parameter">geometry</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table with <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code>
   keys.
         </li>
         <li><span class="parameter">outputs</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table with the monitor name and possibly the
   <code>mm_width</code> and <code>mm_height</code> values if they are available.
         </li>
@@ -2522,9 +3281,10 @@ end
         </li></ul>
         <li><span class="parameter">args</span>
 
+
         <ul>
         <li><span class="parameter">context</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          Why was this signal sent.
         </li>
         </li></ul>
@@ -2539,15 +3299,22 @@ end
     </ul>
 
 
+
+    <span id=item652 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "request::remove"></a>
     <strong>request::remove</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>When a physical monitor viewport has been removed. </p>
 
-<p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
+<p>When a physical monitor viewport has been removed. </p>
+
+<p> Important: This only exists when Awesome is started with <code>--screen off</code>.</p>
 
 <p> If you replace the default handler, it is up to you to find the screen(s)
  associated with this viewport.</p>
@@ -2565,14 +3332,15 @@ end
     <ul>
         <li><span class="parameter">viewport</span>
 
+
         <ul>
         <li><span class="parameter">geometry</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table with <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code>
   keys.
         </li>
         <li><span class="parameter">outputs</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table with the monitor name and possibly the
   <code>mm_width</code> and <code>mm_height</code> values if they are available.
         </li>
@@ -2598,9 +3366,10 @@ end
         </li></ul>
         <li><span class="parameter">args</span>
 
+
         <ul>
         <li><span class="parameter">context</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          Why was this signal sent.
         </li>
         </li></ul>
@@ -2614,18 +3383,25 @@ end
     </ul>
 
 
+
+    <span id=item653 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "request::resize"></a>
     <strong>request::resize</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>When a physical viewport resolution has changed or it has been replaced. </p>
 
-<p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
+<p>When a physical viewport resolution has changed or it has been replaced. </p>
 
-<p> Note that given the viewports are not the same, the <code>id</code> wont be the same.
- Also note that if multiple new viewports fit within a single &ldquo;old&rdquo; viewport,
+<p> Important: This only exists when Awesome is started with <code>--screen off</code>.</p>
+
+<p> Note that given the viewports are not the same, the <code>id</code> won't be the same.
+ Also note that if multiple new viewports fit within a single "old" viewport,
  the resized screen will be the one with the largest total overlapping
  viewport (<code>intersection.width*intersection.height</code>), regardless of the
  outputs names.</p>
@@ -2643,14 +3419,15 @@ end
     <ul>
         <li><span class="parameter">old_viewport</span>
 
+
         <ul>
         <li><span class="parameter">geometry</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table with <code>x</code>, <code>y</code>, <code>width</code> and
   <code>height</code> keys.
         </li>
         <li><span class="parameter">outputs</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table with the monitor name and
   possibly the <code>mm_width</code> and <code>mm_height</code> values if they are available.
         </li>
@@ -2677,14 +3454,15 @@ end
         </li></ul>
         <li><span class="parameter">new_viewport</span>
 
+
         <ul>
         <li><span class="parameter">geometry</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table with <code>x</code>, <code>y</code>, <code>width</code> and
   <code>height</code> keys.
         </li>
         <li><span class="parameter">outputs</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table with the monitor name and
   possibly the
   <code>mm_width</code> and <code>mm_height</code> values if they are available.
@@ -2711,9 +3489,10 @@ end
         </li></ul>
         <li><span class="parameter">args</span>
 
+
         <ul>
         <li><span class="parameter">context</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          Why was this signal sent.
         </li>
         </li></ul>
@@ -2727,10 +3506,16 @@ end
     </ul>
 
 
+
+    <span id=item654 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "tag::history::update"></a>
     <strong>tag::history::update</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     When the tag history changed.
@@ -2741,6 +3526,9 @@ end
 
 
 
+    <span id=item655 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Request_handlers"></a>Request handlers</h2>
@@ -2749,11 +3537,13 @@ end
     <dt>
     <a name = "awful.screen.create_screen_handler"></a>
     <strong>awful.screen.create_screen_handler</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Default handler for <a href="../core_components/screen.html#request::create">request::create</a>. </p>
 
-<p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
+<p> Important: This only exists when Awesome is started with <code>--screen off</code>.</p>
 
 <p> A simplified implementation looks like:</p>
 
@@ -2771,22 +3561,28 @@ end
 
 
 
-
     <h3>See also:</h3>
     <ul>
          <a href="../core_components/screen.html#request::create">request::create</a>
     </ul>
 
 
+
+    <span id=item656 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.screen.remove_screen_handler"></a>
     <strong>awful.screen.remove_screen_handler</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>Default handler for <a href="../core_components/screen.html#request::remove">request::remove</a>. </p>
 
-<p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
+<p>Default handler for <a href="../core_components/screen.html#request::remove">request::remove</a>. </p>
+
+<p> Important: This only exists when Awesome is started with <code>--screen off</code>.</p>
 
 <p> A simplified version of the logic is:</p>
 
@@ -2812,15 +3608,22 @@ end
     </ul>
 
 
+
+    <span id=item657 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.screen.resize_screen_handler"></a>
     <strong>awful.screen.resize_screen_handler</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>Default handler for <a href="../core_components/screen.html#request::resize">request::resize</a>. </p>
 
-<p> Important: This only exists when Awesome is started with <code>&mdash;screen off</code>.</p>
+<p>Default handler for <a href="../core_components/screen.html#request::resize">request::resize</a>. </p>
+
+<p> Important: This only exists when Awesome is started with <code>--screen off</code>.</p>
 
 <p> A simplified version of the logic is:</p>
 
@@ -2848,18 +3651,23 @@ end
     </ul>
 
 
+
+    <span id=item658 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
-    <h2 class="section-header  deprecated_block show_deprecated"><a name="Deprecated_functions"></a>Deprecated functions</h2>
+    <h2 class="section-header "><a name="Deprecated_functions"></a>Deprecated functions</h2>
 
     <dl class="function">
-    <dt class="deprecated_block show_deprecated">
+    <dt>
     <a name = "awful.screen.getdistance_sq"></a>
     <strong>awful.screen.getdistance_sq<i class="deprecated_label"> [deprecated]</i></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
-    <dd class="deprecated_block show_deprecated">
+    <dd>
     Get the square distance between a <a href="../core_components/screen.html#">screen</a> and a point.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -2887,14 +3695,19 @@ end
     </ul>
 
 
+
+    <span id=item659 class="hide_extra">
+    </span>
+
 </dd>
-    <dt class="deprecated_block show_deprecated">
+    <dt>
     <a name = "awful.screen.padding"></a>
     <strong>awful.screen.padding<i class="deprecated_label"> [deprecated]</i></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
-    <dd class="deprecated_block show_deprecated">
+    <dd>
     Get or set the screen padding.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -2902,8 +3715,8 @@ end
          The screen object to change the padding on
         </li>
         <li><span class="parameter">padding</span>
-         The padding, a table with &lsquo;top&rsquo;, &lsquo;left&rsquo;, &lsquo;right&rsquo; and/or
- &lsquo;bottom&rsquo; or a number value to apply set the same padding on all sides. Can be
+         The padding, a table with 'top', 'left', 'right' and/or
+ 'bottom' or a number value to apply set the same padding on all sides. Can be
   nil if you only want to retrieve padding
          (<em>default</em> nil)
         </li>
@@ -2912,7 +3725,7 @@ end
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         A table with left, right, top and bottom number values.
     </ol>
 
@@ -2923,6 +3736,10 @@ end
     </ul>
 
 
+
+    <span id=item660 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Fields"></a>Fields</h2>
@@ -2931,7 +3748,9 @@ end
     <dt>
     <a name = "primary"></a>
     <strong><span class='function_modname'>screen.</span>primary</strong>
-    <span class="proptype">(<span class='summary_type'>screen</span>)</span>
+    <span class="proptype"><span class='summary_type'>screen</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The primary screen.
@@ -2942,11 +3761,16 @@ end
 
 
 
+    <span id=item661 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "automatic_factory"></a>
     <strong><span class='function_modname'>screen.</span>automatic_factory</strong>
-    <span class="proptype">(<span class='summary_type'>N/A</span>)</span>
+    <span class="proptype"><span class='summary_type'>N/A</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     If <a href="../core_components/screen.html#">screen</a> objects are created automatically when new viewports are detected. </p>
@@ -2958,18 +3782,23 @@ end
 
 
 
-
     <h3>See also:</h3>
     <ul>
          <a href="../core_components/screen.html#property::viewports">property::viewports</a>
     </ul>
 
 
+
+    <span id=item662 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.screen.default_focused_args"></a>
     <strong><span class='function_modname'>screen.</span>awful.screen.default_focused_args</strong>
-    <span class="proptype">(<span class='summary_type'>N/A</span>)</span>
+    <span class="proptype"><span class='summary_type'>N/A</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The defaults arguments for <a href="../core_components/screen.html#awful.screen.focused">awful.screen.focused</a>.
@@ -2980,6 +3809,9 @@ end
 
 
 
+    <span id=item663 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
 
@@ -2988,7 +3820,7 @@ end
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

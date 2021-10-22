@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Ruleslib ruled.clipboard - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -59,6 +58,27 @@
   <li><a href="../declarative_rules/ruled.screen.html">ruled.screen</a></li>
   <li><a href="../declarative_rules/ruled.tag.html">ruled.tag</a></li>
 </ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
+</ul>
 <h2>Widgets</h2>
 <ul class="nowrap">
   <li><a href="../widgets/awful.widget.button.html">awful.widget.button</a></li>
@@ -68,7 +88,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -102,6 +121,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -113,23 +133,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -137,6 +140,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -176,10 +180,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -189,6 +192,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -202,9 +206,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -226,11 +227,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -244,78 +248,117 @@
 <h1>Module: <code>ruled.clipboard</code></h1>
 <p>Rules for the clipboard selection.</p>
 <p>
+
 </p>
+    <div class="extra-header">
+
+
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2019 Emmanuel Lepage Vallee</li>
-        <li><strong>Author</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;</li>
+                <li><strong>Copyright</strong>: 2019 Emmanuel Lepage Vallee</li>
+                <li>
+                    <strong>Originally authored by</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Functions">Functions</a>
-</h2>
+<h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#module.remove_rule_source"><span class='function_modname'>ruled.clipboard.</span>remove_rule_source (name)</a></td>
-      <td class="summary">Remove a source.</td>
+      <td class="name" >
+        <a href="#module.remove_rule_source"><span class='function_modname'>ruled.clipboard.</span>remove_rule_source (name)</a>
+      </td>
+      <td colspan="2" class="summary">Remove a source.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.apply"><span class='function_modname'>ruled.clipboard.</span>apply (c)</a></td>
-      <td class="summary">Apply the tag rules to a client.</td>
+      <td class="name" >
+        <a href="#module.apply"><span class='function_modname'>ruled.clipboard.</span>apply (c)</a>
+      </td>
+      <td colspan="2" class="summary">Apply the tag rules to a client.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.append_rule"><span class='function_modname'>ruled.clipboard.</span>append_rule (table)</a></td>
-      <td class="summary">Add a new rule to the default set.</td>
+      <td class="name" >
+        <a href="#module.append_rule"><span class='function_modname'>ruled.clipboard.</span>append_rule (table)</a>
+      </td>
+      <td colspan="2" class="summary">Add a new rule to the default set.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.append_rules"><span class='function_modname'>ruled.clipboard.</span>append_rules (table)</a></td>
-      <td class="summary">Add a new rules to the default set.</td>
+      <td class="name" >
+        <a href="#module.append_rules"><span class='function_modname'>ruled.clipboard.</span>append_rules (table)</a>
+      </td>
+      <td colspan="2" class="summary">Add a new rules to the default set.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.remove_rule"><span class='function_modname'>ruled.clipboard.</span>remove_rule (table)</a></td>
-      <td class="summary">Remove a new rule to the default set.</td>
+      <td class="name" >
+        <a href="#module.remove_rule"><span class='function_modname'>ruled.clipboard.</span>remove_rule (table)</a>
+      </td>
+      <td colspan="2" class="summary">Remove a new rule to the default set.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.get_or_create_by_name"><span class='function_modname'>ruled.clipboard.</span>get_or_create_by_name (name, screen, args)</a></td>
-      <td class="summary">Return an existing dynamic tag or create one.</td>
+      <td class="name" >
+        <a href="#module.get_or_create_by_name"><span class='function_modname'>ruled.clipboard.</span>get_or_create_by_name (name, screen, args)</a>
+      </td>
+      <td colspan="2" class="summary">Return an existing dynamic tag or create one.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.tag.rules.add_rule_source">awful.tag.rules.add_rule_source (name, callback, depends_on, precede)</a></td>
-      <td class="summary">Add a new rule source.</td>
+      <td class="name" >
+        <a href="#awful.tag.rules.add_rule_source">awful.tag.rules.add_rule_source (name, callback, depends_on, precede)</a>
+      </td>
+      <td colspan="2" class="summary">Add a new rule source.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Rule_matching_properties">Rule matching properties</a>
-</h2>
+<h2><a href="#Rule_matching_properties">Rule matching properties</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#area_count">area_count</a></td>
-      <td class="summary">The current number of (physical) monitor areas.</td>
+      <td class="name" >
+        <a href="#area_count">area_count</a>
+      </td>
+      <td colspan="2" class="summary">The current number of (physical) monitor areas.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#area_name">area_name</a></td>
-      <td class="summary">The name of the area.</td>
+      <td class="name" >
+        <a href="#area_name">area_name</a>
+      </td>
+      <td colspan="2" class="summary">The name of the area.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#area_mm_width">area_mm_width</a></td>
-      <td class="summary">The physical width of the area.</td>
+      <td class="name" >
+        <a href="#area_mm_width">area_mm_width</a>
+      </td>
+      <td colspan="2" class="summary">The physical width of the area.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#area_mm_heihgt">area_mm_heihgt</a></td>
-      <td class="summary">The physical height of the area.</td>
+      <td class="name" >
+        <a href="#area_mm_heihgt">area_mm_heihgt</a>
+      </td>
+      <td colspan="2" class="summary">The physical height of the area.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#minimum_dpi">minimum_dpi</a></td>
-      <td class="summary">The least dense DPI of the area.</td>
+      <td class="name" >
+        <a href="#minimum_dpi">minimum_dpi</a>
+      </td>
+      <td colspan="2" class="summary">The least dense DPI of the area.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#maximum_dpi">maximum_dpi</a></td>
-      <td class="summary">The least dense DPI of the area.</td>
+      <td class="name" >
+        <a href="#maximum_dpi">maximum_dpi</a>
+      </td>
+      <td colspan="2" class="summary">The least dense DPI of the area.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#preferred_dpi">preferred_dpi</a></td>
-      <td class="summary">The least dense DPI of the area.</td>
+      <td class="name" >
+        <a href="#preferred_dpi">preferred_dpi</a>
+      </td>
+      <td colspan="2" class="summary">The least dense DPI of the area.</td>
     </tr>
 </table>
 
@@ -329,15 +372,16 @@
     <dt>
     <a name = "module.remove_rule_source"></a>
     <strong><span class='function_modname'>ruled.clipboard.</span>remove_rule_source (name)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Remove a source.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The source name.
         </li>
     </ul>
@@ -352,18 +396,23 @@
 
 
 
+
+    <span id=item868 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "module.apply"></a>
     <strong><span class='function_modname'>ruled.clipboard.</span>apply (c)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Apply the tag rules to a client. </p>
 
 <p> This is useful when it is necessary to apply rules after a tag has been
- created. Many workflows can make use of &ldquo;blank&rdquo; tags which wont match any
+ created. Many workflows can make use of "blank" tags which wont match any
  rules until later.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -377,14 +426,19 @@
 
 
 
+
+    <span id=item869 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "module.append_rule"></a>
     <strong><span class='function_modname'>ruled.clipboard.</span>append_rule (table)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Add a new rule to the default set.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -397,14 +451,19 @@
 
 
 
+
+    <span id=item870 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "module.append_rules"></a>
     <strong><span class='function_modname'>ruled.clipboard.</span>append_rules (table)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Add a new rules to the default set.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -417,14 +476,19 @@
 
 
 
+
+    <span id=item871 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "module.remove_rule"></a>
     <strong><span class='function_modname'>ruled.clipboard.</span>remove_rule (table)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Remove a new rule to the default set.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -437,26 +501,34 @@
 
 
 
+
+    <span id=item872 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "module.get_or_create_by_name"></a>
     <strong><span class='function_modname'>ruled.clipboard.</span>get_or_create_by_name (name, screen, args)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Return an existing dynamic tag or create one.
-
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
 
 
+
         </li>
         <li><span class="parameter">screen</span>
 
 
+
         </li>
         <li><span class="parameter">args</span>
+
 
 
         </li>
@@ -466,16 +538,22 @@
     <ol>
 
            <span class="types"><span class="type">tag</span> or <span class="type">nil</span></span>
-        A tag or nil if the name doesn&rsquo;t exist.
+        A tag or nil if the name doesn't exist.
     </ol>
 
 
 
 
+
+    <span id=item873 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.tag.rules.add_rule_source"></a>
     <strong>awful.tag.rules.add_rule_source (name, callback, depends_on, precede)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Add a new rule source. </p>
@@ -484,11 +562,10 @@
  allows to configure, select or create a tag (or many) to be attached to the
  client.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The provider name. It must be unique.
         </li>
         <li><span class="parameter">callback</span> The callback that is called to produce properties.
@@ -498,24 +575,24 @@
          The client
         </li>
         <li><span class="parameter">properties</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          The current properties. The callback should
   add to and overwrite properties in this table
         </li>
         <li><span class="parameter">callbacks</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table of all callbacks scheduled to be
   executed after the main properties are applied.
         </li>
         </li></ul>
         <li><span class="parameter">depends_on</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A list of names of sources this source depends on
   (sources that must be executed <em>before</em> <code>name</code>.
          (<em>default</em> {})
         </li>
         <li><span class="parameter">precede</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A list of names of sources this source have a
   priority over.
          (<em>default</em> {})
@@ -532,6 +609,10 @@
 
 
 
+
+    <span id=item874 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Rule_matching_properties"></a>Rule matching properties</h2>
@@ -540,14 +621,16 @@
     <dt>
     <a name = "area_count"></a>
     <strong>area_count</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The current number of (physical) monitor areas.
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -557,10 +640,16 @@
 
 
 
+
+    <span id=item875 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "area_name"></a>
     <strong>area_name</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The name of the area. </p>
@@ -568,10 +657,10 @@
 <p> Note that this only works in the <code>except_any</code> or <code>rule_any</code> section because
  an area can have multiple outputs.
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
+
 
 
         </li>
@@ -581,10 +670,16 @@
 
 
 
+
+    <span id=item876 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "area_mm_width"></a>
     <strong>area_mm_width</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The physical width of the area. </p>
@@ -592,10 +687,10 @@
 <p> Note that this only works in the <code>except_any</code> or <code>rule_any</code> section because
  an area can have multiple outputs.
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">numner</span>
+
 
 
         </li>
@@ -605,10 +700,16 @@
 
 
 
+
+    <span id=item877 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "area_mm_heihgt"></a>
     <strong>area_mm_heihgt</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The physical height of the area. </p>
@@ -616,31 +717,37 @@
 <p> Note that this only works in the <code>except_any</code> or <code>rule_any</code> section because
  an area can have multiple outputs.
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
 
 
+
         </li>
     </ul>
 
 
 
 
+
+
+    <span id=item878 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "minimum_dpi"></a>
     <strong>minimum_dpi</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The least dense DPI of the area.
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -649,19 +756,25 @@
 
 
 
+
+
+    <span id=item879 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "maximum_dpi"></a>
     <strong>maximum_dpi</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The least dense DPI of the area.
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -670,19 +783,25 @@
 
 
 
+
+
+    <span id=item880 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "preferred_dpi"></a>
     <strong>preferred_dpi</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The least dense DPI of the area.
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -691,6 +810,10 @@
 
 
 
+
+
+    <span id=item881 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -700,7 +823,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

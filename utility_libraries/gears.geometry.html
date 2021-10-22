@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Utillib gears.geometry - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -34,6 +31,8 @@
 <div id="main">
 
 
+
+
 <!-- Menu -->
 
 <div id="navigation">
@@ -46,7 +45,6 @@
 
 <h2>Contents</h2>
 <ul>
-<li><a href="#Functions">Functions</a></li>
 <li><a href="#Static_module_functions">Static module functions</a></li>
 </ul>
 
@@ -63,6 +61,27 @@
   <li><a href="../utility_libraries/gears.string.html">gears.string</a></li>
   <li><a href="../utility_libraries/gears.table.html">gears.table</a></li>
   <li><a href="../utility_libraries/gears.wallpaper.html">gears.wallpaper</a></li>
+</ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
 </ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
@@ -81,7 +100,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -115,6 +133,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -126,23 +145,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -150,6 +152,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -176,10 +179,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -189,6 +191,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -202,9 +205,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -226,11 +226,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -245,53 +248,91 @@
 <p>Helper functions used to compute geometries.</p>
 <p> When this module refer to a geometry table, this assume a table with at least
  an <em>x</em>, <em>y</em>, <em>width</em> and <em>height</em> keys and numeric values.</p>
+    <div class="extra-header">
+
+
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2008 Julien Danjou</li>
-        <li><strong>Author</strong>: Julien Danjou &lt;julien@danjou.info&gt;</li>
+                <li><strong>Copyright</strong>: 2008 Julien Danjou</li>
+                <li>
+                    <strong>Originally authored by</strong>: Julien Danjou &lt;julien@danjou.info&gt;<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Functions">Functions</a>
-</h2>
+<h2><a href="#Static_module_functions">Static module functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#gears.geometry.rectangle.are_equal"><span class='function_modname'>gears.geometry.</span>rectangle.are_equal (a, b)</a></td>
-      <td class="summary">Return true if the area are exactly identical.</td>
-    </tr>
-</table>
-<h2>
-    <a href="#Static_module_functions">Static module functions</a>
-</h2>
-<table class="function_list">
-    <tr>
-      <td class="name" ><a href="#gears.geometry.rectangle.get_square_distance"><span class='function_modname'>gears.geometry.</span>rectangle.get_square_distance <span class='function_args'>(geom, x, y)</span></a></td>
-      <td class="summary">Get the square distance between a rectangle and a point.</td>
+      <td class="name" >
+        <a href="#gears.geometry.rectangle.get_square_distance"><span class='function_modname'>gears.geometry.</span>rectangle.get_square_distance <span class='function_args'> <b>(</b>geom, x, y<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;number</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the square distance between a rectangle and a point.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.geometry.rectangle.get_closest_by_coord"><span class='function_modname'>gears.geometry.</span>rectangle.get_closest_by_coord <span class='function_args'>(list, x, y)</span></a></td>
-      <td class="summary">Return the closest rectangle from <code>list</code> for a given point.</td>
+      <td class="name" >
+        <a href="#gears.geometry.rectangle.get_closest_by_coord"><span class='function_modname'>gears.geometry.</span>rectangle.get_closest_by_coord <span class='function_args'> <b>(</b>list, x, y<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Return the closest rectangle from <code>list</code> for a given point.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.geometry.rectangle.get_by_coord"><span class='function_modname'>gears.geometry.</span>rectangle.get_by_coord <span class='function_args'>(list, x, y)</span></a></td>
-      <td class="summary">Return the rectangle containing the [x, y] point.</td>
+      <td class="name" >
+        <a href="#gears.geometry.rectangle.get_by_coord"><span class='function_modname'>gears.geometry.</span>rectangle.get_by_coord <span class='function_args'> <b>(</b>list, x, y<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Return the rectangle containing the [x, y] point.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.geometry.rectangle.get_in_direction"><span class='function_modname'>gears.geometry.</span>rectangle.get_in_direction <span class='function_args'>(dir, recttbl, cur)</span></a></td>
-      <td class="summary">Get the nearest rectangle in the given direction.</td>
+      <td class="name" >
+        <a href="#gears.geometry.rectangle.get_in_direction"><span class='function_modname'>gears.geometry.</span>rectangle.get_in_direction <span class='function_args'> <b>(</b>dir, recttbl, cur<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the nearest rectangle in the given direction.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.geometry.rectangle.area_intersect_area"><span class='function_modname'>gears.geometry.</span>rectangle.area_intersect_area <span class='function_args'>(a, b)</span></a></td>
-      <td class="summary">Check if an area intersect another area.</td>
+      <td class="name" >
+        <a href="#gears.geometry.rectangle.are_equal"><span class='function_modname'>gears.geometry.</span>rectangle.are_equal <span class='function_args'> <b>(</b>a, b<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+      </td>
+      <td colspan="2" class="summary">Return true if the area are exactly identical.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.geometry.rectangle.get_intersection"><span class='function_modname'>gears.geometry.</span>rectangle.get_intersection <span class='function_args'>(a, b)</span></a></td>
-      <td class="summary">Get the intersect area between a and b.</td>
+      <td class="name" >
+        <a href="#gears.geometry.rectangle.is_inside"><span class='function_modname'>gears.geometry.</span>rectangle.is_inside <span class='function_args'> <b>(</b>a, b<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+      </td>
+      <td colspan="2" class="summary">Return if rectangle <code>a</code> is within rectangle <code>b</code>.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.geometry.rectangle.area_remove"><span class='function_modname'>gears.geometry.</span>rectangle.area_remove <span class='function_args'>(areas, elem)</span></a></td>
-      <td class="summary">Remove an area from a list, splitting the space between several area that
+      <td class="name" >
+        <a href="#gears.geometry.rectangle.area_intersect_area"><span class='function_modname'>gears.geometry.</span>rectangle.area_intersect_area <span class='function_args'> <b>(</b>a, b<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Check if an area intersect another area.</td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#gears.geometry.rectangle.get_intersection"><span class='function_modname'>gears.geometry.</span>rectangle.get_intersection <span class='function_args'> <b>(</b>a, b<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the intersect area between a and b.</td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#gears.geometry.rectangle.area_remove"><span class='function_modname'>gears.geometry.</span>rectangle.area_remove <span class='function_args'> <b>(</b>areas, elem<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Remove an area from a list, splitting the space between several area that
  can overlap.</td>
     </tr>
 </table>
@@ -300,53 +341,18 @@
 <br/>
 
 
-    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
-    Methods
-    <dl class="function">
-    <dt>
-    <a name = "gears.geometry.rectangle.are_equal"></a>
-    <strong><span class='function_modname'>gears.geometry.</span>rectangle.are_equal (a, b)</strong>
-    </dt>
-    <dd>
-    Return true if the area are exactly identical. </p>
-
-<p> The areas are table with a <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">a</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         The area.
-        </li>
-        <li><span class="parameter">b</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         The other area.
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><span class="type">boolean</span></span>
-        If the areas are identical.
-    </ol>
-
-
-
-
-</dd>
-</dl>
     <h2 class="section-header "><a name="Static_module_functions"></a>Static module functions</h2>
 
     <dl class="function">
     <dt>
     <a name = "gears.geometry.rectangle.get_square_distance"></a>
-    <strong><span class='function_modname'>gears.geometry.</span>rectangle.get_square_distance <span class='function_args'>(geom, x, y)</span></strong>
+    <strong><span class='function_modname'>gears.geometry.</span>rectangle.get_square_distance <span class='function_args'> <b>(</b>geom, x, y<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the square distance between a rectangle and a point.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -389,19 +395,25 @@
 
 
 
+
+    <span id=item2228 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.geometry.rectangle.get_closest_by_coord"></a>
-    <strong><span class='function_modname'>gears.geometry.</span>rectangle.get_closest_by_coord <span class='function_args'>(list, x, y)</span></strong>
+    <strong><span class='function_modname'>gears.geometry.</span>rectangle.get_closest_by_coord <span class='function_args'> <b>(</b>list, x, y<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Return the closest rectangle from <code>list</code> for a given point.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">list</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A list of geometry tables.
         </li>
         <li><span class="parameter">x</span>
@@ -423,10 +435,17 @@
 
 
 
+
+    <span id=item2229 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.geometry.rectangle.get_by_coord"></a>
-    <strong><span class='function_modname'>gears.geometry.</span>rectangle.get_by_coord <span class='function_args'>(list, x, y)</span></strong>
+    <strong><span class='function_modname'>gears.geometry.</span>rectangle.get_by_coord <span class='function_args'> <b>(</b>list, x, y<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Return the rectangle containing the [x, y] point. </p>
@@ -434,11 +453,10 @@
 <p> Note that if multiple element from the geometry list contains the point, the
  returned result is nondeterministic.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">list</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A list of geometry tables.
         </li>
         <li><span class="parameter">x</span>
@@ -461,28 +479,34 @@
 
 
 
+
+    <span id=item2230 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.geometry.rectangle.get_in_direction"></a>
-    <strong><span class='function_modname'>gears.geometry.</span>rectangle.get_in_direction <span class='function_args'>(dir, recttbl, cur)</span></strong>
+    <strong><span class='function_modname'>gears.geometry.</span>rectangle.get_in_direction <span class='function_args'> <b>(</b>dir, recttbl, cur<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the nearest rectangle in the given direction.  Every rectangle is specified as a table
  with <em>x</em>, <em>y</em>, <em>width</em>, <em>height</em> keys, the same as client or screen geometries.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">dir</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The direction, can be either <em>up</em>, <em>down</em>, <em>left</em> or <em>right</em>.
         </li>
         <li><span class="parameter">recttbl</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table of rectangle specifications.
         </li>
         <li><span class="parameter">cur</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          The current rectangle.
         </li>
     </ul>
@@ -496,21 +520,113 @@
 
 
 
+
+    <span id=item2231 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "gears.geometry.rectangle.area_intersect_area"></a>
-    <strong><span class='function_modname'>gears.geometry.</span>rectangle.area_intersect_area <span class='function_args'>(a, b)</span></strong>
+    <a name = "gears.geometry.rectangle.are_equal"></a>
+    <strong><span class='function_modname'>gears.geometry.</span>rectangle.are_equal <span class='function_args'> <b>(</b>a, b<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    Check if an area intersect another area.
+    Return true if the area are exactly identical. </p>
 
+<p> The areas are table with a <code>x</code>, <code>y</code>, <code>width</code> and <code>height</code> keys.
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">a</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          The area.
         </li>
         <li><span class="parameter">b</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         The other area.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        If the areas are identical.
+    </ol>
+
+
+
+
+
+    <span id=item2232 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.geometry.rectangle.is_inside"></a>
+    <strong><span class='function_modname'>gears.geometry.</span>rectangle.is_inside <span class='function_args'> <b>(</b>a, b<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Return if rectangle <code>a</code> is within rectangle <code>b</code>. </p>
+
+<p> This includes the edges. 100% of <code>a</code> area has to be within <code>b</code> for this
+ function to return true. If you wish to know if any part of <code>a</code> intersect
+ with <code>b</code>, use <a href="../utility_libraries/gears.geometry.html#gears.geometry.rectangle.get_intersection">gears.geometry.rectangle.get_intersection</a>.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">a</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         The smaller area.
+        </li>
+        <li><span class="parameter">b</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         The larger area.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        If the areas are identical.
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../utility_libraries/gears.geometry.html#gears.geometry.rectangle.get_intersection">gears.geometry.rectangle.get_intersection</a>
+    </ul>
+
+
+
+    <span id=item2233 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.geometry.rectangle.area_intersect_area"></a>
+    <strong><span class='function_modname'>gears.geometry.</span>rectangle.area_intersect_area <span class='function_args'> <b>(</b>a, b<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Check if an area intersect another area.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">a</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         The area.
+        </li>
+        <li><span class="parameter">b</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          The other area.
         </li>
     </ul>
@@ -524,14 +640,20 @@
 
 
 
+
+    <span id=item2234 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.geometry.rectangle.get_intersection"></a>
-    <strong><span class='function_modname'>gears.geometry.</span>rectangle.get_intersection <span class='function_args'>(a, b)</span></strong>
+    <strong><span class='function_modname'>gears.geometry.</span>rectangle.get_intersection <span class='function_args'> <b>(</b>a, b<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the intersect area between a and b.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -578,27 +700,37 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         The intersect area.
     </ol>
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../utility_libraries/gears.geometry.html#gears.geometry.rectangle.is_inside">gears.geometry.rectangle.is_inside</a>
+    </ul>
 
+
+
+    <span id=item2235 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "gears.geometry.rectangle.area_remove"></a>
-    <strong><span class='function_modname'>gears.geometry.</span>rectangle.area_remove <span class='function_args'>(areas, elem)</span></strong>
+    <strong><span class='function_modname'>gears.geometry.</span>rectangle.area_remove <span class='function_args'> <b>(</b>areas, elem<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Remove an area from a list, splitting the space between several area that
  can overlap.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">areas</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          Table of areas.
         </li>
         <li><span class="parameter">elem</span> Area to remove.
@@ -631,6 +763,10 @@
 
 
 
+
+    <span id=item2236 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
 
@@ -639,7 +775,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

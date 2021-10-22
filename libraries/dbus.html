@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Module dbus - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -53,10 +52,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -66,11 +64,33 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.widget.html">wibox.widget</a></li>
+</ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
 </ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
@@ -89,7 +109,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -123,6 +142,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -134,23 +154,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -158,6 +161,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -201,9 +205,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -225,11 +226,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -243,46 +247,73 @@
 <h1>Module: <code>dbus</code></h1>
 <p>awesome D-Bus API</p>
 <p>
+
 </p>
+    <div class="extra-header">
+
+
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2008-2009 Julien Danjou</li>
-        <li><strong>Author</strong>: Julien Danjou &lt;julien@danjou.info&gt;</li>
+                <li><strong>Copyright</strong>: 2008-2009 Julien Danjou</li>
+                <li>
+                    <strong>Originally authored by</strong>: Julien Danjou &lt;julien@danjou.info&gt;<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Functions">Functions</a>
-</h2>
+<h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#request_name"><span class='function_modname'>dbus.</span>request_name (bus, name)</a></td>
-      <td class="summary">Register a D-Bus name to receive messages from.</td>
+      <td class="name" >
+        <a href="#request_name"><span class='function_modname'>dbus.</span>request_name (bus, name)</a>
+      </td>
+      <td colspan="2" class="summary">Register a D-Bus name to receive messages from.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#release_name"><span class='function_modname'>dbus.</span>release_name (bus, name)</a></td>
-      <td class="summary">Release a D-Bus name.</td>
+      <td class="name" >
+        <a href="#release_name"><span class='function_modname'>dbus.</span>release_name (bus, name)</a>
+      </td>
+      <td colspan="2" class="summary">Release a D-Bus name.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#add_match"><span class='function_modname'>dbus.</span>add_match (bus, name)</a></td>
-      <td class="summary">Add a match rule to match messages going through the message bus.</td>
+      <td class="name" >
+        <a href="#add_match"><span class='function_modname'>dbus.</span>add_match (bus, name)</a>
+      </td>
+      <td colspan="2" class="summary">Add a match rule to match messages going through the message bus.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#remove_match"><span class='function_modname'>dbus.</span>remove_match (bus, name)</a></td>
-      <td class="summary">Remove a previously added match rule &ldquo;by value&rdquo;
+      <td class="name" >
+        <a href="#remove_match"><span class='function_modname'>dbus.</span>remove_match (bus, name)</a>
+      </td>
+      <td colspan="2" class="summary">Remove a previously added match rule "by value"
  (the most recently-added identical rule gets removed).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#connect_signal"><span class='function_modname'>dbus.</span>connect_signal (interface, func)</a></td>
-      <td class="summary">Add a signal receiver on the D-Bus.</td>
+      <td class="name" >
+        <a href="#connect_signal"><span class='function_modname'>dbus.</span>connect_signal (interface, func)</a>
+      </td>
+      <td colspan="2" class="summary">Add a signal receiver on the D-Bus.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#disconnect_signal"><span class='function_modname'>dbus.</span>disconnect_signal (interface, func)</a></td>
-      <td class="summary">Remove a signal receiver on the D-Bus.</td>
+      <td class="name" >
+        <a href="#disconnect_signal"><span class='function_modname'>dbus.</span>disconnect_signal (interface, func)</a>
+      </td>
+      <td colspan="2" class="summary">Remove a signal receiver on the D-Bus.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#emit_signal"><span class='function_modname'>dbus.</span>emit_signal (bus, path, interface, method, type_1st_arg, value_1st_arg, type_2nd_arg, value_2nd_arg)</a></td>
-      <td class="summary">Emit a signal on the D-Bus.</td>
+      <td class="name" >
+        <a href="#emit_signal"><span class='function_modname'>dbus.</span>emit_signal (bus, path, interface, method, type_1st_arg, value_1st_arg, type_2nd_arg, value_2nd_arg)</a>
+      </td>
+      <td colspan="2" class="summary">Emit a signal on the D-Bus.</td>
     </tr>
 </table>
 
@@ -296,10 +327,11 @@
     <dt>
     <a name = "request_name"></a>
     <strong><span class='function_modname'>dbus.</span>request_name (bus, name)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Register a D-Bus name to receive messages from.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -320,14 +352,19 @@
 
 
 
+
+    <span id=item2528 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "release_name"></a>
     <strong><span class='function_modname'>dbus.</span>release_name (bus, name)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Release a D-Bus name.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -348,14 +385,19 @@
 
 
 
+
+    <span id=item2529 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "add_match"></a>
     <strong><span class='function_modname'>dbus.</span>add_match (bus, name)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Add a match rule to match messages going through the message bus.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -370,16 +412,21 @@
 
 
 
+
+
+    <span id=item2530 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "remove_match"></a>
     <strong><span class='function_modname'>dbus.</span>remove_match (bus, name)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    Remove a previously added match rule &ldquo;by value&rdquo;
+    Remove a previously added match rule "by value"
  (the most recently-added identical rule gets removed).
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -395,14 +442,19 @@
 
 
 
+
+    <span id=item2531 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "connect_signal"></a>
     <strong><span class='function_modname'>dbus.</span>connect_signal (interface, func)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Add a signal receiver on the D-Bus.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -424,14 +476,19 @@
 
 
 
+
+    <span id=item2532 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "disconnect_signal"></a>
     <strong><span class='function_modname'>dbus.</span>disconnect_signal (interface, func)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Remove a signal receiver on the D-Bus.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -447,14 +504,19 @@
 
 
 
+
+    <span id=item2533 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "emit_signal"></a>
     <strong><span class='function_modname'>dbus.</span>emit_signal (bus, path, interface, method, type_1st_arg, value_1st_arg, type_2nd_arg, value_2nd_arg)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Emit a signal on the D-Bus.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -481,13 +543,17 @@
         </li>
         <li><span class="parameter">value_2nd_arg</span>
          value of 2nd argument
- &hellip; etc
+ ... etc
         </li>
     </ul>
 
 
 
 
+
+
+    <span id=item2534 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -497,7 +563,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

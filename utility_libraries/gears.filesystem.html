@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Utillib gears.filesystem - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -63,6 +62,27 @@
   <li><a href="../utility_libraries/gears.table.html">gears.table</a></li>
   <li><a href="../utility_libraries/gears.wallpaper.html">gears.wallpaper</a></li>
 </ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
+</ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
   <li><a href="../declarative_rules/ruled.client.html">ruled.client</a></li>
@@ -80,7 +100,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -114,6 +133,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -125,23 +145,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -149,6 +152,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -175,10 +179,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -188,6 +191,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -201,9 +205,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -225,11 +226,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -241,78 +245,130 @@
 <div id="content">
 
 <h1>Module: <code>gears.filesystem</code></h1>
-<p>Filesystem module for gears</p>
+<p>Filesystem module for gears.</p>
 <p>
+
 </p>
+    <div class="extra-header">
 
 
-<h2>
-    <a href="#Static_module_functions">Static module functions</a>
-</h2>
+
+</div>
+
+
+<h2><a href="#Static_module_functions">Static module functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#make_directories"><span class='function_modname'>gears.filesystem.</span>make_directories <span class='function_args'>(dir)</span></a></td>
-      <td class="summary">Create a directory, including all missing parent directories.</td>
+      <td class="name" >
+        <a href="#make_directories"><span class='function_modname'>gears.filesystem.</span>make_directories <span class='function_args'> <b>(</b>dir<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Create a directory, including all missing parent directories.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#make_parent_directories"><span class='function_modname'>gears.filesystem.</span>make_parent_directories <span class='function_args'>(path)</span></a></td>
-      <td class="summary">Create all parent directories for a given path.</td>
+      <td class="name" >
+        <a href="#make_parent_directories"><span class='function_modname'>gears.filesystem.</span>make_parent_directories <span class='function_args'> <b>(</b>path<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Create all parent directories for a given path.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#file_readable"><span class='function_modname'>gears.filesystem.</span>file_readable <span class='function_args'>(filename)</span></a></td>
-      <td class="summary">Check if a file exists, is readable and not a directory.</td>
+      <td class="name" >
+        <a href="#file_readable"><span class='function_modname'>gears.filesystem.</span>file_readable <span class='function_args'> <b>(</b>filename<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+      </td>
+      <td colspan="2" class="summary">Check if a file exists, is readable and not a directory.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#file_executable"><span class='function_modname'>gears.filesystem.</span>file_executable <span class='function_args'>(filename)</span></a></td>
-      <td class="summary">Check if a file exists, is executable and not a directory.</td>
+      <td class="name" >
+        <a href="#file_executable"><span class='function_modname'>gears.filesystem.</span>file_executable <span class='function_args'> <b>(</b>filename<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+      </td>
+      <td colspan="2" class="summary">Check if a file exists, is executable and not a directory.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#dir_readable"><span class='function_modname'>gears.filesystem.</span>dir_readable <span class='function_args'>(path)</span></a></td>
-      <td class="summary">Check if a path exists, is readable and a directory.</td>
+      <td class="name" >
+        <a href="#dir_readable"><span class='function_modname'>gears.filesystem.</span>dir_readable <span class='function_args'> <b>(</b>path<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+      </td>
+      <td colspan="2" class="summary">Check if a path exists, is readable and a directory.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#is_dir"><span class='function_modname'>gears.filesystem.</span>is_dir <span class='function_args'>(path)</span></a></td>
-      <td class="summary">Check if a path is a directory.</td>
+      <td class="name" >
+        <a href="#is_dir"><span class='function_modname'>gears.filesystem.</span>is_dir <span class='function_args'> <b>(</b>path<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+      </td>
+      <td colspan="2" class="summary">Check if a path is a directory.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_xdg_config_home"><span class='function_modname'>gears.filesystem.</span>get_xdg_config_home <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the config home according to the XDG basedir specification.</td>
+      <td class="name" >
+        <a href="#get_xdg_config_home"><span class='function_modname'>gears.filesystem.</span>get_xdg_config_home <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the config home according to the XDG basedir specification.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_xdg_cache_home"><span class='function_modname'>gears.filesystem.</span>get_xdg_cache_home <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the cache home according to the XDG basedir specification.</td>
+      <td class="name" >
+        <a href="#get_xdg_cache_home"><span class='function_modname'>gears.filesystem.</span>get_xdg_cache_home <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the cache home according to the XDG basedir specification.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_xdg_data_home"><span class='function_modname'>gears.filesystem.</span>get_xdg_data_home <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the data home according to the XDG basedir specification.</td>
+      <td class="name" >
+        <a href="#get_xdg_data_home"><span class='function_modname'>gears.filesystem.</span>get_xdg_data_home <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;string</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the data home according to the XDG basedir specification.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_xdg_data_dirs"><span class='function_modname'>gears.filesystem.</span>get_xdg_data_dirs <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the data dirs according to the XDG basedir specification.</td>
+      <td class="name" >
+        <a href="#get_xdg_data_dirs"><span class='function_modname'>gears.filesystem.</span>get_xdg_data_dirs <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the data dirs according to the XDG basedir specification.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_configuration_dir"><span class='function_modname'>gears.filesystem.</span>get_configuration_dir <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the path to the user&rsquo;s config dir.</td>
+      <td class="name" >
+        <a href="#get_configuration_dir"><span class='function_modname'>gears.filesystem.</span>get_configuration_dir <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the path to the user's config dir.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_cache_dir"><span class='function_modname'>gears.filesystem.</span>get_cache_dir <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the path to a directory that should be used for caching data.</td>
+      <td class="name" >
+        <a href="#get_cache_dir"><span class='function_modname'>gears.filesystem.</span>get_cache_dir <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the path to a directory that should be used for caching data.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_themes_dir"><span class='function_modname'>gears.filesystem.</span>get_themes_dir <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the path to the directory where themes are installed.</td>
+      <td class="name" >
+        <a href="#get_themes_dir"><span class='function_modname'>gears.filesystem.</span>get_themes_dir <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the path to the directory where themes are installed.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_awesome_icon_dir"><span class='function_modname'>gears.filesystem.</span>get_awesome_icon_dir <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the path to the directory where our icons are installed.</td>
+      <td class="name" >
+        <a href="#get_awesome_icon_dir"><span class='function_modname'>gears.filesystem.</span>get_awesome_icon_dir <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the path to the directory where our icons are installed.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_dir"><span class='function_modname'>gears.filesystem.</span>get_dir <span class='function_args'>(d)</span></a></td>
-      <td class="summary">Get the user&rsquo;s config or cache dir.</td>
+      <td class="name" >
+        <a href="#get_dir"><span class='function_modname'>gears.filesystem.</span>get_dir <span class='function_args'> <b>(</b>d<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the user's config or cache dir.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_random_file_from_dir"><span class='function_modname'>gears.filesystem.</span>get_random_file_from_dir <span class='function_args'>(path[, exts])</span></a></td>
-      <td class="summary">Get the name of a random file from a given directory.</td>
+      <td class="name" >
+        <a href="#get_random_file_from_dir"><span class='function_modname'>gears.filesystem.</span>get_random_file_from_dir <span class='function_args'> <b>(</b>path[, exts[, absolute_path=false]]<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;string <i>or</i> nil</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the name of a random file from a given directory.</td>
     </tr>
 </table>
 
@@ -325,16 +381,18 @@
     <dl class="function">
     <dt>
     <a name = "make_directories"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>make_directories <span class='function_args'>(dir)</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>make_directories <span class='function_args'> <b>(</b>dir<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create a directory, including all missing parent directories.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">dir</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The directory.
         </li>
     </ul>
@@ -348,19 +406,25 @@
 
 
 
+
+    <span id=item2212 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "make_parent_directories"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>make_parent_directories <span class='function_args'>(path)</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>make_parent_directories <span class='function_args'> <b>(</b>path<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create all parent directories for a given path.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">path</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The path whose parents should be created.
         </li>
     </ul>
@@ -374,19 +438,25 @@
 
 
 
+
+    <span id=item2213 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "file_readable"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>file_readable <span class='function_args'>(filename)</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>file_readable <span class='function_args'> <b>(</b>filename<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Check if a file exists, is readable and not a directory.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">filename</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The file path.
         </li>
     </ul>
@@ -401,19 +471,25 @@
 
 
 
+
+    <span id=item2214 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "file_executable"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>file_executable <span class='function_args'>(filename)</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>file_executable <span class='function_args'> <b>(</b>filename<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Check if a file exists, is executable and not a directory.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">filename</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The file path.
         </li>
     </ul>
@@ -428,19 +504,25 @@
 
 
 
+
+    <span id=item2215 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "dir_readable"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>dir_readable <span class='function_args'>(path)</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>dir_readable <span class='function_args'> <b>(</b>path<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Check if a path exists, is readable and a directory.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">path</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The directory path.
         </li>
     </ul>
@@ -455,19 +537,25 @@
 
 
 
+
+    <span id=item2216 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "is_dir"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>is_dir <span class='function_args'>(path)</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>is_dir <span class='function_args'> <b>(</b>path<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Check if a path is a directory.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">path</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The directory path
         </li>
     </ul>
@@ -482,93 +570,123 @@
 
 
 
+
+    <span id=item2217 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_xdg_config_home"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>get_xdg_config_home <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>get_xdg_config_home <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the config home according to the XDG basedir specification.
 
 
-
     <h3>Returns:</h3>
     <ol>
 
-        the config home (XDG_CONFIG_HOME) with a slash at the end.
+        the config home (XDG<em>CONFIG</em>HOME) with a slash at the end.
     </ol>
 
 
 
 
+
+    <span id=item2218 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_xdg_cache_home"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>get_xdg_cache_home <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>get_xdg_cache_home <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the cache home according to the XDG basedir specification.
 
 
-
     <h3>Returns:</h3>
     <ol>
 
-        the cache home (XDG_CACHE_HOME) with a slash at the end.
+        the cache home (XDG<em>CACHE</em>HOME) with a slash at the end.
     </ol>
 
 
 
 
+
+    <span id=item2219 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_xdg_data_home"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>get_xdg_data_home <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>get_xdg_data_home <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;string</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the data home according to the XDG basedir specification.
 
 
-
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        the data home (XDG_DATA_HOME) with a slash at the end.
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+        the data home (XDG<em>DATA</em>HOME) with a slash at the end.
     </ol>
 
 
 
 
+
+    <span id=item2220 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_xdg_data_dirs"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>get_xdg_data_dirs <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>get_xdg_data_dirs <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the data dirs according to the XDG basedir specification.
 
 
-
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-        the data dirs (XDG_DATA_DIRS) with a slash at the end of each entry.
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+        the data dirs (XDG<em>DATA</em>DIRS) with a slash at the end of each entry.
     </ol>
 
 
 
 
+
+    <span id=item2221 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_configuration_dir"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>get_configuration_dir <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>get_configuration_dir <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    Get the path to the user&rsquo;s config dir.
- This is the directory containing the configuration file (&ldquo;rc.lua&rdquo;).
-
+    Get the path to the user's config dir.
+ This is the directory containing the configuration file ("rc.lua").
 
 
     <h3>Returns:</h3>
@@ -580,16 +698,22 @@
 
 
 
+
+    <span id=item2222 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_cache_dir"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>get_cache_dir <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>get_cache_dir <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the path to a directory that should be used for caching data.
 
 
-
     <h3>Returns:</h3>
     <ol>
 
@@ -599,16 +723,22 @@
 
 
 
+
+    <span id=item2223 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_themes_dir"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>get_themes_dir <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>get_themes_dir <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the path to the directory where themes are installed.
 
 
-
     <h3>Returns:</h3>
     <ol>
 
@@ -618,16 +748,22 @@
 
 
 
+
+    <span id=item2224 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_awesome_icon_dir"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>get_awesome_icon_dir <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>get_awesome_icon_dir <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the path to the directory where our icons are installed.
 
 
-
     <h3>Returns:</h3>
     <ol>
 
@@ -637,21 +773,27 @@
 
 
 
+
+    <span id=item2225 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_dir"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>get_dir <span class='function_args'>(d)</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>get_dir <span class='function_args'> <b>(</b>d<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    Get the user&rsquo;s config or cache dir.
- It first checks XDG_CONFIG_HOME / XDG_CACHE_HOME, but then goes with the
+    Get the user's config or cache dir.
+ It first checks XDG<em>CONFIG</em>HOME / XDG<em>CACHE</em>HOME, but then goes with the
  default paths.
-
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">d</span>
-         The directory to get (either &ldquo;config&rdquo; or &ldquo;cache&rdquo;).
+         The directory to get (either "config" or "cache").
         </li>
     </ul>
 
@@ -664,39 +806,55 @@
 
 
 
+
+    <span id=item2226 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_random_file_from_dir"></a>
-    <strong><span class='function_modname'>gears.filesystem.</span>get_random_file_from_dir <span class='function_args'>(path[, exts])</span></strong>
+    <strong><span class='function_modname'>gears.filesystem.</span>get_random_file_from_dir <span class='function_args'> <b>(</b>path[, exts[, absolute_path=false]]<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;string <i>or</i> nil</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the name of a random file from a given directory.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">path</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The directory to search.
         </li>
         <li><span class="parameter">exts</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          Specific extensions to limit the search to. eg:<code>{ &quot;jpg&quot;, &quot;png&quot; }</code>
    If ommited, all files are considered.
          (<em>optional</em>)
+        </li>
+        <li><span class="parameter">absolute_path</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Return the absolute path instead of the filename.
+         (<em>default</em> false)
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">nil</span></span>
-        A randomly selected filename from the specified path (with
-   a specified extension if required) or nil if no suitable file is found.
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <span class="type">nil</span></span>
+         A randomly selected filename from the specified path (with
+   a specified extension if required) or nil if no suitable file is found. If <code>absolute_path</code>
+   is set, then a path is returned instead of a file name.
     </ol>
 
 
 
+
+
+    <span id=item2227 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -706,7 +864,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

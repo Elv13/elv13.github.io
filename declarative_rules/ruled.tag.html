@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Ruleslib ruled.tag - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -48,7 +47,7 @@
 <ul>
 <li><a href="#Functions">Functions</a></li>
 <li><a href="#Rule_components">Rule components</a></li>
-<li><a href="#Extra_properties_available_in_awful_rules_and_awful_spawn">Extra properties available in awful.rules and awful.spawn</a></li>
+<li><a href="#Extra_properties_available_in_the_rules">Extra properties available in the rules</a></li>
 </ul>
 
 
@@ -60,6 +59,27 @@
   <li><a href="../declarative_rules/ruled.screen.html">ruled.screen</a></li>
   <li><strong>ruled.tag</strong></li>
 </ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
+</ul>
 <h2>Widgets</h2>
 <ul class="nowrap">
   <li><a href="../widgets/awful.widget.button.html">awful.widget.button</a></li>
@@ -69,7 +89,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -103,6 +122,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -114,23 +134,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -138,6 +141,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -177,10 +181,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -190,6 +193,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -203,9 +207,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -227,11 +228,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -244,13 +248,22 @@
 
 <h1>Module: <code>ruled.tag</code></h1>
 <p>Rules for tags.</p>
-<p><p> In this first example, we create 9 tags which are automatically initialized
+<p>
+
+
+<h1> Static tags</h1>
+
+<p> In this first example, we create 9 tags which are automatically initialized
  even when there is no clients:</p>
 
-<p><img src="../images/AUTOGEN_ruled_tag_rules_basic.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_sequences_tag_rules_basic.svg" alt="Usage example"/></p>
+
+
 
 <pre>
-tag.connect_signal(<span class="string">'request::rules'</span>, <span class="keyword">function</span>()
+tag.connect_signal(<span class="string">"request::rules"</span>, <span class="keyword">function</span>()
     <span class="keyword">for</span> i=<span class="number">1</span>, <span class="number">9</span> <span class="keyword">do</span>
         ruled.tag.append_rule {
             rule        = {}, <span class="comment">-- matches everything
@@ -267,7 +280,7 @@ tag.connect_signal(<span class="string">'request::rules'</span>, <span class="ke
 
 
 <span class="comment">-- The calculator will spawn into the currently selected tag.
-</span>awful.spawn(<span class="string">'kcalc'</span>)
+</span>awful.spawn(<span class="string">"kcalc"</span>)
 
 <span class="comment">-- Select tag 1 and tag 5.
 </span>screen[<span class="number">1</span>].tags[<span class="number">3</span>].selected = <span class="keyword">false</span>
@@ -275,23 +288,42 @@ screen[<span class="number">1</span>].tags[<span class="number">1</span>].select
 screen[<span class="number">1</span>].tags[<span class="number">5</span>].selected = <span class="keyword">true</span>
 
 <span class="comment">-- The xterm will be tagged with the 2 selected tags.
-</span>awful.spawn(<span class="string">'xterm'</span>)
+</span>awful.spawn(<span class="string">"xterm"</span>)
 </pre>
 
+<p> This is how the default <a href="../sample files/rc.lua.html#">rc.lua</a> works. You get a static number of tags created
+ at startup and they never really change. This is very convinient when accustomed
+ to the classic virtual desktop context. How allows to have simple and deterministic
+ keybindings to switch to a specific tags, because they never move.</p>
 
-<p> In this second example, we create a tag called &ldquo;calculator&rdquo; which is only
+<p> However it is rather restrictive to automate your workflow. This forces you to either
+ hardcode all applications you will use or to manually manager every client. Dynamic
+ tags, demonstrated below, create and destroy tags based on what you are doing.</p>
+
+<h1> Dynamic tags</h1>
+
+<p> The concept of dynamic tagging is to create and destroy tags based on what is going
+ on. For example, an "Internet" tag can be created when you start your web browsing.
+ Another example would be splitting tags in smaller parts when they contain too many
+ clients.</p>
+
+<p> In this example, we create a tag called "calculator" which is only
  created when wither <code>kcalc</code>, <code>gnome-calculator</code> or <code>wxmaxima</code> is started.
  The tag is also volatile so it will get destroyed when the last client
  gets closed.</p>
 
-<p><img src="../images/AUTOGEN_ruled_tag_rules_exclusive.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_sequences_tag_rules_exclusive.svg" alt="Usage example"/></p>
+
+
 
 <pre>
 <span class="comment">-- Add some **tag** rules. Note that the <a href="../declarative_rules/ruled.tag.html#rule">rule</a> and <a href="../declarative_rules/ruled.tag.html#rule_any">rule_any</a> section
 </span><span class="comment">-- actually match clients.
-</span>tag.connect_signal(<span class="string">'request::rules'</span>, <span class="keyword">function</span>()
-    <span class="comment">-- Create 4 generic 'workspace like' tags at startup.
-</span>    <span class="keyword">for</span> k, name <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span> }  <span class="keyword">do</span>
+</span>tag.connect_signal(<span class="string">"request::rules"</span>, <span class="keyword">function</span>()
+    <span class="comment">-- Create 4 generic "workspace like" tags at startup.
+</span>    <span class="keyword">for</span> k, name <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"one"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>, <span class="string">"four"</span> }  <span class="keyword">do</span>
         ruled.tag.append_rule {
             rule        = {}, <span class="comment">-- matches everything
 </span>            properties  = {
@@ -306,14 +338,14 @@ screen[<span class="number">1</span>].tags[<span class="number">5</span>].select
         }
     <span class="keyword">end</span>
 
-    <span class="comment">-- Create a 'Calculator' only when a new calculator is spawned.
+    <span class="comment">-- Create a "Calculator" only when a new calculator is spawned.
 </span>    ruled.tag.append_rule {
         rule_any    = {
-            class = {<span class="string">'gnome-calculator'</span>, <span class="string">'kcalc'</span>, <span class="string">'wxmaxima'</span>}
+            class = {<span class="string">"gnome-calculator"</span>, <span class="string">"kcalc"</span>, <span class="string">"wxmaxima"</span>}
         },
         properties  = {
             init      = <span class="keyword">false</span>,
-            name      = <span class="string">'Calculator'</span>,
+            name      = <span class="string">"Calculator"</span>,
             index     = <span class="number">4</span>,
             view_only = <span class="keyword">true</span>,
             exclusive = <span class="keyword">true</span>,
@@ -325,10 +357,10 @@ screen[<span class="number">1</span>].tags[<span class="number">5</span>].select
 
 <span class="comment">-- Add a **client** rule to allow <code>kcolorchooser</code> to be added to the
 </span><span class="comment">-- selected tags regardless of their <code>exclusive</code> or <code>locked</code> properties.
-</span>client.connect_signal(<span class="string">'request::rules'</span>, <span class="keyword">function</span>()
+</span>ruled.client.connect_signal(<span class="string">"request::rules"</span>, <span class="keyword">function</span>()
     ruled.client.append_rule {
         rule_any    = {
-            class = {<span class="string">'kcolorchooser'</span>}
+            class = {<span class="string">"kcolorchooser"</span>}
         },
         properties = {
             intrusive = <span class="keyword">true</span>,
@@ -338,42 +370,45 @@ screen[<span class="number">1</span>].tags[<span class="number">5</span>].select
 
 
 <span class="comment">-- Spawn a Calculator.
-</span>awful.spawn(<span class="string">'kcalc'</span>)
+</span>awful.spawn(<span class="string">"kcalc"</span>)
 
 <span class="comment">-- Spawn a kcolorchooser, which should enter the tag because it is intrusive.
-</span>awful.spawn(<span class="string">'kcolorchooser'</span>)
+</span>awful.spawn(<span class="string">"kcolorchooser"</span>)
 
 <span class="comment">-- Spawn xterm, it should pick another tag because it isn't allowed into
 </span><span class="comment">-- the exclusive tag.
-</span>awful.spawn(<span class="string">'xterm'</span>)
+</span>awful.spawn(<span class="string">"xterm"</span>)
 
-<span class="comment">-- Kill kcalc and kcolorchooser, the 'Calculator' will be destroyed
+<span class="comment">-- Kill kcalc and kcolorchooser, the "Calculator" will be destroyed
 </span><span class="comment">-- because it is volatile.
 </span><span class="keyword">for</span> _, c <span class="keyword">in</span> <span class="global">ipairs</span>(client.get()) <span class="keyword">do</span>
-    <span class="keyword">if</span> c.class == <span class="string">'kcalc'</span> <span class="keyword">then</span>
+    <span class="keyword">if</span> c.class == <span class="string">"kcalc"</span> <span class="keyword">then</span>
         c:kill()
     <span class="keyword">end</span>
 <span class="keyword">end</span>
 
 <span class="keyword">for</span> _, c <span class="keyword">in</span> <span class="global">ipairs</span>(client.get()) <span class="keyword">do</span>
-    <span class="keyword">if</span> c.class == <span class="string">'kcolorchooser'</span> <span class="keyword">then</span>
+    <span class="keyword">if</span> c.class == <span class="string">"kcolorchooser"</span> <span class="keyword">then</span>
         c:kill()
     <span class="keyword">end</span>
 <span class="keyword">end</span>
 </pre>
-
 
 <p> In this example, the rules are configured to create new tags for each client
  class and assign at most 2 clients per tag, after which a new tag will be
  created. It also demonstrate how to use a function on the <code>index</code> property
  to place tags with the same name next to each other.</p>
 
-<p><img src="../images/AUTOGEN_ruled_tag_rules_groups.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_sequences_tag_rules_groups.svg" alt="Usage example"/></p>
+
+
 
 <pre>
 <span class="comment">-- Try to group tags by name.
 </span><span class="keyword">local</span> <span class="keyword">function</span> group_tags(c, rule)
-    <span class="keyword">local</span> name = <span class="global">type</span>(rule.name) == <span class="string">'function'</span>
+    <span class="keyword">local</span> name = <span class="global">type</span>(rule.name) == <span class="string">"function"</span>
         <span class="keyword">and</span> rule.name(c, rule) <span class="keyword">or</span> rule.name <span class="keyword">or</span> c.class
     <span class="keyword">for</span> idx, t <span class="keyword">in</span> <span class="global">ipairs</span>(c.screen.tags) <span class="keyword">do</span>
         <span class="keyword">if</span> t.name == name <span class="keyword">then</span>
@@ -382,7 +417,7 @@ screen[<span class="number">1</span>].tags[<span class="number">5</span>].select
     <span class="keyword">end</span>
 <span class="keyword">end</span>
 
-tag.connect_signal(<span class="string">'request::rules'</span>, <span class="keyword">function</span>()
+tag.connect_signal(<span class="string">"request::rules"</span>, <span class="keyword">function</span>()
     <span class="comment">-- Create tags for each client class with a maximum of 2 clients per tag.
 </span>    ruled.tag.append_rule {
         rule        = {}, <span class="comment">-- matches everything
@@ -401,13 +436,13 @@ tag.connect_signal(<span class="string">'request::rules'</span>, <span class="ke
 
 
 <span class="comment">-- Spawn some apps.
-</span>awful.spawn(<span class="string">'kcalc'</span>)
-awful.spawn(<span class="string">'xterm'</span>)
-awful.spawn(<span class="string">'kcalc'</span>)
-awful.spawn(<span class="string">'xterm'</span>)
+</span>awful.spawn(<span class="string">"kcalc"</span>)
+awful.spawn(<span class="string">"xterm"</span>)
+awful.spawn(<span class="string">"kcalc"</span>)
+awful.spawn(<span class="string">"xterm"</span>)
 
 <span class="comment">-- Spawn another kcalc, it should create a tag next to the original.
-</span>awful.spawn(<span class="string">'kcalc'</span>)
+</span>awful.spawn(<span class="string">"kcalc"</span>)
 
 <span class="comment">-- Kill all clients. There is no non-volatile tags, so none should remains.
 </span><span class="keyword">for</span> i = #client.get(), <span class="number">1</span>, -<span class="number">1</span> <span class="keyword">do</span>
@@ -415,13 +450,21 @@ awful.spawn(<span class="string">'xterm'</span>)
 <span class="keyword">end</span>
 </pre>
 
-
 <p> This example shows how to use tag rules to send clients to a specific screen.</p>
 
-<p><img src="../images/AUTOGEN_ruled_tag_rules_multiscreen1.svg" alt="Usage example" /></p>
+<h1> Multiple screens</h1>
+
+<p> In this example, the tags can only be created on screen 2 and 4. If the client
+ aims to appear on screen 1 or 3, it will be moved:</p>
+
+
+
+<p><img src="../images/AUTOGEN_sequences_tag_rules_multiscreen2.svg" alt="Usage example"/></p>
+
+
 
 <pre>
-client.connect_signal(<span class="string">'request::rules'</span>, <span class="keyword">function</span>()
+ruled.client.connect_signal(<span class="string">"request::rules"</span>, <span class="keyword">function</span>()
     <span class="comment">-- These are a subset of the default <a href="../sample files/rc.lua.html#">rc.lua</a> client rules. If you already
 </span>    <span class="comment">-- have them, don't add this.
 </span>    ruled.client.append_rule {
@@ -435,15 +478,15 @@ client.connect_signal(<span class="string">'request::rules'</span>, <span class=
     }
 <span class="keyword">end</span>)
 
-tag.connect_signal(<span class="string">'request::rules'</span>, <span class="keyword">function</span>()
-    <span class="comment">-- Allow tags named 'kcalc' to be created on screen 2 and 4, but not
+tag.connect_signal(<span class="string">"request::rules"</span>, <span class="keyword">function</span>()
+    <span class="comment">-- Allow tags named "kcalc" to be created on screen 2 and 4, but not
 </span>    <span class="comment">-- 1 and 3.
 </span>    ruled.tag.append_rule {
         rule_any    = {
-            class  = {<span class="string">'kcalc'</span>},
-            screen = {screen[<span class="number">2</span>], screen[<span class="number">4</span>]},
+            class  = {<span class="string">"kcalc"</span>},
         },
         properties  = {
+            screens     = {screen[<span class="number">2</span>], screen[<span class="number">4</span>]},
             name        = <span class="keyword">function</span>(c) <span class="keyword">return</span> c.class <span class="keyword">end</span>,
             icon        = <span class="keyword">function</span>(c) <span class="keyword">return</span> c.icon  <span class="keyword">end</span>,
             view_only   = <span class="keyword">true</span>,
@@ -454,19 +497,138 @@ tag.connect_signal(<span class="string">'request::rules'</span>, <span class="ke
             exclusive   = <span class="keyword">true</span>,
         }
     }
+    <span class="comment">-- This is a fallback tag because otherwise xterm would not match
+</span>    <span class="comment">-- anything. It will exist for each screen.
+</span>    ruled.tag.append_rule {
+        fallback   = <span class="keyword">true</span>,
+        rule       = {},
+        properties = {
+            name        = <span class="string">"Fallback"</span>,
+            icon        = <span class="keyword">function</span>(c) <span class="keyword">return</span> c.icon  <span class="keyword">end</span>,
+            view_only   = <span class="keyword">true</span>,
+            multi_class = <span class="keyword">true</span>,
+            layout      = awful.layout.suit.fair,
+            volatile    = <span class="keyword">true</span>,
+            exclusive   = <span class="keyword">false</span>,
+        }
+    }
 <span class="keyword">end</span>)
 
 
+<span class="comment">-- Move the mouse to screen 1, where it cannot create the tag.
+</span>mouse.coords {
+    x = screen[<span class="number">1</span>].geometry.x + <span class="number">10</span>,
+    y = screen[<span class="number">1</span>].geometry.y + <span class="number">10</span>,
+}
+
 <span class="comment">-- Spawn some apps.
-</span>awful.spawn(<span class="string">'kcalc'</span>)
-awful.spawn(<span class="string">'xterm'</span>)
-awful.spawn(<span class="string">'kcalc'</span>)
-awful.spawn(<span class="string">'xterm'</span>)
+</span>awful.spawn(<span class="string">"kcalc"</span>)
+
+<span class="comment">-- Both xterm client should share the same fallback tag.
+</span>awful.spawn(<span class="string">"xterm"</span>)
+awful.spawn(<span class="string">"xterm"</span>)
 </pre>
 
+<p> In this example, different screens have different rules for the same class:</p>
 
-<p> Properties available in the rules
- =================================</p>
+
+
+<p><img src="../images/AUTOGEN_sequences_tag_rules_multiscreen1.svg" alt="Usage example"/></p>
+
+
+
+<pre>
+ruled.client.connect_signal(<span class="string">"request::rules"</span>, <span class="keyword">function</span>()
+    <span class="comment">-- These are a subset of the default <a href="../sample files/rc.lua.html#">rc.lua</a> client rules. If you already
+</span>    <span class="comment">-- have them, don't add this.
+</span>    ruled.client.append_rule {
+        rule = {},
+        properties = {
+            focus     = awful.client.focus.filter,
+            raise     = <span class="keyword">true</span>,
+            screen    = awful.screen.preferred,
+            placement = awful.placement.no_overlap+awful.placement.no_offscreen
+        },
+    }
+<span class="keyword">end</span>)
+
+tag.connect_signal(<span class="string">"request::rules"</span>, <span class="keyword">function</span>()
+    <span class="comment">-- Allow tags named "kcalc" to be created on screen 2 and 4, but not
+</span>    <span class="comment">-- 1 and 3.
+</span>    ruled.tag.append_rule {
+        rule_every    = {
+            class  = {<span class="string">"kcalc"</span>},
+            screen = {screen[<span class="number">1</span>]},
+        },
+        properties  = {
+            name        = <span class="keyword">function</span>(c) <span class="keyword">return</span> c.class .. <span class="string">" for s1/s3"</span> <span class="keyword">end</span>,
+            icon        = <span class="keyword">function</span>(c) <span class="keyword">return</span> c.icon  <span class="keyword">end</span>,
+            view_only   = <span class="keyword">true</span>,
+            multi_class = <span class="keyword">false</span>,
+            max_client  = <span class="number">2</span>,
+            layout      = awful.layout.suit.fair,
+            volatile    = <span class="keyword">true</span>,
+            exclusive   = <span class="keyword">true</span>,
+        }
+    }
+
+    <span class="comment">-- Different layout if on screen 1 or 3.
+</span>    ruled.tag.append_rule {
+        rule_any    = {
+            class  = {<span class="string">"xterm"</span>},
+        },
+        properties  = {
+            name        = <span class="string">"Terminals"</span>,
+            icon        = <span class="keyword">function</span>(c) <span class="keyword">return</span> c.icon  <span class="keyword">end</span>,
+            view_only   = <span class="keyword">true</span>,
+            multi_class = <span class="keyword">false</span>,
+            layout      = awful.layout.suit.max,
+            volatile    = <span class="keyword">true</span>,
+            exclusive   = <span class="keyword">true</span>,
+        }
+    }
+
+    ruled.tag.append_rule {
+        rule_every    = {
+            class  = {<span class="string">"kcalc"</span>},
+            screen = {screen[<span class="number">2</span>]},
+        },
+        properties  = {
+            name        = <span class="keyword">function</span>(c) <span class="keyword">return</span> c.class .. <span class="string">" for s2/s4"</span> <span class="keyword">end</span>,
+            icon        = <span class="keyword">function</span>(c) <span class="keyword">return</span> c.icon  <span class="keyword">end</span>,
+            view_only   = <span class="keyword">true</span>,
+            multi_class = <span class="keyword">false</span>,
+            max_client  = <span class="number">2</span>,
+            layout      = awful.layout.suit.max,
+            volatile    = <span class="keyword">true</span>,
+            exclusive   = <span class="keyword">true</span>,
+        }
+    }
+<span class="keyword">end</span>)
+
+
+<span class="comment">-- Move the mouse to screen 1, where it cannot create the tag.
+</span>mouse.coords {
+    x = screen[<span class="number">1</span>].geometry.x + <span class="number">10</span>,
+    y = screen[<span class="number">1</span>].geometry.y + <span class="number">10</span>,
+}
+
+<span class="comment">-- Spawn some apps.
+</span>awful.spawn(<span class="string">"kcalc"</span>)
+awful.spawn(<span class="string">"xterm"</span>)
+
+<span class="comment">-- Move the mouse to screen 2, where it can create the tag.
+</span>mouse.coords {
+    x = screen[<span class="number">2</span>].geometry.x + <span class="number">10</span>,
+    y = screen[<span class="number">2</span>].geometry.y + <span class="number">10</span>,
+}
+
+awful.spawn(<span class="string">"xterm"</span>)
+awful.spawn(<span class="string">"kcalc"</span>)
+</pre>
+
+<h1> Properties available in the rules</h1>
+
 
 <table class='widget_list' border=1>
  <tr>
@@ -493,125 +655,186 @@ awful.spawn(<span class="string">'xterm'</span>)
    <tr><td><a href='../core_components/tag.html#name'>name</a></td><td>Tag name</td></tr>
    <tr><td><a href='../core_components/tag.html#selected'>selected</a></td><td>True if the tag is selected to be viewed</td></tr>
    <tr><td><a href='../core_components/tag.html#activated'>activated</a></td><td>True if the tag is active and can be used</td></tr>
+   <tr><td><a href='../core_components/tag.html#index'>index</a></td><td>The tag index</td></tr>
+   <tr><td><a href='../core_components/tag.html#isolated'>isolated</a></td><td>When set, clients added to this tag will be untagged from all other tags</td></tr>
+   <tr><td><a href='../core_components/tag.html#max_client'>max\_client</a></td><td>The maximum number of client before creating a duplicate</td></tr>
+   <tr><td><a href='../core_components/tag.html#focus_policy'>focus\_policy</a></td><td>Define when clients on this tag are allowed to steal the focus</td></tr>
+   <tr><td><a href='../core_components/tag.html#relocator'>relocator</a></td><td>Function called when new screens are added to potentially relocate the tag</td></tr>
+   <tr><td><a href='../core_components/tag.html#exclusive'>exclusive</a></td><td>Define if a tag implicitly reject or allow any client</td></tr>
+   <tr><td><a href='../core_components/tag.html#screen'>screen</a></td><td>The tag screen</td></tr>
+   <tr><td><a href='../core_components/tag.html#master_width_factor'>master\_width\_factor</a></td><td>The tag master width factor</td></tr>
+   <tr><td><a href='../core_components/tag.html#layout'>layout</a></td><td>The tag client layout</td></tr>
+   <tr><td><a href='../core_components/tag.html#layouts'>layouts</a></td><td>The (proposed) list of available layouts for this tag</td></tr>
+   <tr><td><a href='../core_components/tag.html#volatile'>volatile</a></td><td>Define if the tag must be deleted when the last client is untagged</td></tr>
+   <tr><td><a href='../core_components/tag.html#gap'>gap</a></td><td>The gap (spacing, also called <code>useless\_gap</code>) between clients</td></tr>
+   <tr><td><a href='../core_components/tag.html#gap_single_client'>gap\_single\_client</a></td><td>Enable gaps for a single client</td></tr>
+   <tr><td><a href='../core_components/tag.html#master_fill_policy'>master\_fill\_policy</a></td><td>Set size fill policy for the master client(s)</td></tr>
+   <tr><td><a href='../core_components/tag.html#master_count'>master\_count</a></td><td>Set the number of master windows</td></tr>
+   <tr><td><a href='../core_components/tag.html#icon'>icon</a></td><td>Set the tag icon</td></tr>
+   <tr><td><a href='../core_components/tag.html#column_count'>column\_count</a></td><td>Set the number of columns</td></tr>
+   <tr><td><a href='../core_components/tag.html#name'>name</a></td><td>Tag name</td></tr>
+   <tr><td><a href='../core_components/tag.html#selected'>selected</a></td><td>True if the tag is selected to be viewed</td></tr>
+   <tr><td><a href='../core_components/tag.html#activated'>activated</a></td><td>True if the tag is active and can be used</td></tr>
  </table>
 
 </p>
+    <div class="extra-header">
+
+
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2011-2019 Emmanuel Lepage Vallee</li>
-        <li><strong>Author</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;</li>
+                <li><strong>Copyright</strong>: 2011-2019 Emmanuel Lepage Vallee</li>
+                <li>
+                    <strong>Originally authored by</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Functions">Functions</a>
-</h2>
+<h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#module.remove_rule_source"><span class='function_modname'>ruled.tag.</span>remove_rule_source (name)</a></td>
-      <td class="summary">Remove a source.</td>
+      <td class="name" >
+        <a href="#module.remove_rule_source"><span class='function_modname'>ruled.tag.</span>remove_rule_source (name)</a>
+      </td>
+      <td colspan="2" class="summary">Remove a source.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.apply"><span class='function_modname'>ruled.tag.</span>apply (c)</a></td>
-      <td class="summary">Apply the tag rules to a client.</td>
+      <td class="name" >
+        <a href="#module.apply"><span class='function_modname'>ruled.tag.</span>apply (c)</a>
+      </td>
+      <td colspan="2" class="summary">Apply the tag rules to a client.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.append_rule"><span class='function_modname'>ruled.tag.</span>append_rule (table)</a></td>
-      <td class="summary">Add a new rule to the default set.</td>
+      <td class="name" >
+        <a href="#module.append_rule"><span class='function_modname'>ruled.tag.</span>append_rule (table)</a>
+      </td>
+      <td colspan="2" class="summary">Add a new rule to the default set.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.append_rules"><span class='function_modname'>ruled.tag.</span>append_rules (table)</a></td>
-      <td class="summary">Add a new rules to the default set.</td>
+      <td class="name" >
+        <a href="#module.append_rules"><span class='function_modname'>ruled.tag.</span>append_rules (table)</a>
+      </td>
+      <td colspan="2" class="summary">Add a new rules to the default set.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.remove_rule"><span class='function_modname'>ruled.tag.</span>remove_rule (table)</a></td>
-      <td class="summary">Remove a new rule to the default set.</td>
+      <td class="name" >
+        <a href="#module.remove_rule"><span class='function_modname'>ruled.tag.</span>remove_rule (table)</a>
+      </td>
+      <td colspan="2" class="summary">Remove a new rule to the default set.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.get_or_create_by_name"><span class='function_modname'>ruled.tag.</span>get_or_create_by_name (name, screen, args)</a></td>
-      <td class="summary">Return an existing dynamic tag or create one.</td>
+      <td class="name" >
+        <a href="#module.get_or_create_by_name"><span class='function_modname'>ruled.tag.</span>get_or_create_by_name (name, screen, args)</a>
+      </td>
+      <td colspan="2" class="summary">Return an existing dynamic tag or create one.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.get_names"><span class='function_modname'>ruled.tag.</span>get_names ()</a></td>
-      <td class="summary">Return a list of static names for dynamic tags.</td>
+      <td class="name" >
+        <a href="#module.get_names"><span class='function_modname'>ruled.tag.</span>get_names ()</a>
+      </td>
+      <td colspan="2" class="summary">Return a list of static names for dynamic tags.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.rules_for_name"><span class='function_modname'>ruled.tag.</span>rules_for_name (name)</a></td>
-      <td class="summary">Get the rules for a tag name.</td>
+      <td class="name" >
+        <a href="#module.rules_for_name"><span class='function_modname'>ruled.tag.</span>rules_for_name (name)</a>
+      </td>
+      <td colspan="2" class="summary">Get the rules for a tag name.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#module.get_next_tag"><span class='function_modname'>ruled.tag.</span>get_next_tag (t, args)</a></td>
-      <td class="summary">Configurable way to get &ldquo;the next tag&rdquo;.</td>
+      <td class="name" >
+        <a href="#module.get_next_tag"><span class='function_modname'>ruled.tag.</span>get_next_tag (t, args)</a>
+      </td>
+      <td colspan="2" class="summary">Configurable way to get "the next tag".</td>
     </tr>
 </table>
-<h2>
-    <a href="#Rule_components">Rule components</a>
-</h2>
+<h2><a href="#Rule_components">Rule components</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#properties">properties</a></td>
-      <td class="summary">A table which content will be used to set the target object properties.</td>
+      <td class="shortname" ><a href="#properties">properties</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">A table whose content will be used to set the target object properties.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#callbacks">callbacks</a></td>
-      <td class="summary">A list of callback function to call <em>after</em> the properties have been apploed.</td>
+      <td class="shortname" ><a href="#callbacks">callbacks</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">A list of callback function to call <em>after</em> the properties have been apploed.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#rule">rule</a></td>
-      <td class="summary">A table which content will be compared to the target object current properties.</td>
+      <td class="shortname" ><a href="#rule">rule</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">A table whose content will be compared to the target object current properties.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#rule_any">rule_any</a></td>
-      <td class="summary">Similar to <a href="../declarative_rules/ruled.tag.html#rule">rule</a>, but each entry is a table with multiple values.</td>
+      <td class="shortname" ><a href="#rule_any">rule_any</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">Similar to <a href="../declarative_rules/ruled.tag.html#rule">rule</a>, but each entry is a table with multiple values.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#except">except</a></td>
-      <td class="summary">The negative equivalent of <a href="../declarative_rules/ruled.tag.html#rule">rule</a>.</td>
+      <td class="shortname" ><a href="#except">except</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">The negative equivalent of <a href="../declarative_rules/ruled.tag.html#rule">rule</a>.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#except_any">except_any</a></td>
-      <td class="summary">The negative equivalent of <a href="../declarative_rules/ruled.tag.html#rule_any">rule_any</a>.</td>
+      <td class="shortname" ><a href="#except_any">except_any</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">The negative equivalent of <a href="../declarative_rules/ruled.tag.html#rule_any">rule_any</a>.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#rule_every">rule_every</a></td>
-      <td class="summary">Matches when one of every "category" of components match.</td>
+      <td class="shortname" ><a href="#rule_every">rule_every</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">Matches when one of every \"category\" of components match.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#rule_every">rule_every</a></td>
-      <td class="summary">A table which content will be compared to the target object current properties.</td>
+      <td class="shortname" ><a href="#rule_lesser">rule_lesser</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">A table whose content will be compared to the target object current properties.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#rule_every">rule_every</a></td>
-      <td class="summary">A table which content will be compared to the target object current properties.</td>
+      <td class="shortname" ><a href="#rule_greater">rule_greater</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">A table whose content will be compared to the target object current properties.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#id">id</a></td>
-      <td class="summary">An identifier for this rule.</td>
+      <td class="shortname" ><a href="#id">id</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table <i>or</i> string <i>or</i> number <i>or</i> function</span></td>
+      <td colspan="2" class="summary">An identifier for this rule.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Extra_properties_available_in_awful_rules_and_awful_spawn">Extra properties available in awful.rules and awful.spawn</a>
-</h2>
+<h2><a href="#Extra_properties_available_in_the_rules">Extra properties available in the rules</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#init">init</a></td>
-      <td class="summary">Create the tag when the rules are executed or only when clients are tagged.</td>
+      <td class="shortname" ><a href="#init">init</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">Create the tag when the rules are executed or only when clients are tagged.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#switch_to_tags">switch_to_tags</a></td>
-      <td class="summary">Unselect the current tags and select this client tags when a client is tagged.</td>
+      <td class="shortname" ><a href="#switch_to_tags">switch_to_tags</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">Unselect the current tags and select this client tags when a client is tagged.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#view_only">view_only</a></td>
-      <td class="summary">Deselect all tags and select the tag when a client is tagged.</td>
+      <td class="shortname" ><a href="#view_only">view_only</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">Deselect all tags and select the tag when a client is tagged.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#multi_class">multi_class</a></td>
-      <td class="summary">Allow multiple classes in the tag.</td>
+      <td class="shortname" ><a href="#multi_class">multi_class</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">Allow multiple classes in the tag.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#only_on_selected">only_on_selected</a></td>
-      <td class="summary">Only tag clients to this tag if it is currently selected.</td>
+      <td class="shortname" ><a href="#only_on_selected">only_on_selected</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">Only tag clients to this tag if it is currently selected.</td>
     </tr>
 </table>
 
@@ -625,15 +848,16 @@ awful.spawn(<span class="string">'xterm'</span>)
     <dt>
     <a name = "module.remove_rule_source"></a>
     <strong><span class='function_modname'>ruled.tag.</span>remove_rule_source (name)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Remove a source.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The source name.
         </li>
     </ul>
@@ -648,18 +872,23 @@ awful.spawn(<span class="string">'xterm'</span>)
 
 
 
+
+    <span id=item949 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "module.apply"></a>
     <strong><span class='function_modname'>ruled.tag.</span>apply (c)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Apply the tag rules to a client. </p>
 
 <p> This is useful when it is necessary to apply rules after a tag has been
- created. Many workflows can make use of &ldquo;blank&rdquo; tags which wont match any
+ created. Many workflows can make use of "blank" tags which wont match any
  rules until later.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -673,14 +902,19 @@ awful.spawn(<span class="string">'xterm'</span>)
 
 
 
+
+    <span id=item950 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "module.append_rule"></a>
     <strong><span class='function_modname'>ruled.tag.</span>append_rule (table)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Add a new rule to the default set.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -693,14 +927,19 @@ awful.spawn(<span class="string">'xterm'</span>)
 
 
 
+
+    <span id=item951 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "module.append_rules"></a>
     <strong><span class='function_modname'>ruled.tag.</span>append_rules (table)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Add a new rules to the default set.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -713,14 +952,19 @@ awful.spawn(<span class="string">'xterm'</span>)
 
 
 
+
+    <span id=item952 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "module.remove_rule"></a>
     <strong><span class='function_modname'>ruled.tag.</span>remove_rule (table)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Remove a new rule to the default set.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -733,26 +977,34 @@ awful.spawn(<span class="string">'xterm'</span>)
 
 
 
+
+    <span id=item953 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "module.get_or_create_by_name"></a>
     <strong><span class='function_modname'>ruled.tag.</span>get_or_create_by_name (name, screen, args)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Return an existing dynamic tag or create one.
-
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
 
 
+
         </li>
         <li><span class="parameter">screen</span>
 
 
+
         </li>
         <li><span class="parameter">args</span>
+
 
 
         </li>
@@ -762,19 +1014,26 @@ awful.spawn(<span class="string">'xterm'</span>)
     <ol>
 
            <span class="types"><span class="type">tag</span> or <span class="type">nil</span></span>
-        A tag or nil if the name doesn&rsquo;t exist.
+        A tag or nil if the name doesn't exist.
     </ol>
 
 
 
 
+
+    <span id=item954 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "module.get_names"></a>
     <strong><span class='function_modname'>ruled.tag.</span>get_names ()</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>Return a list of static names for dynamic tags. </p>
+
+<p>Return a list of static names for dynamic tags. </p>
 
 <p> Do <em>not</em> modify this list. If a copy is needed, use:</p>
 
@@ -788,10 +1047,16 @@ awful.spawn(<span class="string">'xterm'</span>)
 
 
 
+
+    <span id=item955 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "module.rules_for_name"></a>
     <strong><span class='function_modname'>ruled.tag.</span>rules_for_name (name)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the rules for a tag name. </p>
@@ -799,10 +1064,10 @@ awful.spawn(<span class="string">'xterm'</span>)
 <p> Note, do not modify the returned table, make a deep copy if a modified
  version is needed.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
+
 
 
         </li>
@@ -812,34 +1077,44 @@ awful.spawn(<span class="string">'xterm'</span>)
 
 
 
+
+    <span id=item956 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "module.get_next_tag"></a>
     <strong><span class='function_modname'>ruled.tag.</span>get_next_tag (t, args)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    Configurable way to get &ldquo;the next tag&rdquo;. </p>
+    Configurable way to get "the next tag". </p>
 
 <p> It can navigate across screens, rotate tags or create new ones.</p>
 
-<p> The &ldquo;WMii workflow&rdquo; is to create a new tag when you reach the last one and
+<p> The "WMii workflow" is to create a new tag when you reach the last one and
  remove empty tags.
-
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">t</span>
 
 
+
         </li>
         <li><span class="parameter">args</span>
-        TODO eminent style create TODO rotate TODO args.direction TODO args.rotate_tags TODO args.rotate_screens TODO args.fallback
+        TODO eminent style create TODO rotate TODO args.direction TODO args.rotate<em>tags TODO args.rotate</em>screens TODO args.fallback
         </li>
     </ul>
 
 
 
 
+
+
+    <span id=item957 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -849,18 +1124,13 @@ awful.spawn(<span class="string">'xterm'</span>)
     <dt>
     <a name = "properties"></a>
     <strong>properties</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    A table which content will be used to set the target object properties.
+    A table whose content will be used to set the target object properties.
 
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -870,22 +1140,21 @@ awful.spawn(<span class="string">'xterm'</span>)
     </ul>
 
 
+
+    <span id=item958 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "callbacks"></a>
     <strong>callbacks</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     A list of callback function to call <em>after</em> the properties have been apploed.
 
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -895,25 +1164,21 @@ awful.spawn(<span class="string">'xterm'</span>)
     </ul>
 
 
+
+    <span id=item959 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "rule"></a>
     <strong>rule</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    A table which content will be compared to the target object current properties. </p>
+    A table whose content will be compared to the target object current properties.
 
-<p> The comparison operator for this section is equal to (<code>==</code>). In case of a
- string, it will be pattern matched.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -924,23 +1189,22 @@ awful.spawn(<span class="string">'xterm'</span>)
     </ul>
 
 
+
+    <span id=item960 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "rule_any"></a>
     <strong>rule_any</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Similar to <a href="../declarative_rules/ruled.tag.html#rule">rule</a>, but each entry is a table with multiple values.
 
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
-
 
 
     <h3>See also:</h3>
@@ -949,23 +1213,22 @@ awful.spawn(<span class="string">'xterm'</span>)
          <li><a href="../declarative_rules/ruled.tag.html#except_any">except_any</a></li>
     </ul>
 
+
+
+    <span id=item961 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "except"></a>
     <strong>except</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The negative equivalent of <a href="../declarative_rules/ruled.tag.html#rule">rule</a>.
 
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -976,22 +1239,46 @@ awful.spawn(<span class="string">'xterm'</span>)
     </ul>
 
 
+
+    <span id=item962 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "except_any"></a>
     <strong>except_any</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The negative equivalent of <a href="../declarative_rules/ruled.tag.html#rule_any">rule_any</a>.
 
 
-    <h3>Type:</h3>
+
+
+    <h3>See also:</h3>
     <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
+         <li><a href="../declarative_rules/ruled.tag.html#rule">rule</a></li>
+         <li><a href="../declarative_rules/ruled.tag.html#except">except</a></li>
     </ul>
+
+
+
+    <span id=item963 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "rule_every"></a>
+    <strong>rule_every</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Matches when one of every \"category\" of components match.
+
 
 
 
@@ -1002,22 +1289,23 @@ awful.spawn(<span class="string">'xterm'</span>)
     </ul>
 
 
+
+    <span id=item964 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "rule_every"></a>
-    <strong>rule_every</strong>
+    <a name = "rule_lesser"></a>
+    <strong>rule_lesser</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    Matches when one of every "category" of components match.
+    A table whose content will be compared to the target object current properties. </p>
 
+<p> The comparison will be made using the lesser (<code>&lt;</code>) operator.
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -1028,64 +1316,44 @@ awful.spawn(<span class="string">'xterm'</span>)
     </ul>
 
 
+
+    <span id=item965 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "rule_every"></a>
-    <strong>rule_every</strong>
+    <a name = "rule_greater"></a>
+    <strong>rule_greater</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    A table which content will be compared to the target object current properties. </p>
+    A table whose content will be compared to the target object current properties. </p>
 
-<p> The comparison operator for this section is greater than (<code>&gt;</code>).
+<p> The comparison will be made using the greater (<code>&gt;</code>) operator.
 
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
 
 
 
     <h3>See also:</h3>
     <ul>
-         <a href="../declarative_rules/ruled.tag.html#rule">rule</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "rule_every"></a>
-    <strong>rule_every</strong>
-    </dt>
-    <dd>
-    A table which content will be compared to the target object current properties. </p>
-
-<p> The comparison operator for this section is lesser than (<code>&lt;</code>).
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
+         <li><a href="../declarative_rules/ruled.tag.html#rule">rule</a></li>
+         <li><a href="../declarative_rules/ruled.tag.html#except">except</a></li>
     </ul>
 
 
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../declarative_rules/ruled.tag.html#rule">rule</a>
-    </ul>
-
+    <span id=item966 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "id"></a>
     <strong>id</strong>
+    <span class="proptype"><span class='summary_type'>table <i>or</i> string <i>or</i> number <i>or</i> function</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     An identifier for this rule. </p>
@@ -1098,25 +1366,25 @@ awful.spawn(<span class="string">'xterm'</span>)
  modify or disable a rule.
 
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-        |string|number|function
-        </li>
-    </ul>
 
 
 
 
+
+    <span id=item967 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
-    <h2 class="section-header "><a name="Extra_properties_available_in_awful_rules_and_awful_spawn"></a>Extra properties available in awful.rules and awful.spawn</h2>
+    <h2 class="section-header "><a name="Extra_properties_available_in_the_rules"></a>Extra properties available in the rules</h2>
 
     <dl class="function">
     <dt>
     <a name = "init"></a>
     <strong>init</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create the tag when the rules are executed or only when clients are tagged. </p>
@@ -1124,15 +1392,6 @@ awful.spawn(<span class="string">'xterm'</span>)
 <p> They will be created in all matching screens.
 
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">boolean</span>
-
-
-         (<em>default</em> false)
-        </li>
-    </ul>
-
 
 
     <h3>See also:</h3>
@@ -1140,24 +1399,22 @@ awful.spawn(<span class="string">'xterm'</span>)
          <a href="../core_components/tag.html#selected">tag.selected</a>
     </ul>
 
+
+
+    <span id=item968 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "switch_to_tags"></a>
     <strong>switch_to_tags</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Unselect the current tags and select this client tags when a client is tagged.
 
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">boolean</span>
-
-
-         (<em>default</em> false)
-        </li>
-    </ul>
 
 
 
@@ -1167,23 +1424,21 @@ awful.spawn(<span class="string">'xterm'</span>)
     </ul>
 
 
+
+    <span id=item969 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "view_only"></a>
     <strong>view_only</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Deselect all tags and select the tag when a client is tagged.
 
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">boolean</span>
-
-
-         (<em>default</em> false)
-        </li>
-    </ul>
 
 
 
@@ -1192,10 +1447,17 @@ awful.spawn(<span class="string">'xterm'</span>)
     </ul>
 
 
+
+    <span id=item970 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "multi_class"></a>
     <strong>multi_class</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Allow multiple classes in the tag. </p>
@@ -1204,15 +1466,6 @@ awful.spawn(<span class="string">'xterm'</span>)
  tag.
 
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">boolean</span>
-
-
-         (<em>default</em> true)
-        </li>
-    </ul>
-
 
 
     <h3>See also:</h3>
@@ -1220,10 +1473,17 @@ awful.spawn(<span class="string">'xterm'</span>)
     </ul>
 
 
+
+    <span id=item971 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "only_on_selected"></a>
     <strong>only_on_selected</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Only tag clients to this tag if it is currently selected. </p>
@@ -1231,18 +1491,13 @@ awful.spawn(<span class="string">'xterm'</span>)
 <p> If no tag is selected, this is ignored and one will be selected.
 
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">boolean</span>
-
-
-         (<em>default</em> true)
-        </li>
-    </ul>
 
 
 
 
+
+    <span id=item972 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -1252,7 +1507,7 @@ awful.spawn(<span class="string">'xterm'</span>)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

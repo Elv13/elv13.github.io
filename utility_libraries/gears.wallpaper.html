@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Utillib gears.wallpaper - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -34,6 +31,8 @@
 <div id="main">
 
 
+
+
 <!-- Menu -->
 
 <div id="navigation">
@@ -46,7 +45,7 @@
 
 <h2>Contents</h2>
 <ul>
-<li><a href="#Static_module_functions">Static module functions</a></li>
+<li><a href="#Deprecated_functions">Deprecated functions</a></li>
 </ul>
 
 
@@ -62,6 +61,27 @@
   <li><a href="../utility_libraries/gears.string.html">gears.string</a></li>
   <li><a href="../utility_libraries/gears.table.html">gears.table</a></li>
   <li><strong>gears.wallpaper</strong></li>
+</ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
 </ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
@@ -80,7 +100,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -114,6 +133,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -125,23 +145,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -149,6 +152,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -175,10 +179,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -188,6 +191,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -201,9 +205,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -225,11 +226,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -242,63 +246,65 @@
 
 <h1>Module: <code>gears.wallpaper</code></h1>
 <p>Functions for setting the wallpaper.</p>
-<p><p> There are two levels of functionality provided by this module:</p>
-
-<p> The low-level functionality consists of two functions.
- <a href="../utility_libraries/gears.wallpaper.html#set">set</a> an already-prepared wallpaper on all screens and <a href="../utility_libraries/gears.wallpaper.html#prepare_context">prepare_context</a>
- prepares things to draw a new wallpaper.</p>
-
-<p> The low-level API can for example be used to set solid red as a wallpaper
- (see <a href="../theme_related_libraries/gears.color.html#">gears.color</a> for details on the supported syntax):</p>
-
-<pre>
-gears.wallpaper.set(<span class="string">"#ff0000"</span>)
-</pre>
+<p> This module is deprecated, please use <a href="../popups_and_bars/awful.wallpaper.html#">awful.wallpaper</a>.</p>
+    <div class="extra-header">
 
 
-<p> Ontop of these low-level functions, the remaining functions implement more
- useful functionality. For example, given a screen object <code>s</code>, an image can be
- set as the wallpaper as follows:</p>
-
-<pre>
-gears.wallpaper.maximized(<span class="string">"path/to/image.png"</span>, s)
-</pre>
-
-</p>
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2012 Uli Schlachter</li>
-        <li><strong>Author</strong>: Uli Schlachter</li>
+                <li><strong>Copyright</strong>: 2012 Uli Schlachter</li>
+                <li>
+                    <strong>Originally authored by</strong>: Uli Schlachter<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Static_module_functions">Static module functions</a>
-</h2>
+<h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#prepare_context"><span class='function_modname'>gears.wallpaper.</span>prepare_context <span class='function_args'>(s)</span></a></td>
-      <td class="summary">Prepare the needed state for setting a wallpaper.</td>
+      <td class="name" >
+        <a href="#prepare_context">gears.wallpaper.prepare_context<i class="deprecated_label"> [deprecated]</i></a>
+      </td>
+      <td colspan="2" class="summary">Prepare the needed state for setting a wallpaper.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#set"><span class='function_modname'>gears.wallpaper.</span>set <span class='function_args'>(pattern)</span></a></td>
-      <td class="summary">Set the current wallpaper.</td>
+      <td class="name" >
+        <a href="#set">gears.wallpaper.set<i class="deprecated_label"> [deprecated]</i></a>
+      </td>
+      <td colspan="2" class="summary">Set the current wallpaper.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#centered"><span class='function_modname'>gears.wallpaper.</span>centered <span class='function_args'>(surf, s, background, scale)</span></a></td>
-      <td class="summary">Set a centered wallpaper.</td>
+      <td class="name" >
+        <a href="#centered">gears.wallpaper.centered<i class="deprecated_label"> [deprecated]</i></a>
+      </td>
+      <td colspan="2" class="summary">Set a centered wallpaper.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#tiled"><span class='function_modname'>gears.wallpaper.</span>tiled <span class='function_args'>(surf, s, offset)</span></a></td>
-      <td class="summary">Set a tiled wallpaper.</td>
+      <td class="name" >
+        <a href="#tiled">gears.wallpaper.tiled<i class="deprecated_label"> [deprecated]</i></a>
+      </td>
+      <td colspan="2" class="summary">Set a tiled wallpaper.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#maximized"><span class='function_modname'>gears.wallpaper.</span>maximized <span class='function_args'>(surf, s, ignore_aspect, offset)</span></a></td>
-      <td class="summary">Set a maximized wallpaper.</td>
+      <td class="name" >
+        <a href="#maximized">gears.wallpaper.maximized<i class="deprecated_label"> [deprecated]</i></a>
+      </td>
+      <td colspan="2" class="summary">Set a maximized wallpaper.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#fit"><span class='function_modname'>gears.wallpaper.</span>fit <span class='function_args'>(surf, s, background)</span></a></td>
-      <td class="summary">Set a fitting wallpaper.</td>
+      <td class="name" >
+        <a href="#fit">gears.wallpaper.fit<i class="deprecated_label"> [deprecated]</i></a>
+      </td>
+      <td colspan="2" class="summary">Set a fitting wallpaper.</td>
     </tr>
 </table>
 
@@ -306,19 +312,20 @@ gears.wallpaper.maximized(<span class="string">"path/to/image.png"</span>, s)
 <br/>
 
 
-    <h2 class="section-header "><a name="Static_module_functions"></a>Static module functions</h2>
+    <h2 class="section-header "><a name="Deprecated_functions"></a>Deprecated functions</h2>
 
     <dl class="function">
     <dt>
     <a name = "prepare_context"></a>
-    <strong><span class='function_modname'>gears.wallpaper.</span>prepare_context <span class='function_args'>(s)</span></strong>
+    <strong>gears.wallpaper.prepare_context<i class="deprecated_label"> [deprecated]</i></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Prepare the needed state for setting a wallpaper.
  This function returns a cairo context through which a wallpaper can be drawn.
  The context is only valid for a short time and should not be saved in a
  global variable.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -338,14 +345,19 @@ gears.wallpaper.maximized(<span class="string">"path/to/image.png"</span>, s)
 
 
 
+
+    <span id=item2279 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "set"></a>
-    <strong><span class='function_modname'>gears.wallpaper.</span>set <span class='function_args'>(pattern)</span></strong>
+    <strong>gears.wallpaper.set<i class="deprecated_label"> [deprecated]</i></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Set the current wallpaper.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -363,14 +375,19 @@ gears.wallpaper.maximized(<span class="string">"path/to/image.png"</span>, s)
     </ul>
 
 
+
+    <span id=item2280 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "centered"></a>
-    <strong><span class='function_modname'>gears.wallpaper.</span>centered <span class='function_args'>(surf, s, background, scale)</span></strong>
+    <strong>gears.wallpaper.centered<i class="deprecated_label"> [deprecated]</i></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Set a centered wallpaper.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -398,14 +415,19 @@ gears.wallpaper.maximized(<span class="string">"path/to/image.png"</span>, s)
     </ul>
 
 
+
+    <span id=item2281 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "tiled"></a>
-    <strong><span class='function_modname'>gears.wallpaper.</span>tiled <span class='function_args'>(surf, s, offset)</span></strong>
+    <strong>gears.wallpaper.tiled<i class="deprecated_label"> [deprecated]</i></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Set a tiled wallpaper.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -425,14 +447,19 @@ gears.wallpaper.maximized(<span class="string">"path/to/image.png"</span>, s)
 
 
 
+
+    <span id=item2282 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "maximized"></a>
-    <strong><span class='function_modname'>gears.wallpaper.</span>maximized <span class='function_args'>(surf, s, ignore_aspect, offset)</span></strong>
+    <strong>gears.wallpaper.maximized<i class="deprecated_label"> [deprecated]</i></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Set a maximized wallpaper.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -444,7 +471,7 @@ gears.wallpaper.maximized(<span class="string">"path/to/image.png"</span>, s)
    all screens are set.
         </li>
         <li><span class="parameter">ignore_aspect</span>
-         If this is true, the image&rsquo;s aspect ratio is ignored.
+         If this is true, the image's aspect ratio is ignored.
    The default is to honor the aspect ratio.
         </li>
         <li><span class="parameter">offset</span>
@@ -456,14 +483,19 @@ gears.wallpaper.maximized(<span class="string">"path/to/image.png"</span>, s)
 
 
 
+
+    <span id=item2283 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "fit"></a>
-    <strong><span class='function_modname'>gears.wallpaper.</span>fit <span class='function_args'>(surf, s, background)</span></strong>
+    <strong>gears.wallpaper.fit<i class="deprecated_label"> [deprecated]</i></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Set a fitting wallpaper.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -488,6 +520,10 @@ gears.wallpaper.maximized(<span class="string">"path/to/image.png"</span>, s)
     </ul>
 
 
+
+    <span id=item2284 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
 
@@ -496,7 +532,7 @@ gears.wallpaper.maximized(<span class="string">"path/to/image.png"</span>, s)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

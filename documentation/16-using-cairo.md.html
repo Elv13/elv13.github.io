@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Topic 16-using-cairo.md - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -56,15 +55,39 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><strong>Using Cairo and LGI</strong></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
   <li><a href="../documentation/90-FAQ.md.html">FAQ</a></li>
+</ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
 </ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
@@ -83,7 +106,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -117,6 +139,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -128,23 +151,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -152,6 +158,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -191,10 +198,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -204,6 +210,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -217,9 +224,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -241,93 +245,92 @@
 
 <div id="content">
 
-    <h1>Using Cairo and LGI</h1>
+
+<h1>Using Cairo and LGI</h1>
 
 <p>The interface of Awesome is mostly based on a library called LGI. It provides
 access to C libraries such as GTK, GLib, Cairo, Pango, PangoCairo and RSVG using
-Lua code without having to write actual &ldquo;glue&rdquo; C code.</p>
+Lua code without having to write actual "glue" C code.</p>
 
 <p>This is done using the GObject-introspection framework. The main advantage is
 the time saved and large number of features exposed for free. The downside is
 the lack of proper Lua centric documentation and examples. Some examples can be
-found in <a href="https://github.com/pavouk/lgi/tree/master/docs">LGI&rsquo;s own documentation</a>,
+found in <a href="https://github.com/pavouk/lgi/tree/master/docs">LGI's own documentation</a>,
 but this does not directly explain how to use a concrete API.
 Using other APIs requires some trial and error, and can be even impossible if
 the introspection data is missing or inaccurate.
 Using low-level APIs directly can easily cause crashes.
-It is the programmer&rsquo;s responsibility to properly check return and error
+It is the programmer's responsibility to properly check return and error
 values.</p>
 
 <p><a name="Using_LGI_in_Awesome"></a></p>
-
 <h2>Using LGI in Awesome</h2>
 
 <p>GObject and Gnome centric libraries tend to use the common C practice of
 emulating namespaces using underscores in function names.
 LGI exposes a proper namespace based API. For example, if the C function is:</p>
 
+
 <pre>
 cairo_image_surface_create()
 </pre>
 
-
 <p>Then the LGI equivalent is:</p>
+
 
 <pre>
 lgi.cairo.ImageSurface.create()
 </pre>
 
-
 <p>The same goes for enums:</p>
+
 
 <pre>
 CAIRO_FORMAT_ARGB32
 </pre>
 
-
 <p>becomes:</p>
+
 
 <pre>
 lgi.cairo.Format.ARGB32
 </pre>
 
-
 <p>LGI is also object oriented while the C API is function based. When those
-functions take the &ldquo;class&rdquo; &ldquo;object&rdquo;, then this:</p>
+functions take the "class" "object", then this:</p>
+
 
 <pre>
 cairo_line_to(cr, x, y)
 </pre>
 
-
 <p>can be expressed as:</p>
+
 
 <pre>
 cr:line_to(x, y)
 </pre>
 
-
 <p>It is however important to note some inconsistencies. For example, Cairo is
 called <code>lgi.cairo</code> while GLib is called <code>lgi.GLib</code>. Figuring this out will
 require some experimenting. The best way to do this without actually
-reloading Awesome is to open the <code>lua</code> command in a terminal and use <a href="https://www.lua.org/manual/5.1/manual.html#pdf-print">print</a>:</p>
+reloading Awesome is to open the <code>lua</code> command in a terminal and use <a href="https://www.lua.org/manual/5.3/manual.html#pdf-print">print</a>:</p>
+
 
 <pre>
 <span class="global">print</span>(<span class="string">"This will print a table address:"</span>, <span class="global">require</span>(<span class="string">"lgi"</span>).cairo)
 <span class="global">print</span>(<span class="string">"This will print an error:"</span>, <span class="global">require</span>(<span class="string">"lgi"</span>).Cairo)
 </pre>
 
-
-<p>It is recommended to avoid using <a href="https://www.lua.org/manual/5.1/manual.html#pdf-require">require</a> always when using a function, but
+<p>It is recommended to avoid using <a href="https://www.lua.org/manual/5.3/manual.html#pdf-require">require</a> always when using a function, but
 include the libraries at the top of your <a href="../sample files/rc.lua.html#">rc.lua</a> or Lua module instead:</p>
+
 
 <pre>
 <span class="keyword">local</span> cairo = <span class="global">require</span>(<span class="string">"lgi"</span>).cairo
 </pre>
 
-
 <p><a name="The_Cairo_API"></a></p>
-
 <h2>The Cairo API</h2>
 
 <p>Cairo is a 2D graphic library used by Awesome, Gnome and XFCE. It allows to
@@ -343,14 +346,13 @@ feature.</p>
 of surfaces including:</p>
 
 <ul>
-<li>Color images with transparency (<code>ARGB32</code>) or without (<code>RGB24</code>)</li>
-<li>Monochrome image surfaces with transparency (<code>A8</code>) or without (<code>A1</code>)</li>
-<li>SVG vectorial surfaces</li>
-<li>Native (XCB) surfaces</li>
-<li>Framebuffers and other less interesting ones (from the point of
-view of Awesome)</li>
+    <li>Color images with transparency (<code>ARGB32</code>) or without (<code>RGB24</code>)</li>
+    <li>Monochrome image surfaces with transparency (<code>A8</code>) or without (<code>A1</code>)</li>
+    <li>SVG vectorial surfaces</li>
+    <li>Native (XCB) surfaces</li>
+    <li>Framebuffers and other less interesting ones (from the point of
+    view of Awesome)</li>
 </ul>
-
 
 <p>For more details see <a href="https://cairographics.org/manual/cairo-Image-Surfaces.html">Surfaces</a>.</p>
 
@@ -371,22 +373,21 @@ may not be closed (a shape).</p>
 The current path is extended until it is used and reset (see next section).
 Until then nothing will be drawn to the surface.  For example:</p>
 
+
 <pre>
 cr:rectangle(<span class="number">0</span> , <span class="number">0</span> , <span class="number">10</span>, <span class="number">10</span>)
 cr:rectangle(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>)
 </pre>
-
 
 <p>will not do anything until the operation is applied to the context.</p>
 
 <p>For more details, read:</p>
 
 <ul>
-<li><a href="http://cairographics.org/manual/cairo-Paths.html">Path</a></li>
-<li><a href="http://cairographics.org/manual/cairo-cairo-t.html">Context</a></li>
-<li><a href="http://cairographics.org/manual/cairo-Transformations.html">Transformation</a></li>
+    <li><a href="http://cairographics.org/manual/cairo-Paths.html">Path</a></li>
+    <li><a href="http://cairographics.org/manual/cairo-cairo-t.html">Context</a></li>
+    <li><a href="http://cairographics.org/manual/cairo-Transformations.html">Transformation</a></li>
 </ul>
-
 
 <p>A context also holds a transformation matrix (see <a href="../classes/gears.matrix.html#">gears.matrix</a>), which is
 used when applying an operation.</p>
@@ -396,14 +397,13 @@ used when applying an operation.</p>
 <p>Multiple operations can be done with the paths. The most common are:</p>
 
 <ul>
-<li><em>fill</em>: Fill the path with the current source.</li>
-<li><em>stroke</em>: Paint the path outline with the current source.</li>
-<li><em>mask</em>: Use the current source as an alpha mask while painting with the
-current operator.</li>
-<li><em>clip</em>: Crop the surface&rsquo;s workarea so nothing outside of the clip will be
-affected by all following operations.</li>
+    <li><em>fill</em>: Fill the path with the current source.</li>
+    <li><em>stroke</em>: Paint the path outline with the current source.</li>
+    <li><em>mask</em>: Use the current source as an alpha mask while painting with the
+    current operator.</li>
+    <li><em>clip</em>: Crop the surface's workarea so nothing outside of the clip will be
+    affected by all following operations.</li>
 </ul>
-
 
 <p><strong>Operators</strong>:</p>
 
@@ -423,6 +423,7 @@ information and examples on how widgets work.</p>
 <p>It is also possible to create surfaces manually. See <a href="../libraries/gears.surface.html#">gears.surface</a> for
 some examples. Here is the most simple example you can get:</p>
 
+
 <pre>
 <span class="comment">-- Create a surface
 </span><span class="keyword">local</span> img = cairo.ImageSurface.create(cairo.Format.ARGB32, <span class="number">50</span>, <span class="number">50</span>)
@@ -431,7 +432,7 @@ some examples. Here is the most simple example you can get:</p>
 </span><span class="keyword">local</span> cr  = cairo.Context(img)
 
 <span class="comment">-- Set a red source
-</span>cr:set_source(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>)
+</span>cr:set_source_rgb(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>)
 <span class="comment">-- Alternative:
 </span>cr:set_source(gears.color(<span class="string">"#ff0000"</span>))
 
@@ -442,9 +443,9 @@ some examples. Here is the most simple example you can get:</p>
 </span>cr:fill()
 </pre>
 
-
 <p>This can then be used as <code>bgimage</code> for a <a href="../popups_and_bars/wibox.html#">wibox</a>, <a href="../popups_and_bars/awful.wibar.html#">awful.wibar</a> or
 <a href="../widget_containers/wibox.container.background.html#">wibox.container.background</a>:</p>
+
 
 <pre>
 screen.primary.mywibox.bgimage = img
@@ -456,7 +457,7 @@ screen.primary.mywibox.bgimage = img
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

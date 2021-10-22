@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Widgetmod wibox.widget.graph - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -48,9 +47,10 @@
 <ul>
 <li><a href="#Constructors">Constructors</a></li>
 <li><a href="#Object_properties">Object properties</a></li>
+<li><a href="#Deprecated_object_properties">Deprecated object properties</a></li>
 <li><a href="#Object_methods">Object methods </a></li>
-<li><a href="#Signals">Signals</a></li>
 <li><a href="#Theme_variables">Theme variables</a></li>
+<li><a href="#Signals">Signals</a></li>
 </ul>
 
 
@@ -63,7 +63,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -83,6 +82,27 @@
   <li><a href="../widgets/wibox.widget.systray.html">wibox.widget.systray</a></li>
   <li><a href="../widgets/wibox.widget.textbox.html">wibox.widget.textbox</a></li>
   <li><a href="../widgets/wibox.widget.textclock.html">wibox.widget.textclock</a></li>
+</ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
 </ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
@@ -105,6 +125,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -116,23 +137,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -140,6 +144,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -179,10 +184,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -192,6 +196,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -205,9 +210,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -229,11 +231,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -255,7 +260,9 @@
 
 <p> To display the graph vertically, use a <a href="../widget_containers/wibox.container.rotate.html#">wibox.container.rotate</a> widget.</p>
 
-<p><img src="../images/AUTOGEN_wibox_widget_defaults_graph.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_defaults_graph.svg" alt="Usage example"/></p>
     <h3>Usage:</h3>
     <ul>
         <pre class="example">wibox.widget {
@@ -264,207 +271,398 @@
 }
 </pre>
     </ul>
+    <div class="extra-header">
+  <div class="extra-header__section">
+    <h3>Class Hierarchy</h3>
+    <div class="inheritance">
+    <ul class="inheritance__level inheritance__level--root">
+        <li class="inheritance__level__node inheritance__level__node--root">
+            <a href="../utility_libraries/gears.object.html">gears.object</a>
+        </li>
+        <li>
+    <ul class="inheritance__level ">
+        <li class="inheritance__level__node ">
+            <a href="../classes/wibox.widget.base.html">wibox.widget.base</a>
+        </li>
+        <li>
+    <ul class="inheritance__level ">
+        <li class="inheritance__level__node ">
+            <strong>wibox.widget.graph</strong>
+        </li>
+    </ul>
+        </li>
+    </ul>
+        </li>
+    </ul>
+    </div>
+  </div>
+
+
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2009 Julien Danjou</li>
-        <li><strong>Author</strong>: Julien Danjou &lt;julien@danjou.info&gt;</li>
+                <li><strong>Copyright</strong>: 2009 Julien Danjou</li>
+                <li>
+                    <strong>Originally authored by</strong>: Julien Danjou &lt;julien@danjou.info&gt;<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Constructors">Constructors</a>
-</h2>
+<h2><a href="#Constructors">Constructors</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#wibox.widget.graph">wibox.widget.graph <span class='function_args'>(args)</span></a></td>
-      <td class="summary">Create a graph widget.</td>
+      <td class="name" >
+        <a href="#wibox.widget.graph">wibox.widget.graph <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
+      </td>
+      <td colspan="2" class="summary">Create a graph widget.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Object_properties">Object properties</a>
-</h2>
+<h2><a href="#Object_properties">Object properties</a></h2>
 <table class="function_list">
+    <tr>
+      <td class="shortname" ><a href="#border_width">border_width</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">Set the graph border_width.</td>
+    </tr>
     <tr>
       <td class="shortname" ><a href="#border_color">border_color</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.color</span></td>
-      <td class="summary">Set the graph border color.</td>
+      <td colspan="2" class="summary">Set the graph border color.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#color">color</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td class="summary">Set the graph foreground color.</td>
+      <td colspan="2" class="summary">Set the graph foreground color.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#background_color">background_color</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.color</span></td>
-      <td class="summary">Set the graph background color.</td>
+      <td colspan="2" class="summary">Set the graph background color.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#group_colors">group_colors</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">Set the colors for data groups.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#max_value">max_value</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">Set the maximum value the graph should handle.</td>
+      <td colspan="2" class="summary">The maximum value the graph should handle.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#min_value">min_value</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">The minimum value.</td>
+      <td colspan="2" class="summary">The minimum value the graph should handle.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#scale">scale</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td class="summary">Set the graph to automatically scale its values.</td>
+      <td colspan="2" class="summary">Set the graph to automatically scale its values.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#clamp_bars">clamp_bars</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">Clamp graph bars to keep them inside the widget for out-of-range values.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#baseline_value">baseline_value</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">The value corresponding to the starting point of graph bars.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#step_width">step_width</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">Set the width or the individual steps.</td>
+      <td colspan="2" class="summary">Set the width or the individual steps.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#step_spacing">step_spacing</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">Set the spacing between the steps.</td>
+      <td colspan="2" class="summary">Set the spacing between the steps.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#step_shape">step_shape</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>shape</span></td>
-      <td class="summary">The step shape.</td>
+      <td class="summarytype" nowrap><span class='summary_type'>gears.shape <i>or</i> function</span></td>
+      <td colspan="2" class="summary">The step shape.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#stack">stack</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td class="summary">Set the graph to draw stacks.</td>
+      <td colspan="2" class="summary">Set the graph to draw stacks.</td>
     </tr>
     <tr>
-      <td class="shortname" ><a href="#stack_colors">stack_colors</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>stack_colors</span></td>
-      <td class="summary">Set the graph stacking colors.</td>
+      <td class="shortname" ><a href="#nan_indication">nan_indication</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">Display NaN indication.</td>
     </tr>
+    <tr>
+      <td class="shortname" ><a href="#nan_color">nan_color</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>gears.color</span></td>
+      <td colspan="2" class="summary">The color of NaN indication.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#capacity">capacity</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>integer <i>or</i> nil</span></td>
+      <td colspan="2" class="summary">Set the graph capacity.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#wibox.widget.base.children">children</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="1" class="summary">Get or set the children elements.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#wibox.widget.base.all_children">all_children</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="1" class="summary">Get all direct and indirect children widgets.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#wibox.widget.base.forced_height">forced_height</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> nil</span></td>
+      <td colspan="1" class="summary">Force a widget height.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#wibox.widget.base.forced_width">forced_width</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> nil</span></td>
+      <td colspan="1" class="summary">Force a widget width.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#wibox.widget.base.opacity">opacity</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="1" class="summary">The widget opacity (transparency).</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#wibox.widget.base.visible">visible</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="1" class="summary">The widget visibility.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#wibox.widget.base.buttons">buttons</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="1" class="summary">The widget buttons.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
+    </tr>
+</table>
+<h2><a href="#Deprecated_object_properties">Deprecated object properties</a></h2>
+<table class="function_list">
     <tr>
       <td class="shortname" ><a href="#height">height</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">Set the graph height.</td>
+      <td colspan="2" class="summary">Set the graph height.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#width">width</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">Set the graph width.</td>
+      <td colspan="2" class="summary">Set the graph width.</td>
     </tr>
     <tr>
-      <td class="shortname" ><a href="#children">children</a></td>
+      <td class="shortname" ><a href="#stack_colors">stack_colors</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">Get or set the children elements.</td>
-    </tr>
-    <tr>
-      <td class="shortname" ><a href="#all_children">all_children</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td class="summary">Get all direct and indirect children widgets.</td>
-    </tr>
-    <tr>
-      <td class="shortname" ><a href="#forced_height">forced_height</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> nil</span></td>
-      <td class="summary">Force a widget height.</td>
-    </tr>
-    <tr>
-      <td class="shortname" ><a href="#forced_width">forced_width</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> nil</span></td>
-      <td class="summary">Force a widget width.</td>
-    </tr>
-    <tr>
-      <td class="shortname" ><a href="#opacity">opacity</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">The widget opacity (transparency).</td>
-    </tr>
-    <tr>
-      <td class="shortname" ><a href="#visible">visible</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td class="summary">The widget visibility.</td>
+      <td colspan="2" class="summary">Set the colors for data groups.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Object_methods">Object methods </a>
-</h2>
+<h2><a href="#Object_methods">Object methods </a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#add_value">:add_value <span class='function_args'>(value, group)</span></a></td>
-      <td class="summary">Add a value to the graph</td>
+      <td class="name" >
+        <a href="#pick_data_group_color">:pick_data_group_color <span class='function_args'> <b>(</b>group_idx<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;gears.color</span></span>
+      </td>
+      <td colspan="2" class="summary">Determine the color to paint a data group with.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#clear">:clear <span class='function_args'>()</span></a></td>
-      <td class="summary">Clear the graph.</td>
+      <td class="name" >
+        <a href="#compute_drawn_values_num">:compute_drawn_values_num <span class='function_args'> <b>(</b>usable_width<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Determine how many values should be drawn for a given widget width.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#setup">:setup <span class='function_args'>(args)</span></a></td>
-      <td class="summary">Set a declarative widget hierarchy description.</td>
+      <td class="name" >
+        <a href="#add_value">:add_value <span class='function_args'> <b>(</b>[value=NaN[, group=1]]<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Add a value to the graph.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#buttons">:buttons <span class='function_args'>(_buttons)</span></a></td>
-      <td class="summary">Set/get a widget&rsquo;s buttons.</td>
+      <td class="name" >
+        <a href="#clear">:clear <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Clear the graph.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#emit_signal_recursive">:emit_signal_recursive <span class='function_args'>(signal_name, ...)</span></a></td>
-      <td class="summary">Emit a signal and ensure all parent widgets in the hierarchies also
+      <td class="name" >
+        <a href="#wibox.widget.base:add_button">:add_button <span class='function_args'> <b>(</b>button<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Add a new <a href="../input_handling/awful.button.html#">awful.button</a> to this widget.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#wibox.widget.base:emit_signal_recursive">:emit_signal_recursive <span class='function_args'> <b>(</b>signal_name, ...<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Emit a signal and ensure all parent widgets in the hierarchies also
  forward the signal.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#emit_signal">:emit_signal <span class='function_args'>(name, ...)</span></a></td>
-      <td class="summary">Emit a signal.</td>
+      <td class="name" >
+        <a href="#wibox.widget.base:index">:index <span class='function_args'> <b>(</b>widget[, recursive[, ...]]<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;(number, widget, table)</span></span>
+      </td>
+      <td colspan="1" class="summary">Get the index of a widget.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#connect_signal">:connect_signal <span class='function_args'>(name, func)</span></a></td>
-      <td class="summary">Connect to a signal.</td>
+      <td class="name" >
+        <a href="#connect_signal">:connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Connect to a signal.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.object
+      </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#weak_connect_signal">:weak_connect_signal <span class='function_args'>(name, func)</span></a></td>
-      <td class="summary">Connect to a signal weakly.</td>
+      <td class="name" >
+        <a href="#weak_connect_signal">:weak_connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Connect to a signal weakly.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.object
+      </td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#disconnect_signal">:disconnect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Disonnect from a signal.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.object
+      </td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#emit_signal">:emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Emit a signal.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.object
+      </td>
     </tr>
 </table>
-<h2>
-    <a href="#Signals">Signals</a>
-</h2>
+<h2><a href="#Theme_variables">Theme variables</a></h2>
 <table class="function_list">
-    <tr>
-      <td class="name" ><a href="#widget::layout_changed">widget::layout_changed</a></td>
-      <td class="summary">When the layout (size) change.</td>
-    </tr>
-    <tr>
-      <td class="name" ><a href="#widget::redraw_needed">widget::redraw_needed</a></td>
-      <td class="summary">When the widget content changed.</td>
-    </tr>
-    <tr>
-      <td class="name" ><a href="#button::press">button::press</a></td>
-      <td class="summary">When a mouse button is pressed over the widget.</td>
-    </tr>
-    <tr>
-      <td class="name" ><a href="#button::release">button::release</a></td>
-      <td class="summary">When a mouse button is released over the widget.</td>
-    </tr>
-    <tr>
-      <td class="name" ><a href="#mouse::enter">mouse::enter</a></td>
-      <td class="summary">When the mouse enter a widget.</td>
-    </tr>
-    <tr>
-      <td class="name" ><a href="#mouse::leave">mouse::leave</a></td>
-      <td class="summary">When the mouse leave a widget.</td>
-    </tr>
-</table>
-<h2>
-    <a href="#Theme_variables">Theme variables</a>
-</h2>
-<table class="function_list">
-    <tr>
-      <td class="shortname" ><a href="#beautiful.graph_bg">beautiful.graph_bg</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td class="summary">The graph background color.</td>
-    </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.graph_fg">beautiful.graph_fg</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td class="summary">The graph foreground color.</td>
+      <td colspan="2" class="summary">The graph foreground color
+ Used, when the <a href="../widgets/wibox.widget.graph.html#color">color</a> property isn't set.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#beautiful.graph_bg">beautiful.graph_bg</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
+      <td colspan="2" class="summary">The graph background color.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.graph_border_color">beautiful.graph_border_color</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td class="summary">The graph border color.</td>
+      <td colspan="2" class="summary">The graph border color.</td>
+    </tr>
+</table>
+<h2><a href="#Signals">Signals</a></h2>
+<table class="function_list">
+    <tr>
+      <td class="name" >
+        <a href="#widget::layout_changed">widget::layout_changed</a>
+      </td>
+      <td colspan="1" class="summary">When the layout (size) change.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#widget::redraw_needed">widget::redraw_needed</a>
+      </td>
+      <td colspan="1" class="summary">When the widget content changed.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#button::press">button::press</a>
+      </td>
+      <td colspan="1" class="summary">When a mouse button is pressed over the widget.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#button::release">button::release</a>
+      </td>
+      <td colspan="1" class="summary">When a mouse button is released over the widget.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#mouse::enter">mouse::enter</a>
+      </td>
+      <td colspan="1" class="summary">When the mouse enter a widget.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#mouse::leave">mouse::leave</a>
+      </td>
+      <td colspan="1" class="summary">When the mouse leave a widget.</td>
+      <td class="baseclass" nowrap>
+        Inherited from wibox.widget.base
+      </td>
     </tr>
 </table>
 
@@ -477,28 +675,34 @@
     <dl class="function">
     <dt>
     <a name = "wibox.widget.graph"></a>
-    <strong>wibox.widget.graph <span class='function_args'>(args)</span></strong>
+    <strong>wibox.widget.graph <span class='function_named_args'><b>{</b>[args]<b>}</b></span></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create a graph widget.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
-         Standard widget() arguments. You should add width and height
- key to set graph geometry.
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Standard widget() arguments.
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
+           <span class="types"><a class="type" href="../widgets/wibox.widget.graph.html#wibox.widget.graph">wibox.widget.graph</a></span>
         A new graph widget.
     </ol>
 
 
 
+
+
+    <span id=item1437 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -506,14 +710,73 @@
 
     <dl class="function">
     <dt>
-    <a name = "border_color"></a>
-    <strong>border_color</strong>
-    <span class="proptype">(<span class='summary_type'>gears.color</span>)</span>
+    <a name = "border_width"></a>
+    <strong>border_width</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
     </dt>
     <dd>
-    Set the graph border color.
- If the value is nil, no border will be drawn.
+    Set the graph border_width. </p>
 
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_border_width.svg" alt="Usage example"/>
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../widgets/wibox.widget.graph.html#border_color">border_color</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, width <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">10</span> } <span class="keyword">do</span>
+    wibox.widget {
+        border_width  = width,
+        border_color  = beautiful.border_color,
+        widget        = wibox.widget.graph,
+    }
+ <span class="keyword">end</span></pre>
+    </ul>
+
+     <br />
+     <center id=button1438>
+     <a class="show_more_button" onclick="show_extra('1438')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1438 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::border_width</code></span>  When the <a href="../widgets/wibox.widget.graph.html#border_width">border_width</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#border_width">border_width</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "border_color"></a>
+    <strong>border_color</strong>
+    <span class="proptype"><span class='summary_type'>gears.color</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+         &middot 1 theme variable
+    </span>
+    </dt>
+    <dd>
+    Set the graph border color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_border_color.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
@@ -530,16 +793,61 @@
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, color <span class="keyword">in</span> <span class="global">ipairs</span> {<span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span>, <span class="string">"#ff00ff"</span> } <span class="keyword">do</span>
+    wibox.widget {
+        border_width  = <span class="number">2</span>,
+        border_color  = color,
+        widget        = wibox.widget.graph,
+    }
+ <span class="keyword">end</span></pre>
+    </ul>
+
+     <br />
+     <center id=button1439>
+     <a class="show_more_button" onclick="show_extra('1439')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1439 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::border_color</code></span>  When the <a href="../widgets/wibox.widget.graph.html#border_color">border_color</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#border_color">border_color</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+     <h3>Consumed theme variables:</h3>
+     <table class='widget_list' border=1>
+         <tr style='font-weight: bold;'>
+           <th>Theme variable</th>
+           <th>Usage</th>
+         </tr>
+          <tr><td><a href="../widgets/wibox.widget.graph.html#beautiful.graph_border_color">beautiful.graph_border_color</a></td><td>Fallback when <a href="../widgets/wibox.widget.graph.html#border_color">border_color</a> isn't set.</td></tr>
+     </table>
+    </span>
 
 </dd>
     <dt>
     <a name = "color"></a>
     <strong>color</strong>
-    <span class="proptype">(<span class='summary_type'>color</span>)</span>
+    <span class="proptype"><span class='summary_type'>color</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+         &middot 1 theme variable
+    </span>
     </dt>
     <dd>
-    Set the graph foreground color.
+    Set the graph foreground color. </p>
 
+<p> This color is used, when <a href="../widgets/wibox.widget.graph.html#group_colors">group_colors</a> isn't set.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_color.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
@@ -556,16 +864,58 @@
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, color <span class="keyword">in</span> <span class="global">ipairs</span> {<span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span>, <span class="string">"#ff00ff"</span> } <span class="keyword">do</span>
+    wibox.widget {
+        color     = color,
+        widget    = wibox.widget.graph,
+    }
+ <span class="keyword">end</span></pre>
+    </ul>
+
+     <br />
+     <center id=button1440>
+     <a class="show_more_button" onclick="show_extra('1440')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1440 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::color</code></span>  When the <a href="../widgets/wibox.widget.graph.html#color">color</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#color">color</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+     <h3>Consumed theme variables:</h3>
+     <table class='widget_list' border=1>
+         <tr style='font-weight: bold;'>
+           <th>Theme variable</th>
+           <th>Usage</th>
+         </tr>
+          <tr><td><a href="../widgets/wibox.widget.graph.html#beautiful.graph_fg">beautiful.graph_fg</a></td><td></td></tr>
+     </table>
+    </span>
 
 </dd>
     <dt>
     <a name = "background_color"></a>
     <strong>background_color</strong>
-    <span class="proptype">(<span class='summary_type'>gears.color</span>)</span>
+    <span class="proptype"><span class='summary_type'>gears.color</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+         &middot 1 theme variable
+    </span>
     </dt>
     <dd>
-    Set the graph background color.
+    Set the graph background color. </p>
 
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_background_color.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
@@ -582,69 +932,140 @@
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, color <span class="keyword">in</span> <span class="global">ipairs</span> {<span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span>, <span class="string">"#ff00ff"</span> } <span class="keyword">do</span>
+    wibox.widget {
+        background_color = color,
+        widget           = wibox.widget.graph,
+    }
+ <span class="keyword">end</span></pre>
+    </ul>
+
+     <br />
+     <center id=button1441>
+     <a class="show_more_button" onclick="show_extra('1441')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1441 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::background_color</code></span>  When the <a href="../widgets/wibox.widget.graph.html#background_color">background_color</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#background_color">background_color</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+     <h3>Consumed theme variables:</h3>
+     <table class='widget_list' border=1>
+         <tr style='font-weight: bold;'>
+           <th>Theme variable</th>
+           <th>Usage</th>
+         </tr>
+          <tr><td><a href="../widgets/wibox.widget.graph.html#beautiful.graph_bg">beautiful.graph_bg</a></td><td></td></tr>
+     </table>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "group_colors"></a>
+    <strong>group_colors</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Set the colors for data groups. </p>
+
+<p> Colors in this table are used to paint respective data groups.
+ When this property is unset (default), the <a href="../widgets/wibox.widget.graph.html#color">color</a> property is used
+ instead for all data groups.
+ When this property is set, but there's no color for a data group in it
+ (i.e. <a href="../widgets/wibox.widget.graph.html#group_colors">group_colors</a>[group] is nil or false), then the respective
+ data group is disabled, i.e. not drawn.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_stacked_group_disable.svg" alt="Usage example"/>
+
+    <h3>Type constraints:</h3>
+    <ul>
+        <li><span class="parameter">colors</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         A table with colors for data groups.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> colors_normal = {
+    <span class="string">"#ff0000"</span>,
+    <span class="string">"#00ff00"</span>, <span class="comment">-- the data group is green
+</span>    <span class="string">"#0000ff"</span>
+}
+<span class="keyword">local</span> colors_transparent = {
+    <span class="string">"#ff0000"</span>,
+    <span class="string">"#00000000"</span>, <span class="comment">-- the data group is transparent
+</span>    <span class="string">"#0000ff"</span>
+}
+<span class="keyword">local</span> colors_disabled = {
+    <span class="string">"#ff0000"</span>,
+    <span class="keyword">nil</span>, <span class="comment">-- the data group is disabled
+</span>    <span class="string">"#0000ff"</span>
+}
+
+wibox.widget {
+    stack         = <span class="keyword">true</span>,
+    group_colors  = colors_normal,
+    widget        = wibox.widget.graph,
+}
+
+wibox.widget {
+    stack         = <span class="keyword">true</span>,
+    group_colors  = colors_transparent,
+    widget        = wibox.widget.graph,
+}
+
+wibox.widget {
+    stack         = <span class="keyword">true</span>,
+    group_colors  = colors_disabled,
+    widget        = wibox.widget.graph,
+} </pre>
+    </ul>
+
+
+    <span id=item1442 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "max_value"></a>
     <strong>max_value</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
     </dt>
     <dd>
-    Set the maximum value the graph should handle.
- If &ldquo;scale&rdquo; is also set, the graph never scales up below this value, but it
+    The maximum value the graph should handle. </p>
+
+<p> This value corresponds to the top of the graph.
+ If <a href="../widgets/wibox.widget.graph.html#scale">scale</a> is also set, the graph never scales up below this value, but it
  automatically scales down to make all data fit.
+ If <a href="../widgets/wibox.widget.graph.html#scale">scale</a> and <a href="../widgets/wibox.widget.graph.html#max_value">max_value</a> are unset, <a href="../widgets/wibox.widget.graph.html#max_value">max_value</a> defaults to 1.</p>
 
 
 
-
-
-
-
-</dd>
-    <dt>
-    <a name = "min_value"></a>
-    <strong>min_value</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
-    </dt>
-    <dd>
-    The minimum value.
- Note that the min_value is not supported when used along with the stack
- property.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "scale"></a>
-    <strong>scale</strong>
-    <span class="proptype">(<span class='summary_type'>boolean</span>)</span>
-    </dt>
-    <dd>
-    Set the graph to automatically scale its values.  Default is false.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "step_width"></a>
-    <strong>step_width</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
-    </dt>
-    <dd>
-    Set the width or the individual steps. </p>
-
-<p> Note that it isn&rsquo;t supported when used along with stacked graphs.</p>
-
-<p><img src="../images/AUTOGEN_wibox_widget_graph_step.svg" alt="Usage example" />
-
+<p><img src="../images/AUTOGEN_wibox_widget_graph_max_value.svg" alt="Usage example"/>
 
 
 
@@ -653,42 +1074,394 @@
     <h3>Usage:</h3>
     <ul>
         <pre class="example">wibox.widget {
-    max_value = <span class="number">29</span>,
-    step_width = <span class="number">3</span>,
-    step_spacing = <span class="number">1</span>,
-    step_shape = <span class="keyword">function</span>(cr, width, height)
-        gears.shape.rounded_rect(cr, width, height, <span class="number">2</span>)
-    <span class="keyword">end</span>,
-    widget = wibox.widget.graph
+    max_value = <span class="number">30</span>,
+    widget    = wibox.widget.graph,
+}
+
+wibox.widget {
+    max_value = <span class="number">10</span>,
+    widget    = wibox.widget.graph,
 }</pre>
     </ul>
+
+     <br />
+     <center id=button1443>
+     <a class="show_more_button" onclick="show_extra('1443')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1443 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::max_value</code></span>  When the <a href="../widgets/wibox.widget.graph.html#max_value">max_value</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#max_value">max_value</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "min_value"></a>
+    <strong>min_value</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    The minimum value the graph should handle. </p>
+
+<p> This value corresponds to the bottom of the graph.
+ If <a href="../widgets/wibox.widget.graph.html#scale">scale</a> is also set, the graph never scales up above this value, but it
+ automatically scales down to make all data fit.
+ If <a href="../widgets/wibox.widget.graph.html#scale">scale</a> and <a href="../widgets/wibox.widget.graph.html#min_value">min_value</a> are unset, <a href="../widgets/wibox.widget.graph.html#min_value">min_value</a> defaults to 0.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_min_value.svg" alt="Usage example"/>
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">wibox.widget {
+    max_value = <span class="number">30</span>,
+    widget    = wibox.widget.graph,
+}
+
+wibox.widget {
+    min_value = <span class="number">10</span>,
+    max_value = <span class="number">30</span>,
+    widget    = wibox.widget.graph,
+}</pre>
+    </ul>
+
+     <br />
+     <center id=button1444>
+     <a class="show_more_button" onclick="show_extra('1444')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1444 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::min_value</code></span>  When the <a href="../widgets/wibox.widget.graph.html#min_value">min_value</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#min_value">min_value</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "scale"></a>
+    <strong>scale</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Set the graph to automatically scale its values.  Default is false.</p>
+
+<p> If this property is set to true, the graph calculates
+ effective <a href="../widgets/wibox.widget.graph.html#min_value">min_value</a> and <a href="../widgets/wibox.widget.graph.html#max_value">max_value</a> based on the displayed data,
+ so that all data fits on screen. The properties themselves aren't changed,
+ but the graph is drawn as though <a href="../widgets/wibox.widget.graph.html#min_value">min_value</a>(<a href="../widgets/wibox.widget.graph.html#max_value">max_value</a>) were equal to
+ the minimum(maximum) value among itself and the currently drawn values.
+ If <a href="../widgets/wibox.widget.graph.html#min_value">min_value</a>(<a href="../widgets/wibox.widget.graph.html#max_value">max_value</a>) is unset, then only the drawn values
+ are considered in this calculation.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_scale1.svg" alt="Usage example"/>
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">wibox.widget {
+    scale  = <span class="keyword">false</span>,
+    widget = wibox.widget.graph,
+}
+
+wibox.widget {
+    scale  = <span class="keyword">true</span>,
+    widget = wibox.widget.graph,
+}</pre>
+    </ul>
+
+     <br />
+     <center id=button1445>
+     <a class="show_more_button" onclick="show_extra('1445')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1445 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::scale</code></span>  When the <a href="../widgets/wibox.widget.graph.html#scale">scale</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#scale">scale</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "clamp_bars"></a>
+    <strong>clamp_bars</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Clamp graph bars to keep them inside the widget for out-of-range values. </p>
+
+<p> Drawing values outside the [<a href="../widgets/wibox.widget.graph.html#min_value">min_value</a>, <a href="../widgets/wibox.widget.graph.html#max_value">max_value</a>] range leads to
+ bar shapes that exceed physical widget dimensions.
+ Most of the time this doesn't matter, because bar shapes are rectangles
+ and bar heights aren't large enough to trigger errors in the drawing system.
+ However for some shapes and values it does make a difference and leads
+ to visibly different and/or invalid result.</p>
+
+<p> When this property is set to true (the default), the graph clamps
+ bars' heights to keep them within the graph.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_clamp_bars.svg" alt="Usage example"/>
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">wibox.widget {
+    clamp_bars    = <span class="keyword">false</span>,
+    step_width    = <span class="number">9</span>,
+    step_spacing  = <span class="number">1</span>,
+    step_shape    = gears.shape.arrow,
+    widget        = wibox.widget.graph,
+}
+
+wibox.widget {
+    <span class="comment">--clamp_bars    = true, --default
+</span>    step_width    = <span class="number">9</span>,
+    step_spacing  = <span class="number">1</span>,
+    step_shape    = gears.shape.arrow,
+    widget        = wibox.widget.graph,
+} </pre>
+    </ul>
+
+     <br />
+     <center id=button1446>
+     <a class="show_more_button" onclick="show_extra('1446')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1446 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::clamp_bars</code></span>  When the <a href="../widgets/wibox.widget.graph.html#clamp_bars">clamp_bars</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#clamp_bars">clamp_bars</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "baseline_value"></a>
+    <strong>baseline_value</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    The value corresponding to the starting point of graph bars.  Default is 0.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_baseline_value.svg" alt="Usage example"/>
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">wibox.widget {
+    <span class="comment">--baseline_value = 0, --default
+</span>    min_value      = -<span class="number">5</span>,
+    max_value      = <span class="number">5</span>,
+    widget         = wibox.widget.graph,
+}
+
+wibox.widget {
+    baseline_value = <span class="number">5</span>,
+    min_value      = -<span class="number">5</span>,
+    max_value      = <span class="number">5</span>,
+    widget         = wibox.widget.graph,
+}
+
+wibox.widget {
+    baseline_value = -<span class="number">2.5</span>,
+    min_value      = -<span class="number">5</span>,
+    max_value      = <span class="number">5</span>,
+    widget         = wibox.widget.graph,
+} </pre>
+    </ul>
+
+     <br />
+     <center id=button1447>
+     <a class="show_more_button" onclick="show_extra('1447')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1447 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::baseline_value</code></span>  When the <a href="../widgets/wibox.widget.graph.html#baseline_value">baseline_value</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#baseline_value">baseline_value</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "step_width"></a>
+    <strong>step_width</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Set the width or the individual steps. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_step.svg" alt="Usage example"/>
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, width <span class="keyword">in</span> <span class="global">ipairs</span> {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">10</span>} <span class="keyword">do</span>
+    wibox.widget {
+        step_width   = width,
+        step_spacing = <span class="number">1</span>,
+        step_shape   = <span class="keyword">function</span>(cr, s_width, height)
+            gears.shape.rounded_rect(cr, s_width, height, <span class="number">2</span>)
+        <span class="keyword">end</span>,
+        widget       = wibox.widget.graph,
+    }
+ <span class="keyword">end</span></pre>
+    </ul>
+
+     <br />
+     <center id=button1448>
+     <a class="show_more_button" onclick="show_extra('1448')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1448 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::step_width</code></span>  When the <a href="../widgets/wibox.widget.graph.html#step_width">step_width</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#step_width">step_width</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
 
 </dd>
     <dt>
     <a name = "step_spacing"></a>
     <strong>step_spacing</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
     </dt>
     <dd>
     Set the spacing between the steps. </p>
 
-<p> Note that it isn&rsquo;t supported when used along with stacked graphs.
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_step_spacing.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, spacing <span class="keyword">in</span> <span class="global">ipairs</span> {<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">10</span>} <span class="keyword">do</span>
+    wibox.widget {
+        step_spacing = spacing,
+        widget       = wibox.widget.graph,
+    }
+ <span class="keyword">end</span></pre>
+    </ul>
 
+     <br />
+     <center id=button1449>
+     <a class="show_more_button" onclick="show_extra('1449')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1449 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::step_spacing</code></span>  When the <a href="../widgets/wibox.widget.graph.html#step_spacing">step_spacing</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#step_spacing">step_spacing</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
 
 </dd>
     <dt>
     <a name = "step_shape"></a>
     <strong>step_shape</strong>
-    <span class="proptype">(<span class='summary_type'>shape</span>)</span>
+    <span class="proptype"><span class='summary_type'>gears.shape <i>or</i> function</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
     </dt>
     <dd>
-    The step shape.
+    The step shape. </p>
 
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_step_shape.svg" alt="Usage example"/>
 
 
 
@@ -698,36 +1471,313 @@
          <a href="../theme_related_libraries/gears.shape.html#">gears.shape</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> shapes = {
+    gears.shape.squircle,
+    gears.shape.octogon,
+    gears.shape.rounded_bar,
+    gears.shape.arrow
+}
+
+<span class="keyword">for</span> _, shape <span class="keyword">in</span> <span class="global">ipairs</span>(shapes) <span class="keyword">do</span>
+    wibox.widget {
+        step_width   = <span class="number">5</span>,
+        step_spacing = <span class="number">1</span>,
+        step_shape   = shape,
+        widget       = wibox.widget.graph,
+    }
+ <span class="keyword">end</span></pre>
+    </ul>
+
+     <br />
+     <center id=button1450>
+     <a class="show_more_button" onclick="show_extra('1450')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1450 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::step_shape</code></span>  When the <a href="../widgets/wibox.widget.graph.html#step_shape">step_shape</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#step_shape">step_shape</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
 
 </dd>
     <dt>
     <a name = "stack"></a>
     <strong>stack</strong>
-    <span class="proptype">(<span class='summary_type'>boolean</span>)</span>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
     </dt>
     <dd>
-    Set the graph to draw stacks.  Default is false.
+    Set the graph to draw stacks.  Default is false.</p>
+
+<p> When set to true, bars of each successive data group are drawn on top of
+ bars of previous groups, instead of the baseline.
+ This necessitates all data values to be non-negative.
+ Negative values, if present, will trigger <a href="../widgets/wibox.widget.graph.html#nan_color">NaN indication</a>.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_normal_vs_stacked.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> colors = {
+    <span class="string">"#ff0000"</span>,
+    <span class="string">"#00ff00"</span>,
+    <span class="string">"#0000ff"</span>
+}
+<span class="keyword">local</span> thin_arrow_shape = <span class="keyword">function</span>(cr, width, height)
+    gears.shape.arrow(cr, width, height, <span class="keyword">nil</span>, <span class="number">1</span>, <span class="global">math</span>.max(<span class="number">0</span>, height-<span class="number">4</span>))
+<span class="keyword">end</span>
 
+wibox.widget {
+    <span class="comment">--stack         = false, --default
+</span>    group_colors  = colors,
+    step_width    = <span class="number">5</span>,
+    step_spacing  = <span class="number">1</span>,
+    step_shape    = thin_arrow_shape,
+    widget        = wibox.widget.graph,
+}
+
+wibox.widget {
+    stack         = <span class="keyword">true</span>,
+    group_colors  = colors,
+    step_width    = <span class="number">5</span>,
+    step_spacing  = <span class="number">1</span>,
+    step_shape    = thin_arrow_shape,
+    widget        = wibox.widget.graph,
+} </pre>
+    </ul>
+
+     <br />
+     <center id=button1451>
+     <a class="show_more_button" onclick="show_extra('1451')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1451 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::stack</code></span>  When the <a href="../widgets/wibox.widget.graph.html#stack">stack</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#stack">stack</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
 
 </dd>
     <dt>
-    <a name = "stack_colors"></a>
-    <strong>stack_colors</strong>
-    <span class="proptype">(<span class='summary_type'>stack_colors</span>)</span>
+    <a name = "nan_indication"></a>
+    <strong>nan_indication</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
     </dt>
     <dd>
-    Set the graph stacking colors.  Order matters.
+    Display NaN indication.  Default is true.</p>
 
+<p> When the data contains <a href="https://en.wikipedia.org/wiki/NaN">NaN</a> values,
+ and <a href="../widgets/wibox.widget.graph.html#nan_indication">nan_indication</a> is set, the corresponding area,
+ where the value bar should have been drawn, is filled
+ with the <a href="../widgets/wibox.widget.graph.html#nan_color">nan_color</a> from top to bottom.
+ The painting is done after all other data is rendered,
+ to make sure that it won't be overpainted and go unnoticed.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_nan_color.svg" alt="Usage example"/>
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> data = {
+    -<span class="number">5</span>, -<span class="number">4</span>, <span class="number">0</span>/<span class="number">0</span>, -<span class="number">2</span>, -<span class="number">1</span>, <span class="number">0</span>/<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">0</span>/<span class="number">0</span>, <span class="number">5</span>,
+}
+
+wibox.widget {
+    <span class="comment">-- nan_indication = true, -- default
+</span>    <span class="comment">-- default nan_color
+</span>    step_width    = <span class="number">9</span>,
+    step_spacing  = <span class="number">1</span>,
+    widget        = wibox.widget.graph,
+}
+
+wibox.widget {
+    <span class="comment">-- nan_indication = true, -- default
+</span>    nan_color     = <span class="string">"#ff00007f"</span>,
+    step_width    = <span class="number">9</span>,
+    step_spacing  = <span class="number">1</span>,
+    widget        = wibox.widget.graph,
+}
+
+wibox.widget {
+    nan_indication = <span class="keyword">false</span>,
+    step_width     = <span class="number">9</span>,
+    step_spacing   = <span class="number">1</span>,
+    widget         = wibox.widget.graph,
+} </pre>
+    </ul>
+
+     <br />
+     <center id=button1452>
+     <a class="show_more_button" onclick="show_extra('1452')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1452 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::nan_indication</code></span>  When the <a href="../widgets/wibox.widget.graph.html#nan_indication">nan_indication</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#nan_indication">nan_indication</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "nan_color"></a>
+    <strong>nan_color</strong>
+    <span class="proptype"><span class='summary_type'>gears.color</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    The color of NaN indication. </p>
+
+<p> The color used when <a href="../widgets/wibox.widget.graph.html#nan_indication">nan_indication</a> is set.
+ Defaults to a yellow-black diagonal stripes pattern.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_graph_stacked_nan.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
-        <li><span class="parameter">stack_colors</span>
-         A table with stacking colors.
+        <li><span class="parameter">nan_color</span>
+            <span class="types"><span class="type">gears.color</span></span>
+         The color of NaN indication.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="comment">-- The red and blue data groups are constant,
+</span><span class="comment">-- but the green data group is a sine,
+</span><span class="comment">-- which, when it becomes negative,
+</span><span class="comment">-- triggers NaN indication in a stacked graph.
+</span><span class="keyword">local</span> colors = {
+    <span class="string">"#ff0000"</span>,
+    <span class="string">"#00ff00"</span>,
+    <span class="string">"#0000ff"</span>
+}
+
+wibox.widget {
+    <span class="comment">--default nan_color
+</span>    stack        = <span class="keyword">true</span>,
+    group_colors = colors,
+    step_width   = <span class="number">1</span>,
+    step_spacing = <span class="number">1</span>,
+    widget       = wibox.widget.graph,
+}
+
+wibox.widget {
+    nan_color    = <span class="string">"#ff00ff7f"</span>,
+    stack        = <span class="keyword">true</span>,
+    group_colors = colors,
+    step_width   = <span class="number">1</span>,
+    step_spacing = <span class="number">1</span>,
+    widget       = wibox.widget.graph,
+}
+
+wibox.widget {
+    nan_indication = <span class="keyword">false</span>,
+    stack          = <span class="keyword">true</span>,
+    group_colors   = colors,
+    step_width     = <span class="number">1</span>,
+    step_spacing   = <span class="number">1</span>,
+    widget         = wibox.widget.graph,
+} </pre>
+    </ul>
+
+     <br />
+     <center id=button1453>
+     <a class="show_more_button" onclick="show_extra('1453')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1453 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::nan_color</code></span>  When the <a href="../widgets/wibox.widget.graph.html#nan_color">nan_color</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#nan_color">nan_color</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "capacity"></a>
+    <strong>capacity</strong>
+    <span class="proptype"><span class='summary_type'>integer <i>or</i> nil</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Set the graph capacity. </p>
+
+<p> Since the typical uses of the graph widget imply that <a href="../widgets/wibox.widget.graph.html#add_value">add_value</a> will be
+ called an indefinite number of times, the widget needs a way to know, when
+ to start discarding old values from the backing array.</p>
+
+<p> When <a href="../widgets/wibox.widget.graph.html#capacity">capacity</a> is set, it defines the maximum number of values to keep in
+ each data group.</p>
+
+<p> When <a href="../widgets/wibox.widget.graph.html#capacity">capacity</a> is unset (default), the number is determined heuristically,
+ which is sufficient most of the time, unless the widget gets resized
+ too much too fast.
+
+    <h3>Type constraints:</h3>
+    <ul>
+        <li><span class="parameter">capacity</span>
+            <span class="types"><span class="type">integer</span> or <span class="type">nil</span></span>
+         The maximum number of values to keep
+ per data group (<code>nil</code> for automatic guess).
+         (<em>default</em> nil)
         </li>
     </ul>
 
@@ -735,63 +1785,41 @@
 
 
 
-</dd>
-    <dt>
-    <a name = "height"></a>
-    <strong>height</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
-    </dt>
-    <dd>
-    Set the graph height.
+     <br />
+     <center id=button1454>
+     <a class="show_more_button" onclick="show_extra('1454')">
+      Click to display more
+     </a>
+     </center>
 
-
-    <h3>Type constraints:</h3>
-    <ul>
-        <li><span class="parameter">number</span>
-         The height to set.
-        </li>
-    </ul>
-
-
-
-
+    <span id=item1454 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::capacity</code></span>  When the <a href="../widgets/wibox.widget.graph.html#capacity">capacity</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#capacity">capacity</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
 
 </dd>
     <dt>
-    <a name = "width"></a>
-    <strong>width</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
-    </dt>
-    <dd>
-    Set the graph width.
-
-
-    <h3>Type constraints:</h3>
-    <ul>
-        <li><span class="parameter">number</span>
-         The width to set.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "children"></a>
+    <a name = "wibox.widget.base.children"></a>
     <strong>children</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
     Get or set the children elements.
 
-
     <h3>Type constraints:</h3>
     <ul>
-        <li><span class="parameter">The</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         children
+        <li><span class="parameter">children</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         The children.
         </li>
     </ul>
 
@@ -799,24 +1827,31 @@
 
 
 
+
+    <span id=item988 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "all_children"></a>
+    <a name = "wibox.widget.base.all_children"></a>
     <strong>all_children</strong>
-    <span class="proptype">(<span class='summary_type'>table</span>)</span>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
     Get all direct and indirect children widgets.
  This will scan all containers recursively to find widgets
- Warning: This method it prone to stack overflow id the widget, or any of its
+ Warning: This method it prone to stack overflow if there is a loop in the
+ widgets hierarchy. A hierarchy loop is when a widget, or any of its
  children, contain (directly or indirectly) itself.
-
 
     <h3>Type constraints:</h3>
     <ul>
-        <li><span class="parameter">The</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-         children
+        <li><span class="parameter">children</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         The children.
         </li>
     </ul>
 
@@ -824,15 +1859,21 @@
 
 
 
+
+    <span id=item989 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "forced_height"></a>
+    <a name = "wibox.widget.base.forced_height"></a>
     <strong>forced_height</strong>
-    <span class="proptype">(<span class='summary_type'>number <i>or</i> nil</span>)</span>
+    <span class="proptype"><span class='summary_type'>number <i>or</i> nil</span></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
     Force a widget height.
-
 
     <h3>Type constraints:</h3>
     <ul>
@@ -846,15 +1887,21 @@
 
 
 
+
+    <span id=item990 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "forced_width"></a>
+    <a name = "wibox.widget.base.forced_width"></a>
     <strong>forced_width</strong>
-    <span class="proptype">(<span class='summary_type'>number <i>or</i> nil</span>)</span>
+    <span class="proptype"><span class='summary_type'>number <i>or</i> nil</span></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
     Force a widget width.
-
 
     <h3>Type constraints:</h3>
     <ul>
@@ -868,15 +1915,21 @@
 
 
 
+
+    <span id=item991 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "opacity"></a>
+    <a name = "wibox.widget.base.opacity"></a>
     <strong>opacity</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
     The widget opacity (transparency).
-
 
     <h3>Type constraints:</h3>
     <ul>
@@ -891,11 +1944,18 @@
 
 
 
+
+    <span id=item992 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "visible"></a>
+    <a name = "wibox.widget.base.visible"></a>
     <strong>visible</strong>
-    <span class="proptype">(<span class='summary_type'>boolean</span>)</span>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
     The widget visibility.
@@ -906,61 +1966,330 @@
 
 
 
+    <span id=item993 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "wibox.widget.base.buttons"></a>
+    <strong>buttons</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
+    </dt>
+    <dd>
+    The widget buttons. </p>
+
+<p> The table contains a list of <a href="../input_handling/awful.button.html#">awful.button</a> objects.
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../input_handling/awful.button.html#">awful.button</a>
+    </ul>
+
+
+
+    <span id=item994 class="hide_extra">
+    </span>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Deprecated_object_properties"></a>Deprecated object properties</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "height"></a>
+    <strong>height</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Set the graph height. </p>
+
+<p> This property is deprecated.  Use a <a href="../widget_containers/wibox.container.constraint.html#">wibox.container.constraint</a> widget or
+ <code>forced_height</code>.
+
+    <h3>Type constraints:</h3>
+    <ul>
+        <li><span class="parameter">height</span>
+            <span class="types"><span class="type">number</span></span>
+         The height to set.
+        </li>
+    </ul>
+
+
+
+
+
+     <br />
+     <center id=button1455>
+     <a class="show_more_button" onclick="show_extra('1455')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1455 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::height</code></span>  When the <a href="../widgets/wibox.widget.graph.html#height">height</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#height">height</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "width"></a>
+    <strong>width</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Set the graph width. </p>
+
+<p> This property is deprecated.  Use a <a href="../widget_containers/wibox.container.constraint.html#">wibox.container.constraint</a> widget or
+ <code>forced_width</code>.
+
+    <h3>Type constraints:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+            <span class="types"><span class="type">number</span></span>
+         The width to set.
+        </li>
+    </ul>
+
+
+
+
+
+     <br />
+     <center id=button1456>
+     <a class="show_more_button" onclick="show_extra('1456')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1456 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::width</code></span>  When the <a href="../widgets/wibox.widget.graph.html#width">width</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#">wibox.widget.graph</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/wibox.widget.graph.html#width">width</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "stack_colors"></a>
+    <strong>stack_colors</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Set the colors for data groups. </p>
+
+<p> This property is deprecated. Use <a href="../widgets/wibox.widget.graph.html#group_colors">group_colors</a> instead.
+
+    <h3>Type constraints:</h3>
+    <ul>
+        <li><span class="parameter">colors</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         A table with colors for data groups.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../widgets/wibox.widget.graph.html#group_colors">group_colors</a>
+    </ul>
+
+
+
+    <span id=item1457 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Object_methods"></a>Object methods </h2>
 
     <dl class="function">
     <dt>
-    <a name = "add_value"></a>
-    <strong>:add_value <span class='function_args'>(value, group)</span></strong>
+    <a name = "pick_data_group_color"></a>
+    <strong>:pick_data_group_color <span class='function_args'> <b>(</b>group_idx<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;gears.color</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    Add a value to the graph
+    Determine the color to paint a data group with. </p>
 
+<p> The graph uses this method to choose a color for a given data group.
+ The default implementation uses a color from the <a href="../widgets/wibox.widget.graph.html#group_colors">group_colors</a> table,
+ if present, otherwise it falls back to <a href="../widgets/wibox.widget.graph.html#color">color</a>, then
+ <a href="../widgets/wibox.widget.graph.html#beautiful.graph_fg">beautiful.graph_fg</a> and finally to color red (#ff0000).
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">group_idx</span>
+            <span class="types"><span class="type">number</span></span>
+         The index of the data group.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">gears.color</span></span>
+        The color to paint the data group's values with.
+    </ol>
+
+
+
+
+
+    <span id=item1458 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "compute_drawn_values_num"></a>
+    <strong>:compute_drawn_values_num <span class='function_args'> <b>(</b>usable_width<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Determine how many values should be drawn for a given widget width. </p>
+
+<p> The graph uses this method to determine the upper bound on the
+ number of values that will be drawn from each data group. This affects,
+ among other things, how many values will be considered for autoscaling,
+ when <a href="../widgets/wibox.widget.graph.html#scale">scale</a> is true, and, indirectly, how many values will be kept in
+ the backing array, when <a href="../widgets/wibox.widget.graph.html#capacity">capacity</a> is unset.</p>
+
+<p> The default implementation computes the minimum number that is enough
+ to completely cover the given width with <a href="../widgets/wibox.widget.graph.html#step_width">step_width</a> + <a href="../widgets/wibox.widget.graph.html#step_spacing">step_spacing</a>
+ intervals. The graph calls this method on every redraw and the width
+ passed is the width of the value drawing area, i.e the graph borders
+ are subtracted (2*<a href="../widgets/wibox.widget.graph.html#border_width">border_width</a>).
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">usable_width</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+    <span id=item1459 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "add_value"></a>
+    <strong>:add_value <span class='function_args'> <b>(</b>[value=NaN[, group=1]]<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Add a value to the graph. </p>
+
+<p> The graph widget keeps its values grouped in <em>data groups</em>. Each data group
+ is drawn with its own set of bars, starting with the latest value
+ in the data group at the left edge of the graph.</p>
+
+<p> Simply calling this method with a particular data group index is the only
+ thing necessary and sufficient for creating a data group.
+ Any natural integer as a group number is ok, but the user is advised to keep
+ the group numbers low and consecutive for performance reasons.</p>
+
+<p> There are no constraints on the value parameter, other than it should
+ be a number.
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">value</span>
-         The value to be added to the graph
+            <span class="types"><span class="type">number</span></span>
+         The value to be added to a graph's data group.
+         (<em>default</em> NaN)
         </li>
         <li><span class="parameter">group</span>
-         The stack color group index.
+            <span class="types"><span class="type">integer</span></span>
+         The index of the data group.
+         (<em>default</em> 1)
         </li>
     </ul>
 
 
 
 
+
+
+    <span id=item1460 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "clear"></a>
-    <strong>:clear <span class='function_args'>()</span></strong>
+    <strong>:clear <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    Clear the graph.
+    Clear the graph. </p>
+
+<p> Removes all values from all data groups.
 
 
 
 
 
 
+
+    <span id=item1461 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
-    <a name = "setup"></a>
-    <strong>:setup <span class='function_args'>(args)</span></strong>
+    <a name = "wibox.widget.base:add_button"></a>
+    <strong>:add_button <span class='function_args'> <b>(</b>button<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
-    Set a declarative widget hierarchy description.
- See <a href="../documentation/03-declarative-layout.md.html">The declarative layout system</a>
-
+    Add a new <a href="../input_handling/awful.button.html#">awful.button</a> to this widget.
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">args</span>
-         An array containing the widgets disposition
+        <li><span class="parameter">button</span>
+            <span class="types"><span class="type">awful.button</span></span>
+         The button to add.
         </li>
     </ul>
 
@@ -968,41 +2297,47 @@
 
 
 
-</dd>
-    <dt>
-    <a name = "buttons"></a>
-    <strong>:buttons <span class='function_args'>(_buttons)</span></strong>
-    </dt>
-    <dd>
-    Set/get a widget&rsquo;s buttons.
 
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">_buttons</span>
-         The table of buttons that should bind to the widget.
-        </li>
-    </ul>
-
-
-
-
+    <span id=item995 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
-    <a name = "emit_signal_recursive"></a>
-    <strong>:emit_signal_recursive <span class='function_args'>(signal_name, ...)</span></strong>
+    <a name = "wibox.widget.base:emit_signal_recursive"></a>
+    <strong>:emit_signal_recursive <span class='function_args'> <b>(</b>signal_name, ...<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
-    Emit a signal and ensure all parent widgets in the hierarchies also
- forward the signal.  This is useful to track signals when there is a dynamic
- set of containers and layouts wrapping the widget.
+
+<p>Emit a signal and ensure all parent widgets in the hierarchies also
+ forward the signal. </p>
+
+<p> This is useful to track signals when there is a dynamic set of containers
+   and layouts wrapping the widget.</p>
+
+<p> Note that this function has some flaws:</p>
+
+<ol>
+    <li>The signal is only forwarded once the widget tree has been built. This
+    happens after all currently scheduled functions have been executed.
+    Therefore, it will not start to work right away.</li>
+    <li>In case the widget is present multiple times in a single widget tree,
+    this function will also forward the signal multiple times (once per upward
+    tree path).</li>
+    <li>If the widget is removed from the widget tree, the signal is still
+    forwarded for some time, similar to the first case.</li>
+</ol>
+
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">signal_name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
 
 
         </li>
@@ -1015,45 +2350,91 @@
 
 
 
+
+    <span id=item996 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "emit_signal"></a>
-    <strong>:emit_signal <span class='function_args'>(name, ...)</span></strong>
+    <a name = "wibox.widget.base:index"></a>
+    <strong>:index <span class='function_args'> <b>(</b>widget[, recursive[, ...]]<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;(number, widget, table)</span></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
-    Emit a signal.
-
+    Get the index of a widget.
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         The name of the signal.
+        <li><span class="parameter">widget</span>
+            <span class="types"><span class="type">widget</span></span>
+         The widget to look for.
+        </li>
+        <li><span class="parameter">recursive</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Recursively check accross the sub-widgets
+   hierarchy.
+         (<em>optional</em>)
         </li>
         <li><span class="parameter">...</span>
-         Extra arguments for the callback functions. Each connected
-   function receives the object as first argument and then any extra
-   arguments that are given to emit_signal().
+            <span class="types"><span class="type">widget</span></span>
+         Additional widgets to add at the end of the
+   sub-widgets hierarchy "path".
+         (<em>optional</em>)
         </li>
     </ul>
 
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        The widget index.</li>
+        <li>
+           <span class="types"><span class="type">widget</span></span>
+        The parent widget.</li>
+        <li>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+        The hierarchy path between "self" and "widget".</li>
+    </ol>
 
 
 
+
+
+    <span id=item997 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "connect_signal"></a>
-    <strong>:connect_signal <span class='function_args'>(name, func)</span></strong>
+    <strong>:connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.object
+    </span>
     </dt>
     <dd>
-    Connect to a signal.
+
+<p>Connect to a signal. </p>
+
+
+
+
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>In slot [obj]   nil nil nil
+In slot [obj]   foo bar 42
+</code></pre>
+
+
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -1065,27 +2446,52 @@
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> o = gears.object{}
+<span class="comment">-- Function can be attached to signals
+</span><span class="keyword">local</span> <span class="keyword">function</span> slot(obj, a, b, c)
+    <span class="global">print</span>(<span class="string">"In slot"</span>, obj, a, b, c)
+<span class="keyword">end</span>
+o:connect_signal(<span class="string">"my_signal"</span>, slot)
+<span class="comment">-- Emitting can be done without arguments. In that case, the object will be
+</span><span class="comment">-- implicitly added as an argument.
+</span>o:emit_signal <span class="string">"my_signal"</span>
+<span class="comment">-- It is also possible to add as many random arguments are required.
+</span>o:emit_signal(<span class="string">"my_signal"</span>, <span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="number">42</span>)
+<span class="comment">-- Finally, to allow the object to be garbage collected (the memory freed), it
+</span><span class="comment">-- is necessary to disconnect the signal or use <code>weak_connect_signal</code>
+</span>o:disconnect_signal(<span class="string">"my_signal"</span>, slot)
+<span class="comment">-- This time, the <code>slot</code> wont be called as it is no longer connected.
+</span>o:emit_signal <span class="string">"my_signal"</span></pre>
+    </ul>
+
+
+    <span id=item998 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "weak_connect_signal"></a>
-    <strong>:weak_connect_signal <span class='function_args'>(name, func)</span></strong>
+    <strong>:weak_connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.object
+    </span>
     </dt>
     <dd>
     Connect to a signal weakly. </p>
 
 <p> This allows the callback function to be garbage collected and
- automatically disconnects the signal when that happens.</p>
-
-<p> <strong>Warning:</strong>
+ automatically disconnects the signal when that happens.
+ <strong>Warning:</strong>
  Only use this function if you really, really, really know what you
  are doing.
-
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -1097,6 +2503,142 @@
 
 
 
+
+
+    <span id=item999 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "disconnect_signal"></a>
+    <strong>:disconnect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.object
+    </span>
+    </dt>
+    <dd>
+    Disonnect from a signal.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal.
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         The callback that should be disconnected.
+        </li>
+    </ul>
+
+
+
+
+
+
+    <span id=item1000 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "emit_signal"></a>
+    <strong>:emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.object
+    </span>
+    </dt>
+    <dd>
+    Emit a signal.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal
+        </li>
+        <li><span class="parameter">...</span>
+         Extra arguments for the callback functions. Each connected
+   function receives the object as first argument and then any extra
+   arguments that are given to emit_signal()
+        </li>
+    </ul>
+
+
+
+
+
+
+    <span id=item1001 class="hide_extra">
+    </span>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Theme_variables"></a>Theme variables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "beautiful.graph_fg"></a>
+    <strong>beautiful.graph_fg</strong>
+    <span class="proptype"><span class='summary_type'>color</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    The graph foreground color
+ Used, when the <a href="../widgets/wibox.widget.graph.html#color">color</a> property isn't set.
+
+
+
+
+
+
+
+    <span id=item1462 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "beautiful.graph_bg"></a>
+    <strong>beautiful.graph_bg</strong>
+    <span class="proptype"><span class='summary_type'>color</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    The graph background color.
+ Used, when the <a href="../widgets/wibox.widget.graph.html#background_color">background_color</a> property isn't set.
+
+
+
+
+
+
+
+    <span id=item1463 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "beautiful.graph_border_color"></a>
+    <strong>beautiful.graph_border_color</strong>
+    <span class="proptype"><span class='summary_type'>color</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    The graph border color.
+ Used, when the <a href="../widgets/wibox.widget.graph.html#border_color">border_color</a> property isn't set.
+
+
+
+
+
+
+
+    <span id=item1464 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -1106,6 +2648,9 @@
     <dt>
     <a name = "widget::layout_changed"></a>
     <strong>widget::layout_changed</strong>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
     When the layout (size) change.
@@ -1116,17 +2661,23 @@
 
 
 
-
     <h3>See also:</h3>
     <ul>
-         <a href="../widgets/wibox.widget.graph.html#widget::redraw_needed">widget::redraw_needed</a>
+         <a href="../classes/wibox.widget.base.html#widget::redraw_needed">widget::redraw_needed</a>
     </ul>
 
+
+
+    <span id=item1002 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "widget::redraw_needed"></a>
     <strong>widget::redraw_needed</strong>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
     When the widget content changed.
@@ -1137,24 +2688,33 @@
 
 
 
-
     <h3>See also:</h3>
     <ul>
-         <a href="../widgets/wibox.widget.graph.html#widget::layout_changed">widget::layout_changed</a>
+         <a href="../classes/wibox.widget.base.html#widget::layout_changed">widget::layout_changed</a>
     </ul>
 
+
+
+    <span id=item1003 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "button::press"></a>
     <strong>button::press</strong>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
     When a mouse button is pressed over the widget.
 
-
     <h3>Arguments:</h3>
     <ul>
+        <li><span class="parameter">self</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         The current object instance itself.
+        </li>
         <li><span class="parameter">lx</span>
             <span class="types"><span class="type">number</span></span>
          The horizontal position relative to the (0,0) position in
@@ -1170,7 +2730,7 @@
          The button number.
         </li>
         <li><span class="parameter">mods</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          The modifiers (mod4, mod1 (alt), Control, Shift)
         </li>
         <li><span class="parameter">find_widgets_result</span> The entry from the result of
@@ -1188,7 +2748,7 @@
         <li><span class="parameter">hierarchy</span>
             <span class="types"><a class="type" href="../classes/wibox.hierarchy.html#">wibox.hierarchy</a></span>
          The hierarchy
- managing the widget&rsquo;s geometry.
+ managing the widget's geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1227,21 +2787,31 @@
 
     <h3>See also:</h3>
     <ul>
-         <a href="../core_components/mouse.html#">mouse</a>
+         <a href="../input_handling/mouse.html#">mouse</a>
     </ul>
 
+
+
+    <span id=item1004 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "button::release"></a>
     <strong>button::release</strong>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
     When a mouse button is released over the widget.
 
-
     <h3>Arguments:</h3>
     <ul>
+        <li><span class="parameter">self</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         The current object instance itself.
+        </li>
         <li><span class="parameter">lx</span>
             <span class="types"><span class="type">number</span></span>
          The horizontal position relative to the (0,0) position in
@@ -1257,7 +2827,7 @@
          The button number.
         </li>
         <li><span class="parameter">mods</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          The modifiers (mod4, mod1 (alt), Control, Shift)
         </li>
         <li><span class="parameter">find_widgets_result</span> The entry from the result of
@@ -1275,7 +2845,7 @@
         <li><span class="parameter">hierarchy</span>
             <span class="types"><a class="type" href="../classes/wibox.hierarchy.html#">wibox.hierarchy</a></span>
          The hierarchy
- managing the widget&rsquo;s geometry.
+ managing the widget's geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1314,21 +2884,31 @@
 
     <h3>See also:</h3>
     <ul>
-         <a href="../core_components/mouse.html#">mouse</a>
+         <a href="../input_handling/mouse.html#">mouse</a>
     </ul>
 
+
+
+    <span id=item1005 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "mouse::enter"></a>
     <strong>mouse::enter</strong>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
     When the mouse enter a widget.
 
-
     <h3>Arguments:</h3>
     <ul>
+        <li><span class="parameter">self</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         The current object instance itself.
+        </li>
         <li><span class="parameter">find_widgets_result</span> The entry from the result of
  <a href="../classes/wibox.drawable.html#wibox.drawable:find_widgets">wibox.drawable:find_widgets</a> for the position that the mouse hit.
         <ul>
@@ -1344,7 +2924,7 @@
         <li><span class="parameter">hierarchy</span>
             <span class="types"><a class="type" href="../classes/wibox.hierarchy.html#">wibox.hierarchy</a></span>
          The hierarchy
- managing the widget&rsquo;s geometry.
+ managing the widget's geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1383,21 +2963,31 @@
 
     <h3>See also:</h3>
     <ul>
-         <a href="../core_components/mouse.html#">mouse</a>
+         <a href="../input_handling/mouse.html#">mouse</a>
     </ul>
 
+
+
+    <span id=item1006 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "mouse::leave"></a>
     <strong>mouse::leave</strong>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from wibox.widget.base
+    </span>
     </dt>
     <dd>
     When the mouse leave a widget.
 
-
     <h3>Arguments:</h3>
     <ul>
+        <li><span class="parameter">self</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         The current object instance itself.
+        </li>
         <li><span class="parameter">find_widgets_result</span> The entry from the result of
  <a href="../classes/wibox.drawable.html#wibox.drawable:find_widgets">wibox.drawable:find_widgets</a> for the position that the mouse hit.
         <ul>
@@ -1413,7 +3003,7 @@
         <li><span class="parameter">hierarchy</span>
             <span class="types"><a class="type" href="../classes/wibox.hierarchy.html#">wibox.hierarchy</a></span>
          The hierarchy
- managing the widget&rsquo;s geometry.
+ managing the widget's geometry.
         </li>
         <li><span class="parameter">x</span>
             <span class="types"><span class="type">number</span></span>
@@ -1452,58 +3042,13 @@
 
     <h3>See also:</h3>
     <ul>
-         <a href="../core_components/mouse.html#">mouse</a>
+         <a href="../input_handling/mouse.html#">mouse</a>
     </ul>
 
 
-</dd>
-</dl>
-    <h2 class="section-header "><a name="Theme_variables"></a>Theme variables</h2>
 
-    <dl class="function">
-    <dt>
-    <a name = "beautiful.graph_bg"></a>
-    <strong>beautiful.graph_bg</strong>
-    <span class="proptype">(<span class='summary_type'>color</span>)</span>
-    </dt>
-    <dd>
-    The graph background color.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "beautiful.graph_fg"></a>
-    <strong>beautiful.graph_fg</strong>
-    <span class="proptype">(<span class='summary_type'>color</span>)</span>
-    </dt>
-    <dd>
-    The graph foreground color.
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "beautiful.graph_border_color"></a>
-    <strong>beautiful.graph_border_color</strong>
-    <span class="proptype">(<span class='summary_type'>color</span>)</span>
-    </dt>
-    <dd>
-    The graph border color.
-
-
-
-
-
-
+    <span id=item1007 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -1513,7 +3058,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

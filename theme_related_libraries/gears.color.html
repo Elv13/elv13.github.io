@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Themelib gears.color - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -58,6 +57,27 @@
   <li><strong>gears.color</strong></li>
   <li><a href="../theme_related_libraries/gears.shape.html">gears.shape</a></li>
 </ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
+</ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
   <li><a href="../declarative_rules/ruled.client.html">ruled.client</a></li>
@@ -75,7 +95,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -109,6 +128,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -120,23 +140,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -144,6 +147,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -177,10 +181,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -190,6 +193,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -203,9 +207,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -227,11 +228,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -256,98 +260,142 @@
 
 <p> In general, patterns are specified as strings formatted as
  <code>&quot;type:arguments&quot;</code>. <code>&quot;arguments&quot;</code> is specific to the pattern being used. For
- example, one can use:
+ example, one can use:</p>
+
 <pre>
-<span class="string">&ldquo;radial:50,50,10:55,55,30:0,#ff0000:0.5,#00ff00:1,#0000ff&rdquo;</span>
+<span class="string">"radial:50,50,10:55,55,30:0,#ff0000:0.5,#00ff00:1,#0000ff"</span>
 </pre>
- The above will call <a href="../theme_related_libraries/gears.color.html#create_radial_pattern">create_radial_pattern</a> with the provided string, after
+
+<p> The above will call <a href="../theme_related_libraries/gears.color.html#create_radial_pattern">create_radial_pattern</a> with the provided string, after
  stripping the <code>radial:</code> prefix.</p>
 
 <p> Alternatively, patterns can be specified via tables. In this case, the
- table&rsquo;s &lsquo;type&rsquo; member specifies the type. For example:
+ table's 'type' member specifies the type. For example:</p>
+
 <pre>
 {
-  <span class="global">type</span> = <span class="string">&ldquo;radial&rdquo;</span>,
+  <span class="global">type</span> = <span class="string">"radial"</span>,
   from = { <span class="number">50</span>, <span class="number">50</span>, <span class="number">10</span> },
   to = { <span class="number">55</span>, <span class="number">55</span>, <span class="number">30</span> },
-  stops = { { <span class="number">0</span>, <span class="string">&ldquo;#ff0000&rdquo;</span> }, { <span class="number">0.5</span>, <span class="string">&ldquo;#00ff00&rdquo;</span> }, { <span class="number">1</span>, <span class="string">&ldquo;#0000ff&rdquo;</span> } }
+  stops = { { <span class="number">0</span>, <span class="string">"#ff0000"</span> }, { <span class="number">0.5</span>, <span class="string">"#00ff00"</span> }, { <span class="number">1</span>, <span class="string">"#0000ff"</span> } }
 }
 </pre>
- Any argument that cannot be understood is passed to <a href="../theme_related_libraries/gears.color.html#create_solid_pattern">create_solid_pattern</a>.</p>
+
+<p> Any argument that cannot be understood is passed to <a href="../theme_related_libraries/gears.color.html#create_solid_pattern">create_solid_pattern</a>.</p>
 
 <p> Please note that you MUST NOT modify the returned pattern, for example by
  calling :set_matrix() on it, because this function uses a cache and your
  changes could thus have unintended side effects. Use <a href="../theme_related_libraries/gears.color.html#create_pattern_uncached">create_pattern_uncached</a>
  if you need to modify the returned pattern.</p>
+    <div class="extra-header">
+
+
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2010 Uli Schlachter</li>
-        <li><strong>Author</strong>: Uli Schlachter</li>
+                <li><strong>Copyright</strong>: 2010 Uli Schlachter</li>
+                <li>
+                    <strong>Originally authored by</strong>: Uli Schlachter<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Static_module_functions">Static module functions</a>
-</h2>
+<h2><a href="#Static_module_functions">Static module functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#parse_color"><span class='function_modname'>gears.color.</span>parse_color <span class='function_args'>(col)</span></a></td>
-      <td class="summary">Parse a HTML-color.</td>
+      <td class="name" >
+        <a href="#parse_color"><span class='function_modname'>gears.color.</span>parse_color <span class='function_args'> <b>(</b>col<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+      </td>
+      <td colspan="2" class="summary">Parse a HTML-color.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#create_solid_pattern"><span class='function_modname'>gears.color.</span>create_solid_pattern <span class='function_args'>(col)</span></a></td>
-      <td class="summary">Create a solid pattern</td>
+      <td class="name" >
+        <a href="#create_solid_pattern"><span class='function_modname'>gears.color.</span>create_solid_pattern <span class='function_args'> <b>(</b>col<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Create a solid pattern</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#create_png_pattern"><span class='function_modname'>gears.color.</span>create_png_pattern <span class='function_args'>(file)</span></a></td>
-      <td class="summary">Create an image pattern from a png file</td>
+      <td class="name" >
+        <a href="#create_png_pattern"><span class='function_modname'>gears.color.</span>create_png_pattern <span class='function_args'> <b>(</b>file<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Create an image pattern from a png file</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#create_linear_pattern"><span class='function_modname'>gears.color.</span>create_linear_pattern <span class='function_args'>(arg)</span></a></td>
-      <td class="summary">Create a linear pattern object.</td>
+      <td class="name" >
+        <a href="#create_linear_pattern"><span class='function_modname'>gears.color.</span>create_linear_pattern <span class='function_args'> <b>(</b>arg<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Create a linear pattern object.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#create_radial_pattern"><span class='function_modname'>gears.color.</span>create_radial_pattern <span class='function_args'>(arg)</span></a></td>
-      <td class="summary">Create a radial pattern object.</td>
+      <td class="name" >
+        <a href="#create_radial_pattern"><span class='function_modname'>gears.color.</span>create_radial_pattern <span class='function_args'> <b>(</b>arg<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Create a radial pattern object.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#create_pattern_uncached"><span class='function_modname'>gears.color.</span>create_pattern_uncached <span class='function_args'>(col)</span></a></td>
-      <td class="summary">Create a pattern from a given string.</td>
+      <td class="name" >
+        <a href="#create_pattern_uncached"><span class='function_modname'>gears.color.</span>create_pattern_uncached <span class='function_args'> <b>(</b>col<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Create a pattern from a given string.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#create_pattern"><span class='function_modname'>gears.color.</span>create_pattern <span class='function_args'>()</span></a></td>
-      <td class="summary">Create a pattern from a given string, same as <a href="../theme_related_libraries/gears.color.html#">gears.color</a>.</td>
+      <td class="name" >
+        <a href="#create_pattern"><span class='function_modname'>gears.color.</span>create_pattern <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Create a pattern from a given string, same as <a href="../theme_related_libraries/gears.color.html#">gears.color</a>.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#create_opaque_pattern"><span class='function_modname'>gears.color.</span>create_opaque_pattern <span class='function_args'>(col)</span></a></td>
-      <td class="summary">Check if a pattern is opaque.</td>
+      <td class="name" >
+        <a href="#create_opaque_pattern"><span class='function_modname'>gears.color.</span>create_opaque_pattern <span class='function_args'> <b>(</b>col<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Check if a pattern is opaque.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#recolor_image"><span class='function_modname'>gears.color.</span>recolor_image <span class='function_args'>(image, new_color)</span></a></td>
-      <td class="summary">Fill non-transparent area of an image with a given color.</td>
+      <td class="name" >
+        <a href="#recolor_image"><span class='function_modname'>gears.color.</span>recolor_image <span class='function_args'> <b>(</b>image, new_color<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Fill non-transparent area of an image with a given color.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#ensure_pango_color"><span class='function_modname'>gears.color.</span>ensure_pango_color <span class='function_args'>(check_color, fallback)</span></a></td>
-      <td class="summary">Get a valid color for Pango markup</td>
+      <td class="name" >
+        <a href="#ensure_pango_color"><span class='function_modname'>gears.color.</span>ensure_pango_color <span class='function_args'> <b>(</b>check_color, fallback<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;string</span></span>
+      </td>
+      <td colspan="2" class="summary">Get a valid color for Pango markup</td>
     </tr>
 </table>
-<h2>
-    <a href="#Tables">Tables</a>
-</h2>
+<h2><a href="#Tables">Tables</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#color.types">color.types</a></td>
-      <td class="summary">Mapping of all supported color types.</td>
+      <td class="name" >
+        <a href="#color.types">color.types</a>
+      </td>
+      <td colspan="2" class="summary">Mapping of all supported color types.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Fields">Fields</a>
-</h2>
+<h2><a href="#Fields">Fields</a></h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#color.transparent"><span class='function_modname'>gears.color.</span>color.transparent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>N/A</span></td>
-      <td class="summary">No color</td>
+      <td colspan="2" class="summary">No color</td>
     </tr>
 </table>
 
@@ -360,13 +408,15 @@
     <dl class="function">
     <dt>
     <a name = "parse_color"></a>
-    <strong><span class='function_modname'>gears.color.</span>parse_color <span class='function_args'>(col)</span></strong>
+    <strong><span class='function_modname'>gears.color.</span>parse_color <span class='function_args'> <b>(</b>col<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Parse a HTML-color.
  This function can parse colors like <code>#rrggbb</code> and <code>#rrggbbaa</code> and also <code>red</code>.
  Max 4 chars per channel.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -378,7 +428,7 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         4 values representing color in RGBA format (each of them in
  [0, 1] range) or nil if input is incorrect.
     </ol>
@@ -391,14 +441,20 @@
 </span> gears.color.parse_color(<span class="string">"#00ff00ff"</span>)</pre>
     </ul>
 
+
+    <span id=item2312 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "create_solid_pattern"></a>
-    <strong><span class='function_modname'>gears.color.</span>create_solid_pattern <span class='function_args'>(col)</span></strong>
+    <strong><span class='function_modname'>gears.color.</span>create_solid_pattern <span class='function_args'> <b>(</b>col<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create a solid pattern
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -416,14 +472,20 @@
 
 
 
+
+    <span id=item2313 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "create_png_pattern"></a>
-    <strong><span class='function_modname'>gears.color.</span>create_png_pattern <span class='function_args'>(file)</span></strong>
+    <strong><span class='function_modname'>gears.color.</span>create_png_pattern <span class='function_args'> <b>(</b>file<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create an image pattern from a png file
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -441,29 +503,33 @@
 
 
 
+
+    <span id=item2314 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "create_linear_pattern"></a>
-    <strong><span class='function_modname'>gears.color.</span>create_linear_pattern <span class='function_args'>(arg)</span></strong>
+    <strong><span class='function_modname'>gears.color.</span>create_linear_pattern <span class='function_args'> <b>(</b>arg<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create a linear pattern object.
  The pattern is created from a string. This string should have the following
  form: <code>&quot;x0, y0:x1, y1:&lt;stops&gt;&quot;</code>
  Alternatively, the pattern can be specified as a table:</p>
-
 <pre><code>{ type = "linear", from = { x0, y0 }, to = { x1, y1 },
   stops = { &lt;stops&gt; } }
 </code></pre>
-
 <p> <code>x0,y0</code> and <code>x1,y1</code> are the start and stop point of the pattern.
  For the explanation of <code>&lt;stops&gt;</code>, see <code>color.create_pattern</code>.
-
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">arg</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          The argument describing the pattern.
         </li>
     </ul>
@@ -477,30 +543,34 @@
 
 
 
+
+    <span id=item2315 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "create_radial_pattern"></a>
-    <strong><span class='function_modname'>gears.color.</span>create_radial_pattern <span class='function_args'>(arg)</span></strong>
+    <strong><span class='function_modname'>gears.color.</span>create_radial_pattern <span class='function_args'> <b>(</b>arg<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create a radial pattern object.
  The pattern is created from a string. This string should have the following
  form: <code>&quot;x0, y0, r0:x1, y1, r1:&lt;stops&gt;&quot;</code>
  Alternatively, the pattern can be specified as a table:</p>
-
 <pre><code>{ type = "radial", from = { x0, y0, r0 }, to = { x1, y1, r1 },
   stops = { &lt;stops&gt; } }
 </code></pre>
-
 <p> <code>x0,y0</code> and <code>x1,y1</code> are the start and stop point of the pattern.
  <code>r0</code> and <code>r1</code> are the radii of the start / stop circle.
  For the explanation of <code>&lt;stops&gt;</code>, see <code>color.create_pattern</code>.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">arg</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a> or <a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          The argument describing the pattern
         </li>
     </ul>
@@ -514,10 +584,17 @@
 
 
 
+
+    <span id=item2316 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "create_pattern_uncached"></a>
-    <strong><span class='function_modname'>gears.color.</span>create_pattern_uncached <span class='function_args'>(col)</span></strong>
+    <strong><span class='function_modname'>gears.color.</span>create_pattern_uncached <span class='function_args'> <b>(</b>col<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create a pattern from a given string.
@@ -526,7 +603,6 @@
  and this function is that this function does not insert the generated
  objects into the pattern cache. Thus, you are allowed to modify the
  returned object.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -548,14 +624,20 @@
     </ul>
 
 
+
+    <span id=item2317 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "create_pattern"></a>
-    <strong><span class='function_modname'>gears.color.</span>create_pattern <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>gears.color.</span>create_pattern <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create a pattern from a given string, same as <a href="../theme_related_libraries/gears.color.html#">gears.color</a>.
-
 
 
 
@@ -566,16 +648,22 @@
     </ul>
 
 
+
+    <span id=item2318 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "create_opaque_pattern"></a>
-    <strong><span class='function_modname'>gears.color.</span>create_opaque_pattern <span class='function_args'>(col)</span></strong>
+    <strong><span class='function_modname'>gears.color.</span>create_opaque_pattern <span class='function_args'> <b>(</b>col<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Check if a pattern is opaque.
  A pattern is transparent if the background on which it gets drawn (with
- operator OVER) doesn&rsquo;t influence the visual result.
-
+ operator OVER) doesn't influence the visual result.
 
     <h3>Parameters:</h3>
     <ul>
@@ -593,14 +681,20 @@
 
 
 
+
+    <span id=item2319 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "recolor_image"></a>
-    <strong><span class='function_modname'>gears.color.</span>recolor_image <span class='function_args'>(image, new_color)</span></strong>
+    <strong><span class='function_modname'>gears.color.</span>recolor_image <span class='function_args'> <b>(</b>image, new_color<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Fill non-transparent area of an image with a given color.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -621,14 +715,20 @@
 
 
 
+
+    <span id=item2320 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "ensure_pango_color"></a>
-    <strong><span class='function_modname'>gears.color.</span>ensure_pango_color <span class='function_args'>(check_color, fallback)</span></strong>
+    <strong><span class='function_modname'>gears.color.</span>ensure_pango_color <span class='function_args'> <b>(</b>check_color, fallback<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;string</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get a valid color for Pango markup
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -636,7 +736,7 @@
          The color to check.
         </li>
         <li><span class="parameter">fallback</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The color to return if the first is invalid. (default: black)
         </li>
     </ul>
@@ -644,12 +744,16 @@
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
         color if it is valid, else fallback.
     </ol>
 
 
 
+
+
+    <span id=item2321 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -659,26 +763,31 @@
     <dt>
     <a name = "color.types"></a>
     <strong>color.types</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Mapping of all supported color types.  New entries can be added.
-
 
     <h3>Fields:</h3>
     <ul>
         <li><span class="parameter">solid</span>
 
 
+
         </li>
         <li><span class="parameter">png</span>
+
 
 
         </li>
         <li><span class="parameter">linear</span>
 
 
+
         </li>
         <li><span class="parameter">radial</span>
+
 
 
         </li>
@@ -688,6 +797,10 @@
 
 
 
+
+    <span id=item2322 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Fields"></a>Fields</h2>
@@ -696,7 +809,9 @@
     <dt>
     <a name = "color.transparent"></a>
     <strong><span class='function_modname'>gears.color.</span>color.transparent</strong>
-    <span class="proptype">(<span class='summary_type'>N/A</span>)</span>
+    <span class="proptype"><span class='summary_type'>N/A</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     No color
@@ -707,6 +822,9 @@
 
 
 
+    <span id=item2323 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
 
@@ -715,7 +833,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

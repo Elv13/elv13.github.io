@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Coreclassmod drawable - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -56,18 +55,22 @@
 <ul class="nowrap">
   <li><a href="../core_components/awesome.html">awesome</a></li>
   <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
   <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
   <li><strong>drawable</strong></li>
   <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
   <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
   <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
   <li><a href="../core_components/root.html">root</a></li>
   <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
   <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
 </ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
@@ -86,7 +89,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -120,6 +122,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -138,6 +141,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -177,10 +181,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -190,6 +193,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -203,9 +207,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -227,11 +228,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -243,107 +247,166 @@
 <div id="content">
 
 <h1>Module: <code>drawable</code></h1>
-<p>awesome drawable API</p>
+<p>awesome drawable API.</p>
 <p> Furthermore to the classes described here, one can also use signals as
  described in <a href="../classes/signals.html#">signals</a>.</p>
+    <div class="extra-header">
+
+
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2012 Uli Schlachter</li>
-        <li><strong>Author</strong>: Uli Schlachter &lt;psychon@znc.in&gt;</li>
+                <li><strong>Copyright</strong>: 2012 Uli Schlachter</li>
+                <li>
+                    <strong>Originally authored by</strong>: Uli Schlachter &lt;psychon@znc.in&gt;<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Static_module_functions">Static module functions</a>
-</h2>
+<h2><a href="#Static_module_functions">Static module functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#drawable"><span class='function_modname'>drawable.</span>drawable <span class='function_args'>(surface)</span></a></td>
-      <td class="summary">Drawable object.</td>
+      <td class="name" >
+        <a href="#drawable"><span class='function_modname'>drawable.</span>drawable <span class='function_args'> <b>(</b>surface<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Drawable object.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#instances"><span class='function_modname'>drawable.</span>instances <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the number of instances.</td>
+      <td class="name" >
+        <a href="#instances"><span class='function_modname'>drawable.</span>instances <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the number of instances.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#set_index_miss_handler"><span class='function_modname'>drawable.</span>set_index_miss_handler <span class='function_args'>(cb)</span></a></td>
-      <td class="summary">Set a __index metamethod for all drawable instances.</td>
+      <td class="name" >
+        <a href="#set_index_miss_handler"><span class='function_modname'>drawable.</span>set_index_miss_handler <span class='function_args'> <b>(</b>cb<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Set a __index metamethod for all drawable instances.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#set_newindex_miss_handler"><span class='function_modname'>drawable.</span>set_newindex_miss_handler <span class='function_args'>(cb)</span></a></td>
-      <td class="summary">Set a __newindex metamethod for all drawable instances.</td>
+      <td class="name" >
+        <a href="#set_newindex_miss_handler"><span class='function_modname'>drawable.</span>set_newindex_miss_handler <span class='function_args'> <b>(</b>cb<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Set a __newindex metamethod for all drawable instances.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Object_methods">Object methods </a>
-</h2>
+<h2><a href="#Object_methods">Object methods </a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#refresh">:refresh <span class='function_args'>()</span></a></td>
-      <td class="summary">Refresh a drawable&rsquo;s content.</td>
+      <td class="name" >
+        <a href="#refresh">:refresh <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Refresh a drawable's content.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#geometry">:geometry <span class='function_args'>()</span></a></td>
-      <td class="summary">Get drawable geometry.</td>
+      <td class="name" >
+        <a href="#geometry">:geometry <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+      </td>
+      <td colspan="2" class="summary">Get drawable geometry.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Signals">Signals</a>
-</h2>
+<h2><a href="#Signals">Signals</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#button::press">button::press</a></td>
-      <td class="summary">
+      <td class="name" >
+        <a href="#button::press">button::press</a>
+      </td>
+      <td colspan="2" class="summary">
+
 </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#button::release">button::release</a></td>
-      <td class="summary">
+      <td class="name" >
+        <a href="#button::release">button::release</a>
+      </td>
+      <td colspan="2" class="summary">
+
 </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#mouse::enter">mouse::enter</a></td>
-      <td class="summary">
+      <td class="name" >
+        <a href="#mouse::enter">mouse::enter</a>
+      </td>
+      <td colspan="2" class="summary">
+
 </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#mouse::leave">mouse::leave</a></td>
-      <td class="summary">
+      <td class="name" >
+        <a href="#mouse::leave">mouse::leave</a>
+      </td>
+      <td colspan="2" class="summary">
+
 </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#mouse::move">mouse::move</a></td>
-      <td class="summary">
+      <td class="name" >
+        <a href="#mouse::move">mouse::move</a>
+      </td>
+      <td colspan="2" class="summary">
+
 </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#property::geometry">property::geometry</a></td>
-      <td class="summary">
+      <td class="name" >
+        <a href="#property::geometry">property::geometry</a>
+      </td>
+      <td colspan="2" class="summary">
+
 </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#property::height">property::height</a></td>
-      <td class="summary">
+      <td class="name" >
+        <a href="#property::height">property::height</a>
+      </td>
+      <td colspan="2" class="summary">
+
 </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#property::width">property::width</a></td>
-      <td class="summary">
+      <td class="name" >
+        <a href="#property::width">property::width</a>
+      </td>
+      <td colspan="2" class="summary">
+
 </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#property::x">property::x</a></td>
-      <td class="summary">
+      <td class="name" >
+        <a href="#property::x">property::x</a>
+      </td>
+      <td colspan="2" class="summary">
+
 </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#property::y">property::y</a></td>
-      <td class="summary">
+      <td class="name" >
+        <a href="#property::y">property::y</a>
+      </td>
+      <td colspan="2" class="summary">
+
 </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#property::surface">property::surface</a></td>
-      <td class="summary">
+      <td class="name" >
+        <a href="#property::surface">property::surface</a>
+      </td>
+      <td colspan="2" class="summary">
+
 </td>
     </tr>
 </table>
@@ -357,16 +420,18 @@
     <dl class="function">
     <dt>
     <a name = "drawable"></a>
-    <strong><span class='function_modname'>drawable.</span>drawable <span class='function_args'>(surface)</span></strong>
+    <strong><span class='function_modname'>drawable.</span>drawable <span class='function_args'> <b>(</b>surface<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Drawable object.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">surface</span>
-         The drawable&rsquo;s cairo surface.
+         The drawable's cairo surface.
         </li>
     </ul>
 
@@ -374,14 +439,20 @@
 
 
 
+
+    <span id=item473 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "instances"></a>
-    <strong><span class='function_modname'>drawable.</span>instances <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>drawable.</span>instances <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the number of instances.
-
 
 
     <h3>Returns:</h3>
@@ -393,15 +464,21 @@
 
 
 
+
+    <span id=item474 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "set_index_miss_handler"></a>
-    <strong><span class='function_modname'>drawable.</span>set_index_miss_handler <span class='function_args'>(cb)</span></strong>
+    <strong><span class='function_modname'>drawable.</span>set_index_miss_handler <span class='function_args'> <b>(</b>cb<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Set a __index metamethod for all drawable instances.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">cb</span>
@@ -413,15 +490,21 @@
 
 
 
+
+
+    <span id=item475 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "set_newindex_miss_handler"></a>
-    <strong><span class='function_modname'>drawable.</span>set_newindex_miss_handler <span class='function_args'>(cb)</span></strong>
+    <strong><span class='function_modname'>drawable.</span>set_newindex_miss_handler <span class='function_args'> <b>(</b>cb<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Set a __newindex metamethod for all drawable instances.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -434,6 +517,10 @@
 
 
 
+
+
+    <span id=item476 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -442,37 +529,49 @@
     <dl class="function">
     <dt>
     <a name = "refresh"></a>
-    <strong>:refresh <span class='function_args'>()</span></strong>
+    <strong>:refresh <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    Refresh a drawable&rsquo;s content.  This has to be called whenever some drawing to
- the drawable&rsquo;s surface has been done and should become visible.
+    Refresh a drawable's content.  This has to be called whenever some drawing to
+ the drawable's surface has been done and should become visible.
 
 
 
 
 
 
+
+    <span id=item477 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "geometry"></a>
-    <strong>:geometry <span class='function_args'>()</span></strong>
+    <strong>:geometry <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get drawable geometry.  The geometry consists of x, y, width and height.
 
 
-
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         A table with drawable coordinates and geometry.
     </ol>
 
 
 
+
+
+    <span id=item478 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -482,6 +581,8 @@
     <dt>
     <a name = "button::press"></a>
     <strong>button::press</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
 
@@ -492,11 +593,17 @@
 
 
 
+
+
+    <span id=item479 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "button::release"></a>
     <strong>button::release</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
 
@@ -507,11 +614,17 @@
 
 
 
+
+
+    <span id=item480 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "mouse::enter"></a>
     <strong>mouse::enter</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
 
@@ -522,11 +635,17 @@
 
 
 
+
+
+    <span id=item481 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "mouse::leave"></a>
     <strong>mouse::leave</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
 
@@ -537,11 +656,17 @@
 
 
 
+
+
+    <span id=item482 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "mouse::move"></a>
     <strong>mouse::move</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
 
@@ -552,11 +677,17 @@
 
 
 
+
+
+    <span id=item483 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "property::geometry"></a>
     <strong>property::geometry</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
 
@@ -567,11 +698,17 @@
 
 
 
+
+
+    <span id=item484 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "property::height"></a>
     <strong>property::height</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
 
@@ -582,11 +719,17 @@
 
 
 
+
+
+    <span id=item485 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "property::width"></a>
     <strong>property::width</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
 
@@ -597,11 +740,17 @@
 
 
 
+
+
+    <span id=item486 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "property::x"></a>
     <strong>property::x</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
 
@@ -612,11 +761,17 @@
 
 
 
+
+
+    <span id=item487 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "property::y"></a>
     <strong>property::y</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
 
@@ -627,11 +782,17 @@
 
 
 
+
+
+    <span id=item488 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "property::surface"></a>
     <strong>property::surface</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
 
@@ -642,6 +803,10 @@
 
 
 
+
+
+    <span id=item489 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -651,7 +816,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

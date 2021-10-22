@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Topic 02-contributing.md - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -58,15 +57,39 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><strong>Contributing</strong></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
   <li><a href="../documentation/90-FAQ.md.html">FAQ</a></li>
+</ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
 </ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
@@ -85,7 +108,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -119,6 +141,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -130,23 +153,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -154,6 +160,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -193,10 +200,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -206,6 +212,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -219,9 +226,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -243,22 +247,20 @@
 
 <div id="content">
 
-    <h1>Contributing</h1>
+
+<h1>Contributing</h1>
 
 <p><a name="Bugs"></a></p>
-
 <h2>Bugs</h2>
 
 <p>Please look at <a href="https://github.com/awesomeWM/awesome/issues">Github Issues</a>.</p>
 
 <p><a name="Triage_Issues____Open_Source_Helpers__https___www_codetriage_com_AwesomeWM_awesome_badges_users_svg___https___www_codetriage_com_AwesomeWM_awesome_"></a></p>
-
-<h2>Triage Issues <a href="https://www.codetriage.com/AwesomeWM/awesome"><img src="https://www.codetriage.com/AwesomeWM/awesome/badges/users.svg" alt="Open Source Helpers" /></a></h2>
+<h2>Triage Issues <a href="https://www.codetriage.com/AwesomeWM/awesome"><img src="https://www.codetriage.com/AwesomeWM/awesome/badges/users.svg" alt="Open Source Helpers"/></a></h2>
 
 <p>You can triage issues which may include reproducing bug reports or asking for vital information, such as version numbers or reproduction instructions. If you would like to start triaging issues, one easy way to get started is to <a href="https://www.codetriage.com/AwesomeWM/awesome">subscribe to AwesomeWM on CodeTriage</a>.</p>
 
 <p><a name="Style"></a></p>
-
 <h2>Style</h2>
 
 <p>If you intend to patch and contribute to Awesome, please respect the
@@ -267,9 +269,9 @@ following guidelines.</p>
 <p>Imitate the existing code style. For concrete rules:</p>
 
 <ul>
-<li><p>Use 4 spaces indentation, do not use tabulator characters;</p></li>
-<li><p>Place braces alone on new lines, and do not place braces for single
-line statement where it is not needed, i.e.:</p></li>
+    <li><p>Use 4 spaces indentation, do not use tabulator characters;</p></li>
+    <li><p>Place braces alone on new lines, and do not place braces for single
+    line statement where it is not needed, i.e.:</p></li>
 </ul>
 
 
@@ -284,29 +286,29 @@ line statement where it is not needed, i.e.:</p></li>
 }
 </pre>
 
+<p> - Do not put a space after if, for, while or function call statements;</p>
 
 <ul>
-<li><p>Do not put a space after if, for, while or function call statements;</p></li>
-<li><p>The preferred maximum line length is 80 characters;</p></li>
-<li><p>Use <code>/<em> </em>/</code> for comments;</p></li>
-<li><p>Use the API: there is a list of <code>a_*()</code> functions you should use instead
-of the standard libc ones. There is also a common API for linked lists,
-tabulars, etc.;</p></li>
-<li><p>Be <em>clear</em> in what you do;</p></li>
-<li><p>Prefix your function names with the module they are enhancing,
-i.e. if you add a function to manipulate a tag, prefix it with <code>tag_</code>;</p></li>
-<li><p>Write documentation for any new functions, options, whatever.</p></li>
+    <li><p>The preferred maximum line length is 80 characters;</p></li>
+    <li><p>Use <code>/* */</code> for comments;</p></li>
+    <li><p>Use the API: there is a list of <code>a_*()</code> functions you should use instead
+    of the standard libc ones. There is also a common API for linked lists,
+    tabulars, etc.;</p></li>
+    <li><p>Be <em>clear</em> in what you do;</p></li>
+    <li><p>Prefix your function names with the module they are enhancing,
+    i.e. if you add a function to manipulate a tag, prefix it with <code>tag_</code>;</p></li>
+    <li><p>Write documentation for any new functions, options, whatever.</p></li>
 </ul>
-
 
 <p>A vim modeline is set in each file to respect this.</p>
 
 <h3>Documentation of Lua files</h3>
 
-<p>For documentation purposes LDoc&mdash;-see
+<p>For documentation purposes LDoc---see
 <a href="https://stevedonovan.github.io/ldoc/manual/doc.md.html">here</a> for its
-documentation&mdash;-is used. Comments that shall be parsed by LDoc have the
+documentation---is used. Comments that shall be parsed by LDoc have the
 following format:</p>
+
 
 <pre>
 <span class="comment">--- summary.
@@ -322,10 +324,9 @@ following format:</p>
 ]]</span>
 </pre>
 
-
 <p>You can use the full power of
 <a href="http://daringfireball.net/projects/markdown">Markdown</a> with the extensions of
-<a href="http://www.pell.portland.or.us/%7Eorc/Code/discount/">Discount</a> for markup in
+<a href="http://www.pell.portland.or.us/~orc/Code/discount/">Discount</a> for markup in
 the comments.</p>
 
 <p>Every module and class should have a short description at its beginning which
@@ -339,13 +340,7 @@ should include <code>@author author</code>, <code>@copyright year author</code> 
 <p>For a more comprehensive description of the available tags see the <a href="https://stevedonovan.github.io/ldoc/manual/doc.md.html">LDoc
 documentation</a>.</p>
 
-<p>In addition to the regular tags provided by LDoc there are also some aliases
-for typed parameters defined in <code>docs/config.ld</code>, e.g. <code>@client</code> for
-<code>@tparam client.object</code>, <code>@tag</code> for <code>@tparam tag</code> and <code>@tab</code> for
-<code>@tparam table</code>).</p>
-
 <p><a name="Patches"></a></p>
-
 <h2>Patches</h2>
 
 <p>If you plan to submit patches, you should follow the following guidelines.</p>
@@ -353,22 +348,21 @@ for typed parameters defined in <code>docs/config.ld</code>, e.g. <code>@client<
 <h3>Commits</h3>
 
 <ul>
-<li>make commits of logical units;</li>
-<li>do not modify piece of code not related to your commit;</li>
-<li>do not try to fix style of code you are not writing,
-it&rsquo;s just adding noise for no gain;</li>
-<li>check for unnecessary whitespace with <code>git diff &mdash;check</code> before committing;</li>
-<li>do not check in commented out code or unneeded files;</li>
-<li>provide a meaningful commit message;</li>
-<li>the first line of the commit message should be a short;
-description and should skip the full stop;</li>
-<li>if you want your work included, add a
-<code>Signed-off-by: Your Name &lt;you@example.com&gt;</code> line to the
-commit message (or just use the option <code>-s</code> when committing);</li>
-<li>make sure that you have tests for the bug you are fixing;</li>
-<li>if possible, add a unit test to the test suite under spec/.</li>
+    <li>make commits of logical units;</li>
+    <li>do not modify piece of code not related to your commit;</li>
+    <li>do not try to fix style of code you are not writing,
+    it's just adding noise for no gain;</li>
+    <li>check for unnecessary whitespace with <code>git diff --check</code> before committing;</li>
+    <li>do not check in commented out code or unneeded files;</li>
+    <li>provide a meaningful commit message;</li>
+    <li>the first line of the commit message should be a short;
+    description and should skip the full stop;</li>
+    <li>if you want your work included, add a
+    <code>Signed-off-by: Your Name &lt;you@example.com&gt;</code> line to the
+    commit message (or just use the option <code>-s</code> when committing);</li>
+    <li>make sure that you have tests for the bug you are fixing;</li>
+    <li>if possible, add a unit test to the test suite under spec/.</li>
 </ul>
-
 
 <h3>Patches</h3>
 
@@ -376,10 +370,7 @@ commit message (or just use the option <code>-s</code> when committing);</li>
 method.</p>
 
 <h4>Pull request</h4>
-
-<ul>
-<li>create a <a href="https://github.com/awesomeWM/awesome/pulls">pull request</a></li>
-</ul>
+<p>- create a <a href="https://github.com/awesomeWM/awesome/pulls">pull request</a></p>
 
 
 
@@ -387,7 +378,7 @@ method.</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

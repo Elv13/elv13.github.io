@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Ruleslib ruled.screen - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -49,7 +48,7 @@
 <li><a href="#Static_module_functions">Static module functions</a></li>
 <li><a href="#Rule_components">Rule components</a></li>
 <li><a href="#Rule_matching_properties">Rule matching properties</a></li>
-<li><a href="#Extra_properties_available_in_awful_rules_and_awful_spawn">Extra properties available in awful.rules and awful.spawn</a></li>
+<li><a href="#Extra_properties_available_in_the_rules">Extra properties available in the rules</a></li>
 </ul>
 
 
@@ -61,6 +60,27 @@
   <li><strong>ruled.screen</strong></li>
   <li><a href="../declarative_rules/ruled.tag.html">ruled.tag</a></li>
 </ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
+</ul>
 <h2>Widgets</h2>
 <ul class="nowrap">
   <li><a href="../widgets/awful.widget.button.html">awful.widget.button</a></li>
@@ -70,7 +90,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -104,6 +123,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -115,23 +135,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -139,6 +142,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -178,10 +182,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -191,6 +194,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -204,9 +208,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -228,11 +229,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -245,225 +249,309 @@
 
 <h1>Module: <code>ruled.screen</code></h1>
 <p>Rules for screens.</p>
-<p><p> This is why you might want to have screen rules:</p>
+<p>
+
+
+<p> This is why you might want to have screen rules:</p>
 
 <ul>
-<li>Attach useful names to screens so they can be easily matched by client or
-tag rules.</li>
-<li>Control the various HiDPI knobs.</li>
-<li>Define how removing viewports should affect the screens.</li>
-<li>Easily handle clone mode like when a projector is connected.</li>
-<li>Attach various custom properties to screen objects.</li>
-<li>Detect and configure various &ldquo;modes&rdquo; like work, office or portable with
-different workflows.</li>
+    <li>Attach useful names to screens so they can be easily matched by client or
+    tag rules.</li>
+    <li>Control the various HiDPI knobs.</li>
+    <li>Define how removing viewports should affect the screens.</li>
+    <li>Easily handle clone mode like when a projector is connected.</li>
+    <li>Attach various custom properties to screen objects.</li>
+    <li>Detect and configure various "modes" like work, office or portable with
+    different workflows.</li>
 </ul>
-
 </p>
+    <div class="extra-header">
+
+
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2019 Emmanuel Lepage Vallee</li>
-        <li><strong>Author</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;</li>
+                <li><strong>Copyright</strong>: 2019 Emmanuel Lepage Vallee</li>
+                <li>
+                    <strong>Originally authored by</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Static_module_functions">Static module functions</a>
-</h2>
+<h2><a href="#Static_module_functions">Static module functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#remove_rule_source"><span class='function_modname'>ruled.screen.</span>remove_rule_source <span class='function_args'>(name)</span></a></td>
-      <td class="summary">Remove a source.</td>
+      <td class="name" >
+        <a href="#remove_rule_source"><span class='function_modname'>ruled.screen.</span>remove_rule_source <span class='function_args'> <b>(</b>name<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+      </td>
+      <td colspan="2" class="summary">Remove a source.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#append_rule"><span class='function_modname'>ruled.screen.</span>append_rule <span class='function_args'>(table)</span></a></td>
-      <td class="summary">Add a new rule to the default set.</td>
+      <td class="name" >
+        <a href="#append_rule"><span class='function_modname'>ruled.screen.</span>append_rule <span class='function_args'> <b>(</b>table<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Add a new rule to the default set.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#append_rules"><span class='function_modname'>ruled.screen.</span>append_rules <span class='function_args'>(table)</span></a></td>
-      <td class="summary">Add a new rules to the default set.</td>
+      <td class="name" >
+        <a href="#append_rules"><span class='function_modname'>ruled.screen.</span>append_rules <span class='function_args'> <b>(</b>table<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Add a new rules to the default set.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#remove_rule"><span class='function_modname'>ruled.screen.</span>remove_rule <span class='function_args'>(table)</span></a></td>
-      <td class="summary">Remove a new rule to the default set.</td>
+      <td class="name" >
+        <a href="#remove_rule"><span class='function_modname'>ruled.screen.</span>remove_rule <span class='function_args'> <b>(</b>table<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Remove a new rule to the default set.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#awful.tag.rules.add_rule_source">awful.tag.rules.add_rule_source <span class='function_args'>(name, callback, depends_on, precede)</span></a></td>
-      <td class="summary">Add a new rule source.</td>
+      <td class="name" >
+        <a href="#awful.tag.rules.add_rule_source">awful.tag.rules.add_rule_source <span class='function_args'> <b>(</b>name, callback, depends_on, precede<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Add a new rule source.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Rule_components">Rule components</a>
-</h2>
+<h2><a href="#Rule_components">Rule components</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#properties">properties</a></td>
-      <td class="summary">A table which content will be used to set the target object properties.</td>
+      <td class="shortname" ><a href="#properties">properties</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">A table whose content will be used to set the target object properties.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#callbacks">callbacks</a></td>
-      <td class="summary">A list of callback function to call <em>after</em> the properties have been apploed.</td>
+      <td class="shortname" ><a href="#callbacks">callbacks</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">A list of callback function to call <em>after</em> the properties have been apploed.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#rule">rule</a></td>
-      <td class="summary">A table which content will be compared to the target object current properties.</td>
+      <td class="shortname" ><a href="#rule">rule</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">A table whose content will be compared to the target object current properties.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#rule_any">rule_any</a></td>
-      <td class="summary">Similar to <a href="../declarative_rules/ruled.screen.html#rule">rule</a>, but each entry is a table with multiple values.</td>
+      <td class="shortname" ><a href="#rule_any">rule_any</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">Similar to <a href="../declarative_rules/ruled.screen.html#rule">rule</a>, but each entry is a table with multiple values.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#except">except</a></td>
-      <td class="summary">The negative equivalent of <a href="../declarative_rules/ruled.screen.html#rule">rule</a>.</td>
+      <td class="shortname" ><a href="#except">except</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">The negative equivalent of <a href="../declarative_rules/ruled.screen.html#rule">rule</a>.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#except_any">except_any</a></td>
-      <td class="summary">The negative equivalent of <a href="../declarative_rules/ruled.screen.html#rule_any">rule_any</a>.</td>
+      <td class="shortname" ><a href="#except_any">except_any</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">The negative equivalent of <a href="../declarative_rules/ruled.screen.html#rule_any">rule_any</a>.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#rule_every">rule_every</a></td>
-      <td class="summary">Matches when one of every "category" of components match.</td>
+      <td class="shortname" ><a href="#rule_every">rule_every</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">Matches when one of every \"category\" of components match.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#rule_every">rule_every</a></td>
-      <td class="summary">A table which content will be compared to the target object current properties.</td>
+      <td class="shortname" ><a href="#rule_lesser">rule_lesser</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">A table whose content will be compared to the target object current properties.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#rule_every">rule_every</a></td>
-      <td class="summary">A table which content will be compared to the target object current properties.</td>
+      <td class="shortname" ><a href="#rule_greater">rule_greater</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">A table whose content will be compared to the target object current properties.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#id">id</a></td>
-      <td class="summary">An identifier for this rule.</td>
+      <td class="shortname" ><a href="#id">id</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table <i>or</i> string <i>or</i> number <i>or</i> function</span></td>
+      <td colspan="2" class="summary">An identifier for this rule.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Rule_matching_properties">Rule matching properties</a>
-</h2>
+<h2><a href="#Rule_matching_properties">Rule matching properties</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#viewport_count">viewport_count</a></td>
-      <td class="summary">The current number of (physical) monitor viewports.</td>
+      <td class="name" >
+        <a href="#viewport_count">viewport_count</a>
+      </td>
+      <td colspan="2" class="summary">The current number of (physical) monitor viewports.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#output_count">output_count</a></td>
-      <td class="summary">The number of output attached to the viewport.</td>
+      <td class="name" >
+        <a href="#output_count">output_count</a>
+      </td>
+      <td colspan="2" class="summary">The number of output attached to the viewport.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#is_cloned">is_cloned</a></td>
-      <td class="summary">True if the viewport has multiple overlapping outputs.</td>
+      <td class="name" >
+        <a href="#is_cloned">is_cloned</a>
+      </td>
+      <td colspan="2" class="summary">True if the viewport has multiple overlapping outputs.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#aspect_ratio">aspect_ratio</a></td>
-      <td class="summary">The screen aspect ratio.</td>
+      <td class="name" >
+        <a href="#aspect_ratio">aspect_ratio</a>
+      </td>
+      <td colspan="2" class="summary">The screen aspect ratio.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#has_name">has_name</a></td>
-      <td class="summary">Check if one of the output is named as such.</td>
+      <td class="name" >
+        <a href="#has_name">has_name</a>
+      </td>
+      <td colspan="2" class="summary">Check if one of the output is named as such.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#has_mm_width">has_mm_width</a></td>
-      <td class="summary">Check if one of the output has this width (in millimeters).</td>
+      <td class="name" >
+        <a href="#has_mm_width">has_mm_width</a>
+      </td>
+      <td colspan="2" class="summary">Check if one of the output has this width (in millimeters).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#has_mm_height">has_mm_height</a></td>
-      <td class="summary">Check if one of the output has this height (in millimeters).</td>
+      <td class="name" >
+        <a href="#has_mm_height">has_mm_height</a>
+      </td>
+      <td colspan="2" class="summary">Check if one of the output has this height (in millimeters).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#has_mm_size">has_mm_size</a></td>
-      <td class="summary">Check if one of the output has this diagonal (in millimeters).</td>
+      <td class="name" >
+        <a href="#has_mm_size">has_mm_size</a>
+      </td>
+      <td colspan="2" class="summary">Check if one of the output has this diagonal (in millimeters).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#has_inch_size">has_inch_size</a></td>
-      <td class="summary">Check if one of the output has this diagonal (in inches).</td>
+      <td class="name" >
+        <a href="#has_inch_size">has_inch_size</a>
+      </td>
+      <td colspan="2" class="summary">Check if one of the output has this diagonal (in inches).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#has_dpi">has_dpi</a></td>
-      <td class="summary">Check if one of the output has this dpi (dots per inch).</td>
+      <td class="name" >
+        <a href="#has_dpi">has_dpi</a>
+      </td>
+      <td colspan="2" class="summary">Check if one of the output has this dpi (dots per inch).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#x">x</a></td>
-      <td class="summary">The viewport horizontal position (in pixels).</td>
+      <td class="name" >
+        <a href="#x">x</a>
+      </td>
+      <td colspan="2" class="summary">The viewport horizontal position (in pixels).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#y">y</a></td>
-      <td class="summary">The viewport vertical position (in pixels).</td>
+      <td class="name" >
+        <a href="#y">y</a>
+      </td>
+      <td colspan="2" class="summary">The viewport vertical position (in pixels).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#width">width</a></td>
-      <td class="summary">The viewport width (in pixels).</td>
+      <td class="name" >
+        <a href="#width">width</a>
+      </td>
+      <td colspan="2" class="summary">The viewport width (in pixels).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#height">height</a></td>
-      <td class="summary">The viewport height (in pixels).</td>
+      <td class="name" >
+        <a href="#height">height</a>
+      </td>
+      <td colspan="2" class="summary">The viewport height (in pixels).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#minimum_dpi">minimum_dpi</a></td>
-      <td class="summary">The least dense DPI of the area.</td>
+      <td class="name" >
+        <a href="#minimum_dpi">minimum_dpi</a>
+      </td>
+      <td colspan="2" class="summary">The least dense DPI of the area.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#maximum_dpi">maximum_dpi</a></td>
-      <td class="summary">The least dense DPI of the area.</td>
+      <td class="name" >
+        <a href="#maximum_dpi">maximum_dpi</a>
+      </td>
+      <td colspan="2" class="summary">The least dense DPI of the area.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#preferred_dpi">preferred_dpi</a></td>
-      <td class="summary">The least dense DPI of the area.</td>
+      <td class="name" >
+        <a href="#preferred_dpi">preferred_dpi</a>
+      </td>
+      <td colspan="2" class="summary">The least dense DPI of the area.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#minimum_mm_size">minimum_mm_size</a></td>
-      <td class="summary">The smallest diagonal size (in millimeters).</td>
+      <td class="name" >
+        <a href="#minimum_mm_size">minimum_mm_size</a>
+      </td>
+      <td colspan="2" class="summary">The smallest diagonal size (in millimeters).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#minimum_inch_size">minimum_inch_size</a></td>
-      <td class="summary">The smallest diagonal size (in inches).</td>
+      <td class="name" >
+        <a href="#minimum_inch_size">minimum_inch_size</a>
+      </td>
+      <td colspan="2" class="summary">The smallest diagonal size (in inches).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#maximum_mm_size">maximum_mm_size</a></td>
-      <td class="summary">The largest diagonal size (in millimeters).</td>
+      <td class="name" >
+        <a href="#maximum_mm_size">maximum_mm_size</a>
+      </td>
+      <td colspan="2" class="summary">The largest diagonal size (in millimeters).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#maximum_inch_size">maximum_inch_size</a></td>
-      <td class="summary">The largest diagonal size (in inches).</td>
+      <td class="name" >
+        <a href="#maximum_inch_size">maximum_inch_size</a>
+      </td>
+      <td colspan="2" class="summary">The largest diagonal size (in inches).</td>
     </tr>
 </table>
-<h2>
-    <a href="#Extra_properties_available_in_awful_rules_and_awful_spawn">Extra properties available in awful.rules and awful.spawn</a>
-</h2>
+<h2><a href="#Extra_properties_available_in_the_rules">Extra properties available in the rules</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#persistence_strategy">persistence_strategy</a></td>
-      <td class="summary">The strategy to use when the viewport is removed.</td>
+      <td class="shortname" ><a href="#persistence_strategy">persistence_strategy</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
+      <td colspan="2" class="summary">The strategy to use when the viewport is removed.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#screen">screen</a></td>
-      <td class="summary">A screen object (or function to pick one) to move to this viewport.</td>
+      <td class="shortname" ><a href="#screen">screen</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>N/A</span></td>
+      <td colspan="2" class="summary">A screen object (or function to pick one) to move to this viewport.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#geometry">geometry</a></td>
-      <td class="summary">The geometry for this screen.</td>
+      <td class="shortname" ><a href="#geometry">geometry</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">The geometry for this screen.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#dpi">dpi</a></td>
-      <td class="summary">The screen DPI.</td>
+      <td class="shortname" ><a href="#dpi">dpi</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">The screen DPI.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#primary">primary</a></td>
-      <td class="summary">If this screen is the primary screen.</td>
+      <td class="shortname" ><a href="#primary">primary</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">If this screen is the primary screen.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#timeout">timeout</a></td>
-      <td class="summary">A timeout before destroying the screen once its viewport is gone.</td>
+      <td class="shortname" ><a href="#timeout">timeout</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">A timeout before destroying the screen once its viewport is gone.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#ignore">ignore</a></td>
-      <td class="summary">When set to true, the screen wont be created.</td>
+      <td class="shortname" ><a href="#ignore">ignore</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">When set to true, the screen wont be created.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#name">name</a></td>
-      <td class="summary">The screen name.</td>
+      <td class="shortname" ><a href="#name">name</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
+      <td colspan="2" class="summary">The screen name.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#split">split</a></td>
-      <td class="summary">Split the viewport into multiple screens.</td>
+      <td class="shortname" ><a href="#split">split</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>N/A</span></td>
+      <td colspan="2" class="summary">Split the viewport into multiple screens.</td>
     </tr>
 </table>
 
@@ -476,16 +564,18 @@ different workflows.</li>
     <dl class="function">
     <dt>
     <a name = "remove_rule_source"></a>
-    <strong><span class='function_modname'>ruled.screen.</span>remove_rule_source <span class='function_args'>(name)</span></strong>
+    <strong><span class='function_modname'>ruled.screen.</span>remove_rule_source <span class='function_args'> <b>(</b>name<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Remove a source.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The source name.
         </li>
     </ul>
@@ -500,14 +590,20 @@ different workflows.</li>
 
 
 
+
+    <span id=item904 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "append_rule"></a>
-    <strong><span class='function_modname'>ruled.screen.</span>append_rule <span class='function_args'>(table)</span></strong>
+    <strong><span class='function_modname'>ruled.screen.</span>append_rule <span class='function_args'> <b>(</b>table<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Add a new rule to the default set.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -520,14 +616,20 @@ different workflows.</li>
 
 
 
+
+    <span id=item905 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "append_rules"></a>
-    <strong><span class='function_modname'>ruled.screen.</span>append_rules <span class='function_args'>(table)</span></strong>
+    <strong><span class='function_modname'>ruled.screen.</span>append_rules <span class='function_args'> <b>(</b>table<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Add a new rules to the default set.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -540,14 +642,20 @@ different workflows.</li>
 
 
 
+
+    <span id=item906 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "remove_rule"></a>
-    <strong><span class='function_modname'>ruled.screen.</span>remove_rule <span class='function_args'>(table)</span></strong>
+    <strong><span class='function_modname'>ruled.screen.</span>remove_rule <span class='function_args'> <b>(</b>table<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Remove a new rule to the default set.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -560,10 +668,17 @@ different workflows.</li>
 
 
 
+
+    <span id=item907 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "awful.tag.rules.add_rule_source"></a>
-    <strong>awful.tag.rules.add_rule_source <span class='function_args'>(name, callback, depends_on, precede)</span></strong>
+    <strong>awful.tag.rules.add_rule_source <span class='function_args'> <b>(</b>name, callback, depends_on, precede<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Add a new rule source. </p>
@@ -572,11 +687,10 @@ different workflows.</li>
  allows to configure, select or create a tag (or many) to be attached to the
  client.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The provider name. It must be unique.
         </li>
         <li><span class="parameter">callback</span> The callback that is called to produce properties.
@@ -586,24 +700,24 @@ different workflows.</li>
          The client
         </li>
         <li><span class="parameter">properties</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          The current properties. The callback should
   add to and overwrite properties in this table
         </li>
         <li><span class="parameter">callbacks</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A table of all callbacks scheduled to be
   executed after the main properties are applied.
         </li>
         </li></ul>
         <li><span class="parameter">depends_on</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A list of names of sources this source depends on
   (sources that must be executed <em>before</em> <a href="../declarative_rules/ruled.screen.html#name">name</a>.
          (<em>default</em> {})
         </li>
         <li><span class="parameter">precede</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A list of names of sources this source have a
   priority over.
          (<em>default</em> {})
@@ -614,6 +728,10 @@ different workflows.</li>
 
 
 
+
+    <span id=item908 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Rule_components"></a>Rule components</h2>
@@ -622,18 +740,13 @@ different workflows.</li>
     <dt>
     <a name = "properties"></a>
     <strong>properties</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    A table which content will be used to set the target object properties.
+    A table whose content will be used to set the target object properties.
 
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -643,22 +756,21 @@ different workflows.</li>
     </ul>
 
 
+
+    <span id=item909 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "callbacks"></a>
     <strong>callbacks</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     A list of callback function to call <em>after</em> the properties have been apploed.
 
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -668,25 +780,21 @@ different workflows.</li>
     </ul>
 
 
+
+    <span id=item910 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "rule"></a>
     <strong>rule</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    A table which content will be compared to the target object current properties. </p>
+    A table whose content will be compared to the target object current properties.
 
-<p> The comparison operator for this section is equal to (<code>==</code>). In case of a
- string, it will be pattern matched.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -697,23 +805,22 @@ different workflows.</li>
     </ul>
 
 
+
+    <span id=item911 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "rule_any"></a>
     <strong>rule_any</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Similar to <a href="../declarative_rules/ruled.screen.html#rule">rule</a>, but each entry is a table with multiple values.
 
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
-
 
 
     <h3>See also:</h3>
@@ -722,23 +829,22 @@ different workflows.</li>
          <li><a href="../declarative_rules/ruled.screen.html#except_any">except_any</a></li>
     </ul>
 
+
+
+    <span id=item912 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "except"></a>
     <strong>except</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The negative equivalent of <a href="../declarative_rules/ruled.screen.html#rule">rule</a>.
 
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -749,22 +855,46 @@ different workflows.</li>
     </ul>
 
 
+
+    <span id=item913 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "except_any"></a>
     <strong>except_any</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The negative equivalent of <a href="../declarative_rules/ruled.screen.html#rule_any">rule_any</a>.
 
 
-    <h3>Type:</h3>
+
+
+    <h3>See also:</h3>
     <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
+         <li><a href="../declarative_rules/ruled.screen.html#rule">rule</a></li>
+         <li><a href="../declarative_rules/ruled.screen.html#except">except</a></li>
     </ul>
+
+
+
+    <span id=item914 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "rule_every"></a>
+    <strong>rule_every</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Matches when one of every \"category\" of components match.
+
 
 
 
@@ -775,22 +905,23 @@ different workflows.</li>
     </ul>
 
 
+
+    <span id=item915 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "rule_every"></a>
-    <strong>rule_every</strong>
+    <a name = "rule_lesser"></a>
+    <strong>rule_lesser</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    Matches when one of every "category" of components match.
+    A table whose content will be compared to the target object current properties. </p>
 
+<p> The comparison will be made using the lesser (<code>&lt;</code>) operator.
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -801,64 +932,44 @@ different workflows.</li>
     </ul>
 
 
+
+    <span id=item916 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
-    <a name = "rule_every"></a>
-    <strong>rule_every</strong>
+    <a name = "rule_greater"></a>
+    <strong>rule_greater</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    A table which content will be compared to the target object current properties. </p>
+    A table whose content will be compared to the target object current properties. </p>
 
-<p> The comparison operator for this section is greater than (<code>&gt;</code>).
+<p> The comparison will be made using the greater (<code>&gt;</code>) operator.
 
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
-    </ul>
 
 
 
     <h3>See also:</h3>
     <ul>
-         <a href="../declarative_rules/ruled.screen.html#rule">rule</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "rule_every"></a>
-    <strong>rule_every</strong>
-    </dt>
-    <dd>
-    A table which content will be compared to the target object current properties. </p>
-
-<p> The comparison operator for this section is lesser than (<code>&lt;</code>).
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-
-
-        </li>
+         <li><a href="../declarative_rules/ruled.screen.html#rule">rule</a></li>
+         <li><a href="../declarative_rules/ruled.screen.html#except">except</a></li>
     </ul>
 
 
 
-    <h3>See also:</h3>
-    <ul>
-         <a href="../declarative_rules/ruled.screen.html#rule">rule</a>
-    </ul>
-
+    <span id=item917 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "id"></a>
     <strong>id</strong>
+    <span class="proptype"><span class='summary_type'>table <i>or</i> string <i>or</i> number <i>or</i> function</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     An identifier for this rule. </p>
@@ -871,16 +982,13 @@ different workflows.</li>
  modify or disable a rule.
 
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">table</span>
-        |string|number|function
-        </li>
-    </ul>
 
 
 
 
+
+    <span id=item918 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -890,16 +998,18 @@ different workflows.</li>
     <dt>
     <a name = "viewport_count"></a>
     <strong>viewport_count</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The current number of (physical) monitor viewports. </p>
 
 <p> Note that a viewport can have multiple outputs.
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -909,21 +1019,27 @@ different workflows.</li>
 
 
 
+
+    <span id=item919 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "output_count"></a>
     <strong>output_count</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The number of output attached to the viewport. </p>
 
-<p> It is normally one, but if, for example, a projector is in &ldquo;clone mode&rdquo; with
+<p> It is normally one, but if, for example, a projector is in "clone mode" with
  a laptop screen, there will be 2.
-
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -937,20 +1053,28 @@ different workflows.</li>
     </ul>
 
 
+
+    <span id=item920 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "is_cloned"></a>
     <strong>is_cloned</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     True if the viewport has multiple overlapping outputs. </p>
 
-<p><img src="../images/AUTOGEN_ruled_screen_rules_cloned.svg" alt="Usage example" />
 
+
+<p><img src="../images/AUTOGEN_ruled_screen_rules_cloned.svg" alt="Usage example"/>
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">boolean</span>
+
 
 
         </li>
@@ -972,10 +1096,16 @@ different workflows.</li>
 }</pre>
     </ul>
 
+
+    <span id=item921 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "aspect_ratio"></a>
     <strong>aspect_ratio</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The screen aspect ratio. </p>
@@ -988,12 +1118,14 @@ different workflows.</li>
 
 <p> This property is useful to detect ultrawide monitors and vertical monitors.</p>
 
-<p><img src="../images/AUTOGEN_ruled_screen_rules_split.svg" alt="Usage example" />
 
+
+<p><img src="../images/AUTOGEN_ruled_screen_rules_split.svg" alt="Usage example"/>
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1011,39 +1143,51 @@ different workflows.</li>
 }</pre>
     </ul>
 
+
+    <span id=item922 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "has_name"></a>
     <strong>has_name</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Check if one of the output is named as such.
-
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">string</span>
 
 
+
         </li>
     </ul>
 
 
 
 
+
+
+    <span id=item923 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "has_mm_width"></a>
     <strong>has_mm_width</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Check if one of the output has this width (in millimeters).
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1052,19 +1196,25 @@ different workflows.</li>
 
 
 
+
+
+    <span id=item924 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "has_mm_height"></a>
     <strong>has_mm_height</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Check if one of the output has this height (in millimeters).
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1073,19 +1223,25 @@ different workflows.</li>
 
 
 
+
+
+    <span id=item925 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "has_mm_size"></a>
     <strong>has_mm_size</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Check if one of the output has this diagonal (in millimeters).
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1094,19 +1250,25 @@ different workflows.</li>
 
 
 
+
+
+    <span id=item926 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "has_inch_size"></a>
     <strong>has_inch_size</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Check if one of the output has this diagonal (in inches).
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1115,19 +1277,25 @@ different workflows.</li>
 
 
 
+
+
+    <span id=item927 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "has_dpi"></a>
     <strong>has_dpi</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Check if one of the output has this dpi (dots per inch).
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1136,19 +1304,25 @@ different workflows.</li>
 
 
 
+
+
+    <span id=item928 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "x"></a>
     <strong>x</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The viewport horizontal position (in pixels).
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1157,19 +1331,25 @@ different workflows.</li>
 
 
 
+
+
+    <span id=item929 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "y"></a>
     <strong>y</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The viewport vertical position (in pixels).
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1178,19 +1358,25 @@ different workflows.</li>
 
 
 
+
+
+    <span id=item930 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "width"></a>
     <strong>width</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The viewport width (in pixels).
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1199,19 +1385,25 @@ different workflows.</li>
 
 
 
+
+
+    <span id=item931 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "height"></a>
     <strong>height</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The viewport height (in pixels).
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1220,19 +1412,25 @@ different workflows.</li>
 
 
 
+
+
+    <span id=item932 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "minimum_dpi"></a>
     <strong>minimum_dpi</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The least dense DPI of the area.
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1241,19 +1439,25 @@ different workflows.</li>
 
 
 
+
+
+    <span id=item933 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "maximum_dpi"></a>
     <strong>maximum_dpi</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The least dense DPI of the area.
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1262,19 +1466,25 @@ different workflows.</li>
 
 
 
+
+
+    <span id=item934 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "preferred_dpi"></a>
     <strong>preferred_dpi</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The least dense DPI of the area.
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1283,19 +1493,25 @@ different workflows.</li>
 
 
 
+
+
+    <span id=item935 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "minimum_mm_size"></a>
     <strong>minimum_mm_size</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The smallest diagonal size (in millimeters).
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1305,20 +1521,28 @@ different workflows.</li>
 
 
 
+
+    <span id=item936 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "minimum_inch_size"></a>
     <strong>minimum_inch_size</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The smallest diagonal size (in inches). </p>
 
-<p><img src="../images/AUTOGEN_ruled_screen_rules_max_dpi.svg" alt="Usage example" />
 
+
+<p><img src="../images/AUTOGEN_ruled_screen_rules_max_dpi.svg" alt="Usage example"/>
 
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1329,27 +1553,33 @@ different workflows.</li>
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="global">print</span>(<span class="string">'\n\nRULES'</span>)
+        <pre class="example"><span class="global">print</span>(<span class="string">"\n\nRULES"</span>)
 <span class="comment">-- Use the least dense DPI when multiple outputs are cloned.
 </span>ruled.screen.append_rule {
     rule_greater = { inch_maximum_size = <span class="number">50</span> }, <span class="comment">-- Force a low DPI for large screens.
 </span>    properties   = { dpi               = <span class="number">72</span> },
 }
-             <span class="global">print</span>(<span class="string">'\n\nDDDDD'</span>, screen[<span class="number">1</span>].data.viewport.inch_maximum_size, screen[<span class="number">1</span>].dpi)</pre>
+             <span class="global">print</span>(<span class="string">"\n\nDDDDD"</span>, screen[<span class="number">1</span>].data.viewport.inch_maximum_size, screen[<span class="number">1</span>].dpi)</pre>
     </ul>
+
+
+    <span id=item937 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "maximum_mm_size"></a>
     <strong>maximum_mm_size</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The largest diagonal size (in millimeters).
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1358,19 +1588,25 @@ different workflows.</li>
 
 
 
+
+
+    <span id=item938 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "maximum_inch_size"></a>
     <strong>maximum_inch_size</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The largest diagonal size (in inches).
 
-
     <h3>Type:</h3>
     <ul>
         <li><span class="parameter">number</span>
+
 
 
         </li>
@@ -1380,14 +1616,21 @@ different workflows.</li>
 
 
 
+
+    <span id=item939 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
-    <h2 class="section-header "><a name="Extra_properties_available_in_awful_rules_and_awful_spawn"></a>Extra properties available in awful.rules and awful.spawn</h2>
+    <h2 class="section-header "><a name="Extra_properties_available_in_the_rules"></a>Extra properties available in the rules</h2>
 
     <dl class="function">
     <dt>
     <a name = "persistence_strategy"></a>
     <strong>persistence_strategy</strong>
+    <span class="proptype"><span class='summary_type'>string</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The strategy to use when the viewport is removed. </p>
@@ -1395,30 +1638,21 @@ different workflows.</li>
 <p> The possible values are:</p>
 
 <ul>
-<li><strong>replace</strong>: Replace existing non-preserved screens with this screen. If no
-other non-replaceable screen exist, it will split the remaining screen to
-make room for this one.</li>
-<li><strong>destroy</strong>: Do not preserve and destroy the screen.</li>
-<li><strong>relocate</strong>: Relocate if a new viewport is added at the same time. This
-is better then viewports are simply moved
-<em>(default)</em>.</li>
-<li><strong>keep</strong>: Never destroy the screen even if it gets out of sight. It is good
-when temporarily removing a viewport only to add it back (like moving from
-work to home when both have an identical external screen).</li>
+    <li><strong>replace</strong>: Replace existing non-preserved screens with this screen. If no
+    other non-replaceable screen exist, it will split the remaining screen to
+    make room for this one.</li>
+    <li><strong>destroy</strong>: Do not preserve and destroy the screen.</li>
+    <li><strong>relocate</strong>: Relocate if a new viewport is added at the same time. This
+    is better then viewports are simply moved
+    <em>(default)</em>.</li>
+    <li><strong>keep</strong>: Never destroy the screen even if it gets out of sight. It is good
+    when temporarily removing a viewport only to add it back (like moving from
+    work to home when both have an identical external screen).</li>
 </ul>
-
 
 <p> Note that sometime it is easier to relocate the tags than to relocate the
  screens.
 
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">string</span>
-
-
-        </li>
-    </ul>
 
 
 
@@ -1428,10 +1662,17 @@ work to home when both have an identical external screen).</li>
     </ul>
 
 
+
+    <span id=item940 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "screen"></a>
     <strong>screen</strong>
+    <span class="proptype"><span class='summary_type'>N/A</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     A screen object (or function to pick one) to move to this viewport. </p>
@@ -1446,10 +1687,16 @@ work to home when both have an identical external screen).</li>
 
 
 
+    <span id=item941 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "geometry"></a>
     <strong>geometry</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The geometry for this screen. </p>
@@ -1457,129 +1704,99 @@ work to home when both have an identical external screen).</li>
 <p> If none are provided, the viewport geometry will be used.
 
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">geometry</span>
-
-        <ul>
-        <li><span class="parameter">x</span>
-            <span class="types"><span class="type">number</span></span>
-
-
-        </li>
-        <li><span class="parameter">y</span>
-            <span class="types"><span class="type">number</span></span>
-
-
-        </li>
-        <li><span class="parameter">width</span>
-            <span class="types"><span class="type">number</span></span>
-
-
-        </li>
-        <li><span class="parameter">height</span>
-            <span class="types"><span class="type">number</span></span>
-
-
-        </li>
-        </li></ul>
-    </ul>
 
 
 
 
+
+    <span id=item942 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "dpi"></a>
     <strong>dpi</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The screen DPI.
 
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">number</span>
-
-
-        </li>
-    </ul>
 
 
 
 
+
+    <span id=item943 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "primary"></a>
     <strong>primary</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     If this screen is the primary screen.
 
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">boolean</span>
-
-
-        </li>
-    </ul>
 
 
 
 
+
+    <span id=item944 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "timeout"></a>
     <strong>timeout</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     A timeout before destroying the screen once its viewport is gone. </p>
 
 <p> Sometime, changing the screen layout can be done with multiple steps. In that
  case, there will be a window of time where the viewports will be in the
- &ldquo;wrong&rdquo; state. A timeout (in seconds) longer than this window of invalidity
+ "wrong" state. A timeout (in seconds) longer than this window of invalidity
  will help avoid unnecessary screen creation and destruction.
 
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">number</span>
-
-
-        </li>
-    </ul>
 
 
 
 
+
+    <span id=item945 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "ignore"></a>
     <strong>ignore</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     When set to true, the screen wont be created. </p>
 
-<p> This way the viewport can be ignored. This doesn&rsquo;t prevent from moving
+<p> This way the viewport can be ignored. This doesn't prevent from moving
  floating clients to this area or having some static fullscreen clients there
  like Kodi. When set, there will be no screen object, so no wallpaper, wibar
  or tiled client area for that viewport.</p>
 
-<p><img src="../images/AUTOGEN_ruled_screen_rules_ignore.svg" alt="Usage example" />
 
 
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">boolean</span>
+<p><img src="../images/AUTOGEN_ruled_screen_rules_ignore.svg" alt="Usage example"/>
 
-
-        </li>
-    </ul>
 
 
 
@@ -1592,10 +1809,17 @@ work to home when both have an identical external screen).</li>
 }</pre>
     </ul>
 
+
+    <span id=item946 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "name"></a>
     <strong>name</strong>
+    <span class="proptype"><span class='summary_type'>string</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The screen name. </p>
@@ -1603,25 +1827,24 @@ work to home when both have an identical external screen).</li>
 <p> This is useful to access the screen from <a href="../declarative_rules/ruled.client.html#">ruled.client</a> or <a href="../declarative_rules/ruled.tag.html#">ruled.tag</a>
  without having to write screen detection code.</p>
 
-<p> Note that &ldquo;primary&rdquo; and any output names are reserved and should not be used.
-
-
-    <h3>Type:</h3>
-    <ul>
-        <li><span class="parameter">string</span>
-
-
-        </li>
-    </ul>
+<p> Note that "primary" and any output names are reserved and should not be used.
 
 
 
 
+
+
+
+    <span id=item947 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "split"></a>
     <strong>split</strong>
+    <span class="proptype"><span class='summary_type'>N/A</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Split the viewport into multiple screens. </p>
@@ -1633,12 +1856,15 @@ work to home when both have an identical external screen).</li>
 
 
 
-
     <h3>See also:</h3>
     <ul>
          <a href="../core_components/screen.html#split">screen.split</a>
     </ul>
 
+
+
+    <span id=item948 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -1648,7 +1874,7 @@ work to home when both have an identical external screen).</li>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

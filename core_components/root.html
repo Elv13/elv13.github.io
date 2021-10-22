@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Coreclassmod root - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -48,6 +47,7 @@
 <ul>
 <li><a href="#Functions">Functions</a></li>
 <li><a href="#Static_module_functions">Static module functions</a></li>
+<li><a href="#Object_properties">Object properties</a></li>
 </ul>
 
 
@@ -55,18 +55,22 @@
 <ul class="nowrap">
   <li><a href="../core_components/awesome.html">awesome</a></li>
   <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
   <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
   <li><a href="../core_components/drawable.html">drawable</a></li>
   <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
   <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
   <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
   <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
   <li><strong>root</strong></li>
   <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
   <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
 </ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
@@ -85,7 +89,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -119,6 +122,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -137,6 +141,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -176,10 +181,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -189,6 +193,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -202,9 +207,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -226,11 +228,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -242,68 +247,115 @@
 <div id="content">
 
 <h1>Module: <code>root</code></h1>
-<p>awesome root window API</p>
+<p>awesome root window API.</p>
 <p>
+
 </p>
+    <div class="extra-header">
+
+
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2008-2009 Julien Danjou</li>
-        <li><strong>Author</strong>: Julien Danjou &lt;julien@danjou.info&gt;</li>
+                <li><strong>Copyright</strong>: 2008-2009 Julien Danjou</li>
+                <li>
+                    <strong>Originally authored by</strong>: Julien Danjou &lt;julien@danjou.info&gt;<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Functions">Functions</a>
-</h2>
+<h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#set_xproperty"><span class='function_modname'>root.</span>set_xproperty (name, value)</a></td>
-      <td class="summary">Change a xproperty.</td>
+      <td class="name" >
+        <a href="#set_xproperty"><span class='function_modname'>root.</span>set_xproperty (name, value)</a>
+      </td>
+      <td colspan="2" class="summary">Change a xproperty.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_xproperty"><span class='function_modname'>root.</span>get_xproperty (name)</a></td>
-      <td class="summary">Get the value of a xproperty.</td>
+      <td class="name" >
+        <a href="#get_xproperty"><span class='function_modname'>root.</span>get_xproperty (name)</a>
+      </td>
+      <td colspan="2" class="summary">Get the value of a xproperty.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Static_module_functions">Static module functions</a>
-</h2>
+<h2><a href="#Static_module_functions">Static module functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#fake_input"><span class='function_modname'>root.</span>fake_input <span class='function_args'>(event_type, detail, x, y)</span></a></td>
-      <td class="summary">Send fake keyboard or mouse events.</td>
+      <td class="name" >
+        <a href="#fake_input"><span class='function_modname'>root.</span>fake_input <span class='function_args'> <b>(</b>event_type, detail, x, y<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Send fake keyboard or mouse events.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#keys"><span class='function_modname'>root.</span>keys <span class='function_args'>(keys_array)</span></a></td>
-      <td class="summary">Get or set global key bindings.</td>
+      <td class="name" >
+        <a href="#cursor"><span class='function_modname'>root.</span>cursor <span class='function_args'> <b>(</b>cursor_name<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Set the root cursor</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#buttons"><span class='function_modname'>root.</span>buttons <span class='function_args'>(button_table)</span></a></td>
-      <td class="summary">Get or set global mouse bindings.</td>
+      <td class="name" >
+        <a href="#drawins"><span class='function_modname'>root.</span>drawins <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the drawins attached to a screen.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#cursor"><span class='function_modname'>root.</span>cursor <span class='function_args'>(cursor_name)</span></a></td>
-      <td class="summary">Set the root cursor</td>
+      <td class="name" >
+        <a href="#wallpaper"><span class='function_modname'>root.</span>wallpaper <span class='function_args'> <b>(</b>pattern<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the wallpaper as a cairo surface or set it as a cairo pattern.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#drawins"><span class='function_modname'>root.</span>drawins <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the drawins attached to a screen.</td>
+      <td class="name" >
+        <a href="#size"><span class='function_modname'>root.</span>size <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the size of the root window.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#wallpaper"><span class='function_modname'>root.</span>wallpaper <span class='function_args'>(pattern)</span></a></td>
-      <td class="summary">Get the wallpaper as a cairo surface or set it as a cairo pattern.</td>
+      <td class="name" >
+        <a href="#size_mm"><span class='function_modname'>root.</span>size_mm <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the physical size of the root window, in millimeter.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#size"><span class='function_modname'>root.</span>size <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the size of the root window.</td>
+      <td class="name" >
+        <a href="#tags"><span class='function_modname'>root.</span>tags <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the attached tags.</td>
+    </tr>
+</table>
+<h2><a href="#Object_properties">Object properties</a></h2>
+<table class="function_list">
+    <tr>
+      <td class="shortname" ><a href="#keys">keys</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">Get or set global key bindings.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#size_mm"><span class='function_modname'>root.</span>size_mm <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the physical size of the root window, in millimeter.</td>
+      <td class="shortname" ><a href="#buttons">buttons</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">Store the list of mouse buttons to be applied on the wallpaper (also
+ known as root window).</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#tags"><span class='function_modname'>root.</span>tags <span class='function_args'>()</span></a></td>
-      <td class="summary">Get the attached tags.</td>
+      <td class="shortname" ><a href="#content">content</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>surface</span></td>
+      <td colspan="2" class="summary">Get the content of the root window as a cairo surface.</td>
     </tr>
 </table>
 
@@ -317,10 +369,11 @@
     <dt>
     <a name = "set_xproperty"></a>
     <strong><span class='function_modname'>root.</span>set_xproperty (name, value)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Change a xproperty.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -336,14 +389,19 @@
 
 
 
+
+    <span id=item578 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_xproperty"></a>
     <strong><span class='function_modname'>root.</span>get_xproperty (name)</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the value of a xproperty.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -356,6 +414,10 @@
 
 
 
+
+    <span id=item579 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Static_module_functions"></a>Static module functions</h2>
@@ -363,20 +425,24 @@
     <dl class="function">
     <dt>
     <a name = "fake_input"></a>
-    <strong><span class='function_modname'>root.</span>fake_input <span class='function_args'>(event_type, detail, x, y)</span></strong>
+    <strong><span class='function_modname'>root.</span>fake_input <span class='function_args'> <b>(</b>event_type, detail, x, y<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>Send fake keyboard or mouse events. </p>
+
+<p>Send fake keyboard or mouse events. </p>
 
 <p> Usually the currently focused client or the keybindings will receive those
  events. If a <code>keygrabber</code> or <a href="../core_components/mousegrabber.html#">mousegrabber</a> is running, then it will get them.</p>
 
 <p> Some keys have different names compared to the ones generally used in
- Awesome. For example, Awesome uses &ldquo;modifier keys&rdquo; for keybindings using
- their X11 names such as &ldquo;Control&rdquo; or &ldquo;Mod1&rdquo; (for &ldquo;Alt&rdquo;). These are not the
+ Awesome. For example, Awesome uses "modifier keys" for keybindings using
+ their X11 names such as "Control" or "Mod1" (for "Alt"). These are not the
  name of the key but is only the name of the modifier they represent. Some
  modifiers are even present twice on some keyboard like the left and right
- &ldquo;Shift&rdquo;. Here is a list of the &ldquo;real&rdquo; key names matching the modifiers in
+ "Shift". Here is a list of the "real" key names matching the modifiers in
  <a href="../core_components/root.html#fake_input">fake_input</a>:</p>
 
 <p> <table class='widget_list' border=1>
@@ -391,7 +457,7 @@
   <tr><td> Mod1</td><td align='center'> Alt_L </td><td align='center'> Alt_R </td></tr>
  </table></p>
 
-<p> Note that this is valid for most of the modern &ldquo;western&rdquo; keyboard layouts.
+<p> Note that this is valid for most of the modern "western" keyboard layouts.
  Some older, custom or foreign layouts may break this convention.</p>
 
 <p> This function is very low level, to be more useful, it can be wrapped into
@@ -399,35 +465,43 @@
 
 <p> <strong>Sending strings:</strong></p>
 
+
+
+
+
 <pre><code>local function send_string_to_client(s, c)
     local old_c = client.focus
     client.focus = c
     for i=1, #s do
         local char = s:sub(i,i)
-        root.fake_input('key_press'  , char)
-        root.fake_input('key_release', char)
+        root.fake_input("key_press"  , char)
+        root.fake_input("key_release", char)
     end
     client.focus = old_c
 end
 
-send_string_to_client('Hello world!')
+send_string_to_client("Hello world!")
 </code></pre>
 
 <p> Note that this example works for most ASCII inputs but may fail depending on
  how the string is encoded. Some multi-byte characters may not represent
  keys and some UTF-8 encoding format create characters by combining multiple
  elements such as accent + base character or various escape sequences. If you
- wish to use this example for &ldquo;real world&rdquo; i18n use cases, learning about
+ wish to use this example for "real world" i18n use cases, learning about
  XKB event and UTF-8 encoding is a prerequisites.</p>
 
 <p> <strong>Clicking:</strong></p>
 
-<p> <img src="../images/mouse.svg" alt="Client geometry" /></p>
+<p> <img src="../images/mouse.svg" alt="Client geometry"/></p>
+
+
+
+
 
 <pre><code>local function click(button_id, x, y)
     mouse.coords {x = x, y = y}
-    root.fake_input('button_press' , button_id)
-    root.fake_input('button_release', button_id)
+    root.fake_input("button_press" , button_id)
+    root.fake_input("button_release", button_id)
 end
 
 click(1, 42, 42)
@@ -459,152 +533,101 @@ click(1, 42, 42)
 
 
 
-</dd>
-    <dt>
-    <a name = "keys"></a>
-    <strong><span class='function_modname'>root.</span>keys <span class='function_args'>(keys_array)</span></strong>
-    </dt>
-    <dd>
-    Get or set global key bindings.
- These bindings will be available when you press keys on the root window.
 
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">keys_array</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a> or <span class="type">nil</span></span>
-         An array of key binding objects, or nothing.
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        The array of key bindings objects of this client.
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "buttons"></a>
-    <strong><span class='function_modname'>root.</span>buttons <span class='function_args'>(button_table)</span></strong>
-    </dt>
-    <dd>
-    Get or set global mouse bindings.
- This binding will be available when you click on the root window.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">button_table</span>
-         An array of mouse button bindings objects, or nothing.
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-        The array of mouse button bindings objects.
-    </ol>
-
-
-
+    <span id=item580 class="hide_extra">
+    </span>
 
 </dd>
     <dt>
     <a name = "cursor"></a>
-    <strong><span class='function_modname'>root.</span>cursor <span class='function_args'>(cursor_name)</span></strong>
+    <strong><span class='function_modname'>root.</span>cursor <span class='function_args'> <b>(</b>cursor_name<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>Set the root cursor  The possible values are:</p>
+    Set the root cursor  The possible values are:</p>
 
-<ul>
-<li><table class='widget_list' border=1>
-<tr><td>num_glyphs          </td></tr>
-<tr><td>cursor              </td></tr>
-<tr><td>arrow               </td></tr>
-<tr><td>based_arrow_down    </td></tr>
-<tr><td>based_arrow_up      </td></tr>
-<tr><td>boat                </td></tr>
-<tr><td>bogosity            </td></tr>
-<tr><td>bottom_left_corner  </td></tr>
-<tr><td>bottom_right_corner </td></tr>
-<tr><td>bottom_side         </td></tr>
-<tr><td>bottom_tee          </td></tr>
-<tr><td>box_spiral          </td></tr>
-<tr><td>center_ptr          </td></tr>
-<tr><td>circle              </td></tr>
-<tr><td>clock               </td></tr>
-<tr><td>coffee_mug          </td></tr>
-<tr><td>cross               </td></tr>
-<tr><td>cross_reverse       </td></tr>
-<tr><td>crosshair           </td></tr>
-<tr><td>diamond_cross       </td></tr>
-<tr><td>dot                 </td></tr>
-<tr><td>dotbox              </td></tr>
-<tr><td>double_arrow        </td></tr>
-<tr><td>draft_large         </td></tr>
-<tr><td>draft_small         </td></tr>
-<tr><td>draped_box          </td></tr>
-<tr><td>exchange            </td></tr>
-<tr><td>fleur               </td></tr>
-<tr><td>gobbler             </td></tr>
-<tr><td>gumby               </td></tr>
-<tr><td>hand                </td></tr>
-<tr><td>hand                </td></tr>
-<tr><td>heart               </td></tr>
-<tr><td>icon                </td></tr>
-<tr><td>iron_cross          </td></tr>
-<tr><td>left_ptr            </td></tr>
-<tr><td>left_side           </td></tr>
-<tr><td>left_tee            </td></tr>
-<tr><td>leftbutton          </td></tr>
-<tr><td>ll_angle            </td></tr>
-<tr><td>lr_angle            </td></tr>
-<tr><td>man                 </td></tr>
-<tr><td>middlebutton        </td></tr>
-<tr><td>mouse               </td></tr>
-<tr><td>pencil              </td></tr>
-<tr><td>pirate              </td></tr>
-<tr><td>plus                </td></tr>
-<tr><td>question_arrow      </td></tr>
-<tr><td>right_ptr           </td></tr>
-<tr><td>right_side          </td></tr>
-<tr><td>right_tee           </td></tr>
-<tr><td>rightbutton         </td></tr>
-<tr><td>rtl_logo            </td></tr>
-<tr><td>sailboat            </td></tr>
-<tr><td>sb_down_arrow       </td></tr>
-<tr><td>sb_h_double_arrow   </td></tr>
-<tr><td>sb_left_arrow       </td></tr>
-<tr><td>sb_right_arrow      </td></tr>
-<tr><td>sb_up_arrow         </td></tr>
-<tr><td>sb_v_double_arrow   </td></tr>
-<tr><td>shuttle             </td></tr>
-<tr><td>sizing              </td></tr>
-<tr><td>spider              </td></tr>
-<tr><td>spraycan            </td></tr>
-<tr><td>star                </td></tr>
-<tr><td>target              </td></tr>
-<tr><td>tcross              </td></tr>
-<tr><td>top_left_arrow      </td></tr>
-<tr><td>top_left_corner     </td></tr>
-<tr><td>top_right_corner    </td></tr>
-<tr><td>top_side            </td></tr>
-<tr><td>top_tee             </td></tr>
-<tr><td>trek                </td></tr>
-<tr><td>ul_angle            </td></tr>
-<tr><td>umbrella            </td></tr>
-<tr><td>ur_angle            </td></tr>
-<tr><td>watch               </td></tr>
-<tr><td>xterm               </td></tr>
-</table></li>
-</ul>
-
-
-
+<p>  <div class='flex-list'>
+ <div>num_glyphs</div>
+ <div>arrow</div>
+ <div>based<em>arrow</em>down</div>
+ <div>based<em>arrow</em>up</div>
+ <div>boat</div>
+ <div>bogosity</div>
+ <div>bottom<em>left</em>corner</div>
+ <div>bottom<em>right</em>corner</div>
+ <div>bottom_side</div>
+ <div>bottom_tee</div>
+ <div>box_spiral</div>
+ <div>center_ptr</div>
+ <div>circle</div>
+ <div>clock</div>
+ <div>coffee_mug</div>
+ <div>cross</div>
+ <div>crosshair</div>
+ <div>cross_reverse</div>
+ <div>cursor</div>
+ <div>diamond_cross</div>
+ <div>dotbox</div>
+ <div>dot</div>
+ <div>double_arrow</div>
+ <div>draft_large</div>
+ <div>draft_small</div>
+ <div>draped_box</div>
+ <div>exchange</div>
+ <div>fleur</div>
+ <div>gobbler</div>
+ <div>gumby</div>
+ <div>hand</div>
+ <div>hand</div>
+ <div>heart</div>
+ <div>icon</div>
+ <div>iron_cross</div>
+ <div>leftbutton</div>
+ <div>left_ptr</div>
+ <div>left_side</div>
+ <div>left_tee</div>
+ <div>ll_angle</div>
+ <div>lr_angle</div>
+ <div>man</div>
+ <div>middlebutton</div>
+ <div>mouse</div>
+ <div>pencil</div>
+ <div>pirate</div>
+ <div>plus</div>
+ <div>question_arrow</div>
+ <div>rightbutton</div>
+ <div>right_ptr</div>
+ <div>right_side</div>
+ <div>right_tee</div>
+ <div>rtl_logo</div>
+ <div>sailboat</div>
+ <div>sb<em>down</em>arrow</div>
+ <div>sb<em>h</em>double_arrow</div>
+ <div>sb<em>left</em>arrow</div>
+ <div>sb<em>right</em>arrow</div>
+ <div>sb<em>up</em>arrow</div>
+ <div>sb<em>v</em>double_arrow</div>
+ <div>shuttle</div>
+ <div>sizing</div>
+ <div>spider</div>
+ <div>spraycan</div>
+ <div>star</div>
+ <div>target</div>
+ <div>tcross</div>
+ <div>top<em>left</em>arrow</div>
+ <div>top<em>left</em>corner</div>
+ <div>top<em>right</em>corner</div>
+ <div>top_side</div>
+ <div>top_tee</div>
+ <div>trek</div>
+ <div>ul_angle</div>
+ <div>umbrella</div>
+ <div>ur_angle</div>
+ <div>watch</div>
+ <div>xterm</div>
+ </div>
 
     <h3>Parameters:</h3>
     <ul>
@@ -617,14 +640,20 @@ click(1, 42, 42)
 
 
 
+
+    <span id=item581 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "drawins"></a>
-    <strong><span class='function_modname'>root.</span>drawins <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>root.</span>drawins <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the drawins attached to a screen.
-
 
 
     <h3>Returns:</h3>
@@ -636,14 +665,20 @@ click(1, 42, 42)
 
 
 
+
+    <span id=item582 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "wallpaper"></a>
-    <strong><span class='function_modname'>root.</span>wallpaper <span class='function_args'>(pattern)</span></strong>
+    <strong><span class='function_modname'>root.</span>wallpaper <span class='function_args'> <b>(</b>pattern<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the wallpaper as a cairo surface or set it as a cairo pattern.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -661,14 +696,20 @@ click(1, 42, 42)
 
 
 
+
+    <span id=item583 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "size"></a>
-    <strong><span class='function_modname'>root.</span>size <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>root.</span>size <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the size of the root window.
-
 
 
     <h3>Returns:</h3>
@@ -682,14 +723,20 @@ click(1, 42, 42)
 
 
 
+
+    <span id=item584 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "size_mm"></a>
-    <strong><span class='function_modname'>root.</span>size_mm <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>root.</span>size_mm <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the physical size of the root window, in millimeter.
-
 
 
     <h3>Returns:</h3>
@@ -703,14 +750,20 @@ click(1, 42, 42)
 
 
 
+
+    <span id=item585 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "tags"></a>
-    <strong><span class='function_modname'>root.</span>tags <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>root.</span>tags <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the attached tags.
-
 
 
     <h3>Returns:</h3>
@@ -722,6 +775,112 @@ click(1, 42, 42)
 
 
 
+
+    <span id=item586 class="hide_extra">
+    </span>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Object_properties"></a>Object properties</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "keys"></a>
+    <strong>keys</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Get or set global key bindings.
+ These bindings will be available when you press keys on the root window
+ (the wallpaper).
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../input_handling/awful.key.html#">awful.key</a>
+    </ul>
+
+
+
+    <span id=item587 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "buttons"></a>
+    <strong>buttons</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Store the list of mouse buttons to be applied on the wallpaper (also
+ known as root window).
+
+    <h3>Type constraints:</h3>
+    <ul>
+        <li><span class="parameter">buttons</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         The list of buttons.
+         (<em>default</em> {})
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../input_handling/awful.button.html#">awful.button</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">root.buttons = {
+    awful.button({ }, <span class="number">3</span>, <span class="keyword">function</span> () mymainmenu:toggle() <span class="keyword">end</span>),
+    awful.button({ }, <span class="number">4</span>, awful.tag.viewnext),
+    awful.button({ }, <span class="number">5</span>, awful.tag.viewprev),
+}</pre>
+    </ul>
+
+
+    <span id=item588 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "content"></a>
+    <strong>content</strong>
+    <span class="proptype"><span class='summary_type'>surface</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Get the content of the root window as a cairo surface.
+
+    <h3>Type constraints:</h3>
+    <ul>
+        <li><span class="parameter">A</span>
+            <span class="types"><span class="type">surface</span></span>
+         cairo surface with the root window content (aka the whole surface from every screens).
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../libraries/gears.surface.html#">gears.surface</a>
+    </ul>
+
+
+
+    <span id=item589 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
 
@@ -730,7 +889,7 @@ click(1, 42, 42)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

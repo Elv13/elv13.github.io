@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Utillib gears.sort - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -63,6 +62,27 @@
   <li><a href="../utility_libraries/gears.table.html">gears.table</a></li>
   <li><a href="../utility_libraries/gears.wallpaper.html">gears.wallpaper</a></li>
 </ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
+</ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
   <li><a href="../declarative_rules/ruled.client.html">ruled.client</a></li>
@@ -80,7 +100,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -114,6 +133,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -125,23 +145,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -149,6 +152,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -175,10 +179,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -188,6 +191,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -201,9 +205,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -225,11 +226,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -243,36 +247,57 @@
 <h1>Module: <code>gears.sort</code></h1>
 <p>Extra sorting algorithms.</p>
 <p>
+
 </p>
+    <div class="extra-header">
 
 
-<h2>
-    <a href="#lib_gears_sort_topological_Functions">lib.gears.sort.topological Functions</a>
-</h2>
+
+</div>
+
+
+<h2><a href="#lib_gears_sort_topological_Functions">lib.gears.sort.topological Functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#append">:append <span class='function_args'>(node, dependencies)</span></a></td>
-      <td class="summary">Ensure that <code>node</code> appears after all <code>dependencies</code>.</td>
+      <td class="name" >
+        <a href="#append">:append <span class='function_args'> <b>(</b>node, dependencies<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Ensure that <code>node</code> appears after all <code>dependencies</code>.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#prepend">:prepend <span class='function_args'>(node, subordinates)</span></a></td>
-      <td class="summary">Ensure that <code>node</code> appears before all <code>subordinates</code>.</td>
+      <td class="name" >
+        <a href="#prepend">:prepend <span class='function_args'> <b>(</b>node, subordinates<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Ensure that <code>node</code> appears before all <code>subordinates</code>.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#clone">:clone <span class='function_args'>()</span></a></td>
-      <td class="summary">Create a copy of this topological sort.</td>
+      <td class="name" >
+        <a href="#clone">:clone <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Create a copy of this topological sort.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#remove">:remove <span class='function_args'>(node)</span></a></td>
-      <td class="summary">Remove a node from the topological map.</td>
+      <td class="name" >
+        <a href="#remove">:remove <span class='function_args'> <b>(</b>node<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Remove a node from the topological map.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#sort">:sort <span class='function_args'>()</span></a></td>
-      <td class="summary">Try to sort the nodes.</td>
+      <td class="name" >
+        <a href="#sort">:sort <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;table <i>or</i> nil</span></span>
+      </td>
+      <td colspan="2" class="summary">Try to sort the nodes.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#topological"><span class='function_modname'>gears.sort.</span>topological <span class='function_args'>()</span></a></td>
-      <td class="summary">A topological sorting class.</td>
+      <td class="name" >
+        <a href="#topological"><span class='function_modname'>gears.sort.</span>topological <span class='function_args'> <b>(</b><b>)</b></span></a>
+      </td>
+      <td colspan="2" class="summary">A topological sorting class.</td>
     </tr>
 </table>
 
@@ -285,11 +310,13 @@
     <dl class="function">
     <dt>
     <a name = "append"></a>
-    <strong>:append <span class='function_args'>(node, dependencies)</span></strong>
+    <strong>:append <span class='function_args'> <b>(</b>node, dependencies<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Ensure that <code>node</code> appears after all <code>dependencies</code>.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -297,7 +324,7 @@
          The node that edges are added to.
         </li>
         <li><span class="parameter">dependencies</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          List of nodes that have to appear before <code>node</code>.
         </li>
     </ul>
@@ -306,14 +333,20 @@
 
 
 
+
+    <span id=item2247 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "prepend"></a>
-    <strong>:prepend <span class='function_args'>(node, subordinates)</span></strong>
+    <strong>:prepend <span class='function_args'> <b>(</b>node, subordinates<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Ensure that <code>node</code> appears before all <code>subordinates</code>.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -321,7 +354,7 @@
          The node that edges are added to.
         </li>
         <li><span class="parameter">subordinates</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          List of nodes that have to appear after <code>node</code>.
         </li>
     </ul>
@@ -330,10 +363,17 @@
 
 
 
+
+    <span id=item2248 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "clone"></a>
-    <strong>:clone <span class='function_args'>()</span></strong>
+    <strong>:clone <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create a copy of this topological sort.
@@ -346,14 +386,19 @@
 
 
 
+    <span id=item2249 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "remove"></a>
-    <strong>:remove <span class='function_args'>(node)</span></strong>
+    <strong>:remove <span class='function_args'> <b>(</b>node<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Remove a node from the topological map.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -366,26 +411,33 @@
 
 
 
+
+    <span id=item2250 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "sort"></a>
-    <strong>:sort <span class='function_args'>()</span></strong>
+    <strong>:sort <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;table <i>or</i> nil</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Try to sort the nodes.
 
 
-
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
         A sorted list of nodes
     </ol>
      <h3>Or</h3>
     <ol>
         <li>
            <span class="types"><span class="type">nil</span></span>
+
 
 </li>
         <li>
@@ -395,16 +447,27 @@
 
 
 
+
+    <span id=item2251 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "topological"></a>
-    <strong><span class='function_modname'>gears.sort.</span>topological <span class='function_args'>()</span></strong>
+    <strong><span class='function_modname'>gears.sort.</span>topological <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>A topological sorting class. </p>
+
+<p>A topological sorting class. </p>
 
 <p> The object returned by this function allows to create simple dependency
  graphs. It can be used for decision making or ordering of complex sequences.</p>
+
+
+
+
 
 <p><strong>Usage example output</strong>:</p>
 
@@ -422,6 +485,7 @@ The position #6 is: f
 
 
 
+
     <h3>Usage:</h3>
     <ul>
         <pre class="example"><span class="keyword">local</span> tsort = gears.sort.topological()
@@ -432,9 +496,13 @@ tsort:append(<span class="string">'e'</span>, { <span class="string">'d'</span> 
 tsort:append(<span class="string">'f'</span>, { <span class="string">'e'</span>, <span class="string">'d'</span> })
 <span class="keyword">local</span> res = <span class="global">assert</span>(tsort:sort())
 <span class="keyword">for</span> k, v <span class="keyword">in</span> <span class="global">ipairs</span>(res) <span class="keyword">do</span>
-    <span class="global">print</span>(<span class="string">'The position #'</span>..k..<span class="string">' is: '</span>..v)
+    <span class="global">print</span>(<span class="string">"The position #"</span>..k..<span class="string">" is: "</span>..v)
 <span class="keyword">end</span></pre>
     </ul>
+
+
+    <span id=item2252 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -444,7 +512,7 @@ tsort:append(<span class="string">'f'</span>, { <span class="string">'e'</span>,
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

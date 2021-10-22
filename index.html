@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>awesome API documentation</title>
     <link rel="stylesheet" href="ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -34,6 +31,8 @@
 <div id="main">
 
 
+
+
 <!-- Menu -->
 
 <div id="navigation">
@@ -43,6 +42,27 @@
 
 
 
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="core_components/awesome.html">awesome</a></li>
+  <li><a href="core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="core_components/drawable.html">drawable</a></li>
+  <li><a href="core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="core_components/root.html">root</a></li>
+  <li><a href="core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="input_handling/mouse.html">mouse</a></li>
+</ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
   <li><a href="declarative_rules/ruled.client.html">ruled.client</a></li>
@@ -60,7 +80,6 @@
   <li><a href="widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -94,6 +113,7 @@
   <li><a href="widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -105,23 +125,6 @@
   <li><a href="widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="core_components/awesome.html">awesome</a></li>
-  <li><a href="core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="core_components/button.html">button</a></li>
-  <li><a href="core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="core_components/drawable.html">drawable</a></li>
-  <li><a href="core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="core_components/key.html">key</a></li>
-  <li><a href="core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="core_components/root.html">root</a></li>
-  <li><a href="core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -129,6 +132,7 @@
   <li><a href="popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="popups_and_bars/menubar.html">menubar</a></li>
@@ -168,10 +172,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="libraries/awful.spawn.html">awful.spawn</a></li>
@@ -181,6 +184,7 @@
   <li><a href="libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="libraries/naughty.html">naughty</a></li>
@@ -194,9 +198,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="classes/awful.button.html">awful.button</a></li>
-  <li><a href="classes/awful.key.html">awful.key</a></li>
-  <li><a href="classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="classes/gears.cache.html">gears.cache</a></li>
   <li><a href="classes/gears.history.html">gears.history</a></li>
@@ -218,11 +219,14 @@
   <li><a href="documentation/00-authors.md.html">Authors</a></li>
   <li><a href="documentation/01-readme.md.html">Readme</a></li>
   <li><a href="documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="documentation/89-NEWS.md.html">NEWS</a></li>
@@ -234,8 +238,9 @@
 <div id="content">
 
 
-  <h2>API documentation for awesome, a highly configurable X window manager (version v4.3-459-g1f17deae4).</h2>
-  <p>Welcome to the documentation for the awesome window manager. Below you find an
+  <h2>API documentation for awesome, a highly configurable X window manager (version v4.3-1306-g4d52706fa-dirty).</h2>
+  <p>
+<p>Welcome to the documentation for the Awesome window manager. Below you find an
 overview of the individual parts which links to the full documentation.</p>
 
 <p>If you are a new user, you may want to read <a href="documentation/07-my-first-awesome.md.html#">07-my-first-awesome.md</a> to get
@@ -244,6 +249,121 @@ started. In <a href="documentation/05-awesomerc.md.html#">05-awesomerc.md</a>, t
 <p>If you already used awesome in the past, <a href="documentation/89-NEWS.md.html#">89-NEWS.md</a> and <a href="documentation/17-porting-tips.md.html#">17-porting-tips.md</a>
 should be useful for you.</p>
 
+<h3>Default configuration components name:</h3>
+
+<p><center><img src="images/AUTOGEN_awful_popup_defaultconfig.svg"></center></p>
+
+<h3>Guides</h3>
+
+
+<div class="index_guides">
+    <div>
+        <a href="documentation/07-my-first-awesome.md.html#">Getting started</a>
+        <a href="documentation/90-FAQ.md.html#">FAQ</a>
+        <a href="documentation/01-readme.md.html#">Read Me</a>
+        <a href="documentation/89-NEWS.md.html#">NEWS</a>
+    </div>
+    <div>
+        <a href="documentation/03-declarative-layout.md.html#">The widget system</a>
+        <a href="documentation/09-options.md.html#">Startup options</a>
+        <a href="documentation/05-awesomerc.md.html#">The default rc.lua</a>
+        <a href="documentation/08-client-layout-system.md.html#">Window management</a>
+    </div>
+</div>
+
+
+<h2>Major libraries</h2>
+
+<p>AwesomeWM ship multiple libraries. Here is an overview of the purpose and scope
+of those libraries.</p>
+
+
+<table class='widget_list' border=1>
+  <tr style='font-weight: bold;'>
+   <th align='center'>Library</th>
+   <th align='center'>Description</th>
+  </tr>
+  <tr><td><code>gears</code></td><td>Utilities such as color parsing and objects</td></tr>
+  <tr><td><a href="popups_and_bars/wibox.html#">wibox</a></td><td>Awesome own generic widget framework</td></tr>
+  <tr><td><code>awful</code></td><td>Everything related to window managment</td></tr>
+  <tr><td><code>awful.widget</code></td><td>Window management related widgets</td></tr>
+  <tr><td><a href="libraries/awful.layout.html#">awful.layout</a></td><td>The default stateless client tiling module.</td></tr>
+  <tr><td><code>ruled</code></td><td>Define declarative rules on various events</td></tr>
+  <tr><td><a href="libraries/naughty.html#">naughty</a></td><td>Notifications</td></tr>
+  <tr><td><a href="popups_and_bars/menubar.html#">menubar</a></td><td>XDG (application) menu implementation</td></tr>
+  <tr><td><a href="theme_related_libraries/beautiful.html#">beautiful</a></td><td>Awesome theme module</td></tr>
+</table>
+
+
+
+</p>
+
+<h2>Core_components</h2>
+<table class="module_list">
+  <tr>
+    <td class="name"  ><a href="core_components/awesome.html">awesome</a></td>
+    <td class="summary">AwesomeWM lifecycle API.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="core_components/awful.keygrabber.html">awful.keygrabber</a></td>
+    <td class="summary">A keyboard grabbing and transaction object.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="core_components/client.html">client</a></td>
+    <td class="summary">A process window.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="core_components/drawable.html">drawable</a></td>
+    <td class="summary">awesome drawable API.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="core_components/gears.timer.html">gears.timer</a></td>
+    <td class="summary">Timer objects and functions.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="core_components/mousegrabber.html">mousegrabber</a></td>
+    <td class="summary">awesome mousegrabber API.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="core_components/naughty.action.html">naughty.action</a></td>
+    <td class="summary">A notification action.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="core_components/naughty.notification.html">naughty.notification</a></td>
+    <td class="summary">A notification object.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="core_components/root.html">root</a></td>
+    <td class="summary">awesome root window API.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="core_components/screen.html">screen</a></td>
+    <td class="summary">The AwesomeWM screen API.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="core_components/tag.html">tag</a></td>
+    <td class="summary">awesome tag API.</td>
+  </tr>
+</table>
+<h2>Input_handling</h2>
+<table class="module_list">
+  <tr>
+    <td class="name"  ><a href="input_handling/awful.button.html">awful.button</a></td>
+    <td class="summary">Create easily new buttons objects ignoring certain modifiers.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="input_handling/awful.key.html">awful.key</a></td>
+    <td class="summary">Create easily new key objects ignoring certain modifiers.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="input_handling/awful.keyboard.html">awful.keyboard</a></td>
+    <td class="summary">Utilities related to the keyboard and keybindings.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="input_handling/mouse.html">mouse</a></td>
+    <td class="summary">awesome mouse API.</td>
+  </tr>
+</table>
 <h2>Declarative_rules</h2>
 <table class="module_list">
   <tr>
@@ -280,16 +400,16 @@ should be useful for you.</p>
   <tr>
     <td class="name"  ><a href="widgets/awful.widget.keyboardlayout.html">awful.widget.keyboardlayout</a></td>
     <td class="summary">
+
 </td>
   </tr>
   <tr>
     <td class="name"  ><a href="widgets/awful.widget.launcher.html">awful.widget.launcher</a></td>
-    <td class="summary">
-</td>
+    <td class="summary">A button widget which hosts a menu or starts a command.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></td>
-    <td class="summary">Layoutbox widget.</td>
+    <td class="summary">Display the current client layout (<a href="libraries/awful.layout.html#">awful.layout</a>) icon or name.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></td>
@@ -300,14 +420,8 @@ should be useful for you.</p>
     <td class="summary">The widget version of <a href="libraries/awful.prompt.html#">awful.prompt</a>.</td>
   </tr>
   <tr>
-    <td class="name"  ><a href="widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></td>
-    <td class="summary">A generic wibar based prompt bar.</td>
-  </tr>
-  <tr>
     <td class="name"  ><a href="widgets/awful.widget.taglist.html">awful.widget.taglist</a></td>
-    <td class="summary">Taglist widget module for awful</p>
-
-<p> Here is a more advanced example of how to extent the <code>taglist</code>.</td>
+    <td class="summary">Taglist widget module for awful.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></td>
@@ -339,12 +453,7 @@ should be useful for you.</p>
   </tr>
   <tr>
     <td class="name"  ><a href="widgets/wibox.widget.calendar.html">wibox.widget.calendar</a></td>
-    <td class="summary">A calendar widget</p>
-
-<p> This module defines two widgets: a month calendar and a year calendar</p>
-
-<p> The two widgets have a <code>date</code> property, in the form of
- a table {day=[number|nil], month=[number|nil], year=[number]}.</td>
+    <td class="summary">A calendar widget.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="widgets/wibox.widget.checkbox.html">wibox.widget.checkbox</a></td>
@@ -356,8 +465,7 @@ should be useful for you.</p>
   </tr>
   <tr>
     <td class="name"  ><a href="widgets/wibox.widget.imagebox.html">wibox.widget.imagebox</a></td>
-    <td class="summary">
-</td>
+    <td class="summary">A widget to display an image.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="widgets/wibox.widget.piechart.html">wibox.widget.piechart</a></td>
@@ -378,11 +486,13 @@ should be useful for you.</p>
   <tr>
     <td class="name"  ><a href="widgets/wibox.widget.systray.html">wibox.widget.systray</a></td>
     <td class="summary">
+
 </td>
   </tr>
   <tr>
     <td class="name"  ><a href="widgets/wibox.widget.textbox.html">wibox.widget.textbox</a></td>
     <td class="summary">
+
 </td>
   </tr>
   <tr>
@@ -406,18 +516,16 @@ should be useful for you.</p>
   </tr>
   <tr>
     <td class="name"  ><a href="widget_containers/wibox.container.background.html">wibox.container.background</a></td>
-    <td class="summary">A container capable of changing the background color, foreground color
+    <td class="summary">A container capable of changing the background color, foreground color and
  widget shape.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="widget_containers/wibox.container.constraint.html">wibox.container.constraint</a></td>
-    <td class="summary">
-</td>
+    <td class="summary">Restrict a widget size using one of multiple available strategies.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="widget_containers/wibox.container.margin.html">wibox.container.margin</a></td>
-    <td class="summary">
-</td>
+    <td class="summary">Add a margin around a widget.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="widget_containers/wibox.container.mirror.html">wibox.container.mirror</a></td>
@@ -439,23 +547,26 @@ should be useful for you.</p>
     <td class="name"  ><a href="widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></td>
     <td class="summary">This container scrolls its inner widget inside of the available space.</td>
   </tr>
+  <tr>
+    <td class="name"  ><a href="widget_containers/wibox.container.tile.html">wibox.container.tile</a></td>
+    <td class="summary">Replicate the content of the widget over and over.</td>
+  </tr>
 </table>
 <h2>Widget_layouts</h2>
 <table class="module_list">
   <tr>
     <td class="name"  ><a href="widget_layouts/wibox.layout.align.html">wibox.layout.align</a></td>
-    <td class="summary">
-</td>
+    <td class="summary">The <code>align</code> layout has three slots for child widgets.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="widget_layouts/wibox.layout.fixed.html">wibox.layout.fixed</a></td>
-    <td class="summary">
-</td>
+    <td class="summary">A <code>fixed</code> layout may be initialized with any number of child widgets, and
+ during runtime widgets may be added and removed dynamically.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="widget_layouts/wibox.layout.flex.html">wibox.layout.flex</a></td>
-    <td class="summary">
-</td>
+    <td class="summary">A <code>flex</code> layout may be initialized with any number of child widgets, and
+ during runtime widgets may be added and removed dynamically.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="widget_layouts/wibox.layout.grid.html">wibox.layout.grid</a></td>
@@ -474,73 +585,6 @@ should be useful for you.</p>
     <td class="summary">A stacked layout.</td>
   </tr>
 </table>
-<h2>Core_components</h2>
-<table class="module_list">
-  <tr>
-    <td class="name"  ><a href="core_components/awesome.html">awesome</a></td>
-    <td class="summary">AwesomeWM lifecycle API.</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="core_components/awful.keygrabber.html">awful.keygrabber</a></td>
-    <td class="summary">A keyboard grabbing and transaction object.</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="core_components/button.html">button</a></td>
-    <td class="summary">awesome button API</p>
-
-<p> Furthermore to the classes described here, one can also use signals as
- described in <a href="classes/signals.html#">signals</a>.</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="core_components/client.html">client</a></td>
-    <td class="summary">A process window.</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="core_components/drawable.html">drawable</a></td>
-    <td class="summary">awesome drawable API</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="core_components/gears.timer.html">gears.timer</a></td>
-    <td class="summary">Timer objects and functions.</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="core_components/key.html">key</a></td>
-    <td class="summary">awesome key API</p>
-
-<p> Furthermore to the classes described here, one can also use signals as
- described in <a href="classes/signals.html#">signals</a>.</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="core_components/mouse.html">mouse</a></td>
-    <td class="summary">awesome mouse API.</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="core_components/mousegrabber.html">mousegrabber</a></td>
-    <td class="summary">awesome mousegrabber API</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="core_components/naughty.action.html">naughty.action</a></td>
-    <td class="summary">A notification action.</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="core_components/naughty.notification.html">naughty.notification</a></td>
-    <td class="summary">A notification object.</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="core_components/root.html">root</a></td>
-    <td class="summary">awesome root window API</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="core_components/screen.html">screen</a></td>
-    <td class="summary">The AwesomeWM screen API.</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="core_components/tag.html">tag</a></td>
-    <td class="summary">awesome tag API</p>
-
-<p> What is a tag?</td>
-  </tr>
-</table>
 <h2>Popups_and_bars</h2>
 <table class="module_list">
   <tr>
@@ -549,7 +593,7 @@ should be useful for you.</p>
   </tr>
   <tr>
     <td class="name"  ><a href="popups_and_bars/awful.menu.html">awful.menu</a></td>
-    <td class="summary">A menu for awful</td>
+    <td class="summary">A menu for awful.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="popups_and_bars/awful.popup.html">awful.popup</a></td>
@@ -564,18 +608,20 @@ should be useful for you.</p>
     <td class="summary">Tooltip module for awesome objects.</td>
   </tr>
   <tr>
+    <td class="name"  ><a href="popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></td>
+    <td class="summary">Allows to use the wibox widget system to draw the wallpaper.</td>
+  </tr>
+  <tr>
     <td class="name"  ><a href="popups_and_bars/awful.wibar.html">awful.wibar</a></td>
-    <td class="summary">Wibox module for awful.</td>
+    <td class="summary">The main AwesomeWM "bar" module.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></td>
-    <td class="summary">A calendar popup wibox</p>
-
-<p> Display a month or year calendar popup using <code>calendar_popup.month</code> or <code>calendar_popup.year</code>.</td>
+    <td class="summary">A calendar popup wibox.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="popups_and_bars/menubar.html">menubar</a></td>
-    <td class="summary">Menubar module, which aims to provide a freedesktop menu alternative</td>
+    <td class="summary">Menubar module, which aims to provide a freedesktop menu alternative.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="popups_and_bars/naughty.layout.box.html">naughty.layout.box</a></td>
@@ -588,6 +634,7 @@ should be useful for you.</p>
   <tr>
     <td class="name"  ><a href="popups_and_bars/wibox.html">wibox</a></td>
     <td class="summary">
+
 </td>
   </tr>
 </table>
@@ -596,11 +643,12 @@ should be useful for you.</p>
   <tr>
     <td class="name"  ><a href="utility_libraries/gears.debug.html">gears.debug</a></td>
     <td class="summary">
+
 </td>
   </tr>
   <tr>
     <td class="name"  ><a href="utility_libraries/gears.filesystem.html">gears.filesystem</a></td>
-    <td class="summary">Filesystem module for gears</td>
+    <td class="summary">Filesystem module for gears.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="utility_libraries/gears.geometry.html">gears.geometry</a></td>
@@ -608,7 +656,7 @@ should be useful for you.</p>
   </tr>
   <tr>
     <td class="name"  ><a href="utility_libraries/gears.math.html">gears.math</a></td>
-    <td class="summary">Math module for gears</td>
+    <td class="summary">Math module for gears.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="utility_libraries/gears.object.html">gears.object</a></td>
@@ -618,6 +666,7 @@ should be useful for you.</p>
   <tr>
     <td class="name"  ><a href="utility_libraries/gears.protected_call.html">gears.protected_call</a></td>
     <td class="summary">
+
 </td>
   </tr>
   <tr>
@@ -626,11 +675,11 @@ should be useful for you.</p>
   </tr>
   <tr>
     <td class="name"  ><a href="utility_libraries/gears.string.html">gears.string</a></td>
-    <td class="summary">String module for gears</td>
+    <td class="summary">String module for gears.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="utility_libraries/gears.table.html">gears.table</a></td>
-    <td class="summary">Table module for gears</td>
+    <td class="summary">Table module for gears.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="utility_libraries/gears.wallpaper.html">gears.wallpaper</a></td>
@@ -693,21 +742,16 @@ should be useful for you.</p>
     <td class="summary">Completion module.</td>
   </tr>
   <tr>
-    <td class="name"  ><a href="libraries/awful.ewmh.html">awful.ewmh</a></td>
-    <td class="summary">Implements EWMH requests handling.</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="libraries/awful.hot_corner.html">awful.hot_corner</a></td>
-    <td class="summary">Perform an action of show a wibox when the mouse hit the side or
- corner of the screen.</td>
-  </tr>
-  <tr>
     <td class="name"  ><a href="libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></td>
     <td class="summary">Popup widget which shows current hotkeys and their descriptions.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="libraries/awful.layout.html">awful.layout</a></td>
-    <td class="summary">Layout module for awful</td>
+    <td class="summary">Layout module for awful.</td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="libraries/awful.permissions.html">awful.permissions</a></td>
+    <td class="summary">Implements EWMH requests handling.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="libraries/awful.placement.html">awful.placement</a></td>
@@ -723,7 +767,7 @@ should be useful for you.</p>
   </tr>
   <tr>
     <td class="name"  ><a href="libraries/awful.util.html">awful.util</a></td>
-    <td class="summary">Utility module for awful</td>
+    <td class="summary">Utility module for awful.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="libraries/dbus.html">dbus</a></td>
@@ -744,7 +788,12 @@ should be useful for you.</p>
   <tr>
     <td class="name"  ><a href="libraries/gears.surface.html">gears.surface</a></td>
     <td class="summary">
+
 </td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></td>
+    <td class="summary">make focus.byidx and swap.byidx behave more consistently with other layouts</td>
   </tr>
   <tr>
     <td class="name"  ><a href="libraries/menubar.menu_gen.html">menubar.menu_gen</a></td>
@@ -765,6 +814,7 @@ should be useful for you.</p>
   <tr>
     <td class="name"  ><a href="libraries/wibox.widget.html">wibox.widget</a></td>
     <td class="summary">
+
 </td>
   </tr>
 </table>
@@ -782,26 +832,14 @@ should be useful for you.</p>
 <h2>Classes</h2>
 <table class="module_list">
   <tr>
-    <td class="name"  ><a href="classes/awful.button.html">awful.button</a></td>
-    <td class="summary">Create easily new buttons objects ignoring certain modifiers.</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="classes/awful.key.html">awful.key</a></td>
-    <td class="summary">Create easily new key objects ignoring certain modifiers.</td>
-  </tr>
-  <tr>
-    <td class="name"  ><a href="classes/awful.wallpaper.html">awful.wallpaper</a></td>
-    <td class="summary">Allows to use the wibox widget system to draw the wallpaper.</td>
-  </tr>
-  <tr>
     <td class="name"  ><a href="classes/awful.widget.common.html">awful.widget.common</a></td>
     <td class="summary">
+
 </td>
   </tr>
   <tr>
     <td class="name"  ><a href="classes/gears.cache.html">gears.cache</a></td>
-    <td class="summary">
-</td>
+    <td class="summary">Cache object with data that can be garbage-collected.</td>
   </tr>
   <tr>
     <td class="name"  ><a href="classes/gears.history.html">gears.history</a></td>
@@ -847,6 +885,7 @@ should be useful for you.</p>
   <tr>
     <td class="name"  ><a href="classes/wibox.widget.base.html">wibox.widget.base</a></td>
     <td class="summary">
+
 </td>
   </tr>
   <tr>
@@ -893,6 +932,18 @@ should be useful for you.</p>
     <td class="summary"></td>
   </tr>
   <tr>
+    <td class="name"  ><a href="documentation/08-client-layout-system.md.html">08-client-layout-system.md</a></td>
+    <td class="summary"></td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="documentation/09-options.md.html">09-options.md</a></td>
+    <td class="summary"></td>
+  </tr>
+  <tr>
+    <td class="name"  ><a href="documentation/10-building-and-testing.md.html">10-building-and-testing.md</a></td>
+    <td class="summary"></td>
+  </tr>
+  <tr>
     <td class="name"  ><a href="documentation/16-using-cairo.md.html">16-using-cairo.md</a></td>
     <td class="summary"></td>
   </tr>
@@ -914,7 +965,7 @@ should be useful for you.</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

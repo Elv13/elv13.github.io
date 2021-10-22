@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Topic 01-readme.md - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -65,15 +64,39 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><strong>Readme</strong></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
   <li><a href="../documentation/90-FAQ.md.html">FAQ</a></li>
+</ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
 </ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
@@ -92,7 +115,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -126,6 +148,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -137,23 +160,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -161,6 +167,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -200,10 +207,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -213,6 +219,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -226,9 +233,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -250,35 +254,37 @@
 
 <div id="content">
 
-    <h1>Readme</h1>
+
+<h1>Readme</h1>
 
 <p><a name="About_Awesome"></a></p>
-
 <h2>About Awesome</h2>
 
 <p>Awesome is a highly configurable, next generation framework window manager for X.</p>
 
 <p><a name="Building_and_installation"></a></p>
-
 <h2>Building and installation</h2>
 
-<p>After extracting the dist tarball, run:</p>
+<p>After extracting the dist tarball or cloning the repository, run:</p>
+
 
 <pre>
 make
+sudo make install
 </pre>
 
 
-<p>This will create a build directory, run <code>cmake</code> in it and build Awesome.</p>
+<p>This will</p>
 
-<p>After building is finished, you can either install via <code>make install</code>:</p>
+<ol>
+    <li>create a build directory at <code>./build</code>,</li>
+    <li>run <code>cmake</code>,</li>
+    <li>build Awesome and</li>
+    <li>install it to the default prefix path <code>/usr/local</code>.</li>
+</ol>
 
-<pre>
-make install  # you might need root permissions
-</pre>
+<p>Alternatively to the above, you can generate a <code>.deb</code> or <code>.rpm</code> package, for easy installation management:</p>
 
-
-<p>or by auto-generating a .deb or .rpm package, for easy removal later on:</p>
 
 <pre>
 make <span class="global">package</span>
@@ -289,99 +295,42 @@ sudo rpm -Uvh awesome-x.y.z.rpm
 </pre>
 
 
-<p>NOTE: Awesome uses <a href="https://cmake.org"><code>cmake</code></a> to build. In case you want to
-pass arguments to <code>cmake</code>, please use the <code>CMAKE_ARGS</code> environment variable. For
-instance:</p>
+<h3>Advanced options and testing</h3>
 
-<pre>
-CMAKE_ARGS=<span class="string">"-DCMAKE_INSTALL_PREFIX=/opt/awesome"</span> make
-</pre>
-
+<p>A full list of dependencies, more advanced build options, as well as instructions on how to use the test suite can be found <a href="https://awesomewm.org/apidoc/10-building-and-testing.md.html">here</a>.</p>
 
 <h3>Installing current git master as a package receipts</h3>
 
 <h4>Arch Linux AUR</h4>
 
-<pre><code> sudo pacman -S --needed base-devel git
- git clone https://aur.archlinux.org/awesome-git.git
- cd awesome-git
- makepkg -fsri
-</code></pre>
+
+<pre>
+sudo pacman -S <span class="comment">--needed base-devel git
+</span>git clone https://aur.archlinux.org/awesome-git.git
+cd awesome-git
+makepkg -fsri
+</pre>
+
 
 <h4>Debian-based</h4>
 
-<pre><code> sudo apt build-dep awesome
- git clone https://github.com/awesomewm/awesome
- cd awesome
- make package
- sudo apt install *.deb
-</code></pre>
 
-<h3>Build dependencies</h3>
-
-<p>Awesome has the following dependencies (besides a more-or-less standard POSIX
-environment):</p>
-
-<ul>
-<li><a href="https://cmake.org">CMake >= 3.0.0</a></li>
-<li><a href="https://www.lua.org">Lua >= 5.1.0</a> or <a href="http://luajit.org">LuaJIT</a></li>
-<li><a href="https://github.com/pavouk/lgi">LGI >= 0.8.0</a></li>
-<li><a href="https://www.x.org/archive//individual/proto/">xproto >= 7.0.15</a></li>
-<li><a href="https://xcb.freedesktop.org/">libxcb >= 1.6</a> with support for the RandR, XTest, Xinerama, SHAPE and
-XKB extensions</li>
-<li><a href="https://xcb.freedesktop.org/">libxcb-cursor</a></li>
-<li><a href="https://xcb.freedesktop.org/">libxcb-util >= 0.3.8</a></li>
-<li><a href="https://xcb.freedesktop.org/">libxcb-keysyms >= 0.3.4</a></li>
-<li><a href="https://xcb.freedesktop.org/">libxcb-icccm >= 0.3.8</a></li>
-<li><a href="https://xcb.freedesktop.org/">libxcb-xfixes</a></li>
-<li><a href="https://github.com/Airblader/xcb-util-xrm">xcb-util-xrm >= 1.0</a></li>
-<li><a href="http://xkbcommon.org/">libxkbcommon</a> with X11 support enabled</li>
-<li><a href="https://www.freedesktop.org/wiki/Software/startup-notification/">libstartup-notification >=
-0.10</a></li>
-<li><a href="https://www.cairographics.org/">cairo</a> with support for XCB and GObject
-introspection</li>
-<li><a href="http://www.pango.org/">Pango</a> with support for Cairo and GObject
-introspection</li>
-<li><a href="https://wiki.gnome.org/Projects/GLib">GLib >= 2.40</a> with support for GObject
-introspection</li>
-<li><a href="https://developer.gnome.org/gio/stable/">GIO</a> with support for GObject
-introspection</li>
-<li><a href="https://wiki.gnome.org/Projects/GdkPixbuf">GdkPixbuf</a></li>
-<li>libX11 with xcb support</li>
-<li><a href="http://www.imagemagick.org/script/index.php">Imagemagick&rsquo;s convert utility</a></li>
-<li><a href="https://github.com/devnev/libxdg-basedir">libxdg-basedir >= 1.0.0</a></li>
-</ul>
-
-
-<p>Additionally, the following optional dependencies exist:</p>
-
-<ul>
-<li><a href="https://www.freedesktop.org/wiki/Software/dbus/">DBus</a> for DBus integration
-and the <code>awesome-client</code> utility</li>
-<li><a href="https://asciidoctor.org/">asciidoctor</a> for generating man pages</li>
-<li><a href="http://www.gzip.org/">gzip</a> for compressing man pages</li>
-<li><a href="https://stevedonovan.github.io/ldoc/">ldoc >= 1.4.5</a> for generating the
-documentation</li>
-<li><a href="https://olivinelabs.com/busted/">busted</a> for running unit tests</li>
-<li><a href="https://github.com/mpeterv/luacheck">luacheck</a> for static code analysis</li>
-<li><a href="https://keplerproject.github.io/luacov/">LuaCov</a> for collecting code coverage
-information</li>
-<li>libexecinfo on systems where libc does not provide <code>backtrace_symbols()</code> to
-generate slightly better backtraces on crashes</li>
-<li><code>Xephyr</code> or <code>Xvfb</code> for running integration tests</li>
-<li><a href="https://www.gtk.org/">GTK+ >= 3.10</a> for <code>./themes/gtk/</code></li>
-<li><a href="https://gitlab.freedesktop.org/xorg/lib/libxcb-errors">xcb-errors</a> for
-pretty-printing of X11 errors</li>
-</ul>
+<pre>
+sudo apt build-dep awesome
+git clone https://github.com/awesomewm/awesome
+cd awesome
+make <span class="global">package</span>
+sudo apt install *.deb
+</pre>
 
 
 <p><a name="Running_Awesome"></a></p>
-
 <h2>Running Awesome</h2>
 
 <p>You can directly select Awesome from your display manager. If not, you can
 add the following line to your <code>.xinitrc</code> to start Awesome using <code>startx</code>
 or to <code>.xsession</code> to start Awesome using your display manager:</p>
+
 
 <pre>
 exec awesome
@@ -391,6 +340,7 @@ exec awesome
 <p>In order to connect Awesome to a specific display, make sure that
 the <code>DISPLAY</code> environment variable is set correctly, e.g.:</p>
 
+
 <pre>
 DISPLAY=foo.bar:<span class="number">1</span> exec awesome
 </pre>
@@ -399,7 +349,6 @@ DISPLAY=foo.bar:<span class="number">1</span> exec awesome
 <p>(This will start Awesome on display <code>:1</code> of the host foo.bar.)</p>
 
 <p><a name="Configuration"></a></p>
-
 <h2>Configuration</h2>
 
 <p>The configuration of Awesome is done by creating a
@@ -408,7 +357,6 @@ DISPLAY=foo.bar:<span class="number">1</span> exec awesome
 <p>An example configuration named <code>awesomerc.lua</code> is provided in the source.</p>
 
 <p><a name="Troubleshooting"></a></p>
-
 <h2>Troubleshooting</h2>
 
 <p>On most systems any message printed by Awesome (including warnings and errors)
@@ -422,6 +370,7 @@ problem.</p>
 
 <p>You can call <a href="../core_components/awesome.html#">awesome</a> with <code>gdb</code> like this:</p>
 
+
 <pre>
 DISPLAY=:<span class="number">2</span> gdb awesome
 </pre>
@@ -429,14 +378,12 @@ DISPLAY=:<span class="number">2</span> gdb awesome
 
 <p>Then in <code>gdb</code> set any arguments and run it:</p>
 
-<pre>
-(gdb) set args <span class="comment">--replace
-</span>(gdb) run
-</pre>
+<pre><code> (gdb) set args --replace
+ (gdb) run
+</code></pre>
 
 
 <p><a name="Asking_questions"></a></p>
-
 <h2>Asking questions</h2>
 
 <h4>IRC</h4>
@@ -446,40 +393,32 @@ DISPLAY=:<span class="number">2</span> gdb awesome
 <p><a href="https://webchat.oftc.net/?channels=awesome">IRC Webchat</a></p>
 
 <h4>Stack Overflow</h4>
-
 <p>You can ask questions on <a href="http://stackoverflow.com/questions/tagged/awesome-wm">Stack Overflow</a>.</p>
 
 <h4>Reddit</h4>
-
 <p>We also have a <a href="https://www.reddit.com/r/awesomewm/">awesome subreddit</a> where you can share your work and ask questions.</p>
 
 <p><a name="Reporting_issues"></a></p>
-
 <h2>Reporting issues</h2>
 
 <p>Please report any issues you may find on <a href="https://github.com/awesomeWM/awesome/issues">our bugtracker</a>.</p>
 
 <p><a name="Contributing_code"></a></p>
-
 <h2>Contributing code</h2>
 
 <p>You can submit pull requests on the <a href="https://github.com/awesomeWM/awesome">github repository</a>.
 Please read the <a href="https://github.com/awesomeWM/awesome/blob/master/docs/02-contributing.md">contributing guide</a> for any coding, documentation or patch guidelines.</p>
 
 <p><a name="Status"></a></p>
-
 <h2>Status</h2>
-
-<p><a href="https://travis-ci.com/awesomeWM/awesome"><img src="https://travis-ci.com/awesomeWM/awesome.svg?branch=master" alt="Build Status" /></a></p>
+<p><a href="https://travis-ci.com/awesomeWM/awesome"><img src="https://travis-ci.com/awesomeWM/awesome.svg?branch=master" alt="Build Status"/></a></p>
 
 <p><a name="Documentation"></a></p>
-
 <h2>Documentation</h2>
 
 <p>Online documentation is available <a href="https://awesomewm.org/apidoc/">here</a>.</p>
 
 <p><a name="License"></a></p>
-
 <h2>License</h2>
 
 <p>The project is licensed under GNU General Public License v2 or later.
@@ -491,7 +430,7 @@ or <a href="http://www.gnu.org/licenses/gpl.html">v3</a>).</p>
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

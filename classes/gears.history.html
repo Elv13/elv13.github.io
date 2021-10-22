@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Class gears.history - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -57,9 +56,6 @@
 
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><strong>gears.history</strong></li>
@@ -75,6 +71,27 @@
   <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
   <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
   <li><a href="../classes/xproperties.html">xproperties</a></li>
+</ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
 </ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
@@ -93,7 +110,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -127,6 +143,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -138,23 +155,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -162,6 +162,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -201,10 +202,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -214,6 +214,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -230,11 +231,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -247,11 +251,14 @@
 
 <h1>Module: <code>gears.history</code></h1>
 <p>A generic and stateful history tracking class.</p>
-<p><p> This module hosts an abstract implementation of history tracking. It can be
+<p>
+
+
+<p> This module hosts an abstract implementation of history tracking. It can be
  used with any datatype and hide the implementation details.</p>
 
-<p> Alt+Tab like iterator for clients
- =================================</p>
+<h1> Alt+Tab like iterator for clients</h1>
+
 
 <pre>
 <span class="keyword">local</span> h = gears.history {
@@ -299,189 +306,273 @@ h.paused = <span class="keyword">false</span>
 </pre>
 
 </p>
+    <div class="extra-header">
+
+
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2014-2019 Emmanuel Lepage Vallee</li>
-        <li><strong>Author</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;</li>
+                <li><strong>Copyright</strong>: 2014-2019 Emmanuel Lepage Vallee</li>
+                <li>
+                    <strong>Originally authored by</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Constructors">Constructors</a>
-</h2>
+<h2><a href="#Constructors">Constructors</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#gears.history">gears.history <span class='function_args'>(args)</span></a></td>
-      <td class="summary">Create a new history tracking object.</td>
+      <td class="name" >
+        <a href="#gears.history">gears.history <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
+      </td>
+      <td colspan="2" class="summary">Create a new history tracking object.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Object_properties">Object properties</a>
-</h2>
+<h2><a href="#Object_properties">Object properties</a></h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#gears.history.mode">mode</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td class="summary">The history updating mode.</td>
+      <td colspan="2" class="summary">The history updating mode.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#gears.history.maximum_entries">maximum_entries</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">The maximum number of entries.</td>
+      <td colspan="2" class="summary">The maximum number of entries.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#gears.history.count">count</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td class="summary">Count the number of time an entry is used.</td>
+      <td colspan="2" class="summary">Count the number of time an entry is used.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#gears.history.paused">paused</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td class="summary">Is the history tracking currently paused.</td>
+      <td colspan="2" class="summary">Is the history tracking currently paused.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Object_methods">Object methods </a>
-</h2>
+<h2><a href="#Object_methods">Object methods </a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#gears.history.resume">:resume <span class='function_args'>()</span></a></td>
-      <td class="summary">Resume tracking.</td>
+      <td class="name" >
+        <a href="#gears.history.resume">:resume <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Resume tracking.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.pause">:pause <span class='function_args'>()</span></a></td>
-      <td class="summary">Pause tracking.</td>
+      <td class="name" >
+        <a href="#gears.history.pause">:pause <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Pause tracking.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.push">:push <span class='function_args'>(object)</span></a></td>
-      <td class="summary">Push an entry to the front (most recent) spot.</td>
+      <td class="name" >
+        <a href="#gears.history.push">:push <span class='function_args'> <b>(</b>object<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Push an entry to the front (most recent) spot.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.remove">:remove <span class='function_args'>(value)</span></a></td>
-      <td class="summary">Remove a value.</td>
+      <td class="name" >
+        <a href="#gears.history.remove">:remove <span class='function_args'> <b>(</b>value<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Remove a value.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.iterate_newest">:iterate_newest <span class='function_args'>(args)</span></a></td>
-      <td class="summary">Create a new iterator that starts with the <strong>newest</strong> entry.</td>
+      <td class="name" >
+        <a href="#gears.history.iterate_newest">:iterate_newest <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Create a new iterator that starts with the <strong>newest</strong> entry.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.iterate_oldest">:iterate_oldest <span class='function_args'>(args)</span></a></td>
-      <td class="summary">Create a new iterator that starts with the <strong>oldest</strong> entry.</td>
+      <td class="name" >
+        <a href="#gears.history.iterate_oldest">:iterate_oldest <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Create a new iterator that starts with the <strong>oldest</strong> entry.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.oldest">:oldest <span class='function_args'>()</span></a></td>
-      <td class="summary">Returns the oldest object tracked by this history.</td>
+      <td class="name" >
+        <a href="#gears.history.oldest">:oldest <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Returns the oldest object tracked by this history.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.newest">:newest <span class='function_args'>()</span></a></td>
-      <td class="summary">Returns the newest object tracked by this history.</td>
+      <td class="name" >
+        <a href="#gears.history.newest">:newest <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Returns the newest object tracked by this history.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.pop_newest">:pop_newest <span class='function_args'>()</span></a></td>
-      <td class="summary">Pop (remove) the most recent entry.</td>
+      <td class="name" >
+        <a href="#gears.history.pop_newest">:pop_newest <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Pop (remove) the most recent entry.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.pop_oldest">:pop_oldest <span class='function_args'>()</span></a></td>
-      <td class="summary">Pop (remove) the least recent entry.</td>
+      <td class="name" >
+        <a href="#gears.history.pop_oldest">:pop_oldest <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Pop (remove) the least recent entry.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.emit_signal">:emit_signal <span class='function_args'>(name, ...)</span></a></td>
-      <td class="summary">Emit a signal.</td>
+      <td class="name" >
+        <a href="#gears.history.emit_signal">:emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Emit a signal.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.object
+      </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.connect_signal">:connect_signal <span class='function_args'>(name, func)</span></a></td>
-      <td class="summary">Connect to a signal.</td>
+      <td class="name" >
+        <a href="#gears.history.connect_signal">:connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Connect to a signal.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.object
+      </td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.weak_connect_signal">:weak_connect_signal <span class='function_args'>(name, func)</span></a></td>
-      <td class="summary">Connect to a signal weakly.</td>
+      <td class="name" >
+        <a href="#gears.history.weak_connect_signal">:weak_connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Connect to a signal weakly.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.object
+      </td>
     </tr>
 </table>
-<h2>
-    <a href="#Signals">Signals</a>
-</h2>
+<h2><a href="#Signals">Signals</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#gears.history.paused">paused</a></td>
-      <td class="summary">Emitted when the history tracking is paused.</td>
+      <td class="name" >
+        <a href="#gears.history.paused">paused</a>
+      </td>
+      <td colspan="2" class="summary">Emitted when the history tracking is paused.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.resumed">resumed</a></td>
-      <td class="summary">Emitted when the history tracking is resumed.</td>
+      <td class="name" >
+        <a href="#gears.history.resumed">resumed</a>
+      </td>
+      <td colspan="2" class="summary">Emitted when the history tracking is resumed.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#request::select">request::select</a></td>
-      <td class="summary">Emitted when the iterator <code>:select()</code> method is called.</td>
+      <td class="name" >
+        <a href="#request::select">request::select</a>
+      </td>
+      <td colspan="2" class="summary">Emitted when the iterator <code>:select()</code> method is called.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#entry::ousted">entry::ousted</a></td>
-      <td class="summary">Emitted when an entry is ousted because it exeed the <a href="../classes/gears.history.html#gears.history.maximum_entries">maximum_entries</a>.</td>
+      <td class="name" >
+        <a href="#entry::ousted">entry::ousted</a>
+      </td>
+      <td colspan="2" class="summary">Emitted when an entry is ousted because it exeed the <a href="../classes/gears.history.html#gears.history.maximum_entries">maximum_entries</a>.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#entry::pushed">entry::pushed</a></td>
-      <td class="summary">Emitted when an object is pushed to the history.</td>
+      <td class="name" >
+        <a href="#entry::pushed">entry::pushed</a>
+      </td>
+      <td colspan="2" class="summary">Emitted when an object is pushed to the history.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#entry::added">entry::added</a></td>
-      <td class="summary">Emitted when an object is added to the history.</td>
+      <td class="name" >
+        <a href="#entry::added">entry::added</a>
+      </td>
+      <td colspan="2" class="summary">Emitted when an object is added to the history.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#entry::removed">entry::removed</a></td>
-      <td class="summary">Emitted when an object is removed from the stack.</td>
+      <td class="name" >
+        <a href="#entry::removed">entry::removed</a>
+      </td>
+      <td colspan="2" class="summary">Emitted when an object is removed from the stack.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Iterator_methods">Iterator methods </a>
-</h2>
+<h2><a href="#Iterator_methods">Iterator methods </a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#gears.history.next">:next <span class='function_args'>()</span></a></td>
-      <td class="summary">Move the iterator to the next element.</td>
+      <td class="name" >
+        <a href="#gears.history.next">:next <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Move the iterator to the next element.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.previous">:previous <span class='function_args'>()</span></a></td>
-      <td class="summary">Move the iterator to the previous element.</td>
+      <td class="name" >
+        <a href="#gears.history.previous">:previous <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Move the iterator to the previous element.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.select_next">:select_next <span class='function_args'>()</span></a></td>
-      <td class="summary">Move the iterator to the next element and select it.</td>
+      <td class="name" >
+        <a href="#gears.history.select_next">:select_next <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Move the iterator to the next element and select it.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.select_previous">:select_previous <span class='function_args'>()</span></a></td>
-      <td class="summary">Move the iterator to the previous element and select it.</td>
+      <td class="name" >
+        <a href="#gears.history.select_previous">:select_previous <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Move the iterator to the previous element and select it.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.select">:select <span class='function_args'>()</span></a></td>
-      <td class="summary">Emit the <a href="../classes/gears.history.html#request::select">request::select</a> signal on the current object.</td>
+      <td class="name" >
+        <a href="#gears.history.select">:select <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Emit the <a href="../classes/gears.history.html#request::select">request::select</a> signal on the current object.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.history.reset">:reset <span class='function_args'>()</span></a></td>
-      <td class="summary">Reset the iterator position.</td>
+      <td class="name" >
+        <a href="#gears.history.reset">:reset <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Reset the iterator position.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Iterator_properties">Iterator properties </a>
-</h2>
+<h2><a href="#Iterator_properties">Iterator properties </a></h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#gears.history.current">current</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>N/A</span></td>
-      <td class="summary">The current entry.</td>
+      <td colspan="2" class="summary">The current entry.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#gears.history.index">index</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td class="summary">The current index.</td>
+      <td colspan="2" class="summary">The current index.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#gears.history.rotate">rotate</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td class="summary">Start over when <code>:next()</code> or <code>:previous()</code> reach the end.</td>
+      <td colspan="2" class="summary">Start over when <code>:next()</code> or <code>:previous()</code> reach the end.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#gears.history.filter">filter</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>function</span></td>
-      <td class="summary">The filter function used to skip some entries.</td>
+      <td colspan="2" class="summary">The filter function used to skip some entries.</td>
     </tr>
 </table>
 
@@ -494,15 +585,17 @@ h.paused = <span class="keyword">false</span>
     <dl class="function">
     <dt>
     <a name = "gears.history"></a>
-    <strong>gears.history <span class='function_args'>(args)</span></strong>
+    <strong>gears.history <span class='function_named_args'><b>{</b>[args]<b>}</b></span></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create a new history tracking object.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">args</span>
+
 
         <ul>
         <li><span class="parameter">count</span>
@@ -523,6 +616,10 @@ h.paused = <span class="keyword">false</span>
 
 
 
+
+    <span id=item2661 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Object_properties"></a>Object properties</h2>
@@ -531,16 +628,19 @@ h.paused = <span class="keyword">false</span>
     <dt>
     <a name = "gears.history.mode"></a>
     <strong>mode</strong>
-    <span class="proptype">(<span class='summary_type'>string</span>)</span>
+    <span class="proptype"><span class='summary_type'>string</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>The history updating mode. </p>
+
+<p>The history updating mode. </p>
 
 <p> Possible values are:</p>
 
 <ul>
-<li><em>heap</em>: Always keep a single instance of each entry (default)</li>
-<li><em>multi</em>: Allow an entry to be in multiple positions</li>
+    <li><em>heap</em>: Always keep a single instance of each entry (default)</li>
+    <li><em>multi</em>: Allow an entry to be in multiple positions</li>
 </ul>
 
 
@@ -551,17 +651,21 @@ h.paused = <span class="keyword">false</span>
 
 
 
+    <span id=item2662 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.maximum_entries"></a>
     <strong>maximum_entries</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The maximum number of entries. </p>
 
 <p> Use <code>math.huge</code> for unlimited.
-
 
 
 
@@ -572,11 +676,17 @@ h.paused = <span class="keyword">false</span>
     </ul>
 
 
+
+    <span id=item2663 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.count"></a>
     <strong>count</strong>
-    <span class="proptype">(<span class='summary_type'>boolean</span>)</span>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Count the number of time an entry is used.
@@ -587,11 +697,16 @@ h.paused = <span class="keyword">false</span>
 
 
 
+    <span id=item2664 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.paused"></a>
     <strong>paused</strong>
-    <span class="proptype">(<span class='summary_type'>boolean</span>)</span>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Is the history tracking currently paused. </p>
@@ -604,6 +719,9 @@ h.paused = <span class="keyword">false</span>
 
 
 
+    <span id=item2665 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Object_methods"></a>Object methods </h2>
@@ -611,7 +729,10 @@ h.paused = <span class="keyword">false</span>
     <dl class="function">
     <dt>
     <a name = "gears.history.resume"></a>
-    <strong>:resume <span class='function_args'>()</span></strong>
+    <strong>:resume <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Resume tracking. </p>
@@ -625,10 +746,16 @@ h.paused = <span class="keyword">false</span>
 
 
 
+    <span id=item2666 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.pause"></a>
-    <strong>:pause <span class='function_args'>()</span></strong>
+    <strong>:pause <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Pause tracking. </p>
@@ -642,13 +769,20 @@ h.paused = <span class="keyword">false</span>
 
 
 
+    <span id=item2667 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.push"></a>
-    <strong>:push <span class='function_args'>(object)</span></strong>
+    <strong>:push <span class='function_args'> <b>(</b>object<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>Push an entry to the front (most recent) spot. </p>
+
+<p>Push an entry to the front (most recent) spot. </p>
 
 <p> Note that this is a function, not a method. It is safe to use directly
  in <a href="../classes/gears.history.html#gears.history.connect_signal">connect_signal</a> or as a callback.</p>
@@ -676,13 +810,21 @@ client.connect_signal("manage" , my_history.push )
 
 
 
+
+    <span id=item2668 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.remove"></a>
-    <strong>:remove <span class='function_args'>(value)</span></strong>
+    <strong>:remove <span class='function_args'> <b>(</b>value<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>Remove a value. </p>
+
+<p>Remove a value. </p>
 
 <p> Note that this is a function, not a method. It is safe to use directly
  in <a href="../classes/gears.history.html#gears.history.connect_signal">connect_signal</a> or as a callback.</p>
@@ -699,6 +841,7 @@ client.connect_signal("manage" , my_history.push )
         <li><span class="parameter">value</span>
 
 
+
         </li>
     </ul>
 
@@ -706,14 +849,20 @@ client.connect_signal("manage" , my_history.push )
 
 
 
+
+    <span id=item2669 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.iterate_newest"></a>
-    <strong>:iterate_newest <span class='function_args'>(args)</span></strong>
+    <strong>:iterate_newest <span class='function_named_args'><b>{</b>[args]<b>}</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create a new iterator that starts with the <strong>newest</strong> entry.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -749,14 +898,20 @@ client.connect_signal("manage" , my_history.push )
 my_history.paused = <span class="keyword">false</span></pre>
     </ul>
 
+
+    <span id=item2670 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.iterate_oldest"></a>
-    <strong>:iterate_oldest <span class='function_args'>(args)</span></strong>
+    <strong>:iterate_oldest <span class='function_named_args'><b>{</b>[args]<b>}</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create a new iterator that starts with the <strong>oldest</strong> entry.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -792,14 +947,20 @@ my_history.paused = <span class="keyword">false</span></pre>
 my_history.paused = <span class="keyword">false</span></pre>
     </ul>
 
+
+    <span id=item2671 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.oldest"></a>
-    <strong>:oldest <span class='function_args'>()</span></strong>
+    <strong>:oldest <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Returns the oldest object tracked by this history.
-
 
 
     <h3>Returns:</h3>
@@ -811,14 +972,20 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
+
+    <span id=item2672 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.newest"></a>
-    <strong>:newest <span class='function_args'>()</span></strong>
+    <strong>:newest <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Returns the newest object tracked by this history.
-
 
 
     <h3>Returns:</h3>
@@ -830,10 +997,17 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
+
+    <span id=item2673 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.pop_newest"></a>
-    <strong>:pop_newest <span class='function_args'>()</span></strong>
+    <strong>:pop_newest <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Pop (remove) the most recent entry. </p>
@@ -847,10 +1021,16 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
+    <span id=item2674 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.pop_oldest"></a>
-    <strong>:pop_oldest <span class='function_args'>()</span></strong>
+    <strong>:pop_oldest <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Pop (remove) the least recent entry. </p>
@@ -864,19 +1044,25 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
+    <span id=item2675 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.emit_signal"></a>
-    <strong>:emit_signal <span class='function_args'>(name, ...)</span></strong>
+    <strong>:emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.object
+    </span>
     </dt>
     <dd>
     Emit a signal.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">...</span>
@@ -890,19 +1076,26 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
+
+    <span id=item2676 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.connect_signal"></a>
-    <strong>:connect_signal <span class='function_args'>(name, func)</span></strong>
+    <strong>:connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.object
+    </span>
     </dt>
     <dd>
     Connect to a signal.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -915,10 +1108,18 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
+
+    <span id=item2677 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.weak_connect_signal"></a>
-    <strong>:weak_connect_signal <span class='function_args'>(name, func)</span></strong>
+    <strong>:weak_connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.object
+    </span>
     </dt>
     <dd>
     Connect to a signal weakly. </p>
@@ -930,11 +1131,10 @@ my_history.paused = <span class="keyword">false</span></pre>
  Only use this function if you really, really, really know what you
  are doing.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The name of the signal.
         </li>
         <li><span class="parameter">func</span>
@@ -947,6 +1147,10 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
+
+    <span id=item2678 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Signals"></a>Signals</h2>
@@ -955,6 +1159,8 @@ my_history.paused = <span class="keyword">false</span></pre>
     <dt>
     <a name = "gears.history.paused"></a>
     <strong>paused</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Emitted when the history tracking is paused.
@@ -965,10 +1171,15 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
+    <span id=item2679 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.resumed"></a>
     <strong>resumed</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Emitted when the history tracking is resumed.
@@ -979,13 +1190,19 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
+    <span id=item2680 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "request::select"></a>
     <strong>request::select</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>Emitted when the iterator <code>:select()</code> method is called. </p>
+
+<p>Emitted when the iterator <code>:select()</code> method is called. </p>
 
 <p> Calling <code>:select()</code> itself does nothing beside emitting this signal. It is
  up to the API user to implement a handler for it.</p>
@@ -1011,14 +1228,19 @@ end)
 
 
 
+
+    <span id=item2681 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "entry::ousted"></a>
     <strong>entry::ousted</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Emitted when an entry is ousted because it exeed the <a href="../classes/gears.history.html#gears.history.maximum_entries">maximum_entries</a>.
-
 
     <h3>Arguments:</h3>
     <ul>
@@ -1031,16 +1253,21 @@ end)
 
 
 
+
+    <span id=item2682 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "entry::pushed"></a>
     <strong>entry::pushed</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Emitted when an object is pushed to the history. </p>
 
 <p> It is sent for both new and existing objects.
-
 
     <h3>Arguments:</h3>
     <ul>
@@ -1057,16 +1284,21 @@ end)
     </ul>
 
 
+
+    <span id=item2683 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "entry::added"></a>
     <strong>entry::added</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Emitted when an object is added to the history. </p>
 
 <p> It is sent only for <em>new</em> entries that were not already in the stack.
-
 
     <h3>Arguments:</h3>
     <ul>
@@ -1083,14 +1315,19 @@ end)
     </ul>
 
 
+
+    <span id=item2684 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "entry::removed"></a>
     <strong>entry::removed</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Emitted when an object is removed from the stack.
-
 
     <h3>Arguments:</h3>
     <ul>
@@ -1102,6 +1339,10 @@ end)
 
 
 
+
+
+    <span id=item2685 class="hide_extra">
+    </span>
 
 </dd>
 </dl>
@@ -1116,14 +1357,16 @@ end)
     <dl class="function">
     <dt>
     <a name = "gears.history.next"></a>
-    <strong>:next <span class='function_args'>()</span></strong>
+    <strong>:next <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Move the iterator to the next element. </p>
 
 <p> Note that that is a function rather than a method, it can be passed directly
  to <a href="../classes/gears.history.html#gears.history.connect_signal">connect_signal</a>.
-
 
 
 
@@ -1135,17 +1378,23 @@ end)
     </ul>
 
 
+
+    <span id=item2686 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.previous"></a>
-    <strong>:previous <span class='function_args'>()</span></strong>
+    <strong>:previous <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Move the iterator to the previous element. </p>
 
 <p> Note that that is a function rather than a method, it can be passed directly
  to <a href="../classes/gears.history.html#gears.history.connect_signal">connect_signal</a>.
-
 
 
 
@@ -1157,10 +1406,17 @@ end)
     </ul>
 
 
+
+    <span id=item2687 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.select_next"></a>
-    <strong>:select_next <span class='function_args'>()</span></strong>
+    <strong>:select_next <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Move the iterator to the next element and select it. </p>
@@ -1171,17 +1427,23 @@ end)
 
 
 
-
     <h3>See also:</h3>
     <ul>
          <a href="../classes/gears.history.html#gears.history.previous">previous</a>
     </ul>
 
 
+
+    <span id=item2688 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.select_previous"></a>
-    <strong>:select_previous <span class='function_args'>()</span></strong>
+    <strong>:select_previous <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Move the iterator to the previous element and select it. </p>
@@ -1192,17 +1454,23 @@ end)
 
 
 
-
     <h3>See also:</h3>
     <ul>
          <a href="../classes/gears.history.html#gears.history.next">next</a>
     </ul>
 
 
+
+    <span id=item2689 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.select"></a>
-    <strong>:select <span class='function_args'>()</span></strong>
+    <strong>:select <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Emit the <a href="../classes/gears.history.html#request::select">request::select</a> signal on the current object. </p>
@@ -1216,10 +1484,16 @@ end)
 
 
 
+    <span id=item2690 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.reset"></a>
-    <strong>:reset <span class='function_args'>()</span></strong>
+    <strong>:reset <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Reset the iterator position.
@@ -1230,6 +1504,9 @@ end)
 
 
 
+    <span id=item2691 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Iterator_properties"></a>Iterator properties </h2>
@@ -1238,7 +1515,9 @@ end)
     <dt>
     <a name = "gears.history.current"></a>
     <strong>current</strong>
-    <span class="proptype">(<span class='summary_type'>N/A</span>)</span>
+    <span class="proptype"><span class='summary_type'>N/A</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The current entry. </p>
@@ -1251,11 +1530,16 @@ end)
 
 
 
+    <span id=item2692 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.index"></a>
     <strong>index</strong>
-    <span class="proptype">(<span class='summary_type'>number</span>)</span>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The current index.
@@ -1266,11 +1550,16 @@ end)
 
 
 
+    <span id=item2693 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.rotate"></a>
     <strong>rotate</strong>
-    <span class="proptype">(<span class='summary_type'>boolean</span>)</span>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Start over when <code>:next()</code> or <code>:previous()</code> reach the end.
@@ -1281,14 +1570,20 @@ end)
 
 
 
+    <span id=item2694 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.history.filter"></a>
     <strong>filter</strong>
-    <span class="proptype">(<span class='summary_type'>function</span>)</span>
+    <span class="proptype"><span class='summary_type'>function</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>The filter function used to skip some entries. </p>
+
+<p>The filter function used to skip some entries. </p>
 
 <p> <strong>Clients from the current tag:</strong></p>
 
@@ -1326,6 +1621,10 @@ end)
 
 
 
+
+    <span id=item2695 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
 
@@ -1334,7 +1633,7 @@ end)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

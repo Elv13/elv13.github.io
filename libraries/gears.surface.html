@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Module gears.surface - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -54,10 +53,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -67,11 +65,33 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><strong>gears.surface</strong></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
   <li><a href="../libraries/selection.html">selection</a></li>
   <li><a href="../libraries/wibox.widget.html">wibox.widget</a></li>
+</ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
 </ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
@@ -90,7 +110,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -124,6 +143,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -135,23 +155,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -159,6 +162,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -202,9 +206,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -226,11 +227,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -243,67 +247,105 @@
 
 <h1>Module: <code>gears.surface</code></h1>
 <p>
+
 </p>
 <p>
+
 </p>
+    <div class="extra-header">
+
+
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2012 Uli Schlachter</li>
-        <li><strong>Author</strong>: Uli Schlachter</li>
+                <li><strong>Copyright</strong>: 2012 Uli Schlachter</li>
+                <li>
+                    <strong>Originally authored by</strong>: Uli Schlachter<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Static_module_functions">Static module functions</a>
-</h2>
+<h2><a href="#Static_module_functions">Static module functions</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#load_uncached_silently"><span class='function_modname'>gears.surface.</span>load_uncached_silently <span class='function_args'>(_surface, default)</span></a></td>
-      <td class="summary">Try to convert the argument into an lgi cairo surface.</td>
+      <td class="name" >
+        <a href="#load_uncached_silently"><span class='function_modname'>gears.surface.</span>load_uncached_silently <span class='function_args'> <b>(</b>_surface, default<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Try to convert the argument into an lgi cairo surface.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#load_silently"><span class='function_modname'>gears.surface.</span>load_silently <span class='function_args'>(_surface, default)</span></a></td>
-      <td class="summary">Try to convert the argument into an lgi cairo surface.</td>
+      <td class="name" >
+        <a href="#load_silently"><span class='function_modname'>gears.surface.</span>load_silently <span class='function_args'> <b>(</b>_surface, default<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Try to convert the argument into an lgi cairo surface.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#load_uncached"><span class='function_modname'>gears.surface.</span>load_uncached <span class='function_args'>(_surface)</span></a></td>
-      <td class="summary">Try to convert the argument into an lgi cairo surface.</td>
+      <td class="name" >
+        <a href="#load_uncached"><span class='function_modname'>gears.surface.</span>load_uncached <span class='function_args'> <b>(</b>_surface<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Try to convert the argument into an lgi cairo surface.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#gears.surface">gears.surface <span class='function_args'>(_surface)</span></a></td>
-      <td class="summary">Try to convert the argument into an lgi cairo surface.</td>
+      <td class="name" >
+        <a href="#gears.surface">gears.surface <span class='function_args'> <b>(</b>_surface<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Try to convert the argument into an lgi cairo surface.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#get_size"><span class='function_modname'>gears.surface.</span>get_size <span class='function_args'>(surf)</span></a></td>
-      <td class="summary">Get the size of a cairo surface</td>
+      <td class="name" >
+        <a href="#get_size"><span class='function_modname'>gears.surface.</span>get_size <span class='function_args'> <b>(</b>surf<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Get the size of a cairo surface</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#duplicate_surface"><span class='function_modname'>gears.surface.</span>duplicate_surface <span class='function_args'>(s)</span></a></td>
-      <td class="summary">Create a copy of a cairo surface.</td>
+      <td class="name" >
+        <a href="#duplicate_surface"><span class='function_modname'>gears.surface.</span>duplicate_surface <span class='function_args'> <b>(</b>s<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+      </td>
+      <td colspan="2" class="summary">Create a copy of a cairo surface.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#load_from_shape"><span class='function_modname'>gears.surface.</span>load_from_shape <span class='function_args'>(width, height, shape[, shape_color=white[, bg_color=transparent]])</span></a></td>
-      <td class="summary">Create a surface from a <a href="../theme_related_libraries/gears.shape.html#">gears.shape</a>
+      <td class="name" >
+        <a href="#load_from_shape"><span class='function_modname'>gears.surface.</span>load_from_shape <span class='function_args'> <b>(</b>width, height, shape[, shape_color=white[, bg_color=transparent]]<b>)</b></span></a>
+        <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;cairo.surface</span></span>
+      </td>
+      <td colspan="2" class="summary">Create a surface from a <a href="../theme_related_libraries/gears.shape.html#">gears.shape</a>
  Any additional parameters will be passed to the shape function</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#apply_shape_bounding"><span class='function_modname'>gears.surface.</span>apply_shape_bounding <span class='function_args'>(draw, shape[, Any])</span></a></td>
-      <td class="summary">Apply a shape to a client or a wibox.</td>
+      <td class="name" >
+        <a href="#apply_shape_bounding"><span class='function_modname'>gears.surface.</span>apply_shape_bounding <span class='function_args'> <b>(</b>draw, shape[, Any]<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Apply a shape to a client or a wibox.</td>
     </tr>
 </table>
-<h2>
-    <a class="deprecated_h2" onclick="show_deprecated()">
-      Click to display deprecated functions
-    </a>
-</h2>
-<table class="function_list deprecated_block show_deprecated">
+<h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
+<table class="function_list">
     <tr>
-      <td class="name" ><a href="#draw_to_svg_file">gears.surface.draw_to_svg_file<i class="deprecated_label"> [deprecated]</i></a></td>
-      <td class="summary">Create an SVG file with this widget content.</td>
+      <td class="name" >
+        <a href="#draw_to_svg_file">gears.surface.draw_to_svg_file<i class="deprecated_label"> [deprecated]</i></a>
+      </td>
+      <td colspan="2" class="summary">Create an SVG file with this widget content.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#draw_to_image_surface">gears.surface.draw_to_image_surface<i class="deprecated_label"> [deprecated]</i></a></td>
-      <td class="summary">Create a cairo surface with this widget content.</td>
+      <td class="name" >
+        <a href="#draw_to_image_surface">gears.surface.draw_to_image_surface<i class="deprecated_label"> [deprecated]</i></a>
+      </td>
+      <td colspan="2" class="summary">Create a cairo surface with this widget content.</td>
     </tr>
 </table>
 
@@ -316,12 +358,14 @@
     <dl class="function">
     <dt>
     <a name = "load_uncached_silently"></a>
-    <strong><span class='function_modname'>gears.surface.</span>load_uncached_silently <span class='function_args'>(_surface, default)</span></strong>
+    <strong><span class='function_modname'>gears.surface.</span>load_uncached_silently <span class='function_args'> <b>(</b>_surface, default<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Try to convert the argument into an lgi cairo surface.
  This is usually needed for loading images by file name.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -345,16 +389,22 @@
 
 
 
+
+    <span id=item2594 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "load_silently"></a>
-    <strong><span class='function_modname'>gears.surface.</span>load_silently <span class='function_args'>(_surface, default)</span></strong>
+    <strong><span class='function_modname'>gears.surface.</span>load_silently <span class='function_args'> <b>(</b>_surface, default<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Try to convert the argument into an lgi cairo surface.
  This is usually needed for loading images by file name and uses a cache.
  In contrast to <code>load()</code>, errors are returned to the caller.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -379,16 +429,22 @@
 
 
 
+
+    <span id=item2595 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "load_uncached"></a>
-    <strong><span class='function_modname'>gears.surface.</span>load_uncached <span class='function_args'>(_surface)</span></strong>
+    <strong><span class='function_modname'>gears.surface.</span>load_uncached <span class='function_args'> <b>(</b>_surface<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Try to convert the argument into an lgi cairo surface.
  This is usually needed for loading images by file name. Errors are handled
  via <a href="../utility_libraries/gears.debug.html#print_error">gears.debug.print_error</a>.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -406,16 +462,22 @@
 
 
 
+
+    <span id=item2596 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "gears.surface"></a>
-    <strong>gears.surface <span class='function_args'>(_surface)</span></strong>
+    <strong>gears.surface <span class='function_args'> <b>(</b>_surface<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Try to convert the argument into an lgi cairo surface.
  This is usually needed for loading images by file name. Errors are handled
  via <a href="../utility_libraries/gears.debug.html#print_error">gears.debug.print_error</a>.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -433,14 +495,20 @@
 
 
 
+
+    <span id=item2597 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "get_size"></a>
-    <strong><span class='function_modname'>gears.surface.</span>get_size <span class='function_args'>(surf)</span></strong>
+    <strong><span class='function_modname'>gears.surface.</span>get_size <span class='function_args'> <b>(</b>surf<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Get the size of a cairo surface
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -452,16 +520,23 @@
     <h3>Returns:</h3>
     <ol>
 
-        The surface&rsquo;s width and height.
+        The surface's width and height.
     </ol>
 
 
 
 
+
+    <span id=item2598 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "duplicate_surface"></a>
-    <strong><span class='function_modname'>gears.surface.</span>duplicate_surface <span class='function_args'>(s)</span></strong>
+    <strong><span class='function_modname'>gears.surface.</span>duplicate_surface <span class='function_args'> <b>(</b>s<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create a copy of a cairo surface.
@@ -473,7 +548,6 @@
  input. The details are explained in the <code>create_similar</code> function on a cairo
  surface.
 
-
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">s</span>
@@ -484,21 +558,27 @@
     <h3>Returns:</h3>
     <ol>
 
-        The surface&rsquo;s duplicate.
+        The surface's duplicate.
     </ol>
 
 
 
 
+
+    <span id=item2599 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "load_from_shape"></a>
-    <strong><span class='function_modname'>gears.surface.</span>load_from_shape <span class='function_args'>(width, height, shape[, shape_color=white[, bg_color=transparent]])</span></strong>
+    <strong><span class='function_modname'>gears.surface.</span>load_from_shape <span class='function_args'> <b>(</b>width, height, shape[, shape_color=white[, bg_color=transparent]]<b>)</b></span></strong>
+    <span class="proptype"><span class='summary_type'> -&gt;&nbsp;cairo.surface</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Create a surface from a <a href="../theme_related_libraries/gears.shape.html#">gears.shape</a>
  Any additional parameters will be passed to the shape function
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -533,17 +613,23 @@
 
 
 
+
+    <span id=item2600 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "apply_shape_bounding"></a>
-    <strong><span class='function_modname'>gears.surface.</span>apply_shape_bounding <span class='function_args'>(draw, shape[, Any])</span></strong>
+    <strong><span class='function_modname'>gears.surface.</span>apply_shape_bounding <span class='function_args'> <b>(</b>draw, shape[, Any]<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Apply a shape to a client or a wibox. </p>
 
 <p>  If the wibox or client size change, this function need to be called
    again.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -564,20 +650,25 @@
 
 
 
+
+    <span id=item2601 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
-    <h2 class="section-header  deprecated_block show_deprecated"><a name="Deprecated_functions"></a>Deprecated functions</h2>
+    <h2 class="section-header "><a name="Deprecated_functions"></a>Deprecated functions</h2>
 
     <dl class="function">
-    <dt class="deprecated_block show_deprecated">
+    <dt>
     <a name = "draw_to_svg_file"></a>
     <strong>gears.surface.draw_to_svg_file<i class="deprecated_label"> [deprecated]</i></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
-    <dd class="deprecated_block show_deprecated">
+    <dd>
     Create an SVG file with this widget content.
  This is dynamic, so the SVG will be updated along with the widget content.
  because of this, the painting may happen hover multiple event loop cycles.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -586,7 +677,7 @@
          A widget
         </li>
         <li><span class="parameter">path</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          The output file path
         </li>
         <li><span class="parameter">width</span>
@@ -615,16 +706,21 @@
     </ul>
 
 
+
+    <span id=item2602 class="hide_extra">
+    </span>
+
 </dd>
-    <dt class="deprecated_block show_deprecated">
+    <dt>
     <a name = "draw_to_image_surface"></a>
     <strong>gears.surface.draw_to_image_surface<i class="deprecated_label"> [deprecated]</i></strong>
+    <span class="baseclass" >
+    </span>
     </dt>
-    <dd class="deprecated_block show_deprecated">
+    <dd>
     Create a cairo surface with this widget content.
  This is dynamic, so the SVG will be updated along with the widget content.
  because of this, the painting may happen hover multiple event loop cycles.
-
 
     <h3>Parameters:</h3>
     <ul>
@@ -662,6 +758,10 @@
     </ul>
 
 
+
+    <span id=item2603 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
 
@@ -670,7 +770,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

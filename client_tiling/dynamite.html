@@ -5,20 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Tilinglib dynamite - awesome API documentation</title>
     <link rel="stylesheet" href="../ldoc.css" type="text/css" />
-  <script>
-    var st = document.createElement('style')
-    var show_dep = document.createTextNode('.show_deprecated { display: block;}')
-    var deprecated_shown = false
-    st.appendChild(show_dep)
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
 
-    function show_deprecated() {
-      if (deprecated_shown)
-        document.getElementsByTagName('head')[0].removeChild(st);
-      else
-        document.getElementsByTagName('head')[0].appendChild(st);
-      deprecated_shown = !deprecated_shown
-    }
-  </script>
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
 </head>
 <body>
 
@@ -32,6 +29,8 @@
 
 
 <div id="main">
+
+
 
 
 <!-- Menu -->
@@ -61,6 +60,27 @@
   <li><a href="../client_tiling/dynamite.utils.html">dynamite.utils</a></li>
   <li><a href="../client_tiling/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
 </ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
+</ul>
 <h2>Declarative rules</h2>
 <ul class="nowrap">
   <li><a href="../declarative_rules/ruled.client.html">ruled.client</a></li>
@@ -78,7 +98,6 @@
   <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
   <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
   <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
-  <li><a href="../widgets/awful.widget.promptbar.html">awful.widget.promptbar</a></li>
   <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
   <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
   <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
@@ -112,6 +131,7 @@
   <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
   <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
   <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
 </ul>
 <h2>Widget layouts</h2>
 <ul class="nowrap">
@@ -123,23 +143,6 @@
   <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
   <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
 </ul>
-<h2>Core components</h2>
-<ul class="nowrap">
-  <li><a href="../core_components/awesome.html">awesome</a></li>
-  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
-  <li><a href="../core_components/button.html">button</a></li>
-  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
-  <li><a href="../core_components/drawable.html">drawable</a></li>
-  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
-  <li><a href="../core_components/key.html">key</a></li>
-  <li><a href="../core_components/mouse.html">mouse<span class='listplusign'> and awful.mouse</span></a></li>
-  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
-  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
-  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
-  <li><a href="../core_components/root.html">root</a></li>
-  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
-  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
-</ul>
 <h2>Popups and bars</h2>
 <ul class="nowrap">
   <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
@@ -147,6 +150,7 @@
   <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
   <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
   <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
   <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
   <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
@@ -176,10 +180,9 @@
 <h2>Libraries</h2>
 <ul class="nowrap">
   <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
-  <li><a href="../libraries/awful.ewmh.html">awful.ewmh</a></li>
-  <li><a href="../libraries/awful.hot_corner.html">awful.hot_corner</a></li>
   <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
   <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
   <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
   <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
   <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
@@ -189,6 +192,7 @@
   <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
   <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
   <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
   <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
   <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
   <li><a href="../libraries/naughty.html">naughty</a></li>
@@ -202,9 +206,6 @@
 </ul>
 <h2>Classes</h2>
 <ul class="nowrap">
-  <li><a href="../classes/awful.button.html">awful.button</a></li>
-  <li><a href="../classes/awful.key.html">awful.key</a></li>
-  <li><a href="../classes/awful.wallpaper.html">awful.wallpaper</a></li>
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
@@ -226,11 +227,14 @@
   <li><a href="../documentation/00-authors.md.html">Authors</a></li>
   <li><a href="../documentation/01-readme.md.html">Readme</a></li>
   <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
-  <li><a href="../documentation/03-declarative-layout.md.html">The AwesomeWM widget system</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
   <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
   <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
   <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
   <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
   <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
   <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
   <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
@@ -253,9 +257,7 @@
 <p> To enable this system, add <code>require(&quot;dynamite&quot;)</code> at the top
  of your <a href="../sample files/rc.lua.html#">rc.lua</a></p>
 
-<p> Overview</p>
-
-<hr />
+<h2> Overview</h2>
 
 <p> There is 4 ways to use this module. The first one replicates the traditional
  way AwesomeWM tiling works. There is preprogrammed <code>suit</code>s. Each suits will
@@ -273,19 +275,16 @@
 <p> Finally, it is possible to use the <code>floating</code> suit, in which case the whole
  thing is irrelevant and there the tiling is handled by the snapping feature.</p>
 
-<p> Components</p>
-
-<hr />
+<h2> Components</h2>
 
 <p> This module provide extended versions of many <a href="../popups_and_bars/wibox.html#">wibox</a> widgets and layouts.
  They add extra features such as:</p>
 
 <ul>
-<li>Mouse resizing to the existing layouts.</li>
-<li>&ldquo;Insertion points&rdquo; to dynamically alter the layout</li>
-<li>Sleep and awake mode to avoid using CPU when the layout isn&rsquo;t displayed</li>
+    <li>Mouse resizing to the existing layouts.</li>
+    <li>"Insertion points" to dynamically alter the layout</li>
+    <li>Sleep and awake mode to avoid using CPU when the layout isn't displayed</li>
 </ul>
-
 
 <p> While the normal variants of the layouts can be used directly, it is
  highly recommended to use the <a href="../client_tiling/dynamite.html#">dynamite</a> versions of those layouts to avoid
@@ -293,13 +292,15 @@
 
 <p> TODO add an auto generated list of layouts and widgets</p>
 
-<p> Custom layout examples</p>
-
-<hr />
+<h2> Custom layout examples</h2>
 
 <p> <strong>Simple tiling layout</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_manual_scaling1.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_manual_scaling1.svg" alt="Usage example"/></p>
+
+
 
 <pre>
 <span class="keyword">local</span> mycustomtilelayout = dynamite {
@@ -322,11 +323,11 @@
 }
 </pre>
 
-
 <p> <strong>In place client spawning</strong>:</p>
 
-<p> The <a href="../libraries/dynamite.widget.spawn.html#">dynamite.widget.spawn</a> allows to add &ldquo;future&rdquo; clients directly into
+<p> The <a href="../libraries/dynamite.widget.spawn.html#">dynamite.widget.spawn</a> allows to add "future" clients directly into
  a layout:</p>
+
 
 <pre>
 <span class="keyword">local</span> mycustomtilelayout = dynamite {
@@ -353,13 +354,16 @@
 }
 </pre>
 
-
 <p> See the <a href="../core_components/client.html#startup_id">client.startup_id</a> for an overview of the limitations and
  workarounds available to mitigate them.</p>
 
 <p> <strong>A column and a layout.tabbed stack</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_manual_scaling2.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_manual_scaling2.svg" alt="Usage example"/></p>
+
+
 
 <pre>
 <span class="keyword">local</span> mycustomtilelayout = dynamite {
@@ -374,15 +378,18 @@
         priority = <span class="number">1</span>,
         layout    = dynamite.layout.tabbed
     },
-    inner_fill_strategy = <span class="string">'default'</span>,
+    inner_fill_strategy = <span class="string">"default"</span>,
     layout     = dynamite.layout.ratio.horizontal
 }
 </pre>
 
-
 <p> <strong>Using master width factor and alignment</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_manual_scaling3.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_manual_scaling3.svg" alt="Usage example"/></p>
+
+
 
 <pre>
 <span class="keyword">local</span> mycustomtilelayout = dynamite {
@@ -399,15 +406,18 @@
         layout    = dynamite.layout.ratio.vertical
     },
     ratio               = <span class="number">2.99</span>,
-    inner_fill_strategy = <span class="string">'center'</span>,
+    inner_fill_strategy = <span class="string">"center"</span>,
     layout              = dynamite.layout.ratio.horizontal
 }
 </pre>
 
-
 <p> <strong>Adding margins:</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_manual_scaling_margin.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_manual_scaling_margin.svg" alt="Usage example"/></p>
+
+
 
 <pre>
 <span class="keyword">local</span> mycustomtilelayout = dynamite {
@@ -432,10 +442,13 @@
 }
 </pre>
 
-
 <p> <strong>Apply a reflection:</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_manual_mirror.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_manual_mirror.svg" alt="Usage example"/></p>
+
+
 
 <pre>
 <span class="keyword">local</span> <span class="keyword">function</span> gen_with_mirror(hor, ver)
@@ -481,7 +494,6 @@ screen[<span class="number">3</span>].selected_tag.layout = gen_with_mirror(<spa
 screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<span class="keyword">true</span> , <span class="keyword">true</span> )
 </pre>
 
-
 <p> end</p>
 
 <p> <strong>Use different layouts depending on the number of clients:</strong>:</p>
@@ -489,7 +501,11 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 <p> A basic use case with 2 type of layouts depending only on the number of
  client.</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_manual_conditional.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_manual_conditional.svg" alt="Usage example"/></p>
+
+
 
 <pre>
 <span class="keyword">local</span> mycustomtilelayout = dynamite {
@@ -510,17 +526,20 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 }
 </pre>
 
+<p> A more useful example using "real" layout suites:</p>
 
-<p> A more useful example using &ldquo;real&rdquo; layout suites:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_manual_conditional2.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_manual_conditional2.svg" alt="Usage example"/></p>
+
+
 
 <pre>
-<span class="keyword">local</span> tile   = <span class="global">require</span>(<span class="string">'dynamite.layout.ratio'</span>)
-<span class="keyword">local</span> cond   = <span class="global">require</span>(<span class="string">'dynamite.layout.conditional'</span>)
-<span class="keyword">local</span> corner = <span class="global">require</span>(<span class="string">'dynamite.suit.corner'</span>)
-<span class="keyword">local</span> fair   = <span class="global">require</span>(<span class="string">'dynamite.suit.fair'</span>)
-<span class="keyword">local</span> margin = <span class="global">require</span>(<span class="string">'wibox.container.margin'</span>)
+<span class="keyword">local</span> tile   = <span class="global">require</span>(<span class="string">"dynamite.layout.ratio"</span>)
+<span class="keyword">local</span> cond   = <span class="global">require</span>(<span class="string">"dynamite.layout.conditional"</span>)
+<span class="keyword">local</span> corner = <span class="global">require</span>(<span class="string">"dynamite.suit.corner"</span>)
+<span class="keyword">local</span> fair   = <span class="global">require</span>(<span class="string">"dynamite.suit.fair"</span>)
+<span class="keyword">local</span> margin = <span class="global">require</span>(<span class="string">"wibox.container.margin"</span>)
 <span class="keyword">local</span> mycustomtilelayout = dynamite {
     {
         max_elements = <span class="number">3</span>,
@@ -566,108 +585,135 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 }
 </pre>
 
-
-<p> Serialization and introspection</p>
-
-<hr />
+<h2> Serialization and introspection</h2>
 
 <p> TODO show how to use <code>awesome-client</code> to extract and load layouts.</p>
 
-<p> FAQ</p>
-
-<hr />
+<h2> FAQ</h2>
 
 <p> <strong>Is it possible to create all layouts using the declarative syntax</strong>:</p>
 
-<p> No, creating &ldquo;complex&rdquo; suits is required to use more advanced layout
+<p> No, creating "complex" suits is required to use more advanced layout
  features like <code>master_width_factor</code> and <code>master_fill_policy</code>. Declarative
  custom layouts is usually good enough for the normal use cases if you
- don&rsquo;t plan to use these properties.</p>
+ don't plan to use these properties.</p>
 
 <p> <strong>If there a change of behavior compared to the classic AwesomeWM layout, is it a bug?</strong>:</p>
 
 <p> It is probable a bug. Some suits gained new features such as better resizing
  or using tabs when there is too many clients, but otherwise they should behave
  the same as they used to do.</p>
+    <div class="extra-header">
+
+
+  <div class="extra-header__section">
     <h3>Info:</h3>
     <ul>
-        <li><strong>Copyright</strong>: 2016-2018 Emmanuel Lepage Vallee</li>
-        <li><strong>Author</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;</li>
+                <li><strong>Copyright</strong>: 2016-2018 Emmanuel Lepage Vallee</li>
+                <li>
+                    <strong>Originally authored by</strong>: Emmanuel Lepage Vallee &lt;elv1313@gmail.com&gt;<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
     </ul>
+  </div>
+
+</div>
 
 
-<h2>
-    <a href="#Object_properties">Object properties</a>
-</h2>
+<h2><a href="#Object_properties">Object properties</a></h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#max_elements">max_elements</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> function</span></td>
-      <td class="summary">The (soft) limit for the number of children.</td>
+      <td colspan="2" class="summary">The (soft) limit for the number of children.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#priority">priority</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> function</span></td>
-      <td class="summary">The priority of the layout compared to its peers.</td>
+      <td colspan="2" class="summary">The priority of the layout compared to its peers.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#inner_fill_strategy">inner_fill_strategy</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>N/A</span></td>
-      <td class="summary">Define how to distribute the empty space.</td>
+      <td colspan="2" class="summary">Define how to distribute the empty space.</td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#reflow">reflow</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td class="summary">When an element is removed, take one away from a lower priority layout.</td>
+      <td colspan="2" class="summary">When an element is removed, take one away from a lower priority layout.</td>
     </tr>
 </table>
-<h2>
-    <a href="#Client_layouts">Client layouts</a>
-</h2>
+<h2><a href="#Client_layouts">Client layouts</a></h2>
 <table class="function_list">
     <tr>
-      <td class="name" ><a href="#dynamite.suit.corner"><span class='function_modname'>dynamite.</span>suit.corner</a></td>
-      <td class="summary">Replace the stateless corner layout.</td>
+      <td class="name" >
+        <a href="#dynamite.suit.corner"><span class='function_modname'>dynamite.</span>suit.corner</a>
+      </td>
+      <td colspan="2" class="summary">Replace the stateless corner layout.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#fair">fair</a></td>
-      <td class="summary">Replace the stateless fair.</td>
+      <td class="name" >
+        <a href="#fair">fair</a>
+      </td>
+      <td colspan="2" class="summary">Replace the stateless fair.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#dynamite.fair.horizontal"><span class='function_modname'>dynamite.</span>fair.horizontal</a></td>
-      <td class="summary">A fair layout prioritizing horizontal space.</td>
+      <td class="name" >
+        <a href="#dynamite.fair.horizontal"><span class='function_modname'>dynamite.</span>fair.horizontal</a>
+      </td>
+      <td colspan="2" class="summary">A fair layout prioritizing horizontal space.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#magnifier">magnifier</a></td>
-      <td class="summary">A client in front of a list of other clients.</td>
+      <td class="name" >
+        <a href="#magnifier">magnifier</a>
+      </td>
+      <td colspan="2" class="summary">A client in front of a list of other clients.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#manual">manual</a></td>
-      <td class="summary">Manually declare a layout for the clients.</td>
+      <td class="name" >
+        <a href="#manual">manual</a>
+      </td>
+      <td colspan="2" class="summary">Manually declare a layout for the clients.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#max">max</a></td>
-      <td class="summary">All clients are maximized on top of each other.</td>
+      <td class="name" >
+        <a href="#max">max</a>
+      </td>
+      <td colspan="2" class="summary">All clients are maximized on top of each other.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#tile">tile</a></td>
-      <td class="summary">A layout with columns and rows.</td>
+      <td class="name" >
+        <a href="#tile">tile</a>
+      </td>
+      <td colspan="2" class="summary">A layout with columns and rows.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#dynamite.tile.left"><span class='function_modname'>dynamite.</span>tile.left</a></td>
-      <td class="summary">A tile layout with the slave clients on the left.</td>
+      <td class="name" >
+        <a href="#dynamite.tile.left"><span class='function_modname'>dynamite.</span>tile.left</a>
+      </td>
+      <td colspan="2" class="summary">A tile layout with the slave clients on the left.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#dynamite.tile.top"><span class='function_modname'>dynamite.</span>tile.top</a></td>
-      <td class="summary">A tile layout with the slave clients on the top.</td>
+      <td class="name" >
+        <a href="#dynamite.tile.top"><span class='function_modname'>dynamite.</span>tile.top</a>
+      </td>
+      <td colspan="2" class="summary">A tile layout with the slave clients on the top.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#dynamite.tile.bottom"><span class='function_modname'>dynamite.</span>tile.bottom</a></td>
-      <td class="summary">A tile layout with the slave clients on the bottom.</td>
+      <td class="name" >
+        <a href="#dynamite.tile.bottom"><span class='function_modname'>dynamite.</span>tile.bottom</a>
+      </td>
+      <td colspan="2" class="summary">A tile layout with the slave clients on the bottom.</td>
     </tr>
     <tr>
-      <td class="name" ><a href="#treesome">treesome</a></td>
-      <td class="summary">Split the focused client area in two.</td>
+      <td class="name" >
+        <a href="#treesome">treesome</a>
+      </td>
+      <td colspan="2" class="summary">Split the focused client area in two.</td>
     </tr>
 </table>
 
@@ -681,20 +727,21 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
     <dt>
     <a name = "max_elements"></a>
     <strong>max_elements</strong>
-    <span class="proptype">(<span class='summary_type'>number <i>or</i> function</span>)</span>
+    <span class="proptype"><span class='summary_type'>number <i>or</i> function</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The (soft) limit for the number of children. </p>
 
 <p> This is an hint used by the automatic placement fallback algorithm in case
- the layout doesn&rsquo;t provide its own.</p>
+ the layout doesn't provide its own.</p>
 
 <p> It also allows rather complex layout to be defined without an imperative
  implementation.</p>
 
 <p> If no <a href="../client_tiling/dynamite.html#priority">priority</a> is set, the layout with the highest number of free spot
  will be chosen.
-
 
     <h3>Type constraints:</h3>
     <ul>
@@ -710,23 +757,28 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 
 
+
+    <span id=item2346 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "priority"></a>
     <strong>priority</strong>
-    <span class="proptype">(<span class='summary_type'>number <i>or</i> function</span>)</span>
+    <span class="proptype"><span class='summary_type'>number <i>or</i> function</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     The priority of the layout compared to its peers. </p>
 
-<p> A &ldquo;full&rdquo; layout is composed of many smaller layouts, containers and widgets.
- When time comes to choose where to add a new client, the &ldquo;full&rdquo; layout can
+<p> A "full" layout is composed of many smaller layouts, containers and widgets.
+ When time comes to choose where to add a new client, the "full" layout can
  either implement its own logic tree or fallback to the default on.</p>
 
 <p> In that case, the <a href="../client_tiling/dynamite.html#priority">priority</a> index will be taken into account. The higher
  the number is, the higher priority it has. The highest priority layout
- will &ldquo;win&rdquo; as long as the number of elements is below <a href="../client_tiling/dynamite.html#max_elements">max_elements</a>.
-
+ will "win" as long as the number of elements is below <a href="../client_tiling/dynamite.html#max_elements">max_elements</a>.
 
     <h3>Type constraints:</h3>
     <ul>
@@ -742,17 +794,22 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 
 
+
+    <span id=item2347 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "inner_fill_strategy"></a>
     <strong>inner_fill_strategy</strong>
-    <span class="proptype">(<span class='summary_type'>N/A</span>)</span>
+    <span class="proptype"><span class='summary_type'>N/A</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Define how to distribute the empty space. </p>
 
 <p> This property is only available on the tiled sections.
-
 
 
 
@@ -763,11 +820,17 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
     </ul>
 
 
+
+    <span id=item2348 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "reflow"></a>
     <strong>reflow</strong>
-    <span class="proptype">(<span class='summary_type'>boolean</span>)</span>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     When an element is removed, take one away from a lower priority layout.
@@ -778,6 +841,9 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 
 
+    <span id=item2349 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
     <h2 class="section-header "><a name="Client_layouts"></a>Client layouts</h2>
@@ -786,21 +852,29 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
     <dt>
     <a name = "dynamite.suit.corner"></a>
     <strong><span class='function_modname'>dynamite.</span>suit.corner</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Replace the stateless corner layout. </p>
 
 <p> This layout has a master client and a row on the side and bottom of the
- master client. They are resized so the two &ldquo;slave&rdquo; column and row are
+ master client. They are resized so the two "slave" column and row are
  aligned.</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_corner_corner.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_corner_corner.svg" alt="Usage example"/></p>
+
 
 <p> <strong>Client count scaling</strong>:</p>
 
 <p> The first row is the <a href="../client_tiling/dynamite.html#dynamite.suit.corner">corner</a> layout and the second one <code>corner.horizontal</code></p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_corner_scaling.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_corner_scaling.svg" alt="Usage example"/></p>
+
 
 <p> <strong>master_count effect</strong>:</p>
 
@@ -812,17 +886,24 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p> <strong>master_width_factor effect</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_corner_mwfact.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_corner_mwfact.svg" alt="Usage example"/></p>
+
 
 <p> <strong>gap effect</strong>:</p>
 
-<p> The &ldquo;useless&rdquo; gap tag property will change the spacing between clients.</p>
+<p> The "useless" gap tag property will change the spacing between clients.</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_corner_gap.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_corner_gap.svg" alt="Usage example"/></p>
+
 
 <p> <strong>resize effect:</strong></p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_corner_resize.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_corner_resize.svg" alt="Usage example"/></p>
+
 
 <p> See <code>awful.tag.setgap</code>
  See <code>awful.tag.getgap</code>
@@ -830,7 +911,9 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p> <strong>screen padding effect</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_corner_padding.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_corner_padding.svg" alt="Usage example"/></p>
 
 <p> See <code>awful.screen.padding</code>
 
@@ -840,10 +923,15 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 
 
+    <span id=item2350 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "fair"></a>
     <strong>fair</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     Replace the stateless fair. </p>
@@ -851,19 +939,25 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 <p> This is not a perfect clone, as the stateful property of this layout
  allow to minimize the number of clients being moved. If a splot of left
  empty, then it will be used next time a client is added rather than
- &ldquo;pop&rdquo; a client from the next column/row and move everything. This is
+ "pop" a client from the next column/row and move everything. This is
  intended, if you really wish to see the old behavior, a new layout will
  be created.</p>
 
-<p> This version also support resizing, the older one did not&mdash;</p>
+<p> This version also support resizing, the older one did not--</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_fair_fair.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_fair_fair.svg" alt="Usage example"/></p>
+
 
 <p> <strong>Client count scaling</strong>:</p>
 
 <p> The first row is the <a href="../client_tiling/dynamite.html#fair">fair</a> layout and the second one <code>fair.horizontal</code></p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_fair_scaling.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_fair_scaling.svg" alt="Usage example"/></p>
+
 
 <p> <strong>master_count effect</strong>:</p>
 
@@ -873,15 +967,16 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p> Unused</p>
 
-<p> <strong>master_width_factor effect</strong>:</p>
+<p> <strong>master<em>width</em>factor effect</strong>:</p>
 
 <p> Unused</p>
 
 <p> <strong>gap effect</strong>:</p>
 
-<p> The &ldquo;useless&rdquo; gap tag property will change the spacing between clients.</p>
+<p> The "useless" gap tag property will change the spacing between clients.</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_fair_gap.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_fair_gap.svg" alt="Usage example"/></p>
 
 <p> See <code>awful.tag.setgap</code>
  See <code>awful.tag.getgap</code>
@@ -889,11 +984,17 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p> <strong>screen padding effect</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_fair_padding.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_fair_padding.svg" alt="Usage example"/></p>
+
 
 <p> <strong>Resize effect</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_fair_resize.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_fair_resize.svg" alt="Usage example"/></p>
+
 
 <p> See <code>awful.screen.padding</code>
 
@@ -903,14 +1004,18 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 
 
+    <span id=item2351 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "dynamite.fair.horizontal"></a>
     <strong><span class='function_modname'>dynamite.</span>fair.horizontal</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     A fair layout prioritizing horizontal space.
-
 
 
 
@@ -921,19 +1026,31 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
     </ul>
 
 
+
+    <span id=item2352 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "magnifier"></a>
     <strong>magnifier</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     A client in front of a list of other clients. </p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_magnifier_magnifier.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_magnifier_magnifier.svg" alt="Usage example"/></p>
+
 
 <p> <strong>Client count scaling</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_magnifier_scaling.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_magnifier_scaling.svg" alt="Usage example"/></p>
+
 
 <p> <strong>nmaster effect</strong>:</p>
 
@@ -945,23 +1062,31 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 <p> <strong>master_width_factor effect</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_magnifier_mwfact.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_magnifier_mwfact.svg" alt="Usage example"/></p>
+
 
 <p> <strong>gap effect</strong>:</p>
 
-<p> The &ldquo;useless&rdquo; gap tag property will change the spacing between clients.</p>
+<p> The "useless" gap tag property will change the spacing between clients.</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_magnifier_gap.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_magnifier_gap.svg" alt="Usage example"/></p>
+
 
 <p> <strong>resize effect</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_magnifier_resize.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_magnifier_resize.svg" alt="Usage example"/></p>
+
 
 <p> See <code>awful.tag.setgap</code>
  See <code>awful.tag.getgap</code>
  See <code>awful.tag.incgap</code></p>
 
 <p> <strong>screen padding effect</strong>:</p>
+
 
 <p> See <code>awful.screen.padding</code>
 
@@ -971,23 +1096,29 @@ screen[<span class="number">4</span>].selected_tag.layout = gen_with_mirror(<spa
 
 
 
+    <span id=item2353 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "manual"></a>
     <strong>manual</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>Manually declare a layout for the clients. </p>
+
+<p>Manually declare a layout for the clients. </p>
 
 <p> The following properties are honored in the blocks:</p>
 
 <ul>
-<li><em>name</em>: The layout name</li>
-<li><em>priority</em>: The block priority when adding new clients</li>
-<li><em>reflow</em>: When a client is removed, should it take one away from this
-and add it to the one with an higher priority.</li>
-<li><em>max_elements</em>: The maximium number of client for a block</li>
-<li><em>ratio</em>: The ratio for the block FIXME</li>
+    <li><em>name</em>: The layout name</li>
+    <li><em>priority</em>: The block priority when adding new clients</li>
+    <li><em>reflow</em>: When a client is removed, should it take one away from this
+    and add it to the one with an higher priority.</li>
+    <li>*max_elements*: The maximium number of client for a block</li>
+    <li><em>ratio</em>: The ratio for the block FIXME</li>
 </ul>
 
 
@@ -998,17 +1129,25 @@ and add it to the one with an higher priority.</li>
 
 
 
+    <span id=item2354 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "max"></a>
     <strong>max</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     All clients are maximized on top of each other. </p>
 
 <p> <strong>Client count scaling</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_max_scaling.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_max_scaling.svg" alt="Usage example"/></p>
+
 
 <p> <strong>nmaster effect</strong>:</p>
 
@@ -1024,13 +1163,17 @@ and add it to the one with an higher priority.</li>
 
 <p> <strong>gap effect</strong>:</p>
 
-<p> The &ldquo;useless&rdquo; gap tag property will change the spacing between clients.</p>
+<p> The "useless" gap tag property will change the spacing between clients.</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_max_gap.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_max_gap.svg" alt="Usage example"/></p>
+
 
 <p> <strong>screen padding effect</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_max_padding.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_max_padding.svg" alt="Usage example"/></p>
 
 <p> See <code>awful.screen.padding</code>
 
@@ -1040,10 +1183,15 @@ and add it to the one with an higher priority.</li>
 
 
 
+    <span id=item2355 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "tile"></a>
     <strong>tile</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     A layout with columns and rows. </p>
@@ -1051,9 +1199,11 @@ and add it to the one with an higher priority.</li>
 <p> <strong>Variants</strong> :</p>
 
 <p> The <a href="../client_tiling/dynamite.html#tile">tile</a> layout is available in 4 variants: <a href="../client_tiling/dynamite.html#tile">tile</a>, <code>tile.left</code>, <code>tile.top</code>
- and <code>tile.bottom</code>. The name indicate the position of the &ldquo;slave&rdquo; columns.</p>
+ and <code>tile.bottom</code>. The name indicate the position of the "slave" columns.</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_tile_directions.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_directions.svg" alt="Usage example"/></p>
+
 
 <p> <strong>Client count scaling</strong>:</p>
 
@@ -1061,13 +1211,16 @@ and add it to the one with an higher priority.</li>
  <code>tile.left</code> folowed by <code>tile.top</code> and <code>tile.bottom</code>. The columns indicate how
  the layout change when new clients are added.</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_tile_scaling.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_scaling.svg" alt="Usage example"/></p>
+
 
 <p> <strong>master_count effect</strong>:</p>
 
 <p> The master_count property will affect number of rows in the master columns.</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_tile_nmaster.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_nmaster.svg" alt="Usage example"/></p>
 
 <p> See <a href="../core_components/tag.html#master_count">tag.master_count</a>
  See <code>awful.tag.incnmaster</code></p>
@@ -1077,33 +1230,38 @@ and add it to the one with an higher priority.</li>
 <p> When columns are added, this layout will maximize the space available to each
  clients in the slaves columns.</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_tile_ncol.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_ncol.svg" alt="Usage example"/></p>
 
 <p> See <a href="../core_components/tag.html#column_count">tag.column_count</a>
  See <code>awful.tag.incncol</code></p>
 
 <p> <strong>master_width_factor effect</strong>:</p>
 
-<p> The master width factor is the ratio between the &ldquo;master&rdquo; column and the
- &ldquo;slave&rdquo; ones.</p>
+<p> The master width factor is the ratio between the "master" column and the
+ "slave" ones.</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_tile_mwfact.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_mwfact.svg" alt="Usage example"/></p>
 
 <p> See <a href="../core_components/tag.html#master_width_factor">tag.master_width_factor</a>
  See <code>awful.tag.incmwfact</code></p>
 
 <p> <strong>gap effect</strong>:</p>
 
-<p> The &ldquo;useless&rdquo; gap tag property will change the spacing between clients.</p>
+<p> The "useless" gap tag property will change the spacing between clients.</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_tile_gap.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_gap.svg" alt="Usage example"/></p>
 
 <p> See <a href="../core_components/tag.html#gap">tag.gap</a>
  See <code>awful.tag.incgap</code></p>
 
 <p> <strong>screen padding effect</strong>:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_tile_padding.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_tile_padding.svg" alt="Usage example"/></p>
 
 <p> See <code>awful.screen.padding</code></p>
 
@@ -1119,10 +1277,15 @@ and add it to the one with an higher priority.</li>
 
 
 
+    <span id=item2356 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "dynamite.tile.left"></a>
     <strong><span class='function_modname'>dynamite.</span>tile.left</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     A tile layout with the slave clients on the left.
@@ -1130,17 +1293,22 @@ and add it to the one with an higher priority.</li>
 
 
 
-
     <h3>See also:</h3>
     <ul>
          <a href="../client_tiling/dynamite.html#tile">dynamite.tile</a>
     </ul>
 
 
+
+    <span id=item2357 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "dynamite.tile.top"></a>
     <strong><span class='function_modname'>dynamite.</span>tile.top</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     A tile layout with the slave clients on the top.
@@ -1148,17 +1316,22 @@ and add it to the one with an higher priority.</li>
 
 
 
-
     <h3>See also:</h3>
     <ul>
          <a href="../client_tiling/dynamite.html#tile">dynamite.tile</a>
     </ul>
 
 
+
+    <span id=item2358 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "dynamite.tile.bottom"></a>
     <strong><span class='function_modname'>dynamite.</span>tile.bottom</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
     A tile layout with the slave clients on the bottom.
@@ -1166,20 +1339,26 @@ and add it to the one with an higher priority.</li>
 
 
 
-
     <h3>See also:</h3>
     <ul>
          <a href="../client_tiling/dynamite.html#tile">dynamite.tile</a>
     </ul>
 
 
+
+    <span id=item2359 class="hide_extra">
+    </span>
+
 </dd>
     <dt>
     <a name = "treesome"></a>
     <strong>treesome</strong>
+    <span class="baseclass" >
+    </span>
     </dt>
     <dd>
-    <p>Split the focused client area in two. </p>
+
+<p>Split the focused client area in two. </p>
 
 <p> The split will be either vertical or horizontal to maximize the space.</p>
 
@@ -1187,10 +1366,13 @@ and add it to the one with an higher priority.</li>
  is unsuited when initializing it with many existing clients. This, in turn,
  makes it user-unfriendly when switching between multiple layouts:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_treesome_simple.svg" alt="Usage example" /></p>
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_treesome_simple.svg" alt="Usage example"/></p>
+
 
 <p> Alternatively, it is possible to control this layout per-screen using the
- &ldquo;remote control&rdquo; object returned by:</p>
+ "remote control" object returned by:</p>
 
 <pre><code>local api = dynamite.suit.treesome.api(mouse.screen)
 </code></pre>
@@ -1198,24 +1380,24 @@ and add it to the one with an higher priority.</li>
 <p> This object has the following mutually exclusive properties:</p>
 
 <ul>
-<li><strong>horizontal_split</strong>: Split along the horizontal axis (side by side)</li>
-<li><strong>vertical_split</strong>: Split along the horizontal axis (top/bottom)</li>
-<li><strong>tabbed</strong>: Add client on top of each other.</li>
-<li><strong>auto</strong>: Pick <code>vertical</code> or <a href="../client_tiling/dynamite.html#dynamite.fair.horizontal">horizontal</a> depending on the maximum size
-of the resulting clients (<em>default</em>)</li>
+    <li><strong>horizontal_split</strong>: Split along the horizontal axis (side by side)</li>
+    <li><strong>vertical_split</strong>: Split along the horizontal axis (top/bottom)</li>
+    <li><strong>tabbed</strong>: Add client on top of each other.</li>
+    <li><strong>auto</strong>: Pick <code>vertical</code> or <a href="../client_tiling/dynamite.html#dynamite.fair.horizontal">horizontal</a> depending on the maximum size
+    of the resulting clients (<em>default</em>)</li>
 </ul>
-
 
 <p> It also has:</p>
 
 <ul>
-<li><em>insert</em>:</li>
+    <li><em>insert</em>:</li>
 </ul>
 
+<p> Here's an example of the following steps:</p>
 
-<p> Here&rsquo;s an example of the following steps:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_treesome_complex.svg" alt="Usage example" /></p>
+
+<p><img src="../images/AUTOGEN_dynamite_suit_treesome_complex.svg" alt="Usage example"/></p>
 
 <p><strong>Usage example output</strong>:</p>
 
@@ -1225,9 +1407,13 @@ api.vertical_split   = true
 api.tabbed           = true
 </code></pre>
 
-<p> Here&rsquo;s an example when <code>insert</code> is enabled:</p>
 
-<p><img src="../images/AUTOGEN_dynamite_suit_treesome_insert.svg" alt="Usage example" /></p>
+
+<p> Here's an example when <code>insert</code> is enabled:</p>
+
+
+
+<p><img src="../images/AUTOGEN_dynamite_suit_treesome_insert.svg" alt="Usage example"/></p>
 
 <p><strong>Usage example output</strong>:</p>
 
@@ -1241,6 +1427,8 @@ Adding a client
 Adding a client
 Adding a client
 </code></pre>
+
+
 
 <p> It is useful to add keybindings to the <code>globalkeys</code> section of <a href="../sample files/rc.lua.html#">rc.lua</a> to
  manipulate this API:</p>
@@ -1270,6 +1458,10 @@ end, {description = "go back", group = "layout"}),
 
 
 
+
+    <span id=item2360 class="hide_extra">
+    </span>
+
 </dd>
 </dl>
 
@@ -1278,7 +1470,7 @@ end, {description = "go back", group = "layout"}),
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2019-07-30 00:42:48 </i>
+<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
