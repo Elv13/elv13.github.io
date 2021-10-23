@@ -1,0 +1,1461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Class gears.watcher - awesome API documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+   <script>
+     function show_extra(id) {
+        var cur = document.getElementById("item"+id).className
+
+        if (cur == "hide_extra") {
+            document.getElementById("item"+id).className = "show_more"
+            document.getElementById("button"+id).className = "hide_extra"
+        }
+     }
+   </script>
+
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+    <div id="product_logo"></div>
+    <div id="product_name"><big><b></b></big></div>
+    <div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>awesome</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Constructors">Constructors</a></li>
+<li><a href="#Object_properties">Object properties</a></li>
+<li><a href="#Object_methods">Object methods </a></li>
+<li><a href="#Signals">Signals</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
+  <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.connection.html">gears.connection</a></li>
+  <li><a href="../classes/gears.history.html">gears.history</a></li>
+  <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
+  <li><a href="../classes/gears.reactive.html">gears.reactive</a></li>
+  <li><strong>gears.watcher</strong></li>
+  <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
+  <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
+  <li><a href="../classes/signals.html">signals</a></li>
+  <li><a href="../classes/wibox.container.conditional.html">wibox.container.conditional</a></li>
+  <li><a href="../classes/wibox.container.scale.html">wibox.container.scale</a></li>
+  <li><a href="../classes/wibox.container.template.html">wibox.container.template</a></li>
+  <li><a href="../classes/wibox.drawable.html">wibox.drawable</a></li>
+  <li><a href="../classes/wibox.hierarchy.html">wibox.hierarchy</a></li>
+  <li><a href="../classes/wibox.widget.base.html">wibox.widget.base</a></li>
+  <li><a href="../classes/wibox.widget.status.html">wibox.widget.status</a></li>
+  <li><a href="../classes/xproperties.html">xproperties</a></li>
+</ul>
+<h2>Core components</h2>
+<ul class="nowrap">
+  <li><a href="../core_components/awesome.html">awesome</a></li>
+  <li><a href="../core_components/awful.keygrabber.html">awful.keygrabber</a></li>
+  <li><a href="../core_components/client.html">client<span class='listplusign'> and awful.client</span></a></li>
+  <li><a href="../core_components/drawable.html">drawable</a></li>
+  <li><a href="../core_components/gears.timer.html">gears.timer</a></li>
+  <li><a href="../core_components/mousegrabber.html">mousegrabber</a></li>
+  <li><a href="../core_components/naughty.action.html">naughty.action</a></li>
+  <li><a href="../core_components/naughty.notification.html">naughty.notification</a></li>
+  <li><a href="../core_components/root.html">root</a></li>
+  <li><a href="../core_components/screen.html">screen<span class='listplusign'> and awful.screen</span></a></li>
+  <li><a href="../core_components/tag.html">tag<span class='listplusign'> and awful.tag</span></a></li>
+</ul>
+<h2>Input handling</h2>
+<ul class="nowrap">
+  <li><a href="../input_handling/awful.button.html">awful.button</a></li>
+  <li><a href="../input_handling/awful.key.html">awful.key</a></li>
+  <li><a href="../input_handling/awful.keyboard.html">awful.keyboard</a></li>
+  <li><a href="../input_handling/mouse.html">mouse</a></li>
+</ul>
+<h2>Declarative rules</h2>
+<ul class="nowrap">
+  <li><a href="../declarative_rules/ruled.client.html">ruled.client</a></li>
+  <li><a href="../declarative_rules/ruled.clipboard.html">ruled.clipboard</a></li>
+  <li><a href="../declarative_rules/ruled.notifications.html">ruled.notifications</a></li>
+  <li><a href="../declarative_rules/ruled.screen.html">ruled.screen</a></li>
+  <li><a href="../declarative_rules/ruled.tag.html">ruled.tag</a></li>
+</ul>
+<h2>Widgets</h2>
+<ul class="nowrap">
+  <li><a href="../widgets/awful.widget.button.html">awful.widget.button</a></li>
+  <li><a href="../widgets/awful.widget.clienticon.html">awful.widget.clienticon</a></li>
+  <li><a href="../widgets/awful.widget.keyboardlayout.html">awful.widget.keyboardlayout</a></li>
+  <li><a href="../widgets/awful.widget.launcher.html">awful.widget.launcher</a></li>
+  <li><a href="../widgets/awful.widget.layoutbox.html">awful.widget.layoutbox</a></li>
+  <li><a href="../widgets/awful.widget.layoutlist.html">awful.widget.layoutlist</a></li>
+  <li><a href="../widgets/awful.widget.prompt.html">awful.widget.prompt</a></li>
+  <li><a href="../widgets/awful.widget.taglist.html">awful.widget.taglist</a></li>
+  <li><a href="../widgets/awful.widget.tasklist.html">awful.widget.tasklist</a></li>
+  <li><a href="../widgets/awful.widget.watch.html">awful.widget.watch</a></li>
+  <li><a href="../widgets/naughty.list.actions.html">naughty.list.actions</a></li>
+  <li><a href="../widgets/naughty.list.notifications.html">naughty.list.notifications</a></li>
+  <li><a href="../widgets/naughty.widget.icon.html">naughty.widget.icon</a></li>
+  <li><a href="../widgets/naughty.widget.message.html">naughty.widget.message</a></li>
+  <li><a href="../widgets/naughty.widget.title.html">naughty.widget.title</a></li>
+  <li><a href="../widgets/wibox.widget.calendar.html">wibox.widget.calendar</a></li>
+  <li><a href="../widgets/wibox.widget.checkbox.html">wibox.widget.checkbox</a></li>
+  <li><a href="../widgets/wibox.widget.graph.html">wibox.widget.graph</a></li>
+  <li><a href="../widgets/wibox.widget.imagebox.html">wibox.widget.imagebox</a></li>
+  <li><a href="../widgets/wibox.widget.piechart.html">wibox.widget.piechart</a></li>
+  <li><a href="../widgets/wibox.widget.progressbar.html">wibox.widget.progressbar</a></li>
+  <li><a href="../widgets/wibox.widget.separator.html">wibox.widget.separator</a></li>
+  <li><a href="../widgets/wibox.widget.slider.html">wibox.widget.slider</a></li>
+  <li><a href="../widgets/wibox.widget.systray.html">wibox.widget.systray</a></li>
+  <li><a href="../widgets/wibox.widget.textbox.html">wibox.widget.textbox</a></li>
+  <li><a href="../widgets/wibox.widget.textclock.html">wibox.widget.textclock</a></li>
+</ul>
+<h2>Widget containers</h2>
+<ul class="nowrap">
+  <li><a href="../widget_containers/awful.widget.only_on_screen.html">awful.widget.only_on_screen</a></li>
+  <li><a href="../widget_containers/naughty.widget.background.html">naughty.widget.background</a></li>
+  <li><a href="../widget_containers/wibox.container.arcchart.html">wibox.container.arcchart</a></li>
+  <li><a href="../widget_containers/wibox.container.background.html">wibox.container.background</a></li>
+  <li><a href="../widget_containers/wibox.container.constraint.html">wibox.container.constraint</a></li>
+  <li><a href="../widget_containers/wibox.container.margin.html">wibox.container.margin</a></li>
+  <li><a href="../widget_containers/wibox.container.mirror.html">wibox.container.mirror</a></li>
+  <li><a href="../widget_containers/wibox.container.place.html">wibox.container.place</a></li>
+  <li><a href="../widget_containers/wibox.container.radialprogressbar.html">wibox.container.radialprogressbar</a></li>
+  <li><a href="../widget_containers/wibox.container.rotate.html">wibox.container.rotate</a></li>
+  <li><a href="../widget_containers/wibox.container.scroll.html">wibox.container.scroll</a></li>
+  <li><a href="../widget_containers/wibox.container.tile.html">wibox.container.tile</a></li>
+</ul>
+<h2>Widget layouts</h2>
+<ul class="nowrap">
+  <li><a href="../widget_layouts/wibox.layout.align.html">wibox.layout.align</a></li>
+  <li><a href="../widget_layouts/wibox.layout.fixed.html">wibox.layout.fixed</a></li>
+  <li><a href="../widget_layouts/wibox.layout.flex.html">wibox.layout.flex</a></li>
+  <li><a href="../widget_layouts/wibox.layout.grid.html">wibox.layout.grid</a></li>
+  <li><a href="../widget_layouts/wibox.layout.manual.html">wibox.layout.manual</a></li>
+  <li><a href="../widget_layouts/wibox.layout.ratio.html">wibox.layout.ratio</a></li>
+  <li><a href="../widget_layouts/wibox.layout.stack.html">wibox.layout.stack</a></li>
+</ul>
+<h2>Popups and bars</h2>
+<ul class="nowrap">
+  <li><a href="../popups_and_bars/awful.hotkeys_popup.widget.html">awful.hotkeys_popup.widget</a></li>
+  <li><a href="../popups_and_bars/awful.menu.html">awful.menu</a></li>
+  <li><a href="../popups_and_bars/awful.popup.html">awful.popup</a></li>
+  <li><a href="../popups_and_bars/awful.titlebar.html">awful.titlebar</a></li>
+  <li><a href="../popups_and_bars/awful.tooltip.html">awful.tooltip</a></li>
+  <li><a href="../popups_and_bars/awful.wallpaper.html">awful.wallpaper</a></li>
+  <li><a href="../popups_and_bars/awful.wibar.html">awful.wibar</a></li>
+  <li><a href="../popups_and_bars/awful.widget.calendar_popup.html">awful.widget.calendar_popup</a></li>
+  <li><a href="../popups_and_bars/menubar.html">menubar</a></li>
+  <li><a href="../popups_and_bars/naughty.layout.box.html">naughty.layout.box</a></li>
+  <li><a href="../popups_and_bars/naughty.layout.legacy.html">naughty.layout.legacy</a></li>
+  <li><a href="../popups_and_bars/wibox.html">wibox</a></li>
+</ul>
+<h2>Utility libraries</h2>
+<ul class="nowrap">
+  <li><a href="../utility_libraries/gears.debug.html">gears.debug</a></li>
+  <li><a href="../utility_libraries/gears.filesystem.html">gears.filesystem</a></li>
+  <li><a href="../utility_libraries/gears.geometry.html">gears.geometry</a></li>
+  <li><a href="../utility_libraries/gears.math.html">gears.math</a></li>
+  <li><a href="../utility_libraries/gears.object.html">gears.object</a></li>
+  <li><a href="../utility_libraries/gears.protected_call.html">gears.protected_call</a></li>
+  <li><a href="../utility_libraries/gears.sort.html">gears.sort</a></li>
+  <li><a href="../utility_libraries/gears.string.html">gears.string</a></li>
+  <li><a href="../utility_libraries/gears.table.html">gears.table</a></li>
+  <li><a href="../utility_libraries/gears.wallpaper.html">gears.wallpaper</a></li>
+</ul>
+<h2>Theme related libraries</h2>
+<ul class="nowrap">
+  <li><a href="../theme_related_libraries/beautiful.html">beautiful</a></li>
+  <li><a href="../theme_related_libraries/gears.color.html">gears.color</a></li>
+  <li><a href="../theme_related_libraries/gears.shape.html">gears.shape</a></li>
+</ul>
+<h2>Client tiling</h2>
+<ul class="nowrap">
+  <li><a href="../client_tiling/dynamite.html">dynamite</a></li>
+  <li><a href="../client_tiling/dynamite.layout.conditional.html">dynamite.layout.conditional</a></li>
+  <li><a href="../client_tiling/dynamite.layout.ratio.html">dynamite.layout.ratio</a></li>
+  <li><a href="../client_tiling/dynamite.layout.stack.html">dynamite.layout.stack</a></li>
+  <li><a href="../client_tiling/dynamite.layout.tabbed.html">dynamite.layout.tabbed</a></li>
+  <li><a href="../client_tiling/dynamite.utils.html">dynamite.utils</a></li>
+  <li><a href="../client_tiling/dynamite.widget.placeholder.html">dynamite.widget.placeholder</a></li>
+</ul>
+<h2>Libraries</h2>
+<ul class="nowrap">
+  <li><a href="../libraries/awful.completion.html">awful.completion</a></li>
+  <li><a href="../libraries/awful.hotkeys_popup.html">awful.hotkeys_popup</a></li>
+  <li><a href="../libraries/awful.layout.html">awful.layout</a></li>
+  <li><a href="../libraries/awful.permissions.html">awful.permissions</a></li>
+  <li><a href="../libraries/awful.placement.html">awful.placement</a></li>
+  <li><a href="../libraries/awful.prompt.html">awful.prompt</a></li>
+  <li><a href="../libraries/awful.spawn.html">awful.spawn</a></li>
+  <li><a href="../libraries/awful.util.html">awful.util</a></li>
+  <li><a href="../libraries/dbus.html">dbus</a></li>
+  <li><a href="../libraries/dynamite.widget.pager.html">dynamite.widget.pager</a></li>
+  <li><a href="../libraries/dynamite.widget.spawn.html">dynamite.widget.spawn</a></li>
+  <li><a href="../libraries/gears.matcher.html">gears.matcher</a></li>
+  <li><a href="../libraries/gears.surface.html">gears.surface</a></li>
+  <li><a href="../libraries/lib.lain.layout.centerwork.html">lib.lain.layout.centerwork</a></li>
+  <li><a href="../libraries/menubar.menu_gen.html">menubar.menu_gen</a></li>
+  <li><a href="../libraries/menubar.utils.html">menubar.utils</a></li>
+  <li><a href="../libraries/naughty.html">naughty</a></li>
+  <li><a href="../libraries/selection.html">selection</a></li>
+  <li><a href="../libraries/wibox.widget.html">wibox.widget</a></li>
+</ul>
+<h2>Sample files</h2>
+<ul class="nowrap">
+  <li><a href="../sample files/rc.lua.html">rc.lua</a></li>
+  <li><a href="../sample files/theme.lua.html">theme.lua</a></li>
+</ul>
+<h2>Documentation</h2>
+<ul class="nowrap">
+  <li><a href="../documentation/00-authors.md.html">Authors</a></li>
+  <li><a href="../documentation/01-readme.md.html">Readme</a></li>
+  <li><a href="../documentation/02-contributing.md.html">Contributing</a></li>
+  <li><a href="../documentation/03-declarative-layout.md.html">The Widget system</a></li>
+  <li><a href="../documentation/04-new-widgets.md.html">Creating new widget</a></li>
+  <li><a href="../documentation/05-awesomerc.md.html">Default configuration file documentation</a></li>
+  <li><a href="../documentation/06-appearance.md.html">Change Awesome appearance</a></li>
+  <li><a href="../documentation/07-my-first-awesome.md.html">My first Awesome</a></li>
+  <li><a href="../documentation/08-client-layout-system.md.html">The AwesomeWM client layout system</a></li>
+  <li><a href="../documentation/09-options.md.html">Startup options</a></li>
+  <li><a href="../documentation/10-building-and-testing.md.html">Building and Testing</a></li>
+  <li><a href="../documentation/16-using-cairo.md.html">Using Cairo and LGI</a></li>
+  <li><a href="../documentation/17-porting-tips.md.html">Tips for upgrading your configuration</a></li>
+  <li><a href="../documentation/89-NEWS.md.html">NEWS</a></li>
+  <li><a href="../documentation/90-FAQ.md.html">FAQ</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module: <code>gears.watcher</code></h1>
+<p>Fetch information at a specific interval.</p>
+<p>
+
+</p>
+    <div class="extra-header">
+
+
+  <div class="extra-header__section">
+    <h3>Info:</h3>
+    <ul>
+                <li><strong>Copyright</strong>: 2020 Emmanuel Lepage-Vallee</li>
+                <li>
+                    <strong>Originally authored by</strong>: Emmanuel Lepage-Vallee &lt;elv1313@gmail.com&gt;<br />
+                    <small>(Full contributors list available on
+                    <a href="https://github.com/awesomeWM/awesome/graphs/contributors">
+                        our github project)
+                    </a></small>
+
+                </li>
+    </ul>
+  </div>
+
+</div>
+
+
+<h2><a href="#Constructors">Constructors</a></h2>
+<table class="function_list">
+    <tr>
+      <td class="name" >
+        <a href="#gears.watcher">gears.watcher <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
+      </td>
+      <td colspan="2" class="summary">Create a new <a href="../classes/gears.watcher.html#">gears.watcher</a> object.</td>
+    </tr>
+</table>
+<h2><a href="#Object_properties">Object properties</a></h2>
+<table class="function_list">
+    <tr>
+      <td class="shortname" ><a href="#gears.watcher.file">file</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
+      <td colspan="2" class="summary">A file path.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#gears.watcher.files">files</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">A list or map of files.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#gears.watcher.filter">filter</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>function</span></td>
+      <td colspan="2" class="summary">A filter to post-process the file or command.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#gears.watcher.command">command</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table <i>or</i> string</span></td>
+      <td colspan="2" class="summary">A command.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#gears.watcher.shell">shell</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean <i>or</i> string</span></td>
+      <td colspan="2" class="summary">Use a shell when calling the command.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#gears.watcher.labels_as_properties">labels_as_properties</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">In files mode, when paths have labels, apply them as properties.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#gears.watcher.interval">interval</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">The interval between the content refresh.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#gears.watcher.value">value</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>N/A</span></td>
+      <td colspan="2" class="summary">The current value of the watcher.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#gears.watcher.strip_newline">strip_newline</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">Strip the extra trailing newline.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#gears.watcher.started">started</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="1" class="summary">The timer is started.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.timer
+      </td>
+    </tr>
+</table>
+<h2><a href="#Object_methods">Object methods </a></h2>
+<table class="function_list">
+    <tr>
+      <td class="name" >
+        <a href="#gears.watcher.abort">:abort <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Abort the current transactions.</td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#gears.watcher.append_file">:append_file <span class='function_args'> <b>(</b>path[, The]<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Add a file to the files list.</td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#gears.watcher.remove_file">:remove_file <span class='function_args'> <b>(</b>path<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Remove a file to the files list.</td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#gears.watcher.start">:start <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Start the timer.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.timer
+      </td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#gears.watcher.stop">:stop <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Stop the timer.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.timer
+      </td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#gears.watcher.again">:again <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Restart the timer.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.timer
+      </td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#gears.watcher.emit_signal">:emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Emit a signal.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.object
+      </td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#gears.watcher.connect_signal">:connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Connect to a signal.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.object
+      </td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#gears.watcher.weak_connect_signal">:weak_connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="1" class="summary">Connect to a signal weakly.</td>
+      <td class="baseclass" nowrap>
+        Inherited from gears.object
+      </td>
+    </tr>
+</table>
+<h2><a href="#Signals">Signals</a></h2>
+<table class="function_list">
+    <tr>
+      <td class="name" >
+        <a href="#file::acquired">file::acquired</a>
+      </td>
+      <td colspan="2" class="summary">Emitted when a file is read.</td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#file::failed">file::failed</a>
+      </td>
+      <td colspan="2" class="summary">When reading a file failed.</td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#files::acquired">files::acquired</a>
+      </td>
+      <td colspan="2" class="summary">Emitted when all files are read.</td>
+    </tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Constructors"></a>Constructors</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "gears.watcher"></a>
+    <strong>gears.watcher <span class='function_named_args'><b>{</b>[args]<b>}</b></span></strong>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Create a new <a href="../classes/gears.watcher.html#">gears.watcher</a> object.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+
+
+        <ul>
+        <li><span class="parameter">file</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         A file path.
+        </li>
+        <li><span class="parameter">files</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         A list or map of files.
+        </li>
+        <li><span class="parameter">filter</span>
+            <span class="types"><span class="type">function</span></span>
+         A filter to post-process the file or command.
+        </li>
+        <li><span class="parameter">command</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a> or <a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         A command (without a shell).
+        </li>
+        <li><span class="parameter">shell</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Use a shell when calling the command.
+         (<em>default</em> false)
+        </li>
+        <li><span class="parameter">initial_value</span>
+         The value to use before the first "real" value is acquired.
+        </li>
+        <li><span class="parameter">interval</span>
+            <span class="types"><span class="type">number</span></span>
+         The interval between the content refresh.
+        </li>
+        <li><span class="parameter">labels_as_properties</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Set the file labels as properties.
+        </li>
+        <li><span class="parameter">started</span>
+            <span class="types"><span class="type">boolean</span></span>
+         The timer is started.
+        </li>
+        </li></ul>
+    </ul>
+
+
+
+
+
+
+    <span id=item2762 class="hide_extra">
+    </span>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Object_properties"></a>Object properties</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "gears.watcher.file"></a>
+    <strong>file</strong>
+    <span class="proptype"><span class='summary_type'>string</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    A file path. </p>
+
+
+
+<p><img src="../images/AUTOGEN_text_gears_watcher_simple.svg" alt="Usage example"/>
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/gears.watcher.html#gears.watcher.files">files</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> mybatterydischarging = gears.watcher {
+    file     = <span class="string">"/sys/class/power_supply/BAT0/status"</span>,
+    interval = <span class="number">5</span>,
+}</pre>
+    </ul>
+
+     <br />
+     <center id=button2763>
+     <a class="show_more_button" onclick="show_extra('2763')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item2763 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::gears.watcher.file</code></span>  When the <a href="../classes/gears.watcher.html#gears.watcher.file">gears.watcher.file</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../classes/gears.watcher.html#">gears.watcher</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../classes/gears.watcher.html#gears.watcher.file">file</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.files"></a>
+    <strong>files</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+
+<p>A list or map of files. </p>
+
+<p> It is often necessary to query multiple files. When reading from <code>proc</code>,
+ some data is split across multiple files, such as the battery charge.</p>
+
+<p> This property accepts 2 format. One uses is a plain table of paths while
+ the other is a label->path map. Depending on what is being read, both make
+ sense.</p>
+
+<p> <strong>Simple path list:</strong></p>
+
+
+
+<p><img src="../images/AUTOGEN_text_gears_watcher_files1.svg" alt="Usage example"/></p>
+
+
+<pre><code> local mybatterycharging = gears.watcher {
+     files    = {
+         "/sys/class/power_supply/AC/online",
+         "/sys/class/power_supply/BAT0/status"
+     },
+     filter   = function(content)
+         return content['/sys/class/power_supply/AC/online'  ] == "1"
+             or content['/sys/class/power_supply/BAT0/status'] == "Full"
+     end,
+     interval = 5,
+ }
+</code></pre>
+
+<p> <strong>With labels:</strong></p>
+
+
+
+<p><img src="../images/AUTOGEN_text_gears_watcher_files2.svg" alt="Usage example"/></p>
+
+
+<pre><code> local mybatterycharging = gears.watcher {
+     files    = {
+         plugged = "/sys/class/power_supply/AC/online",
+         charged = "/sys/class/power_supply/BAT0/status"
+     },
+     filter   = function(content)
+         return content.plugged == "1" or content.charged == "Full"
+     end,
+     interval = 5,
+ }
+</code></pre>
+
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/gears.watcher.html#gears.watcher.labels_as_properties">labels_as_properties</a>
+    </ul>
+
+
+     <br />
+     <center id=button2764>
+     <a class="show_more_button" onclick="show_extra('2764')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item2764 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::gears.watcher.files</code></span>  When the <a href="../classes/gears.watcher.html#gears.watcher.files">gears.watcher.files</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../classes/gears.watcher.html#">gears.watcher</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../classes/gears.watcher.html#gears.watcher.files">files</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.filter"></a>
+    <strong>filter</strong>
+    <span class="proptype"><span class='summary_type'>function</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    A filter to post-process the file or command. </p>
+
+<p> It can be used, for example, to convert the string to a number or turn
+ the various file content into the final value. The filter argument
+ depend on various <a href="../classes/gears.watcher.html#">gears.watcher</a> properties (as documented below).</p>
+
+<p> <strong>The callback parameters for a single file:</strong>
+   (1) The file content (string)</p>
+
+<p> <strong>The callback parameters for a multiple files (paths):</strong>
+   (1) Tables with the paths as keys and string content as value.</p>
+
+<p> <strong>The callback parameters for a multiple files (labels):</strong>
+   (1) Tables with the keys as keys and string content as value.</p>
+
+<p> **The callback when <a href="../classes/gears.watcher.html#gears.watcher.labels_as_properties">labels_as_properties</a> is true:**
+   (1) The label name
+   (2) The content</p>
+
+<p> <strong>The callback parameters for a command:</strong>
+   (1) Stdout as first parameter
+   (2) Stderr as second parameter
+   (3) Exitreason
+   (4) Exitcode
+
+
+
+
+
+
+     <br />
+     <center id=button2765>
+     <a class="show_more_button" onclick="show_extra('2765')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item2765 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::gears.watcher.filter</code></span>  When the <a href="../classes/gears.watcher.html#gears.watcher.filter">gears.watcher.filter</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../classes/gears.watcher.html#">gears.watcher</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../classes/gears.watcher.html#gears.watcher.filter">filter</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.command"></a>
+    <strong>command</strong>
+    <span class="proptype"><span class='summary_type'>table <i>or</i> string</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+
+<p>A command. </p>
+
+<p> If you plan to use pipes or any shell features, do not
+ forget to also set <a href="../classes/gears.watcher.html#gears.watcher.shell">shell</a> to <code>true</code>.</p>
+
+
+
+
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>one two three
+</code></pre>
+<p> <strong>Usage example:</strong></p>
+
+
+
+<pre><code> local w = gears.watcher {
+     interval = 0.05,
+     command  = "echo one two three",
+ }
+
+ -- [wait some time]
+
+ -- It will be "one two three"
+ print(w.value)
+</code></pre>
+
+
+
+
+
+
+
+
+     <br />
+     <center id=button2766>
+     <a class="show_more_button" onclick="show_extra('2766')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item2766 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::gears.watcher.command</code></span>  When the <a href="../classes/gears.watcher.html#gears.watcher.command">gears.watcher.command</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../classes/gears.watcher.html#">gears.watcher</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../classes/gears.watcher.html#gears.watcher.command">command</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.shell"></a>
+    <strong>shell</strong>
+    <span class="proptype"><span class='summary_type'>boolean <i>or</i> string</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+
+<p>Use a shell when calling the command. </p>
+
+<p> This means you can use <code>|</code>, <code>&amp;&amp;</code>, <code>$?</code> in your command.</p>
+
+
+
+
+<p><strong>Usage example output</strong>:</p>
+
+<pre><code>three
+</code></pre>
+<p> <strong>Usage example:</strong></p>
+
+
+
+<pre><code> local w = gears.watcher {
+     interval = 0.05,
+     command  = "echo one two three | cut -f3 -d ' '",
+     shell    = true,
+ }
+
+ -- [wait some time]
+
+ -- It will be "one two three"
+ print(w.value)
+</code></pre>
+
+
+
+
+
+
+
+
+     <br />
+     <center id=button2767>
+     <a class="show_more_button" onclick="show_extra('2767')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item2767 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::gears.watcher.shell</code></span>  When the <a href="../classes/gears.watcher.html#gears.watcher.shell">gears.watcher.shell</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../classes/gears.watcher.html#">gears.watcher</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../classes/gears.watcher.html#gears.watcher.shell">shell</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.labels_as_properties"></a>
+    <strong>labels_as_properties</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+
+<p>In files mode, when paths have labels, apply them as properties. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_declarative_watcher.svg" alt="Usage example"/></p>
+
+
+<pre><code> local battery = gears.watcher {
+     labels_as_properties = true,
+     interval             = 5,
+     files                = {
+         capacity = "/sys/class/power_supply/BAT0/energy_full",
+         current  = "/sys/class/power_supply/BAT0/energy_now"
+     },
+     filter               = function(label, content)
+         return tonumber(content)
+     end,
+ }
+
+ -- Use the above in a widget.
+ local w = wibox.widget {
+     text = gears.reactive(function()
+         return (battery.current / battery.capacity) .. "%"
+     end),
+     widget = wibox.widget.textbox
+ }
+</code></pre>
+
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/gears.watcher.html#gears.watcher.files">files</a>
+    </ul>
+
+
+
+    <span id=item2768 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.interval"></a>
+    <strong>interval</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    The interval between the content refresh. </p>
+
+<p> (in seconds)
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../core_components/gears.timer.html#timeout">gears.timer.timeout</a>
+    </ul>
+
+
+     <br />
+     <center id=button2769>
+     <a class="show_more_button" onclick="show_extra('2769')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item2769 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::gears.watcher.interval</code></span>  When the <a href="../classes/gears.watcher.html#gears.watcher.interval">gears.watcher.interval</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../classes/gears.watcher.html#">gears.watcher</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../classes/gears.watcher.html#gears.watcher.interval">interval</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.value"></a>
+    <strong>value</strong>
+    <span class="proptype"><span class='summary_type'>N/A</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    The current value of the watcher. </p>
+
+<p> If there is no filter, this will be a string. If a filter is used,
+ then it is whatever it returns.
+
+
+
+
+
+
+     <br />
+     <center id=button2770>
+     <a class="show_more_button" onclick="show_extra('2770')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item2770 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::gears.watcher.value</code></span>  When the <a href="../classes/gears.watcher.html#gears.watcher.value">gears.watcher.value</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../classes/gears.watcher.html#">gears.watcher</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.strip_newline"></a>
+    <strong>strip_newline</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Strip the extra trailing newline. </p>
+
+<p> All posix compliant text file and commands end with a newline.
+ Most of the time, this is inconvinient, so <a href="../classes/gears.watcher.html#">gears.watcher</a> removes
+ them by default. Set this to <code>false</code> if this isn't the desired
+ behavior.
+
+
+
+
+
+
+     <br />
+     <center id=button2771>
+     <a class="show_more_button" onclick="show_extra('2771')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item2771 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::gears.watcher.strip_newline</code></span>  When the <a href="../classes/gears.watcher.html#gears.watcher.strip_newline">gears.watcher.strip_newline</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../classes/gears.watcher.html#">gears.watcher</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../classes/gears.watcher.html#gears.watcher.strip_newline">strip_newline</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.started"></a>
+    <strong>started</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.timer
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    The timer is started.
+
+
+
+
+
+
+     <br />
+     <center id=button2772>
+     <a class="show_more_button" onclick="show_extra('2772')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item2772 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::gears.watcher.started</code></span>  When the <a href="../classes/gears.watcher.html#gears.watcher.started">gears.watcher.started</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../classes/gears.watcher.html#">gears.watcher</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Object_methods"></a>Object methods </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "gears.watcher.abort"></a>
+    <strong>:abort <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Abort the current transactions. </p>
+
+<p> If files are currently being read or commands executed,
+ abort it. This does prevent new transaction from being
+ started. Use <code>:stop()</code> for that.
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/gears.watcher.html#gears.watcher.stop">stop</a>
+    </ul>
+
+
+
+    <span id=item2773 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.append_file"></a>
+    <strong>:append_file <span class='function_args'> <b>(</b>path[, The]<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Add a file to the files list.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The path.
+        </li>
+        <li><span class="parameter">The</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         key.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+
+    <span id=item2774 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.remove_file"></a>
+    <strong>:remove_file <span class='function_args'> <b>(</b>path<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Remove a file to the files list.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The path or the key.
+        </li>
+    </ul>
+
+
+
+
+
+
+    <span id=item2775 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.start"></a>
+    <strong>:start <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.timer
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Start the timer.
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/gears.watcher.html#gears.watcher.stop">stop</a>
+    </ul>
+
+
+     <br />
+     <center id=button2776>
+     <a class="show_more_button" onclick="show_extra('2776')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item2776 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><a href="../classes/gears.watcher.html#gears.watcher.start">start</a></span>  </li>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.stop"></a>
+    <strong>:stop <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.timer
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Stop the timer.
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../classes/gears.watcher.html#gears.watcher.abort">abort</a></li>
+         <li><a href="../classes/gears.watcher.html#gears.watcher.start">start</a></li>
+    </ul>
+
+
+     <br />
+     <center id=button2777>
+     <a class="show_more_button" onclick="show_extra('2777')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item2777 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><a href="../classes/gears.watcher.html#gears.watcher.stop">stop</a></span>  </li>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.again"></a>
+    <strong>:again <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.timer
+         &middot 2 signals
+    </span>
+    </dt>
+    <dd>
+    Restart the timer.
+ This is equivalent to stopping the timer if it is running and then starting
+ it.
+
+
+
+
+
+
+     <br />
+     <center id=button2778>
+     <a class="show_more_button" onclick="show_extra('2778')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item2778 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><a href="../classes/gears.watcher.html#gears.watcher.start">start</a></span>  </li>
+          <li><span class="parameter"><a href="../classes/gears.watcher.html#gears.watcher.stop">stop</a></span>  </li>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.emit_signal"></a>
+    <strong>:emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.object
+    </span>
+    </dt>
+    <dd>
+    Emit a signal.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal.
+        </li>
+        <li><span class="parameter">...</span>
+         Extra arguments for the callback functions. Each connected
+   function receives the object as first argument and then any extra
+   arguments that are given to emit_signal().
+        </li>
+    </ul>
+
+
+
+
+
+
+    <span id=item2779 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.connect_signal"></a>
+    <strong>:connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.object
+    </span>
+    </dt>
+    <dd>
+    Connect to a signal.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal.
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         The callback to call when the signal is emitted.
+        </li>
+    </ul>
+
+
+
+
+
+
+    <span id=item2780 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "gears.watcher.weak_connect_signal"></a>
+    <strong>:weak_connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    &middot;&nbsp;Inherited from gears.object
+    </span>
+    </dt>
+    <dd>
+    Connect to a signal weakly. </p>
+
+<p> This allows the callback function to be garbage collected and
+ automatically disconnects the signal when that happens.</p>
+
+<p> <strong>Warning:</strong>
+ Only use this function if you really, really, really know what you
+ are doing.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The name of the signal.
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         The callback to call when the signal is emitted.
+        </li>
+    </ul>
+
+
+
+
+
+
+    <span id=item2781 class="hide_extra">
+    </span>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Signals"></a>Signals</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "file::acquired"></a>
+    <strong>file::acquired</strong>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Emitted when a file is read.
+
+    <h3>Arguments:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The path.
+        </li>
+        <li><span class="parameter">content</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The file content.
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../classes/gears.watcher.html#files::acquired">files::acquired</a></li>
+         <li><a href="../classes/gears.watcher.html#file::failed">file::failed</a></li>
+    </ul>
+
+
+
+    <span id=item2782 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "file::failed"></a>
+    <strong>file::failed</strong>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    When reading a file failed.
+
+    <h3>Arguments:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         The path.
+        </li>
+    </ul>
+
+
+
+
+
+
+    <span id=item2783 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "files::acquired"></a>
+    <strong>files::acquired</strong>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Emitted when all files are read.
+
+    <h3>Arguments:</h3>
+    <ul>
+        <li><span class="parameter">contents</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Path as keys and content as values.
+        </li>
+        <li><span class="parameter">failed</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         The list of files which could not be read.
+        </li>
+    </ul>
+
+
+
+
+
+
+    <span id=item2784 class="hide_extra">
+    </span>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

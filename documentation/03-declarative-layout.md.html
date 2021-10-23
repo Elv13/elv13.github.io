@@ -49,6 +49,7 @@
 <li><a href="#The_default_widgets">The default widgets </a></li>
 <li><a href="#The_different_syntaxes_to_initiate_widgets">The different syntaxes to initiate widgets </a></li>
 <li><a href="#Creating_and_placing_widgets_using_the_declarative_style">Creating and placing widgets using the declarative style </a></li>
+<li><a href="#Accessing_and_updating_widgets">Accessing and updating widgets </a></li>
 </ul>
 
 
@@ -228,8 +229,11 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.connection.html">gears.connection</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
+  <li><a href="../classes/gears.reactive.html">gears.reactive</a></li>
+  <li><a href="../classes/gears.watcher.html">gears.watcher</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
@@ -1009,51 +1013,6 @@ tb:set_markup(<span class="string">"Hello world! "</span>)
 }
 </pre>
 
-<h3>Accessing widgets</h3>
-
-<p>For each widget or container, it is possible to add an <code>identifier</code> attribute
-so that it can be accessed later.</p>
-
-<p>Widgets defined using <code>setup</code> can be accessed using these methods:</p>
-
-<ul>
-    <li>Avoiding the issue by using externally created widgets</li>
-    <li>Using <code>my_wibox.my_first_widget.my_second_widget</code> style access</li>
-    <li>Using JavaScript like <code>my_wibox:get_children_by_id(&quot;my_second_widget&quot;)[1]</code></li>
-</ul>
-
-<p>The first method mixes the imperative and declarative syntax, and makes the code
-less readable. The second is a little verbose and only works if every node in
-the chain has a valid identifier. The last one doesn't require long paths,
-but it is not easy to get a specific instance if multiple widgets have the
-same identifier.</p>
-
-<p>WARNING: The widget identifier must not use a reserved name. This includes all
-method names, existing widget attributes, <code>layout</code> and <code>widget</code>. Names should
-also respect the Lua variable conventions (case-sensitive, alphanumeric,
-underscore characters and non-numeric first character).</p>
-
-<p>Code:</p>
-
-
-<pre>
-s.mywibox : setup {
-    {
-        id     = <span class="string">"second"</span>,
-        widget = wibox.widget.textbox
-    },
-    {
-        id     = <span class="string">"third"</span>,
-        widget = wibox.widget.textbox
-    },
-    id     = <span class="string">"first"</span>,
-    layout = wibox.layout.fixed.horizontal,
-}
-
-s.mywibox.first.second:set_markup(<span class="string">"changed!"</span>)
-s.mywibox:get_children_by_id(<span class="string">"third"</span>)[<span class="number">1</span>]:set_markup(<span class="string">"Also changed!"</span>)
-</pre>
-
 <h3>Extending the system</h3>
 
 <p>This system is very flexible. Each section attribute (the entries with string
@@ -1163,12 +1122,268 @@ necessary for three reasons:</p>
     widget to simplify everything.</li>
 </ul>
 
+<p><a name="Accessing_and_updating_widgets"></a></p>
+<h2>Accessing and updating widgets</h2>
+
+<p>There is 3 main ways to update the widgets. Each is best suited for it's own niche.
+Choose the one that better suites the style of your code.</p>
+
+<h3>Imperative</h3>
+
+<p>For each widget or container, it is possible to add an <code>identifier</code> attribute
+so that it can be accessed later.</p>
+
+<p>Widgets defined using <code>setup</code> can be accessed using these methods:</p>
+
+<ul>
+    <li>Avoiding the issue by using externally created widgets</li>
+    <li>Using <code>my_wibox.my_first_widget.my_second_widget</code> style access</li>
+    <li>Using JavaScript like <code>my_wibox:get_children_by_id(&quot;my_second_widget&quot;)[1]</code></li>
+</ul>
+
+<p>The first method mixes the imperative and declarative syntax, and makes the code
+less readable. The second is a little verbose and only works if every node in
+the chain has a valid identifier. The last one doesn't require long paths,
+but it is not easy to get a specific instance if multiple widgets have the
+same identifier.</p>
+
+<p>WARNING: The widget identifier must not use a reserved name. This includes all
+method names, existing widget attributes, <code>layout</code> and <code>widget</code>. Names should
+also respect the Lua variable conventions (case-sensitive, alphanumeric,
+underscore characters and non-numeric first character).</p>
+
+<p>Code:</p>
+
+
+<pre>
+s.mywibox : setup {
+    {
+        id     = <span class="string">"second"</span>,
+        widget = wibox.widget.textbox
+    },
+    {
+        id     = <span class="string">"third"</span>,
+        widget = wibox.widget.textbox
+    },
+    id     = <span class="string">"first"</span>,
+    layout = wibox.layout.fixed.horizontal,
+}
+
+s.mywibox.first.second:set_markup(<span class="string">"changed!"</span>)
+s.mywibox:get_children_by_id(<span class="string">"third"</span>)[<span class="number">1</span>]:set_markup(<span class="string">"Also changed!"</span>)
+</pre>
+
+<h3>Reactive</h3>
+
+<p><img src="../images/gears_reactive.svg" alt="Reactive update"/></p>
+
+<p>Think of reactive programming like Excel/Spreadsheets. You define rules or even
+business logic that will automatically be re-evaluated every time the data it
+uses changes. In the background, this rewrites the function and automatically
+creates all the signal connections. Lua is not a reactive language, so it has it's
+limits and you should read the rules defined in the <a href="../classes/gears.reactive.html#">gears.reactive</a> documentation
+carefully. However, when it works, it is by far the simplest way to update a
+widget defined using the declarative syntax.</p>
+
+<h4>Reactive expressions</h4>
+
+<p>A reactive expression is just a function wrapped by a <a href="../classes/gears.reactive.html#">gears.reactive</a> object. This
+will introspect the content and write all the boilerplate. Note that this <em>only</em> works
+in declarative trees. It <em>cannot</em> be mixed with the imperative API.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_decl_doc_reactive_expr1.svg" alt="Usage example"/></p>
+
+
+
+<pre>
+<span class="comment">-- It's important to set 'enable_auto_signals' to <code>true</code> or it wont work.
+</span><span class="comment">--
+</span><span class="comment">-- Note that most AwesomeWM objects (and most modules) objects can be
+</span><span class="comment">-- used directly as long as they implement the signal <code>property::</code> spec.
+</span><span class="comment">--
+</span><span class="comment">-- So you don't *need* a hub object, but it's safer to use one.
+</span><span class="keyword">local</span> my_hub = gears.object {
+    enable_properties   = <span class="keyword">true</span>,
+    enable_auto_signals = <span class="keyword">true</span>
+}
+
+<span class="comment">-- Better set a default value to avoid weirdness.
+</span>my_hub.some_property = <span class="number">42</span>
+
+<span class="comment">-- This is an example, in practice do this in your
+</span><span class="comment">-- wibar widget declaration tree.
+</span><span class="keyword">local</span> w = wibox.widget {
+    markup = gears.reactive(<span class="keyword">function</span>()
+        <span class="comment">-- Each time <code>my_hub.some_property</code> changes, this will be
+</span>        <span class="comment">-- re-interpreted.
+</span>        <span class="keyword">return</span> <span class="string">'&lt;i&gt;'</span> .. (my_hub.some_property / <span class="number">100</span>) .. <span class="string">'&lt;/i&gt;'</span>
+    <span class="keyword">end</span>),
+    widget = wibox.widget.textbox
+}
+
+<span class="comment">-- This will update the widget text to '&lt;i&gt;13.37&lt;/i&gt;'
+</span>my_hub.some_property = <span class="number">1337</span>
+</pre>
+
+<p>Unlike QML, AwesomeWM also support extracting reactive blocks out of the tree:</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_decl_doc_reactive_expr2.svg" alt="Usage example"/></p>
+
+
+
+<pre>
+<span class="comment">-- For some larger function, it's a good idea to move them out of
+</span><span class="comment">-- the declarative construct for maintainability.
+</span><span class="keyword">local</span> my_reactive_object = gears.reactive(<span class="keyword">function</span>()
+    <span class="keyword">if</span> my_hub.some_property &gt; <span class="number">1000</span> <span class="keyword">then</span>
+        <span class="keyword">return</span> &amp;#<span class="number">34</span>&lt;span fgcolor=<span class="string">'#ffff00'</span>&gt;The world is fine&lt;/span&gt;&amp;#<span class="number">34</span>
+    <span class="keyword">else</span>
+        <span class="keyword">return</span> &amp;#<span class="number">34</span>&lt;span fgcolor=<span class="string">'#ff0000'</span>&gt;The world is on fire&lt;/span&gt;&amp;#<span class="number">34</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>)
+
+<span class="keyword">local</span> w = wibox.widget {
+    markup = my_reactive_object,
+    widget = wibox.widget.textbox
+}
+</pre>
+
+<h4>Watcher objects</h4>
+
+<p><a href="../classes/gears.watcher.html#">gears.watcher</a> objects poll files or command at an interval. They do so using
+background threads, so it wont affect performance much. They can be attached
+directly to a widget or used with a <a href="../classes/gears.connection.html#">gears.connection</a> as demonstrated below.
+Using <a href="../classes/gears.connection.html#">gears.connection</a> is preferred when the value is needed by multiple
+widgets (see the CPU graph example later in this document).</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_watcher.svg" alt="Usage example"/></p>
+
+
+
+<pre>
+<span class="comment">-- In this example, the value of energy_full is 89470000 and the value
+</span><span class="comment">-- of energy_now is 85090000. The result will be 95%.
+</span>wibox.widget {
+    value = gears.watcher {
+        files    = {
+            capacity = &amp;#<span class="number">34</span>/sys/class/power_supply/BAT0/energy_full&amp;#<span class="number">34</span>,
+            current  = &amp;#<span class="number">34</span>/sys/class/power_supply/BAT0/energy_now&amp;#<span class="number">34</span>
+        },
+        filter   = <span class="keyword">function</span>(content)
+            <span class="keyword">return</span> <span class="global">tonumber</span>(content.current) / <span class="global">tonumber</span>(content.capacity)
+        <span class="keyword">end</span>,
+        interval = <span class="number">5</span>,
+    },
+    max_value = <span class="number">1</span>,
+    min_value = <span class="number">0</span>,
+    widget    = wibox.widget.progressbar
+}
+</pre>
+
+<h3>Declarative</h3>
+
+<p>The other way to interact with widgets is by creating <a href="../classes/gears.connection.html#">gears.connection</a> objects.
+They can be added in your declarative widget tree like this:</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_decl_doc_connection.svg" alt="Usage example"/></p>
+
+
+
+<pre>
+<span class="keyword">local</span> w = wibox.widget {
+    <span class="comment">-- Get the current cliently focused name.
+</span>    gears.connection {
+        source_class         = client,
+        signal               = &amp;#<span class="number">34</span>focused&amp;#<span class="number">34</span>,
+        source_property      = &amp;#<span class="number">34</span>name&amp;#<span class="number">34</span>,
+        destination_property = &amp;#<span class="number">34</span>text&amp;#<span class="number">34</span>,
+    },
+    widget = wibox.widget.textbox
+}
+</pre>
+
+<p>It is also possible to use them to bind non-widget objects with widgets:</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_decl_doc_connection3.svg" alt="Usage example"/></p>
+
+
+
+<pre>
+<span class="keyword">local</span> w = wibox.widget {
+    gears.connection {
+        source   = gears.timer {
+            timeout   = <span class="number">5</span>,
+            autostart = <span class="keyword">true</span>,
+        },
+        signal   = &amp;#<span class="number">34</span>timeout&amp;#<span class="number">34</span>,
+        callback = <span class="keyword">function</span>(_, parent_widget)
+            parent_widget.text = &amp;#<span class="number">34</span>this will get called every <span class="number">5</span> seconds&amp;#<span class="number">34</span>
+        <span class="keyword">end</span>
+    },
+    widget = wibox.widget.textbox
+}
+</pre>
+
+<p>One useful feature is that when the <a href="../classes/gears.connection.html#">gears.connection</a> has a callback, it has
+direct access to all <code>id</code>s as variables or using <code>get_children_by_id</code>:</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_decl_doc_connection5.svg" alt="Usage example"/></p>
+
+
+
+<pre>
+wibox.widget {
+    {
+        {
+            id        = &amp;#<span class="number">34</span>my_graph&amp;#<span class="number">34</span>,
+            max_value = <span class="number">30</span>,
+            widget    = wibox.widget.graph
+        },
+        {
+            id     = &amp;#<span class="number">34</span>my_label&amp;#<span class="number">34</span>,
+            align  = &amp;#<span class="number">34</span>center&amp;#<span class="number">34</span>,
+            valign = &amp;#<span class="number">34</span>center&amp;#<span class="number">34</span>,
+            widget = wibox.widget.textbox,
+        },
+        layout = wibox.layout.stack
+    },
+    id            = &amp;#<span class="number">34</span>my_progress&amp;#<span class="number">34</span>,
+    max_value     = <span class="number">30</span>,
+    min_value     = <span class="number">0</span>,
+    widget        = wibox.container.radialprogressbar,
+
+    <span class="comment">-- Set the value of all 3 widgets.
+</span>    gears.connection {
+        source          = my_source_object,
+        source_property = &amp;#<span class="number">34</span>value&amp;#<span class="number">34</span>,
+        callback        = <span class="keyword">function</span>(_, _, value)
+            my_graph:add_value(value)
+            my_label.text = value .. &amp;#<span class="number">34</span>mB/s&amp;#<span class="number">34</span>
+            my_progress.value = value
+        <span class="keyword">end</span>
+    },
+}
+</pre>
+
+
 
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
+<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

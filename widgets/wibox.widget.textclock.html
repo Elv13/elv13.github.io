@@ -211,8 +211,11 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.connection.html">gears.connection</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
+  <li><a href="../classes/gears.reactive.html">gears.reactive</a></li>
+  <li><a href="../classes/gears.watcher.html">gears.watcher</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
@@ -278,16 +281,6 @@
  declarative pattern (Both codes are strictly equivalent):</p>
 
 
-
-
-
-
-<pre>
-<span class="keyword">local</span> my_textclock = wibox.widget {
-    format = <span class="string">'%a %b %d, %H:%M'</span>,
-    widget = wibox.widget.textclock
-}
-</pre>
 
 <h2> The GLib DateTime format</h2>
 
@@ -769,7 +762,7 @@
 
 
 
-    <span id=item1572 class="hide_extra">
+    <span id=item1589 class="hide_extra">
     </span>
 
 </dd>
@@ -803,7 +796,7 @@
 
 
 
-    <span id=item1573 class="hide_extra">
+    <span id=item1590 class="hide_extra">
     </span>
 
 </dd>
@@ -826,7 +819,7 @@
 
 
 
-    <span id=item1574 class="hide_extra">
+    <span id=item1591 class="hide_extra">
     </span>
 
 </dd>
@@ -853,7 +846,7 @@
 
 
 
-    <span id=item1575 class="hide_extra">
+    <span id=item1592 class="hide_extra">
     </span>
 
 </dd>
@@ -889,13 +882,13 @@
 
 
      <br />
-     <center id=button1559>
-     <a class="show_more_button" onclick="show_extra('1559')">
+     <center id=button1576>
+     <a class="show_more_button" onclick="show_extra('1576')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1559 class="hide_extra">
+    <span id=item1576 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::markup</code></span>  When the <code>markup</code> value changes.</li>
@@ -937,13 +930,13 @@
 
 
      <br />
-     <center id=button1560>
-     <a class="show_more_button" onclick="show_extra('1560')">
+     <center id=button1577>
+     <a class="show_more_button" onclick="show_extra('1577')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1560 class="hide_extra">
+    <span id=item1577 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::text</code></span>  When the <code>text</code> value changes.</li>
@@ -1020,13 +1013,13 @@ widget{
     </ul>
 
      <br />
-     <center id=button1561>
-     <a class="show_more_button" onclick="show_extra('1561')">
+     <center id=button1578>
+     <a class="show_more_button" onclick="show_extra('1578')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1561 class="hide_extra">
+    <span id=item1578 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::ellipsize</code></span>  When the <code>ellipsize</code> value changes.</li>
@@ -1074,13 +1067,13 @@ widget{
 
 
      <br />
-     <center id=button1562>
-     <a class="show_more_button" onclick="show_extra('1562')">
+     <center id=button1579>
+     <a class="show_more_button" onclick="show_extra('1579')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1562 class="hide_extra">
+    <span id=item1579 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::wrap</code></span>  When the <code>wrap</code> value changes.</li>
@@ -1129,13 +1122,13 @@ widget{
 
 
      <br />
-     <center id=button1563>
-     <a class="show_more_button" onclick="show_extra('1563')">
+     <center id=button1580>
+     <a class="show_more_button" onclick="show_extra('1580')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1563 class="hide_extra">
+    <span id=item1580 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::valign</code></span>  When the <code>valign</code> value changes.</li>
@@ -1184,13 +1177,13 @@ widget{
 
 
      <br />
-     <center id=button1564>
-     <a class="show_more_button" onclick="show_extra('1564')">
+     <center id=button1581>
+     <a class="show_more_button" onclick="show_extra('1581')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1564 class="hide_extra">
+    <span id=item1581 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::align</code></span>  When the <code>align</code> value changes.</li>
@@ -1228,13 +1221,13 @@ widget{
 
 
      <br />
-     <center id=button1565>
-     <a class="show_more_button" onclick="show_extra('1565')">
+     <center id=button1582>
+     <a class="show_more_button" onclick="show_extra('1582')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1565 class="hide_extra">
+    <span id=item1582 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::font</code></span>  When the <code>font</code> value changes.</li>
@@ -1278,7 +1271,7 @@ widget{
 
 
 
-    <span id=item988 class="hide_extra">
+    <span id=item1005 class="hide_extra">
     </span>
 
 </dd>
@@ -1310,7 +1303,7 @@ widget{
 
 
 
-    <span id=item989 class="hide_extra">
+    <span id=item1006 class="hide_extra">
     </span>
 
 </dd>
@@ -1338,7 +1331,7 @@ widget{
 
 
 
-    <span id=item990 class="hide_extra">
+    <span id=item1007 class="hide_extra">
     </span>
 
 </dd>
@@ -1366,7 +1359,7 @@ widget{
 
 
 
-    <span id=item991 class="hide_extra">
+    <span id=item1008 class="hide_extra">
     </span>
 
 </dd>
@@ -1395,7 +1388,7 @@ widget{
 
 
 
-    <span id=item992 class="hide_extra">
+    <span id=item1009 class="hide_extra">
     </span>
 
 </dd>
@@ -1416,7 +1409,7 @@ widget{
 
 
 
-    <span id=item993 class="hide_extra">
+    <span id=item1010 class="hide_extra">
     </span>
 
 </dd>
@@ -1443,7 +1436,7 @@ widget{
 
 
 
-    <span id=item994 class="hide_extra">
+    <span id=item1011 class="hide_extra">
     </span>
 
 </dd>
@@ -1467,7 +1460,7 @@ widget{
 
 
 
-    <span id=item1576 class="hide_extra">
+    <span id=item1593 class="hide_extra">
     </span>
 
 </dd>
@@ -1507,7 +1500,7 @@ widget{
 
 
 
-    <span id=item1566 class="hide_extra">
+    <span id=item1583 class="hide_extra">
     </span>
 
 </dd>
@@ -1548,7 +1541,7 @@ widget{
 
 
 
-    <span id=item1567 class="hide_extra">
+    <span id=item1584 class="hide_extra">
     </span>
 
 </dd>
@@ -1588,7 +1581,7 @@ widget{
 
 
 
-    <span id=item1568 class="hide_extra">
+    <span id=item1585 class="hide_extra">
     </span>
 
 </dd>
@@ -1629,7 +1622,7 @@ widget{
 
 
 
-    <span id=item1569 class="hide_extra">
+    <span id=item1586 class="hide_extra">
     </span>
 
 </dd>
@@ -1675,7 +1668,7 @@ widget{
 
 
 
-    <span id=item1570 class="hide_extra">
+    <span id=item1587 class="hide_extra">
     </span>
 
 </dd>
@@ -1703,7 +1696,7 @@ widget{
 
 
 
-    <span id=item995 class="hide_extra">
+    <span id=item1012 class="hide_extra">
     </span>
 
 </dd>
@@ -1756,7 +1749,7 @@ widget{
 
 
 
-    <span id=item996 class="hide_extra">
+    <span id=item1013 class="hide_extra">
     </span>
 
 </dd>
@@ -1808,7 +1801,7 @@ widget{
 
 
 
-    <span id=item997 class="hide_extra">
+    <span id=item1014 class="hide_extra">
     </span>
 
 </dd>
@@ -1872,7 +1865,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
     </ul>
 
 
-    <span id=item998 class="hide_extra">
+    <span id=item1015 class="hide_extra">
     </span>
 
 </dd>
@@ -1910,7 +1903,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
 
 
 
-    <span id=item999 class="hide_extra">
+    <span id=item1016 class="hide_extra">
     </span>
 
 </dd>
@@ -1942,7 +1935,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
 
 
 
-    <span id=item1000 class="hide_extra">
+    <span id=item1017 class="hide_extra">
     </span>
 
 </dd>
@@ -1975,7 +1968,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
 
 
 
-    <span id=item1001 class="hide_extra">
+    <span id=item1018 class="hide_extra">
     </span>
 
 </dd>
@@ -2000,7 +1993,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
 
 
 
-    <span id=item1571 class="hide_extra">
+    <span id=item1588 class="hide_extra">
     </span>
 
 </dd>
@@ -2031,7 +2024,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
 
 
 
-    <span id=item1002 class="hide_extra">
+    <span id=item1019 class="hide_extra">
     </span>
 
 </dd>
@@ -2058,7 +2051,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
 
 
 
-    <span id=item1003 class="hide_extra">
+    <span id=item1020 class="hide_extra">
     </span>
 
 </dd>
@@ -2155,7 +2148,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
 
 
 
-    <span id=item1004 class="hide_extra">
+    <span id=item1021 class="hide_extra">
     </span>
 
 </dd>
@@ -2252,7 +2245,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
 
 
 
-    <span id=item1005 class="hide_extra">
+    <span id=item1022 class="hide_extra">
     </span>
 
 </dd>
@@ -2331,7 +2324,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
 
 
 
-    <span id=item1006 class="hide_extra">
+    <span id=item1023 class="hide_extra">
     </span>
 
 </dd>
@@ -2410,7 +2403,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
 
 
 
-    <span id=item1007 class="hide_extra">
+    <span id=item1024 class="hide_extra">
     </span>
 
 </dd>
@@ -2421,7 +2414,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
+<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

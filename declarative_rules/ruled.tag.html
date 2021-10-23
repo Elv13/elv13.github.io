@@ -209,8 +209,11 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.connection.html">gears.connection</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
+  <li><a href="../classes/gears.reactive.html">gears.reactive</a></li>
+  <li><a href="../classes/gears.watcher.html">gears.watcher</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
@@ -526,6 +529,15 @@ tag.connect_signal(<span class="string">"request::rules"</span>, <span class="ke
 
 <span class="comment">-- Both xterm client should share the same fallback tag.
 </span>awful.spawn(<span class="string">"xterm"</span>)
+awful.spawn(<span class="string">"xterm"</span>)
+
+<span class="comment">-- Move the mouse to screen 2, where it can create the tag.
+</span>mouse.coords {
+    x = screen[<span class="number">4</span>].geometry.x + <span class="number">10</span>,
+    y = screen[<span class="number">4</span>].geometry.y + <span class="number">10</span>,
+}
+
+awful.spawn(<span class="string">"kcalc"</span>)
 awful.spawn(<span class="string">"xterm"</span>)
 </pre>
 
@@ -873,7 +885,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item949 class="hide_extra">
+    <span id=item966 class="hide_extra">
     </span>
 
 </dd>
@@ -903,7 +915,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item950 class="hide_extra">
+    <span id=item967 class="hide_extra">
     </span>
 
 </dd>
@@ -928,7 +940,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item951 class="hide_extra">
+    <span id=item968 class="hide_extra">
     </span>
 
 </dd>
@@ -953,7 +965,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item952 class="hide_extra">
+    <span id=item969 class="hide_extra">
     </span>
 
 </dd>
@@ -978,7 +990,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item953 class="hide_extra">
+    <span id=item970 class="hide_extra">
     </span>
 
 </dd>
@@ -1021,7 +1033,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item954 class="hide_extra">
+    <span id=item971 class="hide_extra">
     </span>
 
 </dd>
@@ -1048,7 +1060,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item955 class="hide_extra">
+    <span id=item972 class="hide_extra">
     </span>
 
 </dd>
@@ -1078,7 +1090,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item956 class="hide_extra">
+    <span id=item973 class="hide_extra">
     </span>
 
 </dd>
@@ -1113,7 +1125,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item957 class="hide_extra">
+    <span id=item974 class="hide_extra">
     </span>
 
 </dd>
@@ -1141,7 +1153,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item958 class="hide_extra">
+    <span id=item975 class="hide_extra">
     </span>
 
 </dd>
@@ -1165,7 +1177,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item959 class="hide_extra">
+    <span id=item976 class="hide_extra">
     </span>
 
 </dd>
@@ -1190,7 +1202,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item960 class="hide_extra">
+    <span id=item977 class="hide_extra">
     </span>
 
 </dd>
@@ -1215,7 +1227,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item961 class="hide_extra">
+    <span id=item978 class="hide_extra">
     </span>
 
 </dd>
@@ -1240,7 +1252,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item962 class="hide_extra">
+    <span id=item979 class="hide_extra">
     </span>
 
 </dd>
@@ -1265,7 +1277,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item963 class="hide_extra">
+    <span id=item980 class="hide_extra">
     </span>
 
 </dd>
@@ -1290,7 +1302,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item964 class="hide_extra">
+    <span id=item981 class="hide_extra">
     </span>
 
 </dd>
@@ -1317,7 +1329,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item965 class="hide_extra">
+    <span id=item982 class="hide_extra">
     </span>
 
 </dd>
@@ -1344,7 +1356,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item966 class="hide_extra">
+    <span id=item983 class="hide_extra">
     </span>
 
 </dd>
@@ -1371,7 +1383,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item967 class="hide_extra">
+    <span id=item984 class="hide_extra">
     </span>
 
 </dd>
@@ -1401,7 +1413,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item968 class="hide_extra">
+    <span id=item985 class="hide_extra">
     </span>
 
 </dd>
@@ -1425,7 +1437,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item969 class="hide_extra">
+    <span id=item986 class="hide_extra">
     </span>
 
 </dd>
@@ -1448,7 +1460,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item970 class="hide_extra">
+    <span id=item987 class="hide_extra">
     </span>
 
 </dd>
@@ -1474,7 +1486,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item971 class="hide_extra">
+    <span id=item988 class="hide_extra">
     </span>
 
 </dd>
@@ -1496,7 +1508,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 
 
 
-    <span id=item972 class="hide_extra">
+    <span id=item989 class="hide_extra">
     </span>
 
 </dd>
@@ -1507,7 +1519,7 @@ awful.spawn(<span class="string">"kcalc"</span>)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
+<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

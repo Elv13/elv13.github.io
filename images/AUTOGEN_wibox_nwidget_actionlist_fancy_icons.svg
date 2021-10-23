@@ -51,7 +51,7 @@
 <clipPath id="clip1">
   <path d="M 4 4 L 17.5 4 L 17.5 18 L 4 18 Z M 4 4 "/>
 </clipPath>
-<image id="image11" width="22" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAIAAABL1vtsAAAABmJLR0QA/wD/AP+gvaeTAAAAQUlEQVQ4jWM0NzdnoAwwUah/1AhqG8H4//9/4lVbWFhgMWI0XQw/I1hwSZw4cQKrOGbSwGkE1lSE1dzBERbDxggAF2YLHQjOKHUAAAAASUVORK5CYII="/>
+<image id="image14" width="22" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAIAAABL1vtsAAAABmJLR0QA/wD/AP+gvaeTAAAAQUlEQVQ4jWM0NzdnoAwwUah/1AhqG8H4//9/4lVbWFhgMWI0XQw/I1hwSZw4cQKrOGbSwGkE1lSE1dzBERbDxggAF2YLHQjOKHUAAAAASUVORK5CYII="/>
 <clipPath id="clip2">
   <path d="M 22.5 8 L 56.5 8 L 56.5 19 L 22.5 19 Z M 22.5 8 "/>
 </clipPath>
@@ -74,10 +74,10 @@
   <path d="M 197.5 16 L 231.5 16 L 231.5 18 L 197.5 18 Z M 197.5 16 "/>
 </clipPath>
 </defs>
-<g id="surface8">
+<g id="surface11">
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(38.039216%,50.588235%,100%);fill-opacity:0.490196;" d="M 0 0 L 260 0 L 260 24 L 0 24 Z M 0 0 "/>
 <g clip-path="url(#clip1)" clip-rule="nonzero">
-<use xlink:href="#image11" transform="matrix(0.613636,0,0,0.613636,4,4)"/>
+<use xlink:href="#image14" transform="matrix(0.613636,0,0,0.613636,4,4)"/>
 </g>
 <g clip-path="url(#clip2)" clip-rule="nonzero">
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
@@ -93,7 +93,7 @@
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 22.5 16.96875 L 56.5 16.96875 L 56.5 17.5 L 22.5 17.5 Z M 22.5 16.96875 "/>
 </g>
 <g clip-path="url(#clip4)" clip-rule="nonzero">
-<use xlink:href="#image11" transform="matrix(0.613636,0,0,0.613636,92,4)"/>
+<use xlink:href="#image14" transform="matrix(0.613636,0,0,0.613636,92,4)"/>
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph0-6" x="110.5" y="15.90332"/>
@@ -108,7 +108,7 @@
 </g>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 86 0 L 87 0 L 87 24 L 86 24 Z M 86 0 "/>
 <g clip-path="url(#clip6)" clip-rule="nonzero">
-<use xlink:href="#image11" transform="matrix(0.613636,0,0,0.613636,179,4)"/>
+<use xlink:href="#image14" transform="matrix(0.613636,0,0,0.613636,179,4)"/>
 </g>
 <g clip-path="url(#clip7)" clip-rule="nonzero">
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">

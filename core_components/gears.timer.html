@@ -50,7 +50,6 @@
 <li><a href="#Object_properties">Object properties</a></li>
 <li><a href="#Object_methods">Object methods </a></li>
 <li><a href="#Signals">Signals</a></li>
-<li><a href="#Tables">Tables</a></li>
 </ul>
 
 
@@ -212,8 +211,11 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.connection.html">gears.connection</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
+  <li><a href="../classes/gears.reactive.html">gears.reactive</a></li>
+  <li><a href="../classes/gears.watcher.html">gears.watcher</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
@@ -368,9 +370,59 @@ gears.timer {
       <td colspan="2" class="summary">The timer is started.</td>
     </tr>
     <tr>
+      <td class="shortname" ><a href="#wake_up">wake_up</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">Emit "timeout" if the timer is past due when resuming.</td>
+    </tr>
+    <tr>
       <td class="shortname" ><a href="#timeout">timeout</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
       <td colspan="2" class="summary">The timer timeout value.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#randomized">randomized</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">Randomize the length of the first iteration.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#start_at">start_at</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">When the timer starts.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#stop_at">stop_at</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">When the timer stops.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#elapsed">elapsed</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">Nunber of seconds since the timer started.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#remaining">remaining</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">Number of seconds until the next timeout.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#initial_delay">initial_delay</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">Number of seconds before the normal timeout cycle begins.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#count">count</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">The number of timeouts since the timer started.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#iterations">iterations</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">Number of timeouts before auto-stopping.</td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#single_shot">single_shot</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
+      <td colspan="2" class="summary">Trigger this timer a single time then stop.</td>
     </tr>
 </table>
 <h2><a href="#Object_methods">Object methods </a></h2>
@@ -395,6 +447,27 @@ gears.timer {
         <span class="summarytype"></span>
       </td>
       <td colspan="2" class="summary">Restart the timer.</td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#realign">:realign <span class='function_args'> <b>(</b><b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Re-align the timer.</td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#snooze">:snooze <span class='function_args'> <b>(</b>delay<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Snooze (mute) the timer for a number of seconds.</td>
+    </tr>
+    <tr>
+      <td class="name" >
+        <a href="#delay">:delay <span class='function_args'> <b>(</b>delay<b>)</b></span></a>
+        <span class="summarytype"></span>
+      </td>
+      <td colspan="2" class="summary">Add a delay before the next timeout.</td>
     </tr>
     <tr>
       <td class="name" >
@@ -447,14 +520,11 @@ gears.timer {
       </td>
       <td colspan="2" class="summary">When the timer had a timeout event.</td>
     </tr>
-</table>
-<h2><a href="#Tables">Tables</a></h2>
-<table class="function_list">
     <tr>
       <td class="name" >
-        <a href="#timer">timer</a>
+        <a href="#finished">finished</a>
       </td>
-      <td colspan="2" class="summary">Timer objects.</td>
+      <td colspan="2" class="summary">When the number of timeout reaches the value of <a href="../core_components/gears.timer.html#iterations">iterations</a>.</td>
     </tr>
 </table>
 
@@ -492,6 +562,11 @@ gears.timer {
          Call the callback at timer creation.
          (<em>default</em> false)
         </li>
+        <li><span class="parameter">wake_up</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Track system sleep.
+         (<em>default</em> false)
+        </li>
         <li><span class="parameter">callback</span>
             <span class="types"><span class="type">function</span></span>
          Callback function to connect to the
@@ -503,13 +578,42 @@ gears.timer {
          Run only once then stop.
          (<em>default</em> false)
         </li>
+        <li><span class="parameter">initial_delay</span>
+            <span class="types"><span class="type">number</span></span>
+         The number of seconds before auto-starting
+   the timer. Note that <code>autostart</code> also needs to be set for the timer to
+   actually start.
+         (<em>default</em> 0)
+        </li>
+        <li><span class="parameter">randomized</span>
+            <span class="types"><span class="type">boolean</span></span>
+         Randomize the length of the first
+  iteration (from zero to the value of <a href="../core_components/gears.timer.html#timeout">timeout</a>).
+         (<em>default</em> false)
+        </li>
+        <li><span class="parameter">iterations</span>
+            <span class="types"><span class="type">number</span></span>
+         The number of timeout before stopping
+  the timer.
+         (<em>default</em> nil)
+        </li>
+        <li><span class="parameter">start_at</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Wait until this time to "really" start.
+         (<em>default</em> nil)
+        </li>
+        <li><span class="parameter">stop_at</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Stop the timer at this time.
+         (<em>default</em> nil)
+        </li>
         </li></ul>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="../core_components/gears.timer.html#timer">timer</a></span>
+           <span class="types"><a class="type" href="../core_components/gears.timer.html#gears.timer">timer</a></span>
 
 
 
@@ -519,7 +623,7 @@ gears.timer {
 
 
 
-    <span id=item490 class="hide_extra">
+    <span id=item494 class="hide_extra">
     </span>
 
 </dd>
@@ -558,7 +662,7 @@ gears.timer {
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="../core_components/gears.timer.html#timer">timer</a></span>
+           <span class="types"><a class="type" href="../core_components/gears.timer.html#gears.timer">timer</a></span>
         The new timer object.
     </ol>
 
@@ -570,7 +674,7 @@ gears.timer {
 
 
 
-    <span id=item491 class="hide_extra">
+    <span id=item495 class="hide_extra">
     </span>
 
 </dd>
@@ -606,7 +710,7 @@ gears.timer {
     <h3>Returns:</h3>
     <ol>
 
-           <span class="types"><a class="type" href="../core_components/gears.timer.html#timer">timer</a></span>
+           <span class="types"><a class="type" href="../core_components/gears.timer.html#gears.timer">timer</a></span>
         The new timer object.
     </ol>
 
@@ -618,7 +722,7 @@ gears.timer {
 
 
 
-    <span id=item492 class="hide_extra">
+    <span id=item496 class="hide_extra">
     </span>
 
 </dd>
@@ -640,7 +744,7 @@ gears.timer {
 
 
 
-    <span id=item493 class="hide_extra">
+    <span id=item497 class="hide_extra">
     </span>
 
 </dd>
@@ -670,7 +774,7 @@ gears.timer {
 
 
 
-    <span id=item494 class="hide_extra">
+    <span id=item498 class="hide_extra">
     </span>
 
 </dd>
@@ -694,7 +798,49 @@ gears.timer {
 
 
 
-    <span id=item495 class="hide_extra">
+    <span id=item499 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "wake_up"></a>
+    <strong>wake_up</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Emit "timeout" if the timer is past due when resuming. </p>
+
+<p> If the computer goes to sleep, temporarely freezes or hibernates, it
+ is possible one or many <a href="../core_components/gears.timer.html#timeout">timeout</a> signals wont be sent. If this is
+ detected and this property is set to <code>true</code>, the <a href="../core_components/gears.timer.html#timeout">timeout</a> signal
+ will be emitted. Please note that AwesomeWM down not actively track
+ when the system goes to sleep for portability and resource usage
+ reasons. This property is implemented in a best-effort way.
+
+
+
+
+
+
+     <br />
+     <center id=button500>
+     <a class="show_more_button" onclick="show_extra('500')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item500 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::wake_up</code></span>  When the <a href="../core_components/gears.timer.html#wake_up">wake_up</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../core_components/gears.timer.html#">gears.timer</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../core_components/gears.timer.html#wake_up">wake_up</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
     </span>
 
 </dd>
@@ -707,8 +853,29 @@ gears.timer {
     </span>
     </dt>
     <dd>
-    The timer timeout value.
- <strong>Signal:</strong> property::timeout
+    The timer timeout value. </p>
+
+<p> The value can be a number (in seconds). It can also be a table with
+ the following:</p>
+
+<ul>
+    <li><strong>second</strong>: Number from 0 to 59.</li>
+    <li><strong>minute</strong>: Number from 0 to 59.</li>
+    <li><strong>hour</strong>: Number from 0 to 23.</li>
+    <li><strong>day</strong>: Number from 1 to 31.</li>
+    <li><strong>month</strong>: Number between 1 and 12.</li>
+    <li><strong>year</strong>: Full year number (eg. 2021) starting with the current year.</li>
+    <li><strong>multiplier</strong>: Floating point number to divide/multiply the number of
+    seconds between 2 timeouts.</li>
+</ul>
+
+<p> If the multiplier is lesser than one, then it will make the timeout happen
+ more often. For example, for <code>{second = 0, multiplier = 1/3}</code>, the timeout
+ will occur at <code>:00</code>, <code>:20</code>, <code>:40</code> of every minute.</p>
+
+<p> If the multiplier of greater than 1, then it will happen <em>less</em> often. For
+ example, for <code>{ minute = 0, multiplier = 2}</code>, the timeout will happen every
+ 2 hours.
 
 
 
@@ -716,19 +883,358 @@ gears.timer {
 
 
      <br />
-     <center id=button496>
-     <a class="show_more_button" onclick="show_extra('496')">
+     <center id=button501>
+     <a class="show_more_button" onclick="show_extra('501')">
       Click to display more
      </a>
      </center>
 
-    <span id=item496 class="hide_extra">
+    <span id=item501 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::timeout</code></span>  When the <a href="../core_components/gears.timer.html#timeout">timeout</a> value changes.</li>
            <ul>
              <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../core_components/gears.timer.html#">gears.timer</a></span> The object which changed (useful when connecting many object to the same callback).</li>
              <li><span class="parameter"><code>new_value</code></span> <span class="types"><code>number</code></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "randomized"></a>
+    <strong>randomized</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Randomize the length of the first iteration. </p>
+
+<p> The delay will be between zero and <a href="../core_components/gears.timer.html#timeout">timeout</a>.</p>
+
+<p> This option is useful to distribute the events across
+ time. For example, if there is 2 timers at 5 seconds and
+ one at 10 seconds, then 3 timeout will occur virtually at
+ the same time. If they trigger a lot of code, then it might
+ create visible latency.</p>
+
+<p> Please also note that the opposite can also be resirable.
+ Bundling multiple events at the same time can improve
+ energy usage on laptops by letting them be idle for longer.</p>
+
+<p> Using <code>randomized = true</code> is thus desirable for low latency
+ and <code>randomized = false</code> is better for energy efficiency.
+
+
+
+
+
+
+     <br />
+     <center id=button502>
+     <a class="show_more_button" onclick="show_extra('502')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item502 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::randomized</code></span>  When the <a href="../core_components/gears.timer.html#randomized">randomized</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../core_components/gears.timer.html#">gears.timer</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><code>boolean</code></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "start_at"></a>
+    <strong>start_at</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    When the timer starts. </p>
+
+<p> Note that using this property still requires something to either call
+ <code>:start()</code> or set <code>autostart</code> in the constructor. This tells when timer
+ <em>when</em> to start, not <em>if</em> it is started.</p>
+
+<p> Note that setting this property will reset <a href="../core_components/gears.timer.html#initial_delay">initial_delay</a> as they are
+ both mutually exclusive.
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core_components/gears.timer.html#stop_at">stop_at</a></li>
+         <li><a href="../core_components/gears.timer.html#initial_delay">initial_delay</a></li>
+    </ul>
+
+
+     <br />
+     <center id=button503>
+     <a class="show_more_button" onclick="show_extra('503')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item503 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::start_at</code></span>  When the <a href="../core_components/gears.timer.html#start_at">start_at</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../core_components/gears.timer.html#">gears.timer</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../core_components/gears.timer.html#start_at">start_at</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "stop_at"></a>
+    <strong>stop_at</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    When the timer stops.
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core_components/gears.timer.html#start_at">start_at</a></li>
+         <li><a href="../core_components/gears.timer.html#iterations">iterations</a></li>
+    </ul>
+
+
+     <br />
+     <center id=button504>
+     <a class="show_more_button" onclick="show_extra('504')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item504 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><a href="../core_components/gears.timer.html#finished">finished</a></span>  When the timer stops.</li>
+     </ul>
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::stop_at</code></span>  When the <a href="../core_components/gears.timer.html#stop_at">stop_at</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../core_components/gears.timer.html#">gears.timer</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../core_components/gears.timer.html#start_at">start_at</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "elapsed"></a>
+    <strong>elapsed</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Nunber of seconds since the timer started. </p>
+
+<p> This property is read-only.
+
+
+
+
+
+
+
+    <span id=item505 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "remaining"></a>
+    <strong>remaining</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Number of seconds until the next timeout.
+
+
+
+
+
+
+
+    <span id=item506 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "initial_delay"></a>
+    <strong>initial_delay</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Number of seconds before the normal timeout cycle begins. </p>
+
+<p> The value is in seconds.</p>
+
+<p> Please note that setting this value does <strong>not</strong> start the timer.
+ <code>:start()</code> still needs to be called. Also note that setting this
+ property will reset the <a href="../core_components/gears.timer.html#start_at">start_at</a> property as they are mutually
+ exclusive.
+
+
+
+
+
+
+     <br />
+     <center id=button507>
+     <a class="show_more_button" onclick="show_extra('507')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item507 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::initial_delay</code></span>  When the <a href="../core_components/gears.timer.html#initial_delay">initial_delay</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../core_components/gears.timer.html#">gears.timer</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../core_components/gears.timer.html#initial_delay">initial_delay</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "count"></a>
+    <strong>count</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    The number of timeouts since the timer started. </p>
+
+<p> Note that this property is reset each timer the timer
+ is (re)started.
+
+
+
+
+
+
+
+    <span id=item508 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "iterations"></a>
+    <strong>iterations</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Number of timeouts before auto-stopping.
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core_components/gears.timer.html#single_shot">single_shot</a></li>
+         <li><a href="../core_components/gears.timer.html#finished">finished</a></li>
+    </ul>
+
+
+     <br />
+     <center id=button509>
+     <a class="show_more_button" onclick="show_extra('509')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item509 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><a href="../core_components/gears.timer.html#finished">finished</a></span>  After the timer timeouts the <a href="../core_components/gears.timer.html#iterations">iterations</a> time.</li>
+     </ul>
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::iterations</code></span>  When the <a href="../core_components/gears.timer.html#iterations">iterations</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../core_components/gears.timer.html#">gears.timer</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../core_components/gears.timer.html#iterations">iterations</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "single_shot"></a>
+    <strong>single_shot</strong>
+    <span class="proptype"><span class='summary_type'>boolean</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    Trigger this timer a single time then stop.
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../core_components/gears.timer.html#iterations">iterations</a></li>
+         <li><a href="../core_components/gears.timer.html#finished">finished</a></li>
+    </ul>
+
+
+     <br />
+     <center id=button510>
+     <a class="show_more_button" onclick="show_extra('510')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item510 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><a href="../core_components/gears.timer.html#finished">finished</a></span>  After the timer timeout once.</li>
+     </ul>
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::single_shot</code></span>  When the <a href="../core_components/gears.timer.html#single_shot">single_shot</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../core_components/gears.timer.html#">gears.timer</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../core_components/gears.timer.html#single_shot">single_shot</a></span> The new value affected to the property.</li>
            </ul>
      </ul>
     </span>
@@ -747,7 +1253,10 @@ gears.timer {
     </span>
     </dt>
     <dd>
-    Start the timer.
+    Start the timer. </p>
+
+<p> If there is an <a href="../core_components/gears.timer.html#initial_delay">initial_delay</a> or <a href="../core_components/gears.timer.html#start_at">start_at</a>, the <a href="../core_components/gears.timer.html#start">start</a> signal will
+ be emitted later.
 
 
 
@@ -755,13 +1264,13 @@ gears.timer {
 
 
      <br />
-     <center id=button497>
-     <a class="show_more_button" onclick="show_extra('497')">
+     <center id=button511>
+     <a class="show_more_button" onclick="show_extra('511')">
       Click to display more
      </a>
      </center>
 
-    <span id=item497 class="hide_extra">
+    <span id=item511 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><a href="../core_components/gears.timer.html#start">start</a></span>  </li>
@@ -788,13 +1297,13 @@ gears.timer {
 
 
      <br />
-     <center id=button498>
-     <a class="show_more_button" onclick="show_extra('498')">
+     <center id=button512>
+     <a class="show_more_button" onclick="show_extra('512')">
       Click to display more
      </a>
      </center>
 
-    <span id=item498 class="hide_extra">
+    <span id=item512 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><a href="../core_components/gears.timer.html#stop">stop</a></span>  </li>
@@ -821,18 +1330,108 @@ gears.timer {
 
 
      <br />
-     <center id=button499>
-     <a class="show_more_button" onclick="show_extra('499')">
+     <center id=button513>
+     <a class="show_more_button" onclick="show_extra('513')">
       Click to display more
      </a>
      </center>
 
-    <span id=item499 class="hide_extra">
+    <span id=item513 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><a href="../core_components/gears.timer.html#start">start</a></span>  </li>
           <li><span class="parameter"><a href="../core_components/gears.timer.html#stop">stop</a></span>  </li>
      </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "realign"></a>
+    <strong>:realign <span class='function_args'> <b>(</b><b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Re-align the timer. </p>
+
+<p> When the <a href="../core_components/gears.timer.html#timeout">timeout</a> property is a date/time rather than a number
+ of milliseconds, it is possible the time will shift. This method
+ will reset the timer delay.
+
+
+
+
+
+
+
+    <span id=item514 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "snooze"></a>
+    <strong>:snooze <span class='function_args'> <b>(</b>delay<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Snooze (mute) the timer for a number of seconds. </p>
+
+<p> This will not emit <a href="../core_components/gears.timer.html#timeout">timeout</a> before the delay.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">delay</span>
+            <span class="types"><span class="type">number</span></span>
+         The delay (in seconds).
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../core_components/gears.timer.html#delay">delay</a>
+    </ul>
+
+
+
+    <span id=item515 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "delay"></a>
+    <strong>:delay <span class='function_args'> <b>(</b>delay<b>)</b></span></strong>
+    <span class="proptype"></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Add a delay before the next timeout. </p>
+
+<p> This adds a delay to the remaining number of seconds.
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">delay</span>
+            <span class="types"><span class="type">number</span></span>
+         The delay (in seconds).
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../core_components/gears.timer.html#snooze">snooze</a>
+    </ul>
+
+
+
+    <span id=item516 class="hide_extra">
     </span>
 
 </dd>
@@ -865,7 +1464,7 @@ gears.timer {
 
 
 
-    <span id=item500 class="hide_extra">
+    <span id=item517 class="hide_extra">
     </span>
 
 </dd>
@@ -897,7 +1496,7 @@ gears.timer {
 
 
 
-    <span id=item501 class="hide_extra">
+    <span id=item518 class="hide_extra">
     </span>
 
 </dd>
@@ -936,7 +1535,7 @@ gears.timer {
 
 
 
-    <span id=item502 class="hide_extra">
+    <span id=item519 class="hide_extra">
     </span>
 
 </dd>
@@ -959,7 +1558,7 @@ gears.timer {
 
 
 
-    <span id=item503 class="hide_extra">
+    <span id=item520 class="hide_extra">
     </span>
 
 </dd>
@@ -978,7 +1577,7 @@ gears.timer {
 
 
 
-    <span id=item504 class="hide_extra">
+    <span id=item521 class="hide_extra">
     </span>
 
 </dd>
@@ -997,46 +1596,31 @@ gears.timer {
 
 
 
-    <span id=item505 class="hide_extra">
+    <span id=item522 class="hide_extra">
     </span>
 
 </dd>
-</dl>
-    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
-
-    <dl class="function">
     <dt>
-    <a name = "timer"></a>
-    <strong>timer</strong>
+    <a name = "finished"></a>
+    <strong>finished</strong>
     <span class="baseclass" >
     </span>
     </dt>
     <dd>
-    Timer objects.  This type of object is useful when triggering events repeatedly.
- The timer will emit the "timeout" signal every N seconds, N being the timeout
- value. Note that a started timer will not be garbage collected. Call <code>:stop</code>
- to enable garbage collection.
+    When the number of timeout reaches the value of <a href="../core_components/gears.timer.html#iterations">iterations</a>.
 
-    <h3>Fields:</h3>
+
+
+
+    <h3>See also:</h3>
     <ul>
-        <li><span class="parameter">timeout</span>
-            <span class="types"><span class="type">number</span></span>
-         Interval in seconds to emit the timeout signal.
-   Can be any value, including floating point ones (e.g. 1.5 seconds).
-        </li>
-        <li><span class="parameter">started</span>
-            <span class="types"><span class="type">boolean</span></span>
-         Read-only boolean field indicating if the timer has been
-   started.
-        </li>
+         <li><a href="../core_components/gears.timer.html#single_shot">single_shot</a></li>
+         <li><a href="../core_components/gears.timer.html#iterations">iterations</a></li>
     </ul>
 
 
 
-
-
-
-    <span id=item506 class="hide_extra">
+    <span id=item523 class="hide_extra">
     </span>
 
 </dd>
@@ -1047,7 +1631,7 @@ gears.timer {
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
+<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

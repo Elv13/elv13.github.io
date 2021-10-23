@@ -209,8 +209,11 @@
 <ul class="nowrap">
   <li><a href="../classes/awful.widget.common.html">awful.widget.common</a></li>
   <li><a href="../classes/gears.cache.html">gears.cache</a></li>
+  <li><a href="../classes/gears.connection.html">gears.connection</a></li>
   <li><a href="../classes/gears.history.html">gears.history</a></li>
   <li><a href="../classes/gears.matrix.html">gears.matrix</a></li>
+  <li><a href="../classes/gears.reactive.html">gears.reactive</a></li>
+  <li><a href="../classes/gears.watcher.html">gears.watcher</a></li>
   <li><a href="../classes/menubar.icon_theme.html">menubar.icon_theme</a></li>
   <li><a href="../classes/menubar.index_theme.html">menubar.index_theme</a></li>
   <li><a href="../classes/signals.html">signals</a></li>
@@ -553,6 +556,12 @@
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
       <td colspan="2" class="summary">The path where icons were installed to.</td>
     </tr>
+    <tr>
+      <td class="shortname" ><a href="#mainloop_timestamp"><span class='function_modname'>awesome.</span>mainloop_timestamp</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">A low-precision timestampt of when the last even loop iteration
+ was started.</td>
+    </tr>
 </table>
 
 <br/>
@@ -589,7 +598,7 @@
 
 
 
-    <span id=item149 class="hide_extra">
+    <span id=item152 class="hide_extra">
     </span>
 
 </dd>
@@ -617,7 +626,7 @@
 
 
 
-    <span id=item150 class="hide_extra">
+    <span id=item153 class="hide_extra">
     </span>
 
 </dd>
@@ -644,7 +653,7 @@
 
 
 
-    <span id=item151 class="hide_extra">
+    <span id=item154 class="hide_extra">
     </span>
 
 </dd>
@@ -664,7 +673,7 @@
 
 
 
-    <span id=item152 class="hide_extra">
+    <span id=item155 class="hide_extra">
     </span>
 
 </dd>
@@ -703,7 +712,7 @@
 
 
 
-    <span id=item153 class="hide_extra">
+    <span id=item156 class="hide_extra">
     </span>
 
 </dd>
@@ -724,7 +733,7 @@
 
 
 
-    <span id=item154 class="hide_extra">
+    <span id=item157 class="hide_extra">
     </span>
 
 </dd>
@@ -758,7 +767,7 @@
 
 
 
-    <span id=item155 class="hide_extra">
+    <span id=item158 class="hide_extra">
     </span>
 
 </dd>
@@ -797,7 +806,7 @@
 
 
 
-    <span id=item156 class="hide_extra">
+    <span id=item159 class="hide_extra">
     </span>
 
 </dd>
@@ -826,7 +835,7 @@
 
 
 
-    <span id=item157 class="hide_extra">
+    <span id=item160 class="hide_extra">
     </span>
 
 </dd>
@@ -855,7 +864,7 @@
 
 
 
-    <span id=item158 class="hide_extra">
+    <span id=item161 class="hide_extra">
     </span>
 
 </dd>
@@ -884,7 +893,7 @@
 
 
 
-    <span id=item159 class="hide_extra">
+    <span id=item162 class="hide_extra">
     </span>
 
 </dd>
@@ -913,7 +922,7 @@
 
 
 
-    <span id=item160 class="hide_extra">
+    <span id=item163 class="hide_extra">
     </span>
 
 </dd>
@@ -1000,7 +1009,7 @@
 
 
 
-    <span id=item161 class="hide_extra">
+    <span id=item164 class="hide_extra">
     </span>
 
 </dd>
@@ -1027,7 +1036,7 @@
 
 
 
-    <span id=item162 class="hide_extra">
+    <span id=item165 class="hide_extra">
     </span>
 
 </dd>
@@ -1053,7 +1062,7 @@
 
 
 
-    <span id=item163 class="hide_extra">
+    <span id=item166 class="hide_extra">
     </span>
 
 </dd>
@@ -1080,7 +1089,7 @@
 
 
 
-    <span id=item164 class="hide_extra">
+    <span id=item167 class="hide_extra">
     </span>
 
 </dd>
@@ -1113,7 +1122,7 @@
 
 
 
-    <span id=item165 class="hide_extra">
+    <span id=item168 class="hide_extra">
     </span>
 
 </dd>
@@ -1150,7 +1159,7 @@
 
 
 
-    <span id=item166 class="hide_extra">
+    <span id=item169 class="hide_extra">
     </span>
 
 </dd>
@@ -1180,7 +1189,7 @@
 
 
 
-    <span id=item167 class="hide_extra">
+    <span id=item170 class="hide_extra">
     </span>
 
 </dd>
@@ -1213,7 +1222,7 @@
 
 
 
-    <span id=item168 class="hide_extra">
+    <span id=item171 class="hide_extra">
     </span>
 
 </dd>
@@ -1234,7 +1243,7 @@
 
 
 
-    <span id=item169 class="hide_extra">
+    <span id=item172 class="hide_extra">
     </span>
 
 </dd>
@@ -1256,7 +1265,7 @@
 
 
 
-    <span id=item170 class="hide_extra">
+    <span id=item173 class="hide_extra">
     </span>
 
 </dd>
@@ -1278,7 +1287,7 @@
 
 
 
-    <span id=item171 class="hide_extra">
+    <span id=item174 class="hide_extra">
     </span>
 
 </dd>
@@ -1305,7 +1314,7 @@
 
 
 
-    <span id=item172 class="hide_extra">
+    <span id=item175 class="hide_extra">
     </span>
 
 </dd>
@@ -1327,7 +1336,7 @@
 
 
 
-    <span id=item173 class="hide_extra">
+    <span id=item176 class="hide_extra">
     </span>
 
 </dd>
@@ -1348,7 +1357,7 @@
 
 
 
-    <span id=item174 class="hide_extra">
+    <span id=item177 class="hide_extra">
     </span>
 
 </dd>
@@ -1377,7 +1386,7 @@
 
 
 
-    <span id=item175 class="hide_extra">
+    <span id=item178 class="hide_extra">
     </span>
 
 </dd>
@@ -1409,7 +1418,7 @@
 
 
 
-    <span id=item176 class="hide_extra">
+    <span id=item179 class="hide_extra">
     </span>
 
 </dd>
@@ -1434,7 +1443,7 @@
 
 
 
-    <span id=item177 class="hide_extra">
+    <span id=item180 class="hide_extra">
     </span>
 
 </dd>
@@ -1459,7 +1468,7 @@
 
 
 
-    <span id=item178 class="hide_extra">
+    <span id=item181 class="hide_extra">
     </span>
 
 </dd>
@@ -1484,7 +1493,7 @@
 
 
 
-    <span id=item179 class="hide_extra">
+    <span id=item182 class="hide_extra">
     </span>
 
 </dd>
@@ -1509,7 +1518,7 @@
 
 
 
-    <span id=item180 class="hide_extra">
+    <span id=item183 class="hide_extra">
     </span>
 
 </dd>
@@ -1534,7 +1543,7 @@
 
 
 
-    <span id=item181 class="hide_extra">
+    <span id=item184 class="hide_extra">
     </span>
 
 </dd>
@@ -1558,7 +1567,7 @@
 
 
 
-    <span id=item182 class="hide_extra">
+    <span id=item185 class="hide_extra">
     </span>
 
 </dd>
@@ -1578,7 +1587,7 @@
 
 
 
-    <span id=item183 class="hide_extra">
+    <span id=item186 class="hide_extra">
     </span>
 
 </dd>
@@ -1609,7 +1618,7 @@
  APIs. Testing your patches with mode and the default config is recommended
  before submitting a patch.</p>
 
-<p> You can use the <a href="../core_components/awesome.html#kill">-l</a> command line option or <code>api-level</code> modeline key to set
+<p> You can use the <a href="../core_components/awesome.html#api_level">-l</a> command line option or <code>api-level</code> modeline key to set
  the API level for your <a href="../sample files/rc.lua.html#">rc.lua</a>. This setting is global and read only,
  individual modules cannot set their own API level.
 
@@ -1619,7 +1628,7 @@
 
 
 
-    <span id=item184 class="hide_extra">
+    <span id=item187 class="hide_extra">
     </span>
 
 </dd>
@@ -1639,7 +1648,7 @@
 
 
 
-    <span id=item185 class="hide_extra">
+    <span id=item188 class="hide_extra">
     </span>
 
 </dd>
@@ -1659,7 +1668,7 @@
 
 
 
-    <span id=item186 class="hide_extra">
+    <span id=item189 class="hide_extra">
     </span>
 
 </dd>
@@ -1680,7 +1689,7 @@
 
 
 
-    <span id=item187 class="hide_extra">
+    <span id=item190 class="hide_extra">
     </span>
 
 </dd>
@@ -1700,7 +1709,7 @@
 
 
 
-    <span id=item188 class="hide_extra">
+    <span id=item191 class="hide_extra">
     </span>
 
 </dd>
@@ -1720,7 +1729,7 @@
 
 
 
-    <span id=item189 class="hide_extra">
+    <span id=item192 class="hide_extra">
     </span>
 
 </dd>
@@ -1740,7 +1749,7 @@
 
 
 
-    <span id=item190 class="hide_extra">
+    <span id=item193 class="hide_extra">
     </span>
 
 </dd>
@@ -1760,7 +1769,7 @@
 
 
 
-    <span id=item191 class="hide_extra">
+    <span id=item194 class="hide_extra">
     </span>
 
 </dd>
@@ -1780,7 +1789,31 @@
 
 
 
-    <span id=item192 class="hide_extra">
+    <span id=item195 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "mainloop_timestamp"></a>
+    <strong><span class='function_modname'>awesome.</span>mainloop_timestamp</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    A low-precision timestampt of when the last even loop iteration
+ was started. </p>
+
+<p> It is a floating point number with the number of seconds since
+ 1970.
+
+
+
+
+
+
+
+    <span id=item196 class="hide_extra">
     </span>
 
 </dd>
@@ -1791,7 +1824,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-21 23:33:36 </i>
+<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

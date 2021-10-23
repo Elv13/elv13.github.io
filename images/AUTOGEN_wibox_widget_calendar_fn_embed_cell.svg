@@ -526,13 +526,13 @@
   <path d="M 2 12 C 2 6.476562 6.476562 2 12 2 L 182 2 C 187.523438 2 192 6.476562 192 12 L 192 193 C 192 198.523438 187.523438 203 182 203 L 12 203 C 6.476562 203 2 198.523438 2 193 Z M 2 12 "/>
 </clipPath>
 <clipPath id="clip143">
-  <path d="M 84 153 L 100 153 L 100 164 L 84 164 Z M 84 153 "/>
+  <path d="M 84 153 L 99 153 L 99 164 L 84 164 Z M 84 153 "/>
 </clipPath>
 <clipPath id="clip144">
   <path d="M 2 12 C 2 6.476562 6.476562 2 12 2 L 182 2 C 187.523438 2 192 6.476562 192 12 L 192 193 C 192 198.523438 187.523438 203 182 203 L 12 203 C 6.476562 203 2 198.523438 2 193 Z M 2 12 "/>
 </clipPath>
 <clipPath id="clip145">
-  <path d="M 82 147 L 97 147 C 99.761719 147 102 149.238281 102 152 L 102 170 L 87 170 C 84.238281 170 82 167.761719 82 165 Z M 82 147 "/>
+  <path d="M 82 152 C 82 149.238281 84.238281 147 87 147 L 97 147 C 99.761719 147 102 149.238281 102 152 L 102 165 C 102 167.761719 99.761719 170 97 170 L 87 170 C 84.238281 170 82 167.761719 82 165 Z M 82 152 "/>
 </clipPath>
 <clipPath id="clip146">
   <path d="M 107 147 L 127 147 L 127 170 L 107 170 Z M 107 147 "/>
@@ -547,7 +547,7 @@
   <path d="M 2 12 C 2 6.476562 6.476562 2 12 2 L 182 2 C 187.523438 2 192 6.476562 192 12 L 192 193 C 192 198.523438 187.523438 203 182 203 L 12 203 C 6.476562 203 2 198.523438 2 193 Z M 2 12 "/>
 </clipPath>
 <clipPath id="clip150">
-  <path d="M 107 152 C 107 149.238281 109.238281 147 112 147 L 122 147 C 124.761719 147 127 149.238281 127 152 L 127 165 C 127 167.761719 124.761719 170 122 170 L 112 170 C 109.238281 170 107 167.761719 107 165 Z M 107 152 "/>
+  <path d="M 107 147 L 122 147 C 124.761719 147 127 149.238281 127 152 L 127 170 L 112 170 C 109.238281 170 107 167.761719 107 165 Z M 107 147 "/>
 </clipPath>
 <clipPath id="clip151">
   <path d="M 132 147 L 152 147 L 152 170 L 132 170 Z M 132 147 "/>
@@ -1134,30 +1134,30 @@
 </g>
 <g clip-path="url(#clip141)" clip-rule="nonzero">
 <g clip-path="url(#clip142)" clip-rule="nonzero">
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,59.607843%,0%);fill-opacity:1;" d="M 82 147 L 97 147 C 99.761719 147 102 149.238281 102 152 L 102 170 L 87 170 C 84.238281 170 82 167.761719 82 165 Z M 82 147 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(21.960784%,21.960784%,21.960784%);fill-opacity:1;" d="M 82 152 C 82 149.238281 84.238281 147 87 147 L 97 147 C 99.761719 147 102 149.238281 102 152 L 102 165 C 102 167.761719 99.761719 170 97 170 L 87 170 C 84.238281 170 82 167.761719 82 165 Z M 82 152 "/>
 </g>
 </g>
 <g clip-path="url(#clip143)" clip-rule="nonzero">
 <g clip-path="url(#clip144)" clip-rule="nonzero">
 <g clip-path="url(#clip145)" clip-rule="nonzero">
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph0-9" x="84" y="163.25293"/>
-  <use xlink:href="#glyph0-11" x="92" y="163.25293"/>
+<g style="fill:rgb(60%,60%,60%);fill-opacity:1;">
+  <use xlink:href="#glyph1-3" x="84" y="163.25293"/>
+  <use xlink:href="#glyph1-2" x="92" y="163.25293"/>
 </g>
 </g>
 </g>
 </g>
 <g clip-path="url(#clip146)" clip-rule="nonzero">
 <g clip-path="url(#clip147)" clip-rule="nonzero">
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(21.960784%,21.960784%,21.960784%);fill-opacity:1;" d="M 107 152 C 107 149.238281 109.238281 147 112 147 L 122 147 C 124.761719 147 127 149.238281 127 152 L 127 165 C 127 167.761719 124.761719 170 122 170 L 112 170 C 109.238281 170 107 167.761719 107 165 Z M 107 152 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,59.607843%,0%);fill-opacity:1;" d="M 107 147 L 122 147 C 124.761719 147 127 149.238281 127 152 L 127 170 L 112 170 C 109.238281 170 107 167.761719 107 165 Z M 107 147 "/>
 </g>
 </g>
 <g clip-path="url(#clip148)" clip-rule="nonzero">
 <g clip-path="url(#clip149)" clip-rule="nonzero">
 <g clip-path="url(#clip150)" clip-rule="nonzero">
-<g style="fill:rgb(60%,60%,60%);fill-opacity:1;">
-  <use xlink:href="#glyph1-3" x="109" y="163.25293"/>
-  <use xlink:href="#glyph1-3" x="117" y="163.25293"/>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-9" x="109" y="163.25293"/>
+  <use xlink:href="#glyph0-9" x="117" y="163.25293"/>
 </g>
 </g>
 </g>
