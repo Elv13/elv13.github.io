@@ -336,7 +336,9 @@ h.paused = <span class="keyword">false</span>
       <td class="name" >
         <a href="#gears.history">gears.history <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
       </td>
-      <td colspan="2" class="summary">Create a new history tracking object.</td>
+      <td colspan="2" class="summary">
+        Create a new history tracking object.
+      </td>
     </tr>
 </table>
 <h2><a href="#Object_properties">Object properties</a></h2>
@@ -344,22 +346,30 @@ h.paused = <span class="keyword">false</span>
     <tr>
       <td class="shortname" ><a href="#gears.history.mode">mode</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The history updating mode.</td>
+      <td colspan="2" class="summary">
+        The history updating mode.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#gears.history.maximum_entries">maximum_entries</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The maximum number of entries.</td>
+      <td colspan="2" class="summary">
+        The maximum number of entries.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#gears.history.count">count</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">Count the number of time an entry is used.</td>
+      <td colspan="2" class="summary">
+        Count the number of time an entry is used.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#gears.history.paused">paused</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">Is the history tracking currently paused.</td>
+      <td colspan="2" class="summary">
+        Is the history tracking currently paused.
+      </td>
     </tr>
 </table>
 <h2><a href="#Object_methods">Object methods </a></h2>
@@ -369,77 +379,99 @@ h.paused = <span class="keyword">false</span>
         <a href="#gears.history.resume">:resume <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Resume tracking.</td>
+      <td colspan="2" class="summary">
+        Resume tracking.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.pause">:pause <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Pause tracking.</td>
+      <td colspan="2" class="summary">
+        Pause tracking.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.push">:push <span class='function_args'> <b>(</b>object<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Push an entry to the front (most recent) spot.</td>
+      <td colspan="2" class="summary">
+        Push an entry to the front (most recent) spot.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.remove">:remove <span class='function_args'> <b>(</b>value<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Remove a value.</td>
+      <td colspan="2" class="summary">
+        Remove a value.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.iterate_newest">:iterate_newest <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Create a new iterator that starts with the <strong>newest</strong> entry.</td>
+      <td colspan="2" class="summary">
+        Create a new iterator that starts with the <strong>newest</strong> entry.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.iterate_oldest">:iterate_oldest <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Create a new iterator that starts with the <strong>oldest</strong> entry.</td>
+      <td colspan="2" class="summary">
+        Create a new iterator that starts with the <strong>oldest</strong> entry.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.oldest">:oldest <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
       </td>
-      <td colspan="2" class="summary">Returns the oldest object tracked by this history.</td>
+      <td colspan="2" class="summary">
+        Returns the oldest object tracked by this history.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.newest">:newest <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
       </td>
-      <td colspan="2" class="summary">Returns the newest object tracked by this history.</td>
+      <td colspan="2" class="summary">
+        Returns the newest object tracked by this history.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.pop_newest">:pop_newest <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Pop (remove) the most recent entry.</td>
+      <td colspan="2" class="summary">
+        Pop (remove) the most recent entry.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.pop_oldest">:pop_oldest <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Pop (remove) the least recent entry.</td>
+      <td colspan="2" class="summary">
+        Pop (remove) the least recent entry.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.emit_signal">:emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Emit a signal.</td>
+      <td colspan="1" class="summary">
+        Emit a signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -449,7 +481,9 @@ h.paused = <span class="keyword">false</span>
         <a href="#gears.history.connect_signal">:connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Connect to a signal.</td>
+      <td colspan="1" class="summary">
+        Connect to a signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -459,7 +493,9 @@ h.paused = <span class="keyword">false</span>
         <a href="#gears.history.weak_connect_signal">:weak_connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Connect to a signal weakly.</td>
+      <td colspan="1" class="summary">
+        Connect to a signal weakly.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -471,43 +507,57 @@ h.paused = <span class="keyword">false</span>
       <td class="name" >
         <a href="#gears.history.paused">paused</a>
       </td>
-      <td colspan="2" class="summary">Emitted when the history tracking is paused.</td>
+      <td colspan="2" class="summary">
+        Emitted when the history tracking is paused.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.resumed">resumed</a>
       </td>
-      <td colspan="2" class="summary">Emitted when the history tracking is resumed.</td>
+      <td colspan="2" class="summary">
+        Emitted when the history tracking is resumed.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#request::select">request::select</a>
       </td>
-      <td colspan="2" class="summary">Emitted when the iterator <code>:select()</code> method is called.</td>
+      <td colspan="2" class="summary">
+        Emitted when the iterator <code>:select()</code> method is called.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#entry::ousted">entry::ousted</a>
       </td>
-      <td colspan="2" class="summary">Emitted when an entry is ousted because it exeed the <a href="../classes/gears.history.html#gears.history.maximum_entries">maximum_entries</a>.</td>
+      <td colspan="2" class="summary">
+        Emitted when an entry is ousted because it exeed the <a href="../classes/gears.history.html#gears.history.maximum_entries">maximum_entries</a>.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#entry::pushed">entry::pushed</a>
       </td>
-      <td colspan="2" class="summary">Emitted when an object is pushed to the history.</td>
+      <td colspan="2" class="summary">
+        Emitted when an object is pushed to the history.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#entry::added">entry::added</a>
       </td>
-      <td colspan="2" class="summary">Emitted when an object is added to the history.</td>
+      <td colspan="2" class="summary">
+        Emitted when an object is added to the history.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#entry::removed">entry::removed</a>
       </td>
-      <td colspan="2" class="summary">Emitted when an object is removed from the stack.</td>
+      <td colspan="2" class="summary">
+        Emitted when an object is removed from the stack.
+      </td>
     </tr>
 </table>
 <h2><a href="#Iterator_methods">Iterator methods </a></h2>
@@ -517,42 +567,54 @@ h.paused = <span class="keyword">false</span>
         <a href="#gears.history.next">:next <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Move the iterator to the next element.</td>
+      <td colspan="2" class="summary">
+        Move the iterator to the next element.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.previous">:previous <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Move the iterator to the previous element.</td>
+      <td colspan="2" class="summary">
+        Move the iterator to the previous element.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.select_next">:select_next <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Move the iterator to the next element and select it.</td>
+      <td colspan="2" class="summary">
+        Move the iterator to the next element and select it.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.select_previous">:select_previous <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Move the iterator to the previous element and select it.</td>
+      <td colspan="2" class="summary">
+        Move the iterator to the previous element and select it.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.select">:select <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Emit the <a href="../classes/gears.history.html#request::select">request::select</a> signal on the current object.</td>
+      <td colspan="2" class="summary">
+        Emit the <a href="../classes/gears.history.html#request::select">request::select</a> signal on the current object.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#gears.history.reset">:reset <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Reset the iterator position.</td>
+      <td colspan="2" class="summary">
+        Reset the iterator position.
+      </td>
     </tr>
 </table>
 <h2><a href="#Iterator_properties">Iterator properties </a></h2>
@@ -560,22 +622,30 @@ h.paused = <span class="keyword">false</span>
     <tr>
       <td class="shortname" ><a href="#gears.history.current">current</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>N/A</span></td>
-      <td colspan="2" class="summary">The current entry.</td>
+      <td colspan="2" class="summary">
+        The current entry.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#gears.history.index">index</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The current index.</td>
+      <td colspan="2" class="summary">
+        The current index.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#gears.history.rotate">rotate</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">Start over when <code>:next()</code> or <code>:previous()</code> reach the end.</td>
+      <td colspan="2" class="summary">
+        Start over when <code>:next()</code> or <code>:previous()</code> reach the end.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#gears.history.filter">filter</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>function</span></td>
-      <td colspan="2" class="summary">The filter function used to skip some entries.</td>
+      <td colspan="2" class="summary">
+        The filter function used to skip some entries.
+      </td>
     </tr>
 </table>
 
@@ -620,7 +690,7 @@ h.paused = <span class="keyword">false</span>
 
 
 
-    <span id=item2698 class="hide_extra">
+    <span id=item2712 class="hide_extra">
     </span>
 
 </dd>
@@ -654,7 +724,7 @@ h.paused = <span class="keyword">false</span>
 
 
 
-    <span id=item2699 class="hide_extra">
+    <span id=item2713 class="hide_extra">
     </span>
 
 </dd>
@@ -680,7 +750,7 @@ h.paused = <span class="keyword">false</span>
 
 
 
-    <span id=item2700 class="hide_extra">
+    <span id=item2714 class="hide_extra">
     </span>
 
 </dd>
@@ -700,7 +770,7 @@ h.paused = <span class="keyword">false</span>
 
 
 
-    <span id=item2701 class="hide_extra">
+    <span id=item2715 class="hide_extra">
     </span>
 
 </dd>
@@ -722,7 +792,7 @@ h.paused = <span class="keyword">false</span>
 
 
 
-    <span id=item2702 class="hide_extra">
+    <span id=item2716 class="hide_extra">
     </span>
 
 </dd>
@@ -749,7 +819,7 @@ h.paused = <span class="keyword">false</span>
 
 
 
-    <span id=item2703 class="hide_extra">
+    <span id=item2717 class="hide_extra">
     </span>
 
 </dd>
@@ -772,7 +842,7 @@ h.paused = <span class="keyword">false</span>
 
 
 
-    <span id=item2704 class="hide_extra">
+    <span id=item2718 class="hide_extra">
     </span>
 
 </dd>
@@ -814,7 +884,7 @@ client.connect_signal("manage" , my_history.push )
 
 
 
-    <span id=item2705 class="hide_extra">
+    <span id=item2719 class="hide_extra">
     </span>
 
 </dd>
@@ -853,7 +923,7 @@ client.connect_signal("manage" , my_history.push )
 
 
 
-    <span id=item2706 class="hide_extra">
+    <span id=item2720 class="hide_extra">
     </span>
 
 </dd>
@@ -902,7 +972,7 @@ my_history.paused = <span class="keyword">false</span></pre>
     </ul>
 
 
-    <span id=item2707 class="hide_extra">
+    <span id=item2721 class="hide_extra">
     </span>
 
 </dd>
@@ -951,7 +1021,7 @@ my_history.paused = <span class="keyword">false</span></pre>
     </ul>
 
 
-    <span id=item2708 class="hide_extra">
+    <span id=item2722 class="hide_extra">
     </span>
 
 </dd>
@@ -976,7 +1046,7 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
-    <span id=item2709 class="hide_extra">
+    <span id=item2723 class="hide_extra">
     </span>
 
 </dd>
@@ -1001,7 +1071,7 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
-    <span id=item2710 class="hide_extra">
+    <span id=item2724 class="hide_extra">
     </span>
 
 </dd>
@@ -1024,7 +1094,7 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
-    <span id=item2711 class="hide_extra">
+    <span id=item2725 class="hide_extra">
     </span>
 
 </dd>
@@ -1047,7 +1117,7 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
-    <span id=item2712 class="hide_extra">
+    <span id=item2726 class="hide_extra">
     </span>
 
 </dd>
@@ -1080,7 +1150,7 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
-    <span id=item2713 class="hide_extra">
+    <span id=item2727 class="hide_extra">
     </span>
 
 </dd>
@@ -1112,7 +1182,7 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
-    <span id=item2714 class="hide_extra">
+    <span id=item2728 class="hide_extra">
     </span>
 
 </dd>
@@ -1151,7 +1221,7 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
-    <span id=item2715 class="hide_extra">
+    <span id=item2729 class="hide_extra">
     </span>
 
 </dd>
@@ -1174,7 +1244,7 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
-    <span id=item2716 class="hide_extra">
+    <span id=item2730 class="hide_extra">
     </span>
 
 </dd>
@@ -1193,7 +1263,7 @@ my_history.paused = <span class="keyword">false</span></pre>
 
 
 
-    <span id=item2717 class="hide_extra">
+    <span id=item2731 class="hide_extra">
     </span>
 
 </dd>
@@ -1232,7 +1302,7 @@ end)
 
 
 
-    <span id=item2718 class="hide_extra">
+    <span id=item2732 class="hide_extra">
     </span>
 
 </dd>
@@ -1257,7 +1327,7 @@ end)
 
 
 
-    <span id=item2719 class="hide_extra">
+    <span id=item2733 class="hide_extra">
     </span>
 
 </dd>
@@ -1288,7 +1358,7 @@ end)
 
 
 
-    <span id=item2720 class="hide_extra">
+    <span id=item2734 class="hide_extra">
     </span>
 
 </dd>
@@ -1319,7 +1389,7 @@ end)
 
 
 
-    <span id=item2721 class="hide_extra">
+    <span id=item2735 class="hide_extra">
     </span>
 
 </dd>
@@ -1344,7 +1414,7 @@ end)
 
 
 
-    <span id=item2722 class="hide_extra">
+    <span id=item2736 class="hide_extra">
     </span>
 
 </dd>
@@ -1382,7 +1452,7 @@ end)
 
 
 
-    <span id=item2723 class="hide_extra">
+    <span id=item2737 class="hide_extra">
     </span>
 
 </dd>
@@ -1410,7 +1480,7 @@ end)
 
 
 
-    <span id=item2724 class="hide_extra">
+    <span id=item2738 class="hide_extra">
     </span>
 
 </dd>
@@ -1437,7 +1507,7 @@ end)
 
 
 
-    <span id=item2725 class="hide_extra">
+    <span id=item2739 class="hide_extra">
     </span>
 
 </dd>
@@ -1464,7 +1534,7 @@ end)
 
 
 
-    <span id=item2726 class="hide_extra">
+    <span id=item2740 class="hide_extra">
     </span>
 
 </dd>
@@ -1487,7 +1557,7 @@ end)
 
 
 
-    <span id=item2727 class="hide_extra">
+    <span id=item2741 class="hide_extra">
     </span>
 
 </dd>
@@ -1507,7 +1577,7 @@ end)
 
 
 
-    <span id=item2728 class="hide_extra">
+    <span id=item2742 class="hide_extra">
     </span>
 
 </dd>
@@ -1533,7 +1603,7 @@ end)
 
 
 
-    <span id=item2729 class="hide_extra">
+    <span id=item2743 class="hide_extra">
     </span>
 
 </dd>
@@ -1553,7 +1623,7 @@ end)
 
 
 
-    <span id=item2730 class="hide_extra">
+    <span id=item2744 class="hide_extra">
     </span>
 
 </dd>
@@ -1573,7 +1643,7 @@ end)
 
 
 
-    <span id=item2731 class="hide_extra">
+    <span id=item2745 class="hide_extra">
     </span>
 
 </dd>
@@ -1625,7 +1695,7 @@ end)
 
 
 
-    <span id=item2732 class="hide_extra">
+    <span id=item2746 class="hide_extra">
     </span>
 
 </dd>
@@ -1636,7 +1706,7 @@ end)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
+<i style="float:right;">Last updated 2021-11-13 00:24:24 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

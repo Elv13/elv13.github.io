@@ -505,15 +505,69 @@ awful.popup {
       <td class="name" >
         <a href="#awful.widget.tasklist">awful.widget.tasklist <span class='function_args'> <b>(</b>args, filter, buttons, style[, update_function[, base_widget]]<b>)</b></span></a>
       </td>
-      <td colspan="2" class="summary">Create a new tasklist widget.</td>
+      <td colspan="2" class="summary">
+        Create a new tasklist widget.
+      </td>
     </tr>
 </table>
 <h2><a href="#Object_properties">Object properties</a></h2>
 <table class="function_list">
     <tr>
+      <td class="shortname" ><a href="#count">count</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">
+        The current number of clients.
+        <span class="chips--readonly">read only</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#base_layout">base_layout</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>wibox.layout</span></td>
+      <td colspan="2" class="summary">
+        Set the tasklist layout.
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#screen">screen</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>screen</span></td>
+      <td colspan="2" class="summary">
+        The tasklist screen.
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#filter">filter</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>function</span></td>
+      <td colspan="2" class="summary">
+        A function to narrow down the list of clients.
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#update_function">update_function</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>function</span></td>
+      <td colspan="2" class="summary">
+        A function called when the tasklist is refreshed.
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#widget_template">widget_template</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">
+        A template for creating the client widgets.
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#source">source</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>function</span></td>
+      <td colspan="2" class="summary">
+        A function to gather the clients to display.
+      </td>
+    </tr>
+    <tr>
       <td class="shortname" ><a href="#children">children</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="1" class="summary">Get or set the children elements.</td>
+      <td colspan="1" class="summary">
+        Get or set the children elements.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -521,7 +575,9 @@ awful.popup {
     <tr>
       <td class="shortname" ><a href="#all_children">all_children</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="1" class="summary">Get all direct and indirect children widgets.</td>
+      <td colspan="1" class="summary">
+        Get all direct and indirect children widgets.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -529,7 +585,9 @@ awful.popup {
     <tr>
       <td class="shortname" ><a href="#forced_height">forced_height</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> nil</span></td>
-      <td colspan="1" class="summary">Force a widget height.</td>
+      <td colspan="1" class="summary">
+        Force a widget height.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -537,7 +595,9 @@ awful.popup {
     <tr>
       <td class="shortname" ><a href="#forced_width">forced_width</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> nil</span></td>
-      <td colspan="1" class="summary">Force a widget width.</td>
+      <td colspan="1" class="summary">
+        Force a widget width.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -545,7 +605,9 @@ awful.popup {
     <tr>
       <td class="shortname" ><a href="#opacity">opacity</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="1" class="summary">The widget opacity (transparency).</td>
+      <td colspan="1" class="summary">
+        The widget opacity (transparency).
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -553,7 +615,9 @@ awful.popup {
     <tr>
       <td class="shortname" ><a href="#visible">visible</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="1" class="summary">The widget visibility.</td>
+      <td colspan="1" class="summary">
+        The widget visibility.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -561,7 +625,9 @@ awful.popup {
     <tr>
       <td class="shortname" ><a href="#buttons">buttons</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="1" class="summary">The widget buttons.</td>
+      <td colspan="1" class="summary">
+        The widget buttons.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -574,7 +640,9 @@ awful.popup {
         <a href="#setup">:setup <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Set a declarative widget hierarchy description.</td>
+      <td colspan="1" class="summary">
+        Set a declarative widget hierarchy description.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -584,7 +652,9 @@ awful.popup {
         <a href="#add_button">:add_button <span class='function_args'> <b>(</b>button<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Add a new <a href="../input_handling/awful.button.html#">awful.button</a> to this widget.</td>
+      <td colspan="1" class="summary">
+        Add a new <a href="../input_handling/awful.button.html#">awful.button</a> to this widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -594,8 +664,10 @@ awful.popup {
         <a href="#emit_signal_recursive">:emit_signal_recursive <span class='function_args'> <b>(</b>signal_name, ...<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Emit a signal and ensure all parent widgets in the hierarchies also
- forward the signal.</td>
+      <td colspan="1" class="summary">
+        Emit a signal and ensure all parent widgets in the hierarchies also
+ forward the signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -605,7 +677,9 @@ awful.popup {
         <a href="#emit_signal">:emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Emit a signal.</td>
+      <td colspan="1" class="summary">
+        Emit a signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -615,7 +689,9 @@ awful.popup {
         <a href="#connect_signal">:connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Connect to a signal.</td>
+      <td colspan="1" class="summary">
+        Connect to a signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -625,7 +701,9 @@ awful.popup {
         <a href="#weak_connect_signal">:weak_connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Connect to a signal weakly.</td>
+      <td colspan="1" class="summary">
+        Connect to a signal weakly.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -637,7 +715,9 @@ awful.popup {
       <td class="name" >
         <a href="#widget::layout_changed">widget::layout_changed</a>
       </td>
-      <td colspan="1" class="summary">When the layout (size) change.</td>
+      <td colspan="1" class="summary">
+        When the layout (size) change.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -646,7 +726,9 @@ awful.popup {
       <td class="name" >
         <a href="#widget::redraw_needed">widget::redraw_needed</a>
       </td>
-      <td colspan="1" class="summary">When the widget content changed.</td>
+      <td colspan="1" class="summary">
+        When the widget content changed.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -655,7 +737,9 @@ awful.popup {
       <td class="name" >
         <a href="#button::press">button::press</a>
       </td>
-      <td colspan="1" class="summary">When a mouse button is pressed over the widget.</td>
+      <td colspan="1" class="summary">
+        When a mouse button is pressed over the widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -664,7 +748,9 @@ awful.popup {
       <td class="name" >
         <a href="#button::release">button::release</a>
       </td>
-      <td colspan="1" class="summary">When a mouse button is released over the widget.</td>
+      <td colspan="1" class="summary">
+        When a mouse button is released over the widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -673,7 +759,9 @@ awful.popup {
       <td class="name" >
         <a href="#mouse::enter">mouse::enter</a>
       </td>
-      <td colspan="1" class="summary">When the mouse enter a widget.</td>
+      <td colspan="1" class="summary">
+        When the mouse enter a widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -682,7 +770,9 @@ awful.popup {
       <td class="name" >
         <a href="#mouse::leave">mouse::leave</a>
       </td>
-      <td colspan="1" class="summary">When the mouse leave a widget.</td>
+      <td colspan="1" class="summary">
+        When the mouse leave a widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -693,207 +783,289 @@ awful.popup {
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_fg_normal">beautiful.tasklist_fg_normal</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> pattern</span></td>
-      <td colspan="2" class="summary">The default foreground (text) color.</td>
+      <td colspan="2" class="summary">
+        The default foreground (text) color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_bg_normal">beautiful.tasklist_bg_normal</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> pattern</span></td>
-      <td colspan="2" class="summary">The default background color.</td>
+      <td colspan="2" class="summary">
+        The default background color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_fg_focus">beautiful.tasklist_fg_focus</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> pattern</span></td>
-      <td colspan="2" class="summary">The focused client foreground (text) color.</td>
+      <td colspan="2" class="summary">
+        The focused client foreground (text) color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_bg_focus">beautiful.tasklist_bg_focus</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> pattern</span></td>
-      <td colspan="2" class="summary">The focused client background color.</td>
+      <td colspan="2" class="summary">
+        The focused client background color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_fg_urgent">beautiful.tasklist_fg_urgent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> pattern</span></td>
-      <td colspan="2" class="summary">The urgent clients foreground (text) color.</td>
+      <td colspan="2" class="summary">
+        The urgent clients foreground (text) color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_bg_urgent">beautiful.tasklist_bg_urgent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> pattern</span></td>
-      <td colspan="2" class="summary">The urgent clients background color.</td>
+      <td colspan="2" class="summary">
+        The urgent clients background color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_fg_minimize">beautiful.tasklist_fg_minimize</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> pattern</span></td>
-      <td colspan="2" class="summary">The minimized clients foreground (text) color.</td>
+      <td colspan="2" class="summary">
+        The minimized clients foreground (text) color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_bg_minimize">beautiful.tasklist_bg_minimize</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> pattern</span></td>
-      <td colspan="2" class="summary">The minimized clients background color.</td>
+      <td colspan="2" class="summary">
+        The minimized clients background color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_bg_image_normal">beautiful.tasklist_bg_image_normal</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The elements default background image.</td>
+      <td colspan="2" class="summary">
+        The elements default background image.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_bg_image_focus">beautiful.tasklist_bg_image_focus</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The focused client background image.</td>
+      <td colspan="2" class="summary">
+        The focused client background image.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_bg_image_urgent">beautiful.tasklist_bg_image_urgent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The urgent clients background image.</td>
+      <td colspan="2" class="summary">
+        The urgent clients background image.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_bg_image_minimize">beautiful.tasklist_bg_image_minimize</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The minimized clients background image.</td>
+      <td colspan="2" class="summary">
+        The minimized clients background image.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_disable_icon">beautiful.tasklist_disable_icon</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">Disable the tasklist client icons.</td>
+      <td colspan="2" class="summary">
+        Disable the tasklist client icons.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_disable_task_name">beautiful.tasklist_disable_task_name</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">Disable the tasklist client titles.</td>
+      <td colspan="2" class="summary">
+        Disable the tasklist client titles.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_plain_task_name">beautiful.tasklist_plain_task_name</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">Disable the extra tasklist client property notification icons.</td>
+      <td colspan="2" class="summary">
+        Disable the extra tasklist client property notification icons.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_sticky">beautiful.tasklist_sticky</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">Extra tasklist client property notification icon for clients with the sticky property set.</td>
+      <td colspan="2" class="summary">
+        Extra tasklist client property notification icon for clients with the sticky property set.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_ontop">beautiful.tasklist_ontop</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">Extra tasklist client property notification icon for clients with the ontop property set.</td>
+      <td colspan="2" class="summary">
+        Extra tasklist client property notification icon for clients with the ontop property set.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_above">beautiful.tasklist_above</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">Extra tasklist client property notification icon for clients with the above property set.</td>
+      <td colspan="2" class="summary">
+        Extra tasklist client property notification icon for clients with the above property set.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_below">beautiful.tasklist_below</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">Extra tasklist client property notification icon for clients with the below property set.</td>
+      <td colspan="2" class="summary">
+        Extra tasklist client property notification icon for clients with the below property set.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_floating">beautiful.tasklist_floating</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">Extra tasklist client property notification icon for clients with the floating property set.</td>
+      <td colspan="2" class="summary">
+        Extra tasklist client property notification icon for clients with the floating property set.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_maximized">beautiful.tasklist_maximized</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">Extra tasklist client property notification icon for clients with the maximized property set.</td>
+      <td colspan="2" class="summary">
+        Extra tasklist client property notification icon for clients with the maximized property set.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_maximized_horizontal">beautiful.tasklist_maximized_horizontal</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">Extra tasklist client property notification icon for clients with the maximized_horizontal property set.</td>
+      <td colspan="2" class="summary">
+        Extra tasklist client property notification icon for clients with the maximized_horizontal property set.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_maximized_vertical">beautiful.tasklist_maximized_vertical</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">Extra tasklist client property notification icon for clients with the maximized_vertical property set.</td>
-    </tr>
-    <tr>
-      <td class="shortname" ><a href="#beautiful.tasklist_font">beautiful.tasklist_font</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The tasklist font.</td>
+      <td colspan="2" class="summary">
+        Extra tasklist client property notification icon for clients with the maximized_vertical property set.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_align">beautiful.tasklist_align</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The focused client alignment.</td>
+      <td colspan="2" class="summary">
+        The focused client alignment.
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#beautiful.tasklist_font">beautiful.tasklist_font</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
+      <td colspan="2" class="summary">
+        The tasklist font.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_font_focus">beautiful.tasklist_font_focus</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The focused client title alignment.</td>
+      <td colspan="2" class="summary">
+        The focused client title alignment.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_font_minimized">beautiful.tasklist_font_minimized</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The minimized clients font.</td>
+      <td colspan="2" class="summary">
+        The minimized clients font.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_font_urgent">beautiful.tasklist_font_urgent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The urgent clients font.</td>
+      <td colspan="2" class="summary">
+        The urgent clients font.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_spacing">beautiful.tasklist_spacing</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The space between the tasklist elements.</td>
+      <td colspan="2" class="summary">
+        The space between the tasklist elements.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_shape">beautiful.tasklist_shape</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The default tasklist elements shape.</td>
+      <td colspan="2" class="summary">
+        The default tasklist elements shape.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_shape_border_width">beautiful.tasklist_shape_border_width</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The default tasklist elements border width.</td>
+      <td colspan="2" class="summary">
+        The default tasklist elements border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_shape_border_color">beautiful.tasklist_shape_border_color</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> color</span></td>
-      <td colspan="2" class="summary">The default tasklist elements border color.</td>
+      <td colspan="2" class="summary">
+        The default tasklist elements border color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_shape_focus">beautiful.tasklist_shape_focus</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The focused client shape.</td>
+      <td colspan="2" class="summary">
+        The focused client shape.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_shape_border_width_focus">beautiful.tasklist_shape_border_width_focus</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The focused client border width.</td>
+      <td colspan="2" class="summary">
+        The focused client border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_shape_border_color_focus">beautiful.tasklist_shape_border_color_focus</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> color</span></td>
-      <td colspan="2" class="summary">The focused client border color.</td>
+      <td colspan="2" class="summary">
+        The focused client border color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_shape_minimized">beautiful.tasklist_shape_minimized</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The minimized clients shape.</td>
+      <td colspan="2" class="summary">
+        The minimized clients shape.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_shape_border_width_minimized">beautiful.tasklist_shape_border_width_minimized</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The minimized clients border width.</td>
+      <td colspan="2" class="summary">
+        The minimized clients border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_shape_border_color_minimized">beautiful.tasklist_shape_border_color_minimized</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> color</span></td>
-      <td colspan="2" class="summary">The minimized clients border color.</td>
+      <td colspan="2" class="summary">
+        The minimized clients border color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_shape_urgent">beautiful.tasklist_shape_urgent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The urgent clients shape.</td>
+      <td colspan="2" class="summary">
+        The urgent clients shape.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_shape_border_width_urgent">beautiful.tasklist_shape_border_width_urgent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The urgent clients border width.</td>
+      <td colspan="2" class="summary">
+        The urgent clients border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.tasklist_shape_border_color_urgent">beautiful.tasklist_shape_border_color_urgent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> color</span></td>
-      <td colspan="2" class="summary">The urgent clients border color.</td>
+      <td colspan="2" class="summary">
+        The urgent clients border color.
+      </td>
     </tr>
 </table>
 <h2><a href="#List_source_functions">List source functions</a></h2>
@@ -902,7 +1074,9 @@ awful.popup {
       <td class="name" >
         <a href="#awful.widget.tasklist.source.all_clients"><span class='function_modname'>awful.widget.tasklist.</span>source.all_clients</a>
       </td>
-      <td colspan="2" class="summary">Get all the clients in an undefined order.</td>
+      <td colspan="2" class="summary">
+        Get all the clients in an undefined order.
+      </td>
     </tr>
 </table>
 <h2><a href="#List_filters">List filters</a></h2>
@@ -911,31 +1085,41 @@ awful.popup {
       <td class="name" >
         <a href="#awful.widget.tasklist.filter.allscreen"><span class='function_modname'>awful.widget.tasklist.</span>filter.allscreen</a>
       </td>
-      <td colspan="2" class="summary">Filtering function to include all clients.</td>
+      <td colspan="2" class="summary">
+        Filtering function to include all clients.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.widget.tasklist.filter.alltags"><span class='function_modname'>awful.widget.tasklist.</span>filter.alltags</a>
       </td>
-      <td colspan="2" class="summary">Filtering function to include the clients from all tags on the screen.</td>
+      <td colspan="2" class="summary">
+        Filtering function to include the clients from all tags on the screen.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.widget.tasklist.filter.currenttags"><span class='function_modname'>awful.widget.tasklist.</span>filter.currenttags</a>
       </td>
-      <td colspan="2" class="summary">Filtering function to include only the clients from currently selected tags.</td>
+      <td colspan="2" class="summary">
+        Filtering function to include only the clients from currently selected tags.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.widget.tasklist.filter.minimizedcurrenttags"><span class='function_modname'>awful.widget.tasklist.</span>filter.minimizedcurrenttags</a>
       </td>
-      <td colspan="2" class="summary">Filtering function to include only the minimized clients from currently selected tags.</td>
+      <td colspan="2" class="summary">
+        Filtering function to include only the minimized clients from currently selected tags.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.widget.tasklist.filter.focused"><span class='function_modname'>awful.widget.tasklist.</span>filter.focused</a>
       </td>
-      <td colspan="2" class="summary">Filtering function to include only the currently focused client.</td>
+      <td colspan="2" class="summary">
+        Filtering function to include only the currently focused client.
+      </td>
     </tr>
 </table>
 
@@ -968,7 +1152,7 @@ awful.popup {
 
         <ul>
         <li><span class="parameter">screen</span>
-            <span class="types"><span class="type">screen</span></span>
+            <span class="types"><a class="type" href="../widgets/awful.widget.tasklist.html#screen">screen</a></span>
          The screen to draw tasklist for.
         </li>
         <li><span class="parameter">filter</span>
@@ -1091,7 +1275,7 @@ awful.popup {
 
          (<em>default</em> nil)
         </li>
-        <li><span class="parameter">style.tasklist_disable_icon</span>
+        <li><span class="parameter">style.disable_icon</span>
             <span class="types"><span class="type">boolean</span></span>
 
 
@@ -1286,7 +1470,7 @@ awful.popup {
          <strong>DEPRECATED</strong> use args.update_function
         </li>
         <li><span class="parameter">base_widget</span>
-         <strong>DEPRECATED</strong> use args.base_widget
+         <strong>DEPRECATED</strong> use args.base_layout
         </li>
     </ul>
 
@@ -1295,7 +1479,7 @@ awful.popup {
 
 
 
-    <span id=item1182 class="hide_extra">
+    <span id=item1189 class="hide_extra">
     </span>
 
 </dd>
@@ -1303,6 +1487,506 @@ awful.popup {
     <h2 class="section-header "><a name="Object_properties"></a>Object properties</h2>
 
     <dl class="function">
+    <dt>
+    <a name = "count"></a>
+    <strong>count</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+         &middot read only
+    </span>
+    </dt>
+    <dd>
+    The current number of clients.
+
+    <h3>Type constraints:</h3>
+    <ul>
+        <li><span class="parameter">The</span>
+            <span class="types"><span class="type">number</span></span>
+         number of client.
+        </li>
+    </ul>
+
+
+
+
+
+     <br />
+     <center id=button1190>
+     <a class="show_more_button" onclick="show_extra('1190')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1190 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::count</code></span>  When the <a href="../widgets/awful.widget.tasklist.html#count">count</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/awful.widget.tasklist.html#">awful.widget.tasklist</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><code>The</code></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "base_layout"></a>
+    <strong>base_layout</strong>
+    <span class="proptype"><span class='summary_type'>wibox.layout</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+
+<p>Set the tasklist layout. </p>
+
+<p> This can be used to change the layout based on the number of clients:</p>
+
+
+
+<p><img src="../images/AUTOGEN_sequences_client_tasklist_layout1.svg" alt="Usage example"/></p>
+
+
+<pre><code> local tasklist = awful.widget.tasklist {
+     screen      = s,
+     filter      = awful.widget.tasklist.filter.currenttags,
+     base_layout = wibox.widget {
+         spacing = 2,
+         layout  = wibox.layout.fixed.horizontal,
+     },
+     buttons     = {
+         awful.button({ }, 1, function (c)
+             c:activate {
+                 context = "tasklist",
+                 action  = "toggle_minimization"
+             }
+         end),
+         awful.button({ }, 3, function() awful.menu.client_list { theme = { width = 250 } } end),
+         awful.button({ }, 4, function() awful.client.focus.byidx(-1) end),
+         awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
+     },
+ }
+
+ tasklist:connect_signal("property::count", function(self)
+     local count = self.count
+
+     if count &gt; 5 and not self.is_grid then
+         self.base_layout = wibox.widget {
+             forced_num_rows = 2,
+             homogeneous     = true,
+             expand          = true,
+             spacing         = 2,
+             layout          = wibox.layout.grid.horizontal
+         }
+
+         self.is_grid = true
+     elseif count &lt;= 5 and self.is_grid then
+         self.base_layout = wibox.widget {
+             spacing = 2,
+             layout  = wibox.layout.fixed.horizontal
+         }
+
+         self.is_grid = false
+     end
+ end)
+
+ -- Spawn 5 clients.
+ for i=1, 5 do
+     awful.spawn("Client #"..i)
+ end
+
+ -- Spawn another client.
+ awful.spawn("Client #6")
+
+ -- Kill 3 clients.
+ for _=1, 3 do
+     client.get()[1]:kill()
+ end
+</code></pre>
+
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../widget_layouts/wibox.layout.flex.html#horizontal">wibox.layout.flex.horizontal</a>
+    </ul>
+
+
+     <br />
+     <center id=button1191>
+     <a class="show_more_button" onclick="show_extra('1191')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1191 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::base_layout</code></span>  When the <a href="../widgets/awful.widget.tasklist.html#base_layout">base_layout</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/awful.widget.tasklist.html#">awful.widget.tasklist</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/awful.widget.tasklist.html#base_layout">base_layout</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "screen"></a>
+    <strong>screen</strong>
+    <span class="proptype"><span class='summary_type'>screen</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+
+<p>The tasklist screen. </p>
+
+
+
+<p><img src="../images/AUTOGEN_sequences_client_tasklist_screen1.svg" alt="Usage example"/></p>
+
+
+<pre><code> local tasklist = awful.widget.tasklist {
+     screen      = screen[1],
+     filter      = awful.widget.tasklist.filter.currenttags,
+     buttons     = {
+         awful.button({ }, 1, function (c)
+             c:activate {
+                 context = "tasklist",
+                 action  = "toggle_minimization"
+             }
+         end),
+         awful.button({ }, 3, function() awful.menu.client_list { theme = { width = 250 } } end),
+         awful.button({ }, 4, function() awful.client.focus.byidx(-1) end),
+         awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
+     },
+ }
+
+ -- Spawn 5 clients on screen 1.
+ for i= 1, 5 do
+     awful.spawn("Client #"..i, {screen = screen[1]})
+ end
+
+ -- Spawn 3 clients on screen 2.
+ for i=1, 3 do
+     awful.spawn("Client #"..(5+i), {screen = screen[2]})
+ end
+
+ -- Change the tastlist screen.
+ tasklist.screen = screen[2]
+</code></pre>
+
+
+
+
+
+
+
+
+
+     <br />
+     <center id=button1192>
+     <a class="show_more_button" onclick="show_extra('1192')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1192 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::screen</code></span>  When the <a href="../core_components/screen.html#">screen</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/awful.widget.tasklist.html#">awful.widget.tasklist</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../core_components/screen.html#">screen</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "filter"></a>
+    <strong>filter</strong>
+    <span class="proptype"><span class='summary_type'>function</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+
+<p>A function to narrow down the list of clients. </p>
+
+
+
+<p><img src="../images/AUTOGEN_sequences_client_tasklist_custom_filter1.svg" alt="Usage example"/></p>
+
+
+<pre><code> local tasklist = awful.widget.tasklist {
+     screen      = s,
+     filter      = awful.widget.tasklist.filter.currenttags,
+     base_layout = wibox.widget {
+         spacing = 2,
+         layout  = wibox.layout.fixed.horizontal,
+     },
+ }
+
+ -- Spawn 5 clients on screen 1.
+ for i= 1, 5 do
+     awful.spawn("Client #"..i, {screen = screen[1]})
+ end
+
+ -- Spawn 3 clients on screen 2.
+ for i=1, 3 do
+     awful.spawn("Client #"..(5+i), {screen = screen[2]})
+ end
+
+ -- Set the filter to allscreen.
+ tasklist.filter = awful.widget.tasklist.filter.allscreen
+
+ -- Create a pointless demo filter to only have clients
+ -- with off numbers in the name. Because... example!
+ tasklist.filter = function(c, screen) -- luacheck: no unused args
+     return c.name:match("[13579]") and c or nil
+ end
+</code></pre>
+
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../widgets/awful.widget.tasklist.html#awful.widget.tasklist.filter.allscreen">awful.widget.tasklist.filter.allscreen</a></li>
+         <li><a href="../widgets/awful.widget.tasklist.html#awful.widget.tasklist.filter.alltags">awful.widget.tasklist.filter.alltags</a></li>
+         <li><a href="../widgets/awful.widget.tasklist.html#awful.widget.tasklist.filter.currenttags">awful.widget.tasklist.filter.currenttags</a></li>
+         <li><a href="../widgets/awful.widget.tasklist.html#awful.widget.tasklist.filter.minimizedcurrenttags">awful.widget.tasklist.filter.minimizedcurrenttags</a></li>
+         <li><a href="../widgets/awful.widget.tasklist.html#awful.widget.tasklist.filter.focused">awful.widget.tasklist.filter.focused</a></li>
+    </ul>
+
+
+     <br />
+     <center id=button1193>
+     <a class="show_more_button" onclick="show_extra('1193')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1193 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::filter</code></span>  When the <a href="../widgets/awful.widget.tasklist.html#filter">filter</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/awful.widget.tasklist.html#">awful.widget.tasklist</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/awful.widget.tasklist.html#filter">filter</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "update_function"></a>
+    <strong>update_function</strong>
+    <span class="proptype"><span class='summary_type'>function</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+    A function called when the tasklist is refreshed. </p>
+
+<p> This is a very low level API, prefer <a href="../widgets/awful.widget.tasklist.html#widget_template">widget_template</a> whenever
+ you can.
+
+
+
+
+
+
+     <br />
+     <center id=button1194>
+     <a class="show_more_button" onclick="show_extra('1194')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1194 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::update_function</code></span>  When the <a href="../widgets/awful.widget.tasklist.html#update_function">update_function</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/awful.widget.tasklist.html#">awful.widget.tasklist</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/awful.widget.tasklist.html#update_function">update_function</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "widget_template"></a>
+    <strong>widget_template</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+
+<p>A template for creating the client widgets. </p>
+
+
+
+<p><img src="../images/AUTOGEN_sequences_client_tasklist_widget_template1.svg" alt="Usage example"/></p>
+
+
+<pre><code> local tasklist = awful.widget.tasklist {
+     screen      = s,
+     filter      = awful.widget.tasklist.filter.currenttags,
+     base_layout = wibox.widget {
+         spacing = 2,
+         layout  = wibox.layout.fixed.horizontal,
+     },
+ }
+
+ -- Change the widget template.
+ tasklist.widget_template = {
+     {
+         {
+             {
+                 {
+                     id     = "icon_role",
+                     widget = wibox.widget.imagebox,
+                 },
+                 margins = 2,
+                 widget  = wibox.container.margin,
+             },
+             {
+                 id     = "text_role",
+                 widget = wibox.widget.textbox,
+             },
+             layout = wibox.layout.fixed.horizontal,
+         },
+         left  = 10,
+         right = 10,
+         widget = wibox.container.margin
+     },
+     id     = "background_role",
+     widget = wibox.container.background,
+ }
+</code></pre>
+
+
+
+
+
+
+
+
+
+     <br />
+     <center id=button1195>
+     <a class="show_more_button" onclick="show_extra('1195')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1195 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::widget_template</code></span>  When the <a href="../widgets/awful.widget.tasklist.html#widget_template">widget_template</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/awful.widget.tasklist.html#">awful.widget.tasklist</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/awful.widget.tasklist.html#widget_template">widget_template</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "source"></a>
+    <strong>source</strong>
+    <span class="proptype"><span class='summary_type'>function</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+    </span>
+    </dt>
+    <dd>
+
+<p>A function to gather the clients to display. </p>
+
+
+
+<p><img src="../images/AUTOGEN_sequences_client_tasklist_custom_source1.svg" alt="Usage example"/></p>
+
+
+<pre><code> local tasklist = awful.widget.tasklist {
+     screen      = s,
+     filter      = awful.widget.tasklist.filter.currenttags,
+     base_layout = wibox.widget {
+         spacing = 2,
+         layout  = wibox.layout.fixed.horizontal,
+     },
+ }
+
+ -- Spawn 5 clients on screen 1.
+ for i= 1, 5 do
+     awful.spawn("Client #"..i, {screen = screen[1]})
+ end
+
+ -- Make 2 clients floating.
+ client.get()[2].floating = true
+ client.get()[4].floating = true
+
+ -- Only select the floating clients for the tasklist screen.
+ tasklist.source = function(screen)
+     local ret = {}
+
+     for _, c in ipairs(screen.clients) do
+         if c.floating then
+             table.insert(ret, c)
+         end
+     end
+
+     return ret
+ end
+</code></pre>
+
+
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../widgets/awful.widget.tasklist.html#awful.widget.tasklist.source.all_clients">awful.widget.tasklist.source.all_clients</a>
+    </ul>
+
+
+     <br />
+     <center id=button1196>
+     <a class="show_more_button" onclick="show_extra('1196')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1196 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::source</code></span>  When the <a href="../widgets/awful.widget.tasklist.html#source">source</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/awful.widget.tasklist.html#">awful.widget.tasklist</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><a href="../widgets/awful.widget.tasklist.html#source">source</a></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
     <dt>
     <a name = "children"></a>
     <strong>children</strong>
@@ -1327,7 +2011,7 @@ awful.popup {
 
 
 
-    <span id=item1183 class="hide_extra">
+    <span id=item1197 class="hide_extra">
     </span>
 
 </dd>
@@ -1358,7 +2042,7 @@ awful.popup {
 
 
 
-    <span id=item1184 class="hide_extra">
+    <span id=item1198 class="hide_extra">
     </span>
 
 </dd>
@@ -1386,7 +2070,7 @@ awful.popup {
 
 
 
-    <span id=item1185 class="hide_extra">
+    <span id=item1199 class="hide_extra">
     </span>
 
 </dd>
@@ -1414,7 +2098,7 @@ awful.popup {
 
 
 
-    <span id=item1186 class="hide_extra">
+    <span id=item1200 class="hide_extra">
     </span>
 
 </dd>
@@ -1443,7 +2127,7 @@ awful.popup {
 
 
 
-    <span id=item1187 class="hide_extra">
+    <span id=item1201 class="hide_extra">
     </span>
 
 </dd>
@@ -1464,7 +2148,7 @@ awful.popup {
 
 
 
-    <span id=item1188 class="hide_extra">
+    <span id=item1202 class="hide_extra">
     </span>
 
 </dd>
@@ -1491,7 +2175,7 @@ awful.popup {
 
 
 
-    <span id=item1189 class="hide_extra">
+    <span id=item1203 class="hide_extra">
     </span>
 
 </dd>
@@ -1523,7 +2207,7 @@ awful.popup {
 
 
 
-    <span id=item1190 class="hide_extra">
+    <span id=item1204 class="hide_extra">
     </span>
 
 </dd>
@@ -1551,7 +2235,7 @@ awful.popup {
 
 
 
-    <span id=item1191 class="hide_extra">
+    <span id=item1205 class="hide_extra">
     </span>
 
 </dd>
@@ -1586,7 +2270,7 @@ awful.popup {
 
 
 
-    <span id=item1192 class="hide_extra">
+    <span id=item1206 class="hide_extra">
     </span>
 
 </dd>
@@ -1619,7 +2303,7 @@ awful.popup {
 
 
 
-    <span id=item1193 class="hide_extra">
+    <span id=item1207 class="hide_extra">
     </span>
 
 </dd>
@@ -1651,7 +2335,7 @@ awful.popup {
 
 
 
-    <span id=item1194 class="hide_extra">
+    <span id=item1208 class="hide_extra">
     </span>
 
 </dd>
@@ -1690,7 +2374,7 @@ awful.popup {
 
 
 
-    <span id=item1195 class="hide_extra">
+    <span id=item1209 class="hide_extra">
     </span>
 
 </dd>
@@ -1721,7 +2405,7 @@ awful.popup {
 
 
 
-    <span id=item1196 class="hide_extra">
+    <span id=item1210 class="hide_extra">
     </span>
 
 </dd>
@@ -1748,7 +2432,7 @@ awful.popup {
 
 
 
-    <span id=item1197 class="hide_extra">
+    <span id=item1211 class="hide_extra">
     </span>
 
 </dd>
@@ -1845,7 +2529,7 @@ awful.popup {
 
 
 
-    <span id=item1198 class="hide_extra">
+    <span id=item1212 class="hide_extra">
     </span>
 
 </dd>
@@ -1942,7 +2626,7 @@ awful.popup {
 
 
 
-    <span id=item1199 class="hide_extra">
+    <span id=item1213 class="hide_extra">
     </span>
 
 </dd>
@@ -2021,7 +2705,7 @@ awful.popup {
 
 
 
-    <span id=item1200 class="hide_extra">
+    <span id=item1214 class="hide_extra">
     </span>
 
 </dd>
@@ -2100,7 +2784,7 @@ awful.popup {
 
 
 
-    <span id=item1201 class="hide_extra">
+    <span id=item1215 class="hide_extra">
     </span>
 
 </dd>
@@ -2116,7 +2800,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The default foreground (text) color.
+    The default foreground (text) color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_fg_normal.svg" alt="Usage example"/>
 
 
 
@@ -2126,9 +2814,15 @@ awful.popup {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, col <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span> } <span class="keyword">do</span>
+    beautiful.tasklist_fg_normal = col
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1202 class="hide_extra">
+    <span id=item1216 class="hide_extra">
     </span>
 
 </dd>
@@ -2140,7 +2834,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The default background color.
+    The default background color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_bg_normal.svg" alt="Usage example"/>
 
 
 
@@ -2150,9 +2848,25 @@ awful.popup {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> grad = gears.color {
+    <span class="global">type</span>  = <span class="string">"linear"</span>,
+    from  = { <span class="number">0</span>, <span class="number">0</span> },
+    to    = { <span class="number">0</span>, <span class="number">22</span> },
+    stops = {
+        { <span class="number">0</span>, <span class="string">"#ff0000"</span> },
+        { <span class="number">1</span>, <span class="string">"#0000ff"</span> },
+    }
+}
+
+<span class="keyword">for</span> _, col <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span>, grad } <span class="keyword">do</span>
+    beautiful.tasklist_bg_normal = col
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1203 class="hide_extra">
+    <span id=item1217 class="hide_extra">
     </span>
 
 </dd>
@@ -2164,7 +2878,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The focused client foreground (text) color.
+    The focused client foreground (text) color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_fg_focus.svg" alt="Usage example"/>
 
 
 
@@ -2174,9 +2892,15 @@ awful.popup {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, col <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span> } <span class="keyword">do</span>
+    beautiful.tasklist_fg_focus = col
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1204 class="hide_extra">
+    <span id=item1218 class="hide_extra">
     </span>
 
 </dd>
@@ -2188,7 +2912,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The focused client background color.
+    The focused client background color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_bg_focus.svg" alt="Usage example"/>
 
 
 
@@ -2198,9 +2926,25 @@ awful.popup {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> grad = gears.color {
+    <span class="global">type</span>  = <span class="string">"linear"</span>,
+    from  = { <span class="number">0</span>, <span class="number">0</span> },
+    to    = { <span class="number">0</span>, <span class="number">22</span> },
+    stops = {
+        { <span class="number">0</span>, <span class="string">"#ff0000"</span> },
+        { <span class="number">1</span>, <span class="string">"#0000ff"</span> },
+    }
+}
+
+<span class="keyword">for</span> _, col <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span>, grad } <span class="keyword">do</span>
+    beautiful.tasklist_bg_focus = col
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1205 class="hide_extra">
+    <span id=item1219 class="hide_extra">
     </span>
 
 </dd>
@@ -2212,7 +2956,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The urgent clients foreground (text) color.
+    The urgent clients foreground (text) color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_fg_urgent.svg" alt="Usage example"/>
 
 
 
@@ -2222,9 +2970,15 @@ awful.popup {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, col <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span> } <span class="keyword">do</span>
+    beautiful.tasklist_fg_urgent = col
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1206 class="hide_extra">
+    <span id=item1220 class="hide_extra">
     </span>
 
 </dd>
@@ -2236,7 +2990,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The urgent clients background color.
+    The urgent clients background color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_bg_urgent.svg" alt="Usage example"/>
 
 
 
@@ -2246,9 +3004,25 @@ awful.popup {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> grad = gears.color {
+    <span class="global">type</span>  = <span class="string">"linear"</span>,
+    from  = { <span class="number">0</span>, <span class="number">0</span> },
+    to    = { <span class="number">0</span>, <span class="number">22</span> },
+    stops = {
+        { <span class="number">0</span>, <span class="string">"#ff0000"</span> },
+        { <span class="number">1</span>, <span class="string">"#0000ff"</span> },
+    }
+}
+
+<span class="keyword">for</span> _, col <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span>, grad } <span class="keyword">do</span>
+    beautiful.tasklist_bg_urgent = col
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1207 class="hide_extra">
+    <span id=item1221 class="hide_extra">
     </span>
 
 </dd>
@@ -2260,7 +3034,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The minimized clients foreground (text) color.
+    The minimized clients foreground (text) color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_fg_minimize.svg" alt="Usage example"/>
 
 
 
@@ -2270,9 +3048,15 @@ awful.popup {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, col <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span> } <span class="keyword">do</span>
+    beautiful.tasklist_fg_minimize = col
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1208 class="hide_extra">
+    <span id=item1222 class="hide_extra">
     </span>
 
 </dd>
@@ -2284,7 +3068,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The minimized clients background color.
+    The minimized clients background color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_bg_minimize.svg" alt="Usage example"/>
 
 
 
@@ -2294,9 +3082,25 @@ awful.popup {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> grad = gears.color {
+    <span class="global">type</span>  = <span class="string">"linear"</span>,
+    from  = { <span class="number">0</span>, <span class="number">0</span> },
+    to    = { <span class="number">0</span>, <span class="number">22</span> },
+    stops = {
+        { <span class="number">0</span>, <span class="string">"#ff0000"</span> },
+        { <span class="number">1</span>, <span class="string">"#0000ff"</span> },
+    }
+}
+
+<span class="keyword">for</span> _, col <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span>, grad } <span class="keyword">do</span>
+    beautiful.tasklist_bg_minimize = col
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1209 class="hide_extra">
+    <span id=item1223 class="hide_extra">
     </span>
 
 </dd>
@@ -2316,7 +3120,7 @@ awful.popup {
 
 
 
-    <span id=item1210 class="hide_extra">
+    <span id=item1224 class="hide_extra">
     </span>
 
 </dd>
@@ -2336,7 +3140,7 @@ awful.popup {
 
 
 
-    <span id=item1211 class="hide_extra">
+    <span id=item1225 class="hide_extra">
     </span>
 
 </dd>
@@ -2356,7 +3160,7 @@ awful.popup {
 
 
 
-    <span id=item1212 class="hide_extra">
+    <span id=item1226 class="hide_extra">
     </span>
 
 </dd>
@@ -2376,7 +3180,7 @@ awful.popup {
 
 
 
-    <span id=item1213 class="hide_extra">
+    <span id=item1227 class="hide_extra">
     </span>
 
 </dd>
@@ -2388,15 +3192,25 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    Disable the tasklist client icons.
+    Disable the tasklist client icons. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_disable_icon.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, value <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="keyword">true</span>, <span class="keyword">false</span> } <span class="keyword">do</span>
+    beautiful.tasklist_disable_icon = value
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1214 class="hide_extra">
+    <span id=item1228 class="hide_extra">
     </span>
 
 </dd>
@@ -2408,15 +3222,25 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    Disable the tasklist client titles.
+    Disable the tasklist client titles. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_disable_task_name.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, value <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="keyword">true</span>, <span class="keyword">false</span> } <span class="keyword">do</span>
+    beautiful.tasklist_disable_task_name = value
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1215 class="hide_extra">
+    <span id=item1229 class="hide_extra">
     </span>
 
 </dd>
@@ -2430,15 +3254,25 @@ awful.popup {
     <dd>
     Disable the extra tasklist client property notification icons. </p>
 
-<p> See the <a href="#status_icons">Status icons</a> section for more details.
+<p> See the <a href="#status_icons">Status icons</a> section for more details.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_plain_task_name.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, value <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="keyword">true</span>, <span class="keyword">false</span> } <span class="keyword">do</span>
+    beautiful.tasklist_plain_task_name = value
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1216 class="hide_extra">
+    <span id=item1230 class="hide_extra">
     </span>
 
 </dd>
@@ -2458,7 +3292,7 @@ awful.popup {
 
 
 
-    <span id=item1217 class="hide_extra">
+    <span id=item1231 class="hide_extra">
     </span>
 
 </dd>
@@ -2478,7 +3312,7 @@ awful.popup {
 
 
 
-    <span id=item1218 class="hide_extra">
+    <span id=item1232 class="hide_extra">
     </span>
 
 </dd>
@@ -2498,7 +3332,7 @@ awful.popup {
 
 
 
-    <span id=item1219 class="hide_extra">
+    <span id=item1233 class="hide_extra">
     </span>
 
 </dd>
@@ -2518,7 +3352,7 @@ awful.popup {
 
 
 
-    <span id=item1220 class="hide_extra">
+    <span id=item1234 class="hide_extra">
     </span>
 
 </dd>
@@ -2538,7 +3372,7 @@ awful.popup {
 
 
 
-    <span id=item1221 class="hide_extra">
+    <span id=item1235 class="hide_extra">
     </span>
 
 </dd>
@@ -2558,7 +3392,7 @@ awful.popup {
 
 
 
-    <span id=item1222 class="hide_extra">
+    <span id=item1236 class="hide_extra">
     </span>
 
 </dd>
@@ -2578,7 +3412,7 @@ awful.popup {
 
 
 
-    <span id=item1223 class="hide_extra">
+    <span id=item1237 class="hide_extra">
     </span>
 
 </dd>
@@ -2598,27 +3432,7 @@ awful.popup {
 
 
 
-    <span id=item1224 class="hide_extra">
-    </span>
-
-</dd>
-    <dt>
-    <a name = "beautiful.tasklist_font"></a>
-    <strong>beautiful.tasklist_font</strong>
-    <span class="proptype"><span class='summary_type'>string</span></span>
-    <span class="baseclass" >
-    </span>
-    </dt>
-    <dd>
-    The tasklist font.
-
-
-
-
-
-
-
-    <span id=item1225 class="hide_extra">
+    <span id=item1238 class="hide_extra">
     </span>
 
 </dd>
@@ -2630,7 +3444,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The focused client alignment.
+    The focused client alignment. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_align.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
@@ -2644,9 +3462,49 @@ awful.popup {
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, value <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"left"</span>, <span class="string">"center"</span>, <span class="string">"right"</span> } <span class="keyword">do</span>
+    beautiful.tasklist_align = value
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1226 class="hide_extra">
+    <span id=item1239 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "beautiful.tasklist_font"></a>
+    <strong>beautiful.tasklist_font</strong>
+    <span class="proptype"><span class='summary_type'>string</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    The tasklist font. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_font.svg" alt="Usage example"/>
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../widgets/wibox.widget.textbox.html#font">wibox.widget.textbox.font</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, font <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"sans 8"</span>, <span class="string">"sans 10 bold"</span>, <span class="string">"sans 12 italic"</span> } <span class="keyword">do</span>
+    beautiful.tasklist_font = font
+<span class="keyword">end</span></pre>
+    </ul>
+
+
+    <span id=item1240 class="hide_extra">
     </span>
 
 </dd>
@@ -2658,15 +3516,29 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The focused client title alignment.
+    The focused client title alignment. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_font_focus.svg" alt="Usage example"/>
 
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../widgets/wibox.widget.textbox.html#font">wibox.widget.textbox.font</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, font <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"sans 8"</span>, <span class="string">"sans 10 bold"</span>, <span class="string">"sans 12 italic"</span> } <span class="keyword">do</span>
+    beautiful.tasklist_font_focus = font
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-
-    <span id=item1227 class="hide_extra">
+    <span id=item1241 class="hide_extra">
     </span>
 
 </dd>
@@ -2678,15 +3550,29 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The minimized clients font.
+    The minimized clients font. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_font_minimized.svg" alt="Usage example"/>
 
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../widgets/wibox.widget.textbox.html#font">wibox.widget.textbox.font</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, font <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"sans 8"</span>, <span class="string">"sans 10 bold"</span>, <span class="string">"sans 12 italic"</span> } <span class="keyword">do</span>
+    beautiful.tasklist_font_minimized = font
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-
-    <span id=item1228 class="hide_extra">
+    <span id=item1242 class="hide_extra">
     </span>
 
 </dd>
@@ -2698,15 +3584,29 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The urgent clients font.
+    The urgent clients font. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_font_urgent.svg" alt="Usage example"/>
 
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../widgets/wibox.widget.textbox.html#font">wibox.widget.textbox.font</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, font <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"sans 8"</span>, <span class="string">"sans 10 bold"</span>, <span class="string">"sans 12 italic"</span> } <span class="keyword">do</span>
+    beautiful.tasklist_font_urgent = font
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-
-    <span id=item1229 class="hide_extra">
+    <span id=item1243 class="hide_extra">
     </span>
 
 </dd>
@@ -2718,7 +3618,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The space between the tasklist elements.
+    The space between the tasklist elements. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_spacing.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
@@ -2732,9 +3636,15 @@ awful.popup {
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, spacing <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">0</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="number">12</span> } <span class="keyword">do</span>
+    beautiful.tasklist_spacing = spacing
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1230 class="hide_extra">
+    <span id=item1244 class="hide_extra">
     </span>
 
 </dd>
@@ -2746,15 +3656,31 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The default tasklist elements shape.
+    The default tasklist elements shape. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_shape.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">beautiful.tasklist_spacing = <span class="number">5</span>
+
+<span class="keyword">local</span> <span class="keyword">function</span> customized(cr, width, height)
+    <span class="keyword">return</span> gears.shape.parallelogram(cr, width, height, width - height)
+<span class="keyword">end</span>
+
+<span class="keyword">for</span> _, shape <span class="keyword">in</span> <span class="global">ipairs</span> { gears.shape.rounded_rect, gears.shape.octogon, gears.shape.hexagon, customized } <span class="keyword">do</span>
+    beautiful.tasklist_shape = shape
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1231 class="hide_extra">
+    <span id=item1245 class="hide_extra">
     </span>
 
 </dd>
@@ -2766,15 +3692,28 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The default tasklist elements border width.
+    The default tasklist elements border width. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_shape_border_width.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">beautiful.tasklist_spacing = <span class="number">5</span>
+beautiful.tasklist_shape = gears.shape.rounded_rect
+
+<span class="keyword">for</span> _, bw <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span> } <span class="keyword">do</span>
+    beautiful.tasklist_shape_border_width = bw
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1232 class="hide_extra">
+    <span id=item1246 class="hide_extra">
     </span>
 
 </dd>
@@ -2786,7 +3725,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The default tasklist elements border color.
+    The default tasklist elements border color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_shape_border_color.svg" alt="Usage example"/>
 
 
 
@@ -2796,9 +3739,29 @@ awful.popup {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">beautiful.tasklist_spacing = <span class="number">5</span>
+beautiful.tasklist_shape = gears.shape.rounded_rect
+beautiful.tasklist_shape_border_width = <span class="number">2</span>
+
+<span class="keyword">local</span> grad = gears.color {
+    <span class="global">type</span>  = <span class="string">"linear"</span>,
+    from  = { <span class="number">0</span>, <span class="number">0</span> },
+    to    = { <span class="number">0</span>, <span class="number">22</span> },
+    stops = {
+        { <span class="number">0</span>, <span class="string">"#ff0000"</span> },
+        { <span class="number">1</span>, <span class="string">"#0000ff"</span> },
+    }
+}
+
+<span class="keyword">for</span> _, col <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span>, grad } <span class="keyword">do</span>
+    beautiful.tasklist_shape_border_color = col
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1233 class="hide_extra">
+    <span id=item1247 class="hide_extra">
     </span>
 
 </dd>
@@ -2810,15 +3773,31 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The focused client shape.
+    The focused client shape. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_shape_focus.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">beautiful.tasklist_spacing = <span class="number">5</span>
+
+<span class="keyword">local</span> <span class="keyword">function</span> customized(cr, width, height)
+    <span class="keyword">return</span> gears.shape.parallelogram(cr, width, height, width - height)
+<span class="keyword">end</span>
+
+<span class="keyword">for</span> _, shape <span class="keyword">in</span> <span class="global">ipairs</span> { gears.shape.rounded_rect, gears.shape.octogon, gears.shape.hexagon, customized } <span class="keyword">do</span>
+    beautiful.tasklist_shape_focus = shape
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1234 class="hide_extra">
+    <span id=item1248 class="hide_extra">
     </span>
 
 </dd>
@@ -2830,15 +3809,28 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The focused client border width.
+    The focused client border width. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_shape_focus_border_width.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">beautiful.tasklist_spacing = <span class="number">5</span>
+beautiful.tasklist_shape = gears.shape.rounded_rect
+
+<span class="keyword">for</span> _, bw <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span> } <span class="keyword">do</span>
+    beautiful.tasklist_shape_border_width_focus = bw
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1235 class="hide_extra">
+    <span id=item1249 class="hide_extra">
     </span>
 
 </dd>
@@ -2850,7 +3842,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The focused client border color.
+    The focused client border color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_shape_focus_border_width_focus.svg" alt="Usage example"/>
 
 
 
@@ -2860,9 +3856,29 @@ awful.popup {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">beautiful.tasklist_spacing = <span class="number">5</span>
+beautiful.tasklist_shape = gears.shape.rounded_rect
+beautiful.tasklist_shape_border_width = <span class="number">2</span>
+
+<span class="keyword">local</span> grad = gears.color {
+    <span class="global">type</span>  = <span class="string">"linear"</span>,
+    from  = { <span class="number">0</span>, <span class="number">0</span> },
+    to    = { <span class="number">0</span>, <span class="number">22</span> },
+    stops = {
+        { <span class="number">0</span>, <span class="string">"#ff0000"</span> },
+        { <span class="number">1</span>, <span class="string">"#0000ff"</span> },
+    }
+}
+
+<span class="keyword">for</span> _, col <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span>, grad } <span class="keyword">do</span>
+    beautiful.tasklist_shape_border_color_focus = col
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1236 class="hide_extra">
+    <span id=item1250 class="hide_extra">
     </span>
 
 </dd>
@@ -2874,15 +3890,31 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The minimized clients shape.
+    The minimized clients shape. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_shape_minimized.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">beautiful.tasklist_spacing = <span class="number">5</span>
+
+<span class="keyword">local</span> <span class="keyword">function</span> customized(cr, width, height)
+    <span class="keyword">return</span> gears.shape.parallelogram(cr, width, height, width - height)
+<span class="keyword">end</span>
+
+<span class="keyword">for</span> _, shape <span class="keyword">in</span> <span class="global">ipairs</span> { gears.shape.rounded_rect, gears.shape.octogon, gears.shape.hexagon, customized } <span class="keyword">do</span>
+    beautiful.tasklist_shape_minimized = shape
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1237 class="hide_extra">
+    <span id=item1251 class="hide_extra">
     </span>
 
 </dd>
@@ -2894,15 +3926,28 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The minimized clients border width.
+    The minimized clients border width. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_shape_border_width_minimized.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">beautiful.tasklist_spacing = <span class="number">5</span>
+beautiful.tasklist_shape = gears.shape.rounded_rect
+
+<span class="keyword">for</span> _, bw <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span> } <span class="keyword">do</span>
+    beautiful.tasklist_shape_border_width_minimized = bw
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1238 class="hide_extra">
+    <span id=item1252 class="hide_extra">
     </span>
 
 </dd>
@@ -2914,7 +3959,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The minimized clients border color.
+    The minimized clients border color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_shape_border_color_minimized.svg" alt="Usage example"/>
 
 
 
@@ -2924,9 +3973,29 @@ awful.popup {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">beautiful.tasklist_spacing = <span class="number">5</span>
+beautiful.tasklist_shape = gears.shape.rounded_rect
+beautiful.tasklist_shape_border_width = <span class="number">2</span>
+
+<span class="keyword">local</span> grad = gears.color {
+    <span class="global">type</span>  = <span class="string">"linear"</span>,
+    from  = { <span class="number">0</span>, <span class="number">0</span> },
+    to    = { <span class="number">0</span>, <span class="number">22</span> },
+    stops = {
+        { <span class="number">0</span>, <span class="string">"#ff0000"</span> },
+        { <span class="number">1</span>, <span class="string">"#0000ff"</span> },
+    }
+}
+
+<span class="keyword">for</span> _, col <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span>, grad } <span class="keyword">do</span>
+    beautiful.tasklist_shape_border_color_minimized = col
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1239 class="hide_extra">
+    <span id=item1253 class="hide_extra">
     </span>
 
 </dd>
@@ -2938,15 +4007,31 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The urgent clients shape.
+    The urgent clients shape. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_shape_urgent.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">beautiful.tasklist_spacing = <span class="number">5</span>
+
+<span class="keyword">local</span> <span class="keyword">function</span> customized(cr, width, height)
+    <span class="keyword">return</span> gears.shape.parallelogram(cr, width, height, width - height)
+<span class="keyword">end</span>
+
+<span class="keyword">for</span> _, shape <span class="keyword">in</span> <span class="global">ipairs</span> { gears.shape.rounded_rect, gears.shape.octogon, gears.shape.hexagon, customized } <span class="keyword">do</span>
+    beautiful.tasklist_shape_focus = shape
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1240 class="hide_extra">
+    <span id=item1254 class="hide_extra">
     </span>
 
 </dd>
@@ -2958,15 +4043,28 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The urgent clients border width.
+    The urgent clients border width. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_shape_border_width_urgent.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">beautiful.tasklist_spacing = <span class="number">5</span>
+beautiful.tasklist_shape = gears.shape.rounded_rect
+
+<span class="keyword">for</span> _, bw <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span> } <span class="keyword">do</span>
+    beautiful.tasklist_shape_border_width_urgent = bw
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1241 class="hide_extra">
+    <span id=item1255 class="hide_extra">
     </span>
 
 </dd>
@@ -2978,7 +4076,11 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    The urgent clients border color.
+    The urgent clients border color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_awidget_tasklist_style_shape_border_color_urgent.svg" alt="Usage example"/>
 
 
 
@@ -2988,9 +4090,29 @@ awful.popup {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">beautiful.tasklist_spacing = <span class="number">5</span>
+beautiful.tasklist_shape = gears.shape.rounded_rect
+beautiful.tasklist_shape_border_width = <span class="number">2</span>
+
+<span class="keyword">local</span> grad = gears.color {
+    <span class="global">type</span>  = <span class="string">"linear"</span>,
+    from  = { <span class="number">0</span>, <span class="number">0</span> },
+    to    = { <span class="number">0</span>, <span class="number">22</span> },
+    stops = {
+        { <span class="number">0</span>, <span class="string">"#ff0000"</span> },
+        { <span class="number">1</span>, <span class="string">"#0000ff"</span> },
+    }
+}
+
+<span class="keyword">for</span> _, col <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="string">"#ff0000"</span>, <span class="string">"#00ff00"</span>, <span class="string">"#0000ff"</span>, grad } <span class="keyword">do</span>
+    beautiful.tasklist_shape_border_color_urgent = col
+<span class="keyword">end</span></pre>
+    </ul>
 
 
-    <span id=item1242 class="hide_extra">
+    <span id=item1256 class="hide_extra">
     </span>
 
 </dd>
@@ -3015,7 +4137,7 @@ awful.popup {
 
 
 
-    <span id=item1243 class="hide_extra">
+    <span id=item1257 class="hide_extra">
     </span>
 
 </dd>
@@ -3030,7 +4152,36 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    Filtering function to include all clients.
+
+<p>Filtering function to include all clients. </p>
+
+
+
+<p><img src="../images/AUTOGEN_sequences_client_tasklist_filter_allscreen1.svg" alt="Usage example"/></p>
+
+
+<pre><code> local tasklist = awful.widget.tasklist {
+     screen      = s,
+     filter      = awful.widget.tasklist.filter.currenttags,
+     base_layout = wibox.widget {
+         spacing = 2,
+         layout  = wibox.layout.fixed.horizontal,
+     },
+ }
+
+ -- Spawn 5 clients on screen 1.
+ for i= 1, 5 do
+     awful.spawn("Client #"..i, {screen = screen[1]})
+ end
+
+ -- Spawn 3 clients on screen 2.
+ for i=1, 3 do
+     awful.spawn("Client #"..(5+i), {screen = screen[2]})
+ end
+
+ -- Set the filter to allscreen.
+ tasklist.filter = awful.widget.tasklist.filter.allscreen
+</code></pre>
 
 
 
@@ -3038,7 +4189,10 @@ awful.popup {
 
 
 
-    <span id=item1244 class="hide_extra">
+
+
+
+    <span id=item1258 class="hide_extra">
     </span>
 
 </dd>
@@ -3049,13 +4203,47 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    Filtering function to include the clients from all tags on the screen.
+
+<p>Filtering function to include the clients from all tags on the screen. </p>
+
+
+
+<p><img src="../images/AUTOGEN_sequences_client_tasklist_filter_alltags1.svg" alt="Usage example"/></p>
+
+
+<pre><code> local tasklist = awful.widget.tasklist {
+     screen      = s,
+     filter      = awful.widget.tasklist.filter.currenttags,
+     base_layout = wibox.widget {
+         spacing = 2,
+         layout  = wibox.layout.fixed.horizontal,
+     },
+ }
+
+ -- Spawn 5 clients on screen 1.
+ for i= 1, 5 do
+     awful.spawn("Client #"..i, {tags = {screen[1].tags[1]}})
+ end
+
+ -- Spawn 3 clients on screen 2.
+ for i=1, 3 do
+     awful.spawn("Client #"..(5+i), {tags = {screen[1].tags[2]}})
+ end
+
+ -- Set the filter to alltags.
+ tasklist.filter = awful.widget.tasklist.filter.alltags
+</code></pre>
+
+
+
 
     <ul>
         <li><span class="parameter">c</span>
+            <span class="types"><span class="type">client</span></span>
          The client.
         </li>
         <li><span class="parameter">screen</span>
+            <span class="types"><a class="type" href="../widgets/awful.widget.tasklist.html#screen">screen</a></span>
          The screen we are drawing on.
         </li>
     </ul>
@@ -3065,7 +4253,7 @@ awful.popup {
 
 
 
-    <span id=item1245 class="hide_extra">
+    <span id=item1259 class="hide_extra">
     </span>
 
 </dd>
@@ -3076,13 +4264,50 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    Filtering function to include only the clients from currently selected tags.
+
+<p>Filtering function to include only the clients from currently selected tags. </p>
+
+<p> This is the filter used in the default <a href="../sample files/rc.lua.html#">rc.lua</a>.</p>
+
+
+
+<p><img src="../images/AUTOGEN_sequences_client_tasklist_filter_currenttags1.svg" alt="Usage example"/></p>
+
+
+<pre><code> local tasklist = awful.widget.tasklist {
+     screen      = s,
+     filter      = awful.widget.tasklist.filter.currenttags,
+     base_layout = wibox.widget {
+         spacing = 2,
+         layout  = wibox.layout.fixed.horizontal,
+     },
+ }
+
+ -- Spawn 5 clients on screen 1.
+ for k, t in ipairs(screen[1].tags) do
+     for i= 1, 2 do
+         awful.spawn("Client #"..(k-1)*2 + i, {tags = {t}})
+     end
+ end
+
+ -- Selected some tags.
+ screen[1].tags[3].selected = true
+ screen[1].tags[5].selected = true
+
+ -- Set the filter to currenttags.
+ tasklist.filter = awful.widget.tasklist.filter.currenttags
+</code></pre>
+
+
+
 
     <ul>
         <li><span class="parameter">c</span>
+            <span class="types"><span class="type">client</span></span>
          The client.
         </li>
         <li><span class="parameter">screen</span>
+            <span class="types"><a class="type" href="../widgets/awful.widget.tasklist.html#screen">screen</a></span>
          The screen we are drawing on.
         </li>
     </ul>
@@ -3092,7 +4317,7 @@ awful.popup {
 
 
 
-    <span id=item1246 class="hide_extra">
+    <span id=item1260 class="hide_extra">
     </span>
 
 </dd>
@@ -3103,13 +4328,48 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    Filtering function to include only the minimized clients from currently selected tags.
+
+<p>Filtering function to include only the minimized clients from currently selected tags. </p>
+
+
+
+<p><img src="../images/AUTOGEN_sequences_client_tasklist_filter_minimizedcurrenttags1.svg" alt="Usage example"/></p>
+
+
+<pre><code> local tasklist = awful.widget.tasklist {
+     screen      = s,
+     filter      = awful.widget.tasklist.filter.currenttags,
+     base_layout = wibox.widget {
+         spacing = 2,
+         layout  = wibox.layout.fixed.horizontal,
+     },
+ }
+
+ -- Spawn 5 clients on screen 1.
+ for k, t in ipairs(screen[1].tags) do
+     for i= 1, 2 do
+         awful.spawn("Client #"..(k-1)*2 + i, {tags = {t}, minimized = i == 1})
+     end
+ end
+
+ -- Selected some tags.
+ screen[1].tags[3].selected = true
+ screen[1].tags[5].selected = true
+
+ -- Set the filter to minimizedcurrenttags.
+ tasklist.filter = awful.widget.tasklist.filter.minimizedcurrenttags
+</code></pre>
+
+
+
 
     <ul>
         <li><span class="parameter">c</span>
+            <span class="types"><span class="type">client</span></span>
          The client.
         </li>
         <li><span class="parameter">screen</span>
+            <span class="types"><a class="type" href="../widgets/awful.widget.tasklist.html#screen">screen</a></span>
          The screen we are drawing on.
         </li>
     </ul>
@@ -3119,7 +4379,7 @@ awful.popup {
 
 
 
-    <span id=item1247 class="hide_extra">
+    <span id=item1261 class="hide_extra">
     </span>
 
 </dd>
@@ -3130,13 +4390,42 @@ awful.popup {
     </span>
     </dt>
     <dd>
-    Filtering function to include only the currently focused client.
+
+<p>Filtering function to include only the currently focused client. </p>
+
+
+
+<p><img src="../images/AUTOGEN_sequences_client_tasklist_filter_focused1.svg" alt="Usage example"/></p>
+
+
+<pre><code> local tasklist = awful.widget.tasklist {
+     screen      = s,
+     filter      = awful.widget.tasklist.filter.currenttags,
+     base_layout = wibox.widget {
+         spacing = 2,
+         layout  = wibox.layout.fixed.horizontal,
+     },
+ }
+
+ -- Spawn 5 clients on screen 1.
+ for i= 1, 5 do
+     awful.spawn("Client #"..i, {screen = screen[1]})
+ end
+
+ -- Set the filter to focused.
+ tasklist.filter = awful.widget.tasklist.filter.focused
+</code></pre>
+
+
+
 
     <ul>
         <li><span class="parameter">c</span>
+            <span class="types"><span class="type">client</span></span>
          The client.
         </li>
         <li><span class="parameter">screen</span>
+            <span class="types"><a class="type" href="../widgets/awful.widget.tasklist.html#screen">screen</a></span>
          The screen we are drawing on.
         </li>
     </ul>
@@ -3146,7 +4435,7 @@ awful.popup {
 
 
 
-    <span id=item1248 class="hide_extra">
+    <span id=item1262 class="hide_extra">
     </span>
 
 </dd>
@@ -3157,7 +4446,7 @@ awful.popup {
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
+<i style="float:right;">Last updated 2021-11-13 00:24:24 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

@@ -610,7 +610,7 @@
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph3-9" x="202" y="360.90332"/>
 </g>
-<path style="fill-rule:nonzero;fill:rgb(38.039216%,50.588235%,100%);fill-opacity:0.490196;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(38.039216%,50.588235%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 20.800781 17.875 L 44.800781 17.875 L 44.800781 34.125 L 20.800781 34.125 Z M 20.800781 17.875 " transform="matrix(1,0,0,1,68,366)"/>
+<path style="fill-rule:nonzero;fill:rgb(38.039216%,50.588235%,100%);fill-opacity:0.490196;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(38.039216%,50.588235%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 20.800781 17.875 L 32.800781 17.875 L 32.800781 26 L 20.800781 26 Z M 20.800781 17.875 " transform="matrix(1,0,0,1,68,366)"/>
 <g clip-path="url(#clip23)" clip-rule="nonzero">
 <path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.266667;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 0 0 L 160 0 L 160 78 L 0 78 Z M 0 0 " transform="matrix(1,0,0,1,68,366)"/>
 </g>
@@ -685,7 +685,7 @@
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph3-9" x="202" y="581.90332"/>
 </g>
-<path style="fill-rule:nonzero;fill:rgb(38.039216%,50.588235%,100%);fill-opacity:0.490196;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(38.039216%,50.588235%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 41.601562 35.75 L 85.601562 35.75 L 85.601562 68.25 L 41.601562 68.25 Z M 41.601562 35.75 " transform="matrix(1,0,0,1,68,587)"/>
+<path style="fill-rule:nonzero;fill:rgb(38.039216%,50.588235%,100%);fill-opacity:0.490196;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(38.039216%,50.588235%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 20.800781 17.875 L 52.800781 17.875 L 52.800781 42.25 L 20.800781 42.25 Z M 20.800781 17.875 " transform="matrix(1,0,0,1,68,587)"/>
 <g clip-path="url(#clip32)" clip-rule="nonzero">
 <path style="fill:none;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:0.266667;stroke-dasharray:10,4;stroke-dashoffset:1;stroke-miterlimit:10;" d="M 0 0 L 160 0 L 160 78 L 0 78 Z M 0 0 " transform="matrix(1,0,0,1,68,587)"/>
 </g>

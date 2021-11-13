@@ -332,20 +332,20 @@ awful.popup {
     start_callback = <span class="keyword">function</span>() layout_popup.visible = <span class="keyword">true</span>  <span class="keyword">end</span>,
     stop_callback  = <span class="keyword">function</span>() layout_popup.visible = <span class="keyword">false</span> <span class="keyword">end</span>,
     export_keybindings = <span class="keyword">true</span>,
-    release_event = <span class="string">"release"</span>,
+    stop_event = <span class="string">"release"</span>,
     stop_key = {<span class="string">"Escape"</span>, <span class="string">"Super_L"</span>, <span class="string">"Super_R"</span>},
     keybindings = {
         {{ modkey          } , <span class="string">" "</span> , <span class="keyword">function</span>()
-            awful.layout.set(gears.<span class="global">table</span>.cycle_value(ll.layouts, ll.current_layout, <span class="number">1</span>))
+            awful.layout.set((gears.<span class="global">table</span>.cycle_value(ll.layouts, ll.current_layout, <span class="number">1</span>)))
         <span class="keyword">end</span>},
         {{ modkey, <span class="string">"Shift"</span> } , <span class="string">" "</span> , <span class="keyword">function</span>()
-            awful.layout.set(gears.<span class="global">table</span>.cycle_value(ll.layouts, ll.current_layout, -<span class="number">1</span>), <span class="keyword">nil</span>)
+            awful.layout.set((gears.<span class="global">table</span>.cycle_value(ll.layouts, ll.current_layout, -<span class="number">1</span>)), <span class="keyword">nil</span>)
         <span class="keyword">end</span>},
     }
 }
 </pre>
 
-<p> This example extends 'awful.widget.layoutbox' to show a layout list popup:</p>
+<p> This example extends <a href="../widgets/awful.widget.layoutbox.html#">awful.widget.layoutbox</a> to show a layout list popup:</p>
 
 
 
@@ -490,7 +490,9 @@ wb:setup {
       <td class="name" >
         <a href="#awful.widget.layoutlist">awful.widget.layoutlist <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
       </td>
-      <td colspan="2" class="summary">Create a layout list.</td>
+      <td colspan="2" class="summary">
+        Create a layout list.
+      </td>
     </tr>
 </table>
 <h2><a href="#Object_properties">Object properties</a></h2>
@@ -498,47 +500,66 @@ wb:setup {
     <tr>
       <td class="shortname" ><a href="#base_layout">base_layout</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>widget</span></td>
-      <td colspan="2" class="summary">The layoutlist default widget layout.</td>
+      <td colspan="2" class="summary">
+        The layoutlist default widget layout.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#widget_template">widget_template</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="2" class="summary">The delegate widget template.</td>
+      <td colspan="2" class="summary">
+        The delegate widget template.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#screen">screen</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>screen</span></td>
-      <td colspan="2" class="summary">The layoutlist screen.</td>
+      <td colspan="2" class="summary">
+        The layoutlist screen.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#source">source</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>function</span></td>
-      <td colspan="2" class="summary">A function that returns the list of layout to display.</td>
+      <td colspan="2" class="summary">
+        A function that returns the list of layout to display.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#filter">filter</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>function</span></td>
-      <td colspan="2" class="summary">The layoutlist filter function.</td>
-    </tr>
-    <tr>
-      <td class="shortname" ><a href="#buttons">buttons</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="2" class="summary">The layoutlist buttons.</td>
+      <td colspan="2" class="summary">
+        The layoutlist filter function.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#layouts">layouts</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="2" class="summary">The currenly displayed layouts.</td>
+      <td colspan="2" class="summary">
+        The currenly displayed layouts.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#current_layout">current_layout</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>layout</span></td>
-      <td colspan="2" class="summary">The currently selected layout.</td>
+      <td colspan="2" class="summary">
+        The currently selected layout.
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#count">count</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">
+        The current number of layouts.
+        <span class="chips--readonly">read only</span>
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.children">children</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="1" class="summary">Get or set the children elements.</td>
+      <td colspan="1" class="summary">
+        Get or set the children elements.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -546,7 +567,9 @@ wb:setup {
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.all_children">all_children</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="1" class="summary">Get all direct and indirect children widgets.</td>
+      <td colspan="1" class="summary">
+        Get all direct and indirect children widgets.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -554,7 +577,9 @@ wb:setup {
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.forced_height">forced_height</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> nil</span></td>
-      <td colspan="1" class="summary">Force a widget height.</td>
+      <td colspan="1" class="summary">
+        Force a widget height.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -562,7 +587,9 @@ wb:setup {
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.forced_width">forced_width</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> nil</span></td>
-      <td colspan="1" class="summary">Force a widget width.</td>
+      <td colspan="1" class="summary">
+        Force a widget width.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -570,7 +597,9 @@ wb:setup {
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.opacity">opacity</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="1" class="summary">The widget opacity (transparency).</td>
+      <td colspan="1" class="summary">
+        The widget opacity (transparency).
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -578,7 +607,9 @@ wb:setup {
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.visible">visible</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="1" class="summary">The widget visibility.</td>
+      <td colspan="1" class="summary">
+        The widget visibility.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -586,7 +617,9 @@ wb:setup {
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.buttons">buttons</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="1" class="summary">The widget buttons.</td>
+      <td colspan="1" class="summary">
+        The widget buttons.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -597,82 +630,114 @@ wb:setup {
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_fg_normal">beautiful.layoutlist_fg_normal</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> pattern</span></td>
-      <td colspan="2" class="summary">The default foreground (text) color.</td>
+      <td colspan="2" class="summary">
+        The default foreground (text) color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_bg_normal">beautiful.layoutlist_bg_normal</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> pattern</span></td>
-      <td colspan="2" class="summary">The default background color.</td>
+      <td colspan="2" class="summary">
+        The default background color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_fg_selected">beautiful.layoutlist_fg_selected</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> pattern</span></td>
-      <td colspan="2" class="summary">The selected layout foreground (text) color.</td>
+      <td colspan="2" class="summary">
+        The selected layout foreground (text) color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_bg_selected">beautiful.layoutlist_bg_selected</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> pattern</span></td>
-      <td colspan="2" class="summary">The selected layout background color.</td>
+      <td colspan="2" class="summary">
+        The selected layout background color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_disable_icon">beautiful.layoutlist_disable_icon</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">Disable the layout icons (only show the name label).</td>
+      <td colspan="2" class="summary">
+        Disable the layout icons (only show the name label).
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_disable_name">beautiful.layoutlist_disable_name</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">Disable the layout name label (only show the icon).</td>
+      <td colspan="2" class="summary">
+        Disable the layout name label (only show the icon).
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_font">beautiful.layoutlist_font</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The layoutlist font.</td>
+      <td colspan="2" class="summary">
+        The layoutlist font.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_align">beautiful.layoutlist_align</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The selected layout alignment.</td>
+      <td colspan="2" class="summary">
+        The selected layout alignment.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_font_selected">beautiful.layoutlist_font_selected</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The selected layout title font.</td>
+      <td colspan="2" class="summary">
+        The selected layout title font.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_spacing">beautiful.layoutlist_spacing</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The space between the layouts.</td>
+      <td colspan="2" class="summary">
+        The space between the layouts.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_shape">beautiful.layoutlist_shape</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The default layoutlist elements shape.</td>
+      <td colspan="2" class="summary">
+        The default layoutlist elements shape.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_shape_border_width">beautiful.layoutlist_shape_border_width</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The default layoutlist elements border width.</td>
+      <td colspan="2" class="summary">
+        The default layoutlist elements border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_shape_border_color">beautiful.layoutlist_shape_border_color</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> color</span></td>
-      <td colspan="2" class="summary">The default layoutlist elements border color.</td>
+      <td colspan="2" class="summary">
+        The default layoutlist elements border color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_shape_selected">beautiful.layoutlist_shape_selected</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The selected layout shape.</td>
+      <td colspan="2" class="summary">
+        The selected layout shape.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_shape_border_width_selected">beautiful.layoutlist_shape_border_width_selected</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The selected layout border width.</td>
+      <td colspan="2" class="summary">
+        The selected layout border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.layoutlist_shape_border_color_selected">beautiful.layoutlist_shape_border_color_selected</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string <i>or</i> color</span></td>
-      <td colspan="2" class="summary">The selected layout border color.</td>
+      <td colspan="2" class="summary">
+        The selected layout border color.
+      </td>
     </tr>
 </table>
 <h2><a href="#List_source_functions">List source functions</a></h2>
@@ -681,19 +746,25 @@ wb:setup {
       <td class="name" >
         <a href="#awful.widget.layoutlist.source.for_screen"><span class='function_modname'>awful.widget.layoutlist.</span>source.for_screen</a>
       </td>
-      <td colspan="2" class="summary">The layout list for the first selected tag of a screen.</td>
+      <td colspan="2" class="summary">
+        The layout list for the first selected tag of a screen.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.widget.layoutlist.source.current_screen"><span class='function_modname'>awful.widget.layoutlist.</span>source.current_screen</a>
       </td>
-      <td colspan="2" class="summary">The layouts available for the first selected tag of <code>awful.screen.focused()</code>.</td>
+      <td colspan="2" class="summary">
+        The layouts available for the first selected tag of <code>awful.screen.focused()</code>.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.widget.layoutlist.source.default_layouts"><span class='function_modname'>awful.widget.layoutlist.</span>source.default_layouts</a>
       </td>
-      <td colspan="2" class="summary">The default layout list.</td>
+      <td colspan="2" class="summary">
+        The default layout list.
+      </td>
     </tr>
 </table>
 <h2><a href="#Object_methods">Object methods </a></h2>
@@ -703,7 +774,9 @@ wb:setup {
         <a href="#wibox.widget.base:add_button">:add_button <span class='function_args'> <b>(</b>button<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Add a new <a href="../input_handling/awful.button.html#">awful.button</a> to this widget.</td>
+      <td colspan="1" class="summary">
+        Add a new <a href="../input_handling/awful.button.html#">awful.button</a> to this widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -713,8 +786,10 @@ wb:setup {
         <a href="#wibox.widget.base:emit_signal_recursive">:emit_signal_recursive <span class='function_args'> <b>(</b>signal_name, ...<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Emit a signal and ensure all parent widgets in the hierarchies also
- forward the signal.</td>
+      <td colspan="1" class="summary">
+        Emit a signal and ensure all parent widgets in the hierarchies also
+ forward the signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -724,7 +799,9 @@ wb:setup {
         <a href="#wibox.widget.base:index">:index <span class='function_args'> <b>(</b>widget[, recursive[, ...]]<b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;(number, widget, table)</span></span>
       </td>
-      <td colspan="1" class="summary">Get the index of a widget.</td>
+      <td colspan="1" class="summary">
+        Get the index of a widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -734,7 +811,9 @@ wb:setup {
         <a href="#connect_signal">:connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Connect to a signal.</td>
+      <td colspan="1" class="summary">
+        Connect to a signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -744,7 +823,9 @@ wb:setup {
         <a href="#weak_connect_signal">:weak_connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Connect to a signal weakly.</td>
+      <td colspan="1" class="summary">
+        Connect to a signal weakly.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -754,7 +835,9 @@ wb:setup {
         <a href="#disconnect_signal">:disconnect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Disonnect from a signal.</td>
+      <td colspan="1" class="summary">
+        Disonnect from a signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -764,7 +847,9 @@ wb:setup {
         <a href="#emit_signal">:emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Emit a signal.</td>
+      <td colspan="1" class="summary">
+        Emit a signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -776,7 +861,9 @@ wb:setup {
       <td class="name" >
         <a href="#widget::layout_changed">widget::layout_changed</a>
       </td>
-      <td colspan="1" class="summary">When the layout (size) change.</td>
+      <td colspan="1" class="summary">
+        When the layout (size) change.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -785,7 +872,9 @@ wb:setup {
       <td class="name" >
         <a href="#widget::redraw_needed">widget::redraw_needed</a>
       </td>
-      <td colspan="1" class="summary">When the widget content changed.</td>
+      <td colspan="1" class="summary">
+        When the widget content changed.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -794,7 +883,9 @@ wb:setup {
       <td class="name" >
         <a href="#button::press">button::press</a>
       </td>
-      <td colspan="1" class="summary">When a mouse button is pressed over the widget.</td>
+      <td colspan="1" class="summary">
+        When a mouse button is pressed over the widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -803,7 +894,9 @@ wb:setup {
       <td class="name" >
         <a href="#button::release">button::release</a>
       </td>
-      <td colspan="1" class="summary">When a mouse button is released over the widget.</td>
+      <td colspan="1" class="summary">
+        When a mouse button is released over the widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -812,7 +905,9 @@ wb:setup {
       <td class="name" >
         <a href="#mouse::enter">mouse::enter</a>
       </td>
-      <td colspan="1" class="summary">When the mouse enter a widget.</td>
+      <td colspan="1" class="summary">
+        When the mouse enter a widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -821,7 +916,9 @@ wb:setup {
       <td class="name" >
         <a href="#mouse::leave">mouse::leave</a>
       </td>
-      <td colspan="1" class="summary">When the mouse leave a widget.</td>
+      <td colspan="1" class="summary">
+        When the mouse leave a widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -850,15 +947,14 @@ wb:setup {
 
 
         <ul>
-        <li><span class="parameter">layout</span>
+        <li><span class="parameter">base_layout</span>
             <span class="types"><span class="type">widget</span></span>
          The widget layout (not to be confused with client
   layout).
         </li>
         <li><span class="parameter">buttons</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-         The list of <code>awful.buttons</code>.
-         (<em>default</em> nil)
+         A table with buttons binding to set.
         </li>
         <li><span class="parameter">source</span>
             <span class="types"><span class="type">function</span></span>
@@ -875,11 +971,6 @@ wb:setup {
             <span class="types"><a class="type" href="../widgets/awful.widget.layoutlist.html#screen">screen</a></span>
          A screen
          (<em>default</em> ascreen.focused())
-        </li>
-        <li><span class="parameter">buttons</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
-         The list of <code>awful.buttons</code>.
-         (<em>default</em> nil)
         </li>
         <li><span class="parameter">style</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
@@ -1140,36 +1231,6 @@ wb:setup {
 
 </dd>
     <dt>
-    <a name = "buttons"></a>
-    <strong>buttons</strong>
-    <span class="proptype"><span class='summary_type'>table</span></span>
-    <span class="baseclass" >
-    </span>
-    </dt>
-    <dd>
-
-<p>The layoutlist buttons. </p>
-
-<p> The default is:</p>
-
-<pre><code>gears.table.join(
-    awful.button({ }, 1, awful.layout.set)
-)
-</code></pre>
-
-
-
-
-
-
-
-
-
-    <span id=item1088 class="hide_extra">
-    </span>
-
-</dd>
-    <dt>
     <a name = "layouts"></a>
     <strong>layouts</strong>
     <span class="proptype"><span class='summary_type'>table</span></span>
@@ -1185,7 +1246,7 @@ wb:setup {
 
 
 
-    <span id=item1089 class="hide_extra">
+    <span id=item1088 class="hide_extra">
     </span>
 
 </dd>
@@ -1205,7 +1266,50 @@ wb:setup {
 
 
 
+    <span id=item1089 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "count"></a>
+    <strong>count</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+         &middot read only
+    </span>
+    </dt>
+    <dd>
+    The current number of layouts.
+
+    <h3>Type constraints:</h3>
+    <ul>
+        <li><span class="parameter">The</span>
+            <span class="types"><span class="type">number</span></span>
+         number of layouts.
+        </li>
+    </ul>
+
+
+
+
+
+     <br />
+     <center id=button1090>
+     <a class="show_more_button" onclick="show_extra('1090')">
+      Click to display more
+     </a>
+     </center>
+
     <span id=item1090 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::count</code></span>  When the <a href="../widgets/awful.widget.layoutlist.html#count">count</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/awful.widget.layoutlist.html#">awful.widget.layoutlist</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><code>The</code></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
     </span>
 
 </dd>
@@ -1624,7 +1728,7 @@ wb:setup {
     <ul>
         <li><span class="parameter">spacing</span>
             <span class="types"><span class="type">number</span></span>
-         The spacing between tasks.
+         The spacing between layouts.
          (<em>default</em> 0)
         </li>
     </ul>
@@ -2558,7 +2662,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
+<i style="float:right;">Last updated 2021-11-13 00:24:24 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

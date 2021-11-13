@@ -273,7 +273,7 @@
  <code>bash</code>, <code>zsh</code>, <code>busybox sh</code> or <code>Debian ash</code>.</p>
 
 <p> If you wish to open a process in a terminal window, check that your terminal
- emulator supports the common <a href="../libraries/awful.spawn.html#awful.spawn.single_instance">-e</a> option. If it does, then something like
+ emulator supports the common <a href="../libraries/awful.spawn.html#awful.spawn.once">-e</a> option. If it does, then something like
  this should work:</p>
 
 
@@ -596,63 +596,81 @@ awesome-client <span class="string">'awful=require("awful");
         <a href="#awful.spawn">awful.spawn <span class='function_args'> <b>(</b>cmd[, sn_rules=true[, callback]]<b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;(integer, nil <i>or</i> string) <i>or</i> string</span></span>
       </td>
-      <td colspan="2" class="summary">Spawn a program, and optionally apply properties and/or run a callback.</td>
+      <td colspan="2" class="summary">
+        Spawn a program, and optionally apply properties and/or run a callback.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.spawn.with_shell"><span class='function_modname'>awful.spawn.</span>with_shell <span class='function_args'> <b>(</b>cmd<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Spawn a program using the shell.</td>
+      <td colspan="2" class="summary">
+        Spawn a program using the shell.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.spawn.with_line_callback"><span class='function_modname'>awful.spawn.</span>with_line_callback <span class='function_args'> <b>(</b>cmd, callbacks<b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;Integer <i>or</i> string</span></span>
       </td>
-      <td colspan="2" class="summary">Spawn a program and asynchronously capture its output line by line.</td>
+      <td colspan="2" class="summary">
+        Spawn a program and asynchronously capture its output line by line.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.spawn.easy_async"><span class='function_modname'>awful.spawn.</span>easy_async <span class='function_args'> <b>(</b>cmd, callback<b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;Integer <i>or</i> string</span></span>
       </td>
-      <td colspan="2" class="summary">Asynchronously spawn a program and capture its output.</td>
+      <td colspan="2" class="summary">
+        Asynchronously spawn a program and capture its output.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.spawn.easy_async_with_shell"><span class='function_modname'>awful.spawn.</span>easy_async_with_shell <span class='function_args'> <b>(</b>cmd, callback<b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;Integer <i>or</i> string</span></span>
       </td>
-      <td colspan="2" class="summary">Call <a href="../libraries/awful.spawn.html#awful.spawn.easy_async">spawn.easy_async</a> with a shell.</td>
+      <td colspan="2" class="summary">
+        Call <a href="../libraries/awful.spawn.html#awful.spawn.easy_async">spawn.easy_async</a> with a shell.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.spawn.read_lines"><span class='function_modname'>awful.spawn.</span>read_lines <span class='function_args'> <b>(</b>input_stream, line_callback[, done_callback[, close=false]]<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Read lines from a Gio input stream</td>
+      <td colspan="2" class="summary">
+        Read lines from a Gio input stream
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.spawn.once"><span class='function_modname'>awful.spawn.</span>once <span class='function_args'> <b>(</b>cmd[, rules[, matcher[, unique_id[, callback]]]]<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Spawn a command if it has not been spawned before.</td>
+      <td colspan="2" class="summary">
+        Spawn a command if it has not been spawned before.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.spawn.single_instance"><span class='function_modname'>awful.spawn.</span>single_instance <span class='function_args'> <b>(</b>cmd[, rules[, matcher[, unique_id[, callback]]]]<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Spawn a command if an instance is not already running.</td>
+      <td colspan="2" class="summary">
+        Spawn a command if an instance is not already running.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.spawn.raise_or_spawn"><span class='function_modname'>awful.spawn.</span>raise_or_spawn <span class='function_args'> <b>(</b>cmd, rules[, matcher[, unique_id[, callback]]]<b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;client</span></span>
       </td>
-      <td colspan="2" class="summary">Raise a client if it exists or spawn a new one then raise it.</td>
+      <td colspan="2" class="summary">
+        Raise a client if it exists or spawn a new one then raise it.
+      </td>
     </tr>
 </table>
 
@@ -718,7 +736,7 @@ awesome-client <span class="string">'awful=require("awful");
 
 
 
-    <span id=item2497 class="hide_extra">
+    <span id=item2511 class="hide_extra">
     </span>
 
 </dd>
@@ -746,7 +764,7 @@ awesome-client <span class="string">'awful=require("awful");
 
 
 
-    <span id=item2498 class="hide_extra">
+    <span id=item2512 class="hide_extra">
     </span>
 
 </dd>
@@ -818,7 +836,7 @@ awesome-client <span class="string">'awful=require("awful");
 
 
 
-    <span id=item2499 class="hide_extra">
+    <span id=item2513 class="hide_extra">
     </span>
 
 </dd>
@@ -885,7 +903,7 @@ awesome-client <span class="string">'awful=require("awful");
 
 
 
-    <span id=item2500 class="hide_extra">
+    <span id=item2514 class="hide_extra">
     </span>
 
 </dd>
@@ -952,7 +970,7 @@ awesome-client <span class="string">'awful=require("awful");
 
 
 
-    <span id=item2501 class="hide_extra">
+    <span id=item2515 class="hide_extra">
     </span>
 
 </dd>
@@ -995,7 +1013,7 @@ awesome-client <span class="string">'awful=require("awful");
 
 
 
-    <span id=item2502 class="hide_extra">
+    <span id=item2516 class="hide_extra">
     </span>
 
 </dd>
@@ -1061,7 +1079,7 @@ awesome-client <span class="string">'awful=require("awful");
 
 
 
-    <span id=item2503 class="hide_extra">
+    <span id=item2517 class="hide_extra">
     </span>
 
 </dd>
@@ -1126,7 +1144,7 @@ awesome-client <span class="string">'awful=require("awful");
 
 
 
-    <span id=item2504 class="hide_extra">
+    <span id=item2518 class="hide_extra">
     </span>
 
 </dd>
@@ -1189,13 +1207,13 @@ awesome-client <span class="string">'awful=require("awful");
 
 
      <br />
-     <center id=button2505>
-     <a class="show_more_button" onclick="show_extra('2505')">
+     <center id=button2519>
+     <a class="show_more_button" onclick="show_extra('2519')">
       Click to display more
      </a>
      </center>
 
-    <span id=item2505 class="hide_extra">
+    <span id=item2519 class="hide_extra">
      <h3>Requested actions or permissions:</h3>
      <table class='widget_list' border=1>
          <tr style='font-weight: bold;'>
@@ -1217,7 +1235,7 @@ awesome-client <span class="string">'awful=require("awful");
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
+<i style="float:right;">Last updated 2021-11-13 00:24:24 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

@@ -254,6 +254,10 @@
 
 <h1>Module: <code>wibox.widget.progressbar</code></h1>
 <p>A progressbar widget.</p>
+<p> <img src="../images/progressbar.svg" alt="Components"/></p>
+
+<h1> Common usage examples</h1>
+
 <p> To add text on top of the progressbar, a <a href="../widget_layouts/wibox.layout.stack.html#">wibox.layout.stack</a> can be used:</p>
 
 
@@ -276,6 +280,8 @@ wibox.widget {
     },
     {
         text   = <span class="string">"50%"</span>,
+        valign = <span class="string">"center"</span>,
+        align  = <span class="string">"center"</span>,
         widget = wibox.widget.textbox,
     },
     layout = wibox.layout.stack
@@ -308,7 +314,75 @@ wibox.widget {
  a <a href="../widget_containers/wibox.container.constraint.html#">wibox.container.constraint</a> widget or the <code>forced_width</code>/<code>forced_height</code>
  properties have to be used.</p>
 
+<p> To have a gradient between 2 colors when the bar reaches a threshold, use
+ the <a href="../theme_related_libraries/gears.color.html#">gears.color</a> gradients:</p>
 
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_grad1.svg" alt="Usage example"/></p>
+
+
+
+<pre>
+wibox.widget {
+    color = {
+        <span class="global">type</span>  = <span class="string">"linear"</span>,
+        from  = { <span class="number">0</span>  , <span class="number">0</span> },
+        to    = { <span class="number">100</span>, <span class="number">0</span> },
+        stops = {
+            { <span class="number">0</span>  , <span class="string">"#0000ff"</span> },
+            { <span class="number">0.8</span>, <span class="string">"#0000ff"</span> },
+            { <span class="number">1</span>  , <span class="string">"#ff0000"</span> }
+        }
+    },
+    max_value     = <span class="number">1</span>,
+    value         = <span class="number">1</span>,
+    forced_height = <span class="number">20</span>,
+    forced_width  = <span class="number">100</span>,
+    paddings      = <span class="number">1</span>,
+    border_width  = <span class="number">1</span>,
+    border_color  = beautiful.border_color,
+    widget        = wibox.widget.progressbar,
+}
+</pre>
+
+<p> The same goes for multiple solid colors:</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_grad2.svg" alt="Usage example"/></p>
+
+
+
+<pre>
+<span class="keyword">for</span> _, value <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">0.3</span>, <span class="number">0.5</span>, <span class="number">0.7</span>, <span class="number">1</span> } <span class="keyword">do</span>
+    wibox.widget {
+        color = {
+            <span class="global">type</span>  = <span class="string">"linear"</span>,
+            from  = { <span class="number">0</span>  , <span class="number">0</span> },
+            to    = { <span class="number">100</span>, <span class="number">0</span> },
+            stops = {
+                { <span class="number">0</span>  , <span class="string">"#00ff00"</span> },
+                { <span class="number">0.5</span>, <span class="string">"#00ff00"</span> },
+                { <span class="number">0.5</span>, <span class="string">"#ffff00"</span> },
+                { <span class="number">0.7</span>, <span class="string">"#ffff00"</span> },
+                { <span class="number">0.7</span>, <span class="string">"#ffaa00"</span> },
+                { <span class="number">0.8</span>, <span class="string">"#ffaa00"</span> },
+                { <span class="number">0.8</span>, <span class="string">"#ff0000"</span> },
+                { <span class="number">1</span>  , <span class="string">"#ff0000"</span> }
+            }
+        },
+        max_value     = <span class="number">1</span>,
+        value         = value,
+        forced_height = <span class="number">20</span>,
+        forced_width  = <span class="number">100</span>,
+        paddings      = <span class="number">1</span>,
+        border_width  = <span class="number">1</span>,
+        border_color  = beautiful.border_color,
+        widget        = wibox.widget.progressbar,
+    }
+<span class="keyword">end</span>
+</pre>
 
 <p><img src="../images/AUTOGEN_wibox_widget_defaults_progressbar.svg" alt="Usage example"/></p>
     <h3>Usage:</h3>
@@ -376,95 +450,131 @@ wibox.widget {
       <td class="name" >
         <a href="#wibox.widget.progressbar">wibox.widget.progressbar <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
       </td>
-      <td colspan="2" class="summary">Create a progressbar widget.</td>
+      <td colspan="2" class="summary">
+        Create a progressbar widget.
+      </td>
     </tr>
 </table>
 <h2><a href="#Object_properties">Object properties</a></h2>
 <table class="function_list">
     <tr>
       <td class="shortname" ><a href="#border_color">border_color</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The progressbar border color.</td>
+      <td class="summarytype" nowrap><span class='summary_type'>gears.color</span></td>
+      <td colspan="2" class="summary">
+        The progressbar border color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#border_width">border_width</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The progressbar border width.</td>
+      <td colspan="2" class="summary">
+        The progressbar border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#bar_border_color">bar_border_color</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The progressbar inner border color.</td>
+      <td class="summarytype" nowrap><span class='summary_type'>gears.color</span></td>
+      <td colspan="2" class="summary">
+        The progressbar inner border color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#bar_border_width">bar_border_width</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The progressbar inner border width.</td>
+      <td colspan="2" class="summary">
+        The progressbar inner border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#color">color</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The progressbar foreground color.</td>
+      <td class="summarytype" nowrap><span class='summary_type'>gears.color</span></td>
+      <td colspan="2" class="summary">
+        The progressbar foreground color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#background_color">background_color</a></td>
-      <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The progressbar background color.</td>
+      <td class="summarytype" nowrap><span class='summary_type'>gears.color</span></td>
+      <td colspan="2" class="summary">
+        The progressbar background color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#bar_shape">bar_shape</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The progressbar inner shape.</td>
+      <td colspan="2" class="summary">
+        The progressbar inner shape.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#shape">shape</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The progressbar shape.</td>
+      <td colspan="2" class="summary">
+        The progressbar shape.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#clip">clip</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">Force the inner part (the bar) to fit in the background shape.</td>
+      <td colspan="2" class="summary">
+        Force the inner part (the bar) to fit in the background shape.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#ticks">ticks</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">The progressbar to draw ticks.</td>
+      <td colspan="2" class="summary">
+        The progressbar to draw ticks.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#ticks_gap">ticks_gap</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The progressbar ticks gap.</td>
+      <td colspan="2" class="summary">
+        The progressbar ticks gap.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#ticks_size">ticks_size</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The progressbar ticks size.</td>
+      <td colspan="2" class="summary">
+        The progressbar ticks size.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#max_value">max_value</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The maximum value the progressbar should handle.</td>
+      <td colspan="2" class="summary">
+        The maximum value the progressbar should handle.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#margins">margins</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>(table <i>or</i> number <i>or</i> nil)</span></td>
-      <td colspan="2" class="summary">The progressbar margins.</td>
+      <td colspan="2" class="summary">
+        The progressbar margins.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#paddings">paddings</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>(table <i>or</i> number <i>or</i> nil)</span></td>
-      <td colspan="2" class="summary">The progressbar padding.</td>
+      <td colspan="2" class="summary">
+        The progressbar padding.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#value">value</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">Set the progressbar value.</td>
+      <td colspan="2" class="summary">
+        Set the progressbar value.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.children">children</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="1" class="summary">Get or set the children elements.</td>
+      <td colspan="1" class="summary">
+        Get or set the children elements.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -472,7 +582,9 @@ wibox.widget {
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.all_children">all_children</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="1" class="summary">Get all direct and indirect children widgets.</td>
+      <td colspan="1" class="summary">
+        Get all direct and indirect children widgets.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -480,7 +592,9 @@ wibox.widget {
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.forced_height">forced_height</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> nil</span></td>
-      <td colspan="1" class="summary">Force a widget height.</td>
+      <td colspan="1" class="summary">
+        Force a widget height.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -488,7 +602,9 @@ wibox.widget {
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.forced_width">forced_width</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> nil</span></td>
-      <td colspan="1" class="summary">Force a widget width.</td>
+      <td colspan="1" class="summary">
+        Force a widget width.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -496,7 +612,9 @@ wibox.widget {
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.opacity">opacity</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="1" class="summary">The widget opacity (transparency).</td>
+      <td colspan="1" class="summary">
+        The widget opacity (transparency).
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -504,7 +622,9 @@ wibox.widget {
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.visible">visible</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="1" class="summary">The widget visibility.</td>
+      <td colspan="1" class="summary">
+        The widget visibility.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -512,7 +632,9 @@ wibox.widget {
     <tr>
       <td class="shortname" ><a href="#wibox.widget.base.buttons">buttons</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="1" class="summary">The widget buttons.</td>
+      <td colspan="1" class="summary">
+        The widget buttons.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -523,52 +645,72 @@ wibox.widget {
     <tr>
       <td class="shortname" ><a href="#beautiful.progressbar_bg">beautiful.progressbar_bg</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The progressbar background color.</td>
+      <td colspan="2" class="summary">
+        The progressbar background color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.progressbar_fg">beautiful.progressbar_fg</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The progressbar foreground color.</td>
+      <td colspan="2" class="summary">
+        The progressbar foreground color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.progressbar_shape">beautiful.progressbar_shape</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The progressbar shape.</td>
+      <td colspan="2" class="summary">
+        The progressbar shape.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.progressbar_border_color">beautiful.progressbar_border_color</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The progressbar border color.</td>
+      <td colspan="2" class="summary">
+        The progressbar border color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.progressbar_border_width">beautiful.progressbar_border_width</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The progressbar outer border width.</td>
+      <td colspan="2" class="summary">
+        The progressbar outer border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.progressbar_bar_shape">beautiful.progressbar_bar_shape</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The progressbar inner shape.</td>
+      <td colspan="2" class="summary">
+        The progressbar inner shape.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.progressbar_bar_border_width">beautiful.progressbar_bar_border_width</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The progressbar bar border width.</td>
+      <td colspan="2" class="summary">
+        The progressbar bar border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.progressbar_bar_border_color">beautiful.progressbar_bar_border_color</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The progressbar bar border color.</td>
+      <td colspan="2" class="summary">
+        The progressbar bar border color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.progressbar_margins">beautiful.progressbar_margins</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>(table <i>or</i> number <i>or</i> nil)</span></td>
-      <td colspan="2" class="summary">The progressbar margins.</td>
+      <td colspan="2" class="summary">
+        The progressbar margins.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.progressbar_paddings">beautiful.progressbar_paddings</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>(table <i>or</i> number <i>or</i> nil)</span></td>
-      <td colspan="2" class="summary">The progressbar padding.</td>
+      <td colspan="2" class="summary">
+        The progressbar padding.
+      </td>
     </tr>
 </table>
 <h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
@@ -577,19 +719,25 @@ wibox.widget {
       <td class="name" >
         <a href="#set_vertical">wibox.widget.progressbar.set_vertical<i class="deprecated_label"> [deprecated]</i></a>
       </td>
-      <td colspan="2" class="summary">Set the progressbar to draw vertically.</td>
+      <td colspan="2" class="summary">
+        Set the progressbar to draw vertically.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#set_height">wibox.widget.progressbar.set_height<i class="deprecated_label"> [deprecated]</i></a>
       </td>
-      <td colspan="2" class="summary">Set the progressbar height.</td>
+      <td colspan="2" class="summary">
+        Set the progressbar height.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#set_width">wibox.widget.progressbar.set_width<i class="deprecated_label"> [deprecated]</i></a>
       </td>
-      <td colspan="2" class="summary">Set the progressbar width.</td>
+      <td colspan="2" class="summary">
+        Set the progressbar width.
+      </td>
     </tr>
 </table>
 <h2><a href="#Object_methods">Object methods </a></h2>
@@ -599,7 +747,9 @@ wibox.widget {
         <a href="#wibox.widget.base:add_button">:add_button <span class='function_args'> <b>(</b>button<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Add a new <a href="../input_handling/awful.button.html#">awful.button</a> to this widget.</td>
+      <td colspan="1" class="summary">
+        Add a new <a href="../input_handling/awful.button.html#">awful.button</a> to this widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -609,8 +759,10 @@ wibox.widget {
         <a href="#wibox.widget.base:emit_signal_recursive">:emit_signal_recursive <span class='function_args'> <b>(</b>signal_name, ...<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Emit a signal and ensure all parent widgets in the hierarchies also
- forward the signal.</td>
+      <td colspan="1" class="summary">
+        Emit a signal and ensure all parent widgets in the hierarchies also
+ forward the signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -620,7 +772,9 @@ wibox.widget {
         <a href="#wibox.widget.base:index">:index <span class='function_args'> <b>(</b>widget[, recursive[, ...]]<b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;(number, widget, table)</span></span>
       </td>
-      <td colspan="1" class="summary">Get the index of a widget.</td>
+      <td colspan="1" class="summary">
+        Get the index of a widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -630,7 +784,9 @@ wibox.widget {
         <a href="#connect_signal">:connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Connect to a signal.</td>
+      <td colspan="1" class="summary">
+        Connect to a signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -640,7 +796,9 @@ wibox.widget {
         <a href="#weak_connect_signal">:weak_connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Connect to a signal weakly.</td>
+      <td colspan="1" class="summary">
+        Connect to a signal weakly.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -650,7 +808,9 @@ wibox.widget {
         <a href="#disconnect_signal">:disconnect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Disonnect from a signal.</td>
+      <td colspan="1" class="summary">
+        Disonnect from a signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -660,7 +820,9 @@ wibox.widget {
         <a href="#emit_signal">:emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Emit a signal.</td>
+      <td colspan="1" class="summary">
+        Emit a signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -672,7 +834,9 @@ wibox.widget {
       <td class="name" >
         <a href="#widget::layout_changed">widget::layout_changed</a>
       </td>
-      <td colspan="1" class="summary">When the layout (size) change.</td>
+      <td colspan="1" class="summary">
+        When the layout (size) change.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -681,7 +845,9 @@ wibox.widget {
       <td class="name" >
         <a href="#widget::redraw_needed">widget::redraw_needed</a>
       </td>
-      <td colspan="1" class="summary">When the widget content changed.</td>
+      <td colspan="1" class="summary">
+        When the widget content changed.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -690,7 +856,9 @@ wibox.widget {
       <td class="name" >
         <a href="#button::press">button::press</a>
       </td>
-      <td colspan="1" class="summary">When a mouse button is pressed over the widget.</td>
+      <td colspan="1" class="summary">
+        When a mouse button is pressed over the widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -699,7 +867,9 @@ wibox.widget {
       <td class="name" >
         <a href="#button::release">button::release</a>
       </td>
-      <td colspan="1" class="summary">When a mouse button is released over the widget.</td>
+      <td colspan="1" class="summary">
+        When a mouse button is released over the widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -708,7 +878,9 @@ wibox.widget {
       <td class="name" >
         <a href="#mouse::enter">mouse::enter</a>
       </td>
-      <td colspan="1" class="summary">When the mouse enter a widget.</td>
+      <td colspan="1" class="summary">
+        When the mouse enter a widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -717,7 +889,9 @@ wibox.widget {
       <td class="name" >
         <a href="#mouse::leave">mouse::leave</a>
       </td>
-      <td colspan="1" class="summary">When the mouse leave a widget.</td>
+      <td colspan="1" class="summary">
+        When the mouse leave a widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget.base
       </td>
@@ -767,7 +941,7 @@ wibox.widget {
 
 
 
-    <span id=item1493 class="hide_extra">
+    <span id=item1507 class="hide_extra">
     </span>
 
 </dd>
@@ -778,7 +952,7 @@ wibox.widget {
     <dt>
     <a name = "border_color"></a>
     <strong>border_color</strong>
-    <span class="proptype"><span class='summary_type'>color</span></span>
+    <span class="proptype"><span class='summary_type'>gears.color</span></span>
     <span class="baseclass" >
          &middot 1 signal
          &middot 1 theme variable
@@ -787,12 +961,16 @@ wibox.widget {
     <dd>
     The progressbar border color. </p>
 
-<p> If the value is nil, no border will be drawn.
+<p> If the value is nil, no border will be drawn.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_border_color.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
         <li><span class="parameter">color</span>
-            <span class="types"><a class="type" href="../widgets/wibox.widget.progressbar.html#color">color</a></span>
+            <span class="types"><span class="type">gears.color</span></span>
          The border color to set.
         </li>
     </ul>
@@ -804,15 +982,26 @@ wibox.widget {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, color <span class="keyword">in</span> <span class="global">ipairs</span> { {<span class="keyword">nil</span>}, {<span class="string">"#ff0000"</span>}, {<span class="string">"#00ff00"</span>}, {<span class="string">"#0000ff44"</span>} } <span class="keyword">do</span>
+    wibox.widget {
+        value        = <span class="number">0.33</span>,
+        border_width = <span class="number">2</span>,
+        border_color = color[<span class="number">1</span>],
+        widget       = wibox.widget.progressbar,
+    }
+<span class="keyword">end</span></pre>
+    </ul>
 
      <br />
-     <center id=button1494>
-     <a class="show_more_button" onclick="show_extra('1494')">
+     <center id=button1508>
+     <a class="show_more_button" onclick="show_extra('1508')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1494 class="hide_extra">
+    <span id=item1508 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::border_color</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#border_color">border_color</a> value changes.</li>
@@ -842,21 +1031,36 @@ wibox.widget {
     </span>
     </dt>
     <dd>
-    The progressbar border width.
+    The progressbar border width. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_border_width.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, width <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span> } <span class="keyword">do</span>
+    wibox.widget {
+        value        = <span class="number">0.33</span>,
+        border_width = width,
+        border_color = <span class="string">"#ff0000"</span>,
+        widget       = wibox.widget.progressbar,
+    }
+<span class="keyword">end</span></pre>
+    </ul>
 
      <br />
-     <center id=button1495>
-     <a class="show_more_button" onclick="show_extra('1495')">
+     <center id=button1509>
+     <a class="show_more_button" onclick="show_extra('1509')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1495 class="hide_extra">
+    <span id=item1509 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::border_width</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#border_width">border_width</a> value changes.</li>
@@ -879,7 +1083,7 @@ wibox.widget {
     <dt>
     <a name = "bar_border_color"></a>
     <strong>bar_border_color</strong>
-    <span class="proptype"><span class='summary_type'>color</span></span>
+    <span class="proptype"><span class='summary_type'>gears.color</span></span>
     <span class="baseclass" >
          &middot 1 signal
          &middot 1 theme variable
@@ -888,12 +1092,16 @@ wibox.widget {
     <dd>
     The progressbar inner border color. </p>
 
-<p> If the value is nil, no border will be drawn.
+<p> If the value is nil, no border will be drawn.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_bar_border_color.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
         <li><span class="parameter">color</span>
-            <span class="types"><a class="type" href="../widgets/wibox.widget.progressbar.html#color">color</a></span>
+            <span class="types"><span class="type">gears.color</span></span>
          The border color to set.
         </li>
     </ul>
@@ -905,15 +1113,26 @@ wibox.widget {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, color <span class="keyword">in</span> <span class="global">ipairs</span> { {<span class="keyword">nil</span>}, {<span class="string">"#ff0000"</span>}, {<span class="string">"#00ff00"</span>}, {<span class="string">"#0000ff44"</span>} } <span class="keyword">do</span>
+    wibox.widget {
+        value            = <span class="number">0.33</span>,
+        bar_border_width = <span class="number">2</span>,
+        bar_border_color = color[<span class="number">1</span>],
+        widget           = wibox.widget.progressbar,
+    }
+<span class="keyword">end</span></pre>
+    </ul>
 
      <br />
-     <center id=button1496>
-     <a class="show_more_button" onclick="show_extra('1496')">
+     <center id=button1510>
+     <a class="show_more_button" onclick="show_extra('1510')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1496 class="hide_extra">
+    <span id=item1510 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::bar_border_color</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#bar_border_color">bar_border_color</a> value changes.</li>
@@ -943,21 +1162,36 @@ wibox.widget {
     </span>
     </dt>
     <dd>
-    The progressbar inner border width.
+    The progressbar inner border width. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_bar_border_width.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, width <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span> } <span class="keyword">do</span>
+    wibox.widget {
+        value            = <span class="number">0.33</span>,
+        bar_border_width = width,
+        bar_border_color = <span class="string">"#ff0000"</span>,
+        widget           = wibox.widget.progressbar,
+    }
+<span class="keyword">end</span></pre>
+    </ul>
 
      <br />
-     <center id=button1497>
-     <a class="show_more_button" onclick="show_extra('1497')">
+     <center id=button1511>
+     <a class="show_more_button" onclick="show_extra('1511')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1497 class="hide_extra">
+    <span id=item1511 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::bar_border_width</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#bar_border_width">bar_border_width</a> value changes.</li>
@@ -980,19 +1214,23 @@ wibox.widget {
     <dt>
     <a name = "color"></a>
     <strong>color</strong>
-    <span class="proptype"><span class='summary_type'>color</span></span>
+    <span class="proptype"><span class='summary_type'>gears.color</span></span>
     <span class="baseclass" >
          &middot 1 signal
          &middot 1 theme variable
     </span>
     </dt>
     <dd>
-    The progressbar foreground color.
+    The progressbar foreground color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_color.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
         <li><span class="parameter">color</span>
-            <span class="types"><a class="type" href="../widgets/wibox.widget.progressbar.html#color">color</a></span>
+            <span class="types"><span class="type">gears.color</span></span>
          The progressbar color.
         </li>
     </ul>
@@ -1004,15 +1242,25 @@ wibox.widget {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, color <span class="keyword">in</span> <span class="global">ipairs</span> { {<span class="keyword">nil</span>}, {<span class="string">"#ff0000"</span>}, {<span class="string">"#00ff00"</span>}, {<span class="string">"#0000ff44"</span>} } <span class="keyword">do</span>
+    wibox.widget {
+        value  = <span class="number">0.33</span>,
+        color  = color[<span class="number">1</span>],
+        widget = wibox.widget.progressbar,
+    }
+<span class="keyword">end</span></pre>
+    </ul>
 
      <br />
-     <center id=button1498>
-     <a class="show_more_button" onclick="show_extra('1498')">
+     <center id=button1512>
+     <a class="show_more_button" onclick="show_extra('1512')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1498 class="hide_extra">
+    <span id=item1512 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::color</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#color">color</a> value changes.</li>
@@ -1035,19 +1283,23 @@ wibox.widget {
     <dt>
     <a name = "background_color"></a>
     <strong>background_color</strong>
-    <span class="proptype"><span class='summary_type'>color</span></span>
+    <span class="proptype"><span class='summary_type'>gears.color</span></span>
     <span class="baseclass" >
          &middot 1 signal
          &middot 1 theme variable
     </span>
     </dt>
     <dd>
-    The progressbar background color.
+    The progressbar background color. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_background_color.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
         <li><span class="parameter">color</span>
-            <span class="types"><a class="type" href="../widgets/wibox.widget.progressbar.html#color">color</a></span>
+            <span class="types"><span class="type">gears.color</span></span>
          The progressbar background color.
         </li>
     </ul>
@@ -1059,15 +1311,25 @@ wibox.widget {
          <a href="../theme_related_libraries/gears.color.html#">gears.color</a>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, color <span class="keyword">in</span> <span class="global">ipairs</span> { {<span class="keyword">nil</span>}, {<span class="string">"#ff0000"</span>}, {<span class="string">"#00ff00"</span>}, {<span class="string">"#0000ff44"</span>} } <span class="keyword">do</span>
+    wibox.widget {
+        value            = <span class="number">0.33</span>,
+        background_color = color[<span class="number">1</span>],
+        widget           = wibox.widget.progressbar,
+    }
+<span class="keyword">end</span></pre>
+    </ul>
 
      <br />
-     <center id=button1499>
-     <a class="show_more_button" onclick="show_extra('1499')">
+     <center id=button1513>
+     <a class="show_more_button" onclick="show_extra('1513')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1499 class="hide_extra">
+    <span id=item1513 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::background_color</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#background_color">background_color</a> value changes.</li>
@@ -1128,13 +1390,13 @@ wibox.widget {
     </ul>
 
      <br />
-     <center id=button1500>
-     <a class="show_more_button" onclick="show_extra('1500')">
+     <center id=button1514>
+     <a class="show_more_button" onclick="show_extra('1514')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1500 class="hide_extra">
+    <span id=item1514 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::bar_shape</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#bar_shape">bar_shape</a> value changes.</li>
@@ -1192,13 +1454,13 @@ wibox.widget {
     </ul>
 
      <br />
-     <center id=button1501>
-     <a class="show_more_button" onclick="show_extra('1501')">
+     <center id=button1515>
+     <a class="show_more_button" onclick="show_extra('1515')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1501 class="hide_extra">
+    <span id=item1515 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::shape</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#shape">shape</a> value changes.</li>
@@ -1260,13 +1522,13 @@ wibox.widget {
     </ul>
 
      <br />
-     <center id=button1502>
-     <a class="show_more_button" onclick="show_extra('1502')">
+     <center id=button1516>
+     <a class="show_more_button" onclick="show_extra('1516')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1502 class="hide_extra">
+    <span id=item1516 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::clip</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#clip">clip</a> value changes.</li>
@@ -1287,21 +1549,36 @@ wibox.widget {
     </span>
     </dt>
     <dd>
-    The progressbar to draw ticks.  Default is false.
+    The progressbar to draw ticks. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_ticks.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, has_ticks <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="keyword">true</span>, <span class="keyword">false</span> } <span class="keyword">do</span>
+    wibox.widget {
+        value        = <span class="number">0.33</span>,
+        border_width = <span class="number">2</span>,
+        ticks        = has_ticks,
+        widget       = wibox.widget.progressbar,
+    }
+<span class="keyword">end</span></pre>
+    </ul>
 
      <br />
-     <center id=button1503>
-     <a class="show_more_button" onclick="show_extra('1503')">
+     <center id=button1517>
+     <a class="show_more_button" onclick="show_extra('1517')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1503 class="hide_extra">
+    <span id=item1517 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::ticks</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#ticks">ticks</a> value changes.</li>
@@ -1322,21 +1599,37 @@ wibox.widget {
     </span>
     </dt>
     <dd>
-    The progressbar ticks gap.
+    The progressbar ticks gap. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_ticks_gap.svg" alt="Usage example"/>
 
 
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, gap <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span> } <span class="keyword">do</span>
+    wibox.widget {
+        value        = <span class="number">0.33</span>,
+        border_width = <span class="number">2</span>,
+        ticks        = <span class="keyword">true</span>,
+        ticks_gap    = gap,
+        widget       = wibox.widget.progressbar,
+    }
+<span class="keyword">end</span></pre>
+    </ul>
 
      <br />
-     <center id=button1504>
-     <a class="show_more_button" onclick="show_extra('1504')">
+     <center id=button1518>
+     <a class="show_more_button" onclick="show_extra('1518')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1504 class="hide_extra">
+    <span id=item1518 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::ticks_gap</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#ticks_gap">ticks_gap</a> value changes.</li>
@@ -1357,7 +1650,84 @@ wibox.widget {
     </span>
     </dt>
     <dd>
-    The progressbar ticks size.
+
+<p>The progressbar ticks size. </p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_ticks_size.svg" alt="Usage example"/></p>
+
+
+<pre><code>for _, size in ipairs { 0, 2, 4, 6 } do
+    wibox.widget {
+        value        = 0.33,
+        border_width = 2,
+        ticks        = true,
+        ticks_size   = size,
+        widget       = wibox.widget.progressbar,
+    }
+end
+</code></pre>
+
+<p> It is also possible to mix this feature with the <a href="../widgets/wibox.widget.progressbar.html#bar_shape">bar_shape</a> property:</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_ticks_size2.svg" alt="Usage example"/></p>
+
+
+<pre><code>for _, size in ipairs { 0, 2, 4, 6 } do
+    -- Plane shapes.
+    wibox.widget {
+        value        = 1,
+        border_width = 2,
+        ticks        = true,
+        ticks_size   = size,
+        ticks_gap    = 3,
+        paddings     = 2,
+        bar_shape    = gears.shape.rounded_bar,
+        widget       = wibox.widget.progressbar,
+    }
+
+    -- With a border for each shape.
+    wibox.widget {
+        value            = 1,
+        border_width     = 2,
+        ticks            = true,
+        ticks_size       = size,
+        ticks_gap        = 3,
+        paddings         = 2,
+        bar_shape        = gears.shape.rounded_bar,
+        bor_border_width = 2,
+        bar_border_color = beautiful.border_color,
+        widget           = wibox.widget.progressbar,
+    }
+
+    -- With a gradient.
+    wibox.widget {
+        color = {
+            type  = "linear",
+            from  = { 0 , 0 },
+            to    = { 65, 0 },
+            stops = {
+                { 0   , "#0000ff" },
+                { 0.75, "#0000ff" },
+                { 1   , "#ff0000" }
+            }
+        },
+        paddings     = 2,
+        value        = 1,
+        border_width = 2,
+        ticks        = true,
+        ticks_size   = size,
+        ticks_gap    = 3,
+        bar_shape    = gears.shape.rounded_bar,
+        widget       = wibox.widget.progressbar,
+    }
+end
+</code></pre>
+
+
 
 
 
@@ -1365,13 +1735,13 @@ wibox.widget {
 
 
      <br />
-     <center id=button1505>
-     <a class="show_more_button" onclick="show_extra('1505')">
+     <center id=button1519>
+     <a class="show_more_button" onclick="show_extra('1519')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1505 class="hide_extra">
+    <span id=item1519 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::ticks_size</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#ticks_size">ticks_size</a> value changes.</li>
@@ -1392,21 +1762,42 @@ wibox.widget {
     </span>
     </dt>
     <dd>
-    The maximum value the progressbar should handle.
+    The maximum value the progressbar should handle. </p>
+
+<p> By default, the value is 1. So the content of <a href="../widgets/wibox.widget.progressbar.html#value">value</a> is
+ a percentage.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_max_value.svg" alt="Usage example"/>
 
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../widgets/wibox.widget.progressbar.html#value">value</a>
+    </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, value <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">0</span>, <span class="number">10</span>, <span class="number">42</span>, <span class="number">999</span> } <span class="keyword">do</span>
+    wibox.widget {
+        value     = value,
+        max_value = <span class="number">42</span>,
+        widget    = wibox.widget.progressbar,
+    }
+<span class="keyword">end</span></pre>
+    </ul>
 
      <br />
-     <center id=button1506>
-     <a class="show_more_button" onclick="show_extra('1506')">
+     <center id=button1520>
+     <a class="show_more_button" onclick="show_extra('1520')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1506 class="hide_extra">
+    <span id=item1520 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::max_value</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#max_value">max_value</a> value changes.</li>
@@ -1430,10 +1821,43 @@ wibox.widget {
     <dd>
     The progressbar margins. </p>
 
+<p> The margins are around the progressbar. If you want to add space between the
+ bar and the border, use <a href="../widgets/wibox.widget.progressbar.html#paddings">paddings</a>.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_margins2.svg" alt="Usage example"/></p>
+
+
+<pre><code>wibox.widget {
+    {
+        margins = {
+            top    = 4,
+            bottom = 2,
+            right  = 10,
+            left   = 5
+        },
+        value        = 0.33,
+        border_width = 2,
+        border_color = "#00ff00",
+        background   = "#0000ff",
+        widget       = wibox.widget.progressbar,
+    },
+    forced_width = 75, --DOC_hIDE
+    bg     = "#ff0000",
+    widget = wibox.container.background
+}
+</code></pre>
+
 <p> Note that if the <a href="../widgets/wibox.widget.progressbar.html#clip">clip</a> is disabled, this allows the background to be smaller
  than the bar.</p>
 
-<p> See the <a href="../widgets/wibox.widget.progressbar.html#clip">clip</a> example.
+<p> It is also possible to specify a single number instead of a border for each
+ direction;</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_margins1.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
@@ -1474,18 +1898,29 @@ wibox.widget {
 
     <h3>See also:</h3>
     <ul>
-         <a href="../widgets/wibox.widget.progressbar.html#clip">clip</a>
+         <li><a href="../widgets/wibox.widget.progressbar.html#clip">clip</a></li>
+         <li><a href="../widget_containers/wibox.container.margin.html#">wibox.container.margin</a></li>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, margin <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span> } <span class="keyword">do</span>
+    wibox.widget {
+        value   = <span class="number">0.33</span>,
+        margins = margin,
+        widget  = wibox.widget.progressbar,
+    }
+<span class="keyword">end</span></pre>
+    </ul>
 
      <br />
-     <center id=button1507>
-     <a class="show_more_button" onclick="show_extra('1507')">
+     <center id=button1521>
+     <a class="show_more_button" onclick="show_extra('1521')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1507 class="hide_extra">
+    <span id=item1521 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::margins</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#margins">margins</a> value changes.</li>
@@ -1516,10 +1951,39 @@ wibox.widget {
     <dd>
     The progressbar padding. </p>
 
+<p> This is the space between the inner bar and the progressbar outer border.</p>
+
 <p> Note that if the <a href="../widgets/wibox.widget.progressbar.html#clip">clip</a> is disabled, this allows the bar to be taller
  than the background.</p>
 
-<p> See the <a href="../widgets/wibox.widget.progressbar.html#clip">clip</a> example.
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_paddings2.svg" alt="Usage example"/></p>
+
+
+<pre><code>wibox.widget {
+    paddings = {
+        top    = 4,
+        bottom = 2,
+        right  = 10,
+        left   = 5
+    },
+    value            = 1,
+    border_width     = 2,
+    border_color     = "#00ff00",
+    bar_border_wisth = 2,
+    bar_border_color = "#ffff00",
+    bor_color        = "#ff00ff",
+    background       = "#0000ff",
+    widget           = wibox.widget.progressbar,
+}
+</code></pre>
+
+<p> The paddings can also be a single numeric value:</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_paddings1.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
@@ -1560,18 +2024,29 @@ wibox.widget {
 
     <h3>See also:</h3>
     <ul>
-         <a href="../widgets/wibox.widget.progressbar.html#clip">clip</a>
+         <li><a href="../widgets/wibox.widget.progressbar.html#clip">clip</a></li>
+         <li><a href="../widgets/wibox.widget.progressbar.html#margins">margins</a></li>
     </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, padding <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span> } <span class="keyword">do</span>
+    wibox.widget {
+        value   = <span class="number">0.33</span>,
+        paddings = padding,
+        widget  = wibox.widget.progressbar,
+    }
+<span class="keyword">end</span></pre>
+    </ul>
 
      <br />
-     <center id=button1508>
-     <a class="show_more_button" onclick="show_extra('1508')">
+     <center id=button1522>
+     <a class="show_more_button" onclick="show_extra('1522')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1508 class="hide_extra">
+    <span id=item1522 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::paddings</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#paddings">paddings</a> value changes.</li>
@@ -1599,28 +2074,48 @@ wibox.widget {
     </span>
     </dt>
     <dd>
-    Set the progressbar value.
+    Set the progressbar value. </p>
+
+<p> By default, unless <a href="../widgets/wibox.widget.progressbar.html#max_value">max_value</a> is set, it is number between
+ zero and one.</p>
+
+
+
+<p><img src="../images/AUTOGEN_wibox_widget_progressbar_value.svg" alt="Usage example"/>
 
     <h3>Type constraints:</h3>
     <ul>
         <li><span class="parameter">value</span>
             <span class="types"><span class="type">number</span></span>
-         The progress bar value between 0 and 1.
+         The progress bar value.
         </li>
     </ul>
 
 
 
+    <h3>See also:</h3>
+    <ul>
+         <a href="../widgets/wibox.widget.progressbar.html#max_value">max_value</a>
+    </ul>
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">for</span> _, value <span class="keyword">in</span> <span class="global">ipairs</span> { <span class="number">0</span>, <span class="number">0.2</span>, <span class="number">0.5</span>, <span class="number">1</span> } <span class="keyword">do</span>
+    wibox.widget {
+        value  = value,
+        widget = wibox.widget.progressbar,
+    }
+<span class="keyword">end</span></pre>
+    </ul>
 
      <br />
-     <center id=button1509>
-     <a class="show_more_button" onclick="show_extra('1509')">
+     <center id=button1523>
+     <a class="show_more_button" onclick="show_extra('1523')">
       Click to display more
      </a>
      </center>
 
-    <span id=item1509 class="hide_extra">
+    <span id=item1523 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::value</code></span>  When the <a href="../widgets/wibox.widget.progressbar.html#value">value</a> value changes.</li>
@@ -1845,7 +2340,7 @@ wibox.widget {
 
 
 
-    <span id=item1510 class="hide_extra">
+    <span id=item1524 class="hide_extra">
     </span>
 
 </dd>
@@ -1865,7 +2360,7 @@ wibox.widget {
 
 
 
-    <span id=item1511 class="hide_extra">
+    <span id=item1525 class="hide_extra">
     </span>
 
 </dd>
@@ -1889,7 +2384,7 @@ wibox.widget {
 
 
 
-    <span id=item1512 class="hide_extra">
+    <span id=item1526 class="hide_extra">
     </span>
 
 </dd>
@@ -1909,7 +2404,7 @@ wibox.widget {
 
 
 
-    <span id=item1513 class="hide_extra">
+    <span id=item1527 class="hide_extra">
     </span>
 
 </dd>
@@ -1929,7 +2424,7 @@ wibox.widget {
 
 
 
-    <span id=item1514 class="hide_extra">
+    <span id=item1528 class="hide_extra">
     </span>
 
 </dd>
@@ -1953,7 +2448,7 @@ wibox.widget {
 
 
 
-    <span id=item1515 class="hide_extra">
+    <span id=item1529 class="hide_extra">
     </span>
 
 </dd>
@@ -1973,7 +2468,7 @@ wibox.widget {
 
 
 
-    <span id=item1516 class="hide_extra">
+    <span id=item1530 class="hide_extra">
     </span>
 
 </dd>
@@ -1993,7 +2488,7 @@ wibox.widget {
 
 
 
-    <span id=item1517 class="hide_extra">
+    <span id=item1531 class="hide_extra">
     </span>
 
 </dd>
@@ -2054,7 +2549,7 @@ wibox.widget {
 
 
 
-    <span id=item1518 class="hide_extra">
+    <span id=item1532 class="hide_extra">
     </span>
 
 </dd>
@@ -2115,7 +2610,7 @@ wibox.widget {
 
 
 
-    <span id=item1519 class="hide_extra">
+    <span id=item1533 class="hide_extra">
     </span>
 
 </dd>
@@ -2149,7 +2644,7 @@ wibox.widget {
 
 
 
-    <span id=item1520 class="hide_extra">
+    <span id=item1534 class="hide_extra">
     </span>
 
 </dd>
@@ -2178,7 +2673,7 @@ wibox.widget {
 
 
 
-    <span id=item1521 class="hide_extra">
+    <span id=item1535 class="hide_extra">
     </span>
 
 </dd>
@@ -2207,7 +2702,7 @@ wibox.widget {
 
 
 
-    <span id=item1522 class="hide_extra">
+    <span id=item1536 class="hide_extra">
     </span>
 
 </dd>
@@ -2932,7 +3427,7 @@ o:connect_signal(<span class="string">"my_signal"</span>, slot)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
+<i style="float:right;">Last updated 2021-11-13 00:24:24 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

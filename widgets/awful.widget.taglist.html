@@ -402,15 +402,69 @@ s.mytaglist = awful.widget.taglist {
       <td class="name" >
         <a href="#awful.widget.taglist">awful.widget.taglist <span class='function_args'> <b>(</b>args, filter, buttons, style[, update_function[, base_widget]]<b>)</b></span></a>
       </td>
-      <td colspan="2" class="summary">Create a new taglist widget.</td>
+      <td colspan="2" class="summary">
+        Create a new taglist widget.
+      </td>
     </tr>
 </table>
 <h2><a href="#Object_properties">Object properties</a></h2>
 <table class="function_list">
     <tr>
+      <td class="shortname" ><a href="#screen">screen</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>screen</span></td>
+      <td colspan="2" class="summary">
+        The taglist screen.
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#base_layout">base_layout</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>wibox.layout</span></td>
+      <td colspan="2" class="summary">
+        Set the taglist layout.
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#count">count</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
+      <td colspan="2" class="summary">
+        The current number of tags.
+        <span class="chips--readonly">read only</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#update_function">update_function</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>function</span></td>
+      <td colspan="2" class="summary">
+        An alternative function to configure the content.
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#filter">filter</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>function</span></td>
+      <td colspan="2" class="summary">
+        A function to restrict the content of the taglist.
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#source">source</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>function</span></td>
+      <td colspan="2" class="summary">
+        The function used to gather the group of tags.
+      </td>
+    </tr>
+    <tr>
+      <td class="shortname" ><a href="#widget_template">widget_template</a></td>
+      <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
+      <td colspan="2" class="summary">
+        A templete used to genetate the individual tag widgets.
+      </td>
+    </tr>
+    <tr>
       <td class="shortname" ><a href="#children">children</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="1" class="summary">Get or set the children elements.</td>
+      <td colspan="1" class="summary">
+        Get or set the children elements.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -418,7 +472,9 @@ s.mytaglist = awful.widget.taglist {
     <tr>
       <td class="shortname" ><a href="#all_children">all_children</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="1" class="summary">Get all direct and indirect children widgets.</td>
+      <td colspan="1" class="summary">
+        Get all direct and indirect children widgets.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -426,7 +482,9 @@ s.mytaglist = awful.widget.taglist {
     <tr>
       <td class="shortname" ><a href="#forced_height">forced_height</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> nil</span></td>
-      <td colspan="1" class="summary">Force a widget height.</td>
+      <td colspan="1" class="summary">
+        Force a widget height.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -434,7 +492,9 @@ s.mytaglist = awful.widget.taglist {
     <tr>
       <td class="shortname" ><a href="#forced_width">forced_width</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number <i>or</i> nil</span></td>
-      <td colspan="1" class="summary">Force a widget width.</td>
+      <td colspan="1" class="summary">
+        Force a widget width.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -442,7 +502,9 @@ s.mytaglist = awful.widget.taglist {
     <tr>
       <td class="shortname" ><a href="#opacity">opacity</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="1" class="summary">The widget opacity (transparency).</td>
+      <td colspan="1" class="summary">
+        The widget opacity (transparency).
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -450,7 +512,9 @@ s.mytaglist = awful.widget.taglist {
     <tr>
       <td class="shortname" ><a href="#visible">visible</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="1" class="summary">The widget visibility.</td>
+      <td colspan="1" class="summary">
+        The widget visibility.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -458,7 +522,9 @@ s.mytaglist = awful.widget.taglist {
     <tr>
       <td class="shortname" ><a href="#buttons">buttons</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="1" class="summary">The widget buttons.</td>
+      <td colspan="1" class="summary">
+        The widget buttons.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -471,7 +537,9 @@ s.mytaglist = awful.widget.taglist {
         <a href="#setup">:setup <span class='function_named_args'><b>{</b>[args]<b>}</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Set a declarative widget hierarchy description.</td>
+      <td colspan="1" class="summary">
+        Set a declarative widget hierarchy description.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -481,7 +549,9 @@ s.mytaglist = awful.widget.taglist {
         <a href="#add_button">:add_button <span class='function_args'> <b>(</b>button<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Add a new <a href="../input_handling/awful.button.html#">awful.button</a> to this widget.</td>
+      <td colspan="1" class="summary">
+        Add a new <a href="../input_handling/awful.button.html#">awful.button</a> to this widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -491,8 +561,10 @@ s.mytaglist = awful.widget.taglist {
         <a href="#emit_signal_recursive">:emit_signal_recursive <span class='function_args'> <b>(</b>signal_name, ...<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Emit a signal and ensure all parent widgets in the hierarchies also
- forward the signal.</td>
+      <td colspan="1" class="summary">
+        Emit a signal and ensure all parent widgets in the hierarchies also
+ forward the signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -502,7 +574,9 @@ s.mytaglist = awful.widget.taglist {
         <a href="#emit_signal">:emit_signal <span class='function_args'> <b>(</b>name, ...<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Emit a signal.</td>
+      <td colspan="1" class="summary">
+        Emit a signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -512,7 +586,9 @@ s.mytaglist = awful.widget.taglist {
         <a href="#connect_signal">:connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Connect to a signal.</td>
+      <td colspan="1" class="summary">
+        Connect to a signal.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -522,7 +598,9 @@ s.mytaglist = awful.widget.taglist {
         <a href="#weak_connect_signal">:weak_connect_signal <span class='function_args'> <b>(</b>name, func<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="1" class="summary">Connect to a signal weakly.</td>
+      <td colspan="1" class="summary">
+        Connect to a signal weakly.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from gears.object
       </td>
@@ -534,7 +612,9 @@ s.mytaglist = awful.widget.taglist {
       <td class="name" >
         <a href="#widget::layout_changed">widget::layout_changed</a>
       </td>
-      <td colspan="1" class="summary">When the layout (size) change.</td>
+      <td colspan="1" class="summary">
+        When the layout (size) change.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -543,7 +623,9 @@ s.mytaglist = awful.widget.taglist {
       <td class="name" >
         <a href="#widget::redraw_needed">widget::redraw_needed</a>
       </td>
-      <td colspan="1" class="summary">When the widget content changed.</td>
+      <td colspan="1" class="summary">
+        When the widget content changed.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -552,7 +634,9 @@ s.mytaglist = awful.widget.taglist {
       <td class="name" >
         <a href="#button::press">button::press</a>
       </td>
-      <td colspan="1" class="summary">When a mouse button is pressed over the widget.</td>
+      <td colspan="1" class="summary">
+        When a mouse button is pressed over the widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -561,7 +645,9 @@ s.mytaglist = awful.widget.taglist {
       <td class="name" >
         <a href="#button::release">button::release</a>
       </td>
-      <td colspan="1" class="summary">When a mouse button is released over the widget.</td>
+      <td colspan="1" class="summary">
+        When a mouse button is released over the widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -570,7 +656,9 @@ s.mytaglist = awful.widget.taglist {
       <td class="name" >
         <a href="#mouse::enter">mouse::enter</a>
       </td>
-      <td colspan="1" class="summary">When the mouse enter a widget.</td>
+      <td colspan="1" class="summary">
+        When the mouse enter a widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -579,7 +667,9 @@ s.mytaglist = awful.widget.taglist {
       <td class="name" >
         <a href="#mouse::leave">mouse::leave</a>
       </td>
-      <td colspan="1" class="summary">When the mouse leave a widget.</td>
+      <td colspan="1" class="summary">
+        When the mouse leave a widget.
+      </td>
       <td class="baseclass" nowrap>
         Inherited from wibox.widget
       </td>
@@ -590,167 +680,233 @@ s.mytaglist = awful.widget.taglist {
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_fg_focus">beautiful.taglist_fg_focus</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The tag list main foreground (text) color.</td>
+      <td colspan="2" class="summary">
+        The tag list main foreground (text) color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_bg_focus">beautiful.taglist_bg_focus</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The tag list main background color.</td>
+      <td colspan="2" class="summary">
+        The tag list main background color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_fg_urgent">beautiful.taglist_fg_urgent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The tag list urgent elements foreground (text) color.</td>
+      <td colspan="2" class="summary">
+        The tag list urgent elements foreground (text) color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_bg_urgent">beautiful.taglist_bg_urgent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The tag list urgent elements background color.</td>
+      <td colspan="2" class="summary">
+        The tag list urgent elements background color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_bg_occupied">beautiful.taglist_bg_occupied</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The tag list occupied elements background color.</td>
+      <td colspan="2" class="summary">
+        The tag list occupied elements background color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_fg_occupied">beautiful.taglist_fg_occupied</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The tag list occupied elements foreground (text) color.</td>
+      <td colspan="2" class="summary">
+        The tag list occupied elements foreground (text) color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_bg_empty">beautiful.taglist_bg_empty</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The tag list empty elements background color.</td>
+      <td colspan="2" class="summary">
+        The tag list empty elements background color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_fg_empty">beautiful.taglist_fg_empty</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The tag list empty elements foreground (text) color.</td>
+      <td colspan="2" class="summary">
+        The tag list empty elements foreground (text) color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_bg_volatile">beautiful.taglist_bg_volatile</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The tag list volatile elements background color.</td>
+      <td colspan="2" class="summary">
+        The tag list volatile elements background color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_fg_volatile">beautiful.taglist_fg_volatile</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The tag list volatile elements foreground (text) color.</td>
+      <td colspan="2" class="summary">
+        The tag list volatile elements foreground (text) color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_squares_sel">beautiful.taglist_squares_sel</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>surface</span></td>
-      <td colspan="2" class="summary">The selected elements background image.</td>
+      <td colspan="2" class="summary">
+        The selected elements background image.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_squares_unsel">beautiful.taglist_squares_unsel</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>surface</span></td>
-      <td colspan="2" class="summary">The unselected elements background image.</td>
+      <td colspan="2" class="summary">
+        The unselected elements background image.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_squares_sel_empty">beautiful.taglist_squares_sel_empty</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>surface</span></td>
-      <td colspan="2" class="summary">The selected empty elements background image.</td>
+      <td colspan="2" class="summary">
+        The selected empty elements background image.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_squares_unsel_empty">beautiful.taglist_squares_unsel_empty</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>surface</span></td>
-      <td colspan="2" class="summary">The unselected empty elements background image.</td>
+      <td colspan="2" class="summary">
+        The unselected empty elements background image.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_squares_resize">beautiful.taglist_squares_resize</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">If the background images can be resized.</td>
+      <td colspan="2" class="summary">
+        If the background images can be resized.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_disable_icon">beautiful.taglist_disable_icon</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">Do not display the tag icons, even if they are set.</td>
+      <td colspan="2" class="summary">
+        Do not display the tag icons, even if they are set.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_font">beautiful.taglist_font</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>string</span></td>
-      <td colspan="2" class="summary">The taglist font.</td>
+      <td colspan="2" class="summary">
+        The taglist font.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_spacing">beautiful.taglist_spacing</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The space between the taglist elements.</td>
+      <td colspan="2" class="summary">
+        The space between the taglist elements.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape">beautiful.taglist_shape</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The main shape used for the elements.</td>
+      <td colspan="2" class="summary">
+        The main shape used for the elements.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_border_width">beautiful.taglist_shape_border_width</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The shape elements border width.</td>
+      <td colspan="2" class="summary">
+        The shape elements border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_border_color">beautiful.taglist_shape_border_color</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The elements shape border color.</td>
+      <td colspan="2" class="summary">
+        The elements shape border color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_empty">beautiful.taglist_shape_empty</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The shape used for the empty elements.</td>
+      <td colspan="2" class="summary">
+        The shape used for the empty elements.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_border_width_empty">beautiful.taglist_shape_border_width_empty</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The shape used for the empty elements border width.</td>
+      <td colspan="2" class="summary">
+        The shape used for the empty elements border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_border_color_empty">beautiful.taglist_shape_border_color_empty</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The empty elements shape border color.</td>
+      <td colspan="2" class="summary">
+        The empty elements shape border color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_focus">beautiful.taglist_shape_focus</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The shape used for the selected elements.</td>
+      <td colspan="2" class="summary">
+        The shape used for the selected elements.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_border_width_focus">beautiful.taglist_shape_border_width_focus</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The shape used for the selected elements border width.</td>
+      <td colspan="2" class="summary">
+        The shape used for the selected elements border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_border_color_focus">beautiful.taglist_shape_border_color_focus</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The selected elements shape border color.</td>
+      <td colspan="2" class="summary">
+        The selected elements shape border color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_urgent">beautiful.taglist_shape_urgent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The shape used for the urgent elements.</td>
+      <td colspan="2" class="summary">
+        The shape used for the urgent elements.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_border_width_urgent">beautiful.taglist_shape_border_width_urgent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The shape used for the urgent elements border width.</td>
+      <td colspan="2" class="summary">
+        The shape used for the urgent elements border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_border_color_urgent">beautiful.taglist_shape_border_color_urgent</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The urgents elements shape border color.</td>
+      <td colspan="2" class="summary">
+        The urgents elements shape border color.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_volatile">beautiful.taglist_shape_volatile</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>gears.shape</span></td>
-      <td colspan="2" class="summary">The shape used for the volatile elements.</td>
+      <td colspan="2" class="summary">
+        The shape used for the volatile elements.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_border_width_volatile">beautiful.taglist_shape_border_width_volatile</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>number</span></td>
-      <td colspan="2" class="summary">The shape used for the volatile elements border width.</td>
+      <td colspan="2" class="summary">
+        The shape used for the volatile elements border width.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#beautiful.taglist_shape_border_color_volatile">beautiful.taglist_shape_border_color_volatile</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>color</span></td>
-      <td colspan="2" class="summary">The volatile elements shape border color.</td>
+      <td colspan="2" class="summary">
+        The volatile elements shape border color.
+      </td>
     </tr>
 </table>
 <h2><a href="#List_source_functions">List source functions</a></h2>
@@ -759,7 +915,9 @@ s.mytaglist = awful.widget.taglist {
       <td class="name" >
         <a href="#awful.widget.taglist.source.for_screen"><span class='function_modname'>awful.widget.taglist.</span>source.for_screen</a>
       </td>
-      <td colspan="2" class="summary">All tags for the defined screen ordered by indices.</td>
+      <td colspan="2" class="summary">
+        All tags for the defined screen ordered by indices.
+      </td>
     </tr>
 </table>
 <h2><a href="#List_filters">List filters</a></h2>
@@ -768,19 +926,25 @@ s.mytaglist = awful.widget.taglist {
       <td class="name" >
         <a href="#awful.widget.taglist.filter.noempty"><span class='function_modname'>awful.widget.taglist.</span>filter.noempty</a>
       </td>
-      <td colspan="2" class="summary">Filtering function to include all nonempty tags on the screen.</td>
+      <td colspan="2" class="summary">
+        Filtering function to include all nonempty tags on the screen.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.widget.taglist.filter.selected"><span class='function_modname'>awful.widget.taglist.</span>filter.selected</a>
       </td>
-      <td colspan="2" class="summary">Filtering function to include selected tags on the screen.</td>
+      <td colspan="2" class="summary">
+        Filtering function to include selected tags on the screen.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#awful.widget.taglist.filter.all"><span class='function_modname'>awful.widget.taglist.</span>filter.all</a>
       </td>
-      <td colspan="2" class="summary">Filtering function to include all tags on the screen.</td>
+      <td colspan="2" class="summary">
+        Filtering function to include all tags on the screen.
+      </td>
     </tr>
 </table>
 
@@ -812,7 +976,7 @@ s.mytaglist = awful.widget.taglist {
 
         <ul>
         <li><span class="parameter">screen</span>
-            <span class="types"><span class="type">screen</span></span>
+            <span class="types"><a class="type" href="../widgets/awful.widget.taglist.html#screen">screen</a></span>
          The screen to draw taglist for.
         </li>
         <li><span class="parameter">filter</span>
@@ -1009,7 +1173,7 @@ s.mytaglist = awful.widget.taglist {
          <strong>DEPRECATED</strong> use args.update_function
         </li>
         <li><span class="parameter">base_widget</span>
-         <strong>DEPRECATED</strong> use args.base_widget
+         <strong>DEPRECATED</strong> use args.base_layout
         </li>
     </ul>
 
@@ -1026,6 +1190,189 @@ s.mytaglist = awful.widget.taglist {
     <h2 class="section-header "><a name="Object_properties"></a>Object properties</h2>
 
     <dl class="function">
+    <dt>
+    <a name = "screen"></a>
+    <strong>screen</strong>
+    <span class="proptype"><span class='summary_type'>screen</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    The taglist screen.
+
+
+
+
+
+
+
+    <span id=item1126 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "base_layout"></a>
+    <strong>base_layout</strong>
+    <span class="proptype"><span class='summary_type'>wibox.layout</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    Set the taglist layout.
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../widget_layouts/wibox.layout.fixed.html#horizontal">wibox.layout.fixed.horizontal</a>
+    </ul>
+
+
+
+    <span id=item1127 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "count"></a>
+    <strong>count</strong>
+    <span class="proptype"><span class='summary_type'>number</span></span>
+    <span class="baseclass" >
+         &middot 1 signal
+         &middot read only
+    </span>
+    </dt>
+    <dd>
+    The current number of tags.
+
+    <h3>Type constraints:</h3>
+    <ul>
+        <li><span class="parameter">The</span>
+            <span class="types"><span class="type">number</span></span>
+         number of tags.
+        </li>
+    </ul>
+
+
+
+
+
+     <br />
+     <center id=button1128>
+     <a class="show_more_button" onclick="show_extra('1128')">
+      Click to display more
+     </a>
+     </center>
+
+    <span id=item1128 class="hide_extra">
+     <h3>Emit signals:</h3>
+     <ul>
+          <li><span class="parameter"><code>property::count</code></span>  When the <a href="../widgets/awful.widget.taglist.html#count">count</a> value changes.</li>
+           <ul>
+             <li><span class="parameter"><code>self</code></span> <span class="types"><a href="../widgets/awful.widget.taglist.html#">awful.widget.taglist</a></span> The object which changed (useful when connecting many object to the same callback).</li>
+             <li><span class="parameter"><code>new_value</code></span> <span class="types"><code>The</code></span> The new value affected to the property.</li>
+           </ul>
+     </ul>
+    </span>
+
+</dd>
+    <dt>
+    <a name = "update_function"></a>
+    <strong>update_function</strong>
+    <span class="proptype"><span class='summary_type'>function</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    An alternative function to configure the content. </p>
+
+<p> You should use <a href="../widgets/awful.widget.taglist.html#widget_template">widget_template</a> if it fits your use case first. This
+ API is very low level.
+
+
+
+
+
+
+
+    <span id=item1129 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "filter"></a>
+    <strong>filter</strong>
+    <span class="proptype"><span class='summary_type'>function</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    A function to restrict the content of the taglist.
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../widgets/awful.widget.taglist.html#source">source</a></li>
+         <li><a href="../widgets/awful.widget.taglist.html#awful.widget.taglist.filter.noempty">awful.widget.taglist.filter.noempty</a></li>
+         <li><a href="../widgets/awful.widget.taglist.html#awful.widget.taglist.filter.selected">awful.widget.taglist.filter.selected</a></li>
+         <li><a href="../widgets/awful.widget.taglist.html#awful.widget.taglist.filter.all">awful.widget.taglist.filter.all</a></li>
+         <li><a href="../widgets/awful.widget.taglist.html#awful.widget.taglist.source.for_screen">awful.widget.taglist.source.for_screen</a></li>
+    </ul>
+
+
+
+    <span id=item1130 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "source"></a>
+    <strong>source</strong>
+    <span class="proptype"><span class='summary_type'>function</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    The function used to gather the group of tags.
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <li><a href="../widgets/awful.widget.taglist.html#filter">filter</a></li>
+         <li><a href="../widgets/awful.widget.taglist.html#awful.widget.taglist.source.for_screen">awful.widget.taglist.source.for_screen</a></li>
+    </ul>
+
+
+
+    <span id=item1131 class="hide_extra">
+    </span>
+
+</dd>
+    <dt>
+    <a name = "widget_template"></a>
+    <strong>widget_template</strong>
+    <span class="proptype"><span class='summary_type'>table</span></span>
+    <span class="baseclass" >
+    </span>
+    </dt>
+    <dd>
+    A templete used to genetate the individual tag widgets.
+
+
+
+
+
+
+
+    <span id=item1132 class="hide_extra">
+    </span>
+
+</dd>
     <dt>
     <a name = "children"></a>
     <strong>children</strong>
@@ -1050,7 +1397,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1126 class="hide_extra">
+    <span id=item1133 class="hide_extra">
     </span>
 
 </dd>
@@ -1081,7 +1428,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1127 class="hide_extra">
+    <span id=item1134 class="hide_extra">
     </span>
 
 </dd>
@@ -1109,7 +1456,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1128 class="hide_extra">
+    <span id=item1135 class="hide_extra">
     </span>
 
 </dd>
@@ -1137,7 +1484,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1129 class="hide_extra">
+    <span id=item1136 class="hide_extra">
     </span>
 
 </dd>
@@ -1166,7 +1513,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1130 class="hide_extra">
+    <span id=item1137 class="hide_extra">
     </span>
 
 </dd>
@@ -1187,7 +1534,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1131 class="hide_extra">
+    <span id=item1138 class="hide_extra">
     </span>
 
 </dd>
@@ -1214,7 +1561,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1132 class="hide_extra">
+    <span id=item1139 class="hide_extra">
     </span>
 
 </dd>
@@ -1246,7 +1593,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1133 class="hide_extra">
+    <span id=item1140 class="hide_extra">
     </span>
 
 </dd>
@@ -1274,7 +1621,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1134 class="hide_extra">
+    <span id=item1141 class="hide_extra">
     </span>
 
 </dd>
@@ -1309,7 +1656,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1135 class="hide_extra">
+    <span id=item1142 class="hide_extra">
     </span>
 
 </dd>
@@ -1342,7 +1689,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1136 class="hide_extra">
+    <span id=item1143 class="hide_extra">
     </span>
 
 </dd>
@@ -1374,7 +1721,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1137 class="hide_extra">
+    <span id=item1144 class="hide_extra">
     </span>
 
 </dd>
@@ -1413,7 +1760,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1138 class="hide_extra">
+    <span id=item1145 class="hide_extra">
     </span>
 
 </dd>
@@ -1444,7 +1791,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1139 class="hide_extra">
+    <span id=item1146 class="hide_extra">
     </span>
 
 </dd>
@@ -1471,7 +1818,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1140 class="hide_extra">
+    <span id=item1147 class="hide_extra">
     </span>
 
 </dd>
@@ -1568,7 +1915,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1141 class="hide_extra">
+    <span id=item1148 class="hide_extra">
     </span>
 
 </dd>
@@ -1665,7 +2012,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1142 class="hide_extra">
+    <span id=item1149 class="hide_extra">
     </span>
 
 </dd>
@@ -1744,7 +2091,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1143 class="hide_extra">
+    <span id=item1150 class="hide_extra">
     </span>
 
 </dd>
@@ -1823,7 +2170,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1144 class="hide_extra">
+    <span id=item1151 class="hide_extra">
     </span>
 
 </dd>
@@ -1851,7 +2198,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1145 class="hide_extra">
+    <span id=item1152 class="hide_extra">
     </span>
 
 </dd>
@@ -1875,7 +2222,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1146 class="hide_extra">
+    <span id=item1153 class="hide_extra">
     </span>
 
 </dd>
@@ -1899,7 +2246,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1147 class="hide_extra">
+    <span id=item1154 class="hide_extra">
     </span>
 
 </dd>
@@ -1923,7 +2270,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1148 class="hide_extra">
+    <span id=item1155 class="hide_extra">
     </span>
 
 </dd>
@@ -1947,7 +2294,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1149 class="hide_extra">
+    <span id=item1156 class="hide_extra">
     </span>
 
 </dd>
@@ -1971,7 +2318,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1150 class="hide_extra">
+    <span id=item1157 class="hide_extra">
     </span>
 
 </dd>
@@ -1995,7 +2342,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1151 class="hide_extra">
+    <span id=item1158 class="hide_extra">
     </span>
 
 </dd>
@@ -2019,7 +2366,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1152 class="hide_extra">
+    <span id=item1159 class="hide_extra">
     </span>
 
 </dd>
@@ -2043,7 +2390,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1153 class="hide_extra">
+    <span id=item1160 class="hide_extra">
     </span>
 
 </dd>
@@ -2067,7 +2414,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1154 class="hide_extra">
+    <span id=item1161 class="hide_extra">
     </span>
 
 </dd>
@@ -2091,7 +2438,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1155 class="hide_extra">
+    <span id=item1162 class="hide_extra">
     </span>
 
 </dd>
@@ -2115,7 +2462,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1156 class="hide_extra">
+    <span id=item1163 class="hide_extra">
     </span>
 
 </dd>
@@ -2139,7 +2486,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1157 class="hide_extra">
+    <span id=item1164 class="hide_extra">
     </span>
 
 </dd>
@@ -2163,7 +2510,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1158 class="hide_extra">
+    <span id=item1165 class="hide_extra">
     </span>
 
 </dd>
@@ -2183,7 +2530,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1159 class="hide_extra">
+    <span id=item1166 class="hide_extra">
     </span>
 
 </dd>
@@ -2203,7 +2550,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1160 class="hide_extra">
+    <span id=item1167 class="hide_extra">
     </span>
 
 </dd>
@@ -2223,7 +2570,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1161 class="hide_extra">
+    <span id=item1168 class="hide_extra">
     </span>
 
 </dd>
@@ -2251,7 +2598,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1162 class="hide_extra">
+    <span id=item1169 class="hide_extra">
     </span>
 
 </dd>
@@ -2281,7 +2628,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1163 class="hide_extra">
+    <span id=item1170 class="hide_extra">
     </span>
 
 </dd>
@@ -2305,7 +2652,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1164 class="hide_extra">
+    <span id=item1171 class="hide_extra">
     </span>
 
 </dd>
@@ -2329,7 +2676,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1165 class="hide_extra">
+    <span id=item1172 class="hide_extra">
     </span>
 
 </dd>
@@ -2353,7 +2700,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1166 class="hide_extra">
+    <span id=item1173 class="hide_extra">
     </span>
 
 </dd>
@@ -2377,7 +2724,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1167 class="hide_extra">
+    <span id=item1174 class="hide_extra">
     </span>
 
 </dd>
@@ -2401,7 +2748,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1168 class="hide_extra">
+    <span id=item1175 class="hide_extra">
     </span>
 
 </dd>
@@ -2425,7 +2772,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1169 class="hide_extra">
+    <span id=item1176 class="hide_extra">
     </span>
 
 </dd>
@@ -2449,7 +2796,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1170 class="hide_extra">
+    <span id=item1177 class="hide_extra">
     </span>
 
 </dd>
@@ -2473,7 +2820,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1171 class="hide_extra">
+    <span id=item1178 class="hide_extra">
     </span>
 
 </dd>
@@ -2497,7 +2844,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1172 class="hide_extra">
+    <span id=item1179 class="hide_extra">
     </span>
 
 </dd>
@@ -2521,7 +2868,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1173 class="hide_extra">
+    <span id=item1180 class="hide_extra">
     </span>
 
 </dd>
@@ -2545,7 +2892,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1174 class="hide_extra">
+    <span id=item1181 class="hide_extra">
     </span>
 
 </dd>
@@ -2569,7 +2916,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1175 class="hide_extra">
+    <span id=item1182 class="hide_extra">
     </span>
 
 </dd>
@@ -2593,7 +2940,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1176 class="hide_extra">
+    <span id=item1183 class="hide_extra">
     </span>
 
 </dd>
@@ -2617,7 +2964,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1177 class="hide_extra">
+    <span id=item1184 class="hide_extra">
     </span>
 
 </dd>
@@ -2646,7 +2993,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1178 class="hide_extra">
+    <span id=item1185 class="hide_extra">
     </span>
 
 </dd>
@@ -2674,7 +3021,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1179 class="hide_extra">
+    <span id=item1186 class="hide_extra">
     </span>
 
 </dd>
@@ -2698,7 +3045,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1180 class="hide_extra">
+    <span id=item1187 class="hide_extra">
     </span>
 
 </dd>
@@ -2717,7 +3064,7 @@ s.mytaglist = awful.widget.taglist {
 
 
 
-    <span id=item1181 class="hide_extra">
+    <span id=item1188 class="hide_extra">
     </span>
 
 </dd>
@@ -2728,7 +3075,7 @@ s.mytaglist = awful.widget.taglist {
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
+<i style="float:right;">Last updated 2021-11-13 00:24:24 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

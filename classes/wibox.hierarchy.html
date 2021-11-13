@@ -281,7 +281,9 @@
       <td class="name" >
         <a href="#wibox.hierarchy.new"><span class='function_modname'>wibox.hierarchy.</span>new <span class='function_args'> <b>(</b>context, widget, width, height, redraw_callback, layout_callback, callback_arg<b>)</b></span></a>
       </td>
-      <td colspan="2" class="summary">Create a new widget hierarchy that has no parent.</td>
+      <td colspan="2" class="summary">
+        Create a new widget hierarchy that has no parent.
+      </td>
     </tr>
 </table>
 <h2><a href="#Static_module_functions">Static module functions</a></h2>
@@ -291,8 +293,10 @@
         <a href="#wibox.hierarchy.count_widget"><span class='function_modname'>wibox.hierarchy.</span>count_widget <span class='function_args'> <b>(</b>widget<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Add a widget to the list of widgets for which hierarchies should count their
- occurrences.</td>
+      <td colspan="2" class="summary">
+        Add a widget to the list of widgets for which hierarchies should count their
+ occurrences.
+      </td>
     </tr>
 </table>
 <h2><a href="#Object_methods">Object methods </a></h2>
@@ -302,83 +306,105 @@
         <a href="#wibox.hierarchy.update">:update <span class='function_args'> <b>(</b>context, widget, width, height[, region]<b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
       </td>
-      <td colspan="2" class="summary">Update a widget hierarchy with some new state.</td>
+      <td colspan="2" class="summary">
+        Update a widget hierarchy with some new state.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#wibox.hierarchy.get_widget">:get_widget <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Get the widget that this hierarchy manages.</td>
+      <td colspan="2" class="summary">
+        Get the widget that this hierarchy manages.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#wibox.hierarchy.get_matrix_to_parent">:get_matrix_to_parent <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
       </td>
-      <td colspan="2" class="summary">Get a matrix that transforms to the parent's coordinate space from this
- hierarchy's coordinate system.</td>
+      <td colspan="2" class="summary">
+        Get a matrix that transforms to the parent's coordinate space from this
+ hierarchy's coordinate system.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#wibox.hierarchy.get_matrix_to_device">:get_matrix_to_device <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
       </td>
-      <td colspan="2" class="summary">Get a matrix that transforms to the base of this hierarchy's coordinate
+      <td colspan="2" class="summary">
+        Get a matrix that transforms to the base of this hierarchy's coordinate
  system (aka the coordinate system of the device that this
- hierarchy is applied upon) from this hierarchy's coordinate system.</td>
+ hierarchy is applied upon) from this hierarchy's coordinate system.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#wibox.hierarchy.get_matrix_from_parent">:get_matrix_from_parent <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
       </td>
-      <td colspan="2" class="summary">Get a matrix that transforms from the parent's coordinate space into this
- hierarchy's coordinate system.</td>
+      <td colspan="2" class="summary">
+        Get a matrix that transforms from the parent's coordinate space into this
+ hierarchy's coordinate system.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#wibox.hierarchy.get_matrix_from_device">:get_matrix_from_device <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
       </td>
-      <td colspan="2" class="summary">Get a matrix that transforms from the base of this hierarchy's coordinate
+      <td colspan="2" class="summary">
+        Get a matrix that transforms from the base of this hierarchy's coordinate
  system (aka the coordinate system of the device that this
- hierarchy is applied upon) into this hierarchy's coordinate system.</td>
+ hierarchy is applied upon) into this hierarchy's coordinate system.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#wibox.hierarchy.get_draw_extents">:get_draw_extents <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
       </td>
-      <td colspan="2" class="summary">Get the extents that this hierarchy possibly draws to (in the current coordinate space).</td>
+      <td colspan="2" class="summary">
+        Get the extents that this hierarchy possibly draws to (in the current coordinate space).
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#wibox.hierarchy.get_size">:get_size <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
       </td>
-      <td colspan="2" class="summary">Get the size that this hierarchy logically covers (in the current coordinate space).</td>
+      <td colspan="2" class="summary">
+        Get the size that this hierarchy logically covers (in the current coordinate space).
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#wibox.hierarchy.get_children">:get_children <span class='function_args'> <b>(</b><b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
       </td>
-      <td colspan="2" class="summary">Get a list of all children.</td>
+      <td colspan="2" class="summary">
+        Get a list of all children.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#wibox.hierarchy.get_count">:get_count <span class='function_args'> <b>(</b>widget<b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
       </td>
-      <td colspan="2" class="summary">Count how often this widget is visible inside this hierarchy.</td>
+      <td colspan="2" class="summary">
+        Count how often this widget is visible inside this hierarchy.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#wibox.hierarchy.draw">:draw <span class='function_args'> <b>(</b>context, cr<b>)</b></span></a>
         <span class="summarytype"></span>
       </td>
-      <td colspan="2" class="summary">Draw a hierarchy to some cairo context.</td>
+      <td colspan="2" class="summary">
+        Draw a hierarchy to some cairo context.
+      </td>
     </tr>
 </table>
 
@@ -435,7 +461,7 @@
 
 
 
-    <span id=item2877 class="hide_extra">
+    <span id=item2891 class="hide_extra">
     </span>
 
 </dd>
@@ -467,7 +493,7 @@
 
 
 
-    <span id=item2878 class="hide_extra">
+    <span id=item2892 class="hide_extra">
     </span>
 
 </dd>
@@ -516,7 +542,7 @@
 
 
 
-    <span id=item2879 class="hide_extra">
+    <span id=item2893 class="hide_extra">
     </span>
 
 </dd>
@@ -536,7 +562,7 @@
 
 
 
-    <span id=item2880 class="hide_extra">
+    <span id=item2894 class="hide_extra">
     </span>
 
 </dd>
@@ -562,7 +588,7 @@
 
 
 
-    <span id=item2881 class="hide_extra">
+    <span id=item2895 class="hide_extra">
     </span>
 
 </dd>
@@ -589,7 +615,7 @@
 
 
 
-    <span id=item2882 class="hide_extra">
+    <span id=item2896 class="hide_extra">
     </span>
 
 </dd>
@@ -615,7 +641,7 @@
 
 
 
-    <span id=item2883 class="hide_extra">
+    <span id=item2897 class="hide_extra">
     </span>
 
 </dd>
@@ -642,7 +668,7 @@
 
 
 
-    <span id=item2884 class="hide_extra">
+    <span id=item2898 class="hide_extra">
     </span>
 
 </dd>
@@ -669,7 +695,7 @@
 
 
 
-    <span id=item2885 class="hide_extra">
+    <span id=item2899 class="hide_extra">
     </span>
 
 </dd>
@@ -694,7 +720,7 @@
 
 
 
-    <span id=item2886 class="hide_extra">
+    <span id=item2900 class="hide_extra">
     </span>
 
 </dd>
@@ -719,7 +745,7 @@
 
 
 
-    <span id=item2887 class="hide_extra">
+    <span id=item2901 class="hide_extra">
     </span>
 
 </dd>
@@ -751,7 +777,7 @@
 
 
 
-    <span id=item2888 class="hide_extra">
+    <span id=item2902 class="hide_extra">
     </span>
 
 </dd>
@@ -782,7 +808,7 @@
 
 
 
-    <span id=item2889 class="hide_extra">
+    <span id=item2903 class="hide_extra">
     </span>
 
 </dd>
@@ -793,7 +819,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
+<i style="float:right;">Last updated 2021-11-13 00:24:24 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

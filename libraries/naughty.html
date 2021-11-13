@@ -285,19 +285,25 @@
       <td class="name" >
         <a href="#connect_signal"><span class='function_modname'>naughty.</span>connect_signal (name, func)</a>
       </td>
-      <td colspan="2" class="summary">Connect a global signal on the module.</td>
+      <td colspan="2" class="summary">
+        Connect a global signal on the module.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#emit_signal">emit_signal (name, ...)</a>
       </td>
-      <td colspan="2" class="summary">Emit a module signal.</td>
+      <td colspan="2" class="summary">
+        Emit a module signal.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#disconnect_signal"><span class='function_modname'>naughty.</span>disconnect_signal (name, func)</a>
       </td>
-      <td colspan="2" class="summary">Disconnect a signal from a source.</td>
+      <td colspan="2" class="summary">
+        Disconnect a signal from a source.
+      </td>
     </tr>
 </table>
 <h2><a href="#Static_module_functions">Static module functions</a></h2>
@@ -307,14 +313,18 @@
         <a href="#destroy_all_notifications"><span class='function_modname'>naughty.</span>destroy_all_notifications <span class='function_args'> <b>(</b>screens, reason<b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;true <i>or</i> nil</span></span>
       </td>
-      <td colspan="2" class="summary">Destroy all notifications on given screens.</td>
+      <td colspan="2" class="summary">
+        Destroy all notifications on given screens.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#get_by_id"><span class='function_modname'>naughty.</span>get_by_id <span class='function_args'> <b>(</b>id<b>)</b></span></a>
         <span class="summarytype"><span class='summary_type'> -&gt;&nbsp;()</span></span>
       </td>
-      <td colspan="2" class="summary">Get notification by ID</td>
+      <td colspan="2" class="summary">
+        Get notification by ID
+      </td>
     </tr>
 </table>
 <h2><a href="#Object_properties">Object properties</a></h2>
@@ -322,37 +332,51 @@
     <tr>
       <td class="shortname" ><a href="#suspended">suspended</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">The global suspension state.</td>
+      <td colspan="2" class="summary">
+        The global suspension state.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#expiration_paused">expiration_paused</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">Do not allow notifications to auto-expire.</td>
+      <td colspan="2" class="summary">
+        Do not allow notifications to auto-expire.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#active">active</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>table</span></td>
-      <td colspan="2" class="summary">A table with all active notifications.</td>
+      <td colspan="2" class="summary">
+        A table with all active notifications.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#has_display_handler">has_display_handler</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">True when there is a handler connected to <a href="../libraries/naughty.html#request::display">request::display</a>.</td>
+      <td colspan="2" class="summary">
+        True when there is a handler connected to <a href="../libraries/naughty.html#request::display">request::display</a>.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#auto_reset_timeout">auto_reset_timeout</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">If the timeout needs to be reset when a property changes.</td>
+      <td colspan="2" class="summary">
+        If the timeout needs to be reset when a property changes.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#image_animations_enabled">image_animations_enabled</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">Enable or disable naughty ability to claim to support animations.</td>
+      <td colspan="2" class="summary">
+        Enable or disable naughty ability to claim to support animations.
+      </td>
     </tr>
     <tr>
       <td class="shortname" ><a href="#persistence_enabled">persistence_enabled</a></td>
       <td class="summarytype" nowrap><span class='summary_type'>boolean</span></td>
-      <td colspan="2" class="summary">Enable or disable the persistent notifications.</td>
+      <td colspan="2" class="summary">
+        Enable or disable the persistent notifications.
+      </td>
     </tr>
 </table>
 <h2><a href="#Signals">Signals</a></h2>
@@ -361,49 +385,65 @@
       <td class="name" >
         <a href="#request::display_error">request::display_error</a>
       </td>
-      <td colspan="2" class="summary">Emitted when an error occurred and requires attention.</td>
+      <td colspan="2" class="summary">
+        Emitted when an error occurred and requires attention.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#added">added</a>
       </td>
-      <td colspan="2" class="summary">Emitted when a notification is created.</td>
+      <td colspan="2" class="summary">
+        Emitted when a notification is created.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#destroyed">destroyed</a>
       </td>
-      <td colspan="2" class="summary">Emitted when a notification is destroyed.</td>
+      <td colspan="2" class="summary">
+        Emitted when a notification is destroyed.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#request::display">request::display</a>
       </td>
-      <td colspan="2" class="summary">Emitted when a notification has to be displayed.</td>
+      <td colspan="2" class="summary">
+        Emitted when a notification has to be displayed.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#request::preset">request::preset</a>
       </td>
-      <td colspan="2" class="summary">Emitted when a notification needs pre-display configuration.</td>
+      <td colspan="2" class="summary">
+        Emitted when a notification needs pre-display configuration.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#request::action_icon">request::action_icon</a>
       </td>
-      <td colspan="2" class="summary">Emitted when an action requires an icon it doesn't know.</td>
+      <td colspan="2" class="summary">
+        Emitted when an action requires an icon it doesn't know.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#request::icon">request::icon</a>
       </td>
-      <td colspan="2" class="summary">Emitted when a notification icon could not be loaded.</td>
+      <td colspan="2" class="summary">
+        Emitted when a notification icon could not be loaded.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#request::screen">request::screen</a>
       </td>
-      <td colspan="2" class="summary">Emitted when the screen is not defined or being removed.</td>
+      <td colspan="2" class="summary">
+        Emitted when the screen is not defined or being removed.
+      </td>
     </tr>
 </table>
 <h2><a href="#Request_handlers">Request handlers</a></h2>
@@ -412,25 +452,33 @@
       <td class="name" >
         <a href="#default_screen_handler">default_screen_handler</a>
       </td>
-      <td colspan="2" class="summary">The default handler for <a href="../libraries/naughty.html#request::screen">request::screen</a>.</td>
+      <td colspan="2" class="summary">
+        The default handler for <a href="../libraries/naughty.html#request::screen">request::screen</a>.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#client_icon_handler">client_icon_handler</a>
       </td>
-      <td colspan="2" class="summary">Request handler to get the icon using the clients icons.</td>
+      <td colspan="2" class="summary">
+        Request handler to get the icon using the clients icons.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#icon_path_handler">icon_path_handler</a>
       </td>
-      <td colspan="2" class="summary">Request handler to get the icon using the image or path.</td>
+      <td colspan="2" class="summary">
+        Request handler to get the icon using the image or path.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#icon_clear_handler">icon_clear_handler</a>
       </td>
-      <td colspan="2" class="summary">Request handler for clearing the icon when asked by ie, DBus.</td>
+      <td colspan="2" class="summary">
+        Request handler for clearing the icon when asked by ie, DBus.
+      </td>
     </tr>
 </table>
 <h2><a href="#Deprecated_functions">Deprecated functions</a></h2>
@@ -439,55 +487,73 @@
       <td class="name" >
         <a href="#is_suspended">naughty.is_suspended<i class="deprecated_label"> [deprecated]</i></a>
       </td>
-      <td colspan="2" class="summary">Notification state.</td>
+      <td colspan="2" class="summary">
+        Notification state.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#suspend">naughty.suspend<i class="deprecated_label"> [deprecated]</i></a>
       </td>
-      <td colspan="2" class="summary">Suspend notifications.</td>
+      <td colspan="2" class="summary">
+        Suspend notifications.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#resume">naughty.resume<i class="deprecated_label"> [deprecated]</i></a>
       </td>
-      <td colspan="2" class="summary">Resume notifications.</td>
+      <td colspan="2" class="summary">
+        Resume notifications.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#toggle">naughty.toggle<i class="deprecated_label"> [deprecated]</i></a>
       </td>
-      <td colspan="2" class="summary">Toggle notification state.</td>
+      <td colspan="2" class="summary">
+        Toggle notification state.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#destroy">naughty.destroy<i class="deprecated_label"> [deprecated]</i></a>
       </td>
-      <td colspan="2" class="summary">Destroy notification by notification object</td>
+      <td colspan="2" class="summary">
+        Destroy notification by notification object
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#getById">naughty.getById<i class="deprecated_label"> [deprecated]</i></a>
       </td>
-      <td colspan="2" class="summary">Get notification by ID</td>
+      <td colspan="2" class="summary">
+        Get notification by ID
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#reset_timeout">naughty.reset_timeout<i class="deprecated_label"> [deprecated]</i></a>
       </td>
-      <td colspan="2" class="summary">Set new notification timeout.</td>
+      <td colspan="2" class="summary">
+        Set new notification timeout.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#replace_text">naughty.replace_text<i class="deprecated_label"> [deprecated]</i></a>
       </td>
-      <td colspan="2" class="summary">Replace title and text of an existing notification.</td>
+      <td colspan="2" class="summary">
+        Replace title and text of an existing notification.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#notify">naughty.notify<i class="deprecated_label"> [deprecated]</i></a>
       </td>
-      <td colspan="2" class="summary">Create a notification.</td>
+      <td colspan="2" class="summary">
+        Create a notification.
+      </td>
     </tr>
 </table>
 <h2><a href="#Tables">Tables</a></h2>
@@ -496,31 +562,41 @@
       <td class="name" >
         <a href="#config">config</a>
       </td>
-      <td colspan="2" class="summary">Naughty configuration - a table containing common popup settings.</td>
+      <td colspan="2" class="summary">
+        Naughty configuration - a table containing common popup settings.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#config.presets">config.presets</a>
       </td>
-      <td colspan="2" class="summary">Notification presets for <a href="../libraries/naughty.html#notify">naughty.notify</a>.</td>
+      <td colspan="2" class="summary">
+        Notification presets for <a href="../libraries/naughty.html#notify">naughty.notify</a>.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#config.defaults">config.defaults</a>
       </td>
-      <td colspan="2" class="summary">Defaults for <a href="../libraries/naughty.html#notify">naughty.notify</a>.</td>
+      <td colspan="2" class="summary">
+        Defaults for <a href="../libraries/naughty.html#notify">naughty.notify</a>.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#notification_closed_reason">notification_closed_reason</a>
       </td>
-      <td colspan="2" class="summary">The reason why a notification is to be closed.</td>
+      <td colspan="2" class="summary">
+        The reason why a notification is to be closed.
+      </td>
     </tr>
     <tr>
       <td class="name" >
         <a href="#notifications">notifications</a>
       </td>
-      <td colspan="2" class="summary">Index of notifications per screen and position.</td>
+      <td colspan="2" class="summary">
+        Index of notifications per screen and position.
+      </td>
     </tr>
 </table>
 
@@ -569,7 +645,7 @@
     </ul>
 
 
-    <span id=item2631 class="hide_extra">
+    <span id=item2645 class="hide_extra">
     </span>
 
 </dd>
@@ -598,7 +674,7 @@
 
 
 
-    <span id=item2632 class="hide_extra">
+    <span id=item2646 class="hide_extra">
     </span>
 
 </dd>
@@ -634,7 +710,7 @@
 
 
 
-    <span id=item2633 class="hide_extra">
+    <span id=item2647 class="hide_extra">
     </span>
 
 </dd>
@@ -682,7 +758,7 @@
 
 
 
-    <span id=item2634 class="hide_extra">
+    <span id=item2648 class="hide_extra">
     </span>
 
 </dd>
@@ -713,7 +789,7 @@
 
 
 
-    <span id=item2635 class="hide_extra">
+    <span id=item2649 class="hide_extra">
     </span>
 
 </dd>
@@ -742,13 +818,13 @@
 
 
      <br />
-     <center id=button2636>
-     <a class="show_more_button" onclick="show_extra('2636')">
+     <center id=button2650>
+     <a class="show_more_button" onclick="show_extra('2650')">
       Click to display more
      </a>
      </center>
 
-    <span id=item2636 class="hide_extra">
+    <span id=item2650 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><a href="../libraries/naughty.html#added">added</a></span>  </li>
@@ -785,13 +861,13 @@
 
 
      <br />
-     <center id=button2637>
-     <a class="show_more_button" onclick="show_extra('2637')">
+     <center id=button2651>
+     <a class="show_more_button" onclick="show_extra('2651')">
       Click to display more
      </a>
      </center>
 
-    <span id=item2637 class="hide_extra">
+    <span id=item2651 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::expiration_paused</code></span>  When the <a href="../libraries/naughty.html#expiration_paused">expiration_paused</a> value changes.</li>
@@ -831,13 +907,13 @@
 
 
      <br />
-     <center id=button2638>
-     <a class="show_more_button" onclick="show_extra('2638')">
+     <center id=button2652>
+     <a class="show_more_button" onclick="show_extra('2652')">
       Click to display more
      </a>
      </center>
 
-    <span id=item2638 class="hide_extra">
+    <span id=item2652 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::active</code></span>  When the <a href="../libraries/naughty.html#active">active</a> value changes.</li>
@@ -864,7 +940,7 @@
 
 
 
-    <span id=item2639 class="hide_extra">
+    <span id=item2653 class="hide_extra">
     </span>
 
 </dd>
@@ -888,13 +964,13 @@
 
 
      <br />
-     <center id=button2640>
-     <a class="show_more_button" onclick="show_extra('2640')">
+     <center id=button2654>
+     <a class="show_more_button" onclick="show_extra('2654')">
       Click to display more
      </a>
      </center>
 
-    <span id=item2640 class="hide_extra">
+    <span id=item2654 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::auto_reset_timeout</code></span>  When the <a href="../libraries/naughty.html#auto_reset_timeout">auto_reset_timeout</a> value changes.</li>
@@ -927,13 +1003,13 @@
 
 
      <br />
-     <center id=button2641>
-     <a class="show_more_button" onclick="show_extra('2641')">
+     <center id=button2655>
+     <a class="show_more_button" onclick="show_extra('2655')">
       Click to display more
      </a>
      </center>
 
-    <span id=item2641 class="hide_extra">
+    <span id=item2655 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::image_animations_enabled</code></span>  When the <a href="../libraries/naughty.html#image_animations_enabled">image_animations_enabled</a> value changes.</li>
@@ -972,13 +1048,13 @@
 
 
      <br />
-     <center id=button2642>
-     <a class="show_more_button" onclick="show_extra('2642')">
+     <center id=button2656>
+     <a class="show_more_button" onclick="show_extra('2656')">
       Click to display more
      </a>
      </center>
 
-    <span id=item2642 class="hide_extra">
+    <span id=item2656 class="hide_extra">
      <h3>Emit signals:</h3>
      <ul>
           <li><span class="parameter"><code>property::persistence_enabled</code></span>  When the <a href="../libraries/naughty.html#persistence_enabled">persistence_enabled</a> value changes.</li>
@@ -1021,7 +1097,7 @@
 
 
 
-    <span id=item2643 class="hide_extra">
+    <span id=item2657 class="hide_extra">
     </span>
 
 </dd>
@@ -1047,7 +1123,7 @@
 
 
 
-    <span id=item2644 class="hide_extra">
+    <span id=item2658 class="hide_extra">
     </span>
 
 </dd>
@@ -1073,7 +1149,7 @@
 
 
 
-    <span id=item2645 class="hide_extra">
+    <span id=item2659 class="hide_extra">
     </span>
 
 </dd>
@@ -1118,7 +1194,7 @@ end)
 
 
 
-    <span id=item2646 class="hide_extra">
+    <span id=item2660 class="hide_extra">
     </span>
 
 </dd>
@@ -1153,7 +1229,7 @@ end)
 
 
 
-    <span id=item2647 class="hide_extra">
+    <span id=item2661 class="hide_extra">
     </span>
 
 </dd>
@@ -1206,7 +1282,7 @@ end)
 
 
 
-    <span id=item2648 class="hide_extra">
+    <span id=item2662 class="hide_extra">
     </span>
 
 </dd>
@@ -1293,7 +1369,7 @@ end)
 
 
 
-    <span id=item2649 class="hide_extra">
+    <span id=item2663 class="hide_extra">
     </span>
 
 </dd>
@@ -1324,7 +1400,7 @@ end)
 
 
 
-    <span id=item2650 class="hide_extra">
+    <span id=item2664 class="hide_extra">
     </span>
 
 </dd>
@@ -1349,7 +1425,7 @@ end)
 
 
 
-    <span id=item2651 class="hide_extra">
+    <span id=item2665 class="hide_extra">
     </span>
 
 </dd>
@@ -1368,7 +1444,7 @@ end)
 
 
 
-    <span id=item2652 class="hide_extra">
+    <span id=item2666 class="hide_extra">
     </span>
 
 </dd>
@@ -1387,7 +1463,7 @@ end)
 
 
 
-    <span id=item2653 class="hide_extra">
+    <span id=item2667 class="hide_extra">
     </span>
 
 </dd>
@@ -1406,7 +1482,7 @@ end)
 
 
 
-    <span id=item2654 class="hide_extra">
+    <span id=item2668 class="hide_extra">
     </span>
 
 </dd>
@@ -1431,7 +1507,7 @@ end)
 
 
 
-    <span id=item2655 class="hide_extra">
+    <span id=item2669 class="hide_extra">
     </span>
 
 </dd>
@@ -1452,7 +1528,7 @@ end)
 
 
 
-    <span id=item2656 class="hide_extra">
+    <span id=item2670 class="hide_extra">
     </span>
 
 </dd>
@@ -1473,7 +1549,7 @@ end)
 
 
 
-    <span id=item2657 class="hide_extra">
+    <span id=item2671 class="hide_extra">
     </span>
 
 </dd>
@@ -1494,7 +1570,7 @@ end)
 
 
 
-    <span id=item2658 class="hide_extra">
+    <span id=item2672 class="hide_extra">
     </span>
 
 </dd>
@@ -1532,7 +1608,7 @@ end)
 
 
 
-    <span id=item2659 class="hide_extra">
+    <span id=item2673 class="hide_extra">
     </span>
 
 </dd>
@@ -1562,7 +1638,7 @@ end)
 
 
 
-    <span id=item2660 class="hide_extra">
+    <span id=item2674 class="hide_extra">
     </span>
 
 </dd>
@@ -1594,7 +1670,7 @@ end)
 
 
 
-    <span id=item2661 class="hide_extra">
+    <span id=item2675 class="hide_extra">
     </span>
 
 </dd>
@@ -1636,7 +1712,7 @@ end)
 
 
 
-    <span id=item2662 class="hide_extra">
+    <span id=item2676 class="hide_extra">
     </span>
 
 </dd>
@@ -1822,7 +1898,7 @@ end)
     </ul>
 
 
-    <span id=item2663 class="hide_extra">
+    <span id=item2677 class="hide_extra">
     </span>
 
 </dd>
@@ -1895,7 +1971,7 @@ end)
 
 
 
-    <span id=item2664 class="hide_extra">
+    <span id=item2678 class="hide_extra">
     </span>
 
 </dd>
@@ -1967,7 +2043,7 @@ end)
 
 
 
-    <span id=item2665 class="hide_extra">
+    <span id=item2679 class="hide_extra">
     </span>
 
 </dd>
@@ -2036,7 +2112,7 @@ end)
 
 
 
-    <span id=item2666 class="hide_extra">
+    <span id=item2680 class="hide_extra">
     </span>
 
 </dd>
@@ -2090,7 +2166,7 @@ end)
 
 
 
-    <span id=item2667 class="hide_extra">
+    <span id=item2681 class="hide_extra">
     </span>
 
 </dd>
@@ -2129,7 +2205,7 @@ end)
 
 
 
-    <span id=item2668 class="hide_extra">
+    <span id=item2682 class="hide_extra">
     </span>
 
 </dd>
@@ -2140,7 +2216,7 @@ end)
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-10-22 21:22:07 </i>
+<i style="float:right;">Last updated 2021-11-13 00:24:24 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
